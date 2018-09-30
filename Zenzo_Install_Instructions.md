@@ -5,14 +5,15 @@ Shell script to install a [Zenzo Masternode](https://zenzocoin.com/) on a Linux 
 ## Installation
 ```
 wget -q https://raw.githubusercontent.com/zenzocoin/zenzo/master/znz_install.sh
+
 bash znz_install.sh
 ```
 ***
 
-## Desktop wallet setup  
+## Desktop Wallet Setup 
 
 After the MN is up and running, you need to configure the desktop wallet accordingly. Here are the steps:  
-1. Open the Zenzo Desktop Wallet.  
+1. Open the ZENZO(ZNZ) Desktop Wallet.  
 2. Go to RECEIVE and create a New Address: **MN1**  
 3. Send **15000** ZNZ to **MN1**. You need to send all 15000 coins in one single transaction.
 4. Wait for 15 confirmations.  
@@ -36,7 +37,7 @@ Alias Address Privkey TxHash TxIndex
 ```
 startmasternode "alias" "0" "my_mn"
 ``` 
-14. Login to your VPS and check your masternode status by running the following command:.
+14. Login to your VPS and check your masternode status by running the following command:
 ```
 zenzo-cli masternode status
 ```
@@ -47,7 +48,7 @@ zenzo-cli masternode status
 zenzo-cli masternode status  
 zenzo-cli getinfo
 ```
-Also, if you want to check/start/stop **Zenzo**, run one of the following commands as **root**:
+Also, if you want to check/start/stop **ZENZO**, run one of the following commands as **root**:
 ```
 systemctl status Zenzo #To check if Zenzo service is running  
 systemctl start Zenzo #To start Zenzo service  
@@ -55,6 +56,6 @@ systemctl stop Zenzo #To stop Zenzo service
 systemctl is-enabled Zenzo #To check if Zenzo service is enabled on boot  
 ```  
 ***
-Credit to Zoldur for writing the original install script
+Credit to @Zoldur for writing the original install script.
 
 https://github.com/zoldur
