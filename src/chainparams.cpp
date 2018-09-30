@@ -104,7 +104,7 @@ public:
         pchMessageStart[1] = 0x51;
         pchMessageStart[2] = 0xb9;
         pchMessageStart[3] = 0xc4;
-        vAlertPubKey = ParseHex("048c42792e1bd595af2031a669b1ec33ba781d1ac7aa91d13de05ebd27020ad748d5e05c8223d72a7a9498d8342d58b20a6ad5ff8f1a546b962add5e0c5925be96");
+        vAlertPubKey = ParseHex("04162d81bfff02880ee2e149d7420f159564c20797778cd148cba5356aa608f3a122ab22bcd3f84ac1d252471b5fc71752d1504c848ef0b0c6bd1c155e81be23bc");
         nDefaultPort = 26210;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // Zenzo starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 4000000;
@@ -159,10 +159,11 @@ public:
         assert(hashGenesisBlock == uint256("0000024c78d7d2fb56363f7777bab06de80307ac751b02e843ca7ae62d2310d2"));
         assert(genesis.hashMerkleRoot == uint256("7411c8de5f43691fd7cb0f6264867edb8bb35da1bd6f0377e0981b86832254a1"));
 
-		vSeeds.push_back(CDNSSeedData("144.202.69.85", "144.202.69.85")); // Primary DNS Seeder
-		vSeeds.push_back(CDNSSeedData("144.202.70.74", "144.202.70.74")); // Secondary DNS Seeder		
-		vSeeds.push_back(CDNSSeedData("140.82.61.65", "140.82.61.65")); // Backup DNS Seeder
-		vSeeds.push_back(CDNSSeedData("207.246.95.9", "207.246.95.9")); // Backup Secondary DNS Seeder	
+		vSeeds.push_back(CDNSSeedData("80.240.31.194", "80.240.31.194")); // Primary DNS Seeder
+		vSeeds.push_back(CDNSSeedData("149.28.55.190", "149.28.55.190")); // Secondary DNS Seeder		
+		vSeeds.push_back(CDNSSeedData("45.77.224.165", "45.77.224.165")); // Backup DNS Seeder
+		vSeeds.push_back(CDNSSeedData("45.76.117.67", "45.76.117.67")); // Backup Secondary DNS Seeder	
+		vSeeds.push_back(CDNSSeedData("45.76.184.133", "45.76.184.133")); // Backup DNS Seeder
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 81);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 53);
@@ -185,7 +186,7 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        strSporkKey = "04153bb25db8bca6cd6312fdbb473a1353e32feb42ef6d31674207bbb2a5be28fca82c77a42f857cc68e09461e7c520e8dac3fdfb2ad193aad69bb265df299248b";
+        strSporkKey = "041a3041a1018f6495fc808c044481f0d446be6560e593277a34b258537f77922661f983952cb71a9d1b8948b6e1611fcd28507989d23833f0ba3b5d60c7f289cf";
         strObfuscationPoolDummyAddress = "Zp5p6GQjGdpXB8pvLhcYHc4arG6k9YC8k9";
         nStartMasternodePayments = 1516371317; //Wed, 25 Jun 2014 20:36:16 GMT
 
