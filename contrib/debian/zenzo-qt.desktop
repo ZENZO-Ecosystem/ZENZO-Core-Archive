@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Zenzo
+Comment=Zenzo P2P Cryptocurrency
+Comment[fr]=Zenzo, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Zenzo, eşten eşe kriptografik sanal para birimi
+Exec=zenzo-qt %u
+Terminal=false
+Type=Application
+Icon=zenzo128
+MimeType=x-scheme-handler/zenzo;
+Categories=Office;Finance;

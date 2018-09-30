@@ -1,0 +1,30 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/zenzo_bg.qm</file>
+        <file alias="ca">locale/zenzo_ca.qm</file>
+        <file alias="cs">locale/zenzo_cs.qm</file>
+        <file alias="da">locale/zenzo_da.qm</file>
+        <file alias="de">locale/zenzo_de.qm</file>
+        <file alias="en">locale/zenzo_en.qm</file>
+        <file alias="en_US">locale/zenzo_en_US.qm</file>
+        <file alias="es">locale/zenzo_es.qm</file>
+        <file alias="fi">locale/zenzo_fi.qm</file>
+        <file alias="fr_FR">locale/zenzo_fr_FR.qm</file>
+        <file alias="hr">locale/zenzo_hr.qm</file>
+        <file alias="it">locale/zenzo_it.qm</file>
+        <file alias="ja">locale/zenzo_ja.qm</file>
+        <file alias="ko_KR">locale/zenzo_ko_KR.qm</file>
+        <file alias="nl">locale/zenzo_nl.qm</file>
+        <file alias="pl">locale/zenzo_pl.qm</file>
+        <file alias="pt">locale/zenzo_pt.qm</file>
+        <file alias="pt_BR">locale/zenzo_pt_BR.qm</file>
+        <file alias="ro_RO">locale/zenzo_ro_RO.qm</file>
+        <file alias="ru">locale/zenzo_ru.qm</file>
+        <file alias="sk">locale/zenzo_sk.qm</file>
+        <file alias="sv">locale/zenzo_sv.qm</file>
+        <file alias="tr">locale/zenzo_tr.qm</file>
+        <file alias="uk">locale/zenzo_uk.qm</file>
+        <file alias="zh_CN">locale/zenzo_zh_CN.qm</file>
+        <file alias="zh_TW">locale/zenzo_zh_TW.qm</file>
+    </qresource>
+</RCC>

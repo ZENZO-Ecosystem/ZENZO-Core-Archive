@@ -1,0 +1,26 @@
+# /etc/conf.d/zenzod: config file for /etc/init.d/zenzod
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/zenzo/zenzo.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/zenzod"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/zenzod.pid"
+
+# Where to write zenzod data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/zenzod"
+
+# User and group to own zenzod process
+#BITCOIND_USER="zenzo"
+#BITCOIND_GROUP="zenzo"
+
+# Path to zenzod executable
+#BITCOIND_BIN="/usr/bin/zenzod"
+
+# Nice value to run zenzod under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

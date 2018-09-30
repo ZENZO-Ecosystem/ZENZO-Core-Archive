@@ -1,0 +1,26 @@
+[Unit]
+Description=Zenzo's distributed currency daemon
+After=network.target
+
+[Service]
+User=zenzo
+Group=zenzo
+
+Type=forking
+PIDFile=/var/lib/zenzod/zenzod.pid
+
+ExecStart=/usr/bin/zenzod -daemon -pid=/var/lib/zenzod/zenzod.pid \
+          -conf=/etc/zenzo/zenzo.conf -datadir=/var/lib/zenzod
+
+ExecStop=-/usr/bin/zenzo-cli -conf=/etc/zenzo/zenzo.conf \
+         -datadir=/var/lib/zenzod stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
