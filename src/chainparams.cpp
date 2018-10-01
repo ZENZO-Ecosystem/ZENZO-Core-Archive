@@ -54,15 +54,11 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0000024c78d7d2fb56363f7777bab06de80307ac751b02e843ca7ae62d2310d2"))
-	(50, uint256("0000041a2f922ed1e8d5a9c2e2ac0e979ec0ee0a014003a4e49a5a60bdd6cfb5"))
-	(100, uint256("0000038b89de9b62079f543576c822081427bd1ad4e75756a8e1fdc29570253a"))
-	(150, uint256("0000005281067c5813b4c4e7b838a737bcb048482e20facfb99a9463b92a0aa0"))
-	(200, uint256("00000020f5eb4e5e80d0ab9a7a476dcba1b3d7a8ffb139e9b4ebc08149e793bf"));
+    (0, uint256("0000024c78d7d2fb56363f7777bab06de80307ac751b02e843ca7ae62d2310d2"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1538341195, // * UNIX timestamp of last checkpoint block
-    212,    // * total number of transactions between genesis and last checkpoint
+    1538323043, // * UNIX timestamp of last checkpoint block
+    0,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
@@ -119,12 +115,12 @@ public:
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; // Zenzo: 1 day
         nTargetSpacing = 1 * 60;  // Zenzo: 1 minute
-        nMaturity = 50;
+        nMaturity = 20;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 83000000 * COIN;
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 400;
+        nLastPOWBlock = 100;
         nModifierUpdateBlock = 1;
         nZerocoinStartHeight = 101;
         nAccumulatorStartHeight = 50;
