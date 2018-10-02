@@ -119,7 +119,7 @@ public:
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; // Zenzo: 1 day
         nTargetSpacing = 1 * 60;  // Zenzo: 1 minute
-        nMaturity = 20;
+        nMaturity = 50;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 83000000 * COIN;
 
