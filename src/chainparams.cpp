@@ -55,14 +55,16 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
     (0, uint256("0000024c78d7d2fb56363f7777bab06de80307ac751b02e843ca7ae62d2310d2"))
-	(100, uint256("000008e8aacb5d6564625bedbb549e62fa8a4a7078ccc48e68d60422fa28ae03"))
-	(200, uint256("5fced416abd6a5f1142a3e4bdd0fd384fabea084982db1cad3f30267a6d3a704"))
-	(300, uint256("17034fd26f06696aa533852d4810229045a5849a82e530feb78ba4726b6ec891"))
-	(400, uint256("fd4b96417ec549692f92ce8e708c546038c08bb1601c77245da41f0da07245cf"));
+	(100, uint256("00000a077be1f0b9850b8321fa847e5eb79fd939217596f51f1ea188b16284ea"))
+	(200, uint256("00000003b64c5a430505a05eb3fcada74ff5663829a2cb39be5678223f2f4e59"))
+	(300, uint256("0000000dbb7ac6312c6bbebd31c4dbf6baae9cd34d7ad5fcbe2e89b1c0681d3a"))
+	(400, uint256("0000000a6551d2f6addaffd58fcfc92f1cdb1f0ed91c4cce2b7c925124c51bdc"))
+	(500, uint256("d95c542234350153f61595a58c486485c9d9e01ea26b71614a1938779b4620ae"))
+	(600, uint256("ae353efb716ed1e28c2c597fe41358a9a79f979178dd3da2a568a02f5f9973c8"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1538400789, // * UNIX timestamp of last checkpoint block
-    733,    // * total number of transactions between genesis and last checkpoint
+    1538504133, // * UNIX timestamp of last checkpoint block
+    825,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
@@ -119,12 +121,12 @@ public:
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; // Zenzo: 1 day
         nTargetSpacing = 1 * 60;  // Zenzo: 1 minute
-        nMaturity = 20;
+        nMaturity = 50;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 83000000 * COIN;
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 100;
+        nLastPOWBlock = 400;
         nModifierUpdateBlock = 1;
         nZerocoinStartHeight = 101;
         nAccumulatorStartHeight = 50;
