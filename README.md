@@ -21,7 +21,7 @@ Tor network for greater privacy. All transactions on the network are fully
 verifiable with a built-in blockchain explorer within the software itself. The
 reward ratio of staking to masternodes is 35:65.
 
-Special thanks to @sicXnull and @j00v for their contributions to ZENZO Core.
+Special thanks to @j00v for contributions to ZENZO Core.
 
 
 
