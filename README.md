@@ -43,8 +43,6 @@ block reward ratio of staking to masternodes is 35:65.
 <tr><td>Block Rewards (Masternodes)</td><td>65%</td></tr> 
 </table>
 
-***
-
 ### Block Rewards (ZNZ)
 <table>
 <tr><td>Block 1</td><td>16,800,000</td></tr>
@@ -53,8 +51,9 @@ block reward ratio of staking to masternodes is 35:65.
 <tr><td>Block 10,001 - 50,000</td><td>13</td></tr>
 <tr><td>Block 50,001 - 100,000</td><td>11</td></tr>
 <tr><td>Block 100,001 - ∞</td><td>9</td></tr>  
- 
 </table>
+
+***
 
 
 *Special thanks to @sicXnull and @j00v for their contributions to ZENZO Core.*
