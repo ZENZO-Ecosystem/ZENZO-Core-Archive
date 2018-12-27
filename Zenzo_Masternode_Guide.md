@@ -127,11 +127,11 @@ While that is underway, go back to your local desktop and open zenzo-qt.
 - If you already generated masternode private key,
   enter this command.
   ```bash
-  git clone https://github.com/Zenzo-Ecosystem/Zenzo-Core.git && cd Zenzo-Core && ./masternode_install.sh -p zenzo -k **PRIVATE KEY**
+  git clone https://github.com/Zenzo-Ecosystem/ZENZO-Core.git && cd ZENZO-Core && ./masternode_install.sh -p zenzo -k **PRIVATE KEY**
   ```
    **PRIVATE KEY** means your generated masternode private key. For example,
   ```bash
-  git clone https://github.com/Zenzo-Ecosystem/Zenzo-Core.git && cd Zenzo-Core &&  ./masternode_install.sh -p zenzo -k 87AqVXXXXXERNJxqBGdSS9LDS2vXXXXX5RdiiNd1zM7YAM7SHWX
+  git clone https://github.com/Zenzo-Ecosystem/ZENZO-Core.git && cd ZENZO-Core &&  ./masternode_install.sh -p zenzo -k 87AqVXXXXXERNJxqBGdSS9LDS2vXXXXX5RdiiNd1zM7YAM7SHWX
   ```
   In this script, you can find configuration in masternode.conf in your PC.
   Enter this to check it
@@ -143,7 +143,7 @@ While that is underway, go back to your local desktop and open zenzo-qt.
 - If you want to generate masternode private key within masternode installation,
   use this command
   ```bash
-  git clone https://github.com/Zenzo-Ecosystem/Zenzo-Core.git && cd Zenzo-Core && ./masternode_install.sh -p zenzo -g
+  git clone https://github.com/Zenzo-Ecosystem/ZENZO-Core.git && cd ZENZO-Core && ./masternode_install.sh -p zenzo -g
   ```
   and you can check generated private key in PuTTY. In this script, you can find configuration in masternode.conf in your PC.
   Enter this to check it
@@ -157,13 +157,13 @@ While that is underway, go back to your local desktop and open zenzo-qt.
 If you wish to install more than one masternode on the same VPS, you can add a -c parameter to tell the script how many to configure, so for example this would install three ZENZO (ZN) masternodes (all entered on one line):
 
 ```bash
-git clone https://github.com/Zenzo-Ecosystem/Zenzo-Core.git && cd Zenzo-Core && ./masternode_install.sh -p zenzo -c 3 -g -x
+git clone https://github.com/Zenzo-Ecosystem/ZENZO-Core.git && cd ZENZO-Core && ./masternode_install.sh -p zenzo -c 3 -g -x
 ```
 
 If you already have your masternode private keys, you can add them as shown below (all entered on one line):
 
 ```bash
-git clone https://github.com/Zenzo-Ecosystem/Zenzo-Core.git && cd Zenzo-Core && ./masternode_install.sh -p zenzo -c 3 --key **PRIVATE KEY 01** --key2 **PRIVATE KEY 02** --key3 **PRIVATE KEY 03**
+git clone https://github.com/Zenzo-Ecosystem/ZENZO-Core.git && cd ZENZO-Core && ./masternode_install.sh -p zenzo -c 3 --key **PRIVATE KEY 01** --key2 **PRIVATE KEY 02** --key3 **PRIVATE KEY 03**
 ```
 
 Using this command, you can skip the step for "Configure masternode configuration files", because the command above adds the masternode private keys to the masternode configuration files.
@@ -171,11 +171,11 @@ Using this command, you can skip the step for "Configure masternode configuratio
 If you are adding a new masternode, (and if you installed 2 masternodes already)
 
 ```
-git clone https://github.com/Zenzo-Ecosystem/Zenzo-Core.git && cd Zenzo-Core && ./masternode_install.sh -p zenzo -c 3 -g -x
+git clone https://github.com/Zenzo-Ecosystem/ZENZO-Core.git && cd ZENZO-Core && ./masternode_install.sh -p zenzo -c 3 -g -x
 ```
 if you want to use --key option, add --key3 **MASTERNODE PRIVKEY 03**. You are able to use
 ```
-git clone https://github.com/Zenzo-Ecosystem/Zenzo-Core.git && cd Zenzo-Core && ./masternode_install.sh -p zenzo -c 3 -g -x
+git clone https://github.com/Zenzo-Ecosystem/ZENZO-Core.git && cd ZENZO-Core && ./masternode_install.sh -p zenzo -c 3 -g -x
 ```
 for new third masternode.
 
@@ -185,7 +185,7 @@ If you are upgrading your masternode(s) to a new release, you should first remov
 rm -rf /root/
 ```
 ```bash
-git clone https://github.com/Zenzo-Ecosystem/Zenzo-Core.git && cd Zenzo-Core && ./masternode_install.sh -p zenzo -u
+git clone https://github.com/Zenzo-Ecosystem/ZENZO-Core.git && cd ZENZO-Core && ./masternode_install.sh -p zenzo -u
 ```
 
 The project is configured to use the latest official release of the ZENZO (ZNZ) masternode code, and we will update this project each time a new release is issued, but without downloading the latest version of this project and using the -u parameter. The script will not update an existing ZENZO (ZNZ) node that is already installed.
