@@ -29,7 +29,7 @@ packages:
 - "python"
 reference_datetime: "2015-06-01 00:00:00"
 remotes:
-- "url": "https://github.com/zenzocoin/zenzo"
+- "url": "https://github.com/Zenzo-Ecosystem/ZENZO-Core"
   "dir": "zenzo"
 files: []
 script: |

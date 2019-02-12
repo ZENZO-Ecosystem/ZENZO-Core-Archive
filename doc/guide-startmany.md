@@ -137,7 +137,7 @@ I usually confirm that remote is on the correct block by issuing:
 
 ```zenzod getinfo```
 
-And compare with the official explorer at http://zenzocoin.com
+And compare with the official explorer at http://zenzo.io
 
 ### Local
 

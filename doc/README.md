@@ -1,13 +1,13 @@
-Zenzo Core
+ZENZO Core
 =====================
 
 Setup
 ---------------------
-[Zenzo Core](http://Zenzocoin.com) is the original Zenzo client and it builds the backbone of the network. However, it downloads and stores the entire history of Zenzo transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
+[ZENZO Core](https://zenzo.io) is the original ZENZO client and it builds the backbone of the network. However, it downloads and stores the entire history of ZENZO transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
 
 Running
 ---------------------
-The following are some helpful notes on how to run Zenzo on your native platform.
+The following are some helpful notes on how to run ZENZO on your native platform.
 
 ### Unix
 
@@ -26,14 +26,12 @@ Drag Zenzo-Qt to your applications folder, and then run Zenzo-Qt.
 
 ### Need Help?
 
-* See the documentation at the [Zenzo Wiki](https://en.bitcoin.it/wiki/Main_Page) ***TODO***
-for help and more information.
-* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php) or on the [Zenzo Forum](http://Zenzocoin.com/).
-* Join one of our Discord groups [Zenzo Discord Groups](https://discord.gg/YcnvMqt).
+* Join our Discord Server [ZENZO Discord](https://discord.gg/nzGapAh).
+* Join our Telegram Group [ZENZO Telegram](https://t.me/Zenzo_Telegram).
 
 Building
 ---------------------
-The following are developer notes on how to build Zenzo on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build ZENZO Core on your native platform. They are NOT complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [OSX Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -41,7 +39,6 @@ The following are developer notes on how to build Zenzo on your native platform.
 
 Development
 ---------------------
-The Zenzo repo's [root README](https://github.com/eastcoastcrypto/Zenzo/blob/master/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)
@@ -52,11 +49,6 @@ The Zenzo repo's [root README](https://github.com/eastcoastcrypto/Zenzo/blob/mas
 - [Unit Tests](unit-tests.md)
 - [Unauthenticated REST Interface](REST-interface.md)
 - [Dnsseed Policy](dnsseed-policy.md)
-
-### Resources
-
-* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) .
-* Join the [Zenzo-Dev] Discord groups [Zenzo Discord Groups](https://discord.gg/YcnvMqt).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

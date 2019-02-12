@@ -28,7 +28,7 @@ packages:
 - "python-setuptools"
 - "fonts-tuffy"
 remotes:
-- "url": "https://github.com/zenzocoin/zenzo"
+- "url": "https://github.com/Zenzo-Ecosystem/ZENZO-Core"
   "dir": "zenzo"
 files:
 - "MacOSX10.11.sdk.tar.gz"

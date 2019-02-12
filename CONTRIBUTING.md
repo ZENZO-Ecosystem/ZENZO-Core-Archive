@@ -1,7 +1,7 @@
-Contributing to Zenzo Core
+Contributing to ZENZO Core
 ============================
 
-The Zenzo Core project operates an open contributor model where anyone is
+The ZENZO project operates an open contributor model where anyone is
 welcome to contribute towards development in the form of peer review, testing
 and patches. This document explains the practical process and guidelines for
 contributing.
