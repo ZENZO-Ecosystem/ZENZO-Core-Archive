@@ -23,10 +23,10 @@ If you're using the automated script (found in [contrib/gitian-build.sh](/contri
 Check out the source code in the following directory hierarchy.
 
     cd /path/to/your/toplevel/build
-    git clone https://github.com/eastcoastcrypto/gitian.sigs.git
-    git clone https://github.com/eastcoastcrypto/zenzo-detached-sigs.git
+    git clone https://github.com/eastcoastcrypto/gitian.sigs.git ### INCORRECT
+    git clone https://github.com/eastcoastcrypto/zenzo-detached-sigs.git ### INCORRECT
     git clone https://github.com/devrandom/gitian-builder.git
-    git clone https://github.com/eastcoastcrypto/zenzo.git
+    git clone https://github.com/Zenzo-Ecosystem/ZENZO-Core.git
 
 ### Zenzo maintainers/release engineers, suggestion for writing release notes
 
@@ -99,22 +99,22 @@ The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 ### Build and sign Zenzo Core for Linux, Windows, and OS X:
 
     pushd ./gitian-builder
-    ./bin/gbuild --memory 3000 --commit zenzo=v${VERSION} ../zenzo/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../zenzo/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gbuild --memory 3000 --commit zenzo=v${VERSION} ../ZENZO-Core/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../ZENZO-Core/contrib/gitian-descriptors/gitian-linux.yml
     mv build/out/zenzo-*.tar.gz build/out/src/zenzo-*.tar.gz ../
 
-    ./bin/gbuild --memory 3000 --commit zenzo=v${VERSION} ../zenzo/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../zenzo/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gbuild --memory 3000 --commit zenzo=v${VERSION} ../ZENZO-Core/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../ZENZO-Core/contrib/gitian-descriptors/gitian-win.yml
     mv build/out/zenzo-*-win-unsigned.tar.gz inputs/zenzo-win-unsigned.tar.gz
     mv build/out/zenzo-*.zip build/out/zenzo-*.exe ../
 
-    ./bin/gbuild --memory 3000 --commit zenzo=v${VERSION} ../zenzo/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../zenzo/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gbuild --memory 3000 --commit zenzo=v${VERSION} ../ZENZO-Core/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../ZENZO-Core/contrib/gitian-descriptors/gitian-osx.yml
     mv build/out/zenzo-*-osx-unsigned.tar.gz inputs/zenzo-osx-unsigned.tar.gz
     mv build/out/zenzo-*.tar.gz build/out/zenzo-*.dmg ../
 
-    ./bin/gbuild --memory 3000 --commit zenzo=v${VERSION} ../zenzo/contrib/gitian-descriptors/gitian-aarch64.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../zenzo/contrib/gitian-descriptors/gitian-aarch64.yml
+    ./bin/gbuild --memory 3000 --commit zenzo=v${VERSION} ../ZENZO-Core/contrib/gitian-descriptors/gitian-aarch64.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../ZENZO-Core/contrib/gitian-descriptors/gitian-aarch64.yml
     mv build/out/zenzo-*.tar.gz build/out/src/zenzo-*.tar.gz ../
     popd
 
@@ -130,16 +130,16 @@ Build output expected:
 
 Add other gitian builders keys to your gpg keyring, and/or refresh keys.
 
-    gpg --import zenzo/contrib/gitian-keys/*.gpg
+    gpg --import ZENZO-Core/contrib/gitian-keys/*.gpg
     gpg --refresh-keys
 
 Verify the signatures
 
     pushd ./gitian-builder
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../zenzo/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../zenzo/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../zenzo/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../zenzo/contrib/gitian-descriptors/gitian-aarch64.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../ZENZO-Core/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../ZENZO-Core/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../ZENZO-Core/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../ZENZO-Core/contrib/gitian-descriptors/gitian-aarch64.yml
     popd
 
 ### Next steps:
@@ -189,23 +189,23 @@ Codesigner only: Commit the detached codesign payloads:
 Non-codesigners: wait for Windows/OS X detached signatures:
 
 - Once the Windows/OS X builds each have 3 matching signatures, they will be signed with their respective release keys.
-- Detached signatures will then be committed to the [zenzo-detached-sigs](https://github.com/eastcoastcrypto/zenzo-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+- Detached signatures will then be committed to the [zenzo-detached-sigs](https://github.com/eastcoastcrypto/zenzo-detached-sigs) (<--- INCORRECT) repository, which can be combined with the unsigned apps to create signed binaries.
 
 Create (and optionally verify) the signed OS X binary:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../zenzo/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../zenzo/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../zenzo/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gbuild -i --commit signature=v${VERSION} ../ZENZO-Core/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../ZENZO-Core/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../ZENZO-Core/contrib/gitian-descriptors/gitian-osx-signer.yml
     mv build/out/zenzo-osx-signed.dmg ../zenzo-${VERSION}-osx.dmg
     popd
 
 Create (and optionally verify) the signed Windows binaries:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../zenzo/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../zenzo/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../zenzo/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gbuild -i --commit signature=v${VERSION} ../ZENZO-Core/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../ZENZO-Core/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../ZENZO-Core/contrib/gitian-descriptors/gitian-win-signer.yml
     mv build/out/zenzo-*win64-setup.exe ../zenzo-${VERSION}-win64-setup.exe
     mv build/out/zenzo-*win32-setup.exe ../zenzo-${VERSION}-win32-setup.exe
     popd
@@ -245,7 +245,7 @@ The `*-debug*` files generated by the gitian build contain debug symbols
 for troubleshooting by developers. It is assumed that anyone that is interested
 in debugging can run gitian to generate the files for themselves. To avoid
 end-user confusion about which file to pick, as well as save storage
-space *do not upload these to the zenzocoin.com server*.
+space *do not upload these to the zenzo.io server*.
 
 - GPG-sign it, delete the unsigned file:
 ```
@@ -265,6 +265,6 @@ Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spur
 
   - Archive release notes for the new version to `doc/release-notes/` (branch `master` and branch of the release)
 
-  - Create a [new GitHub release](https://github.com/eastcoastcrypto/Zenzo/releases/new) with a link to the archived release notes.
+  - Create a [new GitHub release](https://github.com/Zenzo-Ecosystem/ZENZO-Core/releases/new) with a link to the archived release notes.
 
   - Celebrate

@@ -1,16 +1,16 @@
-# Zenzo
-Shell script to install a [Zenzo Masternode](https://zenzocoin.com/) on a Linux server running Ubuntu 16.04. Use it on your own risk.
+# ZENZO Masternode Instructions
+Shell script to install a [ZENZO Masternode](https://zenzo.io/) on a Linux server running Ubuntu 16.04. Use it on your own risk.
 ***
 
 ## Installation
 ```
-wget -q https://raw.githubusercontent.com/zenzocoin/zenzo/master/znz_install.sh
+wget -q https://raw.githubusercontent.com/Zenzo-Ecosystem/ZENZO-Core/master/zenzo_install.sh
 
 bash znz_install.sh
 ```
 ***
 
-## Desktop Wallet Setup 
+## Desktop Wallet Setup
 
 After the MN is up and running, you need to configure the desktop wallet accordingly. Here are the steps:  
 1. Open the ZENZO(ZNZ) Desktop Wallet.  
@@ -36,7 +36,7 @@ Alias Address Privkey TxHash TxIndex
 13. Alternatively, open **Debug Console** and type:
 ```
 startmasternode "alias" "0" "my_mn"
-``` 
+```
 14. Login to your VPS and check your masternode status by running the following command:
 ```
 zenzo-cli masternode status

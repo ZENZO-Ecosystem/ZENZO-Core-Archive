@@ -1,9 +1,9 @@
 Gitian building
 ================
 
-*Setup instructions for a gitian build of Zenzo using a Debian VM or physical system.*
+*Setup instructions for a gitian build of ZENZO using a Debian VM or physical system.*
 
-Gitian is the deterministic build process that is used to build the Zenzo
+Gitian is the deterministic build process that is used to build the ZENZO
 Core executables. It provides a way to be reasonably sure that the
 executables are really built from source on GitHub. It also makes sure that
 the same, tested dependencies are used and statically built into the executable.
@@ -26,7 +26,7 @@ Table of Contents
 - [Installing gitian](#installing-gitian)
 - [Setting up gitian images](#setting-up-gitian-images)
 - [Getting and building the inputs](#getting-and-building-the-inputs)
-- [Building Zenzo](#building-zenzo)
+- [Building ZENZO](#building-zenzo)
 - [Building an alternative repository](#building-an-alternative-repository)
 - [Signing externally](#signing-externally)
 - [Uploading signatures](#uploading-signatures)
@@ -60,18 +60,18 @@ In the VirtualBox GUI click "Create" and choose the following parameters in the 
 ![](gitian-building/create_vm_hard_drive.png)
 
 - Hard Drive: Create a virtual hard drive now
-    
+
 ![](gitian-building/create_vm_hard_drive_file_type.png)
 
-- Hard Drive file type: Use the default, VDI (VirtualBox Disk Image) 
+- Hard Drive file type: Use the default, VDI (VirtualBox Disk Image)
 
 ![](gitian-building/create_vm_storage_physical_hard_drive.png)
-    
-- Storage on Physical hard drive: Dynamically Allocated 
-    
+
+- Storage on Physical hard drive: Dynamically Allocated
+
 ![](gitian-building/create_vm_file_location_size.png)
 
-- Disk size: at least 40GB; as low as 20GB *may* be possible, but better to err on the safe side 
+- Disk size: at least 40GB; as low as 20GB *may* be possible, but better to err on the safe side
 - Push the `Create` button
 
 Get the [Debian 7.8 net installer](http://cdimage.debian.org/cdimage/archive/7.8.0/amd64/iso-cd/debian-7.8.0-amd64-netinst.iso) (a more recent minor version should also work, see also [Debian Network installation](https://www.debian.org/CD/netinst/)).
@@ -81,7 +81,7 @@ Unixy OSes by entering the following in a terminal:
     echo "b712a141bc60269db217d3b3e456179bd6b181645f90e4aac9c42ed63de492e9  debian-7.4.0-amd64-netinst.iso" | sha256sum -c
     # (must return OK)
 
-After creating the VM, we need to configure it. 
+After creating the VM, we need to configure it.
 
 - Click the `Settings` button, then go to the `Network` tab. Adapter 1 should be attacked to `NAT`.
 
@@ -125,22 +125,22 @@ and proceed, just press `Enter`. To select a different button, press `Tab`.
 ![](gitian-building/debian_install_4_configure_keyboard.png)
 
 - The VM will detect network settings using DHCP, this should all proceed automatically
-- Configure the network: 
+- Configure the network:
   - System name `debian`.
   - Leave domain name empty.
 
 ![](gitian-building/debian_install_5_configure_the_network.png)
 
-- Choose a root password and enter it twice (remember it for later) 
+- Choose a root password and enter it twice (remember it for later)
 
 ![](gitian-building/debian_install_6a_set_up_root_password.png)
 
-- Name the new user `debian` (the full name doesn't matter, you can leave it empty) 
+- Name the new user `debian` (the full name doesn't matter, you can leave it empty)
 
 ![](gitian-building/debian_install_7_set_up_user_fullname.png)
 ![](gitian-building/debian_install_8_set_up_username.png)
 
-- Choose a user password and enter it twice (remember it for later) 
+- Choose a user password and enter it twice (remember it for later)
 
 ![](gitian-building/debian_install_9_user_password.png)
 
@@ -150,25 +150,25 @@ and proceed, just press `Enter`. To select a different button, press `Tab`.
 ![](gitian-building/debian_install_10_configure_clock.png)
 
 - Disk setup
-  - Partitioning method: Guided - Use the entire disk 
-  
+  - Partitioning method: Guided - Use the entire disk
+
 ![](gitian-building/debian_install_11_partition_disks.png)
 
-  - Select disk to partition: SCSI1 (0,0,0) 
+  - Select disk to partition: SCSI1 (0,0,0)
 
 ![](gitian-building/debian_install_12_choose_disk.png)
 
-  - Partitioning scheme: All files in one partition 
-  
+  - Partitioning scheme: All files in one partition
+
 ![](gitian-building/debian_install_13_partition_scheme.png)
 
   - Finish partitioning and write changes to disk -> *Yes* (`Tab`, `Enter` to select the `Yes` button)
 
-![](gitian-building/debian_install_14_finish.png) 
+![](gitian-building/debian_install_14_finish.png)
 ![](gitian-building/debian_install_15_write_changes.png)
 
 - The base system will be installed, this will take a minute or so
-- Choose a mirror (any will do) 
+- Choose a mirror (any will do)
 
 ![](gitian-building/debian_install_16_choose_a_mirror.png)
 
@@ -178,7 +178,7 @@ and proceed, just press `Enter`. To select a different button, press `Tab`.
 
 - Wait a bit while 'Select and install software' runs
 - Participate in popularity contest -> *No*
-- Choose software to install. We need just the base system. 
+- Choose software to install. We need just the base system.
 
 ![](gitian-building/debian_install_19_software_selection.png)
 
@@ -187,7 +187,7 @@ and proceed, just press `Enter`. To select a different button, press `Tab`.
 
 ![](gitian-building/debian_install_20_install_grub.png)
 
-- Install the GRUB boot loader to the master boot record? -> Yes 
+- Install the GRUB boot loader to the master boot record? -> Yes
 
 ![](gitian-building/debian_install_21_finish_installation.png)
 
