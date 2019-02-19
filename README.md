@@ -33,7 +33,7 @@ use cases, such as the [ZENZO Arcade](https://arcade.zenzo.io)
 <tr><td>Ticker</td><td>ZNZ</td></tr>
 <tr><td>Maximum Coin Supply</td><td>∞</td></tr>  
 <tr><td>Consensus Algorithm</td><td>Proof of Stake (PoS)</td></tr>
-<tr><td>Hashing Algorithm</td><td>Quark</td></tr>
+<tr><td>Hashing Algorithm</td><td>Xevan</td></tr>
 <tr><td>Masternode Collateral</td><td>15,000 ZNZ</td></tr>  
 <tr><td>Premine</td><td>16,800,000 ZNZ</td></tr>
  <tr><td>ZeroCoin Start Height</td><td>101</td></tr>
