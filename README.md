@@ -8,7 +8,7 @@ ZENZO(ZNZ) is an open-source digital
 currency based on Bitcoin's blockchain technology, Dash’s Masternodes,
 PIVX’s Zerocoin Protocol and general Codebase. Each of these elements was combined
 to create a powerful and innovative technology. ZENZO is also powered
-by Blackcoin Proof-of-Stake 3.0 and Bitcoin Core 0.10x code base, using Quark
+by Blackcoin Proof-of-Stake 3.0 and Bitcoin Core 0.10x code base, using Xevan
 hashing algorithm with a block time of just 60 seconds.
 
 A peer-to-peer digital currency that provides fast, zero cost
