@@ -36,6 +36,7 @@ use cases, such as the [ZENZO Arcade](https://arcade.zenzo.io)
 <tr><td>Hashing Algorithm</td><td>Quark</td></tr>
 <tr><td>Masternode Collateral</td><td>15,000 ZNZ</td></tr>  
 <tr><td>Premine</td><td>16,800,000 ZNZ</td></tr>
+ <tr><td>ZeroCoin Start Height</td><td>101</td></tr>
 <tr><td>Block Time</td><td>1 Minute</td></tr>
 <tr><td>Block Size</td><td>2 MB</td></tr>
 <tr><td>Block Maturity</td><td>50 Blocks</td></tr>
