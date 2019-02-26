@@ -1,5 +1,5 @@
-// Copyright (c) 2017 The Zenzo developers
-// Copyright (c) 2017-2018 The Zenzo developers
+// Copyright (c) 2018-2019 The ZENZO developers
+// Copyright (c) 2018-2019 The ZENZO developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 

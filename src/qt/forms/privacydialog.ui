@@ -191,7 +191,7 @@
                         <item>
                          <widget class="QLabel" name="labelzZNZSyncStatus">
                           <property name="toolTip">
-                           <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Zenzo network after a connection is established, but this process has not completed yet.</string>
+                           <string>The displayed information may be out of date. Your wallet automatically synchronizes with the ZENZO network after a connection is established, but this process has not completed yet.</string>
                           </property>
                           <property name="styleSheet">
                            <string notr="true">QLabel { color: red; }</string>
@@ -544,7 +544,7 @@
                          </font>
                         </property>
                         <property name="toolTip">
-                         <string>Status and/or Mesages from the last Mint Action.</string>
+                         <string>Status and/or Messages from the last Mint Action.</string>
                         </property>
                         <property name="frameShape">
                          <enum>QFrame::Panel</enum>
@@ -827,7 +827,7 @@ zZNZ are mature when they have more than 20 confirmations AND more than 2 mints 
                              </size>
                             </property>
                             <property name="toolTip">
-                             <string>The Zenzo address to send the payment to. Creates local payment to yourself when empty.</string>
+                             <string>The ZENZO address to send the payment to. Creates local payment to yourself when empty.</string>
                             </property>
                            </widget>
                           </item>

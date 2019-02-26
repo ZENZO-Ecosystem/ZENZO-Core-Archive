@@ -19,14 +19,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Zenzo"
-            VALUE "FileDescription",    "Zenzo Core (OSS GUI client for Zenzo)"
+            VALUE "CompanyName",        "ZENZO Ecosystem"
+            VALUE "FileDescription",    "ZENZO Core (OSS GUI client for ZENZO)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "Zenzo-qt"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
             VALUE "OriginalFilename",   "Zenzo-qt.exe"
-            VALUE "ProductName",        "Zenzo Core"
+            VALUE "ProductName",        "ZENZO Core"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

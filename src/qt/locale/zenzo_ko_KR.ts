@@ -62,12 +62,12 @@
         <translation>받는 주소</translation>
     </message>
     <message>
-        <source>These are your Zenzo addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>이 주소들은 전송할 Zenzo 주소입니다. 송금하기 전 항상 금액과 전송할 주소를 확인해주세요.</translation>
+        <source>These are your ZENZO addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>이 주소들은 전송할 ZENZO 주소입니다. 송금하기 전 항상 금액과 전송할 주소를 확인해주세요.</translation>
     </message>
     <message>
-        <source>These are your Zenzo addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>이 주소들은 전송 받을 Zenzo 주소입니다. 각 트랜잭션별로 새로운 입금 주소를 사용하는 것이 좋습니다.</translation>
+        <source>These are your ZENZO addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>이 주소들은 전송 받을 ZENZO 주소입니다. 각 트랜잭션별로 새로운 입금 주소를 사용하는 것이 좋습니다.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -176,8 +176,8 @@
         <translation>지갑 암호화 확인</translation>
     </message>
     <message>
-        <source>Zenzo will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
-        <translation>Zenzo는 이제 암호화 프로세스를 마치기 위해 닫힐것입니다. 지갑을 암호화하더라도 맬웨어로 인한 ZNZs 의 도난당하는 것을 완벽하게 보호 할 수는 없습니다.</translation>
+        <source>ZENZO will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
+        <translation>ZENZO는 이제 암호화 프로세스를 마치기 위해 닫힐것입니다. 지갑을 암호화하더라도 맬웨어로 인한 ZNZs 의 도난당하는 것을 완벽하게 보호 할 수는 없습니다.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -239,16 +239,16 @@
         <translation>&amp;BIP 38 암호화</translation>
     </message>
     <message>
-        <source>Enter a Zenzo Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>BIP 38을 사용하여 암호화 할 Zenzo 주소를 입력하십시오. 중간 입력창에 암호를 입력하십시오. 암호화를 누르면 암호화된 개인 키가 계산됩니다.</translation>
+        <source>Enter a ZENZO Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>BIP 38을 사용하여 암호화 할 ZENZO 주소를 입력하십시오. 중간 입력창에 암호를 입력하십시오. 암호화를 누르면 암호화된 개인 키가 계산됩니다.</translation>
     </message>
     <message>
         <source>Address:</source>
         <translation>주소:</translation>
     </message>
     <message>
-        <source>The Zenzo address to sign the message with</source>
-        <translation>메세지를 서명하기 위한 Zenzo 주소</translation>
+        <source>The ZENZO address to sign the message with</source>
+        <translation>메세지를 서명하기 위한 ZENZO 주소</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -279,8 +279,8 @@
         <translation>현재 서명을 시스템 클립 보드에 복사</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Zenzo address</source>
-        <translation>이 Zenzo 주소를 소유하고 있다는 것을 증명하기 위해 메세지에 서명하십시오</translation>
+        <source>Sign the message to prove you own this ZENZO address</source>
+        <translation>이 ZENZO 주소를 소유하고 있다는 것을 증명하기 위해 메세지에 서명하십시오</translation>
     </message>
     <message>
         <source>Encrypt &amp;Key</source>
@@ -303,12 +303,12 @@
         <translation>BIP 38 암호화 된 개인 키를 입력하십시오. 중간 입력창에 암호를 입력하십시오. 키를 암호해제 후 '주소 가져오기'를 클릭하면 개인 키가 지갑에 추가됩니다.</translation>
     </message>
     <message>
-        <source>The Zenzo address the message was signed with</source>
-        <translation>메세지에 서명된 Zenzo 주소</translation>
+        <source>The ZENZO address the message was signed with</source>
+        <translation>메세지에 서명된 ZENZO 주소</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Zenzo address</source>
-        <translation>메세지가 지정된 Zenzo 주소로 서명되었는지 확인해주세요</translation>
+        <source>Verify the message to ensure it was signed with the specified ZENZO address</source>
+        <translation>메세지가 지정된 ZENZO 주소로 서명되었는지 확인해주세요</translation>
     </message>
     <message>
         <source>Decrypt &amp;Key</source>
@@ -602,12 +602,12 @@
         <translation>탭 도구 모음</translation>
     </message>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     <message>
-        <source>Send coins to a Zenzo address</source>
-        <translation>Zenzo 주소로 전송하기</translation>
+        <source>Send coins to a ZENZO address</source>
+        <translation>ZENZO 주소로 전송하기</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and zenzo: URIs)</source>
@@ -630,24 +630,24 @@
         <translation>마스터노드 검색</translation>
     </message>
     <message>
-        <source>&amp;About Zenzo Core</source>
-        <translation>Zenzo Core &amp;정보</translation>
+        <source>&amp;About ZENZO Core</source>
+        <translation>ZENZO Core &amp;정보</translation>
     </message>
     <message>
-        <source>Show information about Zenzo Core</source>
-        <translation>Zenzo Core에 대한 정보 표시</translation>
+        <source>Show information about ZENZO Core</source>
+        <translation>ZENZO Core에 대한 정보 표시</translation>
     </message>
     <message>
-        <source>Modify configuration options for Zenzo</source>
-        <translation>Zenzo에 대한 구성 옵션 수정</translation>
+        <source>Modify configuration options for ZENZO</source>
+        <translation>ZENZO에 대한 구성 옵션 수정</translation>
     </message>
     <message>
-        <source>Sign messages with your Zenzo addresses to prove you own them</source>
-        <translation>Zenzo 주소로 메시지에 서명하여 소유하고 있음을 증명하십시오.</translation>
+        <source>Sign messages with your ZENZO addresses to prove you own them</source>
+        <translation>ZENZO 주소로 메시지에 서명하여 소유하고 있음을 증명하십시오.</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Zenzo addresses</source>
-        <translation>메시지가 지정된 Zenzo 주소로 서명되었는지 확인합니다.</translation>
+        <source>Verify messages to ensure they were signed with specified ZENZO addresses</source>
+        <translation>메시지가 지정된 ZENZO 주소로 서명되었는지 확인합니다.</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -678,8 +678,8 @@
         <translation>마스터노드 구성 파일 열기</translation>
     </message>
     <message>
-        <source>Open a Zenzo: URI or payment request</source>
-        <translation>Zenzo: URI 또는 ​​결제 요청 열기</translation>
+        <source>Open a ZENZO: URI or payment request</source>
+        <translation>ZENZO: URI 또는 ​​결제 요청 열기</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -690,16 +690,16 @@
         <translation>블록 탐색 창</translation>
     </message>
     <message>
-        <source>Show the Zenzo Core help message to get a list with possible Zenzo command-line options</source>
-        <translation>Zenzo Core 도움말 메세지를 표시하여 사용 가능한 Zenzo 명령행 옵션 목록 표시</translation>
+        <source>Show the ZENZO Core help message to get a list with possible ZENZO command-line options</source>
+        <translation>ZENZO Core 도움말 메세지를 표시하여 사용 가능한 ZENZO 명령행 옵션 목록 표시</translation>
     </message>
     <message>
-        <source>Zenzo Core client</source>
-        <translation>Zenzo Core 클라이언트</translation>
+        <source>ZENZO Core client</source>
+        <translation>ZENZO Core 클라이언트</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Zenzo network</source>
-        <translation><numerusform>%n 개 Zenzo 네트웍에 연결</numerusform></translation>
+        <source>%n active connection(s) to ZENZO network</source>
+        <translation><numerusform>%n 개 ZENZO 네트웍에 연결</numerusform></translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -1142,8 +1142,8 @@ Address: %4
         <translation>보내는 주소 수정</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Zenzo address.</source>
-        <translation>입력된 주소 "%1"는 올바른 Zenzo 주소가 아닙니다.</translation>
+        <source>The entered address "%1" is not a valid ZENZO address.</source>
+        <translation>입력된 주소 "%1"는 올바른 ZENZO 주소가 아닙니다.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1188,16 +1188,16 @@ Address: %4
         <translation>버전</translation>
     </message>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About Zenzo Core</source>
-        <translation>Zenzo Core 정보</translation>
+        <source>About ZENZO Core</source>
+        <translation>ZENZO Core 정보</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1243,16 +1243,16 @@ Address: %4
         <translation>환영합니다</translation>
     </message>
     <message>
-        <source>Welcome to Zenzo Core.</source>
-        <translation>Zenzo Core에 오신 것을 환영합니다.</translation>
+        <source>Welcome to ZENZO Core.</source>
+        <translation>ZENZO Core에 오신 것을 환영합니다.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Zenzo Core will store its data.</source>
-        <translation>이 프로그램이 처음 실행되었으므로 Zenzo Core가 데이터를 저장할 위치를 선택할 수 있습니다.</translation>
+        <source>As this is the first time the program is launched, you can choose where ZENZO Core will store its data.</source>
+        <translation>이 프로그램이 처음 실행되었으므로 ZENZO Core가 데이터를 저장할 위치를 선택할 수 있습니다.</translation>
     </message>
     <message>
-        <source>Zenzo Core will download and store a copy of the Zenzo block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Zenzo Core는 Zenzo 블록체인을 다운로드하여 저장합니다. 최소 %1GB의 데이터가 디렉토리에 저장되며 시간이 지날수록 증가합니다. 또한 지갑도 해당 디렉토리에 저장됩니다.</translation>
+        <source>ZENZO Core will download and store a copy of the ZENZO block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>ZENZO Core는 ZENZO 블록체인을 다운로드하여 저장합니다. 최소 %1GB의 데이터가 디렉토리에 저장되며 시간이 지날수록 증가합니다. 또한 지갑도 해당 디렉토리에 저장됩니다.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1263,8 +1263,8 @@ Address: %4
         <translation>사용자 지정 데이터 디렉토리 사용:</translation>
     </message>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1405,12 +1405,12 @@ Address: %4
         <translation>보낼 주소 입력</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Zenzo addresses after it matures.
-To Add: enter percentage to give and Zenzo address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other ZENZO addresses after it matures.
+To Add: enter percentage to give and ZENZO address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>다중전송을 사용하면 성취 한 뒤 다른 Zenzo 주소 목록에 최대 100% 스테이크 또는 마스터노드 보상을 자동으로 보낼 수 있습니다.
-추가하려면 : 부여 할 백분율과 다중전송 벡터에 추가 할 Zenzo 주소를 입력하십시오.
+        <translation>다중전송을 사용하면 성취 한 뒤 다른 ZENZO 주소 목록에 최대 100% 스테이크 또는 마스터노드 보상을 자동으로 보낼 수 있습니다.
+추가하려면 : 부여 할 백분율과 다중전송 벡터에 추가 할 ZENZO 주소를 입력하십시오.
 삭제하려면 삭제할 주소를 입력하고 삭제를 누릅니다.
 활성화를 클릭하지 않으면 다중전송이 활성화되지 않습니다.</translation>
     </message>
@@ -1580,16 +1580,16 @@ Please check the address and try again.</source>
         <translation>난독화 구성</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Zenzo's configuration screen.</source>
-        <translation>난독화가 성공적으로 높게 설정되었습니다.(%1 및 2 rounds) Zenzo의 설정 화면을 열어 언제든지 다시 변경할 수 있습니다.</translation>
+        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening ZENZO's configuration screen.</source>
+        <translation>난독화가 성공적으로 높게 설정되었습니다.(%1 및 2 rounds) ZENZO의 설정 화면을 열어 언제든지 다시 변경할 수 있습니다.</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Zenzo's configuration screen.</source>
-        <translation>난독화가 성공적으로 높게 설정되었습니다.(%1 및 8 rounds) Zenzo의 설정 화면을 열어 언제든지 다시 변경할 수 있습니다.</translation>
+        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening ZENZO's configuration screen.</source>
+        <translation>난독화가 성공적으로 높게 설정되었습니다.(%1 및 8 rounds) ZENZO의 설정 화면을 열어 언제든지 다시 변경할 수 있습니다.</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Zenzo's configuration screen.</source>
-        <translation>난독화가 성공적으로 높게 설정되었습니다.(%1 및 16 rounds) Zenzo의 설정 화면을 열어 언제든지 다시 변경할 수 있습니다.</translation>
+        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening ZENZO's configuration screen.</source>
+        <translation>난독화가 성공적으로 높게 설정되었습니다.(%1 및 16 rounds) ZENZO의 설정 화면을 열어 언제든지 다시 변경할 수 있습니다.</translation>
     </message>
 </context>
 <context>
@@ -1650,8 +1650,8 @@ Please check the address and try again.</source>
         <translation>확인되지 않은 변경사항을 사용하지 않도록 설정하면 해당 트랜잭션에 하나 이상의 컨펌이 진행되야&lt;br/&gt;트랜잭션에 변경사항을 적용할 수 있습니다.&lt;br/&gt;또한 이것은 잔액 계산 방식에도 영향을 줍니다.</translation>
     </message>
     <message>
-        <source>Automatically open the Zenzo client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>라우터에서 Zenzo 클라이언트 포트를 자동으로 엽니다. 이 기능은 라우터가 UPnP를 지원하고 활성화 된 경우에만 사용할 수 있습니다.</translation>
+        <source>Automatically open the ZENZO client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>라우터에서 ZENZO 클라이언트 포트를 자동으로 엽니다. 이 기능은 라우터가 UPnP를 지원하고 활성화 된 경우에만 사용할 수 있습니다.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1670,12 +1670,12 @@ Please check the address and try again.</source>
         <translation>전문적</translation>
     </message>
     <message>
-        <source>Automatically start Zenzo after logging in to the system.</source>
-        <translation>시스템 로그인 후 Zenzo을 자동으로 시작합니다.</translation>
+        <source>Automatically start ZENZO after logging in to the system.</source>
+        <translation>시스템 로그인 후 ZENZO을 자동으로 시작합니다.</translation>
     </message>
     <message>
-        <source>&amp;Start Zenzo on system login</source>
-        <translation>&amp;시스템 로그인시 Zenzo 시작</translation>
+        <source>&amp;Start ZENZO on system login</source>
+        <translation>&amp;시스템 로그인시 ZENZO 시작</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1702,8 +1702,8 @@ Please check the address and try again.</source>
         <translation>&amp;네트워크</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Zenzo.</source>
-        <translation>사용자 인터페이스 언어를 설정할 수 있습니다. 이 설정은 Zenzo을 다시 시작한 후에 적용됩니다.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting ZENZO.</source>
+        <translation>사용자 인터페이스 언어를 설정할 수 있습니다. 이 설정은 ZENZO을 다시 시작한 후에 적용됩니다.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
@@ -1732,8 +1732,8 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</translation>
         <translation>선호하는 자동생성 zZNZ 디노미네이션 </translation>
     </message>
     <message>
-        <source>Connect to the Zenzo network through a SOCKS5 proxy.</source>
-        <translation>SOCKS5 프록시를 통해 Zenzo 네트워크에 연결해주세요.</translation>
+        <source>Connect to the ZENZO network through a SOCKS5 proxy.</source>
+        <translation>SOCKS5 프록시를 통해 ZENZO 네트워크에 연결해주세요.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1891,8 +1891,8 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</translation>
         <translation>아직 완료되지 않은 스테이크 및 마스터노드 보상</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Zenzo network after a connection is established, but this process has not completed yet.</source>
-        <translation>표시된 정보가 오래되었을 수 있습니다. 연결이 완료되면 지갑이 Zenzo 네트워크와 자동으로 동기화될 예정이지만, 아직 해당 프로세스가 완료되지 않았습니다.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ZENZO network after a connection is established, but this process has not completed yet.</source>
+        <translation>표시된 정보가 오래되었을 수 있습니다. 연결이 완료되면 지갑이 ZENZO 네트워크와 자동으로 동기화될 예정이지만, 아직 해당 프로세스가 완료되지 않았습니다.</translation>
     </message>
     <message>
         <source>Unconfirmed transactions to watch-only addresses</source>
@@ -1979,11 +1979,11 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</translation>
     </message>
     <message>
         <source>Cannot start zenzo: click-to-pay handler</source>
-        <translation>Zenzo을 시작할 수 없습니다: 결제하기 위한 클릭 처리</translation>
+        <translation>ZENZO을 시작할 수 없습니다: 결제하기 위한 클릭 처리</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Zenzo address or malformed URI parameters.</source>
-        <translation>URI를 분석할 수 없습니다! 이는 잘못된 Zenzo 주소 또는 URI 매개변수 손상으로 인해 발생할 수 있습니다.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid ZENZO address or malformed URI parameters.</source>
+        <translation>URI를 분석할 수 없습니다! 이는 잘못된 ZENZO 주소 또는 URI 매개변수 손상으로 인해 발생할 수 있습니다.</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -2076,11 +2076,11 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</translation>
         <translation>제로코인 관리:</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Zenzo network after a connection is established, but this process has not completed yet.</source>
-        <translation>표시된 정보가 오래되었을 수 있습니다. 연결이 완료되면 지갑이 Zenzo 네트워크와 자동으로 동기화될 예정이지만, 아직 해당 프로세스가 완료되지 않았습니다.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ZENZO network after a connection is established, but this process has not completed yet.</source>
+        <translation>표시된 정보가 오래되었을 수 있습니다. 연결이 완료되면 지갑이 ZENZO 네트워크와 자동으로 동기화될 예정이지만, 아직 해당 프로세스가 완료되지 않았습니다.</translation>
     </message>
     <message>
-        <source>Enter an amount of Phr to convert to zPhr</source>
+        <source>Enter an amount of ZNZ to convert to zZNZ</source>
         <translation>zZNZ로 변환할 ZNZ 수량을 입력하세요.</translation>
     </message>
     <message>
@@ -2136,11 +2136,11 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</translation>
         <translation>마지막 발행 이후 상태나 메세지</translation>
     </message>
     <message>
-        <source>zPhr Control</source>
+        <source>zZNZ Control</source>
         <translation>zZNZ 설정</translation>
     </message>
     <message>
-        <source>zPhr Selected:</source>
+        <source>zZNZ Selected:</source>
         <translation>선택한 zZNZ : </translation>
     </message>
     <message>
@@ -2180,8 +2180,8 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</translation>
         <translation>지불 &amp;대상:</translation>
     </message>
     <message>
-        <source>The Zenzo address to send the payment to. Creates local payment to yourself when empty.</source>
-        <translation>ZNZ를 전송할 Zenzo 주소입니다. 비어있을 때 자신에게 지불할 주소를 생성합니다.</translation>
+        <source>The ZENZO address to send the payment to. Creates local payment to yourself when empty.</source>
+        <translation>ZNZ를 전송할 ZENZO 주소입니다. 비어있을 때 자신에게 지불할 주소를 생성합니다.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2380,8 +2380,8 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</translation>
         <translation>금액 복사</translation>
     </message>
     <message>
-        <source>Zerocoin functionality is not enabled on the Zenzo network yet.</source>
-        <translation>제로 코인 기능 상태가 Zenzo 네트워크 상에서 이루어지지 않습니다.</translation>
+        <source>Zerocoin functionality is not enabled on the ZENZO network yet.</source>
+        <translation>제로 코인 기능 상태가 ZENZO 네트워크 상에서 이루어지지 않습니다.</translation>
     </message>
     <message>
         <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
@@ -2434,8 +2434,8 @@ Please be patient...</source>
         <translation>주소를 입력하지 않아, 신규 주소를 생성합니다.</translation>
     </message>
     <message>
-        <source>Invalid Zenzo Address</source>
-        <translation>잘못된 Zenzo 주소</translation>
+        <source>Invalid ZENZO Address</source>
+        <translation>잘못된 ZENZO 주소</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -2478,8 +2478,8 @@ Please be patient...</source>
         <translation>제로코인 송금 실패 상태 =</translation>
     </message>
     <message>
-        <source>zPhr Spend #: </source>
-        <translation>zPhr 송금 #: </translation>
+        <source>zZNZ Spend #: </source>
+        <translation>zZNZ 송금 #: </translation>
     </message>
     <message>
         <source>denomination: </source>
@@ -2502,7 +2502,7 @@ Please be patient...</source>
         <translation>주소:</translation>
     </message>
     <message>
-        <source>zPhr Mint</source>
+        <source>zZNZ Mint</source>
         <translation>zZNZ 생성</translation>
     </message>
     <message>
@@ -2525,8 +2525,8 @@ Please be patient...</source>
         <translation>금액</translation>
     </message>
     <message>
-        <source>Enter a Zenzo address (e.g. %1)</source>
-        <translation>Zenzo 주소를 입력하세요 (예 %1)</translation>
+        <source>Enter a ZENZO address (e.g. %1)</source>
+        <translation>ZENZO 주소를 입력하세요 (예 %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2663,8 +2663,8 @@ Please be patient...</source>
         <translation>블록체인</translation>
     </message>
     <message>
-        <source>Open the Zenzo debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>현재 데이터 디렉토리에서 Zenzo 디버그 로그 파일을 엽니다. 로그 파일이 클 경우, 약간의 시간이 걸릴 수 있습니다.</translation>
+        <source>Open the ZENZO debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>현재 데이터 디렉토리에서 ZENZO 디버그 로그 파일을 엽니다. 로그 파일이 클 경우, 약간의 시간이 걸릴 수 있습니다.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
@@ -2832,8 +2832,8 @@ Please be patient...</source>
         <translation>출력:</translation>
     </message>
     <message>
-        <source>Welcome to the Zenzo RPC console.</source>
-        <translation>Zenzo RPC 콘솔에 오신 것을 환영합니다.</translation>
+        <source>Welcome to the ZENZO RPC console.</source>
+        <translation>ZENZO RPC 콘솔에 오신 것을 환영합니다.</translation>
     </message>
     <message>
         <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
@@ -2903,12 +2903,12 @@ Please be patient...</source>
         <translation>새로운 수신 주소와 연결할 선택적 라벨.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Zenzo network.</source>
-        <translation>요청이 열릴 때 표시되는 결제 요청에 첨부할 선택적 메세지 입니다. 참고: Zenzo 네트워크를 통한 결제는 메세지가 전송되지 않습니다.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the ZENZO network.</source>
+        <translation>요청이 열릴 때 표시되는 결제 요청에 첨부할 선택적 메세지 입니다. 참고: ZENZO 네트워크를 통한 결제는 메세지가 전송되지 않습니다.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Zenzo network.</source>
-        <translation>요청이 열릴 때 표시되는 결제 요청에 첨부할 선택적 메세지 입니다.&lt;br&gt;참고: Zenzo 네트워크를 통한 결제는 메세지가 전송되지 않습니다.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the ZENZO network.</source>
+        <translation>요청이 열릴 때 표시되는 결제 요청에 첨부할 선택적 메세지 입니다.&lt;br&gt;참고: ZENZO 네트워크를 통한 결제는 메세지가 전송되지 않습니다.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -3192,8 +3192,8 @@ Please be patient...</source>
         <translation>트랜잭션이 250바이트 인 경우 사용자 지정 수수료가 1000 uZNZs로 설정되고,&lt;br /&gt;1000 uZNZs 안에는 전체에서 최소 "킬로바이트당" 250 uZNZs 만 지불합니다. 1 킬로바이트보다 큰 트랜잭션의 경우 모두 킬로바이트 단위로 지불합니다.</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Zenzo transactions than the network can process.</source>
-        <translation>블록의 공간보다 트랜잭션량이 적으면 최소 수수료만 지불하면 됩니다.&lt;br /&gt;하지만 Zenzo 트랜잭션 수가 많으면 미확인된 트랜잭션로 네트워크가 처리할 수도 있습니다.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for ZENZO transactions than the network can process.</source>
+        <translation>블록의 공간보다 트랜잭션량이 적으면 최소 수수료만 지불하면 됩니다.&lt;br /&gt;하지만 ZENZO 트랜잭션 수가 많으면 미확인된 트랜잭션로 네트워크가 처리할 수도 있습니다.</translation>
     </message>
     <message>
         <source>normal</source>
@@ -3300,8 +3300,8 @@ Please be patient...</source>
         <translation>익명 자금</translation>
     </message>
     <message>
-        <source>Warning: Invalid Zenzo address</source>
-        <translation>경고: 잘못된 Zenzo 주소</translation>
+        <source>Warning: Invalid ZENZO address</source>
+        <translation>경고: 잘못된 ZENZO 주소</translation>
     </message>
     <message>
         <source>any available funds (not recommended)</source>
@@ -3407,8 +3407,8 @@ Please be patient...</source>
         <translation>지불 &amp;대상:</translation>
     </message>
     <message>
-        <source>The Zenzo address to send the payment to</source>
-        <translation>전송할 Zenzo 주소</translation>
+        <source>The ZENZO address to send the payment to</source>
+        <translation>전송할 ZENZO 주소</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3447,8 +3447,8 @@ Please be patient...</source>
         <translation>메세지:</translation>
     </message>
     <message>
-        <source>A message that was attached to the Zenzo: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Zenzo network.</source>
-        <translation>참조용으로 트랜잭션과 함께 기록되는 Zenzo : URI에 첨부된 메세지입니다. 참고: 이 메세지는 Zenzo 네트워크를 통해 전송되지 않습니다.</translation>
+        <source>A message that was attached to the ZENZO: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the ZENZO network.</source>
+        <translation>참조용으로 트랜잭션과 함께 기록되는 ZENZO : URI에 첨부된 메세지입니다. 참고: 이 메세지는 ZENZO 네트워크를 통해 전송되지 않습니다.</translation>
     </message>
     <message>
         <source>This is an unverified payment request.</source>
@@ -3474,8 +3474,8 @@ Please be patient...</source>
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Zenzo Core is shutting down...</source>
-        <translation>Zenzo Core가 종료됩니다...</translation>
+        <source>ZENZO Core is shutting down...</source>
+        <translation>ZENZO Core가 종료됩니다...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -3497,8 +3497,8 @@ Please be patient...</source>
         <translation>자신의 주소로 메세지에 서명할 수 있습니다. 피싱 공격으로 사용자를 속일 수 있으므로 서명에 주의해주세요. 동의하는 바에 한하여 서명하십시오.</translation>
     </message>
     <message>
-        <source>The Zenzo address to sign the message with</source>
-        <translation>메세지를 서명하기 위한 Zenzo 주소</translation>
+        <source>The ZENZO address to sign the message with</source>
+        <translation>메세지를 서명하기 위한 ZENZO 주소</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3529,16 +3529,16 @@ Please be patient...</source>
         <translation>현재 서명을 시스템 클립 보드에 복사</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Zenzo address</source>
-        <translation>이 Zenzo 주소를 소유하고 있다는 것을 증명하기 위해 메세지에 서명하십시오</translation>
+        <source>Sign the message to prove you own this ZENZO address</source>
+        <translation>이 ZENZO 주소를 소유하고 있다는 것을 증명하기 위해 메세지에 서명하십시오</translation>
     </message>
     <message>
-        <source>The Zenzo address the message was signed with</source>
-        <translation>메세지에 서명된 Zenzo 주소</translation>
+        <source>The ZENZO address the message was signed with</source>
+        <translation>메세지에 서명된 ZENZO 주소</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Zenzo address</source>
-        <translation>메세지가 지정된 Zenzo 주소로 서명되었는지 확인해주세요</translation>
+        <source>Verify the message to ensure it was signed with the specified ZENZO address</source>
+        <translation>메세지가 지정된 ZENZO 주소로 서명되었는지 확인해주세요</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -3624,8 +3624,8 @@ Please be patient...</source>
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -3640,8 +3640,8 @@ Please be patient...</source>
         <translation>Dash Core 개발자</translation>
     </message>
     <message>
-        <source>The Zenzo Core developers</source>
-        <translation>Zenzo Core 개발자</translation>
+        <source>The ZENZO Core developers</source>
+        <translation>ZENZO Core 개발자</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -3961,32 +3961,32 @@ Please be patient...</source>
         <translation>난독화</translation>
     </message>
     <message>
-        <source>Converted Phr to zPhr</source>
+        <source>Converted ZNZ to zZNZ</source>
         <translation>zZNZ로 변환된 ZNZ</translation>
     </message>
     <message>
-        <source>Spent zPhr</source>
+        <source>Spent zZNZ</source>
         <translation>전송된 zZNZ</translation>
     </message>
     <message>
-        <source>Received Phr from zPhr</source>
+        <source>Received ZNZ from zZNZ</source>
         <translation>zZNZ로 전송받은 ZNZ</translation>
     </message>
     <message>
-        <source>Minted Change as zPhr from zPhr Spend</source>
+        <source>Minted Change as zZNZ from zZNZ Spend</source>
         <translation>zZNZ 전송후 남은 잔돈 zZNZ 생성됨</translation>
     </message>
     <message>
-        <source>Converted zPhr to Phr</source>
-        <translation>zPhr에서 Phr로 변환됨</translation>
+        <source>Converted zZNZ to ZNZ</source>
+        <translation>zZNZ에서 ZNZ로 변환됨</translation>
     </message>
     <message>
         <source>watch-only</source>
         <translation>읽기 전용</translation>
     </message>
     <message>
-        <source>zPhr Accumulator</source>
-        <translation>zPhr 누산기</translation>
+        <source>zZNZ Accumulator</source>
+        <translation>zZNZ 누산기</translation>
     </message>
     <message>
         <source>(n/a)</source>
@@ -4096,7 +4096,7 @@ Please be patient...</source>
         <translation>마스터노드 보상 </translation>
     </message>
     <message>
-        <source>Received Phr from zPhr</source>
+        <source>Received ZNZ from zZNZ</source>
         <translation>zZNZ로 전송받은 ZNZ</translation>
     </message>
     <message>
@@ -4108,7 +4108,7 @@ Please be patient...</source>
         <translation>제로코인 전송</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zPhr</source>
+        <source>Zerocoin Spend, Change in zZNZ</source>
         <translation>제로코인 전송, 잔돈은 zZNZ</translation>
     </message>
     <message>
@@ -4279,7 +4279,7 @@ Please be patient...</source>
 <context>
     <name>ZPhrControlDialog</name>
     <message>
-        <source>Select zPhr to Spend</source>
+        <source>Select zZNZ to Spend</source>
         <translation>전송할 zZNZ 선택</translation>
     </message>
     <message>
@@ -4291,8 +4291,8 @@ Please be patient...</source>
         <translation>0</translation>
     </message>
     <message>
-        <source>zPhr</source>
-        <translation>zPhr</translation>
+        <source>zZNZ</source>
+        <translation>zZNZ</translation>
     </message>
     <message>
         <source>Select/Deselect All</source>
@@ -4334,8 +4334,8 @@ Please be patient...</source>
         <translation>계산된 누산기 체크포인트는 블록 인덱스에 의해 기록되는 것이 아닙니다.</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. Zenzo Core is probably already running.</source>
-        <translation>        &lt;translation&gt;잠겨진 데이터 디렉토리 %s 를 가져올 수 없습니다. Zenzo Core는 이미 실행 중입니다.</translation>
+        <source>Cannot obtain a lock on data directory %s. ZENZO Core is probably already running.</source>
+        <translation>        &lt;translation&gt;잠겨진 데이터 디렉토리 %s 를 가져올 수 없습니다. ZENZO Core는 이미 실행 중입니다.</translation>
     </message>
     <message>
         <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>
@@ -4354,8 +4354,8 @@ Please be patient...</source>
         <translation>지갑의 모든 트랜잭션들을 삭제하고 오직 블록체인을 통한 트랜잭션 부분들만 복구합니다 -시작 시 다시 스캔</translation>
     </message>
     <message>
-        <source>Disable all Zenzo specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
-        <translation>Zenzo의 모든 특정 기능들을 비활성화합니다(마스터노드, 난독화, SwiftTX, Budgeting) (0-1, 기본값: %u)</translation>
+        <source>Disable all ZENZO specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
+        <translation>ZENZO의 모든 특정 기능들을 비활성화합니다(마스터노드, 난독화, SwiftTX, Budgeting) (0-1, 기본값: %u)</translation>
     </message>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
@@ -4503,23 +4503,23 @@ rpcpassword=%s
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s "Zenzo Alert" admin@foo.com
+for example: alertnotify=echo %%s | mail -s "ZENZO Alert" admin@foo.com
 </source>
-        <translation>Zenzod 또는 Zenzo-qt에 대한 -server 옵션 파일을 사용하려면 configuration 파일에서 rpcpassword를 설정해야 합니다:
+        <translation>ZENZOd 또는 ZENZO-qt에 대한 -server 옵션 파일을 사용하려면 configuration 파일에서 rpcpassword를 설정해야 합니다:
 %s
 다음 무작위 암호를 사용하는 것을 추천합니다:
-rpcuser=Zenzopc
+rpcuser=ZENZOpc
 rpcpassword=%s
 (이 비밀번호는 기억할 필요가 없습니다)
 유저 이름과 비밀번호는 반드시 달라야 합니다.
 파일이 존재하지 않는다면 작성자만 읽기 가능한 권한으로 파일을 생성하십시오.
 또한 문제 발생 알림을 받을려면 alertnotify를 설정하는 것을 추천합니다.
-예시: alertnotify=echo %%s | mail -s "Zenzo Alert" admin@foo.com
+예시: alertnotify=echo %%s | mail -s "ZENZO Alert" admin@foo.com
 </translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. Zenzo Core is probably already running.</source>
-        <translation>이 컴퓨터를 %s 로 지정하는것은 불가능합니다. Zenzo Core는 이미 실행 중입니다.</translation>
+        <source>Unable to bind to %s on this computer. ZENZO Core is probably already running.</source>
+        <translation>이 컴퓨터를 %s 로 지정하는것은 불가능합니다. ZENZO Core는 이미 실행 중입니다.</translation>
     </message>
     <message>
         <source>Unable to locate enough Obfuscation denominated funds for this transaction.</source>
@@ -4546,8 +4546,8 @@ rpcpassword=%s
         <translation>경고 : -paytxfee가 매우 높게 설정되었습니다! 이것은 전송할 경우 지불 할 트랜잭션 수수료입니다.</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Zenzo Core will not work properly.</source>
-        <translation>경고: 컴퓨터의 날짜와 시간이 올바르게 설정되어 있는지 확인해 주세요! 만일 시계가 잘못되어 있다면 Zenzo 코어는 정상적으로 작동하지 않을 수 있습니다.</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong ZENZO Core will not work properly.</source>
+        <translation>경고: 컴퓨터의 날짜와 시간이 올바르게 설정되어 있는지 확인해 주세요! 만일 시계가 잘못되어 있다면 ZENZO 코어는 정상적으로 작동하지 않을 수 있습니다.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -4702,8 +4702,8 @@ rpcpassword=%s
         <translation>Copyright (C) 2014-%i The Dash Core 개발자들</translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The Zenzo Core Developers</source>
-        <translation>Copyright (C) 2015-%i The Zenzo Core 개발자</translation>
+        <source>Copyright (C) 2015-%i The ZENZO Core Developers</source>
+        <translation>Copyright (C) 2015-%i The ZENZO Core 개발자</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -4782,8 +4782,8 @@ rpcpassword=%s
         <translation>wallet.dat을 불러오는 중 오류가 발생했습니다: 지갑 손상됨</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Zenzo Core</source>
-        <translation>wallet.dat를 로드하는 중 오류가 발생했습니다. 지갑에 최신 버전의 Zenzo 코어가 필요합니다.</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of ZENZO Core</source>
+        <translation>wallet.dat를 로드하는 중 오류가 발생했습니다. 지갑에 최신 버전의 ZENZO 코어가 필요합니다.</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -4894,8 +4894,8 @@ rpcpassword=%s
         <translation>정보</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. Zenzo Core is shutting down.</source>
-        <translation>초기화 정확성 검사에 실패 했습니다. Zenzo Core가 종료됩니다.</translation>
+        <source>Initialization sanity check failed. ZENZO Core is shutting down.</source>
+        <translation>초기화 정확성 검사에 실패 했습니다. ZENZO Core가 종료됩니다.</translation>
     </message>
     <message>
         <source>Input is not valid.</source>
@@ -5570,8 +5570,8 @@ rpcpassword=%s
         <translation>지갑이 잠겼습니다.</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart Zenzo Core to complete</source>
-        <translation>지갑을 다시 작성해야 합니다: 완료하려면 Zenzo 코어를 재시작해야 합니다</translation>
+        <source>Wallet needed to be rewritten: restart ZENZO Core to complete</source>
+        <translation>지갑을 다시 작성해야 합니다: 완료하려면 ZENZO 코어를 재시작해야 합니다</translation>
     </message>
     <message>
         <source>Wallet options:</source>

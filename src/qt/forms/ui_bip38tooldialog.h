@@ -361,10 +361,10 @@ public:
     void retranslateUi(QDialog *Bip38ToolDialog)
     {
         Bip38ToolDialog->setWindowTitle(QApplication::translate("Bip38ToolDialog", "BIP 38 Tool", 0));
-        infoLabel_ENC->setText(QApplication::translate("Bip38ToolDialog", "Enter a Zenzo Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.", 0));
+        infoLabel_ENC->setText(QApplication::translate("Bip38ToolDialog", "Enter a ZENZO Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.", 0));
         label_5->setText(QApplication::translate("Bip38ToolDialog", "Address:", 0));
 #ifndef QT_NO_TOOLTIP
-        addressIn_ENC->setToolTip(QApplication::translate("Bip38ToolDialog", "The Zenzo address to encrypt", 0));
+        addressIn_ENC->setToolTip(QApplication::translate("Bip38ToolDialog", "The ZENZO address to encrypt", 0));
 #endif // QT_NO_TOOLTIP
 #ifndef QT_NO_TOOLTIP
         addressBookButton_ENC->setToolTip(QApplication::translate("Bip38ToolDialog", "Choose previously used address", 0));
@@ -383,7 +383,7 @@ public:
 #endif // QT_NO_TOOLTIP
         copyKeyButton_ENC->setText(QString());
 #ifndef QT_NO_TOOLTIP
-        encryptKeyButton_ENC->setToolTip(QApplication::translate("Bip38ToolDialog", "Encrypt the private key for this Zenzo address", 0));
+        encryptKeyButton_ENC->setToolTip(QApplication::translate("Bip38ToolDialog", "Encrypt the private key for this ZENZO address", 0));
 #endif // QT_NO_TOOLTIP
         encryptKeyButton_ENC->setText(QApplication::translate("Bip38ToolDialog", "Encrypt &Key", 0));
 #ifndef QT_NO_TOOLTIP

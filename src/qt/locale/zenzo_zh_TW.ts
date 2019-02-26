@@ -43,11 +43,11 @@
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>選擇要匯出Zenzo幣的位址</translation>
+        <translation>選擇要匯出ZENZO幣的位址</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation>選擇要接收Zenzo幣的位址</translation>
+        <translation>選擇要接收ZENZO幣的位址</translation>
     </message>
     <message>
         <source>C&amp;hoose</source>
@@ -62,12 +62,12 @@
         <translation>接收的位址</translation>
     </message>
     <message>
-        <source>These are your Zenzo addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>這是你用來付款的 Zenzo 位址, 送出前, 請務必確認金額及接收位址是否正確.</translation>
+        <source>These are your ZENZO addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>這是你用來付款的 ZENZO 位址, 送出前, 請務必確認金額及接收位址是否正確.</translation>
     </message>
     <message>
-        <source>These are your Zenzo addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>這是你用來接收款項的 Zenzo 位址, 建議你每次付款都使用新的位址.</translation>
+        <source>These are your ZENZO addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>這是你用來接收款項的 ZENZO 位址, 建議你每次付款都使用新的位址.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -164,8 +164,8 @@
         <translation>錢包確認加密</translation>
     </message>
     <message>
-        <source>Zenzo will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
-        <translation>Zenzo 現在會關閉程式來處理加密流程, 請注意, 僅僅是加密你的錢包並不能完全保護你的 ZNZ 幣被可疑軟體或病毒偷走的風險.</translation>
+        <source>ZENZO will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
+        <translation>ZENZO 現在會關閉程式來處理加密流程, 請注意, 僅僅是加密你的錢包並不能完全保護你的 ZNZ 幣被可疑軟體或病毒偷走的風險.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -227,16 +227,16 @@
         <translation>&amp;BIP 38 加密</translation>
     </message>
     <message>
-        <source>Enter a Zenzo Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>輸入你想 BIP 38 加密的 Zenzo 位址, 輸入密碼在中間欄, 按下加密按鈕來產生加密私鑰.</translation>
+        <source>Enter a ZENZO Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>輸入你想 BIP 38 加密的 ZENZO 位址, 輸入密碼在中間欄, 按下加密按鈕來產生加密私鑰.</translation>
     </message>
     <message>
         <source>Address:</source>
         <translation>位址:</translation>
     </message>
     <message>
-        <source>The Zenzo address to sign the message with</source>
-        <translation>對訊息簽名的 Zenzo 位址</translation>
+        <source>The ZENZO address to sign the message with</source>
+        <translation>對訊息簽名的 ZENZO 位址</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -267,8 +267,8 @@
         <translation>拷貝目前的簽章到系統剪貼簿</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Zenzo address</source>
-        <translation>使用簽章來證明你是該  Zenzo 位址的擁有者,</translation>
+        <source>Sign the message to prove you own this ZENZO address</source>
+        <translation>使用簽章來證明你是該  ZENZO 位址的擁有者,</translation>
     </message>
     <message>
         <source>Encrypt &amp;Key</source>
@@ -287,12 +287,12 @@
         <translation>&amp;BIP 38 解密</translation>
     </message>
     <message>
-        <source>The Zenzo address the message was signed with</source>
-        <translation>此訊息之 Zenzo 位址已簽章於</translation>
+        <source>The ZENZO address the message was signed with</source>
+        <translation>此訊息之 ZENZO 位址已簽章於</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Zenzo address</source>
-        <translation>驗證訊息以確保該  Zenzo 位址已被簽章</translation>
+        <source>Verify the message to ensure it was signed with the specified ZENZO address</source>
+        <translation>驗證訊息以確保該  ZENZO 位址已被簽章</translation>
     </message>
     <message>
         <source>Decrypt &amp;Key</source>
@@ -582,12 +582,12 @@
         <translation>Tabs 工具列</translation>
     </message>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     <message>
-        <source>Send coins to a Zenzo address</source>
-        <translation>送出錢幣到 Zenzo 地址</translation>
+        <source>Send coins to a ZENZO address</source>
+        <translation>送出錢幣到 ZENZO 地址</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and zenzo: URIs)</source>
@@ -602,24 +602,24 @@
         <translation>瀏覽 Masternodes</translation>
     </message>
     <message>
-        <source>&amp;About Zenzo Core</source>
-        <translation>&amp;關於 Zenzo Core</translation>
+        <source>&amp;About ZENZO Core</source>
+        <translation>&amp;關於 ZENZO Core</translation>
     </message>
     <message>
-        <source>Show information about Zenzo Core</source>
-        <translation>顯示 Zenzo Core 相關資訊</translation>
+        <source>Show information about ZENZO Core</source>
+        <translation>顯示 ZENZO Core 相關資訊</translation>
     </message>
     <message>
-        <source>Modify configuration options for Zenzo</source>
-        <translation>修改 Zenzo 設定</translation>
+        <source>Modify configuration options for ZENZO</source>
+        <translation>修改 ZENZO 設定</translation>
     </message>
     <message>
-        <source>Sign messages with your Zenzo addresses to prove you own them</source>
-        <translation>使用你的 Zenzo 位址對訊息簽章, 來證明你是擁有者</translation>
+        <source>Sign messages with your ZENZO addresses to prove you own them</source>
+        <translation>使用你的 ZENZO 位址對訊息簽章, 來證明你是擁有者</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Zenzo addresses</source>
-        <translation>驗證訊息簽章與 Zenzo 位址吻合</translation>
+        <source>Verify messages to ensure they were signed with specified ZENZO addresses</source>
+        <translation>驗證訊息簽章與 ZENZO 位址吻合</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -650,8 +650,8 @@
         <translation>打開Masternode設定檔</translation>
     </message>
     <message>
-        <source>Open a Zenzo: URI or payment request</source>
-        <translation>打開Zenzo: 位址或付款請求 </translation>
+        <source>Open a ZENZO: URI or payment request</source>
+        <translation>打開ZENZO: 位址或付款請求 </translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -662,12 +662,12 @@
         <translation>區塊鏈瀏覽視窗</translation>
     </message>
     <message>
-        <source>Show the Zenzo Core help message to get a list with possible Zenzo command-line options</source>
-        <translation>顯示 Zenzo Core 幫助訊息以取得 Zenzo 命令列表選項</translation>
+        <source>Show the ZENZO Core help message to get a list with possible ZENZO command-line options</source>
+        <translation>顯示 ZENZO Core 幫助訊息以取得 ZENZO 命令列表選項</translation>
     </message>
     <message>
-        <source>Zenzo Core client</source>
-        <translation>Zenzo Core 客戶端</translation>
+        <source>ZENZO Core client</source>
+        <translation>ZENZO Core 客戶端</translation>
     </message>
     </context>
 <context>
@@ -696,15 +696,15 @@
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     </context>
 <context>
     <name>Intro</name>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     </context>
 <context>
@@ -836,8 +836,8 @@
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The Zenzo address to sign the message with</source>
-        <translation>對訊息簽名的 Zenzo 位址</translation>
+        <source>The ZENZO address to sign the message with</source>
+        <translation>對訊息簽名的 ZENZO 位址</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -860,16 +860,16 @@
         <translation>拷貝目前的簽章到系統剪貼簿</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Zenzo address</source>
-        <translation>使用簽章來證明你是該  Zenzo 位址的擁有者,</translation>
+        <source>Sign the message to prove you own this ZENZO address</source>
+        <translation>使用簽章來證明你是該  ZENZO 位址的擁有者,</translation>
     </message>
     <message>
-        <source>The Zenzo address the message was signed with</source>
-        <translation>此訊息之 Zenzo 位址已簽章於</translation>
+        <source>The ZENZO address the message was signed with</source>
+        <translation>此訊息之 ZENZO 位址已簽章於</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Zenzo address</source>
-        <translation>驗證訊息以確保該  Zenzo 位址已被簽章</translation>
+        <source>Verify the message to ensure it was signed with the specified ZENZO address</source>
+        <translation>驗證訊息以確保該  ZENZO 位址已被簽章</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
@@ -907,8 +907,8 @@
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     </context>
 <context>

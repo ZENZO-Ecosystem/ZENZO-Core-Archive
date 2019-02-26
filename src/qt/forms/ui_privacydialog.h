@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'privacydialog.ui'
 **
-** Created by: Qt User Interface Compiler version 5.5.1
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -16,7 +16,6 @@
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QFrame>
-#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -35,13 +34,13 @@ QT_BEGIN_NAMESPACE
 class Ui_PrivacyDialog
 {
 public:
-    QVBoxLayout *verticalLayout_1;
+    QVBoxLayout *verticalLayout_8;
     QVBoxLayout *verticalLayout_Master;
     QFrame *frame_Header;
-    QVBoxLayout *verticalLayout_8;
+    QVBoxLayout *verticalLayout_81;
     QHBoxLayout *horizontalLayout_Header;
     QLabel *labelOverviewHeaderLeft;
-    QSpacerItem *horizontalSpacer_1;
+    QSpacerItem *horizontalSpacer_3;
     QLabel *labelOverviewHeaderRight;
     QFrame *frame_BG;
     QVBoxLayout *verticalLayout;
@@ -74,7 +73,7 @@ public:
     QVBoxLayout *verticalLayout_6;
     QLabel *labelCoinControlQuantity;
     QLabel *labelCoinControlAmount;
-    QSpacerItem *horizontalSpacer_3;
+    QSpacerItem *horizontalSpacer_31;
     QPushButton *pushButtonMintReset;
     QSpacerItem *horizontalSpacer_18;
     QPlainTextEdit *TEMintStatus;
@@ -95,16 +94,17 @@ public:
     QLabel *labelSecurityLevel;
     QHBoxLayout *securityLevelLayout;
     QSpinBox *securityLevel;
-    QGridLayout *gridLayout_7;
+    QHBoxLayout *horizontalLayout_7;
     QLabel *payToLabel;
     QHBoxLayout *payToLayout;
     QValidatedLineEdit *payTo;
     QToolButton *addressBookButton;
     QToolButton *pasteButton;
+    QHBoxLayout *horizontalLayout_8;
     QLabel *labelLabel;
     QLineEdit *addAsLabel;
-    QLabel *amountLabel;
     QHBoxLayout *horizontalLayout_9;
+    QLabel *amountLabel;
     QLineEdit *zZNZpayAmount;
     QLabel *labelzZNZ;
     QHBoxLayout *horizontalLayout_10;
@@ -249,16 +249,16 @@ public:
         sizePolicy.setHeightForWidth(PrivacyDialog->sizePolicy().hasHeightForWidth());
         PrivacyDialog->setSizePolicy(sizePolicy);
         PrivacyDialog->setMinimumSize(QSize(960, 0));
-        verticalLayout_1 = new QVBoxLayout(PrivacyDialog);
-        verticalLayout_1->setObjectName(QStringLiteral("verticalLayout_1"));
+        verticalLayout_8 = new QVBoxLayout(PrivacyDialog);
+        verticalLayout_8->setObjectName(QStringLiteral("verticalLayout_8"));
         verticalLayout_Master = new QVBoxLayout();
         verticalLayout_Master->setSpacing(0);
         verticalLayout_Master->setObjectName(QStringLiteral("verticalLayout_Master"));
         frame_Header = new QFrame(PrivacyDialog);
         frame_Header->setObjectName(QStringLiteral("frame_Header"));
-        verticalLayout_8 = new QVBoxLayout(frame_Header);
-        verticalLayout_8->setObjectName(QStringLiteral("verticalLayout_8"));
-        verticalLayout_8->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_81 = new QVBoxLayout(frame_Header);
+        verticalLayout_81->setObjectName(QStringLiteral("verticalLayout_81"));
+        verticalLayout_81->setContentsMargins(0, 0, 0, 0);
         horizontalLayout_Header = new QHBoxLayout();
         horizontalLayout_Header->setObjectName(QStringLiteral("horizontalLayout_Header"));
         labelOverviewHeaderLeft = new QLabel(frame_Header);
@@ -273,9 +273,9 @@ public:
 
         horizontalLayout_Header->addWidget(labelOverviewHeaderLeft);
 
-        horizontalSpacer_1 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout_Header->addItem(horizontalSpacer_1);
+        horizontalLayout_Header->addItem(horizontalSpacer_3);
 
         labelOverviewHeaderRight = new QLabel(frame_Header);
         labelOverviewHeaderRight->setObjectName(QStringLiteral("labelOverviewHeaderRight"));
@@ -291,7 +291,7 @@ public:
         horizontalLayout_Header->setStretch(0, 1);
         horizontalLayout_Header->setStretch(2, 1);
 
-        verticalLayout_8->addLayout(horizontalLayout_Header);
+        verticalLayout_81->addLayout(horizontalLayout_Header);
 
 
         verticalLayout_Master->addWidget(frame_Header);
@@ -472,9 +472,9 @@ public:
 
         horizontalLayout_5->addLayout(verticalLayout_6);
 
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer_31 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout_5->addItem(horizontalSpacer_3);
+        horizontalLayout_5->addItem(horizontalSpacer_31);
 
         pushButtonMintReset = new QPushButton(verticalFrameLeft);
         pushButtonMintReset->setObjectName(QStringLiteral("pushButtonMintReset"));
@@ -610,15 +610,14 @@ public:
 
         verticalLayout_3->addLayout(horizontalLayout_6);
 
-        gridLayout_7 = new QGridLayout();
-        gridLayout_7->setSpacing(12);
-        gridLayout_7->setObjectName(QStringLiteral("gridLayout_7"));
+        horizontalLayout_7 = new QHBoxLayout();
+        horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
         payToLabel = new QLabel(verticalFrameLeft);
         payToLabel->setObjectName(QStringLiteral("payToLabel"));
         payToLabel->setMinimumSize(QSize(80, 0));
         payToLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout_7->addWidget(payToLabel, 0, 0, 1, 1);
+        horizontalLayout_7->addWidget(payToLabel);
 
         payToLayout = new QHBoxLayout();
         payToLayout->setSpacing(0);
@@ -647,30 +646,37 @@ public:
         payToLayout->addWidget(pasteButton);
 
 
-        gridLayout_7->addLayout(payToLayout, 0, 1, 1, 1);
+        horizontalLayout_7->addLayout(payToLayout);
 
+
+        verticalLayout_3->addLayout(horizontalLayout_7);
+
+        horizontalLayout_8 = new QHBoxLayout();
+        horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
         labelLabel = new QLabel(verticalFrameLeft);
         labelLabel->setObjectName(QStringLiteral("labelLabel"));
         labelLabel->setMinimumSize(QSize(80, 0));
         labelLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout_7->addWidget(labelLabel, 1, 0, 1, 1);
+        horizontalLayout_8->addWidget(labelLabel);
 
         addAsLabel = new QLineEdit(verticalFrameLeft);
         addAsLabel->setObjectName(QStringLiteral("addAsLabel"));
 
-        gridLayout_7->addWidget(addAsLabel, 1, 1, 1, 1);
+        horizontalLayout_8->addWidget(addAsLabel);
 
+
+        verticalLayout_3->addLayout(horizontalLayout_8);
+
+        horizontalLayout_9 = new QHBoxLayout();
+        horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
         amountLabel = new QLabel(verticalFrameLeft);
         amountLabel->setObjectName(QStringLiteral("amountLabel"));
         amountLabel->setMinimumSize(QSize(80, 0));
         amountLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout_7->addWidget(amountLabel, 2, 0, 1, 1);
+        horizontalLayout_9->addWidget(amountLabel);
 
-        horizontalLayout_9 = new QHBoxLayout();
-        horizontalLayout_9->setSpacing(0);
-        horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
         zZNZpayAmount = new QLineEdit(verticalFrameLeft);
         zZNZpayAmount->setObjectName(QStringLiteral("zZNZpayAmount"));
 
@@ -679,12 +685,11 @@ public:
         labelzZNZ = new QLabel(verticalFrameLeft);
         labelzZNZ->setObjectName(QStringLiteral("labelzZNZ"));
         labelzZNZ->setMinimumSize(QSize(55, 0));
-        labelzZNZ->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         horizontalLayout_9->addWidget(labelzZNZ);
 
 
-        gridLayout_7->addLayout(horizontalLayout_9, 2, 1, 1, 1);
+        verticalLayout_3->addLayout(horizontalLayout_9);
 
         horizontalLayout_10 = new QHBoxLayout();
         horizontalLayout_10->setObjectName(QStringLiteral("horizontalLayout_10"));
@@ -713,10 +718,7 @@ public:
         horizontalLayout_10->addItem(horizontalSpacer_6);
 
 
-        gridLayout_7->addLayout(horizontalLayout_10, 3, 0, 1, 2);
-
-
-        verticalLayout_3->addLayout(gridLayout_7);
+        verticalLayout_3->addLayout(horizontalLayout_10);
 
 
         verticalLayout_2->addLayout(verticalLayout_3);
@@ -1207,7 +1209,7 @@ public:
 
         verticalLayout_Master->setStretch(1, 1);
 
-        verticalLayout_1->addLayout(verticalLayout_Master);
+        verticalLayout_8->addLayout(verticalLayout_Master);
 
         dummyHideWidget = new QWidget(PrivacyDialog);
         dummyHideWidget->setObjectName(QStringLiteral("dummyHideWidget"));
@@ -1519,7 +1521,7 @@ public:
         dummyHideLayout->addWidget(labelCoinControlChangeText);
 
 
-        verticalLayout_1->addWidget(dummyHideWidget);
+        verticalLayout_8->addWidget(dummyHideWidget);
 
 #ifndef QT_NO_SHORTCUT
         payToLabel->setBuddy(payTo);
@@ -1534,224 +1536,225 @@ public:
 
     void retranslateUi(QWidget *PrivacyDialog)
     {
-        labelOverviewHeaderLeft->setText(QApplication::translate("PrivacyDialog", "PRIVACY", 0));
+        labelOverviewHeaderLeft->setText(QApplication::translate("PrivacyDialog", "PRIVACY", Q_NULLPTR));
         labelOverviewHeaderRight->setText(QString());
-        labelzZNZActions->setText(QApplication::translate("PrivacyDialog", "Zerocoin Actions:", 0));
+        labelzZNZActions->setText(QApplication::translate("PrivacyDialog", "Zerocoin Actions:", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        labelzZNZSyncStatus->setToolTip(QApplication::translate("PrivacyDialog", "The displayed information may be out of date. Your wallet automatically synchronizes with the Zenzo network after a connection is established, but this process has not completed yet.", 0));
+        labelzZNZSyncStatus->setToolTip(QApplication::translate("PrivacyDialog", "The displayed information may be out of date. Your wallet automatically synchronizes with the ZENZO network after a connection is established, but this process has not completed yet.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
 #ifndef QT_NO_TOOLTIP
-        pushButtonMintzZNZ->setToolTip(QApplication::translate("PrivacyDialog", "Enter an amount of Piv to convert to zZNZ", 0));
+        pushButtonMintzZNZ->setToolTip(QApplication::translate("PrivacyDialog", "Enter an amount of ZNZ to convert to zZNZ", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        pushButtonMintzZNZ->setText(QApplication::translate("PrivacyDialog", "Mint Zerocoin", 0));
-        labelMintAmountValue->setText(QApplication::translate("PrivacyDialog", "0", 0));
-        labelzZNZ_2->setText(QApplication::translate("PrivacyDialog", "zZNZ", 0));
+        pushButtonMintzZNZ->setText(QApplication::translate("PrivacyDialog", "Mint Zerocoin", Q_NULLPTR));
+        labelMintAmountValue->setText(QApplication::translate("PrivacyDialog", "0", Q_NULLPTR));
+        labelzZNZ_2->setText(QApplication::translate("PrivacyDialog", "zZNZ", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        labelzZNZAmountText->setToolTip(QApplication::translate("PrivacyDialog", "Available for minting are coins which are confirmed and not locked or Masternode collaterals.", 0));
+        labelzZNZAmountText->setToolTip(QApplication::translate("PrivacyDialog", "Available for minting are coins which are confirmed and not locked or Masternode collaterals.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelzZNZAmountText->setText(QApplication::translate("PrivacyDialog", "Available for Minting:", 0));
+        labelzZNZAmountText->setText(QApplication::translate("PrivacyDialog", "Available for Minting:", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        labelzZNZAmountValue->setToolTip(QApplication::translate("PrivacyDialog", "Enter an amount of Piv to convert to zZNZ", 0));
+        labelzZNZAmountValue->setToolTip(QApplication::translate("PrivacyDialog", "Enter an amount of ZNZ to convert to zZNZ", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelzZNZAmountValue->setText(QApplication::translate("PrivacyDialog", "0.000\342\200\211000\342\200\21100 ZNZ", 0));
+        labelzZNZAmountValue->setText(QApplication::translate("PrivacyDialog", "0.000\342\200\211000\342\200\21100 ZNZ", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        pushButtonSpentReset->setToolTip(QApplication::translate("PrivacyDialog", "Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.", 0));
+        pushButtonSpentReset->setToolTip(QApplication::translate("PrivacyDialog", "Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        pushButtonSpentReset->setText(QApplication::translate("PrivacyDialog", "Reset", 0));
-        pushButtonCoinControl->setText(QApplication::translate("PrivacyDialog", "Coin Control...", 0));
-        labelCoinControlQuantityText->setText(QApplication::translate("PrivacyDialog", "Quantity:", 0));
-        labelCoinControlAmountText->setText(QApplication::translate("PrivacyDialog", "Amount:", 0));
+        pushButtonSpentReset->setText(QApplication::translate("PrivacyDialog", "Reset", Q_NULLPTR));
+        pushButtonCoinControl->setText(QApplication::translate("PrivacyDialog", "Coin Control...", Q_NULLPTR));
+        labelCoinControlQuantityText->setText(QApplication::translate("PrivacyDialog", "Quantity:", Q_NULLPTR));
+        labelCoinControlAmountText->setText(QApplication::translate("PrivacyDialog", "Amount:", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        pushButtonMintReset->setToolTip(QApplication::translate("PrivacyDialog", "Rescan the complete blockchain for  Zerocoin mints and their meta-data.", 0));
+        pushButtonMintReset->setToolTip(QApplication::translate("PrivacyDialog", "Rescan the complete blockchain for  Zerocoin mints and their meta-data.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        pushButtonMintReset->setText(QApplication::translate("PrivacyDialog", "ReScan", 0));
+        pushButtonMintReset->setText(QApplication::translate("PrivacyDialog", "ReScan", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        TEMintStatus->setToolTip(QApplication::translate("PrivacyDialog", "Status and/or Mesages from the last Mint Action.", 0));
+        TEMintStatus->setToolTip(QApplication::translate("PrivacyDialog", "Status and/or Messages from the last Mint Action.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        pushButtonZZNZControl->setText(QApplication::translate("PrivacyDialog", "zZNZ Control", 0));
-        labelzZNZSelected->setText(QApplication::translate("PrivacyDialog", "zZNZ Selected:", 0));
-        labelzZNZSelected_int->setText(QApplication::translate("PrivacyDialog", "0", 0));
-        labelQuantitySelected->setText(QApplication::translate("PrivacyDialog", "Quantity Selected:", 0));
-        labelQuantitySelected_int->setText(QApplication::translate("PrivacyDialog", "0", 0));
+        TEMintStatus->setPlaceholderText(QString());
+        pushButtonZZNZControl->setText(QApplication::translate("PrivacyDialog", "zZNZ Control", Q_NULLPTR));
+        labelzZNZSelected->setText(QApplication::translate("PrivacyDialog", "zZNZ Selected:", Q_NULLPTR));
+        labelzZNZSelected_int->setText(QApplication::translate("PrivacyDialog", "0", Q_NULLPTR));
+        labelQuantitySelected->setText(QApplication::translate("PrivacyDialog", "Quantity Selected:", Q_NULLPTR));
+        labelQuantitySelected_int->setText(QApplication::translate("PrivacyDialog", "0", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        pushButtonSpendzZNZ->setToolTip(QApplication::translate("PrivacyDialog", "Spend Zerocoin. Without 'Pay To:' address creates payments to yourself.", 0));
+        pushButtonSpendzZNZ->setToolTip(QApplication::translate("PrivacyDialog", "Spend Zerocoin. Without 'Pay To:' address creates payments to yourself.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        pushButtonSpendzZNZ->setText(QApplication::translate("PrivacyDialog", "Spend Zerocoin", 0));
+        pushButtonSpendzZNZ->setText(QApplication::translate("PrivacyDialog", "Spend Zerocoin", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        labelzZNZBalanceText->setToolTip(QApplication::translate("PrivacyDialog", "Available (mature and spendable) zZNZ for spending", 0));
+        labelzZNZBalanceText->setToolTip(QApplication::translate("PrivacyDialog", "Available (mature and spendable) zZNZ for spending", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelzZNZBalanceText->setText(QApplication::translate("PrivacyDialog", "Available Balance:", 0));
+        labelzZNZBalanceText->setText(QApplication::translate("PrivacyDialog", "Available Balance:", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
         labelzAvailableAmount_2->setToolTip(QApplication::translate("PrivacyDialog", "Available (mature and spendable) zZNZ for spending\n"
 "\n"
-"zZNZ are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted", 0));
+"zZNZ are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelzAvailableAmount_2->setText(QApplication::translate("PrivacyDialog", "0 zZNZ", 0));
+        labelzAvailableAmount_2->setText(QApplication::translate("PrivacyDialog", "0 zZNZ", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        labelSecurityLevel->setToolTip(QApplication::translate("PrivacyDialog", "Security Level for Zerocoin Transactions. More is better, but needs more time and resources.", 0));
+        labelSecurityLevel->setToolTip(QApplication::translate("PrivacyDialog", "Security Level for Zerocoin Transactions. More is better, but needs more time and resources.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelSecurityLevel->setText(QApplication::translate("PrivacyDialog", "Security Level:", 0));
+        labelSecurityLevel->setText(QApplication::translate("PrivacyDialog", "Security Level:", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        securityLevel->setToolTip(QApplication::translate("PrivacyDialog", "Security Level 1 - 100 (default: 42)", 0));
+        securityLevel->setToolTip(QApplication::translate("PrivacyDialog", "Security Level 1 - 100 (default: 42)", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        payToLabel->setText(QApplication::translate("PrivacyDialog", "Pay &To:", 0));
+        payToLabel->setText(QApplication::translate("PrivacyDialog", "Pay &To:", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        payTo->setToolTip(QApplication::translate("PrivacyDialog", "The Zenzo address to send the payment to. Creates local payment to yourself when empty.", 0));
+        payTo->setToolTip(QApplication::translate("PrivacyDialog", "The ZENZO address to send the payment to. Creates local payment to yourself when empty.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
 #ifndef QT_NO_TOOLTIP
-        addressBookButton->setToolTip(QApplication::translate("PrivacyDialog", "Choose previously used address", 0));
+        addressBookButton->setToolTip(QApplication::translate("PrivacyDialog", "Choose previously used address", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
         addressBookButton->setText(QString());
-        addressBookButton->setShortcut(QApplication::translate("PrivacyDialog", "Alt+A", 0));
+        addressBookButton->setShortcut(QApplication::translate("PrivacyDialog", "Alt+A", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        pasteButton->setToolTip(QApplication::translate("PrivacyDialog", "Paste address from clipboard", 0));
+        pasteButton->setToolTip(QApplication::translate("PrivacyDialog", "Paste address from clipboard", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
         pasteButton->setText(QString());
-        pasteButton->setShortcut(QApplication::translate("PrivacyDialog", "Alt+P", 0));
-        labelLabel->setText(QApplication::translate("PrivacyDialog", "&Label:", 0));
+        pasteButton->setShortcut(QApplication::translate("PrivacyDialog", "Alt+P", Q_NULLPTR));
+        labelLabel->setText(QApplication::translate("PrivacyDialog", "&Label:", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        addAsLabel->setToolTip(QApplication::translate("PrivacyDialog", "Enter a label for this address to add it to the list of used addresses", 0));
+        addAsLabel->setToolTip(QApplication::translate("PrivacyDialog", "Enter a label for this address to add it to the list of used addresses", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        amountLabel->setText(QApplication::translate("PrivacyDialog", "A&mount:", 0));
-        labelzZNZ->setText(QApplication::translate("PrivacyDialog", "zZNZ", 0));
-        checkBoxMintChange->setText(QApplication::translate("PrivacyDialog", "Convert Change to Zerocoin (might cost additional fees)", 0));
+        amountLabel->setText(QApplication::translate("PrivacyDialog", "A&mount:", Q_NULLPTR));
+        labelzZNZ->setText(QApplication::translate("PrivacyDialog", "zZNZ", Q_NULLPTR));
+        checkBoxMintChange->setText(QApplication::translate("PrivacyDialog", "Convert Change to Zerocoin (might cost additional fees)", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        checkBoxMinimizeChange->setToolTip(QApplication::translate("PrivacyDialog", "If checked, the wallet tries to minimize the returning change instead of minimizing the number of spent denominations.", 0));
+        checkBoxMinimizeChange->setToolTip(QApplication::translate("PrivacyDialog", "If checked, the wallet tries to minimize the returning change instead of minimizing the number of spent denominations.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        checkBoxMinimizeChange->setText(QApplication::translate("PrivacyDialog", "Minimize Change", 0));
+        checkBoxMinimizeChange->setText(QApplication::translate("PrivacyDialog", "Minimize Change", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        labelzZNZStats->setToolTip(QApplication::translate("PrivacyDialog", "Information about the available Zerocoin funds.", 0));
+        labelzZNZStats->setToolTip(QApplication::translate("PrivacyDialog", "Information about the available Zerocoin funds.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelzZNZStats->setText(QApplication::translate("PrivacyDialog", "Zerocoin Stats:", 0));
+        labelzZNZStats->setText(QApplication::translate("PrivacyDialog", "Zerocoin Stats:", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        labelzAvailableText->setToolTip(QApplication::translate("PrivacyDialog", "Total Balance including unconfirmed and immature zZNZ", 0));
+        labelzAvailableText->setToolTip(QApplication::translate("PrivacyDialog", "Total Balance including unconfirmed and immature zZNZ", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelzAvailableText->setText(QApplication::translate("PrivacyDialog", "Total Zerocoin  Balance:", 0));
+        labelzAvailableText->setText(QApplication::translate("PrivacyDialog", "Total Zerocoin  Balance:", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        labelzAvailableAmount->setToolTip(QApplication::translate("PrivacyDialog", "Total Balance including unconfirmed and immature zZNZ", 0));
+        labelzAvailableAmount->setToolTip(QApplication::translate("PrivacyDialog", "Total Balance including unconfirmed and immature zZNZ", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelzAvailableAmount->setText(QApplication::translate("PrivacyDialog", "0 zZNZ", 0));
+        labelzAvailableAmount->setText(QApplication::translate("PrivacyDialog", "0 zZNZ", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        labelzDenom1Text->setToolTip(QApplication::translate("PrivacyDialog", "Denominations with value 1:", 0));
+        labelzDenom1Text->setToolTip(QApplication::translate("PrivacyDialog", "Denominations with value 1:", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelzDenom1Text->setText(QApplication::translate("PrivacyDialog", "Denom. with value 1:", 0));
+        labelzDenom1Text->setText(QApplication::translate("PrivacyDialog", "Denom. with value 1:", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
         labelzDenom1Amount->setToolTip(QApplication::translate("PrivacyDialog", "Unconfirmed: less than 20 confirmations\n"
-"Immature: confirmed, but less than 1 mint of the same denomination after it was minted", 0));
+"Immature: confirmed, but less than 2 mints of the same denomination after it was minted", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelzDenom1Amount->setText(QApplication::translate("PrivacyDialog", "0 x", 0));
+        labelzDenom1Amount->setText(QApplication::translate("PrivacyDialog", "0 x", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        labelzDenom2Text->setToolTip(QApplication::translate("PrivacyDialog", "Denominations with value 5:", 0));
+        labelzDenom2Text->setToolTip(QApplication::translate("PrivacyDialog", "Denominations with value 5:", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelzDenom2Text->setText(QApplication::translate("PrivacyDialog", "Denom. with value 5:", 0));
+        labelzDenom2Text->setText(QApplication::translate("PrivacyDialog", "Denom. with value 5:", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
         labelzDenom2Amount->setToolTip(QApplication::translate("PrivacyDialog", "Unconfirmed: less than 20 confirmations\n"
-"Immature: confirmed, but less than 1 mint of the same denomination after it was minted", 0));
+"Immature: confirmed, but less than 2 mints of the same denomination after it was minted", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelzDenom2Amount->setText(QApplication::translate("PrivacyDialog", "0 x", 0));
+        labelzDenom2Amount->setText(QApplication::translate("PrivacyDialog", "0 x", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        labelzDenom3Text->setToolTip(QApplication::translate("PrivacyDialog", "Denominations with value 10:", 0));
+        labelzDenom3Text->setToolTip(QApplication::translate("PrivacyDialog", "Denominations with value 10:", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelzDenom3Text->setText(QApplication::translate("PrivacyDialog", "Denom. with value 10:", 0));
+        labelzDenom3Text->setText(QApplication::translate("PrivacyDialog", "Denom. with value 10:", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
         labelzDenom3Amount->setToolTip(QApplication::translate("PrivacyDialog", "Unconfirmed: less than 20 confirmations\n"
-"Immature: confirmed, but less than 1 mint of the same denomination after it was minted", 0));
+"Immature: confirmed, but less than 2 mints of the same denomination after it was minted", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelzDenom3Amount->setText(QApplication::translate("PrivacyDialog", "0 x", 0));
+        labelzDenom3Amount->setText(QApplication::translate("PrivacyDialog", "0 x", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        labelzDenom4Text->setToolTip(QApplication::translate("PrivacyDialog", "Denominations with value 50:", 0));
+        labelzDenom4Text->setToolTip(QApplication::translate("PrivacyDialog", "Denominations with value 50:", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelzDenom4Text->setText(QApplication::translate("PrivacyDialog", "Denom. with value 50:", 0));
+        labelzDenom4Text->setText(QApplication::translate("PrivacyDialog", "Denom. with value 50:", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
         labelzDenom4Amount->setToolTip(QApplication::translate("PrivacyDialog", "Unconfirmed: less than 20 confirmations\n"
-"Immature: confirmed, but less than 1 mint of the same denomination after it was minted", 0));
+"Immature: confirmed, but less than 2 mints of the same denomination after it was minted", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelzDenom4Amount->setText(QApplication::translate("PrivacyDialog", "0 x", 0));
+        labelzDenom4Amount->setText(QApplication::translate("PrivacyDialog", "0 x", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        labelzDenom5Text->setToolTip(QApplication::translate("PrivacyDialog", "Denominations with value 100:", 0));
+        labelzDenom5Text->setToolTip(QApplication::translate("PrivacyDialog", "Denominations with value 100:", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelzDenom5Text->setText(QApplication::translate("PrivacyDialog", "Denom. with value 100:", 0));
+        labelzDenom5Text->setText(QApplication::translate("PrivacyDialog", "Denom. with value 100:", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
         labelzDenom5Amount->setToolTip(QApplication::translate("PrivacyDialog", "Unconfirmed: less than 20 confirmations\n"
-"Immature: confirmed, but less than 1 mint of the same denomination after it was minted", 0));
+"Immature: confirmed, but less than 2 mints of the same denomination after it was minted", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelzDenom5Amount->setText(QApplication::translate("PrivacyDialog", "0 x", 0));
+        labelzDenom5Amount->setText(QApplication::translate("PrivacyDialog", "0 x", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        labelzDenom6Text->setToolTip(QApplication::translate("PrivacyDialog", "Denominations with value 500:", 0));
+        labelzDenom6Text->setToolTip(QApplication::translate("PrivacyDialog", "Denominations with value 500:", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelzDenom6Text->setText(QApplication::translate("PrivacyDialog", "Denom. with value 500:", 0));
+        labelzDenom6Text->setText(QApplication::translate("PrivacyDialog", "Denom. with value 500:", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
         labelzDenom6Amount->setToolTip(QApplication::translate("PrivacyDialog", "Unconfirmed: less than 20 confirmations\n"
-"Immature: confirmed, but less than 1 mint of the same denomination after it was minted", 0));
+"Immature: confirmed, but less than 2 mints of the same denomination after it was minted", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelzDenom6Amount->setText(QApplication::translate("PrivacyDialog", "0 x", 0));
+        labelzDenom6Amount->setText(QApplication::translate("PrivacyDialog", "0 x", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        labelzDenom7Text->setToolTip(QApplication::translate("PrivacyDialog", "Denominations with value 1000:", 0));
+        labelzDenom7Text->setToolTip(QApplication::translate("PrivacyDialog", "Denominations with value 1000:", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelzDenom7Text->setText(QApplication::translate("PrivacyDialog", "Denom. with value 1000:", 0));
+        labelzDenom7Text->setText(QApplication::translate("PrivacyDialog", "Denom. with value 1000:", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
         labelzDenom7Amount->setToolTip(QApplication::translate("PrivacyDialog", "Unconfirmed: less than 20 confirmations\n"
-"Immature: confirmed, but less than 1 mint of the same denomination after it was minted", 0));
+"Immature: confirmed, but less than 2 mints of the same denomination after it was minted", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelzDenom7Amount->setText(QApplication::translate("PrivacyDialog", "0 x", 0));
+        labelzDenom7Amount->setText(QApplication::translate("PrivacyDialog", "0 x", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        labelzDenom8Text->setToolTip(QApplication::translate("PrivacyDialog", "Denominations with value 5000:", 0));
+        labelzDenom8Text->setToolTip(QApplication::translate("PrivacyDialog", "Denominations with value 5000:", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelzDenom8Text->setText(QApplication::translate("PrivacyDialog", "Denom. with value 5000:", 0));
+        labelzDenom8Text->setText(QApplication::translate("PrivacyDialog", "Denom. with value 5000:", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
         labelzDenom8Amount->setToolTip(QApplication::translate("PrivacyDialog", "Unconfirmed: less than 20 confirmations\n"
-"Immature: confirmed, but less than 1 mint of the same denomination after it was minted", 0));
+"Immature: confirmed, but less than 2 mints of the same denomination after it was minted", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelzDenom8Amount->setText(QApplication::translate("PrivacyDialog", "0 x", 0));
+        labelzDenom8Amount->setText(QApplication::translate("PrivacyDialog", "0 x", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
         label_AutoMintStatus->setToolTip(QApplication::translate("PrivacyDialog", "Show the current status of automatic zZNZ minting.\n"
 "\n"
 "To change the status (restart required):\n"
-"- enable: add 'enablezeromint=1' to pivx.conf\n"
-"- disable: add 'enablezeromint=0' to pivx.conf\n"
+"- enable: add 'enablezeromint=1' to zenzo.conf\n"
+"- disable: add 'enablezeromint=0' to zenzo.conf\n"
 "\n"
 "To change the percentage (no restart required):\n"
 "- menu Settings->Options->Percentage of autominted zZNZ\n"
 "\n"
-"", 0));
+"", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        label_AutoMintStatus->setText(QApplication::translate("PrivacyDialog", "AutoMint Status", 0));
-        labelZsupplyText->setText(QApplication::translate("PrivacyDialog", "Global Supply:", 0));
-        labelZsupplyAmount->setText(QApplication::translate("PrivacyDialog", "0 zZNZ", 0));
-        labelZsupplyText1->setText(QApplication::translate("PrivacyDialog", "Denom. 1:", 0));
-        labelZsupplyAmount1->setText(QApplication::translate("PrivacyDialog", "0 zZNZ", 0));
-        labelZsupplyText5->setText(QApplication::translate("PrivacyDialog", "Denom. 5:", 0));
-        labelZsupplyAmount5->setText(QApplication::translate("PrivacyDialog", "0 zZNZ", 0));
-        labelZsupplyText10->setText(QApplication::translate("PrivacyDialog", "Denom. 10:", 0));
-        labelZsupplyAmount10->setText(QApplication::translate("PrivacyDialog", "0 zZNZ", 0));
-        labelZsupplyText50->setText(QApplication::translate("PrivacyDialog", "Denom. 50:", 0));
-        labelZsupplyAmount50->setText(QApplication::translate("PrivacyDialog", "0 zZNZ", 0));
-        labelZsupplyText100->setText(QApplication::translate("PrivacyDialog", "Denom. 100:", 0));
-        labelZsupplyAmount100->setText(QApplication::translate("PrivacyDialog", "0 zZNZ", 0));
-        labelZsupplyText500->setText(QApplication::translate("PrivacyDialog", "Denom. 500:", 0));
-        labelZsupplyAmount500->setText(QApplication::translate("PrivacyDialog", "0 zZNZ", 0));
-        labelZsupplyText1000->setText(QApplication::translate("PrivacyDialog", "Denom. 1000:", 0));
-        labelZsupplyAmount1000->setText(QApplication::translate("PrivacyDialog", "0 zZNZ", 0));
-        labelZsupplyText5000->setText(QApplication::translate("PrivacyDialog", "Denom. 5000:", 0));
-        labelZsupplyAmount5000->setText(QApplication::translate("PrivacyDialog", "0 zZNZ", 0));
-        labelCoinControlPriorityText->setText(QApplication::translate("PrivacyDialog", "Priority:", 0));
-        WarningLabel->setText(QApplication::translate("PrivacyDialog", "TextLabel", 0));
-        labelCoinControlFeeText->setText(QApplication::translate("PrivacyDialog", "Fee:", 0));
-        labelCoinControlLowOutputText->setText(QApplication::translate("PrivacyDialog", "Dust:", 0));
-        labelCoinControlLowOutput->setText(QApplication::translate("PrivacyDialog", "no", 0));
-        labelCoinControlBytesText->setText(QApplication::translate("PrivacyDialog", "Bytes:", 0));
-        labelCoinControlInsuffFunds->setText(QApplication::translate("PrivacyDialog", "Insufficient funds!", 0));
+        label_AutoMintStatus->setText(QApplication::translate("PrivacyDialog", "AutoMint Status", Q_NULLPTR));
+        labelZsupplyText->setText(QApplication::translate("PrivacyDialog", "Global Supply:", Q_NULLPTR));
+        labelZsupplyAmount->setText(QApplication::translate("PrivacyDialog", "0 zZNZ", Q_NULLPTR));
+        labelZsupplyText1->setText(QApplication::translate("PrivacyDialog", "Denom. 1:", Q_NULLPTR));
+        labelZsupplyAmount1->setText(QApplication::translate("PrivacyDialog", "0 zZNZ", Q_NULLPTR));
+        labelZsupplyText5->setText(QApplication::translate("PrivacyDialog", "Denom. 5:", Q_NULLPTR));
+        labelZsupplyAmount5->setText(QApplication::translate("PrivacyDialog", "0 zZNZ", Q_NULLPTR));
+        labelZsupplyText10->setText(QApplication::translate("PrivacyDialog", "Denom. 10:", Q_NULLPTR));
+        labelZsupplyAmount10->setText(QApplication::translate("PrivacyDialog", "0 zZNZ", Q_NULLPTR));
+        labelZsupplyText50->setText(QApplication::translate("PrivacyDialog", "Denom. 50:", Q_NULLPTR));
+        labelZsupplyAmount50->setText(QApplication::translate("PrivacyDialog", "0 zZNZ", Q_NULLPTR));
+        labelZsupplyText100->setText(QApplication::translate("PrivacyDialog", "Denom. 100:", Q_NULLPTR));
+        labelZsupplyAmount100->setText(QApplication::translate("PrivacyDialog", "0 zZNZ", Q_NULLPTR));
+        labelZsupplyText500->setText(QApplication::translate("PrivacyDialog", "Denom. 500:", Q_NULLPTR));
+        labelZsupplyAmount500->setText(QApplication::translate("PrivacyDialog", "0 zZNZ", Q_NULLPTR));
+        labelZsupplyText1000->setText(QApplication::translate("PrivacyDialog", "Denom. 1000:", Q_NULLPTR));
+        labelZsupplyAmount1000->setText(QApplication::translate("PrivacyDialog", "0 zZNZ", Q_NULLPTR));
+        labelZsupplyText5000->setText(QApplication::translate("PrivacyDialog", "Denom. 5000:", Q_NULLPTR));
+        labelZsupplyAmount5000->setText(QApplication::translate("PrivacyDialog", "0 zZNZ", Q_NULLPTR));
+        labelCoinControlPriorityText->setText(QApplication::translate("PrivacyDialog", "Priority:", Q_NULLPTR));
+        WarningLabel->setText(QApplication::translate("PrivacyDialog", "TextLabel", Q_NULLPTR));
+        labelCoinControlFeeText->setText(QApplication::translate("PrivacyDialog", "Fee:", Q_NULLPTR));
+        labelCoinControlLowOutputText->setText(QApplication::translate("PrivacyDialog", "Dust:", Q_NULLPTR));
+        labelCoinControlLowOutput->setText(QApplication::translate("PrivacyDialog", "no", Q_NULLPTR));
+        labelCoinControlBytesText->setText(QApplication::translate("PrivacyDialog", "Bytes:", Q_NULLPTR));
+        labelCoinControlInsuffFunds->setText(QApplication::translate("PrivacyDialog", "Insufficient funds!", Q_NULLPTR));
         labelCoinControlChangeLabel->setText(QString());
-        labelCoinControlAutomaticallySelected->setText(QApplication::translate("PrivacyDialog", "Coins automatically selected", 0));
-        labelCoinControlPriority->setText(QApplication::translate("PrivacyDialog", "medium", 0));
-        labelCoinControlFeatures->setText(QApplication::translate("PrivacyDialog", "Coin Control Features", 0));
+        labelCoinControlAutomaticallySelected->setText(QApplication::translate("PrivacyDialog", "Coins automatically selected", Q_NULLPTR));
+        labelCoinControlPriority->setText(QApplication::translate("PrivacyDialog", "medium", Q_NULLPTR));
+        labelCoinControlFeatures->setText(QApplication::translate("PrivacyDialog", "Coin Control Features", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        checkBoxCoinControlChange->setToolTip(QApplication::translate("PrivacyDialog", "If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.", 0));
+        checkBoxCoinControlChange->setToolTip(QApplication::translate("PrivacyDialog", "If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        checkBoxCoinControlChange->setText(QApplication::translate("PrivacyDialog", "Custom change address", 0));
+        checkBoxCoinControlChange->setText(QApplication::translate("PrivacyDialog", "Custom change address", Q_NULLPTR));
         labelCoinControlChangeLabel_2->setText(QString());
-        labelCoinControlAfterFeeText->setText(QApplication::translate("PrivacyDialog", "Amount After Fee:", 0));
-        labelCoinControlChangeText->setText(QApplication::translate("PrivacyDialog", "Change:", 0));
+        labelCoinControlAfterFeeText->setText(QApplication::translate("PrivacyDialog", "Amount After Fee:", Q_NULLPTR));
+        labelCoinControlChangeText->setText(QApplication::translate("PrivacyDialog", "Change:", Q_NULLPTR));
         Q_UNUSED(PrivacyDialog);
     } // retranslateUi
 

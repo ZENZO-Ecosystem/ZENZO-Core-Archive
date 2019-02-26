@@ -227,8 +227,8 @@
         <translation>Zakodowany klucz:</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Zenzo address</source>
-        <translation>Zatwierdź wiadomość, aby udowodnić, że podany adres Zenzo jest w twoim posiadaniu</translation>
+        <source>Sign the message to prove you own this ZENZO address</source>
+        <translation>Zatwierdź wiadomość, aby udowodnić, że podany adres ZENZO jest w twoim posiadaniu</translation>
     </message>
     <message>
         <source>Encrypt &amp;Key</source>
@@ -518,12 +518,12 @@
         <translation>&amp;Pomoc</translation>
     </message>
     <message>
-        <source>Zenzo Core</source>
-        <translation>&amp;Rdzeń Zenzo</translation>
+        <source>ZENZO Core</source>
+        <translation>&amp;Rdzeń ZENZO</translation>
     </message>
     <message>
-        <source>Send coins to a Zenzo address</source>
-        <translation>Wyślij monety do adresu Zenzo</translation>
+        <source>Send coins to a ZENZO address</source>
+        <translation>Wyślij monety do adresu ZENZO</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and zenzo: URIs)</source>
@@ -538,24 +538,24 @@
         <translation>Przeglądaj masternodes</translation>
     </message>
     <message>
-        <source>&amp;About Zenzo Core</source>
+        <source>&amp;About ZENZO Core</source>
         <translation>&amp;O rdzeniu bitcoina</translation>
     </message>
     <message>
-        <source>Show information about Zenzo Core</source>
+        <source>Show information about ZENZO Core</source>
         <translation>Pokaż informacje o rdzeniu bitcoina</translation>
     </message>
     <message>
-        <source>Modify configuration options for Zenzo</source>
-        <translation>Modyfikuj opcje konfiguracji Zenzo</translation>
+        <source>Modify configuration options for ZENZO</source>
+        <translation>Modyfikuj opcje konfiguracji ZENZO</translation>
     </message>
     <message>
-        <source>Sign messages with your Zenzo addresses to prove you own them</source>
-        <translation>Zatwierdź wiadomość z twoimi adresami Zenzo, by udowodnić, że jesteś w ich posiadaniu</translation>
+        <source>Sign messages with your ZENZO addresses to prove you own them</source>
+        <translation>Zatwierdź wiadomość z twoimi adresami ZENZO, by udowodnić, że jesteś w ich posiadaniu</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Zenzo addresses</source>
-        <translation>Zweryfikuj wiadomości by upewnić się, że zostały zatwierdzone z podanego adresu Zenzo</translation>
+        <source>Verify messages to ensure they were signed with specified ZENZO addresses</source>
+        <translation>Zweryfikuj wiadomości by upewnić się, że zostały zatwierdzone z podanego adresu ZENZO</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -582,7 +582,7 @@
         <translation>Otwórz &amp;Plik konfiguracji Masternode</translation>
     </message>
     <message>
-        <source>Open a Zenzo: URI or payment request</source>
+        <source>Open a ZENZO: URI or payment request</source>
         <translation>OtwórzZNZX: URI i żądanie zapłaty</translation>
     </message>
     <message>
@@ -594,12 +594,12 @@
         <translation>Okno eksplorera bloków</translation>
     </message>
     <message>
-        <source>Show the Zenzo Core help message to get a list with possible Zenzo command-line options</source>
-        <translation>Pokaż wiadomość pomocy rdzenia Zenzo, aby dostać listę możliwych opcji Zenzo command-line</translation>
+        <source>Show the ZENZO Core help message to get a list with possible ZENZO command-line options</source>
+        <translation>Pokaż wiadomość pomocy rdzenia ZENZO, aby dostać listę możliwych opcji ZENZO command-line</translation>
     </message>
     <message>
-        <source>Zenzo Core client</source>
-        <translation>Rdzeń Zenzo klient</translation>
+        <source>ZENZO Core client</source>
+        <translation>Rdzeń ZENZO klient</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -912,8 +912,8 @@ MultiWysyłlka: %1</translation>
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Zenzo Core</source>
-        <translation>&amp;Rdzeń Zenzo</translation>
+        <source>ZENZO Core</source>
+        <translation>&amp;Rdzeń ZENZO</translation>
     </message>
     </context>
 <context>
@@ -927,8 +927,8 @@ MultiWysyłlka: %1</translation>
         <translation>Użyj niestandardowej ścieżki danych</translation>
     </message>
     <message>
-        <source>Zenzo Core</source>
-        <translation>&amp;Rdzeń Zenzo</translation>
+        <source>ZENZO Core</source>
+        <translation>&amp;Rdzeń ZENZO</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1188,12 +1188,12 @@ Proszę sprawdzić adres i spróbować ponownie</translation>
         <translation>Zezwól na przychodzące połączenia</translation>
     </message>
     <message>
-        <source>Automatically start Zenzo after logging in to the system.</source>
-        <translation>Automatycznie uruchom Zenzo po zalogowaniu do systemu</translation>
+        <source>Automatically start ZENZO after logging in to the system.</source>
+        <translation>Automatycznie uruchom ZENZO po zalogowaniu do systemu</translation>
     </message>
     <message>
-        <source>&amp;Start Zenzo on system login</source>
-        <translation>&amp;Uruchom Zenzo podczas logowania do systemu</translation>
+        <source>&amp;Start ZENZO on system login</source>
+        <translation>&amp;Uruchom ZENZO podczas logowania do systemu</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1212,8 +1212,8 @@ Proszę sprawdzić adres i spróbować ponownie</translation>
         <translation>&amp;Sieć</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Zenzo.</source>
-        <translation>Język interfejsu użytkownika może być wybrany tutaj. Ustawienia ulegną zmianie po restarcie Zenzo</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting ZENZO.</source>
+        <translation>Język interfejsu użytkownika może być wybrany tutaj. Ustawienia ulegną zmianie po restarcie ZENZO</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
@@ -1222,8 +1222,8 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</source>
 https://www.transifex.com/zenzo-project/zenzo-project-translations </translation>
     </message>
     <message>
-        <source>Connect to the Zenzo network through a SOCKS5 proxy.</source>
-        <translation>Połącz z siecią Zenzo poprzez SOCKS5 proxy.</translation>
+        <source>Connect to the ZENZO network through a SOCKS5 proxy.</source>
+        <translation>Połącz z siecią ZENZO poprzez SOCKS5 proxy.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1461,8 +1461,8 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations </translation
         <translation>Licznz</translation>
     </message>
     <message>
-        <source>Enter a Zenzo address (e.g. %1)</source>
-        <translation>Wprowadź adres Zenzo (np. %1)</translation>
+        <source>Enter a ZENZO address (e.g. %1)</source>
+        <translation>Wprowadź adres ZENZO (np. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1900,8 +1900,8 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations </translation
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Zenzo address</source>
-        <translation>Zatwierdź wiadomość, aby udowodnić, że podany adres Zenzo jest w twoim posiadaniu</translation>
+        <source>Sign the message to prove you own this ZENZO address</source>
+        <translation>Zatwierdź wiadomość, aby udowodnić, że podany adres ZENZO jest w twoim posiadaniu</translation>
     </message>
     <message>
         <source>Clear &amp;All</source>
@@ -1935,8 +1935,8 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations </translation
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Zenzo Core</source>
-        <translation>&amp;Rdzeń Zenzo</translation>
+        <source>ZENZO Core</source>
+        <translation>&amp;Rdzeń ZENZO</translation>
     </message>
     </context>
 <context>

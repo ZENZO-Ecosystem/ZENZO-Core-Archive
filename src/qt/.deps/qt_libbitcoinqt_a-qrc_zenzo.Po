@@ -1,0 +1,4 @@
+qt/qt_libbitcoinqt_a-qrc_zenzo.o: qt/qrc_zenzo.cpp \
+ /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:

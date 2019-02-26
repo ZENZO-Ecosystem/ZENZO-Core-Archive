@@ -62,12 +62,12 @@
         <translation>Получаващ адрес</translation>
     </message>
     <message>
-        <source>These are your Zenzo addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Това са вашите Zenzo адреси за изпращане на плащания. Винаги проверявайте количеството и адреса на получателя, преди да изпратите монети.</translation>
+        <source>These are your ZENZO addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Това са вашите ZENZO адреси за изпращане на плащания. Винаги проверявайте количеството и адреса на получателя, преди да изпратите монети.</translation>
     </message>
     <message>
-        <source>These are your Zenzo addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Това са вашите Zenzo адреси за получаване на плащания. Препоръчително е да използвате нови адреси за получаване за всяка транзакция.</translation>
+        <source>These are your ZENZO addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Това са вашите ZENZO адреси за получаване на плащания. Препоръчително е да използвате нови адреси за получаване за всяка транзакция.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -176,8 +176,8 @@
         <translation>Потвърдете шифрирането на портфейла</translation>
     </message>
     <message>
-        <source>Zenzo will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
-        <translation>Zenzo сега ще се затвори, за да довърши процеса по шифриране. Запомнете, че шифрирането на вашия портфейл не може напълно да защити вашия Zenzo от това, да бъде откраднат чрез злонамерен софутуер, инфектирал вашия компютър.</translation>
+        <source>ZENZO will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
+        <translation>ZENZO сега ще се затвори, за да довърши процеса по шифриране. Запомнете, че шифрирането на вашия портфейл не може напълно да защити вашия ZENZO от това, да бъде откраднат чрез злонамерен софутуер, инфектирал вашия компютър.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -239,16 +239,16 @@
         <translation>&amp;BIP 38 Шифриране</translation>
     </message>
     <message>
-        <source>Enter a Zenzo Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Въведете Zenzo адрес, който искате да шифрирате с BIP 38. Въведете парола в средното поле. Натиснете 'шифрирай', за да се изчисли шифррания личен ключ.</translation>
+        <source>Enter a ZENZO Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Въведете ZENZO адрес, който искате да шифрирате с BIP 38. Въведете парола в средното поле. Натиснете 'шифрирай', за да се изчисли шифррания личен ключ.</translation>
     </message>
     <message>
         <source>Address:</source>
         <translation>Адрес:</translation>
     </message>
     <message>
-        <source>The Zenzo address to sign the message with</source>
-        <translation>Zenzo адреса, с който да подпишете съобщението</translation>
+        <source>The ZENZO address to sign the message with</source>
+        <translation>ZENZO адреса, с който да подпишете съобщението</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -279,8 +279,8 @@
         <translation>Копирай сегашния подпис в системния буфер</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Zenzo address</source>
-        <translation>Подпишете съобщението, за да докажете, че притежавате този Zenzo адрес</translation>
+        <source>Sign the message to prove you own this ZENZO address</source>
+        <translation>Подпишете съобщението, за да докажете, че притежавате този ZENZO адрес</translation>
     </message>
     <message>
         <source>Encrypt &amp;Key</source>
@@ -303,12 +303,12 @@
         <translation>Въведете личният си BIP 38 ключ. Въведете тайната фраза в средното поле. Избери Дешифриращия Ключ за да изчислим личния ключ. След като ключа се дешифрира, за да добаите ключа към портфейла, кликнете "Импортирай адрес".</translation>
     </message>
     <message>
-        <source>The Zenzo address the message was signed with</source>
-        <translation>Zenzo адреса, който е подписано съобщението</translation>
+        <source>The ZENZO address the message was signed with</source>
+        <translation>ZENZO адреса, който е подписано съобщението</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Zenzo address</source>
-        <translation>Поверете съобщението, за да се уверите, че е подписано със зададения Zenzo адрес</translation>
+        <source>Verify the message to ensure it was signed with the specified ZENZO address</source>
+        <translation>Поверете съобщението, за да се уверите, че е подписано със зададения ZENZO адрес</translation>
     </message>
     <message>
         <source>Decrypt &amp;Key</source>
@@ -602,16 +602,16 @@
         <translation>Колан с инструменти</translation>
     </message>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Ядро</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Ядро</translation>
     </message>
     <message>
-        <source>Send coins to a Zenzo address</source>
-        <translation>Изпратете монети до Zenzo адрес</translation>
+        <source>Send coins to a ZENZO address</source>
+        <translation>Изпратете монети до ZENZO адрес</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and zenzo: URIs)</source>
-        <translation>Поискай плащане (генерира QR кодове и  Zenzo:URI)</translation>
+        <translation>Поискай плащане (генерира QR кодове и  ZENZO:URI)</translation>
     </message>
     <message>
         <source>&amp;Privacy</source>
@@ -630,24 +630,24 @@
         <translation>Разгледай мастърноудове</translation>
     </message>
     <message>
-        <source>&amp;About Zenzo Core</source>
-        <translation>&amp;Относно Zenzo Ядрото</translation>
+        <source>&amp;About ZENZO Core</source>
+        <translation>&amp;Относно ZENZO Ядрото</translation>
     </message>
     <message>
-        <source>Show information about Zenzo Core</source>
-        <translation>Информациза за Zenzo Ядрото</translation>
+        <source>Show information about ZENZO Core</source>
+        <translation>Информациза за ZENZO Ядрото</translation>
     </message>
     <message>
-        <source>Modify configuration options for Zenzo</source>
-        <translation>Промени Zenzo конфигурацията</translation>
+        <source>Modify configuration options for ZENZO</source>
+        <translation>Промени ZENZO конфигурацията</translation>
     </message>
     <message>
-        <source>Sign messages with your Zenzo addresses to prove you own them</source>
-        <translation>Подпишете съобщения със своте Zenzo адреси, за да докажете че са Ваши</translation>
+        <source>Sign messages with your ZENZO addresses to prove you own them</source>
+        <translation>Подпишете съобщения със своте ZENZO адреси, за да докажете че са Ваши</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Zenzo addresses</source>
-        <translation>Проеврете съобщения, за да се убедите, че са подписани с указаните Zenzo адреси</translation>
+        <source>Verify messages to ensure they were signed with specified ZENZO addresses</source>
+        <translation>Проеврете съобщения, за да се убедите, че са подписани с указаните ZENZO адреси</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -678,8 +678,8 @@
         <translation>Отвори Мастърноуд конфигурационния файл</translation>
     </message>
     <message>
-        <source>Open a Zenzo: URI or payment request</source>
-        <translation>Отвори Zenzo:URI платежно нареждане</translation>
+        <source>Open a ZENZO: URI or payment request</source>
+        <translation>Отвори ZENZO:URI платежно нареждане</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -690,16 +690,16 @@
         <translation>Прозорец на блок сондата</translation>
     </message>
     <message>
-        <source>Show the Zenzo Core help message to get a list with possible Zenzo command-line options</source>
-        <translation>Разкрийте Помощ за Zenzo Ядрото, за да видите списък с възможни писмени команди.</translation>
+        <source>Show the ZENZO Core help message to get a list with possible ZENZO command-line options</source>
+        <translation>Разкрийте Помощ за ZENZO Ядрото, за да видите списък с възможни писмени команди.</translation>
     </message>
     <message>
-        <source>Zenzo Core client</source>
-        <translation>Клиент Zenzo Ядро</translation>
+        <source>ZENZO Core client</source>
+        <translation>Клиент ZENZO Ядро</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Zenzo network</source>
-        <translation><numerusform>%n активни връзки към Zenzo мрежата</numerusform><numerusform>%n активни свръзки към Zenzo мрежата</numerusform></translation>
+        <source>%n active connection(s) to ZENZO network</source>
+        <translation><numerusform>%n активни връзки към ZENZO мрежата</numerusform><numerusform>%n активни свръзки към ZENZO мрежата</numerusform></translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -1142,8 +1142,8 @@ Address: %4
         <translation>Редактирай адрес за изпращане</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Zenzo address.</source>
-        <translation>Зададения адрес "%1"не е валиден Zenzo адрес.</translation>
+        <source>The entered address "%1" is not a valid ZENZO address.</source>
+        <translation>Зададения адрес "%1"не е валиден ZENZO адрес.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1188,16 +1188,16 @@ Address: %4
         <translation>версия</translation>
     </message>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Ядро</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Ядро</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About Zenzo Core</source>
-        <translation>Относно Zenzo Ядрото</translation>
+        <source>About ZENZO Core</source>
+        <translation>Относно ZENZO Ядрото</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1243,16 +1243,16 @@ Address: %4
         <translation>Привет</translation>
     </message>
     <message>
-        <source>Welcome to Zenzo Core.</source>
-        <translation>Добре Дошли в Zenzo Ядрото</translation>
+        <source>Welcome to ZENZO Core.</source>
+        <translation>Добре Дошли в ZENZO Ядрото</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Zenzo Core will store its data.</source>
-        <translation>Тъй като това е първия път, в който стартирате програмата, имате възможността да изберете къде Zenzo Ядрото ще съхранява своите данни.</translation>
+        <source>As this is the first time the program is launched, you can choose where ZENZO Core will store its data.</source>
+        <translation>Тъй като това е първия път, в който стартирате програмата, имате възможността да изберете къде ZENZO Ядрото ще съхранява своите данни.</translation>
     </message>
     <message>
-        <source>Zenzo Core will download and store a copy of the Zenzo block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Zenzo Ядрото ще изтегли и запише копие на целия Zenzo блокчейн. Поне %1 гигабайта ще бъдат съхранявани в тази папка, като тенденцията е файла да расте. Портфейла също ще бъде запазен в тази папка.</translation>
+        <source>ZENZO Core will download and store a copy of the ZENZO block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>ZENZO Ядрото ще изтегли и запише копие на целия ZENZO блокчейн. Поне %1 гигабайта ще бъдат съхранявани в тази папка, като тенденцията е файла да расте. Портфейла също ще бъде запазен в тази папка.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1263,8 +1263,8 @@ Address: %4
         <translation>Задай своя папка за данни:</translation>
     </message>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Ядро</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Ядро</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1405,12 +1405,12 @@ Address: %4
         <translation>Въведете адреса на Получателя</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Zenzo addresses after it matures.
-To Add: enter percentage to give and Zenzo address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other ZENZO addresses after it matures.
+To Add: enter percentage to give and ZENZO address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>МултиИзпращане Ви позволява автоматично да изпращате до 100% от вашите стейк или мастърноуд възнаграждения към списък от други Zenzo адреси.
-Да Добавите: въведете процент и задайте Zenzo адрес към вектора за МултиИзпращане
+        <translation>МултиИзпращане Ви позволява автоматично да изпращате до 100% от вашите стейк или мастърноуд възнаграждения към списък от други ZENZO адреси.
+Да Добавите: въведете процент и задайте ZENZO адрес към вектора за МултиИзпращане
 Да Прамахнете: Въведете адрес за изстриване и натиснете истрий (del).
 МултиИзпращането няма да бъде активирано докато не кликнете "Активирай"</translation>
     </message>
@@ -1580,15 +1580,15 @@ Please check the address and try again.</source>
         <translation>Конфигурация на Обфускацията</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Zenzo's configuration screen.</source>
+        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening ZENZO's configuration screen.</source>
         <translation>Обфускацията е успешно конфигурирана на елементарно ниво (%1 и 2 кръга). Moжете да промените тази настройка по всяко време от същото място.</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Zenzo's configuration screen.</source>
+        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening ZENZO's configuration screen.</source>
         <translation>Обфускацията е успешно конфигурирана на високо ниво (%1 и 8 кръга). Moжете да промените тази настройка по всяко време от същото място.</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Zenzo's configuration screen.</source>
+        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening ZENZO's configuration screen.</source>
         <translation>Обфускацията е успешно конфигурирана на максимално ниво (%1 и 16 кръга). Moжете да промените тази настройка по всяко време от същото място.</translation>
     </message>
 </context>
@@ -1650,8 +1650,8 @@ Please check the address and try again.</source>
         <translation>Aко изключите харча на непотвърдено ресто, рестото от превод&lt;br/&gt;не може да се използва, докато превода не получи поне 1 потвърждение. &lt;br/&gt;Това влияе и на начина по който общите Ви средства се преизчисляват.</translation>
     </message>
     <message>
-        <source>Automatically open the Zenzo client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Автоматично отвори Zenzo порта в рутера. Това става само ако рутера Ви подържа UPnP и последния е включен.</translation>
+        <source>Automatically open the ZENZO client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Автоматично отвори ZENZO порта в рутера. Това става само ако рутера Ви подържа UPnP и последния е включен.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1670,12 +1670,12 @@ Please check the address and try again.</source>
         <translation>Експерт</translation>
     </message>
     <message>
-        <source>Automatically start Zenzo after logging in to the system.</source>
-        <translation>Стартирай Zenzo автоматично след влизане в системата.</translation>
+        <source>Automatically start ZENZO after logging in to the system.</source>
+        <translation>Стартирай ZENZO автоматично след влизане в системата.</translation>
     </message>
     <message>
-        <source>&amp;Start Zenzo on system login</source>
-        <translation>&amp;Стартирай Zenzo заедно с операционната система</translation>
+        <source>&amp;Start ZENZO on system login</source>
+        <translation>&amp;Стартирай ZENZO заедно с операционната система</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1702,7 +1702,7 @@ Please check the address and try again.</source>
         <translation>&amp;Мрежа</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Zenzo.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting ZENZO.</source>
         <translation>Промяна на езика. Настройката е активна след рестарт на портфейла.</translation>
     </message>
     <message>
@@ -1728,8 +1728,8 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</translation>
         <translation>Предпочитани деноминации, в които да се сече автоматичен zZNZ</translation>
     </message>
     <message>
-        <source>Connect to the Zenzo network through a SOCKS5 proxy.</source>
-        <translation>Свържи се с Zenzo мрежата със SOCKS5 прокси.</translation>
+        <source>Connect to the ZENZO network through a SOCKS5 proxy.</source>
+        <translation>Свържи се с ZENZO мрежата със SOCKS5 прокси.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1887,8 +1887,8 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</translation>
         <translation>Възнаграждение от стейкване или мастърноуд, които все още не са узрели.</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Zenzo network after a connection is established, but this process has not completed yet.</source>
-        <translation>Информацията на вашия екран може би е стара. Вашия портфейла синхронизира автоматично с Zenzo мрежата след като има успешна свръзка, но процеса отнема време и не е завършил все още.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ZENZO network after a connection is established, but this process has not completed yet.</source>
+        <translation>Информацията на вашия екран може би е стара. Вашия портфейла синхронизира автоматично с ZENZO мрежата след като има успешна свръзка, но процеса отнема време и не е завършил все още.</translation>
     </message>
     <message>
         <source>Unconfirmed transactions to watch-only addresses</source>
@@ -1978,8 +1978,8 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</translation>
         <translation>Провал при стартирането на zenzo: click-to-pay обработвател</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Zenzo address or malformed URI parameters.</source>
-        <translation>URI не може да се парсне. Вероятна причина е невалиден Zenzo адрес или зле-форматирани URI Параметри.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid ZENZO address or malformed URI parameters.</source>
+        <translation>URI не може да се парсне. Вероятна причина е невалиден ZENZO адрес или зле-форматирани URI Параметри.</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -2072,11 +2072,11 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</translation>
         <translation>Zerocoin Действия:</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Zenzo network after a connection is established, but this process has not completed yet.</source>
-        <translation>Информацията на вашия екран може би е стара. Вашия портфейла синхронизира автоматично с Zenzo мрежата след като има успешна свръзка, но процеса отнема време и не е завършил все още.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ZENZO network after a connection is established, but this process has not completed yet.</source>
+        <translation>Информацията на вашия екран може би е стара. Вашия портфейла синхронизира автоматично с ZENZO мрежата след като има успешна свръзка, но процеса отнема време и не е завършил все още.</translation>
     </message>
     <message>
-        <source>Enter an amount of Phr to convert to zPhr</source>
+        <source>Enter an amount of ZNZ to convert to zZNZ</source>
         <translation>Въведете колко ZNZ  да се конвертират в zZNZ</translation>
     </message>
     <message>
@@ -2132,11 +2132,11 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</translation>
         <translation>Състояния и/или Съобщения от последните действия по сечене на монети.</translation>
     </message>
     <message>
-        <source>zPhr Control</source>
+        <source>zZNZ Control</source>
         <translation>zZNZ Контрол</translation>
     </message>
     <message>
-        <source>zPhr Selected:</source>
+        <source>zZNZ Selected:</source>
         <translation>Избрани zZNZ:</translation>
     </message>
     <message>
@@ -2176,7 +2176,7 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</translation>
         <translation>Плати На:</translation>
     </message>
     <message>
-        <source>The Zenzo address to send the payment to. Creates local payment to yourself when empty.</source>
+        <source>The ZENZO address to send the payment to. Creates local payment to yourself when empty.</source>
         <translation>Адреса на който да изпратим плащането. Ако е празно - плащането е до себе си.</translation>
     </message>
     <message>
@@ -2376,8 +2376,8 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</translation>
         <translation>Копирай сумата</translation>
     </message>
     <message>
-        <source>Zerocoin functionality is not enabled on the Zenzo network yet.</source>
-        <translation>Zerocoin функцията все още не е активирана в Zenzo мрежата.</translation>
+        <source>Zerocoin functionality is not enabled on the ZENZO network yet.</source>
+        <translation>Zerocoin функцията все още не е активирана в ZENZO мрежата.</translation>
     </message>
     <message>
         <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
@@ -2430,8 +2430,8 @@ Please be patient...</source>
         <translation>Без 'Плати На' адрес, плащането е локално</translation>
     </message>
     <message>
-        <source>Invalid Zenzo Address</source>
-        <translation>Невалиден Zenzo адрес</translation>
+        <source>Invalid ZENZO Address</source>
+        <translation>Невалиден ZENZO адрес</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -2474,7 +2474,7 @@ Please be patient...</source>
         <translation>Харченето на Zerocoin се провали със статус =</translation>
     </message>
     <message>
-        <source>zPhr Spend #: </source>
+        <source>zZNZ Spend #: </source>
         <translation>zZNZ Похарчени #:</translation>
     </message>
     <message>
@@ -2498,7 +2498,7 @@ Please be patient...</source>
         <translation>адрес:</translation>
     </message>
     <message>
-        <source>zPhr Mint</source>
+        <source>zZNZ Mint</source>
         <translation>Сечене на zZNZ</translation>
     </message>
     <message>
@@ -2521,8 +2521,8 @@ Please be patient...</source>
         <translation>Сума</translation>
     </message>
     <message>
-        <source>Enter a Zenzo address (e.g. %1)</source>
-        <translation>Задайте Zenzo адрес (например %1)</translation>
+        <source>Enter a ZENZO address (e.g. %1)</source>
+        <translation>Задайте ZENZO адрес (например %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2659,8 +2659,8 @@ Please be patient...</source>
         <translation>Блокчейн</translation>
     </message>
     <message>
-        <source>Open the Zenzo debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Отвори Zenzo дебъг лог файла от сегашната папка. Това може да отнеме известно време за по-дълги файлове.</translation>
+        <source>Open the ZENZO debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Отвори ZENZO дебъг лог файла от сегашната папка. Това може да отнеме известно време за по-дълги файлове.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
@@ -2827,8 +2827,8 @@ Please be patient...</source>
         <translation>Изходящи:</translation>
     </message>
     <message>
-        <source>Welcome to the Zenzo RPC console.</source>
-        <translation>Добре Дошли в RPC конзолата на Zenzo.</translation>
+        <source>Welcome to the ZENZO RPC console.</source>
+        <translation>Добре Дошли в RPC конзолата на ZENZO.</translation>
     </message>
     <message>
         <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
@@ -2898,12 +2898,12 @@ Please be patient...</source>
         <translation>Незадължителен етикет, който да асоциираме с адреса за получаване.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Zenzo network.</source>
-        <translation>Съобщение свободен текст, което да се прикачи към платежното нареждане, за да бъде показано когато нареждането се отвори от клиента на когото е изпратено. Обърнете внимание, че съобщението няма да бъде изпратено заедно с плащането по Zenzo мрежата.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the ZENZO network.</source>
+        <translation>Съобщение свободен текст, което да се прикачи към платежното нареждане, за да бъде показано когато нареждането се отвори от клиента на когото е изпратено. Обърнете внимание, че съобщението няма да бъде изпратено заедно с плащането по ZENZO мрежата.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Zenzo network.</source>
-        <translation>Съобщение свободен текст, което да се прикачи към платежното нареждане, за да бъде показано когато нареждането се отвори от клиента на когото е изпратено. &lt;br&gt;Обърнете внимание, че съобщението няма да бъде изпратено заедно с плащането по Zenzo мрежата.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the ZENZO network.</source>
+        <translation>Съобщение свободен текст, което да се прикачи към платежното нареждане, за да бъде показано когато нареждането се отвори от клиента на когото е изпратено. &lt;br&gt;Обърнете внимание, че съобщението няма да бъде изпратено заедно с плащането по ZENZO мрежата.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -3187,7 +3187,7 @@ Please be patient...</source>
         <translation>Ако собствената такса е настроена на 1000 uZNZ и превода е само 250 байта, то тогава "за килобайт" само плаща 250 uZNZ входяща такса,&lt;br /&gt; докато "минимална сума" плаща 1000 uZNZ. За транзакции по-големи от килобайт, и двете плащат за килобайт.</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Zenzo transactions than the network can process.</source>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for ZENZO transactions than the network can process.</source>
         <translation>Няма проблем да платите минималната такса, стига обема преводи да е по-малък от наличното място в блоковете. &lt;br /&gt;Но имайте впредвид, че това може да се окаже в превод, който никога не получава потвърждение ако заявките за преводи са повече от колкото мрежата може да понесе.</translation>
     </message>
     <message>
@@ -3295,7 +3295,7 @@ Please be patient...</source>
         <translation>анонимни средства</translation>
     </message>
     <message>
-        <source>Warning: Invalid Zenzo address</source>
+        <source>Warning: Invalid ZENZO address</source>
         <translation>Предупреждение: Невалиден ZNZ адрес</translation>
     </message>
     <message>
@@ -3402,8 +3402,8 @@ Please be patient...</source>
         <translation>Плати На:</translation>
     </message>
     <message>
-        <source>The Zenzo address to send the payment to</source>
-        <translation>Zenzo адреса - получател на плащането</translation>
+        <source>The ZENZO address to send the payment to</source>
+        <translation>ZENZO адреса - получател на плащането</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3442,8 +3442,8 @@ Please be patient...</source>
         <translation>Съобщение:</translation>
     </message>
     <message>
-        <source>A message that was attached to the Zenzo: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Zenzo network.</source>
-        <translation>Съобщение, което е било прикачено към Zenzo:URI и което ще бъде запазено заедно с превода за ваша информация. Внимание: Това съобщение е само за Вас, то няма да бъде изпратено по Zenzo мрежата.</translation>
+        <source>A message that was attached to the ZENZO: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the ZENZO network.</source>
+        <translation>Съобщение, което е било прикачено към ZENZO:URI и което ще бъде запазено заедно с превода за ваша информация. Внимание: Това съобщение е само за Вас, то няма да бъде изпратено по ZENZO мрежата.</translation>
     </message>
     <message>
         <source>This is an unverified payment request.</source>
@@ -3469,8 +3469,8 @@ Please be patient...</source>
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Zenzo Core is shutting down...</source>
-        <translation>Изключване на Zenzo Ядрото...</translation>
+        <source>ZENZO Core is shutting down...</source>
+        <translation>Изключване на ZENZO Ядрото...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -3492,8 +3492,8 @@ Please be patient...</source>
         <translation>Може да подписвате съобщения с Вашите адреси, за да докажете че сте техен притежател. Внимавайте да не подписвате нищо съмнително, тъй като има хакерски атаки, които целят да придобият вашата самоличност. Само подписвайте пълен и ясен текст, с който сте напълно съгласни.</translation>
     </message>
     <message>
-        <source>The Zenzo address to sign the message with</source>
-        <translation>Zenzo адреса, с който да подпишете съобщението</translation>
+        <source>The ZENZO address to sign the message with</source>
+        <translation>ZENZO адреса, с който да подпишете съобщението</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3524,16 +3524,16 @@ Please be patient...</source>
         <translation>Копирай сегашния подпис в системния буфер</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Zenzo address</source>
-        <translation>Подпишете съобщението, за да докажете, че притежавате този Zenzo адрес</translation>
+        <source>Sign the message to prove you own this ZENZO address</source>
+        <translation>Подпишете съобщението, за да докажете, че притежавате този ZENZO адрес</translation>
     </message>
     <message>
-        <source>The Zenzo address the message was signed with</source>
-        <translation>Zenzo адреса, който е подписано съобщението</translation>
+        <source>The ZENZO address the message was signed with</source>
+        <translation>ZENZO адреса, който е подписано съобщението</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Zenzo address</source>
-        <translation>Поверете съобщението, за да се уверите, че е подписано със зададения Zenzo адрес</translation>
+        <source>Verify the message to ensure it was signed with the specified ZENZO address</source>
+        <translation>Поверете съобщението, за да се уверите, че е подписано със зададения ZENZO адрес</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -3619,8 +3619,8 @@ Please be patient...</source>
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Ядро</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Ядро</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -3635,8 +3635,8 @@ Please be patient...</source>
         <translation>Dash Core разработчици</translation>
     </message>
     <message>
-        <source>The Zenzo Core developers</source>
-        <translation>Zenzo Core разработчици</translation>
+        <source>The ZENZO Core developers</source>
+        <translation>ZENZO Core разработчици</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -3955,23 +3955,23 @@ Please be patient...</source>
         <translation>Обфускирани</translation>
     </message>
     <message>
-        <source>Converted Phr to zPhr</source>
+        <source>Converted ZNZ to zZNZ</source>
         <translation>Конвертиран ZNZ във zZNZ</translation>
     </message>
     <message>
-        <source>Spent zPhr</source>
+        <source>Spent zZNZ</source>
         <translation>Похарчени zZNZ</translation>
     </message>
     <message>
-        <source>Received Phr from zPhr</source>
+        <source>Received ZNZ from zZNZ</source>
         <translation>Получен ZNZ от zZNZ</translation>
     </message>
     <message>
-        <source>Minted Change as zPhr from zPhr Spend</source>
+        <source>Minted Change as zZNZ from zZNZ Spend</source>
         <translation>Исечено ресто като zZNZ от похарчените zZNZ</translation>
     </message>
     <message>
-        <source>Converted zPhr to Phr</source>
+        <source>Converted zZNZ to ZNZ</source>
         <translation>Конвертирани zZNZ в ZNZ</translation>
     </message>
     <message>
@@ -3979,7 +3979,7 @@ Please be patient...</source>
         <translation>наблюдение само</translation>
     </message>
     <message>
-        <source>zPhr Accumulator</source>
+        <source>zZNZ Accumulator</source>
         <translation>zZNZ Акумулатор</translation>
     </message>
     <message>
@@ -4086,7 +4086,7 @@ Please be patient...</source>
         <translation>Мастърноуд възнаграждение</translation>
     </message>
     <message>
-        <source>Received Phr from zPhr</source>
+        <source>Received ZNZ from zZNZ</source>
         <translation>Получен ZNZ от zZNZ</translation>
     </message>
     <message>
@@ -4098,7 +4098,7 @@ Please be patient...</source>
         <translation>Харчене на Zerocoin</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zPhr</source>
+        <source>Zerocoin Spend, Change in zZNZ</source>
         <translation>Харчене на Zerocoin, Ресто в zZNZ</translation>
     </message>
     <message>
@@ -4261,7 +4261,7 @@ Please be patient...</source>
 <context>
     <name>ZPhrControlDialog</name>
     <message>
-        <source>Select zPhr to Spend</source>
+        <source>Select zZNZ to Spend</source>
         <translation>Изберете zZNZ за Изпращане</translation>
     </message>
     <message>
@@ -4273,7 +4273,7 @@ Please be patient...</source>
         <translation>0</translation>
     </message>
     <message>
-        <source>zPhr</source>
+        <source>zZNZ</source>
         <translation>zZNZ</translation>
     </message>
     <message>
@@ -4304,8 +4304,8 @@ Please be patient...</source>
         <translation>Изтрий всички преводи от портфейла и възстанови само тези части от блокчейна - сканира при стартиране.</translation>
     </message>
     <message>
-        <source>Disable all Zenzo specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
-        <translation>Изключи всякаква Zenzo функционалност (Мастърноудове, Обфускация, SwiftTX, Бюджетиране) (0-1 default: %u)</translation>
+        <source>Disable all ZENZO specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
+        <translation>Изключи всякаква ZENZO функционалност (Мастърноудове, Обфускация, SwiftTX, Бюджетиране) (0-1 default: %u)</translation>
     </message>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>

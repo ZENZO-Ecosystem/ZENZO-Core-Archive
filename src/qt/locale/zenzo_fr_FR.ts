@@ -152,8 +152,8 @@
         <translation>Confirmer le cryptage du portefeuille</translation>
     </message>
     <message>
-        <source>Zenzo will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
-        <translation>Zenzo va maintenant se fermer pour finir le processus cryptage. Notez que le cryptage de votre portefeuille ne peut pas complètement protéger vos ZNZs d'un vol par un malware ayant infecté votre ordinateur. </translation>
+        <source>ZENZO will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
+        <translation>ZENZO va maintenant se fermer pour finir le processus cryptage. Notez que le cryptage de votre portefeuille ne peut pas complètement protéger vos ZNZs d'un vol par un malware ayant infecté votre ordinateur. </translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -211,16 +211,16 @@
         <translation>BIP 38 crypter</translation>
     </message>
     <message>
-        <source>Enter a Zenzo Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Entrez une adresse Zenzo que vous voulez crypter en utilisant BIP 38. Entrez une phrase secrète dans le champ du milieu. Cliquez sur crypter pour calculer la clé de cryptage privée.</translation>
+        <source>Enter a ZENZO Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Entrez une adresse ZENZO que vous voulez crypter en utilisant BIP 38. Entrez une phrase secrète dans le champ du milieu. Cliquez sur crypter pour calculer la clé de cryptage privée.</translation>
     </message>
     <message>
         <source>Address:</source>
         <translation>Adresse :</translation>
     </message>
     <message>
-        <source>The Zenzo address to sign the message with</source>
-        <translation>L'adresse Zenzo avec laquelle signer le message</translation>
+        <source>The ZENZO address to sign the message with</source>
+        <translation>L'adresse ZENZO avec laquelle signer le message</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -251,8 +251,8 @@
         <translation>Copier la signature actuelle dans le presse-papier</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Zenzo address</source>
-        <translation>Signer le message pour prouver que vous possédez cette adresse Zenzo</translation>
+        <source>Sign the message to prove you own this ZENZO address</source>
+        <translation>Signer le message pour prouver que vous possédez cette adresse ZENZO</translation>
     </message>
     <message>
         <source>Encrypt &amp;Key</source>
@@ -271,12 +271,12 @@
         <translation>BIP 38 Décrypter</translation>
     </message>
     <message>
-        <source>The Zenzo address the message was signed with</source>
-        <translation>L'adresse Zenzo avec laquelle le message a été signé</translation>
+        <source>The ZENZO address the message was signed with</source>
+        <translation>L'adresse ZENZO avec laquelle le message a été signé</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Zenzo address</source>
-        <translation>Vérifiez le message afin de vous assurer qu'il a été signé avec l'adresse Zenzo renseignée</translation>
+        <source>Verify the message to ensure it was signed with the specified ZENZO address</source>
+        <translation>Vérifiez le message afin de vous assurer qu'il a été signé avec l'adresse ZENZO renseignée</translation>
     </message>
     <message>
         <source>Decrypt &amp;Key</source>
@@ -534,8 +534,8 @@
         <translation>&amp;Aide</translation>
     </message>
     <message>
-        <source>Send coins to a Zenzo address</source>
-        <translation>Envoyer des pièces à une adresse Zenzo</translation>
+        <source>Send coins to a ZENZO address</source>
+        <translation>Envoyer des pièces à une adresse ZENZO</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -546,16 +546,16 @@
         <translation>Afficher les masternodes</translation>
     </message>
     <message>
-        <source>Modify configuration options for Zenzo</source>
-        <translation>Modifier les options de configuration pour Zenzo</translation>
+        <source>Modify configuration options for ZENZO</source>
+        <translation>Modifier les options de configuration pour ZENZO</translation>
     </message>
     <message>
-        <source>Sign messages with your Zenzo addresses to prove you own them</source>
-        <translation>Signer les messages avec votre adresse Zenzo pour prouver qu'elles sont bien à vous.</translation>
+        <source>Sign messages with your ZENZO addresses to prove you own them</source>
+        <translation>Signer les messages avec votre adresse ZENZO pour prouver qu'elles sont bien à vous.</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Zenzo addresses</source>
-        <translation>Vérifier les messages afin de s'assurer qu'ils sont signés avec l'adresse Zenzo spécifié</translation>
+        <source>Verify messages to ensure they were signed with specified ZENZO addresses</source>
+        <translation>Vérifier les messages afin de s'assurer qu'ils sont signés avec l'adresse ZENZO spécifié</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -854,8 +854,8 @@ Adresse : %4
         <translation>Modifier l'adresse d'envoi</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Zenzo address.</source>
-        <translation>L'adresse entrée "%1" n'est pas une adresse Zenzo valide</translation>
+        <source>The entered address "%1" is not a valid ZENZO address.</source>
+        <translation>L'adresse entrée "%1" n'est pas une adresse ZENZO valide</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1524,8 +1524,8 @@ Veuillez vérifier l'adresse et réessayer.</translation>
         <translation>Payer à :</translation>
     </message>
     <message>
-        <source>The Zenzo address to send the payment to</source>
-        <translation>L'adresse Zenzo à laquelle envoyer le paiement</translation>
+        <source>The ZENZO address to send the payment to</source>
+        <translation>L'adresse ZENZO à laquelle envoyer le paiement</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1570,8 +1570,8 @@ Veuillez vérifier l'adresse et réessayer.</translation>
         <translation>Signer le message</translation>
     </message>
     <message>
-        <source>The Zenzo address to sign the message with</source>
-        <translation>L'adresse Zenzo avec laquelle signer le message</translation>
+        <source>The ZENZO address to sign the message with</source>
+        <translation>L'adresse ZENZO avec laquelle signer le message</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1598,16 +1598,16 @@ Veuillez vérifier l'adresse et réessayer.</translation>
         <translation>Copier la signature actuelle dans le presse-papier</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Zenzo address</source>
-        <translation>Signer le message pour prouver que vous possédez cette adresse Zenzo</translation>
+        <source>Sign the message to prove you own this ZENZO address</source>
+        <translation>Signer le message pour prouver que vous possédez cette adresse ZENZO</translation>
     </message>
     <message>
-        <source>The Zenzo address the message was signed with</source>
-        <translation>L'adresse Zenzo avec laquelle le message a été signé</translation>
+        <source>The ZENZO address the message was signed with</source>
+        <translation>L'adresse ZENZO avec laquelle le message a été signé</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Zenzo address</source>
-        <translation>Vérifiez le message afin de vous assurer qu'il a été signé avec l'adresse Zenzo renseignée</translation>
+        <source>Verify the message to ensure it was signed with the specified ZENZO address</source>
+        <translation>Vérifiez le message afin de vous assurer qu'il a été signé avec l'adresse ZENZO renseignée</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>

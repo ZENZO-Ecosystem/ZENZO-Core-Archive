@@ -62,12 +62,12 @@
         <translation>Adreces de recepció</translation>
     </message>
     <message>
-        <source>These are your Zenzo addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Aquestes són les teves adreces Zenzo per fer enviar pagaments. Sempre comprova l'import i l'adreça de recepció abans d'enviar les monedes.</translation>
+        <source>These are your ZENZO addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Aquestes són les teves adreces ZENZO per fer enviar pagaments. Sempre comprova l'import i l'adreça de recepció abans d'enviar les monedes.</translation>
     </message>
     <message>
-        <source>These are your Zenzo addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Aquestes són les teves adreces Zenzo per rebre pagaments. Es recomana utilitzar noves adreces de recepció per cada transacció.</translation>
+        <source>These are your ZENZO addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Aquestes són les teves adreces ZENZO per rebre pagaments. Es recomana utilitzar noves adreces de recepció per cada transacció.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -168,8 +168,8 @@
         <translation>Confirma l'encriptació del moneder</translation>
     </message>
     <message>
-        <source>Zenzo will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
-        <translation>Zenzo es tancarà per finalitzar el procés d'encriptació. Recorda que encriptant el teu moneder no protegeix els teus ZNZ de ser robats si el teu ordinador està infectat amb programari maliciós.</translation>
+        <source>ZENZO will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
+        <translation>ZENZO es tancarà per finalitzar el procés d'encriptació. Recorda que encriptant el teu moneder no protegeix els teus ZNZ de ser robats si el teu ordinador està infectat amb programari maliciós.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -418,12 +418,12 @@
         <translation>A&amp;juda</translation>
     </message>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     <message>
-        <source>Send coins to a Zenzo address</source>
-        <translation>Envia monedes a una adreça Zenzo</translation>
+        <source>Send coins to a ZENZO address</source>
+        <translation>Envia monedes a una adreça ZENZO</translation>
     </message>
     <message>
         <source>&amp;Privacy</source>
@@ -434,8 +434,8 @@
         <translation>&amp;Masternodes</translation>
     </message>
     <message>
-        <source>&amp;About Zenzo Core</source>
-        <translation>&amp;Sobre Zenzo Core</translation>
+        <source>&amp;About ZENZO Core</source>
+        <translation>&amp;Sobre ZENZO Core</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -458,12 +458,12 @@
         <translation>Obre el fitxer de configuració del Masternode</translation>
     </message>
     <message>
-        <source>Zenzo Core client</source>
-        <translation>Client Zenzo core</translation>
+        <source>ZENZO Core client</source>
+        <translation>Client ZENZO core</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Zenzo network</source>
-        <translation><numerusform>%n connexió activa a la xarxa Zenzo</numerusform><numerusform>%n connexions actives a la xarxa Zenzo</numerusform></translation>
+        <source>%n active connection(s) to ZENZO network</source>
+        <translation><numerusform>%n connexió activa a la xarxa ZENZO</numerusform><numerusform>%n connexions actives a la xarxa ZENZO</numerusform></translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -814,8 +814,8 @@
         <translation>Edita l'adreça d'enviament</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Zenzo address.</source>
-        <translation>L'adreça introduïda "%1" no és una adreça Zenzo vàlida.</translation>
+        <source>The entered address "%1" is not a valid ZENZO address.</source>
+        <translation>L'adreça introduïda "%1" no és una adreça ZENZO vàlida.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -860,16 +860,16 @@
         <translation>versió</translation>
     </message>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About Zenzo Core</source>
-        <translation>Sobre Zenzo Core</translation>
+        <source>About ZENZO Core</source>
+        <translation>Sobre ZENZO Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -915,12 +915,12 @@
         <translation>Benvingut</translation>
     </message>
     <message>
-        <source>Welcome to Zenzo Core.</source>
-        <translation>Benvingut a Zenzo Core.</translation>
+        <source>Welcome to ZENZO Core.</source>
+        <translation>Benvingut a ZENZO Core.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Zenzo Core will store its data.</source>
-        <translation>Al ser el primer cop que s'inicia el programa, pots escollir on es desaran les dades del Zenzo Core.</translation>
+        <source>As this is the first time the program is launched, you can choose where ZENZO Core will store its data.</source>
+        <translation>Al ser el primer cop que s'inicia el programa, pots escollir on es desaran les dades del ZENZO Core.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -931,8 +931,8 @@
         <translation>Usar una carpeta de dades personalitzada:</translation>
     </message>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1208,8 +1208,8 @@
         <translation>Expert</translation>
     </message>
     <message>
-        <source>Automatically start Zenzo after logging in to the system.</source>
-        <translation>Inicia Zenzo automàticament després d'identificar-te en el sistema.</translation>
+        <source>Automatically start ZENZO after logging in to the system.</source>
+        <translation>Inicia ZENZO automàticament després d'identificar-te en el sistema.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1719,8 +1719,8 @@
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Zenzo Core is shutting down...</source>
-        <translation>Zenzo Core s'està tancant...</translation>
+        <source>ZENZO Core is shutting down...</source>
+        <translation>ZENZO Core s'està tancant...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -1785,8 +1785,8 @@
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -1979,8 +1979,8 @@
         <translation>0</translation>
     </message>
     <message>
-        <source>zPhr</source>
-        <translation>zPhr</translation>
+        <source>zZNZ</source>
+        <translation>zZNZ</translation>
     </message>
     </context>
 <context>

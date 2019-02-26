@@ -681,7 +681,7 @@ public:
 #endif // QT_NO_TOOLTIP
         label_5z->setText(QApplication::translate("OverviewPage", "Combined Balance", 0));
 #ifndef QT_NO_TOOLTIP
-        labelWalletStatus->setToolTip(QApplication::translate("OverviewPage", "The displayed information may be out of date. Your wallet automatically synchronizes with the Zenzo network after a connection is established, but this process has not completed yet.", 0));
+        labelWalletStatus->setToolTip(QApplication::translate("OverviewPage", "The displayed information may be out of date. Your wallet automatically synchronizes with the ZENZO network after a connection is established, but this process has not completed yet.", 0));
 #endif // QT_NO_TOOLTIP
         labelBalanceTextz->setText(QApplication::translate("OverviewPage", "Available:", 0));
 #ifndef QT_NO_TOOLTIP
@@ -723,11 +723,11 @@ public:
         labelLockedBalance->setToolTip(QApplication::translate("OverviewPage", "Locked ZNZ or Masternode collaterals. These are excluded from zZNZ minting.", 0));
 #endif // QT_NO_TOOLTIP
 #ifndef QT_NO_TOOLTIP
-        labelTotalText->setToolTip(QApplication::translate("OverviewPage", "Your current Zenzo balance, unconfirmed and immature transactions included", 0));
+        labelTotalText->setToolTip(QApplication::translate("OverviewPage", "Your current ZENZO balance, unconfirmed and immature transactions included", 0));
 #endif // QT_NO_TOOLTIP
         labelTotalText->setText(QApplication::translate("OverviewPage", "Total:", 0));
 #ifndef QT_NO_TOOLTIP
-        labelTotal->setToolTip(QApplication::translate("OverviewPage", "Your current Zenzo balance, unconfirmed and immature transactions included", 0));
+        labelTotal->setToolTip(QApplication::translate("OverviewPage", "Your current ZENZO balance, unconfirmed and immature transactions included", 0));
 #endif // QT_NO_TOOLTIP
 #ifndef QT_NO_TOOLTIP
         labelWatchTotal->setToolTip(QApplication::translate("OverviewPage", "Current total balance in watch-only addresses", 0));
@@ -769,7 +769,7 @@ public:
 #endif // QT_NO_TOOLTIP
         label_4->setText(QApplication::translate("OverviewPage", "Recent transactions", 0));
 #ifndef QT_NO_TOOLTIP
-        labelTransactionsStatus->setToolTip(QApplication::translate("OverviewPage", "The displayed information may be out of date. Your wallet automatically synchronizes with the Zenzo network after a connection is established, but this process has not completed yet.", 0));
+        labelTransactionsStatus->setToolTip(QApplication::translate("OverviewPage", "The displayed information may be out of date. Your wallet automatically synchronizes with the ZENZO network after a connection is established, but this process has not completed yet.", 0));
 #endif // QT_NO_TOOLTIP
         labelAlerts->setText(QString());
     } // retranslateUi

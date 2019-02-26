@@ -182,9 +182,9 @@ public:
     void retranslateUi(QDialog *Intro)
     {
         Intro->setWindowTitle(QApplication::translate("Intro", "Welcome", 0));
-        label_2->setText(QApplication::translate("Intro", "Welcome to Zenzo Core.", 0));
-        label_4->setText(QApplication::translate("Intro", "As this is the first time the program is launched, you can choose where Zenzo Core will store its data.", 0));
-        sizeWarningLabel->setText(QApplication::translate("Intro", "Zenzo Core will download and store a copy of the Zenzo block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.", 0));
+        label_2->setText(QApplication::translate("Intro", "Welcome to ZENZO Core.", 0));
+        label_4->setText(QApplication::translate("Intro", "As this is the first time the program is launched, you can choose where ZENZO Core will store its data.", 0));
+        sizeWarningLabel->setText(QApplication::translate("Intro", "ZENZO Core will download and store a copy of the ZENZO block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.", 0));
         dataDirDefault->setText(QApplication::translate("Intro", "Use the default data directory", 0));
         dataDirCustom->setText(QApplication::translate("Intro", "Use a custom data directory:", 0));
         freeSpace->setText(QString());

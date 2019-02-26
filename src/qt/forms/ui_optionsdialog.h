@@ -577,9 +577,9 @@ public:
     {
         OptionsDialog->setWindowTitle(QApplication::translate("OptionsDialog", "Options", 0));
 #ifndef QT_NO_TOOLTIP
-        bitcoinAtStartup->setToolTip(QApplication::translate("OptionsDialog", "Automatically start Zenzo after logging in to the system.", 0));
+        bitcoinAtStartup->setToolTip(QApplication::translate("OptionsDialog", "Automatically start ZENZO after logging in to the system.", 0));
 #endif // QT_NO_TOOLTIP
-        bitcoinAtStartup->setText(QApplication::translate("OptionsDialog", "&Start Zenzo on system login", 0));
+        bitcoinAtStartup->setText(QApplication::translate("OptionsDialog", "&Start ZENZO on system login", 0));
         databaseCacheLabel->setText(QApplication::translate("OptionsDialog", "Size of &database cache", 0));
         databaseCacheUnitLabel->setText(QApplication::translate("OptionsDialog", "MB", 0));
         threadsScriptVerifLabel->setText(QApplication::translate("OptionsDialog", "Number of script &verification threads", 0));
@@ -618,7 +618,7 @@ public:
         spendZeroConfChange->setText(QApplication::translate("OptionsDialog", "&Spend unconfirmed change", 0));
         tabWidget->setTabText(tabWidget->indexOf(tabWallet), QApplication::translate("OptionsDialog", "W&allet", 0));
 #ifndef QT_NO_TOOLTIP
-        mapPortUpnp->setToolTip(QApplication::translate("OptionsDialog", "Automatically open the Zenzo client port on the router. This only works when your router supports UPnP and it is enabled.", 0));
+        mapPortUpnp->setToolTip(QApplication::translate("OptionsDialog", "Automatically open the ZENZO client port on the router. This only works when your router supports UPnP and it is enabled.", 0));
 #endif // QT_NO_TOOLTIP
         mapPortUpnp->setText(QApplication::translate("OptionsDialog", "Map port using &UPnP", 0));
 #ifndef QT_NO_TOOLTIP
@@ -626,7 +626,7 @@ public:
 #endif // QT_NO_TOOLTIP
         allowIncoming->setText(QApplication::translate("OptionsDialog", "Allow incoming connections", 0));
 #ifndef QT_NO_TOOLTIP
-        connectSocks->setToolTip(QApplication::translate("OptionsDialog", "Connect to the Zenzo network through a SOCKS5 proxy.", 0));
+        connectSocks->setToolTip(QApplication::translate("OptionsDialog", "Connect to the ZENZO network through a SOCKS5 proxy.", 0));
 #endif // QT_NO_TOOLTIP
         connectSocks->setText(QApplication::translate("OptionsDialog", "&Connect through SOCKS5 proxy (default proxy):", 0));
         proxyIpLabel->setText(QApplication::translate("OptionsDialog", "Proxy &IP:", 0));
@@ -649,7 +649,7 @@ public:
         tabWidget->setTabText(tabWidget->indexOf(tabWindow), QApplication::translate("OptionsDialog", "&Window", 0));
         langLabel->setText(QApplication::translate("OptionsDialog", "User Interface &language:", 0));
 #ifndef QT_NO_TOOLTIP
-        lang->setToolTip(QApplication::translate("OptionsDialog", "The user interface language can be set here. This setting will take effect after restarting Zenzo.", 0));
+        lang->setToolTip(QApplication::translate("OptionsDialog", "The user interface language can be set here. This setting will take effect after restarting ZENZO.", 0));
 #endif // QT_NO_TOOLTIP
         label_3->setText(QApplication::translate("OptionsDialog", "Language missing or translation incomplete? Help contributing translations here:\n"
 "https://www.transifex.com/pivx-project/pivx-project-translations", 0));

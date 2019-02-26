@@ -80,12 +80,12 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>These are your Zenzo addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your ZENZO addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>These are your Zenzo addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your ZENZO addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -221,7 +221,7 @@
     </message>
     <message>
         <location line="+9"/>
-        <source>Zenzo will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
+        <source>ZENZO will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -307,7 +307,7 @@
     </message>
     <message>
         <location line="+6"/>
-        <source>Enter a Zenzo Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <source>Enter a ZENZO Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -318,7 +318,7 @@
     </message>
     <message>
         <location line="-355"/>
-        <source>The Zenzo address to sign the message with</source>
+        <source>The ZENZO address to sign the message with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -360,7 +360,7 @@
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Zenzo address</source>
+        <source>Sign the message to prove you own this ZENZO address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -391,12 +391,12 @@
     </message>
     <message>
         <location line="+25"/>
-        <source>The Zenzo address the message was signed with</source>
+        <source>The ZENZO address the message was signed with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+29"/>
-        <source>Verify the message to ensure it was signed with the specified Zenzo address</source>
+        <source>Verify the message to ensure it was signed with the specified ZENZO address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -776,12 +776,12 @@
     <message>
         <location line="-413"/>
         <location line="+858"/>
-        <source>Zenzo Core</source>
+        <source>ZENZO Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="-675"/>
-        <source>Send coins to a Zenzo address</source>
+        <source>Send coins to a ZENZO address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -806,27 +806,27 @@
     </message>
     <message>
         <location line="+31"/>
-        <source>&amp;About Zenzo Core</source>
+        <source>&amp;About ZENZO Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Show information about Zenzo Core</source>
+        <source>Show information about ZENZO Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+10"/>
-        <source>Modify configuration options for Zenzo</source>
+        <source>Modify configuration options for ZENZO</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>Sign messages with your Zenzo addresses to prove you own them</source>
+        <source>Sign messages with your ZENZO addresses to prove you own them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified Zenzo addresses</source>
+        <source>Verify messages to ensure they were signed with specified ZENZO addresses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -866,7 +866,7 @@
     </message>
     <message>
         <location line="+10"/>
-        <source>Open a Zenzo: URI or payment request</source>
+        <source>Open a ZENZO: URI or payment request</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -881,17 +881,17 @@
     </message>
     <message>
         <location line="+4"/>
-        <source>Show the Zenzo Core help message to get a list with possible Zenzo command-line options</source>
+        <source>Show the ZENZO Core help message to get a list with possible ZENZO command-line options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+204"/>
-        <source>Zenzo Core client</source>
+        <source>ZENZO Core client</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location line="+197"/>
-        <source>%n active connection(s) to Zenzo network</source>
+        <source>%n active connection(s) to ZENZO network</source>
         <translation type="unfinished">
             <numerusform></numerusform>
             <numerusform></numerusform>
@@ -1461,7 +1461,7 @@ Address: %4
     </message>
     <message>
         <location line="+67"/>
-        <source>The entered address &quot;%1&quot; is not a valid Zenzo address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid ZENZO address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1517,7 +1517,7 @@ Address: %4
     </message>
     <message>
         <location line="+0"/>
-        <source>Zenzo Core</source>
+        <source>ZENZO Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1528,7 +1528,7 @@ Address: %4
     </message>
     <message>
         <location line="+4"/>
-        <source>About Zenzo Core</source>
+        <source>About ZENZO Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1586,17 +1586,17 @@ Address: %4
     </message>
     <message>
         <location line="+9"/>
-        <source>Welcome to Zenzo Core.</source>
+        <source>Welcome to ZENZO Core.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+26"/>
-        <source>As this is the first time the program is launched, you can choose where Zenzo Core will store its data.</source>
+        <source>As this is the first time the program is launched, you can choose where ZENZO Core will store its data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+10"/>
-        <source>Zenzo Core will download and store a copy of the Zenzo block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <source>ZENZO Core will download and store a copy of the ZENZO block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1611,7 +1611,7 @@ Address: %4
     </message>
     <message>
         <location filename="../intro.cpp" line="+77"/>
-        <source>Zenzo Core</source>
+        <source>ZENZO Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1787,8 +1787,8 @@ Address: %4
     </message>
     <message>
         <location line="+16"/>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Zenzo addresses after it matures.
-To Add: enter percentage to give and Zenzo address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other ZENZO addresses after it matures.
+To Add: enter percentage to give and ZENZO address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
         <translation type="unfinished"></translation>
@@ -1995,17 +1995,17 @@ Please check the address and try again.</source>
     </message>
     <message>
         <location line="-27"/>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Zenzo&apos;s configuration screen.</source>
+        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening ZENZO&apos;s configuration screen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+14"/>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Zenzo&apos;s configuration screen.</source>
+        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening ZENZO&apos;s configuration screen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+14"/>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Zenzo&apos;s configuration screen.</source>
+        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening ZENZO&apos;s configuration screen.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2081,7 +2081,7 @@ Please check the address and try again.</source>
     </message>
     <message>
         <location line="+33"/>
-        <source>Automatically open the Zenzo client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the ZENZO client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2106,12 +2106,12 @@ Please check the address and try again.</source>
     </message>
     <message>
         <location line="-176"/>
-        <source>Automatically start Zenzo after logging in to the system.</source>
+        <source>Automatically start ZENZO after logging in to the system.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start Zenzo on system login</source>
+        <source>&amp;Start ZENZO on system login</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2146,7 +2146,7 @@ Please check the address and try again.</source>
     </message>
     <message>
         <location line="+192"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting Zenzo.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting ZENZO.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2183,7 +2183,7 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</source>
     </message>
     <message>
         <location line="+114"/>
-        <source>Connect to the Zenzo network through a SOCKS5 proxy.</source>
+        <source>Connect to the ZENZO network through a SOCKS5 proxy.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2387,7 +2387,7 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</source>
     <message>
         <location line="-153"/>
         <location line="+1393"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Zenzo network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ZENZO network after a connection is established, but this process has not completed yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2613,7 +2613,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+114"/>
-        <source>URI cannot be parsed! This can be caused by an invalid Zenzo address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid ZENZO address or malformed URI parameters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2731,13 +2731,13 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+10"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Zenzo network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ZENZO network after a connection is established, but this process has not completed yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+52"/>
         <location line="+46"/>
-        <source>Enter an amount of Phr to convert to zPhr</source>
+        <source>Enter an amount of ZNZ to convert to zZNZ</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2816,12 +2816,12 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+45"/>
-        <source>zPhr Control</source>
+        <source>zZNZ Control</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>zPhr Selected:</source>
+        <source>zZNZ Selected:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2890,7 +2890,7 @@ zZNZ are mature when they have more than 20 confirmations AND more than 3 mints 
     </message>
     <message>
         <location line="+27"/>
-        <source>The Zenzo address to send the payment to. Creates local payment to yourself when empty.</source>
+        <source>The ZENZO address to send the payment to. Creates local payment to yourself when empty.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3167,7 +3167,7 @@ Immature: confirmed, but less than 3 mints of the same denomination after it was
     <message>
         <location line="+88"/>
         <location line="+111"/>
-        <source>Zerocoin functionality is not enabled on the Zenzo network yet.</source>
+        <source>Zerocoin functionality is not enabled on the ZENZO network yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3234,7 +3234,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="+4"/>
-        <source>Invalid Zenzo Address</source>
+        <source>Invalid ZENZO Address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3304,7 +3304,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+15"/>
-        <source>zPhr Spend #: </source>
+        <source>zZNZ Spend #: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3334,7 +3334,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
-        <source>zPhr Mint</source>
+        <source>zZNZ Mint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3362,7 +3362,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location filename="../guiutil.cpp" line="+113"/>
-        <source>Enter a Zenzo address (e.g. %1)</source>
+        <source>Enter a ZENZO address (e.g. %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3557,7 +3557,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+79"/>
-        <source>Open the Zenzo debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the ZENZO debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3784,7 +3784,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="-36"/>
-        <source>Welcome to the Zenzo RPC console.</source>
+        <source>Welcome to the ZENZO RPC console.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3900,12 +3900,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="-37"/>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Zenzo network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the ZENZO network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+23"/>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Zenzo network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the ZENZO network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4264,7 +4264,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line="+33"/>
         <location line="+13"/>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Zenzo transactions than the network can process.</source>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for ZENZO transactions than the network can process.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4400,7 +4400,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+622"/>
-        <source>Warning: Invalid Zenzo address</source>
+        <source>Warning: Invalid ZENZO address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4539,7 +4539,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+18"/>
-        <source>The Zenzo address to send the payment to</source>
+        <source>The ZENZO address to send the payment to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4593,7 +4593,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+10"/>
-        <source>A message that was attached to the Zenzo: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Zenzo network.</source>
+        <source>A message that was attached to the ZENZO: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the ZENZO network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4628,7 +4628,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <name>ShutdownWindow</name>
     <message>
         <location filename="../utilitydialog.cpp" line="+75"/>
-        <source>Zenzo Core is shutting down...</source>
+        <source>ZENZO Core is shutting down...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4656,7 +4656,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+18"/>
-        <source>The Zenzo address to sign the message with</source>
+        <source>The ZENZO address to sign the message with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4698,17 +4698,17 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Zenzo address</source>
+        <source>Sign the message to prove you own this ZENZO address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+106"/>
-        <source>The Zenzo address the message was signed with</source>
+        <source>The ZENZO address the message was signed with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+37"/>
-        <source>Verify the message to ensure it was signed with the specified Zenzo address</source>
+        <source>Verify the message to ensure it was signed with the specified ZENZO address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4823,7 +4823,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <name>SplashScreen</name>
     <message>
         <location filename="../splashscreen.cpp" line="+36"/>
-        <source>Zenzo Core</source>
+        <source>ZENZO Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4843,7 +4843,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>The Zenzo Core developers</source>
+        <source>The ZENZO Core developers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5270,27 +5270,27 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+2"/>
-        <source>Converted Phr to zPhr</source>
+        <source>Converted ZNZ to zZNZ</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Spent zPhr</source>
+        <source>Spent zZNZ</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Received Phr from zPhr</source>
+        <source>Received ZNZ from zZNZ</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Minted Change as zPhr from zPhr Spend</source>
+        <source>Minted Change as zZNZ from zZNZ Spend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Converted zPhr to Phr</source>
+        <source>Converted zZNZ to ZNZ</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5300,7 +5300,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+22"/>
-        <source>zPhr Accumulator</source>
+        <source>zZNZ Accumulator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5439,7 +5439,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Received Phr from zPhr</source>
+        <source>Received ZNZ from zZNZ</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5454,7 +5454,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Zerocoin Spend, Change in zPhr</source>
+        <source>Zerocoin Spend, Change in zZNZ</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5667,7 +5667,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <name>ZPhrControlDialog</name>
     <message>
         <location filename="../forms/zphrcontroldialog.ui" line="+20"/>
-        <source>Select zPhr to Spend</source>
+        <source>Select zZNZ to Spend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5683,7 +5683,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="-7"/>
-        <source>zPhr</source>
+        <source>zZNZ</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5736,7 +5736,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+2"/>
-        <source>Cannot obtain a lock on data directory %s. Zenzo Core is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. ZENZO Core is probably already running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5761,7 +5761,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
-        <source>Disable all Zenzo specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
+        <source>Disable all ZENZO specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5950,13 +5950,13 @@ rpcpassword=%s
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;Zenzo Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;ZENZO Alert&quot; admin@foo.com
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>Unable to bind to %s on this computer. Zenzo Core is probably already running.</source>
+        <source>Unable to bind to %s on this computer. ZENZO Core is probably already running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5991,7 +5991,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Zenzo Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Zenzo Core will not work properly.</source>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong ZENZO Core will not work properly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6186,7 +6186,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Zenzo Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+1"/>
-        <source>Copyright (C) 2015-%i The Zenzo Core Developers</source>
+        <source>Copyright (C) 2015-%i The ZENZO Core Developers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6286,7 +6286,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Zenzo Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of Zenzo Core</source>
+        <source>Error loading wallet.dat: Wallet requires newer version of ZENZO Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6426,7 +6426,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Zenzo Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+1"/>
-        <source>Initialization sanity check failed. Zenzo Core is shutting down.</source>
+        <source>Initialization sanity check failed. ZENZO Core is shutting down.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6538,7 +6538,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Zenzo Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+44"/>
-        <source>Enable automatic wallet backups triggered after each zPhr minting (0-1, default: %u)</source>
+        <source>Enable automatic wallet backups triggered after each zZNZ minting (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7318,7 +7318,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Zenzo Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart Zenzo Core to complete</source>
+        <source>Wallet needed to be rewritten: restart ZENZO Core to complete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

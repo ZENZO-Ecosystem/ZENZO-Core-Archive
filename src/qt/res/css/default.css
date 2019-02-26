@@ -5,7 +5,7 @@
 /* light-purple:      #b396f6 (main purple for white backgrounds)                       */
 /*                                                                                      */
 /* greenish-blue:     #39c0c4 (on hover)                                                */
-/*                                                                                      */                                                
+/*                                                                                      */
 /****************************************************************************************/
 
 WalletFrame {
@@ -210,7 +210,7 @@ background-color:#f2f2f2;
 /***************************** Global Qt Objects ***********************************************************/
 
 QPushButton { /* Global Button Style */
-background-color: #8778dc; 
+background-color: #8778dc;
 border-width: 1px;
 border-style: outset;
 border-color: #382f44;
@@ -868,12 +868,12 @@ QDialog#HelpMessageDialog QScrollBar:vertical, QDialog#HelpMessageDialog QScroll
 border:0;
 }
 
-/* About Zenzo Dialog */
-QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About Zenzo Contents */
+/* About ZENZO Dialog */
+QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About ZENZO Contents */
 margin-left:10px;
 }
 
-QDialog#AboutDialog QLabel#label_2 { /* Margin for About Zenzo text */
+QDialog#AboutDialog QLabel#label_2 { /* Margin for About ZENZO text */
 margin-right:10px;
 }
 
@@ -904,7 +904,7 @@ background-image: url(':/images/zenzo_logo_horizontal');
 background-repeat: no-repeat;
 }
 
-QWidget .QFrame#frame_Header { /* Header with Page-Title and Zenzo-image */
+QWidget .QFrame#frame_Header { /* Header with Page-Title and ZENZO-image */
 min-width:400px;
 background-color:#ffffff;
 }
@@ -1332,7 +1332,7 @@ QDialog#SendCoinsDialog .QFrame#frameCoinControl .QWidget#widgetCoinControl > .Q
 padding:2px;
 }
 
-/* QDialog#SendCoinsDialog .QFrame#frameCoinControl .QCheckBox#checkBoxCoinControlChange { /* Custom Change Label */ 
+/* QDialog#SendCoinsDialog .QFrame#frameCoinControl .QCheckBox#checkBoxCoinControlChange { /* Custom Change Label */
 /* QDialog#SendCoinsDialog .QFrame#frameCoinControl .QValidatedLineEdit#lineEditCoinControlChange { /* Custom Change Address */
 /* QDialog#SendCoinsDialog .QFrame#frameCoinControl .QValidatedLineEdit#lineEditCoinControlChange:!focus { /* Custom Change Address */
 /* QDialog#SendCoinsDialog .QFrame#frameCoinControl .QLineEdit#splitBlockLineEdit { */
@@ -1622,7 +1622,7 @@ QLabel#transactionSumLabel { /* Example of setObjectName for widgets without nam
 color:#333333;
 font-weight:bold;
 }
- 
+
 QLabel#transactionSum { /* Example of setObjectName for widgets without name */
 color:#333333;
 }

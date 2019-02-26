@@ -115,8 +115,8 @@
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>The Zenzo address the message was signed with</source>
-        <translation>Zenzo adresa s kojom je potpisana poruka</translation>
+        <source>The ZENZO address the message was signed with</source>
+        <translation>ZENZO adresa s kojom je potpisana poruka</translation>
     </message>
     <message>
         <source>Allowed: 0-9,a-z,A-Z,</source>
@@ -150,8 +150,8 @@
         <translation>Otvori konfiguracijsku datoteku</translation>
     </message>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     <message>
         <source>&amp;Privacy</source>
@@ -162,8 +162,8 @@
         <translation>&amp;BIP38 alat</translation>
     </message>
     <message>
-        <source>Zenzo Core client</source>
-        <translation>Zenzo Core klijent</translation>
+        <source>ZENZO Core client</source>
+        <translation>ZENZO Core klijent</translation>
     </message>
     <message>
         <source>Error</source>
@@ -256,15 +256,15 @@
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     </context>
 <context>
     <name>Intro</name>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     <message>
         <source>Error</source>
@@ -597,8 +597,8 @@
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Zenzo Core is shutting down...</source>
-        <translation>Zenzo Core se gasi...</translation>
+        <source>ZENZO Core is shutting down...</source>
+        <translation>ZENZO Core se gasi...</translation>
     </message>
     </context>
 <context>
@@ -620,8 +620,8 @@
         <translation>Alt+P</translation>
     </message>
     <message>
-        <source>The Zenzo address the message was signed with</source>
-        <translation>Zenzo adresa s kojom je potpisana poruka</translation>
+        <source>The ZENZO address the message was signed with</source>
+        <translation>ZENZO adresa s kojom je potpisana poruka</translation>
     </message>
     <message>
         <source>Message signed.</source>
@@ -635,8 +635,8 @@
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     <message>
         <source>Version %1</source>

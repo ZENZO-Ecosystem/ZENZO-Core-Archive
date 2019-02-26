@@ -62,12 +62,12 @@
         <translation>Prijímacia adresa</translation>
     </message>
     <message>
-        <source>These are your Zenzo addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Toto sú vaše Zenzo adresy na odosielanie platieb. Pred odoslaním vždy skontrolujte výšku a adresu prijemcu.</translation>
+        <source>These are your ZENZO addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Toto sú vaše ZENZO adresy na odosielanie platieb. Pred odoslaním vždy skontrolujte výšku a adresu prijemcu.</translation>
     </message>
     <message>
-        <source>These are your Zenzo addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Toto sú vaše Zenzo adresy na prijímanie platieb. Pre každú transakciu sa odporúča použiť novú prijímaciu adresu.</translation>
+        <source>These are your ZENZO addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Toto sú vaše ZENZO adresy na prijímanie platieb. Pre každú transakciu sa odporúča použiť novú prijímaciu adresu.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -176,8 +176,8 @@
         <translation>Potvrďte šifrovanie peňaženky</translation>
     </message>
     <message>
-        <source>Zenzo will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
-        <translation>Zenzo sa teraz ukončí, aby dokončil proces šifrovania. Nezabudnite, že šifrovanie peňaženky nemôže úplne ochrániť vaše ZNZ pred odcudzením škodlivým softvérom, ktorý infikuje váš počítač.</translation>
+        <source>ZENZO will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
+        <translation>ZENZO sa teraz ukončí, aby dokončil proces šifrovania. Nezabudnite, že šifrovanie peňaženky nemôže úplne ochrániť vaše ZNZ pred odcudzením škodlivým softvérom, ktorý infikuje váš počítač.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -239,16 +239,16 @@
         <translation>BIP 38 Šifrovanie</translation>
     </message>
     <message>
-        <source>Enter a Zenzo Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Zadajte adresu Zenzo, ktorú chcete zašifrovať pomocou BIP 38. Zadajte prístupovú frázu do stredného poľa. Stlačte šifrovanie na výpočet šifrovaného privátneho kľúča.</translation>
+        <source>Enter a ZENZO Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Zadajte adresu ZENZO, ktorú chcete zašifrovať pomocou BIP 38. Zadajte prístupovú frázu do stredného poľa. Stlačte šifrovanie na výpočet šifrovaného privátneho kľúča.</translation>
     </message>
     <message>
         <source>Address:</source>
         <translation>Adresa:</translation>
     </message>
     <message>
-        <source>The Zenzo address to sign the message with</source>
-        <translation>Adresa Zenzo, ktorou chcete správu podpísať</translation>
+        <source>The ZENZO address to sign the message with</source>
+        <translation>Adresa ZENZO, ktorou chcete správu podpísať</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -279,8 +279,8 @@
         <translation>Skopírujte aktuálny podpis do schránky</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Zenzo address</source>
-        <translation>Podpíšte správu, aby ste preukázali, že ste vlastníkom tejto Zenzo adresy</translation>
+        <source>Sign the message to prove you own this ZENZO address</source>
+        <translation>Podpíšte správu, aby ste preukázali, že ste vlastníkom tejto ZENZO adresy</translation>
     </message>
     <message>
         <source>Encrypt &amp;Key</source>
@@ -303,12 +303,12 @@
         <translation>Zadajte súkromný kľúč zašifrovaný BIP 38. Zadajte prístupovú frázu do stredného poľa. Kliknite na Dešifrovať kľúč, ak chcete vypočítať privátny kľúč. Po dešifrovaní kľúča pridáte do peňaženky tento súkromný kľúč kliknutím na položku 'Importovať adresu'.</translation>
     </message>
     <message>
-        <source>The Zenzo address the message was signed with</source>
-        <translation>Zenzo adresa, ktorou bola správa podpísaná</translation>
+        <source>The ZENZO address the message was signed with</source>
+        <translation>ZENZO adresa, ktorou bola správa podpísaná</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Zenzo address</source>
-        <translation>Skontrolujte správu, aby ste sa uistili, že bola podpísaná zadanou Zenzo adresou</translation>
+        <source>Verify the message to ensure it was signed with the specified ZENZO address</source>
+        <translation>Skontrolujte správu, aby ste sa uistili, že bola podpísaná zadanou ZENZO adresou</translation>
     </message>
     <message>
         <source>Decrypt &amp;Key</source>
@@ -598,12 +598,12 @@
         <translation>Panel nástrojov Záložky</translation>
     </message>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     <message>
-        <source>Send coins to a Zenzo address</source>
-        <translation>Odoslať mince na adresu Zenzo</translation>
+        <source>Send coins to a ZENZO address</source>
+        <translation>Odoslať mince na adresu ZENZO</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and zenzo: URIs)</source>
@@ -618,24 +618,24 @@
         <translation>Prezrieť masternody</translation>
     </message>
     <message>
-        <source>&amp;About Zenzo Core</source>
-        <translation>O Zenzo Core</translation>
+        <source>&amp;About ZENZO Core</source>
+        <translation>O ZENZO Core</translation>
     </message>
     <message>
-        <source>Show information about Zenzo Core</source>
-        <translation>Zobraziť informácie o Zenzo Core</translation>
+        <source>Show information about ZENZO Core</source>
+        <translation>Zobraziť informácie o ZENZO Core</translation>
     </message>
     <message>
-        <source>Modify configuration options for Zenzo</source>
-        <translation>Zmeňte možnosti konfigurácie pre Zenzo</translation>
+        <source>Modify configuration options for ZENZO</source>
+        <translation>Zmeňte možnosti konfigurácie pre ZENZO</translation>
     </message>
     <message>
-        <source>Sign messages with your Zenzo addresses to prove you own them</source>
-        <translation>Podpíšte správy pomocou adresy Zenzo, aby ste preukázali, že ich vlastníte</translation>
+        <source>Sign messages with your ZENZO addresses to prove you own them</source>
+        <translation>Podpíšte správy pomocou adresy ZENZO, aby ste preukázali, že ich vlastníte</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Zenzo addresses</source>
-        <translation>Overte správy, aby sa zabezpečilo, že boli podpísané zadanými Zenzo adresami</translation>
+        <source>Verify messages to ensure they were signed with specified ZENZO addresses</source>
+        <translation>Overte správy, aby sa zabezpečilo, že boli podpísané zadanými ZENZO adresami</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -666,8 +666,8 @@
         <translation>Otvoriť konfiguračný súbor masternodu</translation>
     </message>
     <message>
-        <source>Open a Zenzo: URI or payment request</source>
-        <translation>Otvorte Zenzo: URI alebo žiadosť o platbu</translation>
+        <source>Open a ZENZO: URI or payment request</source>
+        <translation>Otvorte ZENZO: URI alebo žiadosť o platbu</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -678,12 +678,12 @@
         <translation>Okno blockchain prehliadača</translation>
     </message>
     <message>
-        <source>Show the Zenzo Core help message to get a list with possible Zenzo command-line options</source>
-        <translation>Zobraziť pomocnú správu programu Zenzo Core a získajte zoznam možností príkazového riadka Zenzo</translation>
+        <source>Show the ZENZO Core help message to get a list with possible ZENZO command-line options</source>
+        <translation>Zobraziť pomocnú správu programu ZENZO Core a získajte zoznam možností príkazového riadka ZENZO</translation>
     </message>
     <message>
-        <source>Zenzo Core client</source>
-        <translation>Zenzo Core klient</translation>
+        <source>ZENZO Core client</source>
+        <translation>ZENZO Core klient</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -904,15 +904,15 @@ MultiSend: %1</translation>
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     </context>
 <context>
     <name>Intro</name>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1136,8 +1136,8 @@ MultiSend: %1</translation>
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The Zenzo address to sign the message with</source>
-        <translation>Adresa Zenzo, ktorou chcete správu podpísať</translation>
+        <source>The ZENZO address to sign the message with</source>
+        <translation>Adresa ZENZO, ktorou chcete správu podpísať</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1160,16 +1160,16 @@ MultiSend: %1</translation>
         <translation>Skopírujte aktuálny podpis do schránky</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Zenzo address</source>
-        <translation>Podpíšte správu, aby ste preukázali, že ste vlastníkom tejto Zenzo adresy</translation>
+        <source>Sign the message to prove you own this ZENZO address</source>
+        <translation>Podpíšte správu, aby ste preukázali, že ste vlastníkom tejto ZENZO adresy</translation>
     </message>
     <message>
-        <source>The Zenzo address the message was signed with</source>
-        <translation>Zenzo adresa, ktorou bola správa podpísaná</translation>
+        <source>The ZENZO address the message was signed with</source>
+        <translation>ZENZO adresa, ktorou bola správa podpísaná</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Zenzo address</source>
-        <translation>Skontrolujte správu, aby ste sa uistili, že bola podpísaná zadanou Zenzo adresou</translation>
+        <source>Verify the message to ensure it was signed with the specified ZENZO address</source>
+        <translation>Skontrolujte správu, aby ste sa uistili, že bola podpísaná zadanou ZENZO adresou</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
@@ -1207,8 +1207,8 @@ MultiSend: %1</translation>
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     </context>
 <context>

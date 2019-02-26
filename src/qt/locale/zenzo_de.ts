@@ -43,11 +43,11 @@
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>Wählen Sie die Adresse aus, an die Sie Zenzo überweisen möchten</translation>
+        <translation>Wählen Sie die Adresse aus, an die Sie ZENZO überweisen möchten</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation>Wählen Sie die Adresse aus, über die Sie Zenzo empfangen wollen</translation>
+        <translation>Wählen Sie die Adresse aus, über die Sie ZENZO empfangen wollen</translation>
     </message>
     <message>
         <source>C&amp;hoose</source>
@@ -62,12 +62,12 @@
         <translation>Empfangsadressen</translation>
     </message>
     <message>
-        <source>These are your Zenzo addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Dies sind ihre Zenzo-Adressen zum Tätigen von Überweisungen. Bitte prüfen Sie den Betrag und die Empfangsadresse, bevor Sie Zenzo überweisen.</translation>
+        <source>These are your ZENZO addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Dies sind ihre ZENZO-Adressen zum Tätigen von Überweisungen. Bitte prüfen Sie den Betrag und die Empfangsadresse, bevor Sie ZENZO überweisen.</translation>
     </message>
     <message>
-        <source>These are your Zenzo addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Dies sind ihre Zenzo-Adressen zum Empfangen von Zahlungen. Es wird empfohlen für jede Transaktion eine neue Empfangsadresse zu verwenden.</translation>
+        <source>These are your ZENZO addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Dies sind ihre ZENZO-Adressen zum Empfangen von Zahlungen. Es wird empfohlen für jede Transaktion eine neue Empfangsadresse zu verwenden.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -176,7 +176,7 @@
         <translation>Wallet-Verschlüsselung bestätigen</translation>
     </message>
     <message>
-        <source>Zenzo will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
+        <source>ZENZO will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
         <translation>Die Anwendungs wird nun geschlossen um die Verschlüsselung abzuschließen. Bitte beachten Sie, dass auch Verschlüsselung nicht nicht vollständig vor Diebstahl ihrer ZNZs durch Schadsoftware schützt, die ihren Computer befällt.</translation>
     </message>
     <message>
@@ -239,16 +239,16 @@
         <translation>&amp;BIP 38 Verschlüsselung</translation>
     </message>
     <message>
-        <source>Enter a Zenzo Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Gib eine Zenzo Adresse ein welche mit BIP 38 verschlüsselt werden soll. Gib ein Passwort in die mittleren Box ein. Drücke auf verschlüsseln, um den privaten schlüssel zu errechenen.</translation>
+        <source>Enter a ZENZO Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Gib eine ZENZO Adresse ein welche mit BIP 38 verschlüsselt werden soll. Gib ein Passwort in die mittleren Box ein. Drücke auf verschlüsseln, um den privaten schlüssel zu errechenen.</translation>
     </message>
     <message>
         <source>Address:</source>
         <translation>Adresse:</translation>
     </message>
     <message>
-        <source>The Zenzo address to sign the message with</source>
-        <translation>Zenzo Adresse mit welcher die Nachricht signiert werden soll</translation>
+        <source>The ZENZO address to sign the message with</source>
+        <translation>ZENZO Adresse mit welcher die Nachricht signiert werden soll</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -279,8 +279,8 @@
         <translation>Kopiert die aktuelle Signatur in den Zwischenspeicher</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Zenzo address</source>
-        <translation>Signiere die Nachricht um zu Beweisen, dass du diese Zenzo Adresse besitzt</translation>
+        <source>Sign the message to prove you own this ZENZO address</source>
+        <translation>Signiere die Nachricht um zu Beweisen, dass du diese ZENZO Adresse besitzt</translation>
     </message>
     <message>
         <source>Encrypt &amp;Key</source>
@@ -303,12 +303,12 @@
         <translation>Geben Sie den BIP 38 verschlüsselten privaten Schlüssel ein. Geben Sie die Passphrase im mittleren Feld ein. Klicken Sie auf Entschlüsselung, um den privaten Schlüssel zu berechnen. Nachdem der Schlüssel entschlüsselt wurde, klicken Sie auf 'Adresse importieren', fügen Sie diesen privaten Schlüssel der Wallet hinzu.</translation>
     </message>
     <message>
-        <source>The Zenzo address the message was signed with</source>
-        <translation>Die Zenzo Adresse mit welcher die Nachricht signiert wurde.</translation>
+        <source>The ZENZO address the message was signed with</source>
+        <translation>Die ZENZO Adresse mit welcher die Nachricht signiert wurde.</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Zenzo address</source>
-        <translation>Überprüfen Sie die Nachricht, um sicherzustellen, dass sie mit der angegebenen Zenzo-Adresse signiert wurde.</translation>
+        <source>Verify the message to ensure it was signed with the specified ZENZO address</source>
+        <translation>Überprüfen Sie die Nachricht, um sicherzustellen, dass sie mit der angegebenen ZENZO-Adresse signiert wurde.</translation>
     </message>
     <message>
         <source>Decrypt &amp;Key</source>
@@ -602,12 +602,12 @@
         <translation>Registerkartenleiste</translation>
     </message>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     <message>
-        <source>Send coins to a Zenzo address</source>
-        <translation>An eine Zenzo-Adresse überweisen</translation>
+        <source>Send coins to a ZENZO address</source>
+        <translation>An eine ZENZO-Adresse überweisen</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and zenzo: URIs)</source>
@@ -630,24 +630,24 @@
         <translation>Masternodes durchsuchen</translation>
     </message>
     <message>
-        <source>&amp;About Zenzo Core</source>
-        <translation>Über.Zenzo Core</translation>
+        <source>&amp;About ZENZO Core</source>
+        <translation>Über.ZENZO Core</translation>
     </message>
     <message>
-        <source>Show information about Zenzo Core</source>
-        <translation>Zeigt Informationen über Zenzo Core</translation>
+        <source>Show information about ZENZO Core</source>
+        <translation>Zeigt Informationen über ZENZO Core</translation>
     </message>
     <message>
-        <source>Modify configuration options for Zenzo</source>
-        <translation>Konfiguration von Zenzo verändern</translation>
+        <source>Modify configuration options for ZENZO</source>
+        <translation>Konfiguration von ZENZO verändern</translation>
     </message>
     <message>
-        <source>Sign messages with your Zenzo addresses to prove you own them</source>
-        <translation>Unterschreibt eine Nachricht mit Ihrer Zenzo-Adresse und beweist, dass sie Ihnen gehört</translation>
+        <source>Sign messages with your ZENZO addresses to prove you own them</source>
+        <translation>Unterschreibt eine Nachricht mit Ihrer ZENZO-Adresse und beweist, dass sie Ihnen gehört</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Zenzo addresses</source>
-        <translation>Überprüft eine Nachricht um zu prüfen ob diese mit einer bestimmten Zenzo-Adresse signiert wurde</translation>
+        <source>Verify messages to ensure they were signed with specified ZENZO addresses</source>
+        <translation>Überprüft eine Nachricht um zu prüfen ob diese mit einer bestimmten ZENZO-Adresse signiert wurde</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -674,8 +674,8 @@
         <translation>Öffne Masternode Einstellungsdatei</translation>
     </message>
     <message>
-        <source>Open a Zenzo: URI or payment request</source>
-        <translation>Öffne eine Zenzo: URI or Zahlungsanfrage</translation>
+        <source>Open a ZENZO: URI or payment request</source>
+        <translation>Öffne eine ZENZO: URI or Zahlungsanfrage</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -686,16 +686,16 @@
         <translation>Blockchain Betrachter Fenster</translation>
     </message>
     <message>
-        <source>Show the Zenzo Core help message to get a list with possible Zenzo command-line options</source>
-        <translation>Zeige die Zenzo-Core Hilfe, um mögliche Zenzo Kommando-Zeilen-Optionen anzuzeigen</translation>
+        <source>Show the ZENZO Core help message to get a list with possible ZENZO command-line options</source>
+        <translation>Zeige die ZENZO-Core Hilfe, um mögliche ZENZO Kommando-Zeilen-Optionen anzuzeigen</translation>
     </message>
     <message>
-        <source>Zenzo Core client</source>
-        <translation>Zenzo Core Client</translation>
+        <source>ZENZO Core client</source>
+        <translation>ZENZO Core Client</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Zenzo network</source>
-        <translation><numerusform>%n aktive Verbindung zum Zenzo Netzwerk</numerusform><numerusform>%n aktive Verbindungen zum Zenzo Netzwerk</numerusform></translation>
+        <source>%n active connection(s) to ZENZO network</source>
+        <translation><numerusform>%n aktive Verbindung zum ZENZO Netzwerk</numerusform><numerusform>%n aktive Verbindungen zum ZENZO Netzwerk</numerusform></translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -1137,8 +1137,8 @@ Adresse: %4</translation>
         <translation>Zahlungsadresse bearbeiten</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Zenzo address.</source>
-        <translation>Die eingegebene Adresse "%1" ist keine gültige Zenzo-Adresse.</translation>
+        <source>The entered address "%1" is not a valid ZENZO address.</source>
+        <translation>Die eingegebene Adresse "%1" ist keine gültige ZENZO-Adresse.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1183,16 +1183,16 @@ Adresse: %4</translation>
         <translation>Version</translation>
     </message>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-Bit)</translation>
     </message>
     <message>
-        <source>About Zenzo Core</source>
-        <translation>Über Zenzo Core</translation>
+        <source>About ZENZO Core</source>
+        <translation>Über ZENZO Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1238,16 +1238,16 @@ Adresse: %4</translation>
         <translation>Willkommen</translation>
     </message>
     <message>
-        <source>Welcome to Zenzo Core.</source>
-        <translation>Willkommen zu Zenzo Core.</translation>
+        <source>Welcome to ZENZO Core.</source>
+        <translation>Willkommen zu ZENZO Core.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Zenzo Core will store its data.</source>
-        <translation>Da dies das erste Mal ist, dass Sie Zenzo Core starten, legen Sie jetzt bitte fest, an welchem Ort die Daten gespeichert werden sollen.</translation>
+        <source>As this is the first time the program is launched, you can choose where ZENZO Core will store its data.</source>
+        <translation>Da dies das erste Mal ist, dass Sie ZENZO Core starten, legen Sie jetzt bitte fest, an welchem Ort die Daten gespeichert werden sollen.</translation>
     </message>
     <message>
-        <source>Zenzo Core will download and store a copy of the Zenzo block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Zenzo Core wird die Blockchain laden und lokal speichern. Dafür sind mindestens %1GB freier Speicherplatz erforderlich. Der Speicherbedarf wird mit der Zeit anwachsen. Die Wallet wird ebenfalls in diesem Verzeichnis gespeichert.</translation>
+        <source>ZENZO Core will download and store a copy of the ZENZO block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>ZENZO Core wird die Blockchain laden und lokal speichern. Dafür sind mindestens %1GB freier Speicherplatz erforderlich. Der Speicherbedarf wird mit der Zeit anwachsen. Die Wallet wird ebenfalls in diesem Verzeichnis gespeichert.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1258,8 +1258,8 @@ Adresse: %4</translation>
         <translation>Ein benutzerdefiniertes Datenverzeichnis verwenden:</translation>
     </message>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1396,12 +1396,12 @@ Adresse: %4</translation>
         <translation>Zieladresse eingeben</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Zenzo addresses after it matures.
-To Add: enter percentage to give and Zenzo address to add to the MultiSend vector.
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other ZENZO addresses after it matures.
+To Add: enter percentage to give and ZENZO address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiSend ermöglicht es automatisch bis zu 100% Ihrer Stake- oder Masternode-Belohnung zu einer Liste von anderen Zenzo-Adressen zu senden.
-Zum hinzufügen: Gebe den Prozentsätze ein, um die Zenzo-Adressen des MultiSend-Vektor hinzuzufügen.
+        <translation>MultiSend ermöglicht es automatisch bis zu 100% Ihrer Stake- oder Masternode-Belohnung zu einer Liste von anderen ZENZO-Adressen zu senden.
+Zum hinzufügen: Gebe den Prozentsätze ein, um die ZENZO-Adressen des MultiSend-Vektor hinzuzufügen.
 Zum entfernen: Gebe die zu löschende Adresse ein und drücke löschen.
 MultiSend wird nicht aktiviert bis Sie auf Aktivieren geklickt haben.</translation>
     </message>
@@ -1571,16 +1571,16 @@ Bitte Adresse überprüfen und nochmals versuchen.</translation>
         <translation>Verschleierungskonfiguration</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Zenzo's configuration screen.</source>
-        <translation>Verschleierung erfolgreich auf normal gesetzt (%1 und 2 Runden). Sie können dies jederzeit in den Zenzos Konfigurationen ändern.</translation>
+        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening ZENZO's configuration screen.</source>
+        <translation>Verschleierung erfolgreich auf normal gesetzt (%1 und 2 Runden). Sie können dies jederzeit in den ZENZOs Konfigurationen ändern.</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Zenzo's configuration screen.</source>
-        <translation>Verschleierung erfolgreich auf hohen gesetzt (%1 und 8 Runden). Sie können dies jederzeit in den Zenzos Konfigurationen ändern.</translation>
+        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening ZENZO's configuration screen.</source>
+        <translation>Verschleierung erfolgreich auf hohen gesetzt (%1 und 8 Runden). Sie können dies jederzeit in den ZENZOs Konfigurationen ändern.</translation>
     </message>
     <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Zenzo's configuration screen.</source>
-        <translation>Verschleierung erfolgreich auf maximal gesetzt (%1 und 16 Runden). Sie können dies jederzeit in den Zenzos Konfigurationen ändern.</translation>
+        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening ZENZO's configuration screen.</source>
+        <translation>Verschleierung erfolgreich auf maximal gesetzt (%1 und 16 Runden). Sie können dies jederzeit in den ZENZOs Konfigurationen ändern.</translation>
     </message>
 </context>
 <context>
@@ -1641,8 +1641,8 @@ Bitte Adresse überprüfen und nochmals versuchen.</translation>
         <translation>Wenn Sie das Ausgeben von unbestätigten Wechselgeld deaktivieren, so kann das Wechselgeld von einer Transaktion &lt;br/&gt;nicht verwendet werden, bis mindestens eine Bestätigung vorliegt.&lt;br/&gt;Dies hat auch Auswirkungen auf ihre Bilanzberechnung.</translation>
     </message>
     <message>
-        <source>Automatically open the Zenzo client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatisches öffnen des Zenzo-Client-Port im Router. Dies funktioniert nur, wenn ihr Router UPnP unterstützt und es eingeschaltet ist.</translation>
+        <source>Automatically open the ZENZO client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatisches öffnen des ZENZO-Client-Port im Router. Dies funktioniert nur, wenn ihr Router UPnP unterstützt und es eingeschaltet ist.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1661,12 +1661,12 @@ Bitte Adresse überprüfen und nochmals versuchen.</translation>
         <translation>Experte</translation>
     </message>
     <message>
-        <source>Automatically start Zenzo after logging in to the system.</source>
-        <translation>Zenzo automatisch nach dem Login starten.</translation>
+        <source>Automatically start ZENZO after logging in to the system.</source>
+        <translation>ZENZO automatisch nach dem Login starten.</translation>
     </message>
     <message>
-        <source>&amp;Start Zenzo on system login</source>
-        <translation>Zenzo automatisch beim System Login &amp;starten.</translation>
+        <source>&amp;Start ZENZO on system login</source>
+        <translation>ZENZO automatisch beim System Login &amp;starten.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1693,7 +1693,7 @@ Bitte Adresse überprüfen und nochmals versuchen.</translation>
         <translation>&amp;Netzwerk</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Zenzo.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting ZENZO.</source>
         <translation>Die Sprache der Benutzeroberfläche kann hier festgelegt werden. Diese Einstellung wird nach einem Neustart realisiert.</translation>
     </message>
     <message>
@@ -1723,8 +1723,8 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</translation>
         <translation>Bevorzugte automatisierte zZNZ Stückelung </translation>
     </message>
     <message>
-        <source>Connect to the Zenzo network through a SOCKS5 proxy.</source>
-        <translation>Durch einen SOCKS5 Proxy mit dem Zenzo Netzwerk verbinden.</translation>
+        <source>Connect to the ZENZO network through a SOCKS5 proxy.</source>
+        <translation>Durch einen SOCKS5 Proxy mit dem ZENZO Netzwerk verbinden.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1882,8 +1882,8 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</translation>
         <translation>Erarbeiteter Betrag der noch nicht gereift ist</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Zenzo network after a connection is established, but this process has not completed yet.</source>
-        <translation>Die angezeigte Information ist möglicherweise nicht mehr aktuell. Ihre Wallet synchronisiert sich automatisch mit dem Zenzo-Netzwerk, nachdem eine Verbindung hergestellt wurde. Aber dieser Vorgang ist noch nicht abgeschlossen.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ZENZO network after a connection is established, but this process has not completed yet.</source>
+        <translation>Die angezeigte Information ist möglicherweise nicht mehr aktuell. Ihre Wallet synchronisiert sich automatisch mit dem ZENZO-Netzwerk, nachdem eine Verbindung hergestellt wurde. Aber dieser Vorgang ist noch nicht abgeschlossen.</translation>
     </message>
     <message>
         <source>Unconfirmed transactions to watch-only addresses</source>
@@ -1970,11 +1970,11 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</translation>
     </message>
     <message>
         <source>Cannot start zenzo: click-to-pay handler</source>
-        <translation>Kann Zenzo nicht starten: click-to-pay Handler</translation>
+        <translation>Kann ZENZO nicht starten: click-to-pay Handler</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Zenzo address or malformed URI parameters.</source>
-        <translation>URI kann nicht analysiert werden! Dies kann durch eine ungültige Zenzo-Adresse oder fehlerhafte URI-Parameter verursacht worden sein.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid ZENZO address or malformed URI parameters.</source>
+        <translation>URI kann nicht analysiert werden! Dies kann durch eine ungültige ZENZO-Adresse oder fehlerhafte URI-Parameter verursacht worden sein.</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -2067,12 +2067,12 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</translation>
         <translation>Zerocoin Aktionen:</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Zenzo network after a connection is established, but this process has not completed yet.</source>
-        <translation>Die angezeigte Information ist möglicherweise nicht mehr aktuell. Ihre Wallet synchronisiert sich automatisch mit dem Zenzo-Netzwerk, nachdem eine Verbindung hergestellt wurde. Aber dieser Vorgang ist noch nicht abgeschlossen.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ZENZO network after a connection is established, but this process has not completed yet.</source>
+        <translation>Die angezeigte Information ist möglicherweise nicht mehr aktuell. Ihre Wallet synchronisiert sich automatisch mit dem ZENZO-Netzwerk, nachdem eine Verbindung hergestellt wurde. Aber dieser Vorgang ist noch nicht abgeschlossen.</translation>
     </message>
     <message>
-        <source>Enter an amount of Phr to convert to zPhr</source>
-        <translation>Eingabe des Phr-Betrags, um in zPhr umzuwandeln</translation>
+        <source>Enter an amount of ZNZ to convert to zZNZ</source>
+        <translation>Eingabe des ZNZ-Betrags, um in zZNZ umzuwandeln</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -2127,12 +2127,12 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</translation>
         <translation>Status und/oder Mitteilungen aus der letzten Prägung</translation>
     </message>
     <message>
-        <source>zPhr Control</source>
-        <translation>zPhr Kontrolle</translation>
+        <source>zZNZ Control</source>
+        <translation>zZNZ Kontrolle</translation>
     </message>
     <message>
-        <source>zPhr Selected:</source>
-        <translation>zPhr Ausgewählt:</translation>
+        <source>zZNZ Selected:</source>
+        <translation>zZNZ Ausgewählt:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2171,8 +2171,8 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</translation>
         <translation>E&amp;mpfänger:</translation>
     </message>
     <message>
-        <source>The Zenzo address to send the payment to. Creates local payment to yourself when empty.</source>
-        <translation>Die Zenzo-Adresse, an die die Zahlung gesendet wird. Erstellt eine lokale Zahlung an Sie selbst, wenn die Zeile leer ist.</translation>
+        <source>The ZENZO address to send the payment to. Creates local payment to yourself when empty.</source>
+        <translation>Die ZENZO-Adresse, an die die Zahlung gesendet wird. Erstellt eine lokale Zahlung an Sie selbst, wenn die Zeile leer ist.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2371,8 +2371,8 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</translation>
         <translation>Betrag kopieren</translation>
     </message>
     <message>
-        <source>Zerocoin functionality is not enabled on the Zenzo network yet.</source>
-        <translation>Die Zerocoin Funktionalität ist im Zenzo Netzwerk im Moment nicht freigeschaltet.</translation>
+        <source>Zerocoin functionality is not enabled on the ZENZO network yet.</source>
+        <translation>Die Zerocoin Funktionalität ist im ZENZO Netzwerk im Moment nicht freigeschaltet.</translation>
     </message>
     <message>
         <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
@@ -2425,8 +2425,8 @@ Bitte haben Sie etwas Geduld...</translation>
         <translation>Keine "Pay To"-Adresse zur Verfügung. Erstelle lokale Zahlung</translation>
     </message>
     <message>
-        <source>Invalid Zenzo Address</source>
-        <translation>Ungültige Zenzo-Adresse </translation>
+        <source>Invalid ZENZO Address</source>
+        <translation>Ungültige ZENZO-Adresse </translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -2469,7 +2469,7 @@ Bitte haben Sie Geduld...</translation>
         <translation>Ausgeben Zerocoin fehlgeschlagen mit Status =</translation>
     </message>
     <message>
-        <source>zPhr Spend #: </source>
+        <source>zZNZ Spend #: </source>
         <translation>zZNZ Ausgeben #:</translation>
     </message>
     <message>
@@ -2493,8 +2493,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>Adresse:</translation>
     </message>
     <message>
-        <source>zPhr Mint</source>
-        <translation>zPhr Prägen</translation>
+        <source>zZNZ Mint</source>
+        <translation>zZNZ Prägen</translation>
     </message>
     <message>
         <source>Sending successful, return code: </source>
@@ -2516,8 +2516,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>Betrag</translation>
     </message>
     <message>
-        <source>Enter a Zenzo address (e.g. %1)</source>
-        <translation>Zenzo-Adresse eingeben (z.B. %1)</translation>
+        <source>Enter a ZENZO address (e.g. %1)</source>
+        <translation>ZENZO-Adresse eingeben (z.B. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2654,8 +2654,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>Block chain</translation>
     </message>
     <message>
-        <source>Open the Zenzo debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Öffne Zenzo-Debug-Protokolldatei aus dem aktuellen Datenverzeichnis. Dies kann bei großen Protokolldateien einige Sekunden dauern.</translation>
+        <source>Open the ZENZO debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Öffne ZENZO-Debug-Protokolldatei aus dem aktuellen Datenverzeichnis. Dies kann bei großen Protokolldateien einige Sekunden dauern.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
@@ -2822,8 +2822,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>Out:</translation>
     </message>
     <message>
-        <source>Welcome to the Zenzo RPC console.</source>
-        <translation>Willkommen in der Zenzo RPC-Konsole.</translation>
+        <source>Welcome to the ZENZO RPC console.</source>
+        <translation>Willkommen in der ZENZO RPC-Konsole.</translation>
     </message>
     <message>
         <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
@@ -2893,12 +2893,12 @@ Bitte haben Sie Geduld...</translation>
         <translation>Ein optionales Etikett, das mit der neuen Empfangsadresse verknüpft werden soll.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Zenzo network.</source>
-        <translation>Eine optionale Nachricht an die Zahlungsaufforderung anhängen, die bei der Eröffnung der Anforderung angezeigt wird. Hinweis: Die Nachricht wird nicht mit der Zahlung über das Zenzo-Netzwerk gesendet.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the ZENZO network.</source>
+        <translation>Eine optionale Nachricht an die Zahlungsaufforderung anhängen, die bei der Eröffnung der Anforderung angezeigt wird. Hinweis: Die Nachricht wird nicht mit der Zahlung über das ZENZO-Netzwerk gesendet.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Zenzo network.</source>
-        <translation>Eine optionale Nachricht an die Zahlungsaufforderung anhängen, die bei der Eröffnung der Anforderung angezeigt wird.&lt;br&gt;Hinweis: Die Nachricht wird nicht mit der Zahlung über das Zenzo-Netzwerk gesendet.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the ZENZO network.</source>
+        <translation>Eine optionale Nachricht an die Zahlungsaufforderung anhängen, die bei der Eröffnung der Anforderung angezeigt wird.&lt;br&gt;Hinweis: Die Nachricht wird nicht mit der Zahlung über das ZENZO-Netzwerk gesendet.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -3182,8 +3182,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>Wenn die kundenspezifische Gebühr auf 1000 uZNZs eingestellt ist und die Transaktion nur 250 Bytes beträgt, dann zahlt man "pro Kilobyte" nur 250 uZNZs an Gebühren,&lt;br /&gt;während man "insgesamt mindestens" 1000 uZNZs bezahlt. Für Transaktionen, die größer sind als ein Kilobyte, bezahlen sie per Kilobyte.</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Zenzo transactions than the network can process.</source>
-        <translation>Nur die minimale Gebühr zu zahlen ist nur gut, solange es weniger Transaktionsvolumen als Platz in den Blocken gibt.&lt;br /&gt;Aber seien Sie sich bewusst, dass dies in einer niemals bestätigende Transaktion enden kann, sobald die Nachfrage nach Zenzo-Transaktionen höher ist, als was das Netzwerk verarbeiten kann.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for ZENZO transactions than the network can process.</source>
+        <translation>Nur die minimale Gebühr zu zahlen ist nur gut, solange es weniger Transaktionsvolumen als Platz in den Blocken gibt.&lt;br /&gt;Aber seien Sie sich bewusst, dass dies in einer niemals bestätigende Transaktion enden kann, sobald die Nachfrage nach ZENZO-Transaktionen höher ist, als was das Netzwerk verarbeiten kann.</translation>
     </message>
     <message>
         <source>normal</source>
@@ -3290,8 +3290,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>anonyme Mittel</translation>
     </message>
     <message>
-        <source>Warning: Invalid Zenzo address</source>
-        <translation>Warnung: Ungültige Zenzo-Adresse</translation>
+        <source>Warning: Invalid ZENZO address</source>
+        <translation>Warnung: Ungültige ZENZO-Adresse</translation>
     </message>
     <message>
         <source>any available funds (not recommended)</source>
@@ -3397,8 +3397,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>E&amp;mpfänger:</translation>
     </message>
     <message>
-        <source>The Zenzo address to send the payment to</source>
-        <translation>Zenzo-Adresse, an die überwiesen werden soll</translation>
+        <source>The ZENZO address to send the payment to</source>
+        <translation>ZENZO-Adresse, an die überwiesen werden soll</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3437,8 +3437,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>Nachricht:</translation>
     </message>
     <message>
-        <source>A message that was attached to the Zenzo: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Zenzo network.</source>
-        <translation>Eine an die Zenzo-URI angefügte Nachricht, die zusammen mit der Transaktion gespeichert wird. Hinweis: Diese Nachricht wird nicht über das Zenzo-Netzwerk gesendet.</translation>
+        <source>A message that was attached to the ZENZO: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the ZENZO network.</source>
+        <translation>Eine an die ZENZO-URI angefügte Nachricht, die zusammen mit der Transaktion gespeichert wird. Hinweis: Diese Nachricht wird nicht über das ZENZO-Netzwerk gesendet.</translation>
     </message>
     <message>
         <source>This is an unverified payment request.</source>
@@ -3464,8 +3464,8 @@ Bitte haben Sie Geduld...</translation>
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Zenzo Core is shutting down...</source>
-        <translation>Zenzo Core wird beendet...</translation>
+        <source>ZENZO Core is shutting down...</source>
+        <translation>ZENZO Core wird beendet...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -3487,8 +3487,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>Sie können Nachrichten mit Ihren Adressen signieren, um zu beweisen, dass Sie diese besitzen. Seien Sie vorsichtig nichts fragwürdiges zu unterschreiben, da Phishing-Angriffe versuchen können, Sie dazu zu bringen, Ihre Identität zu überschreiben. Unterschreiben Sie nur ganz detaillierte Aussagen, denen Sie zustimmen.</translation>
     </message>
     <message>
-        <source>The Zenzo address to sign the message with</source>
-        <translation>Zenzo Adresse mit welcher die Nachricht signiert werden soll</translation>
+        <source>The ZENZO address to sign the message with</source>
+        <translation>ZENZO Adresse mit welcher die Nachricht signiert werden soll</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3519,16 +3519,16 @@ Bitte haben Sie Geduld...</translation>
         <translation>Kopiert die aktuelle Signatur in die Zwischenablage</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Zenzo address</source>
-        <translation>Signiere die Nachricht um zu Beweisen, dass du diese Zenzo Adresse besitzt</translation>
+        <source>Sign the message to prove you own this ZENZO address</source>
+        <translation>Signiere die Nachricht um zu Beweisen, dass du diese ZENZO Adresse besitzt</translation>
     </message>
     <message>
-        <source>The Zenzo address the message was signed with</source>
-        <translation>Die Zenzo Adresse mit welcher die Nachricht signiert wurde.</translation>
+        <source>The ZENZO address the message was signed with</source>
+        <translation>Die ZENZO Adresse mit welcher die Nachricht signiert wurde.</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Zenzo address</source>
-        <translation>Überprüfen Sie die Nachricht, um sicherzustellen, dass sie mit der angegebenen Zenzo-Adresse signiert wurde.</translation>
+        <source>Verify the message to ensure it was signed with the specified ZENZO address</source>
+        <translation>Überprüfen Sie die Nachricht, um sicherzustellen, dass sie mit der angegebenen ZENZO-Adresse signiert wurde.</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -3614,8 +3614,8 @@ Bitte haben Sie Geduld...</translation>
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -3630,8 +3630,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>Die Dash Core Entwickler</translation>
     </message>
     <message>
-        <source>The Zenzo Core developers</source>
-        <translation>Die Zenzo Core Entwickler</translation>
+        <source>The ZENZO Core developers</source>
+        <translation>Die ZENZO Core Entwickler</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -3950,23 +3950,23 @@ Bitte haben Sie Geduld...</translation>
         <translation>Verschleiert</translation>
     </message>
     <message>
-        <source>Converted Phr to zPhr</source>
+        <source>Converted ZNZ to zZNZ</source>
         <translation>Umgewandeltes ZNZ zu zZNZ</translation>
     </message>
     <message>
-        <source>Spent zPhr</source>
+        <source>Spent zZNZ</source>
         <translation>Ausgeben zZNZ</translation>
     </message>
     <message>
-        <source>Received Phr from zPhr</source>
+        <source>Received ZNZ from zZNZ</source>
         <translation>Empfangene ZNZ von zZNZ</translation>
     </message>
     <message>
-        <source>Minted Change as zPhr from zPhr Spend</source>
+        <source>Minted Change as zZNZ from zZNZ Spend</source>
         <translation>Geprägtes Wechselgeld als zZNZ von zZNZ Ausgabe</translation>
     </message>
     <message>
-        <source>Converted zPhr to Phr</source>
+        <source>Converted zZNZ to ZNZ</source>
         <translation>Umgewandeltes zZNZ zu ZNZ</translation>
     </message>
     <message>
@@ -3974,7 +3974,7 @@ Bitte haben Sie Geduld...</translation>
         <translation>nur beobachtet</translation>
     </message>
     <message>
-        <source>zPhr Accumulator</source>
+        <source>zZNZ Accumulator</source>
         <translation>zZNZ Speicher</translation>
     </message>
     <message>
@@ -4085,7 +4085,7 @@ Bitte haben Sie Geduld...</translation>
         <translation>Masternode Vergütung</translation>
     </message>
     <message>
-        <source>Received Phr from zPhr</source>
+        <source>Received ZNZ from zZNZ</source>
         <translation>Empfangene ZNZ von zZNZ</translation>
     </message>
     <message>
@@ -4097,7 +4097,7 @@ Bitte haben Sie Geduld...</translation>
         <translation>Zerocoin Ausgabe</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zPhr</source>
+        <source>Zerocoin Spend, Change in zZNZ</source>
         <translation>Zerocoin Ausgabe, Wechselgeld in zZNZ</translation>
     </message>
     <message>
@@ -4268,7 +4268,7 @@ Bitte haben Sie Geduld...</translation>
 <context>
     <name>ZPhrControlDialog</name>
     <message>
-        <source>Select zPhr to Spend</source>
+        <source>Select zZNZ to Spend</source>
         <translation>Auswahl zZNZ als Ausgabe</translation>
     </message>
     <message>
@@ -4280,7 +4280,7 @@ Bitte haben Sie Geduld...</translation>
         <translation>0</translation>
     </message>
     <message>
-        <source>zPhr</source>
+        <source>zZNZ</source>
         <translation>zZNZ</translation>
     </message>
     <message>
@@ -4311,8 +4311,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>Der berechnete Akkumulator-Checkpoint stimmt nicht mit dem vom Blockindex aufgezeichneten überein</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. Zenzo Core is probably already running.</source>
-        <translation>Kann keine Sperre für das Datenverzeichnis %s erhalten. Zenzo Core läuft wahrscheinlich bereits.</translation>
+        <source>Cannot obtain a lock on data directory %s. ZENZO Core is probably already running.</source>
+        <translation>Kann keine Sperre für das Datenverzeichnis %s erhalten. ZENZO Core läuft wahrscheinlich bereits.</translation>
     </message>
     <message>
         <source>Create new files with system default permissions, instead of umask 077 (only effective with disabled wallet functionality)</source>
@@ -4323,8 +4323,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>Lösche alle Wallet-Transaktionen und stelle nur diese Teile der Blockchain  beim Start durch -neuscan wieder her</translation>
     </message>
     <message>
-        <source>Disable all Zenzo specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
-        <translation>Deaktiviere alle Zenzo-spezifischen Funktionen (Masternodes, Verschleierung, SwiftTX, Budgetplanung) (0-1, default: %u)</translation>
+        <source>Disable all ZENZO specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
+        <translation>Deaktiviere alle ZENZO-spezifischen Funktionen (Masternodes, Verschleierung, SwiftTX, Budgetplanung) (0-1, default: %u)</translation>
     </message>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
@@ -4472,7 +4472,7 @@ rpcpassword=%s
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s "Zenzo Alert" admin@foo.com
+for example: alertnotify=echo %%s | mail -s "ZENZO Alert" admin@foo.com
 </source>
         <translation>Um zenzod oder die -server option in zenzo-qt zu nutzen, muss ein RPC-Passwort mittels rpcpassword in der Konfigurationsdatei gestzt werden:
 %s
@@ -4483,7 +4483,7 @@ rpcpassword=%s
 User-Name und Passwort MÜSSEN NICHT die oben genannten sein.
 Falls die Datei bisher nicht existiert, erstellen Sie diese mit der eingeschränkten Berechtigung das nur der Besitzer diese lesen darf.
 Des weiteren wird empfohlen das Argument alertnotify zu setzen, damit Sie bei ggf. auftretenden Problemen benachrichtigt werden.
-Beispiel: alertnotify=echo %%s | mail -s "Zenzo Alert" admin@foo.com
+Beispiel: alertnotify=echo %%s | mail -s "ZENZO Alert" admin@foo.com
 </translation>
     </message>
     <message>
@@ -4503,8 +4503,8 @@ Beispiel: alertnotify=echo %%s | mail -s "Zenzo Alert" admin@foo.com
         <translation>Warnung: -paytxfee ist sehr hoch eingestellt! Diese Transaktionsgebühr werden Ihnen abgebucht, falls Sie die Transaktion überweisen.</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Zenzo Core will not work properly.</source>
-        <translation>Warnung: Bitte stellen Sie sicher, das vom Computer verwendete Zeit und Datumangaben korrekt sind! Wenn ihr System falsche Zeitangaben nutzt, wird Zenzo Core nicht korrekt funktionieren.</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong ZENZO Core will not work properly.</source>
+        <translation>Warnung: Bitte stellen Sie sicher, das vom Computer verwendete Zeit und Datumangaben korrekt sind! Wenn ihr System falsche Zeitangaben nutzt, wird ZENZO Core nicht korrekt funktionieren.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -4639,8 +4639,8 @@ Beispiel: alertnotify=echo %%s | mail -s "Zenzo Alert" admin@foo.com
         <translation>Copyright (C) 2014-%i The Dash Core Developers</translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The Zenzo Core Developers</source>
-        <translation>Copyright (C) 2015-%i The Zenzo Core Developers</translation>
+        <source>Copyright (C) 2015-%i The ZENZO Core Developers</source>
+        <translation>Copyright (C) 2015-%i The ZENZO Core Developers</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -4707,8 +4707,8 @@ Beispiel: alertnotify=echo %%s | mail -s "Zenzo Alert" admin@foo.com
         <translation>Fehler beim Laden von wallet.dat : Wallet beschädigt</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Zenzo Core</source>
-        <translation>Fehler beim Laden der wallet.dat: Neuere Zenzo Core Version benötigt</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of ZENZO Core</source>
+        <translation>Fehler beim Laden der wallet.dat: Neuere ZENZO Core Version benötigt</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -4811,8 +4811,8 @@ Beispiel: alertnotify=echo %%s | mail -s "Zenzo Alert" admin@foo.com
         <translation>Hinweis</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. Zenzo Core is shutting down.</source>
-        <translation>Initialisierung Sanity-Check fehlgeschlagen. Zenzo Core schaltet ab.</translation>
+        <source>Initialization sanity check failed. ZENZO Core is shutting down.</source>
+        <translation>Initialisierung Sanity-Check fehlgeschlagen. ZENZO Core schaltet ab.</translation>
     </message>
     <message>
         <source>Input is not valid.</source>
@@ -5407,8 +5407,8 @@ Beispiel: alertnotify=echo %%s | mail -s "Zenzo Alert" admin@foo.com
         <translation>Wallet gesperrt.</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart Zenzo Core to complete</source>
-        <translation>Wallet musste neu geschrieben werden: Bitte Zenzo Core neu starten</translation>
+        <source>Wallet needed to be rewritten: restart ZENZO Core to complete</source>
+        <translation>Wallet musste neu geschrieben werden: Bitte ZENZO Core neu starten</translation>
     </message>
     <message>
         <source>Wallet options:</source>

@@ -1,0 +1,4 @@
+crypto/crypto_libbitcoin_crypto_a-sph_md_helper.o: crypto/sph_md_helper.c \
+ /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:

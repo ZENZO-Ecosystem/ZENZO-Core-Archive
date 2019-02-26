@@ -425,7 +425,7 @@ public:
 #endif // QT_NO_TOOLTIP
         payToLabel->setText(QApplication::translate("SendCoinsEntry", "Pay &To:", 0));
 #ifndef QT_NO_TOOLTIP
-        payTo->setToolTip(QApplication::translate("SendCoinsEntry", "The Zenzo address to send the payment to", 0));
+        payTo->setToolTip(QApplication::translate("SendCoinsEntry", "The ZENZO address to send the payment to", 0));
 #endif // QT_NO_TOOLTIP
 #ifndef QT_NO_TOOLTIP
         addressBookButton->setToolTip(QApplication::translate("SendCoinsEntry", "Choose previously used address", 0));
@@ -448,7 +448,7 @@ public:
         amountLabel->setText(QApplication::translate("SendCoinsEntry", "A&mount:", 0));
         messageLabel->setText(QApplication::translate("SendCoinsEntry", "Message:", 0));
 #ifndef QT_NO_TOOLTIP
-        messageTextLabel->setToolTip(QApplication::translate("SendCoinsEntry", "A message that was attached to the Zenzo: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Zenzo network.", 0));
+        messageTextLabel->setToolTip(QApplication::translate("SendCoinsEntry", "A message that was attached to the ZENZO: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the ZENZO network.", 0));
 #endif // QT_NO_TOOLTIP
 #ifndef QT_NO_TOOLTIP
         SendCoins_InsecurePaymentRequest->setToolTip(QApplication::translate("SendCoinsEntry", "This is an unverified payment request.", 0));

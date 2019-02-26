@@ -1,5 +1,5 @@
 // Copyright (c) 2017 The PIVX Core developers
-// Copyright (c) 2017 The Zenzo developers
+// Copyright (c) 2018-2019 The ZENZO developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
