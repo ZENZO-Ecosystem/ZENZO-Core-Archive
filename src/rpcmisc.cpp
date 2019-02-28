@@ -115,7 +115,7 @@ Value getinfo(const Array& params, bool fHelp)
     }
     zbrkObj.emplace_back(Pair("total", ValueFromAmount(chainActive.Tip()->GetZerocoinSupply())));
     obj.emplace_back(Pair("zZNZsupply", zbrkObj));
-    
+
 #ifdef ENABLE_WALLET
     if (pwalletMain) {
         obj.push_back(Pair("keypoololdest", pwalletMain->GetOldestKeyPoolTime()));
@@ -548,5 +548,10 @@ Value getstakingstatus(const Array& params, bool fHelp)
     obj.push_back(Pair("staking status", nStaking));
 
     return obj;
+}
+
+Value meow(const Array& params, bool fHelp)
+{
+    return "Meow!";
 }
 #endif // ENABLE_WALLET

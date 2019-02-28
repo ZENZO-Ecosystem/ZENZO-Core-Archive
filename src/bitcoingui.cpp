@@ -116,6 +116,7 @@ BitcoinGUI::BitcoinGUI(const NetworkStyle* networkStyle, QWidget* parent) : QMai
     this->setStyleSheet(GUIUtil::loadStyleSheet());
 
     GUIUtil::restoreWindowGeometry("nWindow", QSize(850, 550), this);
+    //resize(QDesktopWidget().availableGeometry(this).size * 0.7);
 
     QString windowTitle = tr("ZENZO Core") + " - ";
 #ifdef ENABLE_WALLET

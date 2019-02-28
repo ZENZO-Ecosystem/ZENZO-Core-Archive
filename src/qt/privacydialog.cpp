@@ -43,7 +43,8 @@ PrivacyDialog::PrivacyDialog(QWidget* parent) : QDialog(parent),
     ui->TEMintStatus->setFrameStyle(QFrame::StyledPanel | QFrame::Sunken);
     ui->TEMintStatus->setLineWidth (2);
     ui->TEMintStatus->setMidLineWidth (2);
-    ui->TEMintStatus->setPlainText(tr("Mint Status: Okay"));
+    //ui->TEMintStatus->setPlainText(tr("Mint Status: Okay"));
+    ui->TEMintStatus->setPlainText(tr("Zerocoin Protocol is disabled, you can only spend mints. Please convert all zZNZ to ZNZ!"));
 
     // Coin Control signals
     connect(ui->pushButtonCoinControl, SIGNAL(clicked()), this, SLOT(coinControlButtonClicked()));
@@ -161,12 +162,12 @@ void PrivacyDialog::on_pushButtonMintzZNZ_clicked()
     if (!walletModel || !walletModel->getOptionsModel())
         return;
 
-    if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE)) {
+    //if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE)) {
         QMessageBox::information(this, tr("Mint Zerocoin"),
                                  tr("zZNZ is currently undergoing maintenance."), QMessageBox::Ok,
                                  QMessageBox::Ok);
         return;
-    }
+    //}
 
     // Reset message text
     ui->TEMintStatus->setPlainText(tr("Mint Status: Okay"));
@@ -288,7 +289,7 @@ void PrivacyDialog::on_pushButtonSpendzZNZ_clicked()
             // Unlock wallet was cancelled
             return;
         }
-        // Wallet is unlocked now, sedn zZNZ
+        // Wallet is unlocked now, send zZNZ
         sendzZNZ();
         return;
     }

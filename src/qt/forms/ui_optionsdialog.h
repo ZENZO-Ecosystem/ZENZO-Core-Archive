@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'optionsdialog.ui'
 **
-** Created by: Qt User Interface Compiler version 5.5.1
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -51,10 +51,6 @@ public:
     QSpinBox *threadsScriptVerif;
     QSpacerItem *horizontalSpacer_3_Main;
     QSpacerItem *verticalSpacer_2;
-    QCheckBox *checkBoxZeromintEnable;
-    QHBoxLayout *horizontalLayout_3;
-    QLabel *percentage_label;
-    QSpinBox *zeromintPercentage;
     QHBoxLayout *horizontalLayout;
     QLabel *labelPreferredDenom;
     QComboBox *preferredDenom;
@@ -92,18 +88,21 @@ public:
     QLabel *langLabel;
     QValueComboBox *lang;
     QLabel *label_3;
-    QHBoxLayout *horizontalLayout_4_Display;
+    QHBoxLayout *horizontalLayout_2_Display;
     QLabel *themeLabel;
     QValueComboBox *theme;
     QFrame *line;
-    QHBoxLayout *horizontalLayout_2_Display;
+    QHBoxLayout *horizontalLayout_3_Display;
     QLabel *unitLabel;
     QValueComboBox *unit;
-    QHBoxLayout *horizontalLayout_5_Display;
+    QHBoxLayout *horizontalLayout_4_Display;
     QLabel *digitsLabel;
     QValueComboBox *digits;
+    QHBoxLayout *horizontalLayout_5_Display;
     QCheckBox *checkBoxHideZeroBalances;
-    QHBoxLayout *horizontalLayout_3_Display;
+    QCheckBox *checkBoxHideOrphans;
+    QSpacerItem *horizontalSpacer;
+    QHBoxLayout *horizontalLayout_3_Display1;
     QLabel *thirdPartyTxUrlsLabel;
     QLineEdit *thirdPartyTxUrls;
     QSpacerItem *verticalSpacer;
@@ -189,29 +188,6 @@ public:
         verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout_Main->addItem(verticalSpacer_2);
-
-        checkBoxZeromintEnable = new QCheckBox(tabMain);
-        checkBoxZeromintEnable->setObjectName(QStringLiteral("checkBoxZeromintEnable"));
-        checkBoxZeromintEnable->setLayoutDirection(Qt::LeftToRight);
-
-        verticalLayout_Main->addWidget(checkBoxZeromintEnable);
-
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        percentage_label = new QLabel(tabMain);
-        percentage_label->setObjectName(QStringLiteral("percentage_label"));
-
-        horizontalLayout_3->addWidget(percentage_label);
-
-        zeromintPercentage = new QSpinBox(tabMain);
-        zeromintPercentage->setObjectName(QStringLiteral("zeromintPercentage"));
-        zeromintPercentage->setMinimum(1);
-        zeromintPercentage->setMaximum(100);
-
-        horizontalLayout_3->addWidget(zeromintPercentage);
-
-
-        verticalLayout_Main->addLayout(horizontalLayout_3);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
@@ -400,20 +376,20 @@ public:
 
         verticalLayout_Display->addWidget(label_3);
 
-        horizontalLayout_4_Display = new QHBoxLayout();
-        horizontalLayout_4_Display->setObjectName(QStringLiteral("horizontalLayout_4_Display"));
+        horizontalLayout_2_Display = new QHBoxLayout();
+        horizontalLayout_2_Display->setObjectName(QStringLiteral("horizontalLayout_2_Display"));
         themeLabel = new QLabel(tabDisplay);
         themeLabel->setObjectName(QStringLiteral("themeLabel"));
 
-        horizontalLayout_4_Display->addWidget(themeLabel);
+        horizontalLayout_2_Display->addWidget(themeLabel);
 
         theme = new QValueComboBox(tabDisplay);
         theme->setObjectName(QStringLiteral("theme"));
 
-        horizontalLayout_4_Display->addWidget(theme);
+        horizontalLayout_2_Display->addWidget(theme);
 
 
-        verticalLayout_Display->addLayout(horizontalLayout_4_Display);
+        verticalLayout_Display->addLayout(horizontalLayout_2_Display);
 
         line = new QFrame(tabDisplay);
         line->setObjectName(QStringLiteral("line"));
@@ -422,57 +398,71 @@ public:
 
         verticalLayout_Display->addWidget(line);
 
-        horizontalLayout_2_Display = new QHBoxLayout();
-        horizontalLayout_2_Display->setObjectName(QStringLiteral("horizontalLayout_2_Display"));
+        horizontalLayout_3_Display = new QHBoxLayout();
+        horizontalLayout_3_Display->setObjectName(QStringLiteral("horizontalLayout_3_Display"));
         unitLabel = new QLabel(tabDisplay);
         unitLabel->setObjectName(QStringLiteral("unitLabel"));
         unitLabel->setTextFormat(Qt::PlainText);
 
-        horizontalLayout_2_Display->addWidget(unitLabel);
+        horizontalLayout_3_Display->addWidget(unitLabel);
 
         unit = new QValueComboBox(tabDisplay);
         unit->setObjectName(QStringLiteral("unit"));
 
-        horizontalLayout_2_Display->addWidget(unit);
+        horizontalLayout_3_Display->addWidget(unit);
 
 
-        verticalLayout_Display->addLayout(horizontalLayout_2_Display);
+        verticalLayout_Display->addLayout(horizontalLayout_3_Display);
 
-        horizontalLayout_5_Display = new QHBoxLayout();
-        horizontalLayout_5_Display->setObjectName(QStringLiteral("horizontalLayout_5_Display"));
+        horizontalLayout_4_Display = new QHBoxLayout();
+        horizontalLayout_4_Display->setObjectName(QStringLiteral("horizontalLayout_4_Display"));
         digitsLabel = new QLabel(tabDisplay);
         digitsLabel->setObjectName(QStringLiteral("digitsLabel"));
 
-        horizontalLayout_5_Display->addWidget(digitsLabel);
+        horizontalLayout_4_Display->addWidget(digitsLabel);
 
         digits = new QValueComboBox(tabDisplay);
         digits->setObjectName(QStringLiteral("digits"));
 
-        horizontalLayout_5_Display->addWidget(digits);
+        horizontalLayout_4_Display->addWidget(digits);
 
 
-        verticalLayout_Display->addLayout(horizontalLayout_5_Display);
+        verticalLayout_Display->addLayout(horizontalLayout_4_Display);
 
+        horizontalLayout_5_Display = new QHBoxLayout();
+        horizontalLayout_5_Display->setObjectName(QStringLiteral("horizontalLayout_5_Display"));
         checkBoxHideZeroBalances = new QCheckBox(tabDisplay);
         checkBoxHideZeroBalances->setObjectName(QStringLiteral("checkBoxHideZeroBalances"));
         checkBoxHideZeroBalances->setLayoutDirection(Qt::LeftToRight);
 
-        verticalLayout_Display->addWidget(checkBoxHideZeroBalances);
+        horizontalLayout_5_Display->addWidget(checkBoxHideZeroBalances);
 
-        horizontalLayout_3_Display = new QHBoxLayout();
-        horizontalLayout_3_Display->setObjectName(QStringLiteral("horizontalLayout_3_Display"));
+        checkBoxHideOrphans = new QCheckBox(tabDisplay);
+        checkBoxHideOrphans->setObjectName(QStringLiteral("checkBoxHideOrphans"));
+
+        horizontalLayout_5_Display->addWidget(checkBoxHideOrphans);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_5_Display->addItem(horizontalSpacer);
+
+
+        verticalLayout_Display->addLayout(horizontalLayout_5_Display);
+
+        horizontalLayout_3_Display1 = new QHBoxLayout();
+        horizontalLayout_3_Display1->setObjectName(QStringLiteral("horizontalLayout_3_Display1"));
         thirdPartyTxUrlsLabel = new QLabel(tabDisplay);
         thirdPartyTxUrlsLabel->setObjectName(QStringLiteral("thirdPartyTxUrlsLabel"));
 
-        horizontalLayout_3_Display->addWidget(thirdPartyTxUrlsLabel);
+        horizontalLayout_3_Display1->addWidget(thirdPartyTxUrlsLabel);
 
         thirdPartyTxUrls = new QLineEdit(tabDisplay);
         thirdPartyTxUrls->setObjectName(QStringLiteral("thirdPartyTxUrls"));
 
-        horizontalLayout_3_Display->addWidget(thirdPartyTxUrls);
+        horizontalLayout_3_Display1->addWidget(thirdPartyTxUrls);
 
 
-        verticalLayout_Display->addLayout(horizontalLayout_3_Display);
+        verticalLayout_Display->addLayout(horizontalLayout_3_Display1);
 
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
@@ -575,111 +565,105 @@ public:
 
     void retranslateUi(QDialog *OptionsDialog)
     {
-        OptionsDialog->setWindowTitle(QApplication::translate("OptionsDialog", "Options", 0));
+        OptionsDialog->setWindowTitle(QApplication::translate("OptionsDialog", "Options", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        bitcoinAtStartup->setToolTip(QApplication::translate("OptionsDialog", "Automatically start ZENZO after logging in to the system.", 0));
+        bitcoinAtStartup->setToolTip(QApplication::translate("OptionsDialog", "Automatically start ZENZO after logging in to the system.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        bitcoinAtStartup->setText(QApplication::translate("OptionsDialog", "&Start ZENZO on system login", 0));
-        databaseCacheLabel->setText(QApplication::translate("OptionsDialog", "Size of &database cache", 0));
-        databaseCacheUnitLabel->setText(QApplication::translate("OptionsDialog", "MB", 0));
-        threadsScriptVerifLabel->setText(QApplication::translate("OptionsDialog", "Number of script &verification threads", 0));
+        bitcoinAtStartup->setText(QApplication::translate("OptionsDialog", "&Start ZENZO on system login", Q_NULLPTR));
+        databaseCacheLabel->setText(QApplication::translate("OptionsDialog", "Size of &database cache", Q_NULLPTR));
+        databaseCacheUnitLabel->setText(QApplication::translate("OptionsDialog", "MB", Q_NULLPTR));
+        threadsScriptVerifLabel->setText(QApplication::translate("OptionsDialog", "Number of script &verification threads", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        threadsScriptVerif->setToolTip(QApplication::translate("OptionsDialog", "(0 = auto, <0 = leave that many cores free)", 0));
+        threadsScriptVerif->setToolTip(QApplication::translate("OptionsDialog", "(0 = auto, <0 = leave that many cores free)", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
 #ifndef QT_NO_TOOLTIP
-        checkBoxZeromintEnable->setToolTip(QApplication::translate("OptionsDialog", "Enable automatic minting of ZNZ units to zZNZ", 0));
+        labelPreferredDenom->setToolTip(QApplication::translate("OptionsDialog", "Wait with automatic conversion to Zerocoin until enough ZNZ for this denomination is available", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        checkBoxZeromintEnable->setText(QApplication::translate("OptionsDialog", "Enable zZNZ Automint", 0));
+        labelPreferredDenom->setText(QApplication::translate("OptionsDialog", "Preferred Automint zZNZ Denomination", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        percentage_label->setToolTip(QApplication::translate("OptionsDialog", "Percentage of incoming ZNZ which get automatically converted to zZNZ via Zerocoin Protocol (min: 10%)", 0));
+        preferredDenom->setToolTip(QApplication::translate("OptionsDialog", "Wait with automatic conversion to Zerocoin until enough ZNZ for this denomination is available", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        percentage_label->setText(QApplication::translate("OptionsDialog", "Percentage of autominted zZNZ", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tabMain), QApplication::translate("OptionsDialog", "&Main", Q_NULLPTR));
+        labelStakeSplitThresholdText->setText(QApplication::translate("OptionsDialog", "Stake split threshold:", Q_NULLPTR));
+        groupBox->setTitle(QApplication::translate("OptionsDialog", "Expert", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        labelPreferredDenom->setToolTip(QApplication::translate("OptionsDialog", "Wait with automatic conversion to Zerocoin until enough ZNZ for this denomination is available", 0));
+        coinControlFeatures->setToolTip(QApplication::translate("OptionsDialog", "Whether to show coin control features or not.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        labelPreferredDenom->setText(QApplication::translate("OptionsDialog", "Preferred Automint zZNZ Denomination", 0));
+        coinControlFeatures->setText(QApplication::translate("OptionsDialog", "Enable coin &control features", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        preferredDenom->setToolTip(QApplication::translate("OptionsDialog", "Wait with automatic conversion to Zerocoin until enough ZNZ for this denomination is available", 0));
+        showMasternodesTab->setToolTip(QApplication::translate("OptionsDialog", "Show additional tab listing all your masternodes in first sub-tab<br/>and all masternodes on the network in second sub-tab.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        tabWidget->setTabText(tabWidget->indexOf(tabMain), QApplication::translate("OptionsDialog", "&Main", 0));
-        labelStakeSplitThresholdText->setText(QApplication::translate("OptionsDialog", "Stake split threshold:", 0));
-        groupBox->setTitle(QApplication::translate("OptionsDialog", "Expert", 0));
+        showMasternodesTab->setText(QApplication::translate("OptionsDialog", "Show Masternodes Tab", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        coinControlFeatures->setToolTip(QApplication::translate("OptionsDialog", "Whether to show coin control features or not.", 0));
+        spendZeroConfChange->setToolTip(QApplication::translate("OptionsDialog", "If you disable the spending of unconfirmed change, the change from a transaction<br/>cannot be used until that transaction has at least one confirmation.<br/>This also affects how your balance is computed.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        coinControlFeatures->setText(QApplication::translate("OptionsDialog", "Enable coin &control features", 0));
+        spendZeroConfChange->setText(QApplication::translate("OptionsDialog", "&Spend unconfirmed change", Q_NULLPTR));
+        tabWidget->setTabText(tabWidget->indexOf(tabWallet), QApplication::translate("OptionsDialog", "W&allet", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        showMasternodesTab->setToolTip(QApplication::translate("OptionsDialog", "Show additional tab listing all your masternodes in first sub-tab<br/>and all masternodes on the network in second sub-tab.", 0));
+        mapPortUpnp->setToolTip(QApplication::translate("OptionsDialog", "Automatically open the ZENZO client port on the router. This only works when your router supports UPnP and it is enabled.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        showMasternodesTab->setText(QApplication::translate("OptionsDialog", "Show Masternodes Tab", 0));
+        mapPortUpnp->setText(QApplication::translate("OptionsDialog", "Map port using &UPnP", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        spendZeroConfChange->setToolTip(QApplication::translate("OptionsDialog", "If you disable the spending of unconfirmed change, the change from a transaction<br/>cannot be used until that transaction has at least one confirmation.<br/>This also affects how your balance is computed.", 0));
+        allowIncoming->setToolTip(QApplication::translate("OptionsDialog", "Accept connections from outside", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        spendZeroConfChange->setText(QApplication::translate("OptionsDialog", "&Spend unconfirmed change", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tabWallet), QApplication::translate("OptionsDialog", "W&allet", 0));
+        allowIncoming->setText(QApplication::translate("OptionsDialog", "Allow incoming connections", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        mapPortUpnp->setToolTip(QApplication::translate("OptionsDialog", "Automatically open the ZENZO client port on the router. This only works when your router supports UPnP and it is enabled.", 0));
+        connectSocks->setToolTip(QApplication::translate("OptionsDialog", "Connect to the ZENZO network through a SOCKS5 proxy.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        mapPortUpnp->setText(QApplication::translate("OptionsDialog", "Map port using &UPnP", 0));
+        connectSocks->setText(QApplication::translate("OptionsDialog", "&Connect through SOCKS5 proxy (default proxy):", Q_NULLPTR));
+        proxyIpLabel->setText(QApplication::translate("OptionsDialog", "Proxy &IP:", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        allowIncoming->setToolTip(QApplication::translate("OptionsDialog", "Accept connections from outside", 0));
+        proxyIp->setToolTip(QApplication::translate("OptionsDialog", "IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        allowIncoming->setText(QApplication::translate("OptionsDialog", "Allow incoming connections", 0));
+        proxyPortLabel->setText(QApplication::translate("OptionsDialog", "&Port:", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        connectSocks->setToolTip(QApplication::translate("OptionsDialog", "Connect to the ZENZO network through a SOCKS5 proxy.", 0));
+        proxyPort->setToolTip(QApplication::translate("OptionsDialog", "Port of the proxy (e.g. 9050)", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        connectSocks->setText(QApplication::translate("OptionsDialog", "&Connect through SOCKS5 proxy (default proxy):", 0));
-        proxyIpLabel->setText(QApplication::translate("OptionsDialog", "Proxy &IP:", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tabNetwork), QApplication::translate("OptionsDialog", "&Network", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        proxyIp->setToolTip(QApplication::translate("OptionsDialog", "IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)", 0));
+        minimizeToTray->setToolTip(QApplication::translate("OptionsDialog", "Show only a tray icon after minimizing the window.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        proxyPortLabel->setText(QApplication::translate("OptionsDialog", "&Port:", 0));
+        minimizeToTray->setText(QApplication::translate("OptionsDialog", "&Minimize to the tray instead of the taskbar", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        proxyPort->setToolTip(QApplication::translate("OptionsDialog", "Port of the proxy (e.g. 9050)", 0));
+        minimizeOnClose->setToolTip(QApplication::translate("OptionsDialog", "Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        tabWidget->setTabText(tabWidget->indexOf(tabNetwork), QApplication::translate("OptionsDialog", "&Network", 0));
+        minimizeOnClose->setText(QApplication::translate("OptionsDialog", "M&inimize on close", Q_NULLPTR));
+        tabWidget->setTabText(tabWidget->indexOf(tabWindow), QApplication::translate("OptionsDialog", "&Window", Q_NULLPTR));
+        langLabel->setText(QApplication::translate("OptionsDialog", "User Interface &language:", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        minimizeToTray->setToolTip(QApplication::translate("OptionsDialog", "Show only a tray icon after minimizing the window.", 0));
+        lang->setToolTip(QApplication::translate("OptionsDialog", "The user interface language can be set here. This setting will take effect after restarting ZENZO.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        minimizeToTray->setText(QApplication::translate("OptionsDialog", "&Minimize to the tray instead of the taskbar", 0));
+        themeLabel->setText(QApplication::translate("OptionsDialog", "User Interface Theme:", Q_NULLPTR));
+        unitLabel->setText(QApplication::translate("OptionsDialog", "&Unit to show amounts in:", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        minimizeOnClose->setToolTip(QApplication::translate("OptionsDialog", "Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.", 0));
+        unit->setToolTip(QApplication::translate("OptionsDialog", "Choose the default subdivision unit to show in the interface and when sending coins.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        minimizeOnClose->setText(QApplication::translate("OptionsDialog", "M&inimize on close", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tabWindow), QApplication::translate("OptionsDialog", "&Window", 0));
-        langLabel->setText(QApplication::translate("OptionsDialog", "User Interface &language:", 0));
+        digitsLabel->setText(QApplication::translate("OptionsDialog", "Decimal digits", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        lang->setToolTip(QApplication::translate("OptionsDialog", "The user interface language can be set here. This setting will take effect after restarting ZENZO.", 0));
+        checkBoxHideZeroBalances->setToolTip(QApplication::translate("OptionsDialog", "Hide empty balances", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        label_3->setText(QApplication::translate("OptionsDialog", "Language missing or translation incomplete? Help contributing translations here:\n"
-"https://www.transifex.com/pivx-project/pivx-project-translations", 0));
-        themeLabel->setText(QApplication::translate("OptionsDialog", "User Interface Theme:", 0));
-        unitLabel->setText(QApplication::translate("OptionsDialog", "&Unit to show amounts in:", 0));
+        checkBoxHideZeroBalances->setText(QApplication::translate("OptionsDialog", "Hide empty balances", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        unit->setToolTip(QApplication::translate("OptionsDialog", "Choose the default subdivision unit to show in the interface and when sending coins.", 0));
+        checkBoxHideOrphans->setToolTip(QApplication::translate("OptionsDialog", "Hide orphan stakes in transaction lists", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        digitsLabel->setText(QApplication::translate("OptionsDialog", "Decimal digits", 0));
+        checkBoxHideOrphans->setText(QApplication::translate("OptionsDialog", "Hide orphan stakes", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        checkBoxHideZeroBalances->setToolTip(QApplication::translate("OptionsDialog", "Hide empty balances", 0));
+        thirdPartyTxUrlsLabel->setToolTip(QApplication::translate("OptionsDialog", "Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        checkBoxHideZeroBalances->setText(QApplication::translate("OptionsDialog", "Hide empty balances", 0));
+        thirdPartyTxUrlsLabel->setText(QApplication::translate("OptionsDialog", "Third party transaction URLs", Q_NULLPTR));
 #ifndef QT_NO_TOOLTIP
-        thirdPartyTxUrlsLabel->setToolTip(QApplication::translate("OptionsDialog", "Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.", 0));
+        thirdPartyTxUrls->setToolTip(QApplication::translate("OptionsDialog", "Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        thirdPartyTxUrlsLabel->setText(QApplication::translate("OptionsDialog", "Third party transaction URLs", 0));
-#ifndef QT_NO_TOOLTIP
-        thirdPartyTxUrls->setToolTip(QApplication::translate("OptionsDialog", "Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.", 0));
-#endif // QT_NO_TOOLTIP
-        tabWidget->setTabText(tabWidget->indexOf(tabDisplay), QApplication::translate("OptionsDialog", "&Display", 0));
-        overriddenByCommandLineInfoLabel->setText(QApplication::translate("OptionsDialog", "Active command-line options that override above options:", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tabDisplay), QApplication::translate("OptionsDialog", "&Display", Q_NULLPTR));
+        overriddenByCommandLineInfoLabel->setText(QApplication::translate("OptionsDialog", "Active command-line options that override above options:", Q_NULLPTR));
         overriddenByCommandLineLabel->setText(QString());
 #ifndef QT_NO_TOOLTIP
-        resetButton->setToolTip(QApplication::translate("OptionsDialog", "Reset all client options to default.", 0));
+        resetButton->setToolTip(QApplication::translate("OptionsDialog", "Reset all client options to default.", Q_NULLPTR));
 #endif // QT_NO_TOOLTIP
-        resetButton->setText(QApplication::translate("OptionsDialog", "&Reset Options", 0));
+        resetButton->setText(QApplication::translate("OptionsDialog", "&Reset Options", Q_NULLPTR));
         statusLabel->setText(QString());
-        okButton->setText(QApplication::translate("OptionsDialog", "&OK", 0));
-        cancelButton->setText(QApplication::translate("OptionsDialog", "&Cancel", 0));
+        okButton->setText(QApplication::translate("OptionsDialog", "&OK", Q_NULLPTR));
+        cancelButton->setText(QApplication::translate("OptionsDialog", "&Cancel", Q_NULLPTR));
     } // retranslateUi
 
 };

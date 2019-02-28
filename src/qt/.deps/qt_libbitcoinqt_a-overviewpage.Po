@@ -278,6 +278,21 @@ qt/qt_libbitcoinqt_a-overviewpage.o: qt/overviewpage.cpp \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h qt/clientmodel.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h qt/guiconstants.h \
+ qt/bitcoingui.h config/zenzo-config.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMenu \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmenu.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QPoint \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qpoint.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPushButton \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qpushbutton.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractbutton.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QSystemTrayIcon \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsystemtrayicon.h \
  qt/guiutil.h /usr/include/x86_64-linux-gnu/qt5/QtCore/QEvent \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QHeaderView \
@@ -2105,6 +2120,38 @@ qt/clientmodel.h:
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h:
 
 qt/guiconstants.h:
+
+qt/bitcoingui.h:
+
+config/zenzo-config.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/QMap:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMenu:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmenu.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/QPoint:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qpoint.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPushButton:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qpushbutton.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractbutton.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QSystemTrayIcon:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsystemtrayicon.h:
 
 qt/guiutil.h:
 

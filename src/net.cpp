@@ -18,7 +18,9 @@
 #include "obfuscation.h"
 #include "primitives/transaction.h"
 #include "ui_interface.h"
+#ifdef ENABLE_WALLET
 #include "wallet.h"
+#endif
 
 #ifdef WIN32
 #include <string.h>
@@ -1424,6 +1426,7 @@ void ThreadMessageHandler()
     }
 }
 
+#ifdef ENABLE_WALLET
 // ppcoin: stake minter thread
 void static ThreadStakeMinter()
 {
@@ -1440,6 +1443,7 @@ void static ThreadStakeMinter()
     }
     LogPrintf("ThreadStakeMinter exiting,\n");
 }
+#endif
 
 bool BindListenPort(const CService& addrBind, string& strError, bool fWhitelisted)
 {
@@ -1574,7 +1578,7 @@ void static Discover(boost::thread_group& threadGroup)
 
 void StartNode(boost::thread_group& threadGroup)
 {
-    uiInterface.InitMessage(_("Loading addresses..."));
+    uiInterface.InitMessage(_("Loading addresses...\n"));
     // Load addresses for peers.dat
     int64_t nStart = GetTimeMillis();
     {
@@ -1624,9 +1628,11 @@ void StartNode(boost::thread_group& threadGroup)
     // Dump network addresses
     threadGroup.create_thread(boost::bind(&LoopForever<void (*)()>, "dumpaddr", &DumpAddresses, DUMP_ADDRESSES_INTERVAL * 1000));
 
+  #ifdef ENABLE_WALLET
     // ppcoin:mint proof-of-stake blocks in the background
-    if (GetBoolArg("-staking", true))
+    if (GetBoolArg("-staking", true) && pwalletMain)
         threadGroup.create_thread(boost::bind(&TraceThread<void (*)()>, "stakemint", &ThreadStakeMinter));
+  #endif
 }
 
 bool StopNode()

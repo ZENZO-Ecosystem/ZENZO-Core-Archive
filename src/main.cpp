@@ -2150,18 +2150,18 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
         if (nHeight < 200)
             return 0;
     }
-	
+
 	// 65% for Masternodes
 	if (nHeight <= 100 && nHeight >= 0) {
 	    ret = blockValue  / 100 * 0;
 	} else {
 		ret = blockValue  / 100 * 65;
-		
+
 	}
-	
+
     return ret;
 }
-	
+
 bool IsInitialBlockDownload()
 {
     LOCK(cs_main);
@@ -3099,9 +3099,11 @@ void static UpdateTip(CBlockIndex* pindexNew)
 {
     chainActive.SetTip(pindexNew);
 
+  #ifdef ENABLE_WALLET
     // If turned on AutoZeromint will automatically convert ZNZ to zZNZ
-    if (pwalletMain->isZeromintEnabled ())
+    if (pwalletMain && pwalletMain->isZeromintEnabled ())
         pwalletMain->AutoZeromint ();
+  #endif
 
     // New best block
     nTimeBestReceived = GetTime();

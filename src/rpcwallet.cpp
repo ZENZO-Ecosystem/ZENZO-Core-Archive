@@ -1895,9 +1895,9 @@ Value settxfee(const Array& params, bool fHelp)
 
     // Amount
     CAmount nAmount = 0;
-    if (params[0].get_real() != 0.0)
+    if (params[0].get_real() != 0.0) {
         nAmount = AmountFromValue(params[0]); // rejects 0.0 amounts
-
+    } else throw runtime_error("Invalid parameter. The TX Fee must be a value larger than 0");
     payTxFee = CFeeRate(nAmount, 1000);
     return true;
 }
@@ -2321,23 +2321,23 @@ Value getzerocoinbalance(const Array& params, bool fHelp)
 }
 Value listmintedzerocoins(const Array& params, bool fHelp)
 {
-    
+
     if (fHelp || params.size() != 0)
         throw runtime_error(
                             "listmintedzerocoins\n"
                             + HelpRequiringPassphrase());
-    
+
     if (pwalletMain->IsLocked())
         throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet passphrase with walletpassphrase first.");
-    
+
     CWalletDB walletdb(pwalletMain->strWalletFile);
     list<CZerocoinMint> listPubCoin = walletdb.ListMintedCoins(true, false, true);
-    
+
     Array jsonList;
     for (const CZerocoinMint& pubCoinItem : listPubCoin) {
         jsonList.push_back(pubCoinItem.GetValue().GetHex());
     }
-    
+
     return jsonList;
 }
 
@@ -2354,7 +2354,7 @@ Value listzerocoinamounts(const Array& params, bool fHelp)
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
     list<CZerocoinMint> listPubCoin = walletdb.ListMintedCoins(true, true, true);
- 
+
     std::map<libzerocoin::CoinDenomination, CAmount> spread;
     for (const auto& denom : libzerocoin::zerocoinDenomList)
         spread.insert(std::pair<libzerocoin::CoinDenomination, CAmount>(denom, 0));
@@ -2431,7 +2431,7 @@ Value mintzerocoin(const Array& params, bool fHelp)
         m.push_back(Pair("time", GetTimeMillis() - nTime));
         arrMints.push_back(m);
     }
-    
+
     return arrMints;
 }
 

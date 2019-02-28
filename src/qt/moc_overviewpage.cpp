@@ -18,8 +18,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_OverviewPage_t {
-    QByteArrayData data[21];
-    char stringdata0[326];
+    QByteArrayData data[23];
+    char stringdata0[344];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -43,12 +43,14 @@ QT_MOC_LITERAL(11, 144, 23), // "immatureZerocoinBalance"
 QT_MOC_LITERAL(12, 168, 16), // "watchOnlyBalance"
 QT_MOC_LITERAL(13, 185, 18), // "watchUnconfBalance"
 QT_MOC_LITERAL(14, 204, 20), // "watchImmatureBalance"
-QT_MOC_LITERAL(15, 225, 17), // "updateDisplayUnit"
-QT_MOC_LITERAL(16, 243, 24), // "handleTransactionClicked"
-QT_MOC_LITERAL(17, 268, 12), // "updateAlerts"
-QT_MOC_LITERAL(18, 281, 8), // "warnings"
-QT_MOC_LITERAL(19, 290, 21), // "updateWatchOnlyLabels"
-QT_MOC_LITERAL(20, 312, 13) // "showWatchOnly"
+QT_MOC_LITERAL(15, 225, 11), // "hideOrphans"
+QT_MOC_LITERAL(16, 237, 5), // "fHide"
+QT_MOC_LITERAL(17, 243, 17), // "updateDisplayUnit"
+QT_MOC_LITERAL(18, 261, 24), // "handleTransactionClicked"
+QT_MOC_LITERAL(19, 286, 12), // "updateAlerts"
+QT_MOC_LITERAL(20, 299, 8), // "warnings"
+QT_MOC_LITERAL(21, 308, 21), // "updateWatchOnlyLabels"
+QT_MOC_LITERAL(22, 330, 13) // "showWatchOnly"
 
     },
     "OverviewPage\0transactionClicked\0\0index\0"
@@ -57,8 +59,9 @@ QT_MOC_LITERAL(20, 312, 13) // "showWatchOnly"
     "zerocoinBalance\0unconfirmedZerocoinBalance\0"
     "immatureZerocoinBalance\0watchOnlyBalance\0"
     "watchUnconfBalance\0watchImmatureBalance\0"
-    "updateDisplayUnit\0handleTransactionClicked\0"
-    "updateAlerts\0warnings\0updateWatchOnlyLabels\0"
+    "hideOrphans\0fHide\0updateDisplayUnit\0"
+    "handleTransactionClicked\0updateAlerts\0"
+    "warnings\0updateWatchOnlyLabels\0"
     "showWatchOnly"
 };
 #undef QT_MOC_LITERAL
@@ -69,7 +72,7 @@ static const uint qt_meta_data_OverviewPage[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -77,24 +80,26 @@ static const uint qt_meta_data_OverviewPage[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   44,    2, 0x06 /* Public */,
+       1,    1,   49,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    9,   47,    2, 0x0a /* Public */,
-      15,    0,   66,    2, 0x08 /* Private */,
-      16,    1,   67,    2, 0x08 /* Private */,
-      17,    1,   70,    2, 0x08 /* Private */,
-      19,    1,   73,    2, 0x08 /* Private */,
+       4,    9,   52,    2, 0x0a /* Public */,
+      15,    1,   71,    2, 0x0a /* Public */,
+      17,    0,   74,    2, 0x08 /* Private */,
+      18,    1,   75,    2, 0x08 /* Private */,
+      19,    1,   78,    2, 0x08 /* Private */,
+      21,    1,   81,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QModelIndex,    3,
 
  // slots: parameters
     QMetaType::Void, 0x80000000 | 5, 0x80000000 | 5, 0x80000000 | 5, 0x80000000 | 5, 0x80000000 | 5, 0x80000000 | 5, 0x80000000 | 5, 0x80000000 | 5, 0x80000000 | 5,    6,    7,    8,    9,   10,   11,   12,   13,   14,
+    QMetaType::Void, QMetaType::Bool,   16,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QModelIndex,    3,
-    QMetaType::Void, QMetaType::QString,   18,
-    QMetaType::Void, QMetaType::Bool,   20,
+    QMetaType::Void, QMetaType::QString,   20,
+    QMetaType::Void, QMetaType::Bool,   22,
 
        0        // eod
 };
@@ -107,10 +112,11 @@ void OverviewPage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         switch (_id) {
         case 0: _t->transactionClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
         case 1: _t->setBalance((*reinterpret_cast< const CAmount(*)>(_a[1])),(*reinterpret_cast< const CAmount(*)>(_a[2])),(*reinterpret_cast< const CAmount(*)>(_a[3])),(*reinterpret_cast< const CAmount(*)>(_a[4])),(*reinterpret_cast< const CAmount(*)>(_a[5])),(*reinterpret_cast< const CAmount(*)>(_a[6])),(*reinterpret_cast< const CAmount(*)>(_a[7])),(*reinterpret_cast< const CAmount(*)>(_a[8])),(*reinterpret_cast< const CAmount(*)>(_a[9]))); break;
-        case 2: _t->updateDisplayUnit(); break;
-        case 3: _t->handleTransactionClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
-        case 4: _t->updateAlerts((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 5: _t->updateWatchOnlyLabels((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 2: _t->hideOrphans((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 3: _t->updateDisplayUnit(); break;
+        case 4: _t->handleTransactionClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
+        case 5: _t->updateAlerts((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 6: _t->updateWatchOnlyLabels((*reinterpret_cast< bool(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -151,13 +157,13 @@ int OverviewPage::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 7;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 7)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 6;
+        _id -= 7;
     }
     return _id;
 }
