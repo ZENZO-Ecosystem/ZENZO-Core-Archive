@@ -14,7 +14,7 @@ hostname = debian
 uname -m = x86_64
 uname -r = 4.9.0-8-amd64
 uname -s = Linux
-uname -v = #1 SMP Debian 4.9.130-2 (2018-10-27)
+uname -v = #1 SMP Debian 4.9.144-3.1 (2019-02-19)
 
 /usr/bin/uname -p = unknown
 /bin/uname -X     = unknown

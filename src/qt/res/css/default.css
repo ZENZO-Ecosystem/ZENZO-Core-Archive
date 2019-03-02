@@ -900,7 +900,7 @@ background-color:#ffffff;
 
 QLabel#labelOverviewHeaderRight {
 qproperty-alignment: 'AlignVCenter | AlignRight';
-background-image: url(':/images/zenzo_logo_horizontal');
+/* background-image: url(':/images/zenzo_logo_horizontal'); */
 background-repeat: no-repeat;
 }
 

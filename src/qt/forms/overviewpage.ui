@@ -803,7 +803,7 @@
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_7">
                      <item>
-                      <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="0,0,0">
+                      <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="0,0">
                        <item>
                         <widget class="QLabel" name="label_5z_3">
                          <property name="minimumSize">

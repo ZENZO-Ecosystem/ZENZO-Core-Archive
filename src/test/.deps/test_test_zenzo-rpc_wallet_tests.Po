@@ -782,19 +782,17 @@ test/test_test_zenzo-rpc_wallet_tests.o: test/rpc_wallet_tests.cpp \
  /usr/include/openssl/buffer.h /usr/include/openssl/evp.h \
  /usr/include/openssl/objects.h /usr/include/openssl/obj_mac.h \
  /usr/include/openssl/asn1.h /usr/include/openssl/bn.h \
- /usr/include/openssl/ec.h /usr/include/openssl/ecdsa.h \
- /usr/include/openssl/ecdh.h /usr/include/openssl/rsa.h \
+ /usr/include/openssl/ec.h /usr/include/openssl/rsa.h \
  /usr/include/openssl/dsa.h /usr/include/openssl/dh.h \
  /usr/include/openssl/sha.h /usr/include/openssl/x509_vfy.h \
  /usr/include/openssl/pkcs7.h /usr/include/openssl/pem.h \
  /usr/include/openssl/pem2.h /usr/include/openssl/hmac.h \
- /usr/include/openssl/kssl.h /usr/include/openssl/ssl2.h \
- /usr/include/openssl/ssl3.h /usr/include/openssl/tls1.h \
- /usr/include/openssl/dtls1.h /usr/include/openssl/pqueue.h \
- /usr/include/openssl/ssl23.h /usr/include/openssl/srtp.h \
- /usr/include/openssl/engine.h /usr/include/openssl/rand.h \
- /usr/include/openssl/ui.h /usr/include/openssl/err.h \
- /usr/include/openssl/x509v3.h \
+ /usr/include/openssl/async.h /usr/include/openssl/ct.h \
+ /usr/include/openssl/ssl2.h /usr/include/openssl/ssl3.h \
+ /usr/include/openssl/tls1.h /usr/include/openssl/dtls1.h \
+ /usr/include/openssl/srtp.h /usr/include/openssl/engine.h \
+ /usr/include/openssl/rand.h /usr/include/openssl/ui.h \
+ /usr/include/openssl/err.h /usr/include/openssl/x509v3.h \
  /usr/include/boost/asio/ssl/detail/openssl_init.hpp \
  /usr/include/boost/asio/ssl/detail/impl/openssl_init.ipp \
  /usr/include/boost/asio/ssl/detail/password_callback.hpp \
@@ -3593,10 +3591,6 @@ rpcprotocol.h:
 
 /usr/include/openssl/ec.h:
 
-/usr/include/openssl/ecdsa.h:
-
-/usr/include/openssl/ecdh.h:
-
 /usr/include/openssl/rsa.h:
 
 /usr/include/openssl/dsa.h:
@@ -3615,7 +3609,9 @@ rpcprotocol.h:
 
 /usr/include/openssl/hmac.h:
 
-/usr/include/openssl/kssl.h:
+/usr/include/openssl/async.h:
+
+/usr/include/openssl/ct.h:
 
 /usr/include/openssl/ssl2.h:
 
@@ -3624,10 +3620,6 @@ rpcprotocol.h:
 /usr/include/openssl/tls1.h:
 
 /usr/include/openssl/dtls1.h:
-
-/usr/include/openssl/pqueue.h:
-
-/usr/include/openssl/ssl23.h:
 
 /usr/include/openssl/srtp.h:
 

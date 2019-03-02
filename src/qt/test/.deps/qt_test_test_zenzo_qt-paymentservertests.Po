@@ -1332,7 +1332,6 @@ qt/test/qt_test_test_zenzo_qt-paymentservertests.o: \
  /usr/include/openssl/evp.h /usr/include/openssl/bio.h \
  /usr/include/openssl/objects.h /usr/include/openssl/obj_mac.h \
  /usr/include/openssl/asn1.h /usr/include/openssl/ec.h \
- /usr/include/openssl/ecdsa.h /usr/include/openssl/ecdh.h \
  /usr/include/openssl/rsa.h /usr/include/openssl/dsa.h \
  /usr/include/openssl/dh.h /usr/include/openssl/x509_vfy.h \
  /usr/include/openssl/lhash.h /usr/include/openssl/pkcs7.h \
@@ -4491,10 +4490,6 @@ utilstrencodings.h:
 /usr/include/openssl/asn1.h:
 
 /usr/include/openssl/ec.h:
-
-/usr/include/openssl/ecdsa.h:
-
-/usr/include/openssl/ecdh.h:
 
 /usr/include/openssl/rsa.h:
 

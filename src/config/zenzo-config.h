@@ -21,7 +21,7 @@
 #define CLIENT_VERSION_MINOR 1
 
 /* Build revision */
-#define CLIENT_VERSION_REVISION 0
+#define CLIENT_VERSION_REVISION 1
 
 /* Version is release */
 #define COPYRIGHT_YEAR 2019
@@ -271,7 +271,7 @@
 #define PACKAGE_NAME "Zenzo Core"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "Zenzo Core 1.1.0"
+#define PACKAGE_STRING "Zenzo Core 1.1.1"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "zenzo"
@@ -280,7 +280,7 @@
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "1.1.0"
+#define PACKAGE_VERSION "1.1.1"
 
 /* Define to necessary symbol if this constant uses a non-standard name on
    your system. */

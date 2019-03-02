@@ -111,6 +111,9 @@ libzerocoin/Accumulator.o: libzerocoin/Accumulator.cpp \
  /usr/include/c++/6/bits/stl_vector.h \
  /usr/include/c++/6/bits/stl_bvector.h /usr/include/c++/6/bits/vector.tcc \
  libzerocoin/Params.h libzerocoin/bignum.h /usr/include/openssl/bn.h \
+ /usr/include/openssl/e_os2.h \
+ /usr/include/x86_64-linux-gnu/openssl/opensslconf.h \
+ /usr/include/openssl/ossl_typ.h \
  /usr/lib/gcc/x86_64-linux-gnu/6/include-fixed/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/6/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
@@ -118,14 +121,11 @@ libzerocoin/Accumulator.o: libzerocoin/Accumulator.cpp \
  /usr/include/linux/limits.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
- /usr/include/openssl/e_os2.h \
- /usr/include/x86_64-linux-gnu/openssl/opensslconf.h \
- /usr/include/openssl/ossl_typ.h /usr/include/openssl/crypto.h \
- /usr/include/c++/6/stdlib.h /usr/include/openssl/stack.h \
- /usr/include/openssl/safestack.h /usr/include/openssl/opensslv.h \
- /usr/include/openssl/symhacks.h serialize.h /usr/include/c++/6/algorithm \
- /usr/include/c++/6/utility /usr/include/c++/6/bits/stl_relops.h \
- /usr/include/c++/6/bits/stl_algo.h \
+ /usr/include/openssl/crypto.h /usr/include/c++/6/stdlib.h \
+ /usr/include/openssl/stack.h /usr/include/openssl/safestack.h \
+ /usr/include/openssl/opensslv.h /usr/include/openssl/symhacks.h \
+ serialize.h /usr/include/c++/6/algorithm /usr/include/c++/6/utility \
+ /usr/include/c++/6/bits/stl_relops.h /usr/include/c++/6/bits/stl_algo.h \
  /usr/include/c++/6/bits/algorithmfwd.h \
  /usr/include/c++/6/bits/stl_heap.h /usr/include/c++/6/bits/stl_tempbuf.h \
  /usr/include/c++/6/bits/uniform_int_dist.h /usr/include/c++/6/limits \
@@ -864,6 +864,12 @@ libzerocoin/bignum.h:
 
 /usr/include/openssl/bn.h:
 
+/usr/include/openssl/e_os2.h:
+
+/usr/include/x86_64-linux-gnu/openssl/opensslconf.h:
+
+/usr/include/openssl/ossl_typ.h:
+
 /usr/lib/gcc/x86_64-linux-gnu/6/include-fixed/limits.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/6/include-fixed/syslimits.h:
@@ -879,12 +885,6 @@ libzerocoin/bignum.h:
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
-
-/usr/include/openssl/e_os2.h:
-
-/usr/include/x86_64-linux-gnu/openssl/opensslconf.h:
-
-/usr/include/openssl/ossl_typ.h:
 
 /usr/include/openssl/crypto.h:
 
