@@ -46,7 +46,7 @@ public:
         QFont font;
         font.setPointSize(10);
         HelpMessageDialog->setFont(font);
-        HelpMessageDialog->setWindowTitle(QStringLiteral("Zenzo Core - Command-line options"));
+        HelpMessageDialog->setWindowTitle(QStringLiteral("ZENZO Core - Command-line options"));
         horizontalLayout_2 = new QHBoxLayout(HelpMessageDialog);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         graphic = new QLabel(HelpMessageDialog);

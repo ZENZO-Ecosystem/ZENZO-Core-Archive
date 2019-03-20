@@ -105,7 +105,7 @@ std::string to_internal(const std::string&);
 
 using namespace std;
 
-// Zenzo only features
+// ZENZO only features
 // Masternode
 bool fMasterNode = false;
 string strMasterNodePrivKey = "";

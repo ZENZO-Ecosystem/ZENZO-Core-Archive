@@ -62,12 +62,12 @@
         <translation>Adresy pro přijetí peněz</translation>
     </message>
     <message>
-        <source>These are your Zenzo addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Toto jsou Vaše Zenzo adresy pro poslání platby. Vždy si překontrolujte množství peněz a cílovou adresu než platbu odešlete.</translation>
+        <source>These are your ZENZO addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Toto jsou Vaše ZENZO adresy pro poslání platby. Vždy si překontrolujte množství peněz a cílovou adresu než platbu odešlete.</translation>
     </message>
     <message>
-        <source>These are your Zenzo addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Toto jsou Vaše Zenzo adresy pro přijetí plateb. Je doporučeno použít novou adresu pro každou novou transakci.</translation>
+        <source>These are your ZENZO addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Toto jsou Vaše ZENZO adresy pro přijetí plateb. Je doporučeno použít novou adresu pro každou novou transakci.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -176,8 +176,8 @@
         <translation>Potvrdit zašifrování peněženky</translation>
     </message>
     <message>
-        <source>Zenzo will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
-        <translation>Zenzo se teď zavře pro dokončení šifrovacího procesu. Prosím, vemte na vědomí, že zašifrování Vaší peněženky plně neochrání Vaše ZNZy před krádží, pokud je Váš počítač infikován malwarem.</translation>
+        <source>ZENZO will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
+        <translation>ZENZO se teď zavře pro dokončení šifrovacího procesu. Prosím, vemte na vědomí, že zašifrování Vaší peněženky plně neochrání Vaše ZNZy před krádží, pokud je Váš počítač infikován malwarem.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -239,16 +239,16 @@
         <translation>&amp;BIP 38 Šifrovat</translation>
     </message>
     <message>
-        <source>Enter a Zenzo Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Zadejte Zenzo adresu, kterou si přejete zašifrovat pomocí BIP38. Frázové heslo zadejte do prostředního boxu. Stiskněte šifrovat pro výpočet šifrovaného privátního klíče.</translation>
+        <source>Enter a ZENZO Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Zadejte ZENZO adresu, kterou si přejete zašifrovat pomocí BIP38. Frázové heslo zadejte do prostředního boxu. Stiskněte šifrovat pro výpočet šifrovaného privátního klíče.</translation>
     </message>
     <message>
         <source>Address:</source>
         <translation>Adresa:</translation>
     </message>
     <message>
-        <source>The Zenzo address to sign the message with</source>
-        <translation>Zenzo adresa pro podepsání zprávy</translation>
+        <source>The ZENZO address to sign the message with</source>
+        <translation>ZENZO adresa pro podepsání zprávy</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -279,8 +279,8 @@
         <translation>Kopírovat aktuální podpis do systémové mezipaměti</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Zenzo address</source>
-        <translation>Podepsat zprávu k prokázání, že vlastníte tuto Zenzo adresu</translation>
+        <source>Sign the message to prove you own this ZENZO address</source>
+        <translation>Podepsat zprávu k prokázání, že vlastníte tuto ZENZO adresu</translation>
     </message>
     <message>
         <source>Encrypt &amp;Key</source>
@@ -303,12 +303,12 @@
         <translation>Vložte BIP 38 šifrovaný privítní klíc. Frázové heslo vložte do prostředního boxu. Kliknětě na Dešifrovat Klíč pro výpočet privátního klíče. Poté co bude klíč dešifrován, kliknutím na 'Importovat Adresu' přidáte privátní klíč do Vaší peněženky.</translation>
     </message>
     <message>
-        <source>The Zenzo address the message was signed with</source>
-        <translation>Zenzo adresa zprávy byla podpsána</translation>
+        <source>The ZENZO address the message was signed with</source>
+        <translation>ZENZO adresa zprávy byla podpsána</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Zenzo address</source>
-        <translation>Verifikujte zprávu pro ujištění, že byla podepsána zmíněnou Zenzo adresou</translation>
+        <source>Verify the message to ensure it was signed with the specified ZENZO address</source>
+        <translation>Verifikujte zprávu pro ujištění, že byla podepsána zmíněnou ZENZO adresou</translation>
     </message>
     <message>
         <source>Decrypt &amp;Key</source>
@@ -598,12 +598,12 @@
         <translation>Nástrojová lišta záložek</translation>
     </message>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     <message>
-        <source>Send coins to a Zenzo address</source>
-        <translation>Odeslat platbuna Zenzo adresu</translation>
+        <source>Send coins to a ZENZO address</source>
+        <translation>Odeslat platbuna ZENZO adresu</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and zenzo: URIs)</source>
@@ -618,24 +618,24 @@
         <translation>Procházet masternody</translation>
     </message>
     <message>
-        <source>&amp;About Zenzo Core</source>
-        <translation>&amp;O Zenzo Core</translation>
+        <source>&amp;About ZENZO Core</source>
+        <translation>&amp;O ZENZO Core</translation>
     </message>
     <message>
-        <source>Show information about Zenzo Core</source>
-        <translation>Zobraz informace o Zenzo Core</translation>
+        <source>Show information about ZENZO Core</source>
+        <translation>Zobraz informace o ZENZO Core</translation>
     </message>
     <message>
-        <source>Modify configuration options for Zenzo</source>
-        <translation>Upravit možnosti konfigurace pro Zenzo</translation>
+        <source>Modify configuration options for ZENZO</source>
+        <translation>Upravit možnosti konfigurace pro ZENZO</translation>
     </message>
     <message>
-        <source>Sign messages with your Zenzo addresses to prove you own them</source>
-        <translation>Podepsat zprávy Vaší Zenzo adresou pro prokázaní, že jste jejich vlastníkem</translation>
+        <source>Sign messages with your ZENZO addresses to prove you own them</source>
+        <translation>Podepsat zprávy Vaší ZENZO adresou pro prokázaní, že jste jejich vlastníkem</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Zenzo addresses</source>
-        <translation>Ověřit zprávy k zajištění, že bylypodepsány vybranými Zenzo adresami</translation>
+        <source>Verify messages to ensure they were signed with specified ZENZO addresses</source>
+        <translation>Ověřit zprávy k zajištění, že bylypodepsány vybranými ZENZO adresami</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -666,8 +666,8 @@
         <translation>Otevřít Masternodový konfigurační soubor</translation>
     </message>
     <message>
-        <source>Open a Zenzo: URI or payment request</source>
-        <translation>Otevřít Zenzo: URI nebo platební žádost</translation>
+        <source>Open a ZENZO: URI or payment request</source>
+        <translation>Otevřít ZENZO: URI nebo platební žádost</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -678,12 +678,12 @@
         <translation>Okno blokového průzkumníka</translation>
     </message>
     <message>
-        <source>Show the Zenzo Core help message to get a list with possible Zenzo command-line options</source>
-        <translation>Zobrazit Zenzo Core pomocnou zpráv pro získání seznamu možných parametrů Zenzo pro příkazy do příkazové řádky</translation>
+        <source>Show the ZENZO Core help message to get a list with possible ZENZO command-line options</source>
+        <translation>Zobrazit ZENZO Core pomocnou zpráv pro získání seznamu možných parametrů ZENZO pro příkazy do příkazové řádky</translation>
     </message>
     <message>
-        <source>Zenzo Core client</source>
-        <translation>Zenzo Core klient</translation>
+        <source>ZENZO Core client</source>
+        <translation>ZENZO Core klient</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -1066,8 +1066,8 @@ MultiSend: %1</translation>
         <translation>Upravit adresu k odeslání platby</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Zenzo address.</source>
-        <translation>Zadaná adresa "%1" není validní Zenzo adresa.</translation>
+        <source>The entered address "%1" is not a valid ZENZO address.</source>
+        <translation>Zadaná adresa "%1" není validní ZENZO adresa.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1112,12 +1112,12 @@ MultiSend: %1</translation>
         <translation>verze</translation>
     </message>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     <message>
-        <source>About Zenzo Core</source>
-        <translation>O Zenzo Core</translation>
+        <source>About ZENZO Core</source>
+        <translation>O ZENZO Core</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1151,16 +1151,16 @@ MultiSend: %1</translation>
         <translation>Vítejte</translation>
     </message>
     <message>
-        <source>Welcome to Zenzo Core.</source>
-        <translation>Vítejte v Zenzo Core.</translation>
+        <source>Welcome to ZENZO Core.</source>
+        <translation>Vítejte v ZENZO Core.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Zenzo Core will store its data.</source>
-        <translation>Při prvním spuštění programu si můžete vybrat, kam bude Zenzo Core ukládat svá data.</translation>
+        <source>As this is the first time the program is launched, you can choose where ZENZO Core will store its data.</source>
+        <translation>Při prvním spuštění programu si můžete vybrat, kam bude ZENZO Core ukládat svá data.</translation>
     </message>
     <message>
-        <source>Zenzo Core will download and store a copy of the Zenzo block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>Zenzo Core stáhne a uloží kopii Zenzo blockchainu. Nejméně %1GB dat bude do této složky uloženo a v průběhu času bude ukládat další data. Peněženka bude v této složce uložena také.</translation>
+        <source>ZENZO Core will download and store a copy of the ZENZO block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>ZENZO Core stáhne a uloží kopii ZENZO blockchainu. Nejméně %1GB dat bude do této složky uloženo a v průběhu času bude ukládat další data. Peněženka bude v této složce uložena také.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1171,8 +1171,8 @@ MultiSend: %1</translation>
         <translation>Použít vlastní složku pro data</translation>
     </message>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1520,12 +1520,12 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Expert</translation>
     </message>
     <message>
-        <source>Automatically start Zenzo after logging in to the system.</source>
-        <translation>Automaticky spustit Zenzo po přihlášení do systému</translation>
+        <source>Automatically start ZENZO after logging in to the system.</source>
+        <translation>Automaticky spustit ZENZO po přihlášení do systému</translation>
     </message>
     <message>
-        <source>&amp;Start Zenzo on system login</source>
-        <translation>&amp;Spusti Zenzo při přihlášení do systému</translation>
+        <source>&amp;Start ZENZO on system login</source>
+        <translation>&amp;Spusti ZENZO při přihlášení do systému</translation>
     </message>
     <message>
         <source>Show Masternodes Tab</source>
@@ -2186,8 +2186,8 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The Zenzo address to sign the message with</source>
-        <translation>Zenzo adresa pro podepsání zprávy</translation>
+        <source>The ZENZO address to sign the message with</source>
+        <translation>ZENZO adresa pro podepsání zprávy</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2214,16 +2214,16 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Kopírovat aktuální podpis do systémové mezipaměti</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Zenzo address</source>
-        <translation>Podepsat zprávu k prokázání, že vlastníte tuto Zenzo adresu</translation>
+        <source>Sign the message to prove you own this ZENZO address</source>
+        <translation>Podepsat zprávu k prokázání, že vlastníte tuto ZENZO adresu</translation>
     </message>
     <message>
-        <source>The Zenzo address the message was signed with</source>
-        <translation>Zenzo adresa zprávy byla podpsána</translation>
+        <source>The ZENZO address the message was signed with</source>
+        <translation>ZENZO adresa zprávy byla podpsána</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Zenzo address</source>
-        <translation>Verifikujte zprávu pro ujištění, že byla podepsána zmíněnou Zenzo adresou</translation>
+        <source>Verify the message to ensure it was signed with the specified ZENZO address</source>
+        <translation>Verifikujte zprávu pro ujištění, že byla podepsána zmíněnou ZENZO adresou</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2265,8 +2265,8 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Core</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Core</translation>
     </message>
     </context>
 <context>

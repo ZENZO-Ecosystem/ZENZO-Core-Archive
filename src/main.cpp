@@ -1,8 +1,8 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017 The Zenzo developers
+// Copyright (c) 2015-2019 The PIVX developers
+// Copyright (c) 2018-2019 The ZENZO developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -48,7 +48,7 @@ using namespace std;
 using namespace libzerocoin;
 
 #if defined(NDEBUG)
-#error "Zenzo cannot be compiled without assertions."
+#error "ZENZO cannot be compiled without assertions."
 #endif
 
 // 6 comes from OPCODE (1) + vch.size() (1) + BIGNUM size (4)
@@ -2150,18 +2150,18 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
         if (nHeight < 200)
             return 0;
     }
-	
+
 	// 65% for Masternodes
 	if (nHeight <= 100 && nHeight >= 0) {
 	    ret = blockValue  / 100 * 0;
 	} else {
 		ret = blockValue  / 100 * 65;
-		
+
 	}
-	
+
     return ret;
 }
-	
+
 bool IsInitialBlockDownload()
 {
     LOCK(cs_main);
@@ -3099,9 +3099,11 @@ void static UpdateTip(CBlockIndex* pindexNew)
 {
     chainActive.SetTip(pindexNew);
 
+  #ifdef ENABLE_WALLET
     // If turned on AutoZeromint will automatically convert ZNZ to zZNZ
-    if (pwalletMain->isZeromintEnabled ())
+    if (pwalletMain && pwalletMain->isZeromintEnabled ())
         pwalletMain->AutoZeromint ();
+  #endif
 
     // New best block
     nTimeBestReceived = GetTime();
@@ -3926,8 +3928,8 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
                 REJECT_INVALID, "block-version");
         }
 
-        // Zenzo
-        // It is entierly possible that we don't have enough data and this could fail
+        // ZENZO
+        // It is entirely possible that we don't have enough data and this could fail
         // (i.e. the block could indeed be valid). Store the block for later consideration
         // but issue an initial reject message.
         // The case also exists that the sending peer could not have enough data to see
@@ -5397,7 +5399,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
             return false;
         }
 
-        // Zenzo: We use certain sporks during IBD, so check to see if they are
+        // ZENZO: We use certain sporks during IBD, so check to see if they are
         // available. If not, ask the first peer connected for them.
         if (!pSporkDB->SporkExists(SPORK_14_NEW_PROTOCOL_ENFORCEMENT) &&
             !pSporkDB->SporkExists(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2) &&

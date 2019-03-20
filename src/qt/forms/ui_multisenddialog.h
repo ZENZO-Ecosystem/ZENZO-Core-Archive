@@ -248,8 +248,8 @@ public:
     void retranslateUi(QDialog *MultiSendDialog)
     {
         MultiSendDialog->setWindowTitle(QApplication::translate("MultiSendDialog", "MultiSend", 0));
-        label_2->setText(QApplication::translate("MultiSendDialog", "MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Zenzo addresses after it matures.\n"
-"To Add: enter percentage to give and Zenzo address to add to the MultiSend vector.\n"
+        label_2->setText(QApplication::translate("MultiSendDialog", "MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other ZENZO addresses after it matures.\n"
+"To Add: enter percentage to give and ZENZO address to add to the MultiSend vector.\n"
 "To Delete: Enter address to delete and press delete.\n"
 "MultiSend will not be activated unless you have clicked Activate", 0));
         multiSendStakeCheckBox->setText(QApplication::translate("MultiSendDialog", "Send For Stakes", 0));

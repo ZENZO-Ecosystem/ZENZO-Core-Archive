@@ -1,8 +1,8 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2018 The Zenzo developers
+// Copyright (c) 2015-2019 The PIVX developers
+// Copyright (c) 2018-2019 The ZENZO developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -112,15 +112,15 @@ public:
         pchMessageStart[3] = 0xc4;
         vAlertPubKey = ParseHex("04162d81bfff02880ee2e149d7420f159564c20797778cd148cba5356aa608f3a122ab22bcd3f84ac1d252471b5fc71752d1504c848ef0b0c6bd1c155e81be23bc");
         nDefaultPort = 26210;
-        bnProofOfWorkLimit = ~uint256(0) >> 20; // Zenzo starting difficulty is 1 / 2^12
+        bnProofOfWorkLimit = ~uint256(0) >> 20; // ZENZO starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 4000000;
         nMaxReorganizationDepth = 100;
         nEnforceBlockUpgradeMajority = 750;
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // Zenzo: 1 day
-        nTargetSpacing = 1 * 60;  // Zenzo: 1 minute
+        nTargetTimespan = 1 * 60; // ZENZO: 1 day
+        nTargetSpacing = 1 * 60;  // ZENZO: 1 minute
         nMaturity = 50;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 83000000 * COIN;
@@ -135,7 +135,7 @@ public:
         nBlockRecalculateAccumulators = ~1; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = ~1; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = ~1; //Last valid accumulator checkpoint
-        
+
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
          * be spent as it did not originally exist in the database.
@@ -166,9 +166,9 @@ public:
         assert(genesis.hashMerkleRoot == uint256("7411c8de5f43691fd7cb0f6264867edb8bb35da1bd6f0377e0981b86832254a1"));
 
 		vSeeds.push_back(CDNSSeedData("80.240.31.194", "80.240.31.194")); // Primary DNS Seeder
-		vSeeds.push_back(CDNSSeedData("149.28.55.190", "149.28.55.190")); // Secondary DNS Seeder		
+		vSeeds.push_back(CDNSSeedData("149.28.55.190", "149.28.55.190")); // Secondary DNS Seeder
 		vSeeds.push_back(CDNSSeedData("45.77.224.165", "45.77.224.165")); // Backup DNS Seeder
-		vSeeds.push_back(CDNSSeedData("45.76.117.67", "45.76.117.67")); // Backup Secondary DNS Seeder	
+		vSeeds.push_back(CDNSSeedData("45.76.117.67", "45.76.117.67")); // Backup Secondary DNS Seeder
 		vSeeds.push_back(CDNSSeedData("45.76.184.133", "45.76.184.133")); // Backup DNS Seeder
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 81);
@@ -234,8 +234,8 @@ public:
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // Zenzo: 1 day
-        nTargetSpacing = 1 * 60;  // Zenzo: 1 minute
+        nTargetTimespan = 1 * 60; // ZENZO: 1 day
+        nTargetSpacing = 1 * 60;  // ZENZO: 1 minute
         nLastPOWBlock = 200;
         nMaturity = 15;
         nMasternodeCountDrift = 4;
@@ -247,7 +247,7 @@ public:
         nBlockRecalculateAccumulators = 9908000; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 9891737; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = 9891730; //Last valid accumulator checkpoint
-        
+
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1538323043;
         genesis.nNonce = 1050765;
@@ -313,8 +313,8 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespan = 24 * 60 * 60; // Zenzo: 1 day
-        nTargetSpacing = 1 * 60;        // Zenzo: 1 minutes
+        nTargetTimespan = 24 * 60 * 60; // ZENZO: 1 day
+        nTargetSpacing = 1 * 60;        // ZENZO: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1538323043;
         genesis.nBits = 0x1e0ffff0;

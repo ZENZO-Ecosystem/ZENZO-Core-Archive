@@ -58,12 +58,12 @@
         <translation>Mottagar adresser</translation>
     </message>
     <message>
-        <source>These are your Zenzo addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Det här är dina Zenzo adresser för att sända betalningar. Kontrollera alltid summan och mottagaradressen före du sänder mynt.</translation>
+        <source>These are your ZENZO addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Det här är dina ZENZO adresser för att sända betalningar. Kontrollera alltid summan och mottagaradressen före du sänder mynt.</translation>
     </message>
     <message>
-        <source>These are your Zenzo addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Det här är dina Zenzo adresser för att ta emot betalningar. Det är rekomenderat att använda en ny mottagaradress för varje transaktion.</translation>
+        <source>These are your ZENZO addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Det här är dina ZENZO adresser för att ta emot betalningar. Det är rekomenderat att använda en ny mottagaradress för varje transaktion.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -160,8 +160,8 @@
         <translation>Bekräfta plånboks krypering</translation>
     </message>
     <message>
-        <source>Zenzo will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
-        <translation>Zenzo kommer att stängas ner nu för att färdigställa kryperingsprocessen. Kom ihåg att kryptering av din plånbok inte kan säkerställa dina ZNZs från att bli stulna av skadeprogram som infekterat din dator.</translation>
+        <source>ZENZO will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
+        <translation>ZENZO kommer att stängas ner nu för att färdigställa kryperingsprocessen. Kom ihåg att kryptering av din plånbok inte kan säkerställa dina ZNZs från att bli stulna av skadeprogram som infekterat din dator.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -223,8 +223,8 @@
         <translation>BIP 38 Kryptering</translation>
     </message>
     <message>
-        <source>Enter a Zenzo Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Ange en Zenzo adress som du vill kryptera med BIP 38.
+        <source>Enter a ZENZO Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Ange en ZENZO adress som du vill kryptera med BIP 38.
 Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den krypterade privata nyckeln.</translation>
     </message>
     <message>
@@ -232,8 +232,8 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
         <translation>Adress:</translation>
     </message>
     <message>
-        <source>The Zenzo address to sign the message with</source>
-        <translation>Zenzo adressen för signera meddelandet med</translation>
+        <source>The ZENZO address to sign the message with</source>
+        <translation>ZENZO adressen för signera meddelandet med</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -264,8 +264,8 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
         <translation>Kopiera den nuvarande signaturen till systemets urklipp</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Zenzo address</source>
-        <translation>Signera meddelandet för att bevisa att du äger denna Zenzo adress</translation>
+        <source>Sign the message to prove you own this ZENZO address</source>
+        <translation>Signera meddelandet för att bevisa att du äger denna ZENZO adress</translation>
     </message>
     <message>
         <source>Encrypt &amp;Key</source>
@@ -288,12 +288,12 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
         <translation>Ange BIP 38 krypterade privata nyckeln. Ange lösenfrasen i med mittersta boxen. Tryck på krypetra nyckel för att beräkna den privata nyckeln. Efter att nyckeln är avkrypterad, Tryck på 'Importera Adress' kommer att lägga till denna privata nyckel till plånboken.</translation>
     </message>
     <message>
-        <source>The Zenzo address the message was signed with</source>
-        <translation>Zenzo adressen meddelandet blev signerat med</translation>
+        <source>The ZENZO address the message was signed with</source>
+        <translation>ZENZO adressen meddelandet blev signerat med</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Zenzo address</source>
-        <translation>Verifiera meddelandet för att säkerställa att de blev signerat med den specifika Zenzo adressen.</translation>
+        <source>Verify the message to ensure it was signed with the specified ZENZO address</source>
+        <translation>Verifiera meddelandet för att säkerställa att de blev signerat med den specifika ZENZO adressen.</translation>
     </message>
     <message>
         <source>Decrypt &amp;Key</source>
@@ -583,12 +583,12 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
         <translation>flik vertygsrad</translation>
     </message>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Kärna</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Kärna</translation>
     </message>
     <message>
-        <source>Send coins to a Zenzo address</source>
-        <translation>Skicka mynt till en Zenzo adress</translation>
+        <source>Send coins to a ZENZO address</source>
+        <translation>Skicka mynt till en ZENZO adress</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and zenzo: URIs)</source>
@@ -603,24 +603,24 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
         <translation>Utforska masternoder</translation>
     </message>
     <message>
-        <source>&amp;About Zenzo Core</source>
-        <translation>Om Zenzo Kärnan</translation>
+        <source>&amp;About ZENZO Core</source>
+        <translation>Om ZENZO Kärnan</translation>
     </message>
     <message>
-        <source>Show information about Zenzo Core</source>
-        <translation>Visa information om Zenzo Kärnan</translation>
+        <source>Show information about ZENZO Core</source>
+        <translation>Visa information om ZENZO Kärnan</translation>
     </message>
     <message>
-        <source>Modify configuration options for Zenzo</source>
-        <translation>Ändra konfigurationsval för Zenzo</translation>
+        <source>Modify configuration options for ZENZO</source>
+        <translation>Ändra konfigurationsval för ZENZO</translation>
     </message>
     <message>
-        <source>Sign messages with your Zenzo addresses to prove you own them</source>
-        <translation>Signera meddelanden med din Zenzo adress för att visa att du äger dem</translation>
+        <source>Sign messages with your ZENZO addresses to prove you own them</source>
+        <translation>Signera meddelanden med din ZENZO adress för att visa att du äger dem</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Zenzo addresses</source>
-        <translation>Verifiera meddelandet för att säkerställa att de blev signerat med den specifika Zenzo adressen.</translation>
+        <source>Verify messages to ensure they were signed with specified ZENZO addresses</source>
+        <translation>Verifiera meddelandet för att säkerställa att de blev signerat med den specifika ZENZO adressen.</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -631,8 +631,8 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
         <translation>Kryptera och avkryptera privata nycklar genom användning av lösenfras</translation>
     </message>
     <message>
-        <source>Zenzo Core client</source>
-        <translation>Zenzo kärn klient</translation>
+        <source>ZENZO Core client</source>
+        <translation>ZENZO kärn klient</translation>
     </message>
     <message>
         <source>%1 and %2</source>
@@ -837,15 +837,15 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Kärna</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Kärna</translation>
     </message>
     </context>
 <context>
     <name>Intro</name>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Kärna</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Kärna</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1157,8 +1157,8 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The Zenzo address to sign the message with</source>
-        <translation>Zenzo adressen för signera meddelandet med</translation>
+        <source>The ZENZO address to sign the message with</source>
+        <translation>ZENZO adressen för signera meddelandet med</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1181,16 +1181,16 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
         <translation>Kopiera den nuvarande signaturen till systemets urklipp</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Zenzo address</source>
-        <translation>Signera meddelandet för att bevisa att du äger denna Zenzo adress</translation>
+        <source>Sign the message to prove you own this ZENZO address</source>
+        <translation>Signera meddelandet för att bevisa att du äger denna ZENZO adress</translation>
     </message>
     <message>
-        <source>The Zenzo address the message was signed with</source>
-        <translation>Zenzo adressen meddelandet blev signerat med</translation>
+        <source>The ZENZO address the message was signed with</source>
+        <translation>ZENZO adressen meddelandet blev signerat med</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Zenzo address</source>
-        <translation>Verifiera meddelandet för att säkerställa att de blev signerat med den specifika Zenzo adressen.</translation>
+        <source>Verify the message to ensure it was signed with the specified ZENZO address</source>
+        <translation>Verifiera meddelandet för att säkerställa att de blev signerat med den specifika ZENZO adressen.</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
@@ -1232,8 +1232,8 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Kärna</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Kärna</translation>
     </message>
     </context>
 <context>

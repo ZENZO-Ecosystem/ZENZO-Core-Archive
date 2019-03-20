@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'intro.ui'
 **
-** Created by: Qt User Interface Compiler version 5.5.1
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -15,6 +15,7 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -31,9 +32,11 @@ class Ui_Intro
 public:
     QVBoxLayout *verticalLayout;
     QLabel *label_2;
-    QSpacerItem *verticalSpacer_4;
-    QLabel *label_4;
+    QGroupBox *groupBox;
     QLabel *sizeWarningLabel;
+    QLabel *label_4;
+    QLabel *label;
+    QSpacerItem *verticalSpacer_4;
     QRadioButton *dataDirDefault;
     QRadioButton *dataDirCustom;
     QHBoxLayout *horizontalLayout;
@@ -53,9 +56,15 @@ public:
     {
         if (Intro->objectName().isEmpty())
             Intro->setObjectName(QStringLiteral("Intro"));
-        Intro->resize(674, 363);
+        Intro->resize(600, 637);
+        Intro->setMinimumSize(QSize(600, 0));
+        Intro->setMaximumSize(QSize(1000, 16777215));
+        Intro->setWindowOpacity(1);
+        Intro->setSizeGripEnabled(false);
+        Intro->setModal(false);
         verticalLayout = new QVBoxLayout(Intro);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setSizeConstraint(QLayout::SetFixedSize);
         label_2 = new QLabel(Intro);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setStyleSheet(QStringLiteral("QLabel { font-style:italic; }"));
@@ -63,21 +72,41 @@ public:
 
         verticalLayout->addWidget(label_2);
 
+        groupBox = new QGroupBox(Intro);
+        groupBox->setObjectName(QStringLiteral("groupBox"));
+        groupBox->setMinimumSize(QSize(580, 300));
+        groupBox->setAutoFillBackground(false);
+        groupBox->setStyleSheet(QStringLiteral(""));
+        groupBox->setFlat(true);
+        groupBox->setCheckable(false);
+        sizeWarningLabel = new QLabel(groupBox);
+        sizeWarningLabel->setObjectName(QStringLiteral("sizeWarningLabel"));
+        sizeWarningLabel->setGeometry(QRect(10, 140, 400, 91));
+        sizeWarningLabel->setMaximumSize(QSize(400, 16777215));
+        sizeWarningLabel->setWordWrap(true);
+        label_4 = new QLabel(groupBox);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(10, 70, 371, 37));
+        label_4->setWordWrap(true);
+        label_4->setMargin(-1);
+        label = new QLabel(groupBox);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(400, 20, 175, 270));
+        label->setMinimumSize(QSize(175, 270));
+        label->setMaximumSize(QSize(175, 270));
+        label->setToolTipDuration(2);
+        label->setAutoFillBackground(false);
+        label->setPixmap(QPixmap(QString::fromUtf8(":/images/zenzo_chan")));
+        label->setScaledContents(true);
+        label->setAlignment(Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing);
+        label->setWordWrap(false);
+        label->setMargin(-20);
+
+        verticalLayout->addWidget(groupBox);
+
         verticalSpacer_4 = new QSpacerItem(20, 15, QSizePolicy::Minimum, QSizePolicy::Minimum);
 
         verticalLayout->addItem(verticalSpacer_4);
-
-        label_4 = new QLabel(Intro);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setWordWrap(true);
-
-        verticalLayout->addWidget(label_4);
-
-        sizeWarningLabel = new QLabel(Intro);
-        sizeWarningLabel->setObjectName(QStringLiteral("sizeWarningLabel"));
-        sizeWarningLabel->setWordWrap(true);
-
-        verticalLayout->addWidget(sizeWarningLabel);
 
         dataDirDefault = new QRadioButton(Intro);
         dataDirDefault->setObjectName(QStringLiteral("dataDirDefault"));
@@ -166,11 +195,18 @@ public:
 
         buttonBox = new QDialogButtonBox(Intro);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
+        buttonBox->setCursor(QCursor(Qt::PointingHandCursor));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+        buttonBox->setCenterButtons(false);
 
         verticalLayout->addWidget(buttonBox);
 
+        groupBox->raise();
+        label_2->raise();
+        dataDirCustom->raise();
+        buttonBox->raise();
+        dataDirDefault->raise();
 
         retranslateUi(Intro);
         QObject::connect(buttonBox, SIGNAL(accepted()), Intro, SLOT(accept()));
@@ -181,12 +217,20 @@ public:
 
     void retranslateUi(QDialog *Intro)
     {
-        Intro->setWindowTitle(QApplication::translate("Intro", "Welcome", 0));
-        label_2->setText(QApplication::translate("Intro", "Welcome to Zenzo Core.", 0));
-        label_4->setText(QApplication::translate("Intro", "As this is the first time the program is launched, you can choose where Zenzo Core will store its data.", 0));
-        sizeWarningLabel->setText(QApplication::translate("Intro", "Zenzo Core will download and store a copy of the Zenzo block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.", 0));
-        dataDirDefault->setText(QApplication::translate("Intro", "Use the default data directory", 0));
-        dataDirCustom->setText(QApplication::translate("Intro", "Use a custom data directory:", 0));
+        Intro->setWindowTitle(QApplication::translate("Intro", "Welcome", Q_NULLPTR));
+        label_2->setText(QApplication::translate("Intro", "Welcome to ZENZO Core.", Q_NULLPTR));
+        groupBox->setTitle(QString());
+        sizeWarningLabel->setText(QApplication::translate("Intro", "ZENZO Core will download and store a copy of the ZENZO blockchain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.", Q_NULLPTR));
+        label_4->setText(QApplication::translate("Intro", "As this is the first time the program is launched, you can choose where ZENZO Core will store its data.", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        label->setToolTip(QApplication::translate("Intro", "<html><head/><body><p>Hi!</p></body></html>", "Hi!"));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_STATUSTIP
+        label->setStatusTip(QString());
+#endif // QT_NO_STATUSTIP
+        label->setText(QString());
+        dataDirDefault->setText(QApplication::translate("Intro", "Use the default data directory", Q_NULLPTR));
+        dataDirCustom->setText(QApplication::translate("Intro", "Use a custom data directory:", Q_NULLPTR));
         freeSpace->setText(QString());
     } // retranslateUi
 

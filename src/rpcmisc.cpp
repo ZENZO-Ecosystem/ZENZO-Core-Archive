@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2018 The Zenzo developers
+// Copyright (c) 2018-2019 The ZENZO developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -115,7 +115,7 @@ Value getinfo(const Array& params, bool fHelp)
     }
     zbrkObj.emplace_back(Pair("total", ValueFromAmount(chainActive.Tip()->GetZerocoinSupply())));
     obj.emplace_back(Pair("zZNZsupply", zbrkObj));
-    
+
 #ifdef ENABLE_WALLET
     if (pwalletMain) {
         obj.push_back(Pair("keypoololdest", pwalletMain->GetOldestKeyPoolTime()));
@@ -548,5 +548,10 @@ Value getstakingstatus(const Array& params, bool fHelp)
     obj.push_back(Pair("staking status", nStaking));
 
     return obj;
+}
+
+Value meow(const Array& params, bool fHelp)
+{
+    return "Meow!";
 }
 #endif // ENABLE_WALLET

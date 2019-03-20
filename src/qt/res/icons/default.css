@@ -1230,7 +1230,7 @@ min-height:100px;
 margin-right:20px;
 margin-left:0;
 margin-top:0;
-background-image: url(':/images/zenzo_logo_horizontal');
+/* background-image: url(':/images/zenzo_logo_horizontal'); /*
 background-repeat:none;
 color:#fff;
 }
@@ -1703,7 +1703,7 @@ QLabel#transactionSumLabel { /* Example of setObjectName for widgets without nam
 color:#fff;
 font-weight:bold;
 }
- 
+
 QLabel#transactionSum { /* Example of setObjectName for widgets without name */
 color:#fff;
 }

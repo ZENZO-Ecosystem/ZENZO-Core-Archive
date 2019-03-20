@@ -62,12 +62,12 @@
         <translation>Vastaanottavat osoitteet</translation>
     </message>
     <message>
-        <source>These are your Zenzo addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Nämä ovat sinun Zenzo osoitteesi maksujen lähetystä varten. Tarkista aina määrä ja vastaanottava osoite ennen kolikoiden lähettämistä.</translation>
+        <source>These are your ZENZO addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Nämä ovat sinun ZENZO osoitteesi maksujen lähetystä varten. Tarkista aina määrä ja vastaanottava osoite ennen kolikoiden lähettämistä.</translation>
     </message>
     <message>
-        <source>These are your Zenzo addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Nämä ovat sinun Zenzo osoitteesi maksujen vastaanottamista varten. On suositeltavaa käyttää uutta vastaanottavaa osoitetta jokaiselle uudelle rahansiirrolle.</translation>
+        <source>These are your ZENZO addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Nämä ovat sinun ZENZO osoitteesi maksujen vastaanottamista varten. On suositeltavaa käyttää uutta vastaanottavaa osoitetta jokaiselle uudelle rahansiirrolle.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -172,8 +172,8 @@
         <translation>Vahvista lompakon salaus</translation>
     </message>
     <message>
-        <source>Zenzo will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
-        <translation>Zenzo sulkeutuu salausprosessin ajaksi. Muista, että lompakon salaus ei voi täysin suojella ZNZien varkaudelta, jos tietokoneesi sisältää haittaohjelmia.</translation>
+        <source>ZENZO will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
+        <translation>ZENZO sulkeutuu salausprosessin ajaksi. Muista, että lompakon salaus ei voi täysin suojella ZNZien varkaudelta, jos tietokoneesi sisältää haittaohjelmia.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -235,8 +235,8 @@
         <translation>&amp;BIP 38 Salaus</translation>
     </message>
     <message>
-        <source>Enter a Zenzo Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Syötä Zenzo osoite, jonnka tahtoisit salata käyttäen BIP 38.
+        <source>Enter a ZENZO Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Syötä ZENZO osoite, jonnka tahtoisit salata käyttäen BIP 38.
 Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityisavaimen.</translation>
     </message>
     <message>
@@ -244,8 +244,8 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>Osoite:</translation>
     </message>
     <message>
-        <source>The Zenzo address to sign the message with</source>
-        <translation>Zenzo osoite, jolla viesti allekirjoitetaan</translation>
+        <source>The ZENZO address to sign the message with</source>
+        <translation>ZENZO osoite, jolla viesti allekirjoitetaan</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -276,8 +276,8 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>Kopioi nykyinen allekirjoitus järjestelmän leikepöydälle</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Zenzo address</source>
-        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän Zenzo osoitteen</translation>
+        <source>Sign the message to prove you own this ZENZO address</source>
+        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän ZENZO osoitteen</translation>
     </message>
     <message>
         <source>Encrypt &amp;Key</source>
@@ -300,12 +300,12 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>Syötä BIP 38 salattu yksityisavain. Syötä salausavain laatikkoon. Paina Avaa Salaus tuottaaksesi yksityisavaimen. Kun avain on dekryptattu, painamalla "Import osoite" lisää tämän yksityisavaimen lompakkoon.</translation>
     </message>
     <message>
-        <source>The Zenzo address the message was signed with</source>
-        <translation>Zenzo osoite, jolla viesti allekirjoitettiin</translation>
+        <source>The ZENZO address the message was signed with</source>
+        <translation>ZENZO osoite, jolla viesti allekirjoitettiin</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Zenzo address</source>
-        <translation>Vahvista että viesti on allekirjoitettu kyseessä olevalla Zenzo osoitteella.</translation>
+        <source>Verify the message to ensure it was signed with the specified ZENZO address</source>
+        <translation>Vahvista että viesti on allekirjoitettu kyseessä olevalla ZENZO osoitteella.</translation>
     </message>
     <message>
         <source>Decrypt &amp;Key</source>
@@ -591,12 +591,12 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>&amp;Apua</translation>
     </message>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Ydin</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Ydin</translation>
     </message>
     <message>
-        <source>Send coins to a Zenzo address</source>
-        <translation>Lähetä kolikkoja Zenzo osoitteeseen</translation>
+        <source>Send coins to a ZENZO address</source>
+        <translation>Lähetä kolikkoja ZENZO osoitteeseen</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and zenzo: URIs)</source>
@@ -611,24 +611,24 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>Selaa masternodeja</translation>
     </message>
     <message>
-        <source>&amp;About Zenzo Core</source>
-        <translation>Zenzo Core &amp;ytimestä</translation>
+        <source>&amp;About ZENZO Core</source>
+        <translation>ZENZO Core &amp;ytimestä</translation>
     </message>
     <message>
-        <source>Show information about Zenzo Core</source>
-        <translation>Näytä tietoja Zenzo Ytimestä</translation>
+        <source>Show information about ZENZO Core</source>
+        <translation>Näytä tietoja ZENZO Ytimestä</translation>
     </message>
     <message>
-        <source>Modify configuration options for Zenzo</source>
-        <translation>Muokkaa konfiguraatio vaihtoehtoja Zenzo:lle</translation>
+        <source>Modify configuration options for ZENZO</source>
+        <translation>Muokkaa konfiguraatio vaihtoehtoja ZENZO:lle</translation>
     </message>
     <message>
-        <source>Sign messages with your Zenzo addresses to prove you own them</source>
+        <source>Sign messages with your ZENZO addresses to prove you own them</source>
         <translation>Allekirjoita viestejä todistaaksesi, että omistat ne.</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Zenzo addresses</source>
-        <translation>Vahvista viestit varmistaaksesi, että ne allekirjoitettiin tietyllä Zenzo osoiteella.</translation>
+        <source>Verify messages to ensure they were signed with specified ZENZO addresses</source>
+        <translation>Vahvista viestit varmistaaksesi, että ne allekirjoitettiin tietyllä ZENZO osoiteella.</translation>
     </message>
     <message>
         <source>&amp;BIP38 tool</source>
@@ -659,8 +659,8 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>Avaa Masternode konfiguraatiotiedosto</translation>
     </message>
     <message>
-        <source>Open a Zenzo: URI or payment request</source>
-        <translation>Avaa Zenzo: URI tai pyydä maksua</translation>
+        <source>Open a ZENZO: URI or payment request</source>
+        <translation>Avaa ZENZO: URI tai pyydä maksua</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -671,12 +671,12 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>Lohkon tutkija näkymä</translation>
     </message>
     <message>
-        <source>Show the Zenzo Core help message to get a list with possible Zenzo command-line options</source>
-        <translation>Näytä Zenzo Ydin apuviesti saadaksesi lista mahdollisista Zenzo komentolinja komennoista.</translation>
+        <source>Show the ZENZO Core help message to get a list with possible ZENZO command-line options</source>
+        <translation>Näytä ZENZO Ydin apuviesti saadaksesi lista mahdollisista ZENZO komentolinja komennoista.</translation>
     </message>
     <message>
-        <source>Zenzo Core client</source>
-        <translation>Zenzo Ydin asiakasohjelma</translation>
+        <source>ZENZO Core client</source>
+        <translation>ZENZO Ydin asiakasohjelma</translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -934,8 +934,8 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Ydin</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Ydin</translation>
     </message>
     <message>
         <source>Usage:</source>
@@ -953,12 +953,12 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>Tervetuloa</translation>
     </message>
     <message>
-        <source>Welcome to Zenzo Core.</source>
-        <translation>Tervetuloa Zenzo Ytimeen.</translation>
+        <source>Welcome to ZENZO Core.</source>
+        <translation>Tervetuloa ZENZO Ytimeen.</translation>
     </message>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Ydin</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Ydin</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1136,11 +1136,11 @@ Please check the address and try again.</source>
     </message>
     <message>
         <source>Use 2 separate masternodes to mix funds up to 10000 ZNZ</source>
-        <translation>Käytä 2 erillistä masternodea sekoittaaksesi enintään 10000 Zenzo</translation>
+        <translation>Käytä 2 erillistä masternodea sekoittaaksesi enintään 10000 ZENZO</translation>
     </message>
     <message>
         <source>Use 8 separate masternodes to mix funds up to 10000 ZNZ</source>
-        <translation>Käytä 8 erillistä masternodea sekoittaaksesi enintään 10000 Zenzo</translation>
+        <translation>Käytä 8 erillistä masternodea sekoittaaksesi enintään 10000 ZENZO</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
@@ -1148,11 +1148,11 @@ Please check the address and try again.</source>
     </message>
     <message>
         <source>This option is the quickest and will cost about ~0.025 ZNZ to anonymize 10000 ZNZ</source>
-        <translation>Tämä vaihtoehto on nopein ja maksaa noin ~0.025 ZNZ anonymoidaksesi 10000 Zenzo</translation>
+        <translation>Tämä vaihtoehto on nopein ja maksaa noin ~0.025 ZNZ anonymoidaksesi 10000 ZENZO</translation>
     </message>
     <message>
         <source>This option is moderately fast and will cost about 0.05 ZNZ to anonymize 10000 ZNZ</source>
-        <translation>Tämä vaihtoehto on suhteellisen nopea ja maksaa 0.05 Zenzo anonymoidaksesi 10000 Zenzo</translation>
+        <translation>Tämä vaihtoehto on suhteellisen nopea ja maksaa 0.05 ZENZO anonymoidaksesi 10000 ZENZO</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
@@ -1160,7 +1160,7 @@ Please check the address and try again.</source>
     </message>
     <message>
         <source>0.1 ZNZ per 10000 ZNZ you anonymize.</source>
-        <translation>0.1 per 10000 Zenzo, jotka anonymisoit.</translation>
+        <translation>0.1 per 10000 ZENZO, jotka anonymisoit.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -1209,12 +1209,12 @@ Please check the address and try again.</source>
         <translation>Ekspertti</translation>
     </message>
     <message>
-        <source>Automatically start Zenzo after logging in to the system.</source>
-        <translation>Automaattisesti käynnistä Zenzo kun kirjaudut sisään.</translation>
+        <source>Automatically start ZENZO after logging in to the system.</source>
+        <translation>Automaattisesti käynnistä ZENZO kun kirjaudut sisään.</translation>
     </message>
     <message>
-        <source>&amp;Start Zenzo on system login</source>
-        <translation>&amp;Aloita Zenzo järjestelmän kirjautumisessa</translation>
+        <source>&amp;Start ZENZO on system login</source>
+        <translation>&amp;Aloita ZENZO järjestelmän kirjautumisessa</translation>
     </message>
     <message>
         <source>Enable coin &amp;control features</source>
@@ -1233,12 +1233,12 @@ Please check the address and try again.</source>
         <translation>&amp;Verkko</translation>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Zenzo.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting ZENZO.</source>
         <translation>Käyttöliittymän kielen voi säätää täällä. Tämä asetus tulee voimaan uudelleenkäynnistettyäsi lompakon.</translation>
     </message>
     <message>
-        <source>Connect to the Zenzo network through a SOCKS5 proxy.</source>
-        <translation>Yhdistä Zenzo verkkoon SOCKS5 proxyn kautta</translation>
+        <source>Connect to the ZENZO network through a SOCKS5 proxy.</source>
+        <translation>Yhdistä ZENZO verkkoon SOCKS5 proxyn kautta</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1542,8 +1542,8 @@ Please check the address and try again.</source>
         <translation>Lohko ketju</translation>
     </message>
     <message>
-        <source>Open the Zenzo debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Avaa Zenzo debug loki nykyisestä sijainnista. Tämä voi kestää muutaman sekunnin suurille lokeille</translation>
+        <source>Open the ZENZO debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Avaa ZENZO debug loki nykyisestä sijainnista. Tämä voi kestää muutaman sekunnin suurille lokeille</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
@@ -1654,8 +1654,8 @@ Please check the address and try again.</source>
         <translation>Ulos:</translation>
     </message>
     <message>
-        <source>Welcome to the Zenzo RPC console.</source>
-        <translation>Tervetuloa Zenzo RPC konsoliin.</translation>
+        <source>Welcome to the ZENZO RPC console.</source>
+        <translation>Tervetuloa ZENZO RPC konsoliin.</translation>
     </message>
     <message>
         <source>never</source>
@@ -1697,12 +1697,12 @@ Please check the address and try again.</source>
         <translation>Vaihtoehtoinen nimike uudelle vastaanottavalle osoitteelle</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Zenzo network.</source>
-        <translation>Vaihtoehtoinen viesti joka liitetään maksupyyntöön, joka näytetään kun pyyntö avataan. Huomio: Viestiä ei lähetetä maksun mukana Zenzo verkolle.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the ZENZO network.</source>
+        <translation>Vaihtoehtoinen viesti joka liitetään maksupyyntöön, joka näytetään kun pyyntö avataan. Huomio: Viestiä ei lähetetä maksun mukana ZENZO verkolle.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Zenzo network.</source>
-        <translation>Vaihtoehtoinen viesti, joka liitetään maksupyyntöö, joka näytetään kun pyyntö avataan. &lt;br&gt; Huomio: Tätä viestiä ei lähetetä maksun mukana Zenzo  verkolle.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the ZENZO network.</source>
+        <translation>Vaihtoehtoinen viesti, joka liitetään maksupyyntöö, joka näytetään kun pyyntö avataan. &lt;br&gt; Huomio: Tätä viestiä ei lähetetä maksun mukana ZENZO  verkolle.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -1982,8 +1982,8 @@ Please check the address and try again.</source>
         <translation>käyttää</translation>
     </message>
     <message>
-        <source>Warning: Invalid Zenzo address</source>
-        <translation>Varoitus: Virheellinen Zenzo osoite</translation>
+        <source>Warning: Invalid ZENZO address</source>
+        <translation>Varoitus: Virheellinen ZENZO osoite</translation>
     </message>
     <message>
         <source>Are you sure you want to send?</source>
@@ -2029,8 +2029,8 @@ Please check the address and try again.</source>
         <translation>Tämä on normaali maksu.</translation>
     </message>
     <message>
-        <source>The Zenzo address to send the payment to</source>
-        <translation>Zenzo osoite johon maksu lähetetään</translation>
+        <source>The ZENZO address to send the payment to</source>
+        <translation>ZENZO osoite johon maksu lähetetään</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2072,8 +2072,8 @@ Please check the address and try again.</source>
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Zenzo Core is shutting down...</source>
-        <translation>Zenzo core sammuu...</translation>
+        <source>ZENZO Core is shutting down...</source>
+        <translation>ZENZO core sammuu...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -2091,8 +2091,8 @@ Please check the address and try again.</source>
         <translation>Voit allekirjoittaa viestejä osoitteillasi todistaaksesi, että omistat ne. Ole varovainen ettet allekirjoita mitään kummallista, sillä kalasteluyritykset saattavat yrittää huijata sinut luovuttamaan tietoja. Allekirjoita vain täysin yksityiskohtaisia sanomia, jotka hyväksyt.</translation>
     </message>
     <message>
-        <source>The Zenzo address to sign the message with</source>
-        <translation>Zenzo osoite, jolla viesti allekirjoitetaan</translation>
+        <source>The ZENZO address to sign the message with</source>
+        <translation>ZENZO osoite, jolla viesti allekirjoitetaan</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2123,16 +2123,16 @@ Please check the address and try again.</source>
         <translation>Kopioi nykyinen allekirjoitus järjestelmän leikepöydälle</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Zenzo address</source>
-        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän Zenzo osoitteen</translation>
+        <source>Sign the message to prove you own this ZENZO address</source>
+        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän ZENZO osoitteen</translation>
     </message>
     <message>
-        <source>The Zenzo address the message was signed with</source>
-        <translation>Zenzo osoite, jolla viesti allekirjoitettiin</translation>
+        <source>The ZENZO address the message was signed with</source>
+        <translation>ZENZO osoite, jolla viesti allekirjoitettiin</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Zenzo address</source>
-        <translation>Vahvista että viesti on allekirjoitettu kyseessä olevalla Zenzo osoitteella.</translation>
+        <source>Verify the message to ensure it was signed with the specified ZENZO address</source>
+        <translation>Vahvista että viesti on allekirjoitettu kyseessä olevalla ZENZO osoitteella.</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2214,8 +2214,8 @@ Please check the address and try again.</source>
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Zenzo Core</source>
-        <translation>Zenzo Ydin</translation>
+        <source>ZENZO Core</source>
+        <translation>ZENZO Ydin</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -2230,8 +2230,8 @@ Please check the address and try again.</source>
         <translation>Dash Core kehittäjät</translation>
     </message>
     <message>
-        <source>The Zenzo Core developers</source>
-        <translation>Zenzo core kehittäjät</translation>
+        <source>The ZENZO Core developers</source>
+        <translation>ZENZO core kehittäjät</translation>
     </message>
     <message>
         <source>[testnet]</source>
@@ -2591,8 +2591,8 @@ Please check the address and try again.</source>
         <translation>Virhe ladattaessa wallet.dat tiedostoa: Lompakko korruptoitunut</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Zenzo Core</source>
-        <translation>Virhe ladattaessa wallet.dat tiedostoa: Lompakko vaatii uudemman version Zenzo Coresta</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of ZENZO Core</source>
+        <translation>Virhe ladattaessa wallet.dat tiedostoa: Lompakko vaatii uudemman version ZENZO Coresta</translation>
     </message>
     <message>
         <source>Error reading from database, shutting down.</source>

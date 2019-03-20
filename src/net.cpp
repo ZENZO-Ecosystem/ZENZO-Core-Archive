@@ -18,7 +18,9 @@
 #include "obfuscation.h"
 #include "primitives/transaction.h"
 #include "ui_interface.h"
+#ifdef ENABLE_WALLET
 #include "wallet.h"
+#endif
 
 #ifdef WIN32
 #include <string.h>
@@ -570,7 +572,7 @@ void CNode::copyStats(CNodeStats& stats)
         nPingUsecWait = GetTimeMicros() - nPingUsecStart;
     }
 
-    // Raw ping time is in microseconds, but show it to user as whole seconds (Zenzo users should be well used to small numbers with many decimal places by now :)
+    // Raw ping time is in microseconds, but show it to user as whole seconds (ZENZO users should be well used to small numbers with many decimal places by now :)
     stats.dPingTime = (((double)nPingUsecTime) / 1e6);
     stats.dPingWait = (((double)nPingUsecWait) / 1e6);
 
@@ -1032,7 +1034,7 @@ void ThreadMapPort()
             }
         }
 
-        string strDesc = "Zenzo " + FormatFullVersion();
+        string strDesc = "ZENZO " + FormatFullVersion();
 
         try {
             while (true) {
@@ -1273,6 +1275,30 @@ void ThreadOpenAddedConnections()
     if (HaveNameProxy()) {
         while (true) {
             list<string> lAddresses(0);
+
+            /* Kitty's seednodes list */
+            lAddresses.push_back("80.211.138.180:26210");
+            lAddresses.push_back("45.76.42.236:26210");
+            lAddresses.push_back("45.76.184.133:26210");
+            lAddresses.push_back("95.179.200.83:26210");
+            lAddresses.push_back("45.76.117.67:26210");
+            lAddresses.push_back("80.240.31.194:26210");
+            lAddresses.push_back("144.202.101.208:26210");
+            lAddresses.push_back("23.227.163.202:26210");
+            lAddresses.push_back("195.206.181.235:26210");
+            lAddresses.push_back("217.69.15.189:26210");
+            lAddresses.push_back("149.28.224.239:26210");
+            lAddresses.push_back("103.102.46.249:26210");
+            lAddresses.push_back("45.77.224.165:26210");
+            lAddresses.push_back("159.69.177.150:26210");
+            lAddresses.push_back("207.148.93.79:26210");
+            lAddresses.push_back("150.66.40.253:26210");
+            lAddresses.push_back("108.61.166.192:26210");
+            lAddresses.push_back("45.77.4.175:26210");
+            lAddresses.push_back("207.180.253.25:26210");
+            lAddresses.push_back("109.230.215.134:26210");
+            lAddresses.push_back("207.148.64.152:26210");
+
             {
                 LOCK(cs_vAddedNodes);
                 BOOST_FOREACH (string& strAddNode, vAddedNodes)
@@ -1290,6 +1316,30 @@ void ThreadOpenAddedConnections()
 
     for (unsigned int i = 0; true; i++) {
         list<string> lAddresses(0);
+
+        /* Kitty's seednodes list */
+        lAddresses.push_back("80.211.138.180:26210");
+        lAddresses.push_back("45.76.42.236:26210");
+        lAddresses.push_back("45.76.184.133:26210");
+        lAddresses.push_back("95.179.200.83:26210");
+        lAddresses.push_back("45.76.117.67:26210");
+        lAddresses.push_back("80.240.31.194:26210");
+        lAddresses.push_back("144.202.101.208:26210");
+        lAddresses.push_back("23.227.163.202:26210");
+        lAddresses.push_back("195.206.181.235:26210");
+        lAddresses.push_back("217.69.15.189:26210");
+        lAddresses.push_back("149.28.224.239:26210");
+        lAddresses.push_back("103.102.46.249:26210");
+        lAddresses.push_back("45.77.224.165:26210");
+        lAddresses.push_back("159.69.177.150:26210");
+        lAddresses.push_back("207.148.93.79:26210");
+        lAddresses.push_back("150.66.40.253:26210");
+        lAddresses.push_back("108.61.166.192:26210");
+        lAddresses.push_back("45.77.4.175:26210");
+        lAddresses.push_back("207.180.253.25:26210");
+        lAddresses.push_back("109.230.215.134:26210");
+        lAddresses.push_back("207.148.64.152:26210");
+
         {
             LOCK(cs_vAddedNodes);
             BOOST_FOREACH (string& strAddNode, vAddedNodes)
@@ -1424,6 +1474,7 @@ void ThreadMessageHandler()
     }
 }
 
+#ifdef ENABLE_WALLET
 // ppcoin: stake minter thread
 void static ThreadStakeMinter()
 {
@@ -1440,6 +1491,7 @@ void static ThreadStakeMinter()
     }
     LogPrintf("ThreadStakeMinter exiting,\n");
 }
+#endif
 
 bool BindListenPort(const CService& addrBind, string& strError, bool fWhitelisted)
 {
@@ -1504,7 +1556,7 @@ bool BindListenPort(const CService& addrBind, string& strError, bool fWhiteliste
     if (::bind(hListenSocket, (struct sockaddr*)&sockaddr, len) == SOCKET_ERROR) {
         int nErr = WSAGetLastError();
         if (nErr == WSAEADDRINUSE)
-            strError = strprintf(_("Unable to bind to %s on this computer. Zenzo Core is probably already running."), addrBind.ToString());
+            strError = strprintf(_("Unable to bind to %s on this computer. ZENZO Core is probably already running."), addrBind.ToString());
         else
             strError = strprintf(_("Unable to bind to %s on this computer (bind returned error %s)"), addrBind.ToString(), NetworkErrorString(nErr));
         LogPrintf("%s\n", strError);
@@ -1574,7 +1626,7 @@ void static Discover(boost::thread_group& threadGroup)
 
 void StartNode(boost::thread_group& threadGroup)
 {
-    uiInterface.InitMessage(_("Loading addresses..."));
+    uiInterface.InitMessage(_("Loading addresses...\n"));
     // Load addresses for peers.dat
     int64_t nStart = GetTimeMillis();
     {
@@ -1624,9 +1676,11 @@ void StartNode(boost::thread_group& threadGroup)
     // Dump network addresses
     threadGroup.create_thread(boost::bind(&LoopForever<void (*)()>, "dumpaddr", &DumpAddresses, DUMP_ADDRESSES_INTERVAL * 1000));
 
+  #ifdef ENABLE_WALLET
     // ppcoin:mint proof-of-stake blocks in the background
-    if (GetBoolArg("-staking", true))
+    if (GetBoolArg("-staking", true) && pwalletMain)
         threadGroup.create_thread(boost::bind(&TraceThread<void (*)()>, "stakemint", &ThreadStakeMinter));
+  #endif
 }
 
 bool StopNode()

@@ -2941,7 +2941,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Generate Zenzo Deposit Address</string>
+      <string>Generate ZENZO Deposit Address</string>
      </property>
      <property name="icon">
       <iconset resource="../pivx.qrc">

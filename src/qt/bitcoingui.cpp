@@ -1,6 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2018 The ZNZ developers
+// Copyright (c) 2015-2019 The PIVX developers
+// Copyright (c) 2018-2019 The ZENZO developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -17,12 +18,14 @@
 #include "optionsdialog.h"
 #include "optionsmodel.h"
 #include "rpcconsole.h"
+#include "rpcserver.h"
 #include "utilitydialog.h"
 
 #ifdef ENABLE_WALLET
 #include "blockexplorer.h"
 #include "walletframe.h"
 #include "walletmodel.h"
+#include "wallet.h"
 #endif // ENABLE_WALLET
 
 #ifdef Q_OS_MAC
@@ -35,6 +38,7 @@
 #include "util.h"
 
 #include <iostream>
+#include <string>
 
 #include <QAction>
 #include <QApplication>
@@ -62,6 +66,8 @@
 #else
 #include <QUrlQuery>
 #endif
+
+QSettings uiSettings;
 
 const QString BitcoinGUI::DEFAULT_WALLET = "~Default";
 
@@ -115,14 +121,16 @@ BitcoinGUI::BitcoinGUI(const NetworkStyle* networkStyle, QWidget* parent) : QMai
     /* Open CSS when configured */
     this->setStyleSheet(GUIUtil::loadStyleSheet());
 
-    GUIUtil::restoreWindowGeometry("nWindow", QSize(850, 550), this);
+    GUIUtil::restoreWindowGeometry("nWindow", QSize(750, 465), this);
 
-    QString windowTitle = tr("Zenzo Core") + " - ";
+    QString windowTitle = tr("ZENZO Core") + " - ";
 #ifdef ENABLE_WALLET
     /* if compiled with wallet support, -disablewallet can still disable the wallet */
     enableWallet = !GetBoolArg("-disablewallet", false);
+    enableZerocoin = GetBoolArg("-zerocoin", false);
 #else
     enableWallet = false;
+    enableZerocoin = false;
 #endif // ENABLE_WALLET
     if (enableWallet) {
         windowTitle += tr("Wallet");
@@ -180,6 +188,40 @@ BitcoinGUI::BitcoinGUI(const NetworkStyle* networkStyle, QWidget* parent) : QMai
     // Create status bar
     statusBar();
 
+    // Ask for Zerocoin preference on first boot
+    /*if (!uiSettings.contains("enableZerocoin")) {
+      QMessageBox zNotif;
+      zNotif.setText("Would you like to enable Zerocoin?");
+      //zNotif.setInformativeText("");
+      zNotif.setWindowTitle("ZENZO Core - Zerocoin");
+      zNotif.setStandardButtons(QMessageBox::No | QMessageBox::Yes);
+      zNotif.setDefaultButton(QMessageBox::No);
+      int ret = zNotif.exec();
+
+      switch (ret) {
+        case QMessageBox::No:
+          enableZerocoin = false;
+          //cout << "Zerocoin: " << enableZerocoin;
+          uiSettings.setValue("enableZerocoin", enableZerocoin);
+          break;
+        case QMessageBox::Yes:
+          enableZerocoin = true;
+          //cout << "Zerocoin: " << enableZerocoin;
+          uiSettings.setValue("enableZerocoin", enableZerocoin);
+          break;
+        default:
+          enableZerocoin = false;
+          //cout << "Zerocoin: " << enableZerocoin;
+          uiSettings.setValue("enableZerocoin", enableZerocoin);
+          break;
+      }
+  } else if (!GetBoolArg("-zerocoin", false)) {
+    enableZerocoin = uiSettings.value("enableZerocoin").toBool();
+  }*/
+
+    // Uncomment below and comment above if debugging / editing the Zerocoin pref. popup
+    //uiSettings.remove("enableZerocoin");
+
     // Status bar notification icons
     QFrame* frameBlocks = new QFrame();
     frameBlocks->setContentsMargins(0, 0, 0, 0);
@@ -189,11 +231,13 @@ BitcoinGUI::BitcoinGUI(const NetworkStyle* networkStyle, QWidget* parent) : QMai
     frameBlocksLayout->setSpacing(3);
     unitDisplayControl = new UnitDisplayStatusBarControl();
     labelStakingIcon = new QLabel();
-    labelAutoMintIcon = new QPushButton();
-    labelAutoMintIcon->setObjectName("labelAutoMintIcon");
-    labelAutoMintIcon->setFlat(true); // Make the button look like a label, but clickable
-    labelAutoMintIcon->setStyleSheet(".QPushButton { background-color: rgba(255, 255, 255, 0);}");
-    labelAutoMintIcon->setMaximumSize(STATUSBAR_ICONSIZE, STATUSBAR_ICONSIZE);
+    if (enableZerocoin) {
+      labelAutoMintIcon = new QPushButton();
+      labelAutoMintIcon->setObjectName("labelAutoMintIcon");
+      labelAutoMintIcon->setFlat(true); // Make the button look like a label, but clickable
+      labelAutoMintIcon->setStyleSheet(".QPushButton { background-color: rgba(255, 255, 255, 0);}");
+      labelAutoMintIcon->setMaximumSize(STATUSBAR_ICONSIZE, STATUSBAR_ICONSIZE);
+    }
     labelEncryptionIcon = new QPushButton();
     labelEncryptionIcon->setObjectName("labelEncryptionIcon");
     labelEncryptionIcon->setFlat(true); // Make the button look like a label, but clickable
@@ -214,8 +258,10 @@ BitcoinGUI::BitcoinGUI(const NetworkStyle* networkStyle, QWidget* parent) : QMai
         frameBlocksLayout->addWidget(labelEncryptionIcon);
         frameBlocksLayout->addStretch();
         frameBlocksLayout->addWidget(labelStakingIcon);
-        frameBlocksLayout->addStretch();
-        frameBlocksLayout->addWidget(labelAutoMintIcon);
+        if (enableZerocoin) {
+          frameBlocksLayout->addStretch();
+          frameBlocksLayout->addWidget(labelAutoMintIcon);
+        }
     }
 #endif // ENABLE_WALLET
     frameBlocksLayout->addWidget(labelTorIcon);
@@ -256,7 +302,7 @@ BitcoinGUI::BitcoinGUI(const NetworkStyle* networkStyle, QWidget* parent) : QMai
     connect(showBackupsAction, SIGNAL(triggered()), rpcConsole, SLOT(showBackups()));
     connect(labelConnectionsIcon, SIGNAL(clicked()), rpcConsole, SLOT(showPeers()));
     connect(labelEncryptionIcon, SIGNAL(clicked()), walletFrame, SLOT(toggleLockWallet()));
-    connect(labelAutoMintIcon, SIGNAL(clicked()), this, SLOT(optionsClicked()));
+    if (enableZerocoin) connect(labelAutoMintIcon, SIGNAL(clicked()), this, SLOT(optionsClicked()));
 
     // Get restart command-line parameters and handle restart
     connect(rpcConsole, SIGNAL(handleRestart(QStringList)), this, SLOT(handleRestart(QStringList)));
@@ -283,10 +329,12 @@ BitcoinGUI::BitcoinGUI(const NetworkStyle* networkStyle, QWidget* parent) : QMai
     timerStakingIcon->start(10000);
     setStakingStatus();
 
-    QTimer* timerAutoMintIcon = new QTimer(labelAutoMintIcon);
-    connect(timerAutoMintIcon, SIGNAL(timeout()), this, SLOT(setAutoMintStatus()));
-    timerAutoMintIcon->start(10000);
-    setAutoMintStatus();
+    if (enableZerocoin) {
+      QTimer* timerAutoMintIcon = new QTimer(labelAutoMintIcon);
+      connect(timerAutoMintIcon, SIGNAL(timeout()), this, SLOT(setAutoMintStatus()));
+      timerAutoMintIcon->start(10000);
+      setAutoMintStatus();
+    }
 }
 
 BitcoinGUI::~BitcoinGUI()
@@ -319,7 +367,7 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
     tabGroup->addAction(overviewAction);
 
     sendCoinsAction = new QAction(QIcon(":/icons/send"), tr("&Send"), this);
-    sendCoinsAction->setStatusTip(tr("Send coins to a Zenzo address"));
+    sendCoinsAction->setStatusTip(tr("Send coins to a ZENZO address"));
     sendCoinsAction->setToolTip(sendCoinsAction->statusTip());
     sendCoinsAction->setCheckable(true);
 #ifdef Q_OS_MAC
@@ -351,16 +399,18 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
 #endif
     tabGroup->addAction(historyAction);
 
-    privacyAction = new QAction(QIcon(":/icons/privacy"), tr("&Privacy"), this);
-    privacyAction->setStatusTip(tr("Privacy Actions for zZNZ"));
-    privacyAction->setToolTip(privacyAction->statusTip());
-    privacyAction->setCheckable(true);
+    if (enableZerocoin) {
+      privacyAction = new QAction(QIcon(":/icons/privacy"), tr("&Privacy"), this);
+      privacyAction->setStatusTip(tr("Privacy Actions for zZNZ"));
+      privacyAction->setToolTip(privacyAction->statusTip());
+      privacyAction->setCheckable(true);
+    }
 #ifdef Q_OS_MAC
-    privacyAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_5));
+if (enableZerocoin) privacyAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_5));
 #else
-    privacyAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
+if (enableZerocoin) privacyAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
 #endif
-    tabGroup->addAction(privacyAction);
+if (enableZerocoin) tabGroup->addAction(privacyAction);
 
 #ifdef ENABLE_WALLET
 
@@ -388,8 +438,10 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
     connect(sendCoinsAction, SIGNAL(triggered()), this, SLOT(gotoSendCoinsPage()));
     connect(receiveCoinsAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(receiveCoinsAction, SIGNAL(triggered()), this, SLOT(gotoReceiveCoinsPage()));
-    connect(privacyAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
-    connect(privacyAction, SIGNAL(triggered()), this, SLOT(gotoPrivacyPage()));
+    if (enableZerocoin) {
+      connect(privacyAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+      connect(privacyAction, SIGNAL(triggered()), this, SLOT(gotoPrivacyPage()));
+    }
     connect(historyAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(historyAction, SIGNAL(triggered()), this, SLOT(gotoHistoryPage()));
 #endif // ENABLE_WALLET
@@ -398,8 +450,8 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
     quitAction->setStatusTip(tr("Quit application"));
     quitAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q));
     quitAction->setMenuRole(QAction::QuitRole);
-    aboutAction = new QAction(networkStyle->getAppIcon(), tr("&About Zenzo Core"), this);
-    aboutAction->setStatusTip(tr("Show information about Zenzo Core"));
+    aboutAction = new QAction(networkStyle->getAppIcon(), tr("&About ZENZO Core"), this);
+    aboutAction->setStatusTip(tr("Show information about ZENZO Core"));
     aboutAction->setMenuRole(QAction::AboutRole);
 #if QT_VERSION < 0x050000
     aboutQtAction = new QAction(QIcon(":/trolltech/qmessagebox/images/qtlogo-64.png"), tr("About &Qt"), this);
@@ -409,7 +461,7 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
     aboutQtAction->setStatusTip(tr("Show information about Qt"));
     aboutQtAction->setMenuRole(QAction::AboutQtRole);
     optionsAction = new QAction(QIcon(":/icons/options"), tr("&Options..."), this);
-    optionsAction->setStatusTip(tr("Modify configuration options for Zenzo"));
+    optionsAction->setStatusTip(tr("Modify configuration options for ZENZO"));
     optionsAction->setMenuRole(QAction::PreferencesRole);
     toggleHideAction = new QAction(networkStyle->getAppIcon(), tr("&Show / Hide"), this);
     toggleHideAction->setStatusTip(tr("Show or hide the main Window"));
@@ -418,15 +470,15 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
     encryptWalletAction->setCheckable(true);
     backupWalletAction = new QAction(QIcon(":/icons/filesave"), tr("&Backup Wallet..."), this);
     backupWalletAction->setStatusTip(tr("Backup wallet to another location"));
-    changePassphraseAction = new QAction(QIcon(":/icons/key"), tr("&Change Passphrase..."), this);   
-    changePassphraseAction->setStatusTip(tr("Change the passphrase used for wallet encryption"));    
+    changePassphraseAction = new QAction(QIcon(":/icons/key"), tr("&Change Passphrase..."), this);
+    changePassphraseAction->setStatusTip(tr("Change the passphrase used for wallet encryption"));
     unlockWalletAction = new QAction(QIcon(":/icons/lock_open"), tr("&Unlock Wallet..."), this);
     unlockWalletAction->setToolTip(tr("Unlock wallet"));
     lockWalletAction = new QAction(tr("&Lock Wallet"), this);
     signMessageAction = new QAction(QIcon(":/icons/edit"), tr("Sign &message..."), this);
-    signMessageAction->setStatusTip(tr("Sign messages with your Zenzo addresses to prove you own them"));
+    signMessageAction->setStatusTip(tr("Sign messages with your ZENZO addresses to prove you own them"));
     verifyMessageAction = new QAction(QIcon(":/icons/transaction_0"), tr("&Verify message..."), this);
-    verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified Zenzo addresses"));
+    verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified ZENZO addresses"));
     bip38ToolAction = new QAction(QIcon(":/icons/key"), tr("&BIP38 tool"), this);
     bip38ToolAction->setToolTip(tr("Encrypt and decrypt private keys using a passphrase"));
     multiSendAction = new QAction(QIcon(":/icons/edit"), tr("&MultiSend"), this);
@@ -469,7 +521,7 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
 
     showHelpMessageAction = new QAction(QApplication::style()->standardIcon(QStyle::SP_MessageBoxInformation), tr("&Command-line options"), this);
     showHelpMessageAction->setMenuRole(QAction::NoRole);
-    showHelpMessageAction->setStatusTip(tr("Show the Zenzo Core help message to get a list with possible Zenzo command-line options"));
+    showHelpMessageAction->setStatusTip(tr("Show the ZENZO Core help message to get a list with possible ZENZO command-line options"));
 
     connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
     connect(aboutAction, SIGNAL(triggered()), this, SLOT(aboutClicked()));
@@ -573,9 +625,19 @@ void BitcoinGUI::createToolBars()
         toolbar->addAction(overviewAction);
         toolbar->addAction(sendCoinsAction);
         toolbar->addAction(receiveCoinsAction);
-        toolbar->addAction(privacyAction);
+        // Disable the Privacy tab if no zZNZ is owned
+        // Enable if zZNZ is owned, so the user has the option to convert back
+        /*CWallet zWallet;
+        int zZNZBalance = zWallet.GetZerocoinBalance(false);
+        if (zZNZBalance > 0) {
+          std::cout << "Zerocoins: " << zZNZBalance << std::endl;
+          toolbar->addAction(privacyAction);
+        }*/
+        // Manual Zerocoin setting (temp)
+        if (enableZerocoin) {
+          toolbar->addAction(privacyAction);
+        }
         toolbar->addAction(historyAction);
-        toolbar->addAction(privacyAction);
         QSettings settings;
         if (settings.value("fShowMasternodesTab").toBool()) {
             toolbar->addAction(masternodeAction);
@@ -631,7 +693,7 @@ void BitcoinGUI::setClientModel(ClientModel* clientModel)
         }
 #endif // ENABLE_WALLET
         unitDisplayControl->setOptionsModel(clientModel->getOptionsModel());
-        connect(clientModel->getOptionsModel(), SIGNAL(zeromintEnableChanged(bool)), this, SLOT(setAutoMintStatus()));
+        if (enableZerocoin) connect(clientModel->getOptionsModel(), SIGNAL(zeromintEnableChanged(bool)), this, SLOT(setAutoMintStatus()));
 
         //Show trayIcon
         if (trayIcon)
@@ -678,7 +740,7 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
     overviewAction->setEnabled(enabled);
     sendCoinsAction->setEnabled(enabled);
     receiveCoinsAction->setEnabled(enabled);
-    privacyAction->setEnabled(enabled);
+    if (enableZerocoin) privacyAction->setEnabled(enabled);
     historyAction->setEnabled(enabled);
     QSettings settings;
     if (settings.value("fShowMasternodesTab").toBool()) {
@@ -702,7 +764,7 @@ void BitcoinGUI::createTrayIcon(const NetworkStyle* networkStyle)
 {
 #ifndef Q_OS_MAC
     trayIcon = new QSystemTrayIcon(this);
-    QString toolTip = tr("Zenzo Core client") + " " + networkStyle->getTitleAddText();
+    QString toolTip = tr("ZENZO Core client") + " " + networkStyle->getTitleAddText();
     trayIcon->setToolTip(toolTip);
     trayIcon->setIcon(networkStyle->getAppIcon());
     trayIcon->hide();
@@ -735,7 +797,7 @@ void BitcoinGUI::createTrayIconMenu()
     trayIconMenu->addSeparator();
     trayIconMenu->addAction(sendCoinsAction);
     trayIconMenu->addAction(receiveCoinsAction);
-    trayIconMenu->addAction(privacyAction);
+    if (enableZerocoin) trayIconMenu->addAction(privacyAction);
     trayIconMenu->addSeparator();
     trayIconMenu->addAction(signMessageAction);
     trayIconMenu->addAction(verifyMessageAction);
@@ -914,7 +976,7 @@ void BitcoinGUI::setNumConnections(int count)
     }
     QIcon connectionItem = QIcon(icon).pixmap(STATUSBAR_ICONSIZE, STATUSBAR_ICONSIZE);
     labelConnectionsIcon->setIcon(connectionItem);
-    labelConnectionsIcon->setToolTip(tr("%n active connection(s) to Zenzo network", "", count));
+    labelConnectionsIcon->setToolTip(tr("%n active connection(s) to the ZENZO network", "", count));
 }
 
 void BitcoinGUI::setNumBlocks(int count)
@@ -1044,7 +1106,7 @@ void BitcoinGUI::setNumBlocks(int count)
 
 void BitcoinGUI::message(const QString& title, const QString& message, unsigned int style, bool* ret)
 {
-    QString strTitle = tr("Zenzo Core"); // default title
+    QString strTitle = tr("ZENZO Core"); // default title
     // Default to information icon
     int nMBoxIcon = QMessageBox::Information;
     int nNotifyIcon = Notificator::Information;
@@ -1069,7 +1131,7 @@ void BitcoinGUI::message(const QString& title, const QString& message, unsigned 
             break;
         }
     }
-    // Append title to "Zenzo - "
+    // Append title to "ZENZO Core - "
     if (!msgType.isEmpty())
         strTitle += " - " + msgType;
 
@@ -1195,11 +1257,11 @@ void BitcoinGUI::setStakingStatus()
 
 void BitcoinGUI::setAutoMintStatus()
 {
-    if (fEnableZeromint) {
+    if (fEnableZeromint && enableZerocoin) {
         labelAutoMintIcon->show();
         labelAutoMintIcon->setIcon(QIcon(":/icons/automint_active").pixmap(STATUSBAR_ICONSIZE, STATUSBAR_ICONSIZE));
         labelAutoMintIcon->setToolTip(tr("AutoMint is currently enabled and set to ") + QString::number(nZeromintPercentage) + "%.\n");
-    } else {
+    } else if (enableZerocoin) {
         labelAutoMintIcon->show();
         labelAutoMintIcon->setIcon(QIcon(":/icons/automint_inactive").pixmap(STATUSBAR_ICONSIZE, STATUSBAR_ICONSIZE));
         labelAutoMintIcon->setToolTip(tr("AutoMint is disabled"));

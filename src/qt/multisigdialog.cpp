@@ -1,4 +1,4 @@
-// Copyright (c) 2017 The Zenzo developers
+// Copyright (c) 2018-2019 The ZENZO developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -307,7 +307,7 @@ void MultisigDialog::on_createButton_clicked()
             string fee;
             if(!createMultisigTransaction(vUserIn, vUserOut, fee, error)){
                 throw runtime_error(error);
-            }   
+            }
 
             //display status string
             ui->createButtonStatus->setStyleSheet("QTextEdit{ color: black }");
@@ -731,7 +731,7 @@ bool MultisigDialog::createRedeemScript(int m, vector<string> vKeys, CScript& re
         for(vector<string>::iterator it = vKeys.begin(); it != vKeys.end(); ++it) {
             string keyString = *it;
     #ifdef ENABLE_WALLET
-            // Case 1: Zenzo address and we have full public key:
+            // Case 1: ZENZO address and we have full public key:
             CBitcoinAddress address(keyString);
             if (pwalletMain && address.IsValid()) {
                 CKeyID keyID;
@@ -1021,4 +1021,3 @@ void MultisigDialog::on_addPrivKeyButton_clicked()
 
     ui->keyList->addWidget(keyFrame);
 }
-

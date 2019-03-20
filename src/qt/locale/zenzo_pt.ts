@@ -62,12 +62,12 @@
         <translation>Endereços de recebimento</translation>
     </message>
     <message>
-        <source>These are your Zenzo addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Esses são seus endereços Zenzo para enviar pagamentos. Sempre confira a quantidade e os endereços de destino antes de enviar moedas.</translation>
+        <source>These are your ZENZO addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Esses são seus endereços ZENZO para enviar pagamentos. Sempre confira a quantidade e os endereços de destino antes de enviar moedas.</translation>
     </message>
     <message>
-        <source>These are your Zenzo addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Esses são seus endereços Zenzo para receber pagamentos. É recomendado usar um novo endereço para cada transação.</translation>
+        <source>These are your ZENZO addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Esses são seus endereços ZENZO para receber pagamentos. É recomendado usar um novo endereço para cada transação.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -176,8 +176,8 @@
         <translation>Confirmar encriptação da carteira</translation>
     </message>
     <message>
-        <source>Zenzo will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
-        <translation>Zenzo encerrará para terminar o processo de encriptação. Lembre-se que encriptar sua carteira não protege completamente suas ZNZs contra roubo por malware infectando seu computador.</translation>
+        <source>ZENZO will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ZNZs from being stolen by malware infecting your computer.</source>
+        <translation>ZENZO encerrará para terminar o processo de encriptação. Lembre-se que encriptar sua carteira não protege completamente suas ZNZs contra roubo por malware infectando seu computador.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -239,16 +239,16 @@
         <translation>Encriptar com &amp;BIP 38</translation>
     </message>
     <message>
-        <source>Enter a Zenzo Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Digite um endereço Zenzo que você gostaria de criptografar usando BIP 38. Digite uma frase secreta na caixa do meio. Pressione criptografar para calcular a chave privada criptografada.</translation>
+        <source>Enter a ZENZO Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Digite um endereço ZENZO que você gostaria de criptografar usando BIP 38. Digite uma frase secreta na caixa do meio. Pressione criptografar para calcular a chave privada criptografada.</translation>
     </message>
     <message>
         <source>Address:</source>
         <translation>Endereço:</translation>
     </message>
     <message>
-        <source>The Zenzo address to sign the message with</source>
-        <translation>Um endereço Zenzo para assinar a mensagem</translation>
+        <source>The ZENZO address to sign the message with</source>
+        <translation>Um endereço ZENZO para assinar a mensagem</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -279,8 +279,8 @@
         <translation>Copiar a assinatura para a area de trabalho</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Zenzo address</source>
-        <translation>Assinar a Mensagem para provar que você e dono desse endereço Zenzo.</translation>
+        <source>Sign the message to prove you own this ZENZO address</source>
+        <translation>Assinar a Mensagem para provar que você e dono desse endereço ZENZO.</translation>
     </message>
     <message>
         <source>Encrypt &amp;Key</source>
@@ -299,8 +299,8 @@
         <translation>Criptografia BIP 38</translation>
     </message>
     <message>
-        <source>The Zenzo address the message was signed with</source>
-        <translation>O endereço Zenzo que foi assinado com</translation>
+        <source>The ZENZO address the message was signed with</source>
+        <translation>O endereço ZENZO que foi assinado com</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
@@ -668,8 +668,8 @@
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>The Zenzo address to sign the message with</source>
-        <translation>Um endereço Zenzo para assinar a mensagem</translation>
+        <source>The ZENZO address to sign the message with</source>
+        <translation>Um endereço ZENZO para assinar a mensagem</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -700,12 +700,12 @@
         <translation>Copiar a assinatura para a area de trabalho</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Zenzo address</source>
-        <translation>Assinar a Mensagem para provar que você e dono desse endereço Zenzo.</translation>
+        <source>Sign the message to prove you own this ZENZO address</source>
+        <translation>Assinar a Mensagem para provar que você e dono desse endereço ZENZO.</translation>
     </message>
     <message>
-        <source>The Zenzo address the message was signed with</source>
-        <translation>O endereço Zenzo que foi assinado com</translation>
+        <source>The ZENZO address the message was signed with</source>
+        <translation>O endereço ZENZO que foi assinado com</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
@@ -912,8 +912,8 @@
         <translation>Deletar todas as transações da carteira e somente recuperar aquelas partes do blockchain através de -rescan na inicialização</translation>
     </message>
     <message>
-        <source>Disable all Zenzo specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
-        <translation>Desabilitar todas as funcionacilidades específicas da Zenzo (Masternodes, Ofuscação, SwiftTX, Budgeting) (0-1, default %u)</translation>
+        <source>Disable all ZENZO specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
+        <translation>Desabilitar todas as funcionacilidades específicas da ZENZO (Masternodes, Ofuscação, SwiftTX, Budgeting) (0-1, default %u)</translation>
     </message>
     <message>
         <source>Connect through SOCKS5 proxy</source>
@@ -1272,8 +1272,8 @@
         <translation>Carteira esta bloqueada.</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart Zenzo Core to complete</source>
-        <translation>Carteira precisa ser reescrita: reinicie o Zenzo Core para completar.</translation>
+        <source>Wallet needed to be rewritten: restart ZENZO Core to complete</source>
+        <translation>Carteira precisa ser reescrita: reinicie o ZENZO Core para completar.</translation>
     </message>
     <message>
         <source>Wallet options:</source>
