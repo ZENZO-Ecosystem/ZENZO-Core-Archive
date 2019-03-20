@@ -23,7 +23,7 @@ packages:
 - "python"
 remotes:
 - "url": "https://github.com/Zenzo-Ecosystem/ZENZO-Core.git"
-  "dir": "zenzo"
+  "dir": "ZENZO-Core"
 files: []
 script: |
   WRAP_DIR=$HOME/wrapped

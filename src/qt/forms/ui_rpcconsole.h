@@ -179,7 +179,7 @@ public:
     {
         if (RPCConsole->objectName().isEmpty())
             RPCConsole->setObjectName(QStringLiteral("RPCConsole"));
-        RPCConsole->resize(769, 485);
+        RPCConsole->resize(769, 516);
         verticalLayout_2 = new QVBoxLayout(RPCConsole);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         tabWidget = new QTabWidget(RPCConsole);
@@ -367,6 +367,7 @@ public:
 
         openDebugLogfileButton = new QPushButton(tab_info);
         openDebugLogfileButton->setObjectName(QStringLiteral("openDebugLogfileButton"));
+        openDebugLogfileButton->setCursor(QCursor(Qt::PointingHandCursor));
         openDebugLogfileButton->setAutoDefault(false);
 
         gridLayout->addWidget(openDebugLogfileButton, 16, 0, 1, 1);
@@ -891,9 +892,9 @@ public:
         wallet_custombackuppath = new QLabel(tab_repair);
         wallet_custombackuppath->setObjectName(QStringLiteral("wallet_custombackuppath"));
         wallet_custombackuppath->setCursor(QCursor(Qt::IBeamCursor));
+        wallet_custombackuppath->setVisible(false);
         wallet_custombackuppath->setTextFormat(Qt::PlainText);
         wallet_custombackuppath->setTextInteractionFlags(Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse);
-        wallet_custombackuppath->setVisible(false);
 
         gridLayout_4->addWidget(wallet_custombackuppath, 3, 1, 1, 3);
 
@@ -906,9 +907,9 @@ public:
         wallet_customzpivbackuppath = new QLabel(tab_repair);
         wallet_customzpivbackuppath->setObjectName(QStringLiteral("wallet_customzpivbackuppath"));
         wallet_customzpivbackuppath->setCursor(QCursor(Qt::IBeamCursor));
+        wallet_customzpivbackuppath->setVisible(false);
         wallet_customzpivbackuppath->setTextFormat(Qt::PlainText);
         wallet_customzpivbackuppath->setTextInteractionFlags(Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse);
-        wallet_customzpivbackuppath->setVisible(false);
 
         gridLayout_4->addWidget(wallet_customzpivbackuppath, 4, 1, 1, 3);
 
@@ -921,9 +922,9 @@ public:
         wallet_custombackupthreshold = new QLabel(tab_repair);
         wallet_custombackupthreshold->setObjectName(QStringLiteral("wallet_custombackupthreshold"));
         wallet_custombackupthreshold->setCursor(QCursor(Qt::IBeamCursor));
+        wallet_custombackupthreshold->setVisible(false);
         wallet_custombackupthreshold->setTextFormat(Qt::PlainText);
         wallet_custombackupthreshold->setTextInteractionFlags(Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse);
-        wallet_custombackupthreshold->setVisible(false);
 
         gridLayout_4->addWidget(wallet_custombackupthreshold, 5, 1, 1, 3);
 
@@ -934,6 +935,7 @@ public:
         btn_salvagewallet = new QPushButton(tab_repair);
         btn_salvagewallet->setObjectName(QStringLiteral("btn_salvagewallet"));
         btn_salvagewallet->setMinimumSize(QSize(100, 23));
+        btn_salvagewallet->setCursor(QCursor(Qt::PointingHandCursor));
 
         gridLayout_4->addWidget(btn_salvagewallet, 7, 0, 1, 2);
 
@@ -952,6 +954,7 @@ public:
         btn_rescan = new QPushButton(tab_repair);
         btn_rescan->setObjectName(QStringLiteral("btn_rescan"));
         btn_rescan->setMinimumSize(QSize(100, 23));
+        btn_rescan->setCursor(QCursor(Qt::PointingHandCursor));
 
         gridLayout_4->addWidget(btn_rescan, 8, 0, 1, 2);
 
@@ -970,6 +973,7 @@ public:
         btn_zapwallettxes1 = new QPushButton(tab_repair);
         btn_zapwallettxes1->setObjectName(QStringLiteral("btn_zapwallettxes1"));
         btn_zapwallettxes1->setMinimumSize(QSize(100, 23));
+        btn_zapwallettxes1->setCursor(QCursor(Qt::PointingHandCursor));
 
         gridLayout_4->addWidget(btn_zapwallettxes1, 9, 0, 1, 2);
 
@@ -988,6 +992,7 @@ public:
         btn_zapwallettxes2 = new QPushButton(tab_repair);
         btn_zapwallettxes2->setObjectName(QStringLiteral("btn_zapwallettxes2"));
         btn_zapwallettxes2->setMinimumSize(QSize(100, 23));
+        btn_zapwallettxes2->setCursor(QCursor(Qt::PointingHandCursor));
 
         gridLayout_4->addWidget(btn_zapwallettxes2, 10, 0, 1, 2);
 
@@ -1006,6 +1011,7 @@ public:
         btn_upgradewallet = new QPushButton(tab_repair);
         btn_upgradewallet->setObjectName(QStringLiteral("btn_upgradewallet"));
         btn_upgradewallet->setMinimumSize(QSize(100, 23));
+        btn_upgradewallet->setCursor(QCursor(Qt::PointingHandCursor));
 
         gridLayout_4->addWidget(btn_upgradewallet, 11, 0, 1, 2);
 
@@ -1024,6 +1030,7 @@ public:
         btn_reindex = new QPushButton(tab_repair);
         btn_reindex->setObjectName(QStringLiteral("btn_reindex"));
         btn_reindex->setMinimumSize(QSize(100, 23));
+        btn_reindex->setCursor(QCursor(Qt::PointingHandCursor));
 
         gridLayout_4->addWidget(btn_reindex, 12, 0, 1, 2);
 
@@ -1042,6 +1049,7 @@ public:
         btn_resync = new QPushButton(tab_repair);
         btn_resync->setObjectName(QStringLiteral("btn_resync"));
         btn_resync->setMinimumSize(QSize(100, 23));
+        btn_resync->setCursor(QCursor(Qt::PointingHandCursor));
 
         gridLayout_4->addWidget(btn_resync, 13, 0, 1, 2);
 
@@ -1067,7 +1075,7 @@ public:
 
         retranslateUi(RPCConsole);
 
-        tabWidget->setCurrentIndex(3);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(RPCConsole);

@@ -74,7 +74,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 479, 213));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 479, 214));
         verticalLayout_2 = new QVBoxLayout(scrollAreaWidgetContents);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         aboutMessage = new QLabel(scrollAreaWidgetContents);
@@ -93,6 +93,7 @@ public:
 
         okButton = new QDialogButtonBox(HelpMessageDialog);
         okButton->setObjectName(QStringLiteral("okButton"));
+        okButton->setCursor(QCursor(Qt::PointingHandCursor));
         okButton->setOrientation(Qt::Horizontal);
         okButton->setStandardButtons(QDialogButtonBox::Ok);
 

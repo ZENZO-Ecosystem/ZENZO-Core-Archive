@@ -123,6 +123,8 @@ CAddress GetLocalAddress(const CNetAddr* paddrPeer = NULL);
 
 extern bool fDiscover;
 extern bool fListen;
+extern bool fUpdateCheck;
+extern int shouldUpgrade;
 extern uint64_t nLocalServices;
 extern uint64_t nLocalHostNonce;
 extern CAddrMan addrman;
@@ -671,5 +673,10 @@ public:
     bool Write(const CAddrMan& addr);
     bool Read(CAddrMan& addr);
 };
+
+
+int CheckForUpdates(std::string addr, std::string ver);
+void replaceAll(std::string& str, const std::string& from, const std::string& to);
+int toInt(const std::string);
 
 #endif // BITCOIN_NET_H

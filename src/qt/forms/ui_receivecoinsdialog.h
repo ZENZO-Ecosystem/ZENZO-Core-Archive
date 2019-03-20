@@ -198,6 +198,7 @@ public:
         receiveButton = new QPushButton(frame2);
         receiveButton->setObjectName(QStringLiteral("receiveButton"));
         receiveButton->setMinimumSize(QSize(150, 0));
+        receiveButton->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon;
         icon.addFile(QStringLiteral(":/icons/receiving_addresses"), QSize(), QIcon::Normal, QIcon::Off);
         receiveButton->setIcon(icon);
@@ -211,6 +212,7 @@ public:
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(clearButton->sizePolicy().hasHeightForWidth());
         clearButton->setSizePolicy(sizePolicy1);
+        clearButton->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon1;
         icon1.addFile(QStringLiteral(":/icons/remove"), QSize(), QIcon::Normal, QIcon::Off);
         clearButton->setIcon(icon1);
@@ -258,10 +260,19 @@ public:
         QBrush brush(QColor(51, 51, 51, 255));
         brush.setStyle(Qt::SolidPattern);
         palette.setBrush(QPalette::Active, QPalette::Text, brush);
+        QBrush brush1(QColor(51, 51, 51, 128));
+        brush1.setStyle(Qt::NoBrush);
+        palette.setBrush(QPalette::Active, QPalette::Text, brush1);
         palette.setBrush(QPalette::Inactive, QPalette::Text, brush);
-        QBrush brush1(QColor(85, 85, 85, 255));
-        brush1.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Disabled, QPalette::Text, brush1);
+        QBrush brush2(QColor(51, 51, 51, 128));
+        brush2.setStyle(Qt::NoBrush);
+        palette.setBrush(QPalette::Inactive, QPalette::Text, brush2);
+        QBrush brush3(QColor(85, 85, 85, 255));
+        brush3.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Disabled, QPalette::Text, brush3);
+        QBrush brush4(QColor(51, 51, 51, 128));
+        brush4.setStyle(Qt::NoBrush);
+        palette.setBrush(QPalette::Disabled, QPalette::Text, brush4);
         recentRequestsView->setPalette(palette);
         recentRequestsView->setContextMenuPolicy(Qt::CustomContextMenu);
         recentRequestsView->setTabKeyNavigation(false);
@@ -274,6 +285,7 @@ public:
         showRequestButton = new QPushButton(frame);
         showRequestButton->setObjectName(QStringLiteral("showRequestButton"));
         showRequestButton->setEnabled(false);
+        showRequestButton->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon2;
         icon2.addFile(QStringLiteral(":/icons/edit"), QSize(), QIcon::Normal, QIcon::Off);
         showRequestButton->setIcon(icon2);
@@ -284,6 +296,7 @@ public:
         removeRequestButton = new QPushButton(frame);
         removeRequestButton->setObjectName(QStringLiteral("removeRequestButton"));
         removeRequestButton->setEnabled(false);
+        removeRequestButton->setCursor(QCursor(Qt::PointingHandCursor));
         removeRequestButton->setIcon(icon1);
         removeRequestButton->setAutoDefault(false);
 

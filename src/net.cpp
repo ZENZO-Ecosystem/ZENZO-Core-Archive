@@ -1,7 +1,8 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2015-2019 The PIVX developers
+// Copyright (c) 2018-2019 The ZENZO developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -10,6 +11,10 @@
 #endif
 
 #include "net.h"
+
+#include <string>
+#include <iostream>
+#include <sstream>
 
 #include "addrman.h"
 #include "chainparams.h"
@@ -37,6 +42,10 @@
 
 #include <boost/filesystem.hpp>
 #include <boost/thread.hpp>
+
+// Define local version integer (ex: v1.1.1 = 111. OR. v1.2.0 = 120, ect)
+// IMPORTANT: Requires updating on each proto-bump!
+#define LOCAL_VERSION_INT 120
 
 // Dump addresses to peers.dat every 15 minutes (900s)
 #define DUMP_ADDRESSES_INTERVAL 900
@@ -76,6 +85,30 @@ struct ListenSocket {
 //
 bool fDiscover = true;
 bool fListen = true;
+bool fUpdateCheck = true;
+
+// 0, should not upgrade
+// 1, should upgrade
+int shouldUpgrade = 0;
+
+// --------------------------------------------------
+// Upgrade Majority
+// This is the magic number for deciding when enough
+// peers have a higher version to be considered the
+// 'majority' of the network for upgrading.
+
+// Higher means more secure and less false-positives,
+// but lengthens time before the upgrade is triggered.
+
+// Peers / nUpgradeMajority = Minimum peers for upgrade
+int nUpgradeMajority = 4; // 25% of peers is 'majority'.
+// --------------------------------------------------
+
+// Track all peer version differences
+int higherVerPeers = 0;
+int currentVerPeers = 0;
+int lowerVerPeers = 0;
+
 uint64_t nLocalServices = NODE_NETWORK;
 CCriticalSection cs_mapLocalHost;
 map<CNetAddr, LocalServiceInfo> mapLocalHost;
@@ -2106,4 +2139,71 @@ void CNode::EndMessage() UNLOCK_FUNCTION(cs_vSend)
         SocketSendData(this);
 
     LEAVE_CRITICAL_SECTION(cs_vSend);
+}
+
+int CheckForUpdates (std::string addr, std::string ver)
+{
+  if (fUpdateCheck == true)
+  {
+    // Save full version for display purposes
+    const string verFull = ver;
+
+    // Splice raw version integer from the Sub Version
+    replaceAll(ver, "/", "");
+    replaceAll(ver, ".", "");
+    replaceAll(ver, "ZENZO Core:", "");
+    replaceAll(ver, "Zenzo Core:", "");
+    int verInt = toInt(ver);
+    int localVerInt = LOCAL_VERSION_INT;
+    std::string upgradeStatus = "upgrade status unknown";
+
+    // Compare our version integer to the connected node
+    if (verInt > localVerInt) {
+      upgradeStatus = "local client is outdated";
+      higherVerPeers++;
+    } else if (verInt == localVerInt) {
+      upgradeStatus = "local client is up to date";
+      currentVerPeers++;
+    } else if (verInt < localVerInt) {
+      upgradeStatus = "peer is outdated";
+      lowerVerPeers++;
+    }
+
+    // Calculate peers needed for a 'majority' upgrade
+    int peersForUpgrade = (higherVerPeers + currentVerPeers + lowerVerPeers) / nUpgradeMajority;
+
+    // Ensure minimum is atleast 1 peer
+    if (peersForUpgrade < 1)
+        peersForUpgrade = 1;
+
+    // Check if majority consensus is met
+    if (higherVerPeers >= peersForUpgrade) {
+      shouldUpgrade = 1;
+    } else {
+      shouldUpgrade = 0;
+    }
+
+    // Debug console prints for consensus tests
+    // std::cout << "Connected to: Node " << addr << ", " << upgradeStatus << ". Peers till upgrade: " << higherVerPeers << "/" << peersForUpgrade << endl;
+
+    return shouldUpgrade;
+  }
+}
+
+void replaceAll(std::string& str, const std::string& from, const std::string& to)
+{
+    if(from.empty())
+        return;
+    size_t start_pos = 0;
+    while((start_pos = str.find(from, start_pos)) != std::string::npos)
+    {
+        str.replace(start_pos, from.length(), to);
+        start_pos += to.length();
+    }
+}
+
+int toInt(const std::string str)
+{
+  int n = std::stoi(str);
+  return n;
 }

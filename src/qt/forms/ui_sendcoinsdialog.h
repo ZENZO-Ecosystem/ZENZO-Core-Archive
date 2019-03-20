@@ -297,6 +297,7 @@ public:
         horizontalLayoutCoinControl2->setContentsMargins(-1, -1, -1, 10);
         pushButtonCoinControl = new QPushButton(frameCoinControl_BG);
         pushButtonCoinControl->setObjectName(QStringLiteral("pushButtonCoinControl"));
+        pushButtonCoinControl->setCursor(QCursor(Qt::PointingHandCursor));
         pushButtonCoinControl->setStyleSheet(QStringLiteral(""));
         pushButtonCoinControl->setAutoDefault(false);
 
@@ -659,11 +660,13 @@ public:
 
         buttonChooseFee = new QPushButton(frameFee);
         buttonChooseFee->setObjectName(QStringLiteral("buttonChooseFee"));
+        buttonChooseFee->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayoutSmartFee->addWidget(buttonChooseFee);
 
         buttonMinimizeFee = new QPushButton(frameFee);
         buttonMinimizeFee->setObjectName(QStringLiteral("buttonMinimizeFee"));
+        buttonMinimizeFee->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayoutSmartFee->addWidget(buttonMinimizeFee);
 
@@ -810,6 +813,7 @@ public:
         sliderSmartFee = new QSlider(frameFeeSelection);
         sliderSmartFee->setObjectName(QStringLiteral("sliderSmartFee"));
         sliderSmartFee->setMinimumSize(QSize(0, 24));
+        sliderSmartFee->setCursor(QCursor(Qt::PointingHandCursor));
         sliderSmartFee->setMinimum(0);
         sliderSmartFee->setMaximum(24);
         sliderSmartFee->setPageStep(1);
@@ -951,6 +955,7 @@ public:
         sendButton = new QPushButton(frame_Send);
         sendButton->setObjectName(QStringLiteral("sendButton"));
         sendButton->setMinimumSize(QSize(150, 0));
+        sendButton->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon;
         icon.addFile(QStringLiteral(":/icons/send"), QSize(), QIcon::Normal, QIcon::Off);
         sendButton->setIcon(icon);
@@ -965,6 +970,7 @@ public:
         sizePolicy4.setVerticalStretch(0);
         sizePolicy4.setHeightForWidth(clearButton->sizePolicy().hasHeightForWidth());
         clearButton->setSizePolicy(sizePolicy4);
+        clearButton->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon1;
         icon1.addFile(QStringLiteral(":/icons/remove"), QSize(), QIcon::Normal, QIcon::Off);
         clearButton->setIcon(icon1);
@@ -974,6 +980,7 @@ public:
 
         addButton = new QPushButton(frame_Send);
         addButton->setObjectName(QStringLiteral("addButton"));
+        addButton->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon2;
         icon2.addFile(QStringLiteral(":/icons/add"), QSize(), QIcon::Normal, QIcon::Off);
         addButton->setIcon(icon2);

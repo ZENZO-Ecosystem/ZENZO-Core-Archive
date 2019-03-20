@@ -60,7 +60,7 @@ public:
     {
         if (MasternodeList->objectName().isEmpty())
             MasternodeList->setObjectName(QStringLiteral("MasternodeList"));
-        MasternodeList->resize(723, 457);
+        MasternodeList->resize(962, 457);
         topLayout = new QVBoxLayout(MasternodeList);
         topLayout->setObjectName(QStringLiteral("topLayout"));
         topLayout->setContentsMargins(9, 9, 9, 9);
@@ -162,10 +162,19 @@ public:
         QBrush brush(QColor(51, 51, 51, 255));
         brush.setStyle(Qt::SolidPattern);
         palette.setBrush(QPalette::Active, QPalette::Text, brush);
+        QBrush brush1(QColor(51, 51, 51, 128));
+        brush1.setStyle(Qt::NoBrush);
+        palette.setBrush(QPalette::Active, QPalette::Text, brush1);
         palette.setBrush(QPalette::Inactive, QPalette::Text, brush);
-        QBrush brush1(QColor(85, 85, 85, 255));
-        brush1.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Disabled, QPalette::Text, brush1);
+        QBrush brush2(QColor(51, 51, 51, 128));
+        brush2.setStyle(Qt::NoBrush);
+        palette.setBrush(QPalette::Inactive, QPalette::Text, brush2);
+        QBrush brush3(QColor(85, 85, 85, 255));
+        brush3.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Disabled, QPalette::Text, brush3);
+        QBrush brush4(QColor(51, 51, 51, 128));
+        brush4.setStyle(Qt::NoBrush);
+        palette.setBrush(QPalette::Disabled, QPalette::Text, brush4);
         tableWidgetMyMasternodes->setPalette(palette);
         tableWidgetMyMasternodes->setEditTriggers(QAbstractItemView::NoEditTriggers);
         tableWidgetMyMasternodes->setAlternatingRowColors(true);
@@ -186,16 +195,19 @@ public:
 
         startAllButton = new QPushButton(frameList);
         startAllButton->setObjectName(QStringLiteral("startAllButton"));
+        startAllButton->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout_5->addWidget(startAllButton);
 
         startMissingButton = new QPushButton(frameList);
         startMissingButton->setObjectName(QStringLiteral("startMissingButton"));
+        startMissingButton->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout_5->addWidget(startMissingButton);
 
         UpdateButton = new QPushButton(frameList);
         UpdateButton->setObjectName(QStringLiteral("UpdateButton"));
+        UpdateButton->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout_5->addWidget(UpdateButton);
 

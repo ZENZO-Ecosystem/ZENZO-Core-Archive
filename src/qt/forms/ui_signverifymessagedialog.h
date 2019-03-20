@@ -97,6 +97,7 @@ public:
 
         addressBookButton_SM = new QToolButton(tabSignMessage);
         addressBookButton_SM->setObjectName(QStringLiteral("addressBookButton_SM"));
+        addressBookButton_SM->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon;
         icon.addFile(QStringLiteral(":/icons/address-book"), QSize(), QIcon::Normal, QIcon::Off);
         addressBookButton_SM->setIcon(icon);
@@ -105,6 +106,7 @@ public:
 
         pasteButton_SM = new QToolButton(tabSignMessage);
         pasteButton_SM->setObjectName(QStringLiteral("pasteButton_SM"));
+        pasteButton_SM->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon1;
         icon1.addFile(QStringLiteral(":/icons/editpaste"), QSize(), QIcon::Normal, QIcon::Off);
         pasteButton_SM->setIcon(icon1);
@@ -138,6 +140,7 @@ public:
 
         copySignatureButton_SM = new QToolButton(tabSignMessage);
         copySignatureButton_SM->setObjectName(QStringLiteral("copySignatureButton_SM"));
+        copySignatureButton_SM->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon2;
         icon2.addFile(QStringLiteral(":/icons/editcopy"), QSize(), QIcon::Normal, QIcon::Off);
         copySignatureButton_SM->setIcon(icon2);
@@ -151,6 +154,7 @@ public:
         horizontalLayout_3_SM->setObjectName(QStringLiteral("horizontalLayout_3_SM"));
         signMessageButton_SM = new QPushButton(tabSignMessage);
         signMessageButton_SM->setObjectName(QStringLiteral("signMessageButton_SM"));
+        signMessageButton_SM->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon3;
         icon3.addFile(QStringLiteral(":/icons/edit"), QSize(), QIcon::Normal, QIcon::Off);
         signMessageButton_SM->setIcon(icon3);
@@ -160,6 +164,7 @@ public:
 
         clearButton_SM = new QPushButton(tabSignMessage);
         clearButton_SM->setObjectName(QStringLiteral("clearButton_SM"));
+        clearButton_SM->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon4;
         icon4.addFile(QStringLiteral(":/icons/remove"), QSize(), QIcon::Normal, QIcon::Off);
         clearButton_SM->setIcon(icon4);
@@ -210,6 +215,7 @@ public:
 
         addressBookButton_VM = new QToolButton(tabVerifyMessage);
         addressBookButton_VM->setObjectName(QStringLiteral("addressBookButton_VM"));
+        addressBookButton_VM->setCursor(QCursor(Qt::PointingHandCursor));
         addressBookButton_VM->setIcon(icon);
 
         horizontalLayout_1_VM->addWidget(addressBookButton_VM);
@@ -231,6 +237,7 @@ public:
         horizontalLayout_2_VM->setObjectName(QStringLiteral("horizontalLayout_2_VM"));
         verifyMessageButton_VM = new QPushButton(tabVerifyMessage);
         verifyMessageButton_VM->setObjectName(QStringLiteral("verifyMessageButton_VM"));
+        verifyMessageButton_VM->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon5;
         icon5.addFile(QStringLiteral(":/icons/transaction_0"), QSize(), QIcon::Normal, QIcon::Off);
         verifyMessageButton_VM->setIcon(icon5);
@@ -240,6 +247,7 @@ public:
 
         clearButton_VM = new QPushButton(tabVerifyMessage);
         clearButton_VM->setObjectName(QStringLiteral("clearButton_VM"));
+        clearButton_VM->setCursor(QCursor(Qt::PointingHandCursor));
         clearButton_VM->setIcon(icon4);
         clearButton_VM->setAutoDefault(false);
 
@@ -270,7 +278,7 @@ public:
 
         retranslateUi(SignVerifyMessageDialog);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(SignVerifyMessageDialog);

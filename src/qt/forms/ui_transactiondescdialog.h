@@ -43,6 +43,7 @@ public:
 
         buttonBox = new QDialogButtonBox(TransactionDescDialog);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
+        buttonBox->setCursor(QCursor(Qt::PointingHandCursor));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Close);
 

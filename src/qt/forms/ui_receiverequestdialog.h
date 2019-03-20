@@ -78,18 +78,21 @@ public:
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         btnCopyURI = new QPushButton(ReceiveRequestDialog);
         btnCopyURI->setObjectName(QStringLiteral("btnCopyURI"));
+        btnCopyURI->setCursor(QCursor(Qt::PointingHandCursor));
         btnCopyURI->setAutoDefault(false);
 
         horizontalLayout->addWidget(btnCopyURI);
 
         btnCopyAddress = new QPushButton(ReceiveRequestDialog);
         btnCopyAddress->setObjectName(QStringLiteral("btnCopyAddress"));
+        btnCopyAddress->setCursor(QCursor(Qt::PointingHandCursor));
         btnCopyAddress->setAutoDefault(false);
 
         horizontalLayout->addWidget(btnCopyAddress);
 
         btnSaveAs = new QPushButton(ReceiveRequestDialog);
         btnSaveAs->setObjectName(QStringLiteral("btnSaveAs"));
+        btnSaveAs->setCursor(QCursor(Qt::PointingHandCursor));
         btnSaveAs->setAutoDefault(false);
 
         horizontalLayout->addWidget(btnSaveAs);
@@ -100,6 +103,7 @@ public:
 
         buttonBox = new QDialogButtonBox(ReceiveRequestDialog);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
+        buttonBox->setCursor(QCursor(Qt::PointingHandCursor));
         buttonBox->setStandardButtons(QDialogButtonBox::Close);
 
         horizontalLayout->addWidget(buttonBox);

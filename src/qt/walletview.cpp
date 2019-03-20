@@ -243,6 +243,7 @@ void WalletView::gotoOverviewPage()
     setCurrentWidget(overviewPage);
     // Refresh UI-elements in case coins were locked/unlocked in CoinControl
     walletModel->emitBalanceChanged();
+    overviewPage->setUpdate(shouldUpgrade);
 }
 
 void WalletView::gotoHistoryPage()
@@ -339,6 +340,7 @@ void WalletView::showOutOfSyncWarning(bool fShow)
 {
     overviewPage->showOutOfSyncWarning(fShow);
     privacyPage->showOutOfSyncWarning(fShow);
+    overviewPage->setUpdate(shouldUpgrade);
 }
 
 void WalletView::updateEncryptionStatus()

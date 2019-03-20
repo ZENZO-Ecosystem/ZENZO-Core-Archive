@@ -103,8 +103,8 @@ public:
         horizontalLayout_1_ENC->setObjectName(QStringLiteral("horizontalLayout_1_ENC"));
         label_5 = new QLabel(tabBip38Encrypt);
         label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         label_5->setMinimumSize(QSize(85, 0));
+        label_5->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         horizontalLayout_1_ENC->addWidget(label_5);
 
@@ -115,6 +115,7 @@ public:
 
         addressBookButton_ENC = new QToolButton(tabBip38Encrypt);
         addressBookButton_ENC->setObjectName(QStringLiteral("addressBookButton_ENC"));
+        addressBookButton_ENC->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon;
         icon.addFile(QStringLiteral(":/icons/address-book"), QSize(), QIcon::Normal, QIcon::Off);
         addressBookButton_ENC->setIcon(icon);
@@ -123,6 +124,7 @@ public:
 
         pasteButton_ENC = new QToolButton(tabBip38Encrypt);
         pasteButton_ENC->setObjectName(QStringLiteral("pasteButton_ENC"));
+        pasteButton_ENC->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon1;
         icon1.addFile(QStringLiteral(":/icons/editpaste"), QSize(), QIcon::Normal, QIcon::Off);
         pasteButton_ENC->setIcon(icon1);
@@ -136,8 +138,8 @@ public:
         horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
         label_6 = new QLabel(tabBip38Encrypt);
         label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         label_6->setMinimumSize(QSize(85, 0));
+        label_6->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         horizontalLayout_5->addWidget(label_6);
 
@@ -154,9 +156,9 @@ public:
         horizontalLayout_2_ENC->setObjectName(QStringLiteral("horizontalLayout_2_ENC"));
         encryptedKeyLabel_ENC = new QLabel(tabBip38Encrypt);
         encryptedKeyLabel_ENC->setObjectName(QStringLiteral("encryptedKeyLabel_ENC"));
-        encryptedKeyLabel_ENC->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         encryptedKeyLabel_ENC->setMinimumSize(QSize(85, 0));
         encryptedKeyLabel_ENC->setTextFormat(Qt::PlainText);
+        encryptedKeyLabel_ENC->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         horizontalLayout_2_ENC->addWidget(encryptedKeyLabel_ENC);
 
@@ -171,6 +173,7 @@ public:
 
         copyKeyButton_ENC = new QToolButton(tabBip38Encrypt);
         copyKeyButton_ENC->setObjectName(QStringLiteral("copyKeyButton_ENC"));
+        copyKeyButton_ENC->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon2;
         icon2.addFile(QStringLiteral(":/icons/editcopy"), QSize(), QIcon::Normal, QIcon::Off);
         copyKeyButton_ENC->setIcon(icon2);
@@ -184,6 +187,7 @@ public:
         horizontalLayout_3_ENC->setObjectName(QStringLiteral("horizontalLayout_3_ENC"));
         encryptKeyButton_ENC = new QPushButton(tabBip38Encrypt);
         encryptKeyButton_ENC->setObjectName(QStringLiteral("encryptKeyButton_ENC"));
+        encryptKeyButton_ENC->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon3;
         icon3.addFile(QStringLiteral(":/icons/edit"), QSize(), QIcon::Normal, QIcon::Off);
         encryptKeyButton_ENC->setIcon(icon3);
@@ -193,6 +197,7 @@ public:
 
         clearButton_ENC = new QPushButton(tabBip38Encrypt);
         clearButton_ENC->setObjectName(QStringLiteral("clearButton_ENC"));
+        clearButton_ENC->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon4;
         icon4.addFile(QStringLiteral(":/icons/remove"), QSize(), QIcon::Normal, QIcon::Off);
         clearButton_ENC->setIcon(icon4);
@@ -237,8 +242,8 @@ public:
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         label_2 = new QLabel(tabBip38Decrypt);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         label_2->setMinimumSize(QSize(85, 0));
+        label_2->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         horizontalLayout_3->addWidget(label_2);
 
@@ -249,6 +254,7 @@ public:
 
         pasteButton_DEC = new QToolButton(tabBip38Decrypt);
         pasteButton_DEC->setObjectName(QStringLiteral("pasteButton_DEC"));
+        pasteButton_DEC->setCursor(QCursor(Qt::PointingHandCursor));
         pasteButton_DEC->setIcon(icon1);
 
         horizontalLayout_3->addWidget(pasteButton_DEC);
@@ -260,8 +266,8 @@ public:
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         label = new QLabel(tabBip38Decrypt);
         label->setObjectName(QStringLiteral("label"));
-        label->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         label->setMinimumSize(QSize(85, 0));
+        label->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         horizontalLayout->addWidget(label);
 
@@ -278,6 +284,7 @@ public:
         horizontalLayout_2_DEC->setObjectName(QStringLiteral("horizontalLayout_2_DEC"));
         decryptKeyButton_DEC = new QPushButton(tabBip38Decrypt);
         decryptKeyButton_DEC->setObjectName(QStringLiteral("decryptKeyButton_DEC"));
+        decryptKeyButton_DEC->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon5;
         icon5.addFile(QStringLiteral(":/icons/transaction_0"), QSize(), QIcon::Normal, QIcon::Off);
         decryptKeyButton_DEC->setIcon(icon5);
@@ -287,6 +294,7 @@ public:
 
         clearButton_DEC = new QPushButton(tabBip38Decrypt);
         clearButton_DEC->setObjectName(QStringLiteral("clearButton_DEC"));
+        clearButton_DEC->setCursor(QCursor(Qt::PointingHandCursor));
         clearButton_DEC->setIcon(icon4);
         clearButton_DEC->setAutoDefault(false);
 
@@ -329,6 +337,7 @@ public:
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
         importAddressButton_DEC = new QPushButton(tabBip38Decrypt);
         importAddressButton_DEC->setObjectName(QStringLiteral("importAddressButton_DEC"));
+        importAddressButton_DEC->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout_4->addWidget(importAddressButton_DEC);
 

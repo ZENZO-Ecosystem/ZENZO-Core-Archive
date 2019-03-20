@@ -252,6 +252,7 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(pushButtonSelectAll->sizePolicy().hasHeightForWidth());
         pushButtonSelectAll->setSizePolicy(sizePolicy);
+        pushButtonSelectAll->setCursor(QCursor(Qt::PointingHandCursor));
         pushButtonSelectAll->setAutoDefault(false);
 
         horizontalLayoutPanel->addWidget(pushButtonSelectAll);
@@ -260,6 +261,7 @@ public:
         pushButtonToggleLock->setObjectName(QStringLiteral("pushButtonToggleLock"));
         sizePolicy.setHeightForWidth(pushButtonToggleLock->sizePolicy().hasHeightForWidth());
         pushButtonToggleLock->setSizePolicy(sizePolicy);
+        pushButtonToggleLock->setCursor(QCursor(Qt::PointingHandCursor));
         pushButtonToggleLock->setAutoDefault(false);
 
         horizontalLayoutPanel->addWidget(pushButtonToggleLock);
@@ -314,6 +316,7 @@ public:
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
         sizePolicy.setHeightForWidth(buttonBox->sizePolicy().hasHeightForWidth());
         buttonBox->setSizePolicy(sizePolicy);
+        buttonBox->setCursor(QCursor(Qt::PointingHandCursor));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Ok);
 

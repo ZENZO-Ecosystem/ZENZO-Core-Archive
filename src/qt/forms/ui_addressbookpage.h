@@ -58,10 +58,19 @@ public:
         QBrush brush(QColor(51, 51, 51, 255));
         brush.setStyle(Qt::SolidPattern);
         palette.setBrush(QPalette::Active, QPalette::Text, brush);
+        QBrush brush1(QColor(51, 51, 51, 128));
+        brush1.setStyle(Qt::NoBrush);
+        palette.setBrush(QPalette::Active, QPalette::Text, brush1);
         palette.setBrush(QPalette::Inactive, QPalette::Text, brush);
-        QBrush brush1(QColor(85, 85, 85, 255));
-        brush1.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Disabled, QPalette::Text, brush1);
+        QBrush brush2(QColor(51, 51, 51, 128));
+        brush2.setStyle(Qt::NoBrush);
+        palette.setBrush(QPalette::Inactive, QPalette::Text, brush2);
+        QBrush brush3(QColor(85, 85, 85, 255));
+        brush3.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Disabled, QPalette::Text, brush3);
+        QBrush brush4(QColor(51, 51, 51, 128));
+        brush4.setStyle(Qt::NoBrush);
+        palette.setBrush(QPalette::Disabled, QPalette::Text, brush4);
         tableView->setPalette(palette);
         tableView->setContextMenuPolicy(Qt::CustomContextMenu);
         tableView->setTabKeyNavigation(false);
@@ -77,6 +86,7 @@ public:
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         newAddress = new QPushButton(AddressBookPage);
         newAddress->setObjectName(QStringLiteral("newAddress"));
+        newAddress->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon;
         icon.addFile(QStringLiteral(":/icons/add"), QSize(), QIcon::Normal, QIcon::Off);
         newAddress->setIcon(icon);
@@ -86,6 +96,7 @@ public:
 
         copyAddress = new QPushButton(AddressBookPage);
         copyAddress->setObjectName(QStringLiteral("copyAddress"));
+        copyAddress->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon1;
         icon1.addFile(QStringLiteral(":/icons/editcopy"), QSize(), QIcon::Normal, QIcon::Off);
         copyAddress->setIcon(icon1);
@@ -95,6 +106,7 @@ public:
 
         deleteAddress = new QPushButton(AddressBookPage);
         deleteAddress->setObjectName(QStringLiteral("deleteAddress"));
+        deleteAddress->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon2;
         icon2.addFile(QStringLiteral(":/icons/remove"), QSize(), QIcon::Normal, QIcon::Off);
         deleteAddress->setIcon(icon2);
@@ -108,6 +120,7 @@ public:
 
         exportButton = new QPushButton(AddressBookPage);
         exportButton->setObjectName(QStringLiteral("exportButton"));
+        exportButton->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon3;
         icon3.addFile(QStringLiteral(":/icons/export"), QSize(), QIcon::Normal, QIcon::Off);
         exportButton->setIcon(icon3);
@@ -122,6 +135,7 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(closeButton->sizePolicy().hasHeightForWidth());
         closeButton->setSizePolicy(sizePolicy);
+        closeButton->setCursor(QCursor(Qt::PointingHandCursor));
         closeButton->setAutoDefault(false);
 
         horizontalLayout->addWidget(closeButton);

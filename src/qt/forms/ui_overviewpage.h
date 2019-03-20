@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'overviewpage.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.1
+** Created by: Qt User Interface Compiler version 5.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -19,6 +19,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QListView>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -83,6 +84,8 @@ public:
     QLabel *labelWatchTotal;
     QSpacerItem *horizontalSpacer_9;
     QSpacerItem *verticalSpacer_3;
+    QLabel *lableUpgrade;
+    QPushButton *buttonUpgrade;
     QFrame *frame_ZerocoinBalances;
     QVBoxLayout *verticalLayout_7;
     QHBoxLayout *horizontalLayout_8;
@@ -462,6 +465,23 @@ public:
 
         verticalLayout_4->addItem(verticalSpacer_3);
 
+        lableUpgrade = new QLabel(frame_Balances);
+        lableUpgrade->setObjectName(QStringLiteral("lableUpgrade"));
+        lableUpgrade->setEnabled(true);
+        lableUpgrade->setAlignment(Qt::AlignCenter);
+        lableUpgrade->setOpenExternalLinks(true);
+
+        verticalLayout_4->addWidget(lableUpgrade);
+
+        buttonUpgrade = new QPushButton(frame_Balances);
+        buttonUpgrade->setObjectName(QStringLiteral("buttonUpgrade"));
+        buttonUpgrade->setEnabled(true);
+        buttonUpgrade->setCursor(QCursor(Qt::PointingHandCursor));
+        buttonUpgrade->setAutoDefault(false);
+        buttonUpgrade->setFlat(false);
+
+        verticalLayout_4->addWidget(buttonUpgrade);
+
 
         verticalLayout->addWidget(frame_Balances);
 
@@ -668,108 +688,113 @@ public:
 
         retranslateUi(OverviewPage);
 
+        buttonUpgrade->setDefault(false);
+
+
         QMetaObject::connectSlotsByName(OverviewPage);
     } // setupUi
 
     void retranslateUi(QWidget *OverviewPage)
     {
-        OverviewPage->setWindowTitle(QApplication::translate("OverviewPage", "Form", Q_NULLPTR));
-        labelOverviewHeaderLeft->setText(QApplication::translate("OverviewPage", "OVERVIEW", Q_NULLPTR));
+        OverviewPage->setWindowTitle(QApplication::translate("OverviewPage", "Form", 0));
+        labelOverviewHeaderLeft->setText(QApplication::translate("OverviewPage", "OVERVIEW", 0));
         labelOverviewHeaderRight->setText(QString());
 #ifndef QT_NO_TOOLTIP
-        label_5z->setToolTip(QApplication::translate("OverviewPage", "Combined Balance (including unconfirmed and immature coins)", Q_NULLPTR));
+        label_5z->setToolTip(QApplication::translate("OverviewPage", "Combined Balance (including unconfirmed and immature coins)", 0));
 #endif // QT_NO_TOOLTIP
-        label_5z->setText(QApplication::translate("OverviewPage", "Combined Balance", Q_NULLPTR));
+        label_5z->setText(QApplication::translate("OverviewPage", "Combined Balance", 0));
 #ifndef QT_NO_TOOLTIP
-        labelWalletStatus->setToolTip(QApplication::translate("OverviewPage", "The displayed information may be out of date. Your wallet automatically synchronizes with the ZENZO network after a connection is established, but this process has not completed yet.", Q_NULLPTR));
+        labelWalletStatus->setToolTip(QApplication::translate("OverviewPage", "The displayed information may be out of date. Your wallet automatically synchronizes with the ZENZO network after a connection is established, but this process has not completed yet.", 0));
 #endif // QT_NO_TOOLTIP
-        labelBalanceTextz->setText(QApplication::translate("OverviewPage", "Available:", Q_NULLPTR));
+        labelBalanceTextz->setText(QApplication::translate("OverviewPage", "Available:", 0));
 #ifndef QT_NO_TOOLTIP
-        labelBalancez->setToolTip(QApplication::translate("OverviewPage", "Your current spendable balance", Q_NULLPTR));
+        labelBalancez->setToolTip(QApplication::translate("OverviewPage", "Your current spendable balance", 0));
 #endif // QT_NO_TOOLTIP
-        labelTotalTextz->setText(QApplication::translate("OverviewPage", "Total:", Q_NULLPTR));
+        labelTotalTextz->setText(QApplication::translate("OverviewPage", "Total:", 0));
 #ifndef QT_NO_TOOLTIP
-        labelTotalz->setToolTip(QApplication::translate("OverviewPage", "Total Balance, including all unavailable coins.", Q_NULLPTR));
+        labelTotalz->setToolTip(QApplication::translate("OverviewPage", "Total Balance, including all unavailable coins.", 0));
 #endif // QT_NO_TOOLTIP
-        label_5->setText(QApplication::translate("OverviewPage", "ZNZ Balance", Q_NULLPTR));
-        labelSpendable->setText(QApplication::translate("OverviewPage", "Spendable:", Q_NULLPTR));
-        labelWatchonly->setText(QApplication::translate("OverviewPage", "Watch-only:", Q_NULLPTR));
-        labelBalanceText->setText(QApplication::translate("OverviewPage", "Available:", Q_NULLPTR));
+        label_5->setText(QApplication::translate("OverviewPage", "ZNZ Balance", 0));
+        labelSpendable->setText(QApplication::translate("OverviewPage", "Spendable:", 0));
+        labelWatchonly->setText(QApplication::translate("OverviewPage", "Watch-only:", 0));
+        labelBalanceText->setText(QApplication::translate("OverviewPage", "Available:", 0));
 #ifndef QT_NO_TOOLTIP
-        labelBalance->setToolTip(QApplication::translate("OverviewPage", "Your current spendable balance", Q_NULLPTR));
-#endif // QT_NO_TOOLTIP
-#ifndef QT_NO_TOOLTIP
-        labelWatchAvailable->setToolTip(QApplication::translate("OverviewPage", "Your current balance in watch-only addresses", Q_NULLPTR));
-#endif // QT_NO_TOOLTIP
-        labelPendingText->setText(QApplication::translate("OverviewPage", "Pending:", Q_NULLPTR));
-#ifndef QT_NO_TOOLTIP
-        labelUnconfirmed->setToolTip(QApplication::translate("OverviewPage", "Total of transactions that have yet to be confirmed, and do not yet count toward the spendable balance", Q_NULLPTR));
+        labelBalance->setToolTip(QApplication::translate("OverviewPage", "Your current spendable balance", 0));
 #endif // QT_NO_TOOLTIP
 #ifndef QT_NO_TOOLTIP
-        labelWatchPending->setToolTip(QApplication::translate("OverviewPage", "Unconfirmed transactions to watch-only addresses", Q_NULLPTR));
+        labelWatchAvailable->setToolTip(QApplication::translate("OverviewPage", "Your current balance in watch-only addresses", 0));
 #endif // QT_NO_TOOLTIP
-        labelImmatureText->setText(QApplication::translate("OverviewPage", "Immature:", Q_NULLPTR));
+        labelPendingText->setText(QApplication::translate("OverviewPage", "Pending:", 0));
 #ifndef QT_NO_TOOLTIP
-        labelImmature->setToolTip(QApplication::translate("OverviewPage", "Staked or masternode rewards that has not yet matured", Q_NULLPTR));
-#endif // QT_NO_TOOLTIP
-#ifndef QT_NO_TOOLTIP
-        labelWatchImmature->setToolTip(QApplication::translate("OverviewPage", "Staked or masternode rewards in watch-only addresses that has not yet matured", Q_NULLPTR));
+        labelUnconfirmed->setToolTip(QApplication::translate("OverviewPage", "Total of transactions that have yet to be confirmed, and do not yet count toward the spendable balance", 0));
 #endif // QT_NO_TOOLTIP
 #ifndef QT_NO_TOOLTIP
-        labelLockedBalanceText->setToolTip(QApplication::translate("OverviewPage", "Locked ZNZ or Masternode collaterals. These are excluded from zZNZ minting.", Q_NULLPTR));
+        labelWatchPending->setToolTip(QApplication::translate("OverviewPage", "Unconfirmed transactions to watch-only addresses", 0));
 #endif // QT_NO_TOOLTIP
-        labelLockedBalanceText->setText(QApplication::translate("OverviewPage", "Locked:", Q_NULLPTR));
+        labelImmatureText->setText(QApplication::translate("OverviewPage", "Immature:", 0));
 #ifndef QT_NO_TOOLTIP
-        labelLockedBalance->setToolTip(QApplication::translate("OverviewPage", "Locked ZNZ or Masternode collaterals. These are excluded from zZNZ minting.", Q_NULLPTR));
-#endif // QT_NO_TOOLTIP
-#ifndef QT_NO_TOOLTIP
-        labelTotalText->setToolTip(QApplication::translate("OverviewPage", "Your current ZENZO balance, unconfirmed and immature transactions included", Q_NULLPTR));
-#endif // QT_NO_TOOLTIP
-        labelTotalText->setText(QApplication::translate("OverviewPage", "Total:", Q_NULLPTR));
-#ifndef QT_NO_TOOLTIP
-        labelTotal->setToolTip(QApplication::translate("OverviewPage", "Your current ZENZO balance, unconfirmed and immature transactions included", Q_NULLPTR));
+        labelImmature->setToolTip(QApplication::translate("OverviewPage", "Staked or masternode rewards that has not yet matured", 0));
 #endif // QT_NO_TOOLTIP
 #ifndef QT_NO_TOOLTIP
-        labelWatchTotal->setToolTip(QApplication::translate("OverviewPage", "Current total balance in watch-only addresses", Q_NULLPTR));
+        labelWatchImmature->setToolTip(QApplication::translate("OverviewPage", "Staked or masternode rewards in watch-only addresses that has not yet matured", 0));
 #endif // QT_NO_TOOLTIP
-        label_5z_3->setText(QApplication::translate("OverviewPage", "zZNZ Balance", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        labelLockedBalanceText->setToolTip(QApplication::translate("OverviewPage", "Locked ZNZ or Masternode collaterals.", 0));
+#endif // QT_NO_TOOLTIP
+        labelLockedBalanceText->setText(QApplication::translate("OverviewPage", "Locked:", 0));
+#ifndef QT_NO_TOOLTIP
+        labelLockedBalance->setToolTip(QApplication::translate("OverviewPage", "Locked ZNZ or Masternode collaterals.", 0));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_TOOLTIP
+        labelTotalText->setToolTip(QApplication::translate("OverviewPage", "Your current ZENZO balance, unconfirmed and immature transactions included", 0));
+#endif // QT_NO_TOOLTIP
+        labelTotalText->setText(QApplication::translate("OverviewPage", "Total:", 0));
+#ifndef QT_NO_TOOLTIP
+        labelTotal->setToolTip(QApplication::translate("OverviewPage", "Your current ZENZO balance, unconfirmed and immature transactions included", 0));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_TOOLTIP
+        labelWatchTotal->setToolTip(QApplication::translate("OverviewPage", "Current total balance in watch-only addresses", 0));
+#endif // QT_NO_TOOLTIP
+        lableUpgrade->setText(QApplication::translate("OverviewPage", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#cc0000;\">An update is available!</span></p></body></html>", 0));
+        buttonUpgrade->setText(QApplication::translate("OverviewPage", "Update", 0));
+        label_5z_3->setText(QApplication::translate("OverviewPage", "zZNZ Balance", 0));
 #ifndef QT_NO_TOOLTIP
         labelzBalanceMatureText->setToolTip(QApplication::translate("OverviewPage", "Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.\n"
-"These zZNZ are spendable.", Q_NULLPTR));
+"These zZNZ are spendable.", 0));
 #endif // QT_NO_TOOLTIP
-        labelzBalanceMatureText->setText(QApplication::translate("OverviewPage", "Available:", Q_NULLPTR));
+        labelzBalanceMatureText->setText(QApplication::translate("OverviewPage", "Available:", 0));
 #ifndef QT_NO_TOOLTIP
         labelzBalanceMature->setToolTip(QApplication::translate("OverviewPage", "Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.\n"
-"These zZNZ are spendable.", Q_NULLPTR));
+"These zZNZ are spendable.", 0));
 #endif // QT_NO_TOOLTIP
 #ifndef QT_NO_TOOLTIP
         labelzBalanceUnconfirmedText->setToolTip(QApplication::translate("OverviewPage", "Unconfirmed: less than 20 confirmations\n"
-"Immature: confirmed, but less than 1 mint of the same denomination after it was minted", Q_NULLPTR));
+"Immature: confirmed, but less than 1 mint of the same denomination after it was minted", 0));
 #endif // QT_NO_TOOLTIP
-        labelzBalanceUnconfirmedText->setText(QApplication::translate("OverviewPage", "Unconfirmed:", Q_NULLPTR));
+        labelzBalanceUnconfirmedText->setText(QApplication::translate("OverviewPage", "Unconfirmed:", 0));
 #ifndef QT_NO_TOOLTIP
         labelzBalanceUnconfirmed->setToolTip(QApplication::translate("OverviewPage", "Unconfirmed: less than 20 confirmations\n"
-"Immature: confirmed, but less than 1 mint of the same denomination after it was minted", Q_NULLPTR));
+"Immature: confirmed, but less than 1 mint of the same denomination after it was minted", 0));
 #endif // QT_NO_TOOLTIP
 #ifndef QT_NO_TOOLTIP
         labelzBalanceImmatureText->setToolTip(QApplication::translate("OverviewPage", "Unconfirmed: less than 20 confirmations\n"
-"Immature: confirmed, but less than 1 mint of the same denomination after it was minted", Q_NULLPTR));
+"Immature: confirmed, but less than 1 mint of the same denomination after it was minted", 0));
 #endif // QT_NO_TOOLTIP
-        labelzBalanceImmatureText->setText(QApplication::translate("OverviewPage", "Immature:", Q_NULLPTR));
+        labelzBalanceImmatureText->setText(QApplication::translate("OverviewPage", "Immature:", 0));
 #ifndef QT_NO_TOOLTIP
         labelzBalanceImmature->setToolTip(QApplication::translate("OverviewPage", "Unconfirmed: less than 20 confirmations\n"
-"Immature: confirmed, but less than 1 mint of the same denomination after it was minted", Q_NULLPTR));
+"Immature: confirmed, but less than 1 mint of the same denomination after it was minted", 0));
 #endif // QT_NO_TOOLTIP
 #ifndef QT_NO_TOOLTIP
-        labelzBalanceText->setToolTip(QApplication::translate("OverviewPage", "Your current zZNZ balance, unconfirmed and immature zZNZ included.", Q_NULLPTR));
+        labelzBalanceText->setToolTip(QApplication::translate("OverviewPage", "Your current zZNZ balance, unconfirmed and immature zZNZ included.", 0));
 #endif // QT_NO_TOOLTIP
-        labelzBalanceText->setText(QApplication::translate("OverviewPage", "Total:", Q_NULLPTR));
+        labelzBalanceText->setText(QApplication::translate("OverviewPage", "Total:", 0));
 #ifndef QT_NO_TOOLTIP
-        labelzBalance->setToolTip(QApplication::translate("OverviewPage", "Your current zZNZ balance, unconfirmed and immature zZNZ included.", Q_NULLPTR));
+        labelzBalance->setToolTip(QApplication::translate("OverviewPage", "Your current zZNZ balance, unconfirmed and immature zZNZ included.", 0));
 #endif // QT_NO_TOOLTIP
-        label_4->setText(QApplication::translate("OverviewPage", "Recent transactions", Q_NULLPTR));
+        label_4->setText(QApplication::translate("OverviewPage", "Recent transactions", 0));
 #ifndef QT_NO_TOOLTIP
-        labelTransactionsStatus->setToolTip(QApplication::translate("OverviewPage", "The displayed information may be out of date. Your wallet automatically synchronizes with the ZENZO network after a connection is established, but this process has not completed yet.", Q_NULLPTR));
+        labelTransactionsStatus->setToolTip(QApplication::translate("OverviewPage", "The displayed information may be out of date. Your wallet automatically synchronizes with the ZENZO network after a connection is established, but this process has not completed yet.", 0));
 #endif // QT_NO_TOOLTIP
         labelAlerts->setText(QString());
     } // retranslateUi

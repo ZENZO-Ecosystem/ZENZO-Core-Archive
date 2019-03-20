@@ -29,7 +29,7 @@ packages:
 - "fonts-tuffy"
 remotes:
 - "url": "https://github.com/Zenzo-Ecosystem/ZENZO-Core"
-  "dir": "zenzo"
+  "dir": "ZENZO-Core"
 files:
 - "MacOSX10.11.sdk.tar.gz"
 script: |

@@ -70,6 +70,7 @@ public:
 
         buttonBox = new QDialogButtonBox(EditAddressDialog);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
+        buttonBox->setCursor(QCursor(Qt::PointingHandCursor));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
 

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'optionsdialog.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.1
+** Created by: Qt User Interface Compiler version 5.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -505,6 +505,7 @@ public:
         horizontalLayout_Buttons->setObjectName(QStringLiteral("horizontalLayout_Buttons"));
         resetButton = new QPushButton(OptionsDialog);
         resetButton->setObjectName(QStringLiteral("resetButton"));
+        resetButton->setCursor(QCursor(Qt::PointingHandCursor));
         resetButton->setAutoDefault(false);
 
         horizontalLayout_Buttons->addWidget(resetButton);
@@ -531,12 +532,14 @@ public:
 
         okButton = new QPushButton(OptionsDialog);
         okButton->setObjectName(QStringLiteral("okButton"));
+        okButton->setCursor(QCursor(Qt::PointingHandCursor));
         okButton->setAutoDefault(false);
 
         horizontalLayout_Buttons->addWidget(okButton);
 
         cancelButton = new QPushButton(OptionsDialog);
         cancelButton->setObjectName(QStringLiteral("cancelButton"));
+        cancelButton->setCursor(QCursor(Qt::PointingHandCursor));
         cancelButton->setAutoDefault(false);
 
         horizontalLayout_Buttons->addWidget(cancelButton);
@@ -556,7 +559,7 @@ public:
 
         retranslateUi(OptionsDialog);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(4);
         okButton->setDefault(true);
 
 
@@ -565,105 +568,106 @@ public:
 
     void retranslateUi(QDialog *OptionsDialog)
     {
-        OptionsDialog->setWindowTitle(QApplication::translate("OptionsDialog", "Options", Q_NULLPTR));
+        OptionsDialog->setWindowTitle(QApplication::translate("OptionsDialog", "Options", 0));
 #ifndef QT_NO_TOOLTIP
-        bitcoinAtStartup->setToolTip(QApplication::translate("OptionsDialog", "Automatically start ZENZO after logging in to the system.", Q_NULLPTR));
+        bitcoinAtStartup->setToolTip(QApplication::translate("OptionsDialog", "Automatically start ZENZO after logging in to the system.", 0));
 #endif // QT_NO_TOOLTIP
-        bitcoinAtStartup->setText(QApplication::translate("OptionsDialog", "&Start ZENZO on system login", Q_NULLPTR));
-        databaseCacheLabel->setText(QApplication::translate("OptionsDialog", "Size of &database cache", Q_NULLPTR));
-        databaseCacheUnitLabel->setText(QApplication::translate("OptionsDialog", "MB", Q_NULLPTR));
-        threadsScriptVerifLabel->setText(QApplication::translate("OptionsDialog", "Number of script &verification threads", Q_NULLPTR));
+        bitcoinAtStartup->setText(QApplication::translate("OptionsDialog", "&Start ZENZO on system login", 0));
+        databaseCacheLabel->setText(QApplication::translate("OptionsDialog", "Size of &database cache", 0));
+        databaseCacheUnitLabel->setText(QApplication::translate("OptionsDialog", "MB", 0));
+        threadsScriptVerifLabel->setText(QApplication::translate("OptionsDialog", "Number of script &verification threads", 0));
 #ifndef QT_NO_TOOLTIP
-        threadsScriptVerif->setToolTip(QApplication::translate("OptionsDialog", "(0 = auto, <0 = leave that many cores free)", Q_NULLPTR));
+        threadsScriptVerif->setToolTip(QApplication::translate("OptionsDialog", "(0 = auto, <0 = leave that many cores free)", 0));
 #endif // QT_NO_TOOLTIP
 #ifndef QT_NO_TOOLTIP
-        labelPreferredDenom->setToolTip(QApplication::translate("OptionsDialog", "Wait with automatic conversion to Zerocoin until enough ZNZ for this denomination is available", Q_NULLPTR));
+        labelPreferredDenom->setToolTip(QApplication::translate("OptionsDialog", "Wait with automatic conversion to Zerocoin until enough ZNZ for this denomination is available", 0));
 #endif // QT_NO_TOOLTIP
-        labelPreferredDenom->setText(QApplication::translate("OptionsDialog", "Preferred Automint zZNZ Denomination", Q_NULLPTR));
+        labelPreferredDenom->setText(QApplication::translate("OptionsDialog", "Preferred Automint zZNZ Denomination", 0));
 #ifndef QT_NO_TOOLTIP
-        preferredDenom->setToolTip(QApplication::translate("OptionsDialog", "Wait with automatic conversion to Zerocoin until enough ZNZ for this denomination is available", Q_NULLPTR));
+        preferredDenom->setToolTip(QApplication::translate("OptionsDialog", "Wait with automatic conversion to Zerocoin until enough ZNZ for this denomination is available", 0));
 #endif // QT_NO_TOOLTIP
-        tabWidget->setTabText(tabWidget->indexOf(tabMain), QApplication::translate("OptionsDialog", "&Main", Q_NULLPTR));
-        labelStakeSplitThresholdText->setText(QApplication::translate("OptionsDialog", "Stake split threshold:", Q_NULLPTR));
-        groupBox->setTitle(QApplication::translate("OptionsDialog", "Expert", Q_NULLPTR));
+        tabWidget->setTabText(tabWidget->indexOf(tabMain), QApplication::translate("OptionsDialog", "&Main", 0));
+        labelStakeSplitThresholdText->setText(QApplication::translate("OptionsDialog", "Stake split threshold:", 0));
+        groupBox->setTitle(QApplication::translate("OptionsDialog", "Expert", 0));
 #ifndef QT_NO_TOOLTIP
-        coinControlFeatures->setToolTip(QApplication::translate("OptionsDialog", "Whether to show coin control features or not.", Q_NULLPTR));
+        coinControlFeatures->setToolTip(QApplication::translate("OptionsDialog", "Whether to show coin control features or not.", 0));
 #endif // QT_NO_TOOLTIP
-        coinControlFeatures->setText(QApplication::translate("OptionsDialog", "Enable coin &control features", Q_NULLPTR));
+        coinControlFeatures->setText(QApplication::translate("OptionsDialog", "Enable coin &control features", 0));
 #ifndef QT_NO_TOOLTIP
-        showMasternodesTab->setToolTip(QApplication::translate("OptionsDialog", "Show additional tab listing all your masternodes in first sub-tab<br/>and all masternodes on the network in second sub-tab.", Q_NULLPTR));
+        showMasternodesTab->setToolTip(QApplication::translate("OptionsDialog", "Show additional tab listing all your masternodes in first sub-tab<br/>and all masternodes on the network in second sub-tab.", 0));
 #endif // QT_NO_TOOLTIP
-        showMasternodesTab->setText(QApplication::translate("OptionsDialog", "Show Masternodes Tab", Q_NULLPTR));
+        showMasternodesTab->setText(QApplication::translate("OptionsDialog", "Show Masternodes Tab", 0));
 #ifndef QT_NO_TOOLTIP
-        spendZeroConfChange->setToolTip(QApplication::translate("OptionsDialog", "If you disable the spending of unconfirmed change, the change from a transaction<br/>cannot be used until that transaction has at least one confirmation.<br/>This also affects how your balance is computed.", Q_NULLPTR));
+        spendZeroConfChange->setToolTip(QApplication::translate("OptionsDialog", "If you disable the spending of unconfirmed change, the change from a transaction<br/>cannot be used until that transaction has at least one confirmation.<br/>This also affects how your balance is computed.", 0));
 #endif // QT_NO_TOOLTIP
-        spendZeroConfChange->setText(QApplication::translate("OptionsDialog", "&Spend unconfirmed change", Q_NULLPTR));
-        tabWidget->setTabText(tabWidget->indexOf(tabWallet), QApplication::translate("OptionsDialog", "W&allet", Q_NULLPTR));
+        spendZeroConfChange->setText(QApplication::translate("OptionsDialog", "&Spend unconfirmed change", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tabWallet), QApplication::translate("OptionsDialog", "W&allet", 0));
 #ifndef QT_NO_TOOLTIP
-        mapPortUpnp->setToolTip(QApplication::translate("OptionsDialog", "Automatically open the ZENZO client port on the router. This only works when your router supports UPnP and it is enabled.", Q_NULLPTR));
+        mapPortUpnp->setToolTip(QApplication::translate("OptionsDialog", "Automatically open the ZENZO client port on the router. This only works when your router supports UPnP and it is enabled.", 0));
 #endif // QT_NO_TOOLTIP
-        mapPortUpnp->setText(QApplication::translate("OptionsDialog", "Map port using &UPnP", Q_NULLPTR));
+        mapPortUpnp->setText(QApplication::translate("OptionsDialog", "Map port using &UPnP", 0));
 #ifndef QT_NO_TOOLTIP
-        allowIncoming->setToolTip(QApplication::translate("OptionsDialog", "Accept connections from outside", Q_NULLPTR));
+        allowIncoming->setToolTip(QApplication::translate("OptionsDialog", "Accept connections from outside", 0));
 #endif // QT_NO_TOOLTIP
-        allowIncoming->setText(QApplication::translate("OptionsDialog", "Allow incoming connections", Q_NULLPTR));
+        allowIncoming->setText(QApplication::translate("OptionsDialog", "Allow incoming connections", 0));
 #ifndef QT_NO_TOOLTIP
-        connectSocks->setToolTip(QApplication::translate("OptionsDialog", "Connect to the ZENZO network through a SOCKS5 proxy.", Q_NULLPTR));
+        connectSocks->setToolTip(QApplication::translate("OptionsDialog", "Connect to the ZENZO network through a SOCKS5 proxy.", 0));
 #endif // QT_NO_TOOLTIP
-        connectSocks->setText(QApplication::translate("OptionsDialog", "&Connect through SOCKS5 proxy (default proxy):", Q_NULLPTR));
-        proxyIpLabel->setText(QApplication::translate("OptionsDialog", "Proxy &IP:", Q_NULLPTR));
+        connectSocks->setText(QApplication::translate("OptionsDialog", "&Connect through SOCKS5 proxy (default proxy):", 0));
+        proxyIpLabel->setText(QApplication::translate("OptionsDialog", "Proxy &IP:", 0));
 #ifndef QT_NO_TOOLTIP
-        proxyIp->setToolTip(QApplication::translate("OptionsDialog", "IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)", Q_NULLPTR));
+        proxyIp->setToolTip(QApplication::translate("OptionsDialog", "IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)", 0));
 #endif // QT_NO_TOOLTIP
-        proxyPortLabel->setText(QApplication::translate("OptionsDialog", "&Port:", Q_NULLPTR));
+        proxyPortLabel->setText(QApplication::translate("OptionsDialog", "&Port:", 0));
 #ifndef QT_NO_TOOLTIP
-        proxyPort->setToolTip(QApplication::translate("OptionsDialog", "Port of the proxy (e.g. 9050)", Q_NULLPTR));
+        proxyPort->setToolTip(QApplication::translate("OptionsDialog", "Port of the proxy (e.g. 9050)", 0));
 #endif // QT_NO_TOOLTIP
-        tabWidget->setTabText(tabWidget->indexOf(tabNetwork), QApplication::translate("OptionsDialog", "&Network", Q_NULLPTR));
+        tabWidget->setTabText(tabWidget->indexOf(tabNetwork), QApplication::translate("OptionsDialog", "&Network", 0));
 #ifndef QT_NO_TOOLTIP
-        minimizeToTray->setToolTip(QApplication::translate("OptionsDialog", "Show only a tray icon after minimizing the window.", Q_NULLPTR));
+        minimizeToTray->setToolTip(QApplication::translate("OptionsDialog", "Show only a tray icon after minimizing the window.", 0));
 #endif // QT_NO_TOOLTIP
-        minimizeToTray->setText(QApplication::translate("OptionsDialog", "&Minimize to the tray instead of the taskbar", Q_NULLPTR));
+        minimizeToTray->setText(QApplication::translate("OptionsDialog", "&Minimize to the tray instead of the taskbar", 0));
 #ifndef QT_NO_TOOLTIP
-        minimizeOnClose->setToolTip(QApplication::translate("OptionsDialog", "Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.", Q_NULLPTR));
+        minimizeOnClose->setToolTip(QApplication::translate("OptionsDialog", "Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.", 0));
 #endif // QT_NO_TOOLTIP
-        minimizeOnClose->setText(QApplication::translate("OptionsDialog", "M&inimize on close", Q_NULLPTR));
-        tabWidget->setTabText(tabWidget->indexOf(tabWindow), QApplication::translate("OptionsDialog", "&Window", Q_NULLPTR));
-        langLabel->setText(QApplication::translate("OptionsDialog", "User Interface &language:", Q_NULLPTR));
+        minimizeOnClose->setText(QApplication::translate("OptionsDialog", "M&inimize on close", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tabWindow), QApplication::translate("OptionsDialog", "&Window", 0));
+        langLabel->setText(QApplication::translate("OptionsDialog", "User Interface &language:", 0));
 #ifndef QT_NO_TOOLTIP
-        lang->setToolTip(QApplication::translate("OptionsDialog", "The user interface language can be set here. This setting will take effect after restarting ZENZO.", Q_NULLPTR));
+        lang->setToolTip(QApplication::translate("OptionsDialog", "The user interface language can be set here. This setting will take effect after restarting ZENZO.", 0));
 #endif // QT_NO_TOOLTIP
-        themeLabel->setText(QApplication::translate("OptionsDialog", "User Interface Theme:", Q_NULLPTR));
-        unitLabel->setText(QApplication::translate("OptionsDialog", "&Unit to show amounts in:", Q_NULLPTR));
+        label_3->setText(QString());
+        themeLabel->setText(QApplication::translate("OptionsDialog", "User Interface Theme:", 0));
+        unitLabel->setText(QApplication::translate("OptionsDialog", "&Unit to show amounts in:", 0));
 #ifndef QT_NO_TOOLTIP
-        unit->setToolTip(QApplication::translate("OptionsDialog", "Choose the default subdivision unit to show in the interface and when sending coins.", Q_NULLPTR));
+        unit->setToolTip(QApplication::translate("OptionsDialog", "Choose the default subdivision unit to show in the interface and when sending coins.", 0));
 #endif // QT_NO_TOOLTIP
-        digitsLabel->setText(QApplication::translate("OptionsDialog", "Decimal digits", Q_NULLPTR));
+        digitsLabel->setText(QApplication::translate("OptionsDialog", "Decimal digits", 0));
 #ifndef QT_NO_TOOLTIP
-        checkBoxHideZeroBalances->setToolTip(QApplication::translate("OptionsDialog", "Hide empty balances", Q_NULLPTR));
+        checkBoxHideZeroBalances->setToolTip(QApplication::translate("OptionsDialog", "Hide empty balances", 0));
 #endif // QT_NO_TOOLTIP
-        checkBoxHideZeroBalances->setText(QApplication::translate("OptionsDialog", "Hide empty balances", Q_NULLPTR));
+        checkBoxHideZeroBalances->setText(QApplication::translate("OptionsDialog", "Hide empty balances", 0));
 #ifndef QT_NO_TOOLTIP
-        checkBoxHideOrphans->setToolTip(QApplication::translate("OptionsDialog", "Hide orphan stakes in transaction lists", Q_NULLPTR));
+        checkBoxHideOrphans->setToolTip(QApplication::translate("OptionsDialog", "Hide orphan stakes in transaction lists", 0));
 #endif // QT_NO_TOOLTIP
-        checkBoxHideOrphans->setText(QApplication::translate("OptionsDialog", "Hide orphan stakes", Q_NULLPTR));
+        checkBoxHideOrphans->setText(QApplication::translate("OptionsDialog", "Hide orphan stakes", 0));
 #ifndef QT_NO_TOOLTIP
-        thirdPartyTxUrlsLabel->setToolTip(QApplication::translate("OptionsDialog", "Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.", Q_NULLPTR));
+        thirdPartyTxUrlsLabel->setToolTip(QApplication::translate("OptionsDialog", "Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.", 0));
 #endif // QT_NO_TOOLTIP
-        thirdPartyTxUrlsLabel->setText(QApplication::translate("OptionsDialog", "Third party transaction URLs", Q_NULLPTR));
+        thirdPartyTxUrlsLabel->setText(QApplication::translate("OptionsDialog", "Third party transaction URLs", 0));
 #ifndef QT_NO_TOOLTIP
-        thirdPartyTxUrls->setToolTip(QApplication::translate("OptionsDialog", "Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.", Q_NULLPTR));
+        thirdPartyTxUrls->setToolTip(QApplication::translate("OptionsDialog", "Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.", 0));
 #endif // QT_NO_TOOLTIP
-        tabWidget->setTabText(tabWidget->indexOf(tabDisplay), QApplication::translate("OptionsDialog", "&Display", Q_NULLPTR));
-        overriddenByCommandLineInfoLabel->setText(QApplication::translate("OptionsDialog", "Active command-line options that override above options:", Q_NULLPTR));
+        tabWidget->setTabText(tabWidget->indexOf(tabDisplay), QApplication::translate("OptionsDialog", "&Display", 0));
+        overriddenByCommandLineInfoLabel->setText(QApplication::translate("OptionsDialog", "Active command-line options that override above options:", 0));
         overriddenByCommandLineLabel->setText(QString());
 #ifndef QT_NO_TOOLTIP
-        resetButton->setToolTip(QApplication::translate("OptionsDialog", "Reset all client options to default.", Q_NULLPTR));
+        resetButton->setToolTip(QApplication::translate("OptionsDialog", "Reset all client options to default.", 0));
 #endif // QT_NO_TOOLTIP
-        resetButton->setText(QApplication::translate("OptionsDialog", "&Reset Options", Q_NULLPTR));
+        resetButton->setText(QApplication::translate("OptionsDialog", "&Reset Options", 0));
         statusLabel->setText(QString());
-        okButton->setText(QApplication::translate("OptionsDialog", "&OK", Q_NULLPTR));
-        cancelButton->setText(QApplication::translate("OptionsDialog", "&Cancel", Q_NULLPTR));
+        okButton->setText(QApplication::translate("OptionsDialog", "&OK", 0));
+        cancelButton->setText(QApplication::translate("OptionsDialog", "&Cancel", 0));
     } // retranslateUi
 
 };

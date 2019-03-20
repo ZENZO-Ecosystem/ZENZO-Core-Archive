@@ -60,6 +60,7 @@ public:
         horizontalLayout->setSizeConstraint(QLayout::SetMinimumSize);
         back = new QPushButton(centralwidget);
         back->setObjectName(QStringLiteral("back"));
+        back->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon;
         icon.addFile(QStringLiteral(":/icons/back"), QSize(), QIcon::Normal, QIcon::Off);
         back->setIcon(icon);
@@ -69,6 +70,7 @@ public:
 
         forward = new QPushButton(centralwidget);
         forward->setObjectName(QStringLiteral("forward"));
+        forward->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon1;
         icon1.addFile(QStringLiteral(":/icons/forward"), QSize(), QIcon::Normal, QIcon::Off);
         forward->setIcon(icon1);
@@ -95,6 +97,7 @@ public:
         pushSearch->setSizePolicy(sizePolicy1);
         pushSearch->setMinimumSize(QSize(0, 0));
         pushSearch->setMaximumSize(QSize(16777215, 16777215));
+        pushSearch->setCursor(QCursor(Qt::PointingHandCursor));
         pushSearch->setAutoDefault(false);
         pushSearch->setFlat(false);
 
@@ -108,7 +111,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 780, 489));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 780, 503));
         horizontalLayout_2 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         content = new QLabel(scrollAreaWidgetContents);
@@ -131,7 +134,7 @@ public:
         BlockExplorer->setCentralWidget(centralwidget);
         menubar = new QMenuBar(BlockExplorer);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 27));
+        menubar->setGeometry(QRect(0, 0, 800, 22));
         BlockExplorer->setMenuBar(menubar);
         statusbar = new QStatusBar(BlockExplorer);
         statusbar->setObjectName(QStringLiteral("statusbar"));

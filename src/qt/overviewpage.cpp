@@ -24,6 +24,8 @@
 #include <QAbstractItemDelegate>
 #include <QPainter>
 #include <QSettings>
+#include <QUrl>
+#include <QDesktopServices>
 #include <QTimer>
 
 #define DECORATION_SIZE 48
@@ -131,11 +133,16 @@ OverviewPage::OverviewPage(QWidget* parent) : QWidget(parent),
     ui->listTransactions->setAttribute(Qt::WA_MacShowFocusRect, false);
 
     connect(ui->listTransactions, SIGNAL(clicked(QModelIndex)), this, SLOT(handleTransactionClicked(QModelIndex)));
+    connect(ui->buttonUpgrade, SIGNAL(clicked()), this, SLOT(updateWallet()));
 
 
     // init "out of sync" warning labels
     ui->labelWalletStatus->setText("(" + tr("out of sync") + ")");
     ui->labelTransactionsStatus->setText("(" + tr("out of sync") + ")");
+
+    // init "update is available" lable and button
+    ui->lableUpgrade->setVisible(false);
+    ui->buttonUpgrade->setVisible(false);
 
     // start with displaying the "out of sync" warnings
     showOutOfSyncWarning(true);
@@ -174,6 +181,30 @@ void OverviewPage::getPercentage(CAmount nUnlockedBalance, CAmount nZerocoinBala
     szZNZPercentage = "(" + QLocale(QLocale::system()).toString(dzPercentage, 'f', nPrecision) + " %)";
     sZNZPercentage = "(" + QLocale(QLocale::system()).toString(dPercentage, 'f', nPrecision) + " %)";
 
+}
+
+void OverviewPage::setUpdate(const int status)
+{
+  // Debug console prints for update status tests
+  //std::cout << "Changing update status: " << status << endl;
+
+  if (status == 0) {
+    ui->lableUpgrade->setVisible(false);
+    ui->buttonUpgrade->setVisible(false);
+  } else if (status == 1) {
+    ui->lableUpgrade->setVisible(true);
+    ui->buttonUpgrade->setVisible(true);
+  }
+}
+
+void OverviewPage::updateWallet()
+{
+    QObject* button = QObject::sender();
+    if (button == ui->buttonUpgrade)
+    {
+      QUrl url("https://github.com/Zenzo-Ecosystem/ZENZO-Core/releases");
+      QDesktopServices::openUrl(url);
+    }
 }
 
 void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance,
@@ -236,7 +267,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
       ui->labelzBalanceUnconfirmed->setVisible(false);
       ui->labelzBalanceMature->setVisible(false);
       ui->labelTotalz->setVisible(false);
-      
+
       // Kill widget Displays
       /*ui->label_5z->setVisible(false);
       ui->line_CombinedBalance->setVisible(false);

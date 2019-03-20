@@ -177,6 +177,7 @@ public:
         addAddressLayout->setObjectName(QStringLiteral("addAddressLayout"));
         addAddressButton = new QPushButton(addMultisigTab);
         addAddressButton->setObjectName(QStringLiteral("addAddressButton"));
+        addAddressButton->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon;
         icon.addFile(QStringLiteral(":/icons/add"), QSize(), QIcon::Normal, QIcon::Off);
         addAddressButton->setIcon(icon);
@@ -211,7 +212,7 @@ public:
         addAddressScrollArea->setWidgetResizable(true);
         addAddressWidget = new QWidget();
         addAddressWidget->setObjectName(QStringLiteral("addAddressWidget"));
-        addAddressWidget->setGeometry(QRect(0, 0, 759, 166));
+        addAddressWidget->setGeometry(QRect(0, 0, 759, 174));
         verticalLayout_5 = new QVBoxLayout(addAddressWidget);
         verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
         addressList = new QVBoxLayout();
@@ -233,6 +234,7 @@ public:
         addMultisigButton->setObjectName(QStringLiteral("addMultisigButton"));
         sizePolicy2.setHeightForWidth(addMultisigButton->sizePolicy().hasHeightForWidth());
         addMultisigButton->setSizePolicy(sizePolicy2);
+        addMultisigButton->setCursor(QCursor(Qt::PointingHandCursor));
         addMultisigButton->setToolTipDuration(-3);
         QIcon icon1;
         icon1.addFile(QStringLiteral(":/icons/filesave"), QSize(), QIcon::Normal, QIcon::Off);
@@ -280,6 +282,7 @@ public:
         importAddressButton->setObjectName(QStringLiteral("importAddressButton"));
         sizePolicy.setHeightForWidth(importAddressButton->sizePolicy().hasHeightForWidth());
         importAddressButton->setSizePolicy(sizePolicy);
+        importAddressButton->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon2;
         icon2.addFile(QStringLiteral(":/icons/receiving_addresses"), QSize(), QIcon::Normal, QIcon::Off);
         importAddressButton->setIcon(icon2);
@@ -321,6 +324,7 @@ public:
         pushButtonCoinControl->setObjectName(QStringLiteral("pushButtonCoinControl"));
         sizePolicy2.setHeightForWidth(pushButtonCoinControl->sizePolicy().hasHeightForWidth());
         pushButtonCoinControl->setSizePolicy(sizePolicy2);
+        pushButtonCoinControl->setCursor(QCursor(Qt::PointingHandCursor));
 
         addTxInputLayout->addWidget(pushButtonCoinControl);
 
@@ -354,6 +358,7 @@ public:
         addInputButton->setObjectName(QStringLiteral("addInputButton"));
         sizePolicy2.setHeightForWidth(addInputButton->sizePolicy().hasHeightForWidth());
         addInputButton->setSizePolicy(sizePolicy2);
+        addInputButton->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon3;
         icon3.addFile(QStringLiteral(":/css/default"), QSize(), QIcon::Normal, QIcon::Off);
         addInputButton->setIcon(icon3);
@@ -370,7 +375,7 @@ public:
         txInputsScrollArea->setWidgetResizable(true);
         txInputsWidget = new QWidget();
         txInputsWidget->setObjectName(QStringLiteral("txInputsWidget"));
-        txInputsWidget->setGeometry(QRect(0, 0, 747, 131));
+        txInputsWidget->setGeometry(QRect(0, 0, 747, 137));
         verticalLayout_7 = new QVBoxLayout(txInputsWidget);
         verticalLayout_7->setObjectName(QStringLiteral("verticalLayout_7"));
         inputsList = new QVBoxLayout();
@@ -397,6 +402,7 @@ public:
         addDestinationButton->setObjectName(QStringLiteral("addDestinationButton"));
         sizePolicy.setHeightForWidth(addDestinationButton->sizePolicy().hasHeightForWidth());
         addDestinationButton->setSizePolicy(sizePolicy);
+        addDestinationButton->setCursor(QCursor(Qt::PointingHandCursor));
         addDestinationButton->setIcon(icon);
 
         addDestinationLayout->addWidget(addDestinationButton);
@@ -418,7 +424,7 @@ public:
         destionationsScrollArea->setWidgetResizable(true);
         destinationsScrollAreaContents = new QWidget();
         destinationsScrollAreaContents->setObjectName(QStringLiteral("destinationsScrollAreaContents"));
-        destinationsScrollAreaContents->setGeometry(QRect(0, 0, 747, 130));
+        destinationsScrollAreaContents->setGeometry(QRect(0, 0, 747, 136));
         verticalLayout_11 = new QVBoxLayout(destinationsScrollAreaContents);
         verticalLayout_11->setObjectName(QStringLiteral("verticalLayout_11"));
         destinationsList = new QVBoxLayout();
@@ -441,6 +447,7 @@ public:
         sizePolicy.setHeightForWidth(createButton->sizePolicy().hasHeightForWidth());
         createButton->setSizePolicy(sizePolicy);
         createButton->setMinimumSize(QSize(150, 0));
+        createButton->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon4;
         icon4.addFile(QStringLiteral(":/icons/export"), QSize(), QIcon::Normal, QIcon::Off);
         createButton->setIcon(icon4);
@@ -523,6 +530,7 @@ public:
         sizePolicy2.setHeightForWidth(signButton->sizePolicy().hasHeightForWidth());
         signButton->setSizePolicy(sizePolicy2);
         signButton->setMinimumSize(QSize(150, 0));
+        signButton->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon5;
         icon5.addFile(QStringLiteral(":/icons/edit"), QSize(), QIcon::Normal, QIcon::Off);
         signButton->setIcon(icon5);
@@ -535,6 +543,7 @@ public:
         commitButton->setEnabled(false);
         sizePolicy2.setHeightForWidth(commitButton->sizePolicy().hasHeightForWidth());
         commitButton->setSizePolicy(sizePolicy2);
+        commitButton->setCursor(QCursor(Qt::PointingHandCursor));
         commitButton->setAutoFillBackground(false);
         QIcon icon6;
         icon6.addFile(QStringLiteral(":/icons/send"), QSize(), QIcon::Normal, QIcon::Off);
@@ -549,6 +558,7 @@ public:
         addPrivKeyButton->setObjectName(QStringLiteral("addPrivKeyButton"));
         sizePolicy.setHeightForWidth(addPrivKeyButton->sizePolicy().hasHeightForWidth());
         addPrivKeyButton->setSizePolicy(sizePolicy);
+        addPrivKeyButton->setCursor(QCursor(Qt::PointingHandCursor));
         addPrivKeyButton->setIcon(icon);
 
         addPrivKeyLayout->addWidget(addPrivKeyButton);
@@ -596,7 +606,7 @@ public:
         keyScrollArea->setWidgetResizable(true);
         keyScrollAreaContents = new QWidget();
         keyScrollAreaContents->setObjectName(QStringLiteral("keyScrollAreaContents"));
-        keyScrollAreaContents->setGeometry(QRect(0, 0, 755, 168));
+        keyScrollAreaContents->setGeometry(QRect(0, 0, 755, 174));
         verticalLayout_9 = new QVBoxLayout(keyScrollAreaContents);
         verticalLayout_9->setObjectName(QStringLiteral("verticalLayout_9"));
         keyList = new QVBoxLayout();

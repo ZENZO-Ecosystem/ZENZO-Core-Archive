@@ -5,16 +5,16 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 1.1.1
+!define VERSION 1.2.0
 !define COMPANY "Zenzo Core project"
 !define URL https://www.zenzo.org
 
 # MUI Symbol Definitions
-!define MUI_ICON "/home/debian/ZENZO-Core/share/pixmaps/bitcoin.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/debian/ZENZO-Core/share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "/home/kittie/ZENZO-Core/share/pixmaps/bitcoin.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/kittie/ZENZO-Core/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "/home/debian/ZENZO-Core/share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/home/kittie/ZENZO-Core/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
@@ -22,7 +22,7 @@ SetCompressor /SOLID lzma
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER "Zenzo Core"
 !define MUI_FINISHPAGE_RUN $INSTDIR\zenzo-qt
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/debian/ZENZO-Core/share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/kittie/ZENZO-Core/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
@@ -48,7 +48,7 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /home/debian/ZENZO-Core/zenzo-${VERSION}-win-setup.exe
+OutFile /home/kittie/ZENZO-Core/zenzo-${VERSION}-win-setup.exe
 !if "" == "64"
 InstallDir $PROGRAMFILES64\Zenzo
 !else
@@ -73,14 +73,14 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /home/debian/ZENZO-Core/release/zenzo-qt
-    File /oname=COPYING.txt /home/debian/ZENZO-Core/COPYING
-    File /oname=readme.txt /home/debian/ZENZO-Core/doc/README_windows.txt
+    File /home/kittie/ZENZO-Core/release/zenzo-qt
+    File /oname=COPYING.txt /home/kittie/ZENZO-Core/COPYING
+    File /oname=readme.txt /home/kittie/ZENZO-Core/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /home/debian/ZENZO-Core/release/zenzod
-    File /home/debian/ZENZO-Core/release/zenzo-cli
+    File /home/kittie/ZENZO-Core/release/zenzod
+    File /home/kittie/ZENZO-Core/release/zenzo-cli
     SetOutPath $INSTDIR\doc
-    File /r /home/debian/ZENZO-Core/doc\*.*
+    File /r /home/kittie/ZENZO-Core/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 SectionEnd

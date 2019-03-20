@@ -136,6 +136,7 @@ public:
         addressBookButton = new QToolButton(MultiSendDialog);
         addressBookButton->setObjectName(QStringLiteral("addressBookButton"));
         addressBookButton->setMaximumSize(QSize(16777215, 32));
+        addressBookButton->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon;
         icon.addFile(QStringLiteral(":/icons/address-book"), QSize(), QIcon::Normal, QIcon::Off);
         addressBookButton->setIcon(icon);
@@ -179,6 +180,7 @@ public:
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
         viewButton = new QPushButton(MultiSendDialog);
         viewButton->setObjectName(QStringLiteral("viewButton"));
+        viewButton->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout_4->addWidget(viewButton);
 
@@ -189,11 +191,13 @@ public:
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         addButton = new QPushButton(MultiSendDialog);
         addButton->setObjectName(QStringLiteral("addButton"));
+        addButton->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout_2->addWidget(addButton);
 
         deleteButton = new QPushButton(MultiSendDialog);
         deleteButton->setObjectName(QStringLiteral("deleteButton"));
+        deleteButton->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout_2->addWidget(deleteButton);
 
@@ -204,11 +208,13 @@ public:
         horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
         activateButton = new QPushButton(MultiSendDialog);
         activateButton->setObjectName(QStringLiteral("activateButton"));
+        activateButton->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout_5->addWidget(activateButton);
 
         disableButton = new QPushButton(MultiSendDialog);
         disableButton->setObjectName(QStringLiteral("disableButton"));
+        disableButton->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout_5->addWidget(disableButton);
 

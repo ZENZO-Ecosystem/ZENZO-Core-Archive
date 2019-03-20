@@ -60,4 +60,4 @@ use cases, such as the [ZENZO Arcade](https://arcade.zenzo.io)
 ***
 
 
-*Special thanks to @sicXnull and @j00v for their contributions to ZENZO Core.*
+*Special thanks to [@JSKitty](https://github.com/JSKitty), @sicXnull and @j00v for their contributions to ZENZO Core.*

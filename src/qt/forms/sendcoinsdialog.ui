@@ -272,6 +272,9 @@
                 </property>
                 <item>
                  <widget class="QPushButton" name="pushButtonCoinControl">
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
                   <property name="styleSheet">
                    <string notr="true"/>
                   </property>
@@ -1050,6 +1053,9 @@
                    </item>
                    <item>
                     <widget class="QPushButton" name="buttonChooseFee">
+                     <property name="cursor">
+                      <cursorShape>PointingHandCursor</cursorShape>
+                     </property>
                      <property name="text">
                       <string>Choose...</string>
                      </property>
@@ -1057,6 +1063,9 @@
                    </item>
                    <item>
                     <widget class="QPushButton" name="buttonMinimizeFee">
+                     <property name="cursor">
+                      <cursorShape>PointingHandCursor</cursorShape>
+                     </property>
                      <property name="toolTip">
                       <string>collapse fee-settings</string>
                      </property>
@@ -1329,6 +1338,9 @@
                           <width>0</width>
                           <height>24</height>
                          </size>
+                        </property>
+                        <property name="cursor">
+                         <cursorShape>PointingHandCursor</cursorShape>
                         </property>
                         <property name="minimum">
                          <number>0</number>
@@ -1604,6 +1616,9 @@
                <height>0</height>
               </size>
              </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
              <property name="toolTip">
               <string>Confirm the send action</string>
              </property>
@@ -1630,6 +1645,9 @@
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
              <property name="toolTip">
               <string>Clear all fields of the form.</string>
              </property>
@@ -1647,6 +1665,9 @@
            </item>
            <item>
             <widget class="QPushButton" name="addButton">
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
              <property name="toolTip">
               <string>Send to multiple recipients at once</string>
              </property>

@@ -11,7 +11,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'walletmodel.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.7.1. It"
+#error "This file was generated using the moc from 5.5.1. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -175,56 +175,48 @@ void WalletModel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
             typedef void (WalletModel::*_t)(const CAmount & , const CAmount & , const CAmount & , const CAmount & , const CAmount & , const CAmount & , const CAmount & , const CAmount & , const CAmount & );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&WalletModel::balanceChanged)) {
                 *result = 0;
-                return;
             }
         }
         {
             typedef void (WalletModel::*_t)(int );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&WalletModel::encryptionStatusChanged)) {
                 *result = 1;
-                return;
             }
         }
         {
             typedef void (WalletModel::*_t)();
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&WalletModel::requireUnlock)) {
                 *result = 2;
-                return;
             }
         }
         {
             typedef void (WalletModel::*_t)(const QString & , const QString & , unsigned int );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&WalletModel::message)) {
                 *result = 3;
-                return;
             }
         }
         {
             typedef void (WalletModel::*_t)(CWallet * , SendCoinsRecipient , QByteArray );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&WalletModel::coinsSent)) {
                 *result = 4;
-                return;
             }
         }
         {
             typedef void (WalletModel::*_t)(const QString & , int );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&WalletModel::showProgress)) {
                 *result = 5;
-                return;
             }
         }
         {
             typedef void (WalletModel::*_t)(bool );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&WalletModel::notifyWatchonlyChanged)) {
                 *result = 6;
-                return;
             }
         }
         {
             typedef void (WalletModel::*_t)(bool );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&WalletModel::notifyMultiSigChanged)) {
                 *result = 7;
-                return;
             }
         }
     }

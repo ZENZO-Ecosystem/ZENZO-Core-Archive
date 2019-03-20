@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'intro.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.1
+** Created by: Qt User Interface Compiler version 5.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -144,6 +144,7 @@ public:
         sizePolicy.setHeightForWidth(ellipsisButton->sizePolicy().hasHeightForWidth());
         ellipsisButton->setSizePolicy(sizePolicy);
         ellipsisButton->setMaximumSize(QSize(30, 16777215));
+        ellipsisButton->setCursor(QCursor(Qt::PointingHandCursor));
         ellipsisButton->setText(QStringLiteral("..."));
         ellipsisButton->setAutoDefault(false);
 
@@ -217,11 +218,11 @@ public:
 
     void retranslateUi(QDialog *Intro)
     {
-        Intro->setWindowTitle(QApplication::translate("Intro", "Welcome", Q_NULLPTR));
-        label_2->setText(QApplication::translate("Intro", "Welcome to ZENZO Core.", Q_NULLPTR));
+        Intro->setWindowTitle(QApplication::translate("Intro", "Welcome", 0));
+        label_2->setText(QApplication::translate("Intro", "Welcome to ZENZO Core.", 0));
         groupBox->setTitle(QString());
-        sizeWarningLabel->setText(QApplication::translate("Intro", "ZENZO Core will download and store a copy of the ZENZO blockchain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.", Q_NULLPTR));
-        label_4->setText(QApplication::translate("Intro", "As this is the first time the program is launched, you can choose where ZENZO Core will store its data.", Q_NULLPTR));
+        sizeWarningLabel->setText(QApplication::translate("Intro", "ZENZO Core will download and store a copy of the ZENZO blockchain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.", 0));
+        label_4->setText(QApplication::translate("Intro", "As this is the first time the program is launched, you can choose where ZENZO Core will store its data.", 0));
 #ifndef QT_NO_TOOLTIP
         label->setToolTip(QApplication::translate("Intro", "<html><head/><body><p>Hi!</p></body></html>", "Hi!"));
 #endif // QT_NO_TOOLTIP
@@ -229,8 +230,8 @@ public:
         label->setStatusTip(QString());
 #endif // QT_NO_STATUSTIP
         label->setText(QString());
-        dataDirDefault->setText(QApplication::translate("Intro", "Use the default data directory", Q_NULLPTR));
-        dataDirCustom->setText(QApplication::translate("Intro", "Use a custom data directory:", Q_NULLPTR));
+        dataDirDefault->setText(QApplication::translate("Intro", "Use the default data directory", 0));
+        dataDirCustom->setText(QApplication::translate("Intro", "Use a custom data directory:", 0));
         freeSpace->setText(QString());
     } // retranslateUi
 
