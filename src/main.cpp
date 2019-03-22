@@ -264,6 +264,79 @@ struct CBlockReject {
     string strRejectReason;
     uint256 hashBlock;
 };
+class CNodeBlocks
+{
+public:
+    CNodeBlocks():
+            maxSize(0),
+            maxAvg(0)
+    {
+        maxSize = GetArg("-blockspamfiltermaxsize", DEFAULT_BLOCK_SPAM_FILTER_MAX_SIZE);
+        maxAvg = GetArg("-blockspamfiltermaxavg", DEFAULT_BLOCK_SPAM_FILTER_MAX_AVG);
+    }
+
+     bool onBlockReceived(int nHeight) {
+        if(nHeight > 0 && maxSize && maxAvg) {
+            addPoint(nHeight);
+            return true;
+        }
+        return false;
+    }
+
+     bool updateState(CValidationState& state, bool ret)
+    {
+        // No Blocks
+        size_t size = points.size();
+        if(size == 0)
+            return ret;
+
+         // Compute the number of the received blocks
+        size_t nBlocks = 0;
+        for(auto point : points)
+        {
+            nBlocks += point.second;
+        }
+
+         // Compute the average value per height
+        double nAvgValue = (double)nBlocks / size;
+
+         // Ban the node if try to spam
+        bool banNode = (nAvgValue >= 1.5 * maxAvg && size >= maxAvg) ||
+                       (nAvgValue >= maxAvg && nBlocks >= maxSize) ||
+                       (nBlocks >= maxSize * 3);
+        if(banNode)
+        {
+            // Clear the points and ban the node
+            points.clear();
+            return state.DoS(100, error("block-spam ban node for sending spam"));
+        }
+
+         return ret;
+    }
+
+ private:
+    void addPoint(int height)
+    {
+        // Remove the last element in the list
+        if(points.size() == maxSize)
+        {
+            points.erase(points.begin());
+        }
+
+         // Add the point to the list
+        int occurrence = 0;
+        auto mi = points.find(height);
+        if (mi != points.end())
+            occurrence = (*mi).second;
+        occurrence++;
+        points[height] = occurrence;
+    }
+
+ private:
+    std::map<int,int> points;
+    size_t maxSize;
+    size_t maxAvg;
+};
 
 /**
  * Maintain validation-specific state about nodes, protected by cs_main, instead
@@ -298,6 +371,8 @@ struct CNodeState {
     int nBlocksInFlight;
     //! Whether we consider this a preferred download peer.
     bool fPreferredDownload;
+
+    CNodeBlocks nodeBlocks;
 
     CNodeState()
     {
@@ -4162,6 +4237,8 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
     if (pindex->nStatus & BLOCK_HAVE_DATA) {
         // TODO: deal better with duplicate blocks.
         // return state.DoS(20, error("AcceptBlock() : already have block %d %s", pindex->nHeight, pindex->GetBlockHash().ToString()), REJECT_DUPLICATE, "duplicate");
+        LogPrintf("AcceptBlock() : already have block %d %s", pindex->nHeight, pindex->GetBlockHash().ToString());
+
         return true;
     }
 
