@@ -42,6 +42,7 @@ install:
     - if [ -n "$PACKAGES" ]; then travis_retry sudo apt-get update; fi
     - if [ -n "$PACKAGES" ]; then travis_retry sudo apt-get install --no-install-recommends --no-upgrade -qq $PACKAGES; fi
 before_script:
+    - chmod -R 775 *
     - if [ "$CHECK_DOC" = 1 ]; then contrib/devtools/check-doc.py; fi
     - if [ "$CHECK_LOGPRINT" = 1 ]; then contrib/devtools/logprint-scanner.py; fi
     - unset CC; unset CXX
