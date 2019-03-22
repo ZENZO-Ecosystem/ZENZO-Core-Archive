@@ -4251,6 +4251,158 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
     }
 
     int nHeight = pindex->nHeight;
+    int splitHeight = -1;
+   bool isPos = block.IsProofOfStake();
+    if (isPoS) {
+        LOCK(cs_main);
+
+        // Blocks arrives in order, so if prev block is not the tip then we are on a fork.
+        // Extra info: duplicated blocks are skipping this checks, so we don't have to worry about those here.
+        bool isBlockFromFork = pindexPrev != nullptr && chainActive.Tip() != pindexPrev;
+
+        // Coin stake
+        CTransaction &stakeTxIn = block.vtx[1];
+
+        // Inputs
+        std::vector<CTxIn> znzInputs;
+        std::vector<CTxIn> zZNZInputs;
+
+        for (const CTxIn& stakeIn : stakeTxIn.vin) {
+            if(stakeIn.scriptSig.IsZerocoinSpend()){
+                zZNZInputs.push_back(stakeIn);
+            }else{
+                znzInputs.push_back(stakeIn);
+            }
+        }
+        const bool hasPIVInputs = !znzInputs.empty();
+        const bool hasZPIVInputs = !zZNZInputs.empty();
+
+        // ZC started after PoS.
+        // Check for serial double spent on the same block, TODO: Move this to the proper method..
+
+        vector<CBigNum> inBlockSerials;
+        for (const CTransaction& tx : block.vtx) {
+            for (const CTxIn& in: tx.vin) {
+                if(nHeight >= Params().Zerocoin_StartHeight()) {
+                    if (in.scriptSig.IsZerocoinSpend()) {
+                        CoinSpend spend = TxInToZerocoinSpend(in);
+                        // Check for serials double spending in the same block
+                        if (std::find(inBlockSerials.begin(), inBlockSerials.end(), spend.getCoinSerialNumber()) !=
+                            inBlockSerials.end()) {
+                            return state.DoS(100, error("%s: serial double spent on the same block", __func__));
+                        }
+                        inBlockSerials.push_back(spend.getCoinSerialNumber());
+                    }
+                }
+                if(tx.IsCoinStake()) continue;
+                if(hasPIVInputs)
+                    // Check if coinstake input is double spent inside the same block
+                    for (const CTxIn& pivIn : znzInputs){
+                        if(pivIn.prevout == in.prevout){
+                            // double spent coinstake input inside block
+                            return error("%s: double spent coinstake input inside block", __func__);
+                        }
+                    }
+            }
+        }
+        inBlockSerials.clear();
+
+
+        // Check whether is a fork or not
+        if (isBlockFromFork) {
+
+            // Start at the block we're adding on to
+            CBlockIndex *prev = pindexPrev;
+
+            int readBlock = 0;
+            vector<CBigNum> vBlockSerials;
+            CBlock bl;
+            // Go backwards on the forked chain up to the split
+            do {
+                // Check if the forked chain is longer than the max reorg limit
+                if(readBlock == Params().MaxReorganizationDepth()){
+                    // TODO: Remove this chain from disk.
+                    return error("%s: forked chain longer than maximum reorg limit", __func__);
+                }
+
+                if(!ReadBlockFromDisk(bl, prev))
+                    // Previous block not on disk
+                    return error("%s: previous block %s not on disk", __func__, prev->GetBlockHash().GetHex());
+                // Increase amount of read blocks
+                readBlock++;
+                // Loop through every input from said block
+                for (const CTransaction& t : bl.vtx) {
+                    for (const CTxIn& in: t.vin) {
+                        // Loop through every input of the staking tx
+                        for (const CTxIn& stakeIn : znzInputs) {
+                            // if it's already spent
+
+                            // First regular staking check
+                            if(hasPIVInputs) {
+                                if (stakeIn.prevout == in.prevout) {
+                                    return state.DoS(100, error("%s: input already spent on a previous block", __func__));
+                                }
+
+                                // Second, if there is zPoS staking then store the serials for later check
+                                if(in.scriptSig.IsZerocoinSpend()){
+                                    vBlockSerials.push_back(TxInToZerocoinSpend(in).getCoinSerialNumber());
+                                }
+                            }
+                        }
+                    }
+                }
+
+                prev = prev->pprev;
+
+            } while (!chainActive.Contains(prev));
+
+            // Split height
+            splitHeight = prev->nHeight;
+
+            // Now that this loop if completed. Check if we have zZNZ inputs.
+            if(hasZPIVInputs){
+                for (const CTxIn& zPivInput : zZNZInputs) {
+                    CoinSpend spend = TxInToZerocoinSpend(zPivInput);
+
+                    // First check if the serials were not already spent on the forked blocks.
+                    CBigNum coinSerial = spend.getCoinSerialNumber();
+                    for(const CBigNum& serial : vBlockSerials){
+                        if(serial == coinSerial){
+                            return state.DoS(100, error("%s: serial double spent on fork", __func__));
+                        }
+                    }
+
+                    // Now check if the serial exists before the chain split.
+                    int nHeightTx = 0;
+                    if (IsSerialInBlockchain(spend.getCoinSerialNumber(), nHeightTx)){
+                        // if the height is nHeightTx > chainSplit means that the spent occurred after the chain split
+                        if(nHeightTx <= splitHeight)
+                            return state.DoS(100, error("%s: serial double spent on main chain", __func__));
+                    }
+
+                    if (!ContextualCheckZerocoinSpendNoSerialCheck(stakeTxIn, spend, pindex, 0))
+                        return state.DoS(100,error("%s: forked chain ContextualCheckZerocoinSpend failed for tx %s", __func__,
+                                                   stakeTxIn.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zpiv");
+
+                    // Now only the ZKP left..
+                    // As the spend maturity is 200, the acc value must be accumulated, otherwise it's not ready to be spent
+                    CBigNum bnAccumulatorValue = 0;
+                    if (!zerocoinDB->ReadAccumulatorValue(spend.getAccumulatorChecksum(), bnAccumulatorValue)) {
+                        return state.DoS(100, error("%s: stake zerocoinspend not ready to be spent", __func__));
+                    }
+
+                    Accumulator accumulator(Params().Zerocoin_Params(chainActive.Height() < Params().Zerocoin_Block_V2_Start()),
+                                            spend.getDenomination(), bnAccumulatorValue);
+
+                    //Check that the coinspend is valid
+                    if(!spend.Verify(accumulator))
+                        return state.DoS(100, error("%s: zerocoin spend did not verify", __func__));
+
+                }
+            }
+
+        }
+
 
     // Write block to history file
     try {
@@ -4384,14 +4536,33 @@ bool ProcessNewBlock(CValidationState& state, CNode* pfrom, CBlock* pblock, CDis
         }
 
         // Store to disk
-        CBlockIndex* pindex = NULL;
+        CBlockIndex* pindex = nullptr;
         bool ret = AcceptBlock (*pblock, state, &pindex, dbp, checked);
         if (pindex && pfrom) {
             mapBlockSource[pindex->GetBlockHash ()] = pfrom->GetId ();
         }
         CheckBlockIndex ();
-        if (!ret)
-            return error ("%s : AcceptBlock FAILED", __func__);
+         if (!ret) {
+            // Check spamming
+            if(pindex && pfrom && GetBoolArg("-blockspamfilter", DEFAULT_BLOCK_SPAM_FILTER)) {
+                CNodeState *nodestate = State(pfrom->GetId());
+                if(nodestate != nullptr) {
+                    nodestate->nodeBlocks.onBlockReceived(pindex->nHeight);
+                    bool nodeStatus = true;
+                    // UpdateState will return false if the node is attacking us or update the score and return true.
+                    nodeStatus = nodestate->nodeBlocks.updateState(state, nodeStatus);
+                    int nDoS = 0;
+                    if (state.IsInvalid(nDoS)) {
+                        if (nDoS > 0)
+                            Misbehaving(pfrom->GetId(), nDoS);
+                        nodeStatus = false;
+                    }
+                    if (!nodeStatus)
+                        return error("%s : AcceptBlock FAILED - block spam protection", __func__);
+                }
+            }
+            return error("%s : AcceptBlock FAILED", __func__);
+         }
     }
 
     if (!ActivateBestChain(state, pblock, checked))
