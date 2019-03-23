@@ -1310,27 +1310,10 @@ void ThreadOpenAddedConnections()
             list<string> lAddresses(0);
 
             /* Kitty's seednodes list */
-            lAddresses.push_back("80.211.138.180:26210");
-            lAddresses.push_back("45.76.42.236:26210");
-            lAddresses.push_back("45.76.184.133:26210");
-            lAddresses.push_back("95.179.200.83:26210");
-            lAddresses.push_back("45.76.117.67:26210");
-            lAddresses.push_back("80.240.31.194:26210");
-            lAddresses.push_back("144.202.101.208:26210");
-            lAddresses.push_back("23.227.163.202:26210");
-            lAddresses.push_back("195.206.181.235:26210");
-            lAddresses.push_back("217.69.15.189:26210");
-            lAddresses.push_back("149.28.224.239:26210");
-            lAddresses.push_back("103.102.46.249:26210");
-            lAddresses.push_back("45.77.224.165:26210");
-            lAddresses.push_back("159.69.177.150:26210");
-            lAddresses.push_back("207.148.93.79:26210");
-            lAddresses.push_back("150.66.40.253:26210");
-            lAddresses.push_back("108.61.166.192:26210");
-            lAddresses.push_back("45.77.4.175:26210");
-            lAddresses.push_back("207.180.253.25:26210");
-            lAddresses.push_back("109.230.215.134:26210");
-            lAddresses.push_back("207.148.64.152:26210");
+            lAddresses.push_back("195.206.181.235:26210"); // Unused Server
+            lAddresses.push_back("160.20.147.226:26210"); // ZENZO Arcade Server
+            lAddresses.push_back("109.230.215.134:26210"); // Old ZENZO Arcade Server
+            lAddresses.push_back("23.82.128.40:26210"); // PIVX Radio
 
             {
                 LOCK(cs_vAddedNodes);
@@ -1351,27 +1334,10 @@ void ThreadOpenAddedConnections()
         list<string> lAddresses(0);
 
         /* Kitty's seednodes list */
-        lAddresses.push_back("80.211.138.180:26210");
-        lAddresses.push_back("45.76.42.236:26210");
-        lAddresses.push_back("45.76.184.133:26210");
-        lAddresses.push_back("95.179.200.83:26210");
-        lAddresses.push_back("45.76.117.67:26210");
-        lAddresses.push_back("80.240.31.194:26210");
-        lAddresses.push_back("144.202.101.208:26210");
-        lAddresses.push_back("23.227.163.202:26210");
-        lAddresses.push_back("195.206.181.235:26210");
-        lAddresses.push_back("217.69.15.189:26210");
-        lAddresses.push_back("149.28.224.239:26210");
-        lAddresses.push_back("103.102.46.249:26210");
-        lAddresses.push_back("45.77.224.165:26210");
-        lAddresses.push_back("159.69.177.150:26210");
-        lAddresses.push_back("207.148.93.79:26210");
-        lAddresses.push_back("150.66.40.253:26210");
-        lAddresses.push_back("108.61.166.192:26210");
-        lAddresses.push_back("45.77.4.175:26210");
-        lAddresses.push_back("207.180.253.25:26210");
-        lAddresses.push_back("109.230.215.134:26210");
-        lAddresses.push_back("207.148.64.152:26210");
+        lAddresses.push_back("195.206.181.235:26210"); // Unused Server
+        lAddresses.push_back("160.20.147.226:26210"); // ZENZO Arcade Server
+        lAddresses.push_back("109.230.215.134:26210"); // Old ZENZO Arcade Server
+        lAddresses.push_back("23.82.128.40:26210"); // PIVX Radio
 
         {
             LOCK(cs_vAddedNodes);
