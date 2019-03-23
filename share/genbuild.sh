@@ -14,7 +14,7 @@ else
 fi
 
 DESC=""
-SUFFIX="v1.0.1"
+SUFFIX="v1.2.0"
 LAST_COMMIT_DATE=""
 #if [ -e "$(which git 2>/dev/null)" -a "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]; then
     # clean 'dirty' status of touched files that haven't been modified
@@ -34,18 +34,18 @@ LAST_COMMIT_DATE=""
   #  LAST_COMMIT_DATE="$(git log -n 1 --format="%ci")"
 #fi
 
-#if [ -n "$DESC" ]; then
-  #  NEWINFO="#define BUILD_DESC \"$DESC\""
-#elif [ -n "$SUFFIX" ]; then
-  #  NEWINFO="#define BUILD_SUFFIX $SUFFIX"
-#else
-  #  NEWINFO="// No build information available"
-#fi
+if [ -n "$DESC" ]; then
+   NEWINFO="#define BUILD_DESC \"$DESC\""
+elif [ -n "$SUFFIX" ]; then
+   NEWINFO="#define BUILD_SUFFIX $SUFFIX"
+else
+   NEWINFO="// No build information available"
+fi
 
 # only update build.h if necessary
-#if [ "$INFO" != "$NEWINFO" ]; then
-  #  echo "$NEWINFO" >"$FILE"
-#    if [ -n "$LAST_COMMIT_DATE" ]; then
-      #  echo "#define BUILD_DATE \"$LAST_COMMIT_DATE\"" >> "$FILE"
-#    fi
-#fi
+if [ "$INFO" != "$NEWINFO" ]; then
+   echo "$NEWINFO" >"$FILE"
+   if [ -n "$LAST_COMMIT_DATE" ]; then
+       echo "#define BUILD_DATE \"$LAST_COMMIT_DATE\"" >> "$FILE"
+   fi
+fi
