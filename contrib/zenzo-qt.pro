@@ -54,6 +54,7 @@ INCLUDEPATH += . \
                src/qt/test \
                src/secp256k1/src \
                src/secp256k1/src/java
+QT += widgets
 
 # Input
 HEADERS += src/activemasternode.h \
