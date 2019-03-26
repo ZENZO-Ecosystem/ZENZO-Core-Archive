@@ -2133,6 +2133,9 @@ int CheckForUpdates (std::string addr, std::string ver)
     } else if (verInt < localVerInt) {
       upgradeStatus = "peer is outdated";
       lowerVerPeers++;
+    } else {
+      // Keeping away compiler warning
+      upgradeStatus = "local client is up to date";
     }
 
     // Calculate peers needed for a 'majority' upgrade

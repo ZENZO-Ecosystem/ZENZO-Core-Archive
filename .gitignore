@@ -82,6 +82,8 @@ libconftest.dylib*
 Makefile
 zenzo-qt
 zenzo-Qt.app
+db-4.8.30.NC
+db4
 
 # Unit-tests
 Makefile.test

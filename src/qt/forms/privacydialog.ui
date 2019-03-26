@@ -91,14 +91,14 @@
            <widget class="QLabel" name="labelOverviewHeaderRight">
             <property name="minimumSize">
              <size>
-              <width>464</width>
-              <height>60</height>
+              <width>290</width>
+              <height>65</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>16777215</width>
-              <height>60</height>
+              <width>290</width>
+              <height>65</height>
              </size>
             </property>
             <property name="font">
