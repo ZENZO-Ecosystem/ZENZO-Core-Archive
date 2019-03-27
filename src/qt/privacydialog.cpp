@@ -44,7 +44,7 @@ PrivacyDialog::PrivacyDialog(QWidget* parent) : QDialog(parent),
     ui->TEMintStatus->setLineWidth (2);
     ui->TEMintStatus->setMidLineWidth (2);
     //ui->TEMintStatus->setPlainText(tr("Mint Status: Okay"));
-    ui->TEMintStatus->setPlainText(tr("Zerocoin Protocol is disabled, you can only spend mints. Please convert all zZNZ to ZNZ!"));
+    ui->TEMintStatus->setPlainText(tr("Zerocoin Protocol is permanently disabled, please use 'exportzerocoins' and contact ZENZO Developers"));
 
     // Coin Control signals
     connect(ui->pushButtonCoinControl, SIGNAL(clicked()), this, SLOT(coinControlButtonClicked()));
@@ -164,7 +164,7 @@ void PrivacyDialog::on_pushButtonMintzZNZ_clicked()
 
     //if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE)) {
         QMessageBox::information(this, tr("Mint Zerocoin"),
-                                 tr("zZNZ is currently undergoing maintenance."), QMessageBox::Ok,
+                                 tr("zZNZ is permanently disabled."), QMessageBox::Ok,
                                  QMessageBox::Ok);
         return;
     //}
