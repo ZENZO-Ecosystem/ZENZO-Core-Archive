@@ -1,8 +1,8 @@
 ### ZENZO is a fork of [PIVX](https://github.com/PIVX-Project/PIVX) that forked [Dash](https://github.com/dashpay/dash) that forked [Bitcoin](https://github.com/bitcoin/bitcoinp)
 
-
 # ZENZO Core Integration/Staging Repository
 
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE) [![Chat on Discord](https://img.shields.io/badge/chat-Discord-brightgreen.svg)](https://discord.gg/invite/nzGapAh) [![GitHub version](https://badge.fury.io/gh/Zenzo-Ecosystem%2FZENZO-Core.svg)](https://badge.fury.io/gh/Zenzo-Ecosystem%2FZENZO-Core)
 
 ZENZO(ZNZ) is an open-source digital
 currency based on Bitcoin's blockchain technology, Dash’s Masternodes and 
