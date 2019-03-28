@@ -1314,6 +1314,7 @@ void ThreadOpenAddedConnections()
             lAddresses.push_back("160.20.147.226:26210"); // ZENZO Arcade Server
             lAddresses.push_back("109.230.215.134:26210"); // Old ZENZO Arcade Server
             lAddresses.push_back("23.82.128.40:26210"); // PIVX Radio
+            lAddresses.push_back("160.20.147.220:26210"); // Germany Seednode
 
             {
                 LOCK(cs_vAddedNodes);
@@ -1338,6 +1339,7 @@ void ThreadOpenAddedConnections()
         lAddresses.push_back("160.20.147.226:26210"); // ZENZO Arcade Server
         lAddresses.push_back("109.230.215.134:26210"); // Old ZENZO Arcade Server
         lAddresses.push_back("23.82.128.40:26210"); // PIVX Radio
+        lAddresses.push_back("160.20.147.220:26210"); // Germany Seednode
 
         {
             LOCK(cs_vAddedNodes);
