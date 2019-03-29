@@ -1,4 +1,4 @@
-# ZENZO Core v1.2.0
+# ZENZO Core v1.2.1
 
 ## Summary
 This brings multiple new features, upgrades, fixes and changes to the monetary partition of the ZENZO ecosystem.
@@ -28,7 +28,7 @@ Updates are completely optional, and can be ignored at will of the user. However
 Upgrades and Updates beyond v1.2.0 are guarenteed to be much, much easier than any other QT-based cryptocurrency currently.
 
 ## How to Upgrade
-_ZENZO Core v1.2.0 is a **non-consensus-breaking** update, meaning: You are not required to upgrade, but we would
+_ZENZO Core v1.2.1 is a **non-consensus-breaking** update, meaning: You are not required to upgrade, but we would
 highly recommend you do, for the large benefits of the latest application and it's improvements._
 
 Steps to Upgrade:
@@ -52,11 +52,15 @@ Steps to Upgrade:
 - [UI] *(YuurinBee)* - Created new icons for the GUI Widgets
 - [UI] *(YuurinBee)* - Created new gradient for the widget menu
 - [UI] *(JSKitty)* - Added the 'cursor hover' effect for most QT buttons
+- [UI] *(JSKitty)* - Nudge header logo to the right of the wallet header
+- [UI] *(JSKitty)* - Fixed double-display on locked coins for local MNs
+- [UI] *(JSKitty)* - Changed "Minted" to "Stake Reward" to simplify PoS
+- [UI] *(JSKitty)* - Increased Overview Page TX'es from 5 to 9 max transactions
+- [UI] *(JSKitty)* - Force Lightmode for MacOS
 ---
 - [Wallet] *(JSKitty)* - Fixed Segmentation Fault on "-disablewallet" command
 - [Wallet] *(JSKitty)* - Added "-zerocoin" command for enabling Zerocoin GUI *(Not Recommended!)*
 ---
-- [Consensus] *(JSKitty)* - Upgraded network subver, protocol remains the same  
 - [Consensus] *(JSKitty)* - Created and implemented the **DVM - Decentralized Version Manager**
 - [Consensus] *(Akshaynexus)* - Fake Stake patch
 ---
@@ -66,7 +70,8 @@ Steps to Upgrade:
 - [RPC] *(JSKitty)* - Fixed invalid response to "settxfee 0"
 - [RPC] *(JSKitty)* - Added secret command 🐈
 ---
-- [Net] *(JSKitty)* - Hardcoded over 20 trusted nodes into the peerslist for instant connections
+- [Net] *(JSKitty)* - Hardcoded 5 Official Seednodes for near-instant connections on new nodes
+- [Net] *(JSKitty)* - Fixed IP reachability issues
 ---
 - [Tests] *(Akshaynexus)* - Added Travis CI config code
 ---
