@@ -45,7 +45,7 @@
 
 // Define local version integer (ex: v1.1.1 = 111. OR. v1.2.0 = 120, ect)
 // IMPORTANT: Requires updating on each proto-bump!
-#define LOCAL_VERSION_INT 120
+#define LOCAL_VERSION_INT 121
 
 // Dump addresses to peers.dat every 15 minutes (900s)
 #define DUMP_ADDRESSES_INTERVAL 900
