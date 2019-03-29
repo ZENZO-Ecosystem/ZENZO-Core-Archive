@@ -5,6 +5,7 @@ TEST_BINARY=test/test_zenzo$(EXEEXT)
 
 
 EXTRA_DIST += \
+	src/crypto/md_helper.c \
 	src/crypto/hamsi_helper.c \
 	test/bctest.py \
 	test/bitcoin-util-test.py \
