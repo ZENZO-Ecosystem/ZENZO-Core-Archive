@@ -45,7 +45,7 @@ Instructions: Homebrew
 1. Clone the github tree to get the source code and go into the directory.
 
         git clone https://github.com/Zenzo-Ecosystem/ZENZO-Core.git
-        cd zenzo
+        cd ZENZO-Core
 
 2.  Build zenzod:
 
