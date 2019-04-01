@@ -277,8 +277,8 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/hmac_sha512.cpp \
   crypto/scrypt.cpp \
   crypto/ripemd160.cpp \
-  crypto/sph_sha2big.c \
   crypto/sph_md_helper.c \
+  crypto/sph_sha2big.c \
   crypto/aes_helper.c \
   crypto/blake.c \
   crypto/bmw.c \
@@ -293,7 +293,9 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/simd.c \
   crypto/echo.c \
   crypto/whirlpool.c \
+  crypto/haval_helper.c \
   crypto/haval.c \
+  crypto/hamsi_helper.c \
   crypto/hamsi.c \
   crypto/fugue.c \
   crypto/sha2.c \
