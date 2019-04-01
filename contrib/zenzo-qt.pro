@@ -453,7 +453,6 @@ SOURCES += src/activemasternode.cpp \
            src/crypto/hamsi.c \
            src/crypto/hamsi_helper.c \
            src/crypto/haval.c \
-           src/crypto/haval_helper.c \
            src/crypto/hmac_sha256.cpp \
            src/crypto/hmac_sha512.cpp \
            src/crypto/jh.c \
