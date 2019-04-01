@@ -326,7 +326,7 @@ crypto_libbitcoin_crypto_a_SOURCES = \
            crypto/sph_skein.h \
            crypto/sph_types.h \
            crypto/sph_whirlpool.h \
-           crypto/whirlpool.c \
+           crypto/whirlpool.c 
 
 # univalue JSON library
 univalue_libbitcoin_univalue_a_SOURCES = \
