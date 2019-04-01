@@ -282,7 +282,7 @@ Clone the git repositories for zenzo and gitian and then checkout the zenzo vers
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
 git clone https://github.com/eastcoastcrypto/Zenzo.git
-cd zenzo
+cd ZENZO-Core
 git checkout v${VERSION}
 cd ..
 ```

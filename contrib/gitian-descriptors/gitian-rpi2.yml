@@ -70,17 +70,17 @@ script: |
   done
   export PATH=${WRAP_DIR}:${PATH}
 
-  cd zenzo
+  cd ZENZO-Core
   BASEPREFIX=`pwd`/depends
   # Build dependencies for each host
   for i in $HOSTS; do
-    make ${MAKEOPTS} NO_QT=1 -C ${BASEPREFIX} HOST="${i}"
+    make -j10 ${MAKEOPTS} NO_QT=1 -C ${BASEPREFIX} HOST="${i}"
   done
 
   # Create the release tarball using (arbitrarily) the first host
   ./autogen.sh
   ./configure --prefix=${BASEPREFIX}/`echo "${HOSTS}" | awk '{print $1;}'`
-  make NO_QT=1 dist
+  make -j10 NO_QT=1 dist
   SOURCEDIST=`echo zenzo-*.tar.gz`
   DISTNAME=`echo ${SOURCEDIST} | sed 's/.tar.*//'`
   # Correct tar file order
@@ -101,8 +101,8 @@ script: |
     tar --strip-components=1 -xf ../$SOURCEDIST
 
     ./configure --prefix=${BASEPREFIX}/${i} --bindir=${INSTALLPATH}/bin --includedir=${INSTALLPATH}/include --libdir=${INSTALLPATH}/lib --disable-ccache --disable-maintainer-mode --disable-dependency-tracking ${CONFIGFLAGS}
-    make ${MAKEOPTS}
-    make install-strip
+    make -j10 ${MAKEOPTS}
+    make -j10 install-strip
     cd installed
     find . -name "lib*.la" -delete
     find . -name "lib*.a" -delete
