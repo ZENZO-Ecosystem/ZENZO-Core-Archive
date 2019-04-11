@@ -1,5 +1,5 @@
 ---
-name: "zenzo-aarch64-1.2"
+name: "zenzo-aarch64-1.2.1"
 enable_cache: true
 suites:
 - "trusty"
