@@ -2,7 +2,7 @@
 name: "zenzo-win-1.2.1"
 enable_cache: true
 suites:
-- "precise"
+- "trusty"
 architectures:
 - "amd64"
 packages:

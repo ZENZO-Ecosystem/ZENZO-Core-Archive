@@ -294,7 +294,7 @@ Setting up gitian images
 -------------------------
 
 Gitian needs virtual images of the operating system to build in.
-Currently this is Ubuntu Precise for x86_64.
+Currently this is Ubuntu trusty for x86_64.
 These images will be copied and used every time that a build is started to
 make sure that the build is deterministic.
 Creating the images will take a while, but only has to be done once.
@@ -303,7 +303,7 @@ Execute the following as user `debian`:
 
 ```bash
 cd gitian-builder
-bin/make-base-vm --lxc --arch amd64 --suite precise
+bin/make-base-vm --lxc --arch amd64 --suite trusty
 ```
 
 There will be a lot of warnings printed during build of the images. These can be ignored.
@@ -352,7 +352,7 @@ Output from `gbuild` will look something like
     Resolving deltas: 100% (25724/25724), done.
     From https://github.com/eastcoastcrypto/Zenzo
     ... (new tags, new branch etc)
-    --- Building for precise x86_64 ---
+    --- Building for trusty x86_64 ---
     Stopping target if it is up
     Making a new image copy
     stdin: is not a tty
