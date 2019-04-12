@@ -35,7 +35,7 @@ Steps to Upgrade:
 1. Backup your wallet *(ZENZO Core -> File -> Backup Wallet...)*
 2. Close ZENZO Core *(ZENZO Core -> File -> Exit)* or *(Shortcut: Ctrl + Q)*
 3. You may optionally delete "zenzo-qt" or "zenzod / zenzo-cli" from your device
-4. [Download ZENZO Core v1.2.0](https://github.com/Zenzo-Ecosystem/ZENZO-Core/releases)
+4. [Download ZENZO Core v1.2.1](https://github.com/Zenzo-Ecosystem/ZENZO-Core/releases)
 5. Open "zenzo-qt" or "zenzod / zenzo-cli"
 6. **Upgrade Complete!**
 
