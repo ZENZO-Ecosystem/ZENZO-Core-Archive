@@ -71,6 +71,9 @@
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QPushButton" name="btnCopyURI">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="text">
         <string>Copy &amp;URI</string>
        </property>
@@ -81,6 +84,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="btnCopyAddress">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="text">
         <string>Copy &amp;Address</string>
        </property>
@@ -91,6 +97,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="btnSaveAs">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="text">
         <string>&amp;Save Image...</string>
        </property>
@@ -114,6 +123,9 @@
      </item>
      <item>
       <widget class="QDialogButtonBox" name="buttonBox">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="standardButtons">
         <set>QDialogButtonBox::Close</set>
        </property>

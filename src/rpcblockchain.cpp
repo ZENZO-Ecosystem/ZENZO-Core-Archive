@@ -91,13 +91,6 @@ Object blockToJSON(const CBlock& block, const CBlockIndex* blockindex, bool txDe
 
     result.push_back(Pair("moneysupply",ValueFromAmount(blockindex->nMoneySupply)));
 
-    Object zbrkObj;
-    for (auto denom : libzerocoin::zerocoinDenomList) {
-        zbrkObj.push_back(Pair(to_string(denom), ValueFromAmount(blockindex->mapZerocoinSupply.at(denom) * (denom*COIN))));
-    }
-    zbrkObj.emplace_back(Pair("total", ValueFromAmount(blockindex->GetZerocoinSupply())));
-    result.emplace_back(Pair("zZNZsupply", zbrkObj));
-
     return result;
 }
 
@@ -279,18 +272,6 @@ Value getblock(const Array& params, bool fHelp)
             "  \"previousblockhash\" : \"hash\",  (string) The hash of the previous block\n"
             "  \"nextblockhash\" : \"hash\"       (string) The hash of the next block\n"
             "  \"moneysupply\" : \"supply\"       (numeric) The money supply when this block was added to the blockchain\n"
-            "  \"zZNZsupply\" :\n"
-            "  {\n"
-            "     \"1\" : n,            (numeric) supply of 1 zZNZ denomination\n"
-            "     \"5\" : n,            (numeric) supply of 5 zZNZ denomination\n"
-            "     \"10\" : n,           (numeric) supply of 10 zZNZ denomination\n"
-            "     \"50\" : n,           (numeric) supply of 50 zZNZ denomination\n"
-            "     \"100\" : n,          (numeric) supply of 100 zZNZ denomination\n"
-            "     \"500\" : n,          (numeric) supply of 500 zZNZ denomination\n"
-            "     \"1000\" : n,         (numeric) supply of 1000 zZNZ denomination\n"
-            "     \"5000\" : n,         (numeric) supply of 5000 zZNZ denomination\n"
-            "     \"total\" : n,        (numeric) The total supply of all zZNZ denominations\n"
-            "  }\n"
             "}\n"
             "\nResult (for verbose=false):\n"
             "\"data\"             (string) A string that is serialized, hex-encoded data for block 'hash'.\n"

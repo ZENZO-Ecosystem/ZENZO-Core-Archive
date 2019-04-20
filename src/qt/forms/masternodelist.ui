@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>723</width>
+    <width>962</width>
     <height>457</height>
    </rect>
   </property>
@@ -91,14 +91,14 @@
            <widget class="QLabel" name="labelOverviewHeaderRight">
             <property name="minimumSize">
              <size>
-              <width>464</width>
-              <height>60</height>
+              <width>290</width>
+              <height>65</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>16777215</width>
-              <height>60</height>
+              <width>290</width>
+              <height>65</height>
              </size>
             </property>
             <property name="font">
@@ -189,8 +189,8 @@
                    <palette>
                     <active>
                      <colorrole role="Text">
-                      <brush brushstyle="SolidPattern">
-                       <color alpha="255">
+                      <brush brushstyle="NoBrush">
+                       <color alpha="128">
                         <red>51</red>
                         <green>51</green>
                         <blue>51</blue>
@@ -200,8 +200,8 @@
                     </active>
                     <inactive>
                      <colorrole role="Text">
-                      <brush brushstyle="SolidPattern">
-                       <color alpha="255">
+                      <brush brushstyle="NoBrush">
+                       <color alpha="128">
                         <red>51</red>
                         <green>51</green>
                         <blue>51</blue>
@@ -211,11 +211,11 @@
                     </inactive>
                     <disabled>
                      <colorrole role="Text">
-                      <brush brushstyle="SolidPattern">
-                       <color alpha="255">
-                        <red>85</red>
-                        <green>85</green>
-                        <blue>85</blue>
+                      <brush brushstyle="NoBrush">
+                       <color alpha="128">
+                        <red>51</red>
+                        <green>51</green>
+                        <blue>51</blue>
                        </color>
                       </brush>
                      </colorrole>
@@ -291,6 +291,9 @@
                   </item>
                   <item>
                    <widget class="QPushButton" name="startAllButton">
+                    <property name="cursor">
+                     <cursorShape>PointingHandCursor</cursorShape>
+                    </property>
                     <property name="text">
                      <string>Start &amp;all</string>
                     </property>
@@ -298,6 +301,9 @@
                   </item>
                   <item>
                    <widget class="QPushButton" name="startMissingButton">
+                    <property name="cursor">
+                     <cursorShape>PointingHandCursor</cursorShape>
+                    </property>
                     <property name="text">
                      <string>Start &amp;MISSING</string>
                     </property>
@@ -305,6 +311,9 @@
                   </item>
                   <item>
                    <widget class="QPushButton" name="UpdateButton">
+                    <property name="cursor">
+                     <cursorShape>PointingHandCursor</cursorShape>
+                    </property>
                     <property name="text">
                      <string>&amp;Update status</string>
                     </property>

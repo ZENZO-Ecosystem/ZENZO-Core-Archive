@@ -1,8 +1,8 @@
 ---
-name: "zenzo-win-1.3"
+name: "zenzo-win-1.2.1"
 enable_cache: true
 suites:
-- "precise"
+- "trusty"
 architectures:
 - "amd64"
 packages:
@@ -23,7 +23,7 @@ packages:
 - "python"
 remotes:
 - "url": "https://github.com/Zenzo-Ecosystem/ZENZO-Core.git"
-  "dir": "zenzo"
+  "dir": "ZENZO-Core"
 files: []
 script: |
   WRAP_DIR=$HOME/wrapped
@@ -101,11 +101,11 @@ script: |
   create_per-host_linker_wrapper "2000-01-01 12:00:00"
   export PATH=${WRAP_DIR}:${PATH}
 
-  cd zenzo
+  cd ZENZO-Core
   BASEPREFIX=`pwd`/depends
   # Build dependencies for each host
   for i in $HOSTS; do
-    make ${MAKEOPTS} -C ${BASEPREFIX} HOST="${i}"
+    chmod -R 775 * && make -j10 ${MAKEOPTS} -C ${BASEPREFIX} HOST="${i}"
   done
 
   # Faketime for binaries
@@ -118,7 +118,7 @@ script: |
   # Create the release tarball using (arbitrarily) the first host
   ./autogen.sh
   CONFIG_SITE=${BASEPREFIX}/`echo "${HOSTS}" | awk '{print $1;}'`/share/config.site ./configure --prefix=/
-  make dist
+  make -j10 dist
   SOURCEDIST=`echo zenzo-*.tar.gz`
   DISTNAME=`echo ${SOURCEDIST} | sed 's/.tar.*//'`
 
@@ -142,9 +142,9 @@ script: |
     tar --strip-components=1 -xf ../$SOURCEDIST
 
     CONFIG_SITE=${BASEPREFIX}/${i}/share/config.site ./configure --prefix=/ --disable-ccache --disable-maintainer-mode --disable-dependency-tracking ${CONFIGFLAGS} CFLAGS="${HOST_CFLAGS}" CXXFLAGS="${HOST_CXXFLAGS}"
-    make ${MAKEOPTS}
-    make deploy
-    make install DESTDIR=${INSTALLPATH}
+    make -j10 ${MAKEOPTS}
+    make -j10 deploy
+    make -j10 install DESTDIR=${INSTALLPATH}
     cp -f zenzo-*setup*.exe $OUTDIR/
     cd installed
     # mv ${DISTNAME}/bin/*.dll ${DISTNAME}/lib/ # temporarily disabled for Zerocoin

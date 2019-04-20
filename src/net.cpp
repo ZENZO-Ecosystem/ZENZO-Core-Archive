@@ -1,7 +1,8 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2015-2019 The PIVX developers
+// Copyright (c) 2018-2019 The ZENZO developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -10,6 +11,10 @@
 #endif
 
 #include "net.h"
+
+#include <string>
+#include <iostream>
+#include <sstream>
 
 #include "addrman.h"
 #include "chainparams.h"
@@ -37,6 +42,10 @@
 
 #include <boost/filesystem.hpp>
 #include <boost/thread.hpp>
+
+// Define local version integer (ex: v1.1.1 = 111. OR. v1.2.0 = 120, ect)
+// IMPORTANT: Requires updating on each proto-bump!
+#define LOCAL_VERSION_INT 121
 
 // Dump addresses to peers.dat every 15 minutes (900s)
 #define DUMP_ADDRESSES_INTERVAL 900
@@ -76,10 +85,33 @@ struct ListenSocket {
 //
 bool fDiscover = true;
 bool fListen = true;
+bool fUpdateCheck = true;
+
+// 0, should not upgrade
+// 1, should upgrade
+int shouldUpgrade = 0;
+
+// --------------------------------------------------
+// Upgrade Majority
+// This is the magic number for deciding when enough
+// peers have a higher version to be considered the
+// 'majority' of the network for upgrading.
+
+// Higher means more secure and less false-positives,
+// but lengthens time before the upgrade is triggered.
+
+// Peers / nUpgradeMajority = Minimum peers for upgrade
+int nUpgradeMajority = 4; // 25% of peers is 'majority'.
+// --------------------------------------------------
+
+// Track all peer version differences
+int higherVerPeers = 0;
+int currentVerPeers = 0;
+int lowerVerPeers = 0;
+
 uint64_t nLocalServices = NODE_NETWORK;
 CCriticalSection cs_mapLocalHost;
 map<CNetAddr, LocalServiceInfo> mapLocalHost;
-static bool vfReachable[NET_MAX] = {};
 static bool vfLimited[NET_MAX] = {};
 static CNode* pnodeLocalHost = NULL;
 uint64_t nLocalHostNonce = 0;
@@ -239,14 +271,6 @@ void AdvertizeLocal(CNode* pnode)
     }
 }
 
-void SetReachable(enum Network net, bool fFlag)
-{
-    LOCK(cs_mapLocalHost);
-    vfReachable[net] = fFlag;
-    if (net == NET_IPV6 && fFlag)
-        vfReachable[NET_IPV4] = true;
-}
-
 // learn a new local address
 bool AddLocal(const CService& addr, int nScore)
 {
@@ -269,7 +293,6 @@ bool AddLocal(const CService& addr, int nScore)
             info.nScore = nScore + (fAlready ? 1 : 0);
             info.nPort = addr.GetPort();
         }
-        SetReachable(addr.GetNetwork());
     }
 
     return true;
@@ -332,7 +355,7 @@ bool IsLocal(const CService& addr)
 bool IsReachable(enum Network net)
 {
     LOCK(cs_mapLocalHost);
-    return vfReachable[net] && !vfLimited[net];
+    return !vfLimited[net];
 }
 
 /** check whether a given address is in a network we can probably connect to */
@@ -1277,27 +1300,11 @@ void ThreadOpenAddedConnections()
             list<string> lAddresses(0);
 
             /* Kitty's seednodes list */
-            lAddresses.push_back("80.211.138.180:26210");
-            lAddresses.push_back("45.76.42.236:26210");
-            lAddresses.push_back("45.76.184.133:26210");
-            lAddresses.push_back("95.179.200.83:26210");
-            lAddresses.push_back("45.76.117.67:26210");
-            lAddresses.push_back("80.240.31.194:26210");
-            lAddresses.push_back("144.202.101.208:26210");
-            lAddresses.push_back("23.227.163.202:26210");
-            lAddresses.push_back("195.206.181.235:26210");
-            lAddresses.push_back("217.69.15.189:26210");
-            lAddresses.push_back("149.28.224.239:26210");
-            lAddresses.push_back("103.102.46.249:26210");
-            lAddresses.push_back("45.77.224.165:26210");
-            lAddresses.push_back("159.69.177.150:26210");
-            lAddresses.push_back("207.148.93.79:26210");
-            lAddresses.push_back("150.66.40.253:26210");
-            lAddresses.push_back("108.61.166.192:26210");
-            lAddresses.push_back("45.77.4.175:26210");
-            lAddresses.push_back("207.180.253.25:26210");
-            lAddresses.push_back("109.230.215.134:26210");
-            lAddresses.push_back("207.148.64.152:26210");
+            lAddresses.push_back("195.206.181.235:26210"); // Unused Server
+            lAddresses.push_back("160.20.147.226:26210"); // ZENZO Arcade Server
+            lAddresses.push_back("109.230.215.134:26210"); // Old ZENZO Arcade Server
+            lAddresses.push_back("23.82.128.40:26210"); // PIVX Radio
+            lAddresses.push_back("160.20.147.220:26210"); // Germany Seednode
 
             {
                 LOCK(cs_vAddedNodes);
@@ -1318,27 +1325,11 @@ void ThreadOpenAddedConnections()
         list<string> lAddresses(0);
 
         /* Kitty's seednodes list */
-        lAddresses.push_back("80.211.138.180:26210");
-        lAddresses.push_back("45.76.42.236:26210");
-        lAddresses.push_back("45.76.184.133:26210");
-        lAddresses.push_back("95.179.200.83:26210");
-        lAddresses.push_back("45.76.117.67:26210");
-        lAddresses.push_back("80.240.31.194:26210");
-        lAddresses.push_back("144.202.101.208:26210");
-        lAddresses.push_back("23.227.163.202:26210");
-        lAddresses.push_back("195.206.181.235:26210");
-        lAddresses.push_back("217.69.15.189:26210");
-        lAddresses.push_back("149.28.224.239:26210");
-        lAddresses.push_back("103.102.46.249:26210");
-        lAddresses.push_back("45.77.224.165:26210");
-        lAddresses.push_back("159.69.177.150:26210");
-        lAddresses.push_back("207.148.93.79:26210");
-        lAddresses.push_back("150.66.40.253:26210");
-        lAddresses.push_back("108.61.166.192:26210");
-        lAddresses.push_back("45.77.4.175:26210");
-        lAddresses.push_back("207.180.253.25:26210");
-        lAddresses.push_back("109.230.215.134:26210");
-        lAddresses.push_back("207.148.64.152:26210");
+        lAddresses.push_back("195.206.181.235:26210"); // Unused Server
+        lAddresses.push_back("160.20.147.226:26210"); // ZENZO Arcade Server
+        lAddresses.push_back("109.230.215.134:26210"); // Old ZENZO Arcade Server
+        lAddresses.push_back("23.82.128.40:26210"); // PIVX Radio
+        lAddresses.push_back("160.20.147.220:26210"); // Germany Seednode
 
         {
             LOCK(cs_vAddedNodes);
@@ -2106,4 +2097,74 @@ void CNode::EndMessage() UNLOCK_FUNCTION(cs_vSend)
         SocketSendData(this);
 
     LEAVE_CRITICAL_SECTION(cs_vSend);
+}
+
+int CheckForUpdates (std::string addr, std::string ver)
+{
+  if (fUpdateCheck == true)
+  {
+    // Save full version for display purposes
+    const string verFull = ver;
+
+    // Splice raw version integer from the Sub Version
+    replaceAll(ver, "/", "");
+    replaceAll(ver, ".", "");
+    replaceAll(ver, "ZENZO Core:", "");
+    replaceAll(ver, "Zenzo Core:", "");
+    int verInt = toInt(ver);
+    int localVerInt = LOCAL_VERSION_INT;
+    std::string upgradeStatus = "upgrade status unknown";
+
+    // Compare our version integer to the connected node
+    if (verInt > localVerInt) {
+      upgradeStatus = "local client is outdated";
+      higherVerPeers++;
+    } else if (verInt == localVerInt) {
+      upgradeStatus = "local client is up to date";
+      currentVerPeers++;
+    } else if (verInt < localVerInt) {
+      upgradeStatus = "peer is outdated";
+      lowerVerPeers++;
+    } else {
+      // Keeping away compiler warning
+      upgradeStatus = "local client is up to date";
+    }
+
+    // Calculate peers needed for a 'majority' upgrade
+    int peersForUpgrade = (higherVerPeers + currentVerPeers + lowerVerPeers) / nUpgradeMajority;
+
+    // Ensure minimum is atleast 1 peer
+    if (peersForUpgrade < 1)
+        peersForUpgrade = 1;
+
+    // Check if majority consensus is met
+    if (higherVerPeers >= peersForUpgrade) {
+      shouldUpgrade = 1;
+    } else {
+      shouldUpgrade = 0;
+    }
+
+    // Debug console prints for consensus tests
+    // std::cout << "Connected to: Node " << addr << ", " << upgradeStatus << ". Peers till upgrade: " << higherVerPeers << "/" << peersForUpgrade << endl;
+
+    return shouldUpgrade;
+  }
+}
+
+void replaceAll(std::string& str, const std::string& from, const std::string& to)
+{
+    if(from.empty())
+        return;
+    size_t start_pos = 0;
+    while((start_pos = str.find(from, start_pos)) != std::string::npos)
+    {
+        str.replace(start_pos, from.length(), to);
+        start_pos += to.length();
+    }
+}
+
+int toInt(const std::string str)
+{
+  int n = std::stoi(str);
+  return n;
 }

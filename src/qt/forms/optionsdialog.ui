@@ -20,7 +20,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="tabMain">
       <attribute name="title">
@@ -469,6 +469,7 @@
           <string notr="true"/>
          </property>
          <property name="text">
+          <string/>
          </property>
          <property name="wordWrap">
           <bool>true</bool>
@@ -541,17 +542,6 @@
         </layout>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBoxHideZeroBalances">
-         <property name="toolTip">
-          <string>Hide empty balances</string>
-         </property>
-         <property name="layoutDirection">
-          <enum>Qt::LeftToRight</enum>
-         </property>
-         <property name="text">
-          <string>Hide empty balances</string>
-         </property>
-        </widget>
         <layout class="QHBoxLayout" name="horizontalLayout_5_Display">
          <item>
           <widget class="QCheckBox" name="checkBoxHideZeroBalances">
@@ -682,6 +672,9 @@
     <layout class="QHBoxLayout" name="horizontalLayout_Buttons">
      <item>
       <widget class="QPushButton" name="resetButton">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="toolTip">
         <string>Reset all client options to default.</string>
        </property>
@@ -746,6 +739,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="okButton">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="text">
         <string>&amp;OK</string>
        </property>
@@ -759,6 +755,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="cancelButton">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="text">
         <string>&amp;Cancel</string>
        </property>

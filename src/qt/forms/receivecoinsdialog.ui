@@ -76,14 +76,14 @@
            <widget class="QLabel" name="labelOverviewHeaderRight">
             <property name="minimumSize">
              <size>
-              <width>464</width>
-              <height>60</height>
+              <width>290</width>
+              <height>65</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>16777215</width>
-              <height>60</height>
+              <width>290</width>
+              <height>65</height>
              </size>
             </property>
             <property name="font">
@@ -252,11 +252,14 @@
                    <height>0</height>
                   </size>
                  </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
                  <property name="text">
                   <string>&amp;Request payment</string>
                  </property>
                  <property name="icon">
-                  <iconset resource="../pivx.qrc">
+                  <iconset resource="../zenzo.qrc">
                    <normaloff>:/icons/receiving_addresses</normaloff>:/icons/receiving_addresses</iconset>
                  </property>
                 </widget>
@@ -269,6 +272,9 @@
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
                  <property name="toolTip">
                   <string>Clear all fields of the form.</string>
                  </property>
@@ -276,7 +282,7 @@
                   <string>Clear</string>
                  </property>
                  <property name="icon">
-                  <iconset resource="../pivx.qrc">
+                  <iconset resource="../zenzo.qrc">
                    <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
                  </property>
                  <property name="autoDefault">
@@ -351,8 +357,8 @@
               <palette>
                <active>
                 <colorrole role="Text">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
+                 <brush brushstyle="NoBrush">
+                  <color alpha="128">
                    <red>51</red>
                    <green>51</green>
                    <blue>51</blue>
@@ -362,8 +368,8 @@
                </active>
                <inactive>
                 <colorrole role="Text">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
+                 <brush brushstyle="NoBrush">
+                  <color alpha="128">
                    <red>51</red>
                    <green>51</green>
                    <blue>51</blue>
@@ -373,11 +379,11 @@
                </inactive>
                <disabled>
                 <colorrole role="Text">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>85</red>
-                   <green>85</green>
-                   <blue>85</blue>
+                 <brush brushstyle="NoBrush">
+                  <color alpha="128">
+                   <red>51</red>
+                   <green>51</green>
+                   <blue>51</blue>
                   </color>
                  </brush>
                 </colorrole>
@@ -402,6 +408,9 @@
                <property name="enabled">
                 <bool>false</bool>
                </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="toolTip">
                 <string>Show the selected request (does the same as double clicking an entry)</string>
                </property>
@@ -409,7 +418,7 @@
                 <string>Show</string>
                </property>
                <property name="icon">
-                <iconset resource="../pivx.qrc">
+                <iconset resource="../zenzo.qrc">
                  <normaloff>:/icons/edit</normaloff>:/icons/edit</iconset>
                </property>
                <property name="autoDefault">
@@ -422,6 +431,9 @@
                <property name="enabled">
                 <bool>false</bool>
                </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="toolTip">
                 <string>Remove the selected entries from the list</string>
                </property>
@@ -429,7 +441,7 @@
                 <string>Remove</string>
                </property>
                <property name="icon">
-                <iconset resource="../pivx.qrc">
+                <iconset resource="../zenzo.qrc">
                  <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
                </property>
                <property name="autoDefault">
@@ -482,7 +494,7 @@
   <tabstop>removeRequestButton</tabstop>
  </tabstops>
  <resources>
-  <include location="../pivx.qrc"/>
+  <include location="../zenzo.qrc"/>
  </resources>
  <connections/>
 </ui>

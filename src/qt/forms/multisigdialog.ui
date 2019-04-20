@@ -90,6 +90,9 @@
         <layout class="QHBoxLayout" name="addAddressLayout">
          <item>
           <widget class="QPushButton" name="addAddressButton">
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
            <property name="toolTip">
             <string>Add another address that could sign to verify a transaction from the multisig address.</string>
            </property>
@@ -97,7 +100,7 @@
             <string>&amp;Add Address / Key</string>
            </property>
            <property name="icon">
-            <iconset resource="../pivx.qrc">
+            <iconset resource="../zenzo.qrc">
              <normaloff>:/icons/add</normaloff>:/icons/add</iconset>
            </property>
            <property name="autoDefault">
@@ -150,7 +153,7 @@
             <x>0</x>
             <y>0</y>
             <width>759</width>
-            <height>166</height>
+            <height>174</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -184,6 +187,9 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
            <property name="toolTip">
             <string>Create a new multisig address</string>
            </property>
@@ -194,7 +200,7 @@
             <string>C&amp;reate</string>
            </property>
            <property name="icon">
-            <iconset resource="../pivx.qrc">
+            <iconset resource="../zenzo.qrc">
              <normaloff>:/icons/filesave</normaloff>:/icons/filesave</iconset>
            </property>
            <property name="autoDefault">
@@ -264,11 +270,14 @@ Please be patient after clicking import.</string>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
            <property name="text">
             <string>&amp;Import Redeem</string>
            </property>
            <property name="icon">
-            <iconset resource="../pivx.qrc">
+            <iconset resource="../zenzo.qrc">
              <normaloff>:/icons/receiving_addresses</normaloff>:/icons/receiving_addresses</iconset>
            </property>
           </widget>
@@ -319,6 +328,9 @@ Please be patient after clicking import.</string>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="text">
                 <string>Coin Control</string>
                </property>
@@ -367,6 +379,9 @@ Please be patient after clicking import.</string>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="toolTip">
                 <string>Add an input to fund the outputs</string>
                </property>
@@ -374,7 +389,7 @@ Please be patient after clicking import.</string>
                 <string>Add a Raw Input</string>
                </property>
                <property name="icon">
-                <iconset resource="../pivx.qrc">
+                <iconset resource="../zenzo.qrc">
                  <normaloff>:/css/default</normaloff>:/css/default</iconset>
                </property>
               </widget>
@@ -398,7 +413,7 @@ Please be patient after clicking import.</string>
                 <x>0</x>
                 <y>0</y>
                 <width>747</width>
-                <height>131</height>
+                <height>137</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_7">
@@ -439,6 +454,9 @@ Please be patient after clicking import.</string>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="toolTip">
                 <string>Add destinations to send ZNZ to</string>
                </property>
@@ -446,7 +464,7 @@ Please be patient after clicking import.</string>
                 <string>Add &amp;Destination</string>
                </property>
                <property name="icon">
-                <iconset resource="../pivx.qrc">
+                <iconset resource="../zenzo.qrc">
                  <normaloff>:/icons/add</normaloff>:/icons/add</iconset>
                </property>
               </widget>
@@ -483,7 +501,7 @@ Please be patient after clicking import.</string>
                 <x>0</x>
                 <y>0</y>
                 <width>747</width>
-                <height>130</height>
+                <height>136</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_11">
@@ -523,6 +541,9 @@ Please be patient after clicking import.</string>
                  <height>0</height>
                 </size>
                </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="toolTip">
                 <string>Create a transaction object using the given inputs to the given outputs</string>
                </property>
@@ -530,7 +551,7 @@ Please be patient after clicking import.</string>
                 <string>Cr&amp;eate</string>
                </property>
                <property name="icon">
-                <iconset resource="../pivx.qrc">
+                <iconset resource="../zenzo.qrc">
                  <normaloff>:/icons/export</normaloff>:/icons/export</iconset>
                </property>
                <property name="autoDefault">
@@ -644,6 +665,9 @@ txScrollArea:{
                  <height>0</height>
                 </size>
                </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="toolTip">
                 <string>Sign the transaction from this wallet or from provided private keys</string>
                </property>
@@ -651,7 +675,7 @@ txScrollArea:{
                 <string>S&amp;ign</string>
                </property>
                <property name="icon">
-                <iconset resource="../pivx.qrc">
+                <iconset resource="../zenzo.qrc">
                  <normaloff>:/icons/edit</normaloff>:/icons/edit</iconset>
                </property>
                <property name="autoDefault">
@@ -673,6 +697,9 @@ txScrollArea:{
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="toolTip">
                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DISABLED until transaction has been signed enough times.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
@@ -683,7 +710,7 @@ txScrollArea:{
                 <string>Co&amp;mmit</string>
                </property>
                <property name="icon">
-                <iconset resource="../pivx.qrc">
+                <iconset resource="../zenzo.qrc">
                  <normaloff>:/icons/send</normaloff>:/icons/send</iconset>
                </property>
                <property name="autoDefault">
@@ -701,6 +728,9 @@ txScrollArea:{
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
                  <property name="toolTip">
                   <string>Add private keys to sign the transaction with</string>
                  </property>
@@ -708,7 +738,7 @@ txScrollArea:{
                   <string>Add Private &amp;Key</string>
                  </property>
                  <property name="icon">
-                  <iconset resource="../pivx.qrc">
+                  <iconset resource="../zenzo.qrc">
                    <normaloff>:/icons/add</normaloff>:/icons/add</iconset>
                  </property>
                 </widget>
@@ -780,7 +810,7 @@ txScrollArea:{
                 <x>0</x>
                 <y>0</y>
                 <width>755</width>
-                <height>168</height>
+                <height>174</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_9">
@@ -815,7 +845,7 @@ txScrollArea:{
   </layout>
  </widget>
  <resources>
-  <include location="../pivx.qrc"/>
+  <include location="../zenzo.qrc"/>
  </resources>
  <connections/>
 </ui>
