@@ -101,7 +101,7 @@
  </widget>
  <resources>
   <include location="../zenzo.qrc"/>
-  <include location="../pivx.qrc"/>
+  <include location="../zenzo.qrc"/>
  </resources>
  <connections>
   <connection>

@@ -445,7 +445,7 @@
       <string>Buy ZNZ</string>
      </property>
      <property name="icon">
-      <iconset resource="../pivx.qrc">
+      <iconset resource="../zenzo.qrc">
        <normaloff>:/icons/bitcoin</normaloff>:/icons/bitcoin</iconset>
      </property>
     </widget>
@@ -2944,7 +2944,7 @@
       <string>Generate ZENZO Deposit Address</string>
      </property>
      <property name="icon">
-      <iconset resource="../pivx.qrc">
+      <iconset resource="../zenzo.qrc">
        <normaloff>:/icons/bitcoin</normaloff>:/icons/bitcoin</iconset>
      </property>
     </widget>
@@ -3206,7 +3206,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="../pivx.qrc">:/icons/transaction_1</pixmap>
+       <pixmap resource="../zenzo.qrc">:/icons/transaction_1</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -3253,7 +3253,7 @@
       <string>Update API Keys</string>
      </property>
      <property name="icon">
-      <iconset resource="../pivx.qrc">
+      <iconset resource="../zenzo.qrc">
        <normaloff>:/icons/bitcoin</normaloff>:/icons/bitcoin</iconset>
      </property>
     </widget>
@@ -3408,7 +3408,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="../pivx.qrc"/>
+  <include location="../zenzo.qrc"/>
  </resources>
  <connections/>
 </ui>

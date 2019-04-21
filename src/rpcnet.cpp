@@ -38,6 +38,33 @@ Value getconnectioncount(const Array& params, bool fHelp)
     return (int)vNodes.size();
 }
 
+Value getdvmstatus(const Array& params, bool fHelp)
+{
+    if (fHelp || params.size() != 0)
+        throw runtime_error(
+            "getdvmstatus\n"
+            "\nReturns the status of the DVM, it's peers, detected versions and update consensus progress as a json object.\n"
+            "\nbResult:\n"
+            "  {\n"
+            "    \"status\": n,                   (numeric) The Consensus Status of the DVM (0 = No Upgrade Consensus, 1 = Upgrade Consensus Met)\n"
+            "    \"total\": n,                    (numeric) The quantity of all measured peers\n"
+            "    \"higher\": n,                   (numeric) The quantity of measured peers with a higher version than us\n"
+            "    \"current\": n,                  (numeric) The quantity of measured peers with a version matching us\n"
+            "    \"lower\": n,                    (numeric) The quantity of measured peers with a lower version than us\n"
+            "  }\n"
+            "\nExamples:\n" +
+            HelpExampleCli("getdvmstatus", "") + HelpExampleRpc("getdvmstatus", ""));
+
+    Object obj;
+    obj.push_back(Pair("status", shouldUpgrade));
+    obj.push_back(Pair("total", (lowerVerPeers + currentVerPeers + higherVerPeers)));
+    obj.push_back(Pair("higher", higherVerPeers));
+    obj.push_back(Pair("current", currentVerPeers));
+    obj.push_back(Pair("lower", lowerVerPeers));
+
+    return obj;
+}
+
 Value ping(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 0)
@@ -92,7 +119,7 @@ Value getpeerinfo(const Array& params, bool fHelp)
             "    \"pingtime\": n,             (numeric) ping time\n"
             "    \"pingwait\": n,             (numeric) ping wait\n"
             "    \"version\": v,              (numeric) The peer version, such as 7001\n"
-            "    \"subver\": \"/Zenzo Core:x.x.x.x/\",  (string) The string version\n"
+            "    \"subver\": \"/ZENZO Core:x.x.x.x/\",  (string) The string version\n"
             "    \"inbound\": true|false,     (boolean) Inbound (true) or Outbound (false)\n"
             "    \"startingheight\": n,       (numeric) The starting height (block) of the peer\n"
             "    \"banscore\": n,             (numeric) The ban score\n"
@@ -354,7 +381,7 @@ Value getnetworkinfo(const Array& params, bool fHelp)
             "\nResult:\n"
             "{\n"
             "  \"version\": xxxxx,                      (numeric) the server version\n"
-            "  \"subversion\": \"/Zenzo Core:x.x.x.x/\",     (string) the server subversion string\n"
+            "  \"subversion\": \"/ZENZO Core:x.x.x.x/\",     (string) the server subversion string\n"
             "  \"protocolversion\": xxxxx,              (numeric) the protocol version\n"
             "  \"localservices\": \"xxxxxxxxxxxxxxxx\", (string) the services we offer to the network\n"
             "  \"timeoffset\": xxxxx,                   (numeric) the time offset\n"
