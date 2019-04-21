@@ -262,6 +262,7 @@ static const CRPCCommand vRPCCommands[] =
         {"network", "addnode", &addnode, true, true, false},
         {"network", "getaddednodeinfo", &getaddednodeinfo, true, true, false},
         {"network", "getconnectioncount", &getconnectioncount, true, false, false},
+        {"network", "getdvmstatus", &getdvmstatus, true, false, false},
         {"network", "getnettotals", &getnettotals, true, true, false},
         {"network", "getpeerinfo", &getpeerinfo, true, false, false},
         {"network", "ping", &ping, true, false, false},
@@ -347,9 +348,8 @@ static const CRPCCommand vRPCCommands[] =
         {"zenzo", "mnsync", &mnsync, true, true, false},
         {"zenzo", "spork", &spork, true, true, false},
         {"zenzo", "getpoolinfo", &getpoolinfo, true, true, false},
-#ifdef ENABLE_WALLET
-        {"zenzo", "obfuscation", &obfuscation, false, false, true}, /* not threadSafe because of SendMoney */
 
+#ifdef ENABLE_WALLET
         /* Wallet */
         {"wallet", "addmultisigaddress", &addmultisigaddress, true, false, true},
         {"wallet", "autocombinerewards", &autocombinerewards, false, false, true},
