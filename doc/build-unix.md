@@ -145,13 +145,17 @@ The above `install_db4` bash script will download and compile Berkeley DB 4.8 au
 
 ```bash
 ./configure LDFLAGS="-L${BDB_PREFIX}/lib/" CPPFLAGS="-I${BDB_PREFIX}/include/"
+make && make install
 ```
 
 **Customized Compile:**
 
 ```bash
 ./configure (custom args here...) LDFLAGS="-L${BDB_PREFIX}/lib/" CPPFLAGS="-I${BDB_PREFIX}/include/"
+make && make install
 ```
+
+Unix Binaries of ZENZO Core will be produced in the `usr/local/bin` directory.
 
 **Note**: You only need Berkeley DB if the wallet is enabled (see the section *Disable-Wallet mode* below).
 
