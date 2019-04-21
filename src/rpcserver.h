@@ -255,8 +255,7 @@ extern json_spirit::Value getchaintips(const json_spirit::Array& params, bool fH
 extern json_spirit::Value invalidateblock(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value reconsiderblock(const json_spirit::Array& params, bool fHelp);
 
-extern json_spirit::Value obfuscation(const json_spirit::Array& params, bool fHelp); // in rpcmasternode.cpp
-extern json_spirit::Value getpoolinfo(const json_spirit::Array& params, bool fHelp);
+extern json_spirit::Value getpoolinfo(const json_spirit::Array& params, bool fHelp); // in rpcmasternode.cpp
 extern json_spirit::Value masternode(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value listmasternodes(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value getmasternodecount(const json_spirit::Array& params, bool fHelp);
