@@ -2,7 +2,7 @@
 
 ## Summary
 This brings multiple new features, upgrades, fixes and changes to the monetary partition of the ZENZO ecosystem.
-Allowing for smoother growth of connectivity and security within the network. An easier, simpler and more efficient 
+Allowing for smoother growth of connectivity and security within the network. An easier, simpler and more efficient
 wallet interface. Full Zerocoin Removal. Polished branding and many, many more improvements alongside.
 
 ### The largest change
@@ -32,9 +32,9 @@ _ZENZO Core v1.2.1 is a **non-consensus-breaking** update, meaning: You are not 
 highly recommend you do, for the large benefits of the latest application and it's improvements._
 
 Steps to Upgrade:
-1. Backup your wallet *(ZENZO Core -> File -> Backup Wallet...)*
+1. (Optional) Backup your wallet *(ZENZO Core -> File -> Backup Wallet...)*
 2. Close ZENZO Core *(ZENZO Core -> File -> Exit)* or *(Shortcut: Ctrl + Q)*
-3. You may optionally delete "zenzo-qt" or "zenzod / zenzo-cli" from your device
+3. (Optional) Delete "zenzo-qt" or "zenzod" / "zenzo-cli" from your device
 4. [Download ZENZO Core v1.2.1](https://github.com/Zenzo-Ecosystem/ZENZO-Core/releases)
 5. Open "zenzo-qt" or "zenzod / zenzo-cli"
 6. **Upgrade Complete!**
@@ -57,9 +57,13 @@ Steps to Upgrade:
 - [UI] *(JSKitty)* - Changed "Minted" to "Stake Reward" to simplify PoS
 - [UI] *(JSKitty)* - Increased Overview Page TX'es from 5 to 9 max transactions
 - [UI] *(JSKitty)* - Force Lightmode for MacOS
+- [UI] *(JSKitty)* - Add Addresses & copy ability to the Receive Page columns
+- [UI] *(JSKitty)* - Fixed example subver(s) in net RPCs
+- [UI] *(JSKitty)* - Removed Zerocoin, Obfuscation and Minting filters from the TX History page
+- [UI] *(JSKitty)* - Removed unwanted linebreak from splashscreen "Loading Addresses..." stage
 ---
 - [Wallet] *(JSKitty)* - Fixed Segmentation Fault on "-disablewallet" command
-- [Wallet] *(JSKitty)* - Added "-zerocoin" command for enabling Zerocoin GUI *(Not Recommended!)*
+- [Wallet] *(JSKitty)* - Added "-zerocoin" daemon arg. for enabling Zerocoin GUI *(Not Recommended!)*
 ---
 - [Consensus] *(JSKitty)* - Created and implemented the **DVM - Decentralized Version Manager**
 - [Consensus] *(Akshaynexus)* - Fake Stake patch
@@ -69,15 +73,26 @@ Steps to Upgrade:
 ---
 - [RPC] *(JSKitty)* - Fixed invalid response to "settxfee 0"
 - [RPC] *(JSKitty)* - Added secret command 🐈
+- [RPC] *(JSKitty)* - **Added getdvmstatus command**
+- [RPC] *(JSKitty)* - Removed obfuscation command
+- [RPC] *(JSKitty)* - Removed all Zerocoin commands, excluding "importzerocoins" and "importzerocoins"
 ---
 - [Net] *(JSKitty)* - Hardcoded 5 Official Seednodes for near-instant connections on new nodes
 - [Net] *(JSKitty)* - Fixed IP reachability issues
 ---
 - [Tests] *(Akshaynexus)* - Added Travis CI config code
 ---
+- [Build] *(Akshaynexus)* - Fixed gitian builds
+- [Build] *(JSKitty)* - Added script for automatic DB4 building
+---
+- [Docs] *(Akshaynexus)* - Added windows build documentation
+- [Docs] *(JSKitty)* - Improved and simplified unix build documentation
+---
 - [Trivial] *(JSKitty)* - Removed Phore and Phr from translation files
+- [Trivial] *(YuurinBee)* - Replaced Phore icons with ZENZO icons
 - [Trivial] *(JSKitty)* - Updated copyright in multiple file headers
 - [Trivial] *(Akshaynexus)* - Added .gitignore file
+- [Trivial] *(JSKitty)* - Fixed .qrc file name in .ui files
 
 ---
 # Credits
