@@ -57,6 +57,9 @@
       </item>
       <item>
        <widget class="QToolButton" name="addressBookButton">
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="toolTip">
          <string>Choose previously used address</string>
         </property>
@@ -64,7 +67,7 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="../pivx.qrc">
+         <iconset resource="../zenzo.qrc">
           <normaloff>:/icons/address-book</normaloff>:/icons/address-book</iconset>
         </property>
         <property name="shortcut">
@@ -74,6 +77,9 @@
       </item>
       <item>
        <widget class="QToolButton" name="pasteButton">
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="toolTip">
          <string>Paste address from clipboard</string>
         </property>
@@ -81,7 +87,7 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="../pivx.qrc">
+         <iconset resource="../zenzo.qrc">
           <normaloff>:/icons/editpaste</normaloff>:/icons/editpaste</iconset>
         </property>
         <property name="shortcut">
@@ -91,6 +97,9 @@
       </item>
       <item>
        <widget class="QToolButton" name="deleteButton">
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="toolTip">
          <string>Remove this entry</string>
         </property>
@@ -98,7 +107,7 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="../pivx.qrc">
+         <iconset resource="../zenzo.qrc">
           <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
         </property>
        </widget>
@@ -302,6 +311,15 @@
         </color>
        </brush>
       </colorrole>
+      <colorrole role="Text">
+       <brush brushstyle="NoBrush">
+        <color alpha="128">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
      </active>
      <inactive>
       <colorrole role="WindowText">
@@ -433,6 +451,15 @@
       <colorrole role="ToolTipText">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Text">
+       <brush brushstyle="NoBrush">
+        <color alpha="128">
          <red>0</red>
          <green>0</green>
          <blue>0</blue>
@@ -576,6 +603,15 @@
         </color>
        </brush>
       </colorrole>
+      <colorrole role="Text">
+       <brush brushstyle="NoBrush">
+        <color alpha="128">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
      </disabled>
     </palette>
    </property>
@@ -622,7 +658,7 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="../pivx.qrc">
+         <iconset resource="../zenzo.qrc">
           <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
         </property>
        </widget>
@@ -816,6 +852,15 @@
         </color>
        </brush>
       </colorrole>
+      <colorrole role="Text">
+       <brush brushstyle="NoBrush">
+        <color alpha="128">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
      </active>
      <inactive>
       <colorrole role="WindowText">
@@ -956,6 +1001,15 @@
       <colorrole role="ToolTipText">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Text">
+       <brush brushstyle="NoBrush">
+        <color alpha="128">
          <red>0</red>
          <green>0</green>
          <blue>0</blue>
@@ -1108,6 +1162,15 @@
         </color>
        </brush>
       </colorrole>
+      <colorrole role="Text">
+       <brush brushstyle="NoBrush">
+        <color alpha="128">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
      </disabled>
     </palette>
    </property>
@@ -1158,7 +1221,7 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="../pivx.qrc">
+         <iconset resource="../zenzo.qrc">
           <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
         </property>
        </widget>
@@ -1215,6 +1278,7 @@
    <class>BitcoinAmountField</class>
    <extends>QLineEdit</extends>
    <header>bitcoinamountfield.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <tabstops>
@@ -1230,7 +1294,7 @@
   <tabstop>deleteButton_s</tabstop>
  </tabstops>
  <resources>
-  <include location="../pivx.qrc"/>
+  <include location="../zenzo.qrc"/>
  </resources>
  <connections/>
 </ui>

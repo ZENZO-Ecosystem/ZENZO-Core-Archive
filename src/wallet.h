@@ -318,7 +318,7 @@ public:
     {
         fBackupMints = fEnabled;
     }
-    
+
     bool isMultiSendEnabled()
     {
         return fMultiSendMasternodeReward || fMultiSendStake;
@@ -1153,8 +1153,8 @@ public:
                 nCredit += pwallet->GetCredit(txout, ISMINE_SPENDABLE);
             }
 
-            // Add masternode collaterals which are handled likc locked coins
-            if (fMasterNode && vout[i].nValue == 15000 * COIN) {
+            // Add masternode collaterals which are handled like locked coins
+            else if (fMasterNode && vout[i].nValue == 15000 * COIN) {
                 nCredit += pwallet->GetCredit(txout, ISMINE_SPENDABLE);
             }
 

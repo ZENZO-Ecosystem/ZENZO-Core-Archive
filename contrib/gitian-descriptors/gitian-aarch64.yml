@@ -1,5 +1,5 @@
 ---
-name: "zenzo-aarch64-1.2"
+name: "zenzo-aarch64-1.2.1"
 enable_cache: true
 suites:
 - "trusty"
@@ -26,7 +26,7 @@ packages:
 reference_datetime: "2015-06-01 00:00:00"
 remotes:
 - "url": "https://github.com/Zenzo-Ecosystem/ZENZO-Core"
-  "dir": "zenzo"
+  "dir": "ZENZO-Core"
 files: []
 script: |
 
@@ -110,7 +110,7 @@ script: |
   chmod +x ${WRAP_DIR}/${prog}
   done
 
-  cd zenzo
+  cd ZENZO-Core
   BASEPREFIX=`pwd`/depends
   # Build dependencies for each host
   for i in $HOSTS; do
@@ -118,7 +118,7 @@ script: |
     if [ -d "$EXTRA_INCLUDES" ]; then
       export HOST_ID_SALT="$EXTRA_INCLUDES"
     fi
-    make ${MAKEOPTS} -C ${BASEPREFIX} HOST="${i}"
+    chmod -R 775 * && make -j10 ${MAKEOPTS} -C ${BASEPREFIX} HOST="${i}"
     unset HOST_ID_SALT
   done
 
@@ -131,7 +131,7 @@ script: |
   # Create the release tarball using (arbitrarily) the first host
   ./autogen.sh
   CONFIG_SITE=${BASEPREFIX}/`echo "${HOSTS}" | awk '{print $1;}'`/share/config.site ./configure --prefix=/
-  make dist
+  make -j10 dist
   SOURCEDIST=`echo zenzo-*.tar.gz`
   DISTNAME=`echo ${SOURCEDIST} | sed 's/.tar.*//'`
   # Correct tar file order
@@ -152,9 +152,9 @@ script: |
     tar --strip-components=1 -xf ../$SOURCEDIST
 
     CONFIG_SITE=${BASEPREFIX}/${i}/share/config.site ./configure --prefix=/ --disable-ccache --disable-maintainer-mode --disable-dependency-tracking ${CONFIGFLAGS} CFLAGS="${HOST_CFLAGS}" CXXFLAGS="${HOST_CXXFLAGS}" LDFLAGS="${HOST_LDFLAGS}"
-    make ${MAKEOPTS}
+    make -j10 ${MAKEOPTS}
 
-    make install DESTDIR=${INSTALLPATH}
+    make -j10 install DESTDIR=${INSTALLPATH}
     cd installed
     find . -name "lib*.la" -delete
     find . -name "lib*.a" -delete

@@ -28,6 +28,9 @@
       </property>
       <item>
        <widget class="QPushButton" name="back">
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="text">
          <string>Back</string>
         </property>
@@ -42,6 +45,9 @@
       </item>
       <item>
        <widget class="QPushButton" name="forward">
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="text">
          <string>Forward</string>
         </property>
@@ -96,6 +102,9 @@
           <height>16777215</height>
          </size>
         </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="text">
          <string>Search</string>
         </property>
@@ -123,7 +132,7 @@
          <x>0</x>
          <y>0</y>
          <width>780</width>
-         <height>489</height>
+         <height>503</height>
         </rect>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -161,14 +170,14 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>27</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../pivx.qrc"/>
+  <include location="../zenzo.qrc"/>
  </resources>
  <connections/>
 </ui>

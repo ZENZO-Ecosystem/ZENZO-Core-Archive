@@ -74,8 +74,8 @@ WalletView::WalletView(QWidget* parent) : QStackedWidget(parent),
 
     QLabel* labelOverviewHeaderRight = new QLabel(frame_Header);
     labelOverviewHeaderRight->setObjectName(QStringLiteral("labelOverviewHeaderRight"));
-    labelOverviewHeaderRight->setMinimumSize(QSize(464, 60));
-    labelOverviewHeaderRight->setMaximumSize(QSize(16777215, 60));
+    labelOverviewHeaderRight->setMinimumSize(QSize(290, 65));
+    labelOverviewHeaderRight->setMaximumSize(QSize(290, 65));
     labelOverviewHeaderRight->setText(QString());
     QFont fontHeaderRight;
     fontHeaderRight.setPointSize(14);
@@ -243,6 +243,7 @@ void WalletView::gotoOverviewPage()
     setCurrentWidget(overviewPage);
     // Refresh UI-elements in case coins were locked/unlocked in CoinControl
     walletModel->emitBalanceChanged();
+    overviewPage->setUpdate(shouldUpgrade);
 }
 
 void WalletView::gotoHistoryPage()
@@ -339,6 +340,7 @@ void WalletView::showOutOfSyncWarning(bool fShow)
 {
     overviewPage->showOutOfSyncWarning(fShow);
     privacyPage->showOutOfSyncWarning(fShow);
+    overviewPage->setUpdate(shouldUpgrade);
 }
 
 void WalletView::updateEncryptionStatus()

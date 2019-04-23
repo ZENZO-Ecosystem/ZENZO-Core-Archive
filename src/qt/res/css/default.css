@@ -51,7 +51,7 @@ color:#000;
 }
 
 QToolBar {
-background-color: qlineargradient(y1:0, y2: 1, stop: 0 #39c0c4, stop: 0.75 #5c95da, stop: 0.99 #9966cc, stop: 1 #ffffff);
+background-color: qlineargradient(y1:0, y2: 1, stop: 0 #8778dc, stop: 0.75 #00d3d5, stop: 1 #ffffff);
 border:0px solid #333;
 padding:1;
 margin:0;
@@ -62,7 +62,7 @@ QToolBar > QToolButton {
 Alignment: left;
 background-color:transparent;
 selection-background-color:transparent;
-border:0.5px solid #888;
+border:0.5px solid #fff;
 border-left: 0px;
 border-right: 0px;
 border-top: 0px;
@@ -900,7 +900,7 @@ background-color:#ffffff;
 
 QLabel#labelOverviewHeaderRight {
 qproperty-alignment: 'AlignVCenter | AlignRight';
-/* background-image: url(':/images/zenzo_logo_horizontal'); */
+background-image: url(':/images/zenzo_logo_horizontal');
 background-repeat: no-repeat;
 }
 

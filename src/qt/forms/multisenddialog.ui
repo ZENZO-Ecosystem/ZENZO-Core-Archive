@@ -155,6 +155,9 @@ MultiSend will not be activated unless you have clicked Activate</string>
              <height>32</height>
             </size>
            </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
            <property name="toolTip">
             <string>Choose an address from the address book</string>
            </property>
@@ -162,7 +165,7 @@ MultiSend will not be activated unless you have clicked Activate</string>
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../pivx.qrc">
+            <iconset resource="../zenzo.qrc">
              <normaloff>:/icons/address-book</normaloff>:/icons/address-book</iconset>
            </property>
            <property name="shortcut">
@@ -223,6 +226,9 @@ MultiSend will not be activated unless you have clicked Activate</string>
         <layout class="QHBoxLayout" name="horizontalLayout_4">
          <item>
           <widget class="QPushButton" name="viewButton">
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
            <property name="toolTip">
             <string/>
            </property>
@@ -240,6 +246,9 @@ MultiSend will not be activated unless you have clicked Activate</string>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
           <widget class="QPushButton" name="addButton">
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
            <property name="toolTip">
             <string/>
            </property>
@@ -253,6 +262,9 @@ MultiSend will not be activated unless you have clicked Activate</string>
          </item>
          <item>
           <widget class="QPushButton" name="deleteButton">
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
            <property name="toolTip">
             <string/>
            </property>
@@ -270,6 +282,9 @@ MultiSend will not be activated unless you have clicked Activate</string>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
           <widget class="QPushButton" name="activateButton">
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
            <property name="statusTip">
             <string>Activate MultiSend</string>
            </property>
@@ -280,6 +295,9 @@ MultiSend will not be activated unless you have clicked Activate</string>
          </item>
          <item>
           <widget class="QPushButton" name="disableButton">
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
            <property name="statusTip">
             <string>Deactivate MultiSend</string>
            </property>
@@ -328,7 +346,7 @@ MultiSend will not be activated unless you have clicked Activate</string>
   </layout>
  </widget>
  <resources>
-  <include location="../pivx.qrc"/>
+  <include location="../zenzo.qrc"/>
  </resources>
  <connections/>
 </ui>
