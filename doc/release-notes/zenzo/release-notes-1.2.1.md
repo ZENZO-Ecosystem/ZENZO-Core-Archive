@@ -10,22 +10,22 @@ wallet interface. Full Zerocoin Removal. Polished branding and many, many more i
 
 - ___DVM - Decentralized Version Manager___
 
-During the 10+ years of Cryptocurrency wallet innovations, there has always been one floating problem with wallets:
+During the 10+ years of cryptocurrency wallet innovations, there has always been one floating problem with wallets:
 
-Users must keep an active eye on social media, news outlets, github and websites. Incase an update releases for a wallet. This can be a frustrating process, especially for new users in the cryptosphere.
-When it comes to notifications, messages, ect. Within wallets, the equation of Security always came in mind, hence, Bitcoin eventually depreciated it's global message / notification system due to worries of creating a central point of failure within that very feature. Allowing one single user to control a specific part of the network, however large that may be.
+Users must keep an active eye on social media, news outlets, GitHub and websites. In case an update releases for a wallet, this can be a frustrating process, especially for new users in the cryptosphere.
+When it comes to notifications, messages, etc. within wallets, the equation of security always comes in mind. Hence, Bitcoin eventually depreciated its global message / notification system due to worries of creating a central point of failure within that very feature. Which means allowing one single user to control a specific part of the network, however large that may be.
 
-One way of solving this issue, is to think in a truely decentralized fashion, meet the ZENZO DVM.
+One way of solving this issue is to think in a truely decentralized fashion... meet the ZENZO DVM.
 
 The DVM is a peer-to-peer version manager and update tracker, custom-built for ZENZO-Core. This is a hardcoded network algorithm that tracks all connected peers of a node, collects their client versions and measures the percentage of nodes that are higher than, matching, or lower than the node's own version.
 
-This system can notify the user of a new update release via the QT GUI, with minimal risk of the update notification being hijacked or manipulated by an outside attacker or middleman.
+This system can notify the user of a new update release via the local wallet QT GUI with minimal risk of the update notification being hijacked or manipulated by an outside attacker or middle-man.
 
-The ZENZO DVM will start operating at a 25% consensus requirement. This means atleast 25% of connected peers must be a higher version than your node to trigger the update process.
+The ZENZO DVM will start operating at a 25% consensus requirement. This means at least 25% of connected peers must be a higher version than your node to trigger the update process.
 
-Updates are completely optional, and can be ignored at will of the user. However, we will always recommend to update whenever available due to the improvements and additions new releases have to offer.
+Updates are completely optional and can be ignored at the will of the user. However, we will always recommend to update whenever available, due to the improvements and additions new releases have to offer.
 
-Upgrades and Updates beyond v1.2.0 are guarenteed to be much, much easier than any other QT-based cryptocurrency currently.
+Upgrades and updates beyond v1.2.0 are guarenteed to be much easier to use than any other QT-based cryptocurrency currently.
 
 ## How to Upgrade
 _ZENZO Core v1.2.1 is a **non-consensus-breaking** update, meaning: You are not required to upgrade, but we would
