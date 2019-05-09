@@ -683,7 +683,7 @@
     </message>
     <message>
         <source>Show the ZENZO Core help message to get a list with possible ZENZO command-line options</source>
-        <translation>Смотрите помощь к программе, чтобы получить документацию ко всем возможным опциям комманды ZENZO</translation>
+        <translation>Смотрите помощь к программе, чтобы получить документацию ко всем возможным опциям команды ZENZO</translation>
     </message>
     <message>
         <source>ZENZO Core client</source>
@@ -1769,7 +1769,7 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</translation>
     </message>
     <message>
         <source>Active command-line options that override above options:</source>
-        <translation>Активные опции коммандной строки, которые переписывают опции выше:</translation>
+        <translation>Активные опции командной строки, которые переписывают опции выше:</translation>
     </message>
     <message>
         <source>Reset all client options to default.</source>
@@ -2334,11 +2334,11 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</translation>
     </message>
     <message>
         <source>&amp;Console</source>
-        <translation>&amp;Коммандая строка</translation>
+        <translation>&amp;Командная строка</translation>
     </message>
     <message>
         <source>Clear console</source>
-        <translation>Очистить коммандную строку</translation>
+        <translation>Очистить командную строку</translation>
     </message>
     <message>
         <source>&amp;Network Traffic</source>
