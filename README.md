@@ -20,7 +20,7 @@ verifiable with a built-in blockchain explorer within the software itself. The
 block reward ratio of staking to masternodes is 35:65.
 
 The ZENZO(ZNZ) digital currency powers the monetary system behind ZENZO’s many
-use cases, such as the [ZENZO Arcade](https://arcade.zenzo.io)
+use cases, such as the [ZENZO Arcade](https://arcade.zenzo.io) and the [ZENZO SDK](https://github.com/ZENZO-Ecosystem/ZENZO-SDK-NodeJS)
 
 **For more information, please visit [zenzo.io](https://www.zenzo.io).**
 
