@@ -58,4 +58,6 @@ use cases, such as the [ZENZO Arcade](https://arcade.zenzo.io) and the [ZENZO SD
 ***
 
 
-*Special thanks to [@JSKitty](https://github.com/JSKitty), @sicXnull and @j00v for their contributions to ZENZO Core in the beginning of it's lifetime.*
+*Special thanks to ZENZO Core Developers (including [@JSKitty](https://github.com/JSKitty))* and other contributors: 
+
+[@AkshayNexus](https://github.com/akshaynexus), @j00v, @sicXnull
