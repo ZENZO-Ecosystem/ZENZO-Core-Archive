@@ -6,8 +6,8 @@ CONFIGFOLDER='/root/.zenzo'
 COIN_DAEMON='zenzod'
 COIN_CLI='zenzo-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_REPO='https://github.com/Zenzo-Ecosystem/ZENZO-Core.git'
-COIN_NAME='Zenzo'
+COIN_REPO='https://github.com/ZENZO-Ecosystem/ZENZO-Core.git'
+COIN_NAME='ZENZO'
 COIN_PORT=26210
 RPC_PORT=26211
 
