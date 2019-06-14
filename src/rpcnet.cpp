@@ -38,27 +38,27 @@ Value getconnectioncount(const Array& params, bool fHelp)
     return (int)vNodes.size();
 }
 
-Value getdvmstatus(const Array& params, bool fHelp)
+Value getdvminfo(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 0)
         throw runtime_error(
-            "getdvmstatus\n"
-            "\nReturns the status of the DVM, it's peers, detected versions and update consensus progress as a json object.\n"
+            "getdvminfo\n"
+            "\nReturns the internal data of the DVM as a json object.\n"
             "\nbResult:\n"
             "  {\n"
             "    \"active\": true|false,          (bool) Is the Updater (DVM) active\n"
-            "    \"status\": n,                   (numeric) The Consensus Status of the DVM (0 = No Upgrade Consensus, 1 = Upgrade Consensus Met)\n"
+            "    \"status\": true|false,          (bool) The Update Status of the DVM, true means an update is available\n"
             "    \"total\": n,                    (numeric) The quantity of all measured peers\n"
             "    \"higher\": n,                   (numeric) The quantity of measured peers with a higher version than us\n"
             "    \"current\": n,                  (numeric) The quantity of measured peers with a version matching us\n"
             "    \"lower\": n,                    (numeric) The quantity of measured peers with a lower version than us\n"
             "  }\n"
             "\nExamples:\n" +
-            HelpExampleCli("getdvmstatus", "") + HelpExampleRpc("getdvmstatus", ""));
+            HelpExampleCli("getdvminfo", "") + HelpExampleRpc("getdvminfo", ""));
 
     Object obj;
     obj.push_back(Pair("active", fUpdateCheck));
-    obj.push_back(Pair("status", shouldUpgrade));
+    obj.push_back(Pair("status", ((shouldUpgrade == 0) ? false : true)));
     obj.push_back(Pair("total", (lowerVerPeers + currentVerPeers + higherVerPeers)));
     obj.push_back(Pair("higher", higherVerPeers));
     obj.push_back(Pair("current", currentVerPeers));

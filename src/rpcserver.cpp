@@ -238,10 +238,10 @@ Value stop(const Array& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop Zenzo server.");
+            "\nStop the ZENZO server.");
     // Shutdown will take long enough that the response should get back
     StartShutdown();
-    return "Zenzo server stopping";
+    return "ZENZO server stopping";
 }
 
 
@@ -262,7 +262,7 @@ static const CRPCCommand vRPCCommands[] =
         {"network", "addnode", &addnode, true, true, false},
         {"network", "getaddednodeinfo", &getaddednodeinfo, true, true, false},
         {"network", "getconnectioncount", &getconnectioncount, true, false, false},
-        {"network", "getdvmstatus", &getdvmstatus, true, false, false},
+        {"network", "getdvminfo", &getdvminfo, true, false, false},
         {"network", "getnettotals", &getnettotals, true, true, false},
         {"network", "getpeerinfo", &getpeerinfo, true, false, false},
         {"network", "ping", &ping, true, false, false},
