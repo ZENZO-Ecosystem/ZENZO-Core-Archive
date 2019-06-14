@@ -132,7 +132,7 @@ To build:
 
 Berkeley DB
 -----------
-It is recommended to use Berkeley DB 4.8. If you have to build it yourself:
+It is recommended to use Berkeley DB 4.8. To compile it automatically, use:
 
 ```bash
 ./contrib/install_db4.sh `pwd`
@@ -144,14 +144,14 @@ The above `install_db4` bash script will download and compile Berkeley DB 4.8 au
 
 ```bash
 ./configure LDFLAGS="-L${BDB_PREFIX}/lib/" CPPFLAGS="-I${BDB_PREFIX}/include/"
-make && make install
+make && sudo make install
 ```
 
 **Customized Compile:**
 
 ```bash
 ./configure LDFLAGS="-L${BDB_PREFIX}/lib/" CPPFLAGS="-I${BDB_PREFIX}/include/" (custom args here...)
-make && make install
+make && sudo make install
 ```
 
 Unix Binaries of ZENZO Core will be produced in the `usr/local/bin` directory.
