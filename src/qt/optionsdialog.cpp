@@ -126,7 +126,8 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(paren
 #endif
 
     ui->unit->setModel(new BitcoinUnits(this));
-
+	
+	
     /* Widget-to-option mapper */
     mapper = new QDataWidgetMapper(this);
     mapper->setSubmitPolicy(QDataWidgetMapper::ManualSubmit);
@@ -215,6 +216,9 @@ void OptionsDialog::setMapper()
 
     /* Masternode Tab */
     mapper->addMapping(ui->showMasternodesTab, OptionsModel::ShowMasternodesTab);
+	
+	/* Updates */
+	mapper->addMapping(ui->notifyUpdates, OptionsModel::EnableUpdates);
 }
 
 void OptionsDialog::enableOkButton()

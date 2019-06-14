@@ -46,6 +46,7 @@ Value getdvmstatus(const Array& params, bool fHelp)
             "\nReturns the status of the DVM, it's peers, detected versions and update consensus progress as a json object.\n"
             "\nbResult:\n"
             "  {\n"
+            "    \"active\": true|false,          (bool) Is the Updater (DVM) active\n"
             "    \"status\": n,                   (numeric) The Consensus Status of the DVM (0 = No Upgrade Consensus, 1 = Upgrade Consensus Met)\n"
             "    \"total\": n,                    (numeric) The quantity of all measured peers\n"
             "    \"higher\": n,                   (numeric) The quantity of measured peers with a higher version than us\n"
@@ -56,6 +57,7 @@ Value getdvmstatus(const Array& params, bool fHelp)
             HelpExampleCli("getdvmstatus", "") + HelpExampleRpc("getdvmstatus", ""));
 
     Object obj;
+    obj.push_back(Pair("active", fUpdateCheck));
     obj.push_back(Pair("status", shouldUpgrade));
     obj.push_back(Pair("total", (lowerVerPeers + currentVerPeers + higherVerPeers)));
     obj.push_back(Pair("higher", higherVerPeers));
