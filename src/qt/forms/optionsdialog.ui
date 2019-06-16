@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>OptionsDialog</class>
  <widget class="QDialog" name="OptionsDialog">
@@ -600,6 +600,43 @@
           <widget class="QLineEdit" name="thirdPartyTxUrls">
            <property name="toolTip">
             <string>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+	 <widget class="QWidget" name="tabUpdates">
+      <attribute name="title">
+       <string>&amp;Updates</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_Updates">
+		<item>
+        <layout class="QHBoxLayout" name="horizontalLayout_5_Updates">
+         <item>
+          <widget class="QCheckBox" name="notifyUpdates">
+           <property name="toolTip">
+            <string>Notify when an update is detected by the Decentralized Version Manager (DVM)</string>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text">
+			   <string>Notify when updates are available</string>
            </property>
           </widget>
          </item>

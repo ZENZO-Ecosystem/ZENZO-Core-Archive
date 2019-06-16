@@ -50,6 +50,7 @@ public:
         HideOrphans,    // bool
         AnonymizeZenzoAmount, //int
         ShowMasternodesTab,  // bool
+        EnableUpdates,  // bool
         Listen,              // bool
         StakeSplitThreshold, // int
         OptionIDRowCount,
@@ -65,6 +66,8 @@ public:
     void setDisplayUnit(const QVariant& value);
     /* Update StakeSplitThreshold's value in wallet */
     void setStakeSplitThreshold(int value);
+	/* DVM activation value */
+	void setUpdateEnabled(bool value);
 
     /* Explicit getters */
     bool getMinimizeToTray() { return fMinimizeToTray; }

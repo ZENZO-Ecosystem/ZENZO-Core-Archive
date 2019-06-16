@@ -172,6 +172,12 @@ void OptionsModel::Init()
         SoftSetArg("-anonymizezenzoamount", settings.value("nAnonymizeZenzoAmount").toString().toStdString());
 
     language = settings.value("language").toString();
+	
+	// Updates - Decentralized Version Manager (DVM)
+	if (!settings.contains("fEnableUpdates")) {
+		fUpdateCheck = true;
+		settings.setValue("fEnableUpdates", true);
+	} else fUpdateCheck = settings.value("fEnableUpdates").toBool();
 }
 
 void OptionsModel::Reset()
@@ -180,7 +186,7 @@ void OptionsModel::Reset()
 
     // Remove all entries from our QSettings object
     settings.clear();
-    resetSettings = true; // Needed in zenzo.cpp during shotdown to also remove the window positions
+    resetSettings = true; // Needed in zenzo.cpp during shutdown to also remove the window positions
 
     // default setting for OptionsModel::StartAtStartup - disabled
     if (GUIUtil::GetStartOnSystemStartup())
@@ -264,6 +270,8 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
             return QVariant(nPreferredDenom);
         case AnonymizeZenzoAmount:
             return QVariant(nAnonymizeZenzoAmount);
+		case EnableUpdates:
+				return settings.value("fEnableUpdates");
         case Listen:
             return settings.value("fListen");
         default:
@@ -402,6 +410,12 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
             settings.setValue("nAnonymizeZenzoAmount", nAnonymizeZenzoAmount);
             emit anonymizeZenzoAmountChanged(nAnonymizeZenzoAmount);
             break;
+		case EnableUpdates:
+            if (settings.value("fEnableUpdates") != value) {
+				fUpdateCheck = value.toBool();
+                settings.setValue("fEnableUpdates", fUpdateCheck);
+            }
+            break;
         case CoinControlFeatures:
             fCoinControlFeatures = value.toBool();
             settings.setValue("fCoinControlFeatures", fCoinControlFeatures);
@@ -462,6 +476,12 @@ void OptionsModel::setStakeSplitThreshold(int value)
                 walletdb.WriteStakeSplitThreshold(nStakeSplitThreshold);
         }
     }
+}
+
+/* Updates the DVM's status */
+void OptionsModel::setUpdateEnabled(bool value)
+{
+	fUpdateCheck = value;
 }
 
 
