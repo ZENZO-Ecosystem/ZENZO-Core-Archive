@@ -117,10 +117,10 @@
         <bool>false</bool>
        </property>
        <property name="toolTip">
-        <string>Serves to disable the trivial sendmoney when OS account compromised. Provides no real security.</string>
+        <string>Locks the wallet from sending transactions, but allows staking rewards to be generated.</string>
        </property>
        <property name="text">
-        <string>For anonymization, automint, and staking only</string>
+        <string>For staking only</string>
        </property>
       </widget>
      </item>

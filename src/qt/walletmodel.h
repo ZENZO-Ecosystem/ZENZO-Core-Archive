@@ -168,7 +168,7 @@ public:
     // Passphrase only needed when unlocking
     bool setWalletLocked(bool locked, const SecureString& passPhrase = SecureString(), bool anonymizeOnly = false);
     bool changePassphrase(const SecureString& oldPass, const SecureString& newPass);
-    // Is wallet unlocked for anonymization only?
+    // Is wallet unlocked for staking only?
     bool isAnonymizeOnlyUnlocked();
     // Wallet backup
     bool backupWallet(const QString& filename);
