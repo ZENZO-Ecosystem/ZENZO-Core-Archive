@@ -13,6 +13,7 @@
 #include "noui.h"
 #include "rpcserver.h"
 #include "ui_interface.h"
+#include "scheduler.h"
 #include "util.h"
 
 #include <boost/algorithm/string/predicate.hpp>
@@ -59,6 +60,7 @@ bool AppInit(int argc, char* argv[])
 {
     boost::thread_group threadGroup;
     boost::thread* detectShutdownThread = NULL;
+    CScheduler scheduler;
 
     bool fRet = false;
 
@@ -144,7 +146,7 @@ bool AppInit(int argc, char* argv[])
         SoftSetBoolArg("-server", true);
 
         detectShutdownThread = new boost::thread(boost::bind(&DetectShutdownThread, &threadGroup));
-        fRet = AppInit2(threadGroup);
+        fRet = AppInit2(threadGroup, scheduler);
     } catch (std::exception& e) {
         PrintExceptionContinue(&e, "AppInit()");
     } catch (...) {
