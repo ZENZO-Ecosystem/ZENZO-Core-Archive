@@ -1,4 +1,5 @@
 // Copyright (c) 2012-2014 The Bitcoin Core developers
+// Copyright (c) 2018-2019 The ZENZO Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -46,7 +47,7 @@ BOOST_AUTO_TEST_CASE(acc_orderupgrade)
     walletdb.WriteAccountingEntry(ae);
 
     wtx.mapValue["comment"] = "z";
-    pwalletMain->AddToWallet(wtx);
+    pwalletMain->AddToWallet(wtx, false, &walletdb);
     vpwtx.push_back(&pwalletMain->mapWallet[wtx.GetHash()]);
     vpwtx[0]->nTimeReceived = (unsigned int)1333333335;
     vpwtx[0]->nOrderPos = -1;
@@ -88,7 +89,7 @@ BOOST_AUTO_TEST_CASE(acc_orderupgrade)
         --tx.nLockTime;  // Just to change the hash :)
         *static_cast<CTransaction*>(&wtx) = CTransaction(tx);
     }
-    pwalletMain->AddToWallet(wtx);
+    pwalletMain->AddToWallet(wtx, false, &walletdb);
     vpwtx.push_back(&pwalletMain->mapWallet[wtx.GetHash()]);
     vpwtx[1]->nTimeReceived = (unsigned int)1333333336;
 
@@ -98,7 +99,7 @@ BOOST_AUTO_TEST_CASE(acc_orderupgrade)
         --tx.nLockTime;  // Just to change the hash :)
         *static_cast<CTransaction*>(&wtx) = CTransaction(tx);
     }
-    pwalletMain->AddToWallet(wtx);
+    pwalletMain->AddToWallet(wtx, false, &walletdb);
     vpwtx.push_back(&pwalletMain->mapWallet[wtx.GetHash()]);
     vpwtx[2]->nTimeReceived = (unsigned int)1333333329;
     vpwtx[2]->nOrderPos = -1;
