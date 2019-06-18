@@ -1,4 +1,5 @@
-// Copyright (c) 2011-2014 The Bitcoin developers
+// Copyright (c) 2011-2019 The Bitcoin developers
+// Copyright (c) 2018-2019 The ZENZO developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -10,7 +11,7 @@
 
 #include "net.h"
 
-#include <QDialog>
+#include <QWidget>
 #include <QCompleter>
 
 class ClientModel;
@@ -24,8 +25,8 @@ QT_BEGIN_NAMESPACE
 class QItemSelection;
 QT_END_NAMESPACE
 
-/** Local Bitcoin RPC console. */
-class RPCConsole : public QDialog
+/** Local ZENZO RPC console. */
+class RPCConsole : public QWidget
 {
     Q_OBJECT
 
@@ -45,6 +46,7 @@ public:
 
 protected:
     virtual bool eventFilter(QObject* obj, QEvent* event);
+    void keyPressEvent(QKeyEvent *);
 
 private slots:
     void on_lineEdit_returnPressed();
@@ -71,7 +73,6 @@ public slots:
     void walletReindex();
     void walletResync();
 
-    void reject();
     void message(int category, const QString& message, bool html = false);
     /** Set number of connections shown in the UI */
     void setNumConnections(int count);
