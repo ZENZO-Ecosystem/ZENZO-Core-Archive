@@ -1,4 +1,5 @@
 // Copyright (c) 2009-2013 The Bitcoin developers
+// Copyright (c) 2018-2019 The ZENZO developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -127,6 +128,7 @@ public:
 
     friend bool operator==(const CSubNet& a, const CSubNet& b);
     friend bool operator!=(const CSubNet& a, const CSubNet& b);
+    friend bool operator<(const CSubNet& a, const CSubNet& b);
 };
 
 /** A combination of a network address (CNetAddr) and a (TCP) port */

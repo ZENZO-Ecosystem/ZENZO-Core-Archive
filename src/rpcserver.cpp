@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2015-2019 The PIVX developers
 // Copyright (c) 2018-2019 The ZENZO developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -260,12 +260,16 @@ static const CRPCCommand vRPCCommands[] =
         /* P2P networking */
         {"network", "getnetworkinfo", &getnetworkinfo, true, false, false},
         {"network", "addnode", &addnode, true, true, false},
+        {"network", "disconnectnode", &disconnectnode, true},
         {"network", "getaddednodeinfo", &getaddednodeinfo, true, true, false},
         {"network", "getconnectioncount", &getconnectioncount, true, false, false},
         {"network", "getdvminfo", &getdvminfo, true, false, false},
         {"network", "getnettotals", &getnettotals, true, true, false},
         {"network", "getpeerinfo", &getpeerinfo, true, false, false},
         {"network", "ping", &ping, true, false, false},
+        {"network", "setban", &setban, true},
+        {"network", "listbanned", &listbanned, true},
+        {"network", "clearbanned", &clearbanned, true},
 
         /* Block chain and UTXO */
         {"blockchain", "getblockchaininfo", &getblockchaininfo, true, false, false},
@@ -399,7 +403,7 @@ static const CRPCCommand vRPCCommands[] =
         {"wallet", "walletpassphrasechange", &walletpassphrasechange, true, false, true},
         {"wallet", "walletpassphrase", &walletpassphrase, true, false, true},
         {"zerocoin", "importzerocoins", &importzerocoins, false, false, true},
-        {"zerocoin", "exportzerocoins", &exportzerocoins, false, false, true}
+        {"zerocoin", "exportzerocoins", &exportzerocoins, false, false, true},
 
 #endif // ENABLE_WALLET
 };
