@@ -48,7 +48,7 @@ void CScheduler::serviceQueue()
                 // Keep waiting until timeout
             }
 #else
-            while (!taskQueue.empty() && newTaskScheduled.wait_until(lock, taskQueue.begin()->first) != boost::cv_status::timeout) {
+            while (!taskQueue.empty() && newTaskScheduled.wait_until<>(lock, taskQueue.begin()->first) != boost::cv_status::timeout) {
                 // Keep waiting until timeout
             }
 #endif
