@@ -3751,47 +3751,6 @@ void CWallet::ReconsiderZerocoins(std::list<CZerocoinMint>& listMintsRestored)
     }
 }
 
-
-void CWallet::ZZNZBackupWallet()
-{
-    filesystem::path backupDir = GetDataDir() / "backups";
-    filesystem::path backupPath;
-    string strNewBackupName;
-
-    for (int i = 0; i < 10; i++) {
-        strNewBackupName = strprintf("wallet-autozbrkbackup-%d.dat", i);
-        backupPath = backupDir / strNewBackupName;
-
-        if (filesystem::exists(backupPath)) {
-            //Keep up to 10 backups
-            if (i <= 8) {
-                //If the next file backup exists and is newer, then iterate
-                filesystem::path nextBackupPath = backupDir / strprintf("wallet-autozbrkbackup-%d.dat", i + 1);
-                if (filesystem::exists(nextBackupPath)) {
-                    time_t timeThis = filesystem::last_write_time(backupPath);
-                    time_t timeNext = filesystem::last_write_time(nextBackupPath);
-                    if (timeThis > timeNext) {
-                        //The next backup is created before this backup was
-                        //The next backup is the correct path to use
-                        backupPath = nextBackupPath;
-                        break;
-                    }
-                }
-                //Iterate to the next filename/number
-                continue;
-            }
-            //reset to 0 because name with 9 already used
-            strNewBackupName = strprintf("wallet-autozbrkbackup-%d.dat", 0);
-            backupPath = backupDir / strNewBackupName;
-            break;
-        }
-        //This filename is fresh, break here and backup
-        break;
-    }
-
-    BackupWallet(*this, backupPath.string());
-}
-
 string CWallet::MintZerocoin(CAmount nValue, CWalletTx& wtxNew, vector<CZerocoinMint>& vMints, const CCoinControl* coinControl)
 {
     // Check amount
@@ -3835,10 +3794,6 @@ string CWallet::MintZerocoin(CAmount nValue, CWalletTx& wtxNew, vector<CZerocoin
         }
     }
 
-    //Create a backup of the wallet
-    if (fBackupMints)
-        ZZNZBackupWallet();
-
     return "";
 }
 
@@ -3857,9 +3812,6 @@ bool CWallet::SpendZerocoin(CAmount nAmount, int nSecurityLevel, CWalletTx& wtxN
     if (!CreateZerocoinSpendTransaction(nAmount, nSecurityLevel, wtxNew, reserveKey, receipt, vMintsSelected, vNewMints, fMintChange, fMinimizeChange, addressTo)) {
         return false;
     }
-
-    if (fMintChange && fBackupMints)
-        ZZNZBackupWallet();
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
     if (!CommitTransaction(wtxNew, reserveKey)) {

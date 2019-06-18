@@ -48,7 +48,6 @@ public:
         ZeromintPrefDenom,   // int
         HideZeroBalances,    // bool
         HideOrphans,    // bool
-        AnonymizeZenzoAmount, //int
         ShowMasternodesTab,  // bool
         EnableUpdates,  // bool
         Listen,              // bool
@@ -104,7 +103,6 @@ signals:
     void zeromintEnableChanged(bool);
     void zeromintPercentageChanged(int);
     void preferredDenomChanged(int);
-    void anonymizeZenzoAmountChanged(int);
     void coinControlFeaturesChanged(bool);
     void hideZeroBalancesChanged(bool);
     void hideOrphansChanged(bool);
