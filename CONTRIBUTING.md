@@ -6,15 +6,6 @@ welcome to contribute towards development in the form of peer review, testing
 and patches. This document explains the practical process and guidelines for
 contributing.
 
-Firstly in terms of structure, there is no particular concept of "Core
-developers" in the sense of privileged people. Open source often naturally
-revolves around meritocracy where longer term contributors gain more trust from
-the developer community. However, some hierarchy is necessary for practical
-purposes. As such there are repository "maintainers" who are responsible for
-merging pull requests as well as a "lead maintainer" who is responsible for the
-release cycle, overall merging, moderation and appointment of maintainers.
-
-
 Contributor Workflow
 --------------------
 
@@ -57,8 +48,7 @@ the pull request affects. Valid areas as:
 
   - *Consensus* for changes to consensus critical code
   - *Docs* for changes to the documentation
-  - *Qt* for changes to zenzo-qt
-  - *Minting* for changes to the minting code
+  - *Qt* or *GUI* for changes to zenzo-qt
   - *Net* or *P2P* for changes to the peer-to-peer network code
   - *RPC/REST* for changes to the RPC or REST APIs
   - *Scripts and tools* for changes to the scripts and tools
@@ -71,15 +61,20 @@ the pull request affects. Valid areas as:
     - whitespace
     - variable names
     - logging and messages
-  - *Utils and libraries* for changes to the utils and libraries
+  - *Utils* for changes to the utils
+  - *Libs* for changes to the libraries
   - *Wallet* for changes to the wallet code
+  
+  If the pull request contains changes to multiple components, join them
+  together using "&", if it's more than two, use a comma to save space.
+  e.g: *[Net & RPC]* or *[Net, RPC, Qt]*
 
 Examples:
 
-    Consensus: Add new opcode for BIP-XXXX OP_CHECKAWESOMESIG
-    Net: Automatically create hidden service, listen on Tor
-    Qt: Add feed bump button
-    Trivial: Fix typo in init.cpp
+    [Consensus] Add new opcode for BIP-XXXX OP_CHECKAWESOMESIG
+    [Net] Automatically create hidden service, listen on Tor
+    [Qt] Add feed bump button
+    [Trivial] Fix typo in init.cpp
 
 If a pull request is specifically not to be considered for merging (yet) please
 prefix the title with [WIP] or use [Tasks Lists](https://help.github.com/articles/basic-writing-and-formatting-syntax/#task-lists)
