@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin developers
 // Copyright (c) 2009-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2015-2019 The PIVX developers
 // Copyright (c) 2018-2019 The ZENZO developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -68,10 +68,10 @@ static bool AppInitRPC(int argc, char* argv[])
     //
     ParseParameters(argc, argv);
     if (argc < 2 || mapArgs.count("-?") || mapArgs.count("-help") || mapArgs.count("-version")) {
-        std::string strUsage = _("Zenzo Core RPC client version") + " " + FormatFullVersion() + "\n";
+        std::string strUsage = _("ZENZO Core RPC client version") + " " + FormatFullVersion() + "\n";
         if (!mapArgs.count("-version")) {
             strUsage += "\n" + _("Usage:") + "\n" +
-                        "  zenzo-cli [options] <command> [params]  " + _("Send command to Zenzo Core") + "\n" +
+                        "  zenzo-cli [options] <command> [params]  " + _("Send command to ZENZO Core") + "\n" +
                         "  zenzo-cli [options] help                " + _("List commands") + "\n" +
                         "  zenzo-cli [options] help <command>      " + _("Get help for a command") + "\n";
 
@@ -101,12 +101,6 @@ static bool AppInitRPC(int argc, char* argv[])
 
 Object CallRPC(const string& strMethod, const Array& params)
 {
-    if (mapArgs["-rpcuser"] == "" && mapArgs["-rpcpassword"] == "")
-        throw runtime_error(strprintf(
-            _("You must set rpcpassword=<password> in the configuration file:\n%s\n"
-              "If the file does not exist, create it with owner-readable-only file permissions."),
-            GetConfigFile().string().c_str()));
-
     // Connect to localhost
     bool fUseSSL = GetBoolArg("-rpcssl", false);
     asio::io_service io_service;
@@ -118,12 +112,26 @@ Object CallRPC(const string& strMethod, const Array& params)
 
     const bool fConnected = d.connect(GetArg("-rpcconnect", "127.0.0.1"), GetArg("-rpcport", itostr(BaseParams().RPCPort())));
     if (!fConnected)
-        throw CConnectionFailed("couldn't connect to server");
+        throw CConnectionFailed("Couldn't connect to server");
+    
+    // Find credentials to use
+    std::string strRPCUserColonPass;
+    if (mapArgs["-rpcpassword"] == "") {
+        // Try fall back to cookie-based authentication if no password is provided
+        if (!GetAuthCookie(&strRPCUserColonPass)) {
+            throw runtime_error(strprintf(
+                _("You must set rpcpassword=<password> in the configuration file:\n%s\n"
+                  "If the file does not exist, create it with owner-readable-only file permissions."),
+                    GetConfigFile().string().c_str()));
+
+        }
+    } else {
+        strRPCUserColonPass = mapArgs["-rpcuser"] + ":" + mapArgs["-rpcpassword"];
+    }
 
     // HTTP basic authentication
-    string strUserPass64 = EncodeBase64(mapArgs["-rpcuser"] + ":" + mapArgs["-rpcpassword"]);
     map<string, string> mapRequestHeaders;
-    mapRequestHeaders["Authorization"] = string("Basic ") + strUserPass64;
+    mapRequestHeaders["Authorization"] = string("Basic ") + EncodeBase64(strRPCUserColonPass);
 
     // Send request
     string strRequest = JSONRPCRequest(strMethod, params, 1);
