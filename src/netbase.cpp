@@ -1,5 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
+// Copyright (c) 2015-2019 The PIVX developers
 // Copyright (c) 2018-2019 The ZENZO developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -1303,6 +1304,13 @@ CSubNet::CSubNet(const std::string& strSubnet, bool fAllowLookup)
     // Normalize network according to netmask
     for (int x = 0; x < 16; ++x)
         network.ip[x] &= netmask[x];
+}
+
+CSubNet::CSubNet(const CNetAddr &addr):
+    valid(addr.IsValid())
+{
+    memset(netmask, 255, sizeof(netmask));
+    network = addr;
 }
 
 bool CSubNet::Match(const CNetAddr& addr) const

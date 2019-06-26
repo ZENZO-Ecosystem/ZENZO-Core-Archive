@@ -1,6 +1,7 @@
-// Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2009-2019 The Bitcoin developers
+// Copyright (c) 2014-2019 The Dash developers
+// Copyright (c) 2015-2019 The PIVX developers
+// Copyright (c) 2018-2019 The ZENZO developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -419,7 +420,7 @@ Value getnetworkinfo(const Array& params, bool fHelp)
             "  }\n"
             "  ,...\n"
             "  ],\n"
-            "  \"relayfee\": x.xxxxxxxx,                (numeric) minimum relay fee for non-free transactions in zenzo/kb\n"
+            "  \"relayfee\": x.xxxxxxxx,                (numeric) minimum relay fee for non-free transactions in ZNZ/kb\n"
             "  \"localaddresses\": [                    (array) list of local addresses\n"
             "  {\n"
             "    \"address\": \"xxxx\",                 (string) network address\n"
@@ -506,9 +507,9 @@ Value setban(const Array& params, bool fHelp)
         if (params.size() == 4 && params[3].get_bool() == true)
             absolute = true;
 
-        isSubnet ? CNode::Ban(subNet, banTime, absolute) : CNode::Ban(netAddr, banTime, absolute);
+        isSubnet ? CNode::Ban(subNet, BanReasonManuallyAdded, banTime, absolute) : CNode::Ban(netAddr, BanReasonManuallyAdded, banTime, absolute);
 
-        //disconnect possible nodes
+        // Disconnect possible nodes
         while(CNode *bannedNode = (isSubnet ? FindNode(subNet) : FindNode(netAddr)))
             bannedNode->fDisconnect = true;
     }
@@ -517,6 +518,8 @@ Value setban(const Array& params, bool fHelp)
         if (!( isSubnet ? CNode::Unban(subNet) : CNode::Unban(netAddr) ))
             throw JSONRPCError(RPC_MISC_ERROR, "Error: Unban failed");
     }
+    
+    DumpBanlist(); // Store banlist to disk
 
     return true;
 }
@@ -532,15 +535,18 @@ Value listbanned(const Array& params, bool fHelp)
                             + HelpExampleRpc("listbanned", "")
                             );
 
-    std::map<CSubNet, int64_t> banMap;
+    banmap_t banMap;
     CNode::GetBanned(banMap);
 
     Array bannedAddresses;
-    for (std::map<CSubNet, int64_t>::iterator it = banMap.begin(); it != banMap.end(); it++)
+    for (banmap_t::iterator it = banMap.begin(); it != banMap.end(); it++)
     {
+        CBanEntry banEntry = (*it).second;
         Object rec;
         rec.push_back(Pair("address", (*it).first.ToString()));
-        rec.push_back(Pair("banned_untill", (*it).second));
+        rec.push_back(Pair("banned_until", banEntry.nBanUntil));
+        rec.push_back(Pair("ban_created", banEntry.nCreateTime));
+        rec.push_back(Pair("ban_reason", banEntry.banReasonToString()));
         bannedAddresses.push_back(rec);
     }
 
@@ -559,6 +565,7 @@ Value clearbanned(const Array& params, bool fHelp)
                             );
 
     CNode::ClearBanned();
+    DumpBanlist(); // Store banlist to disk
 
     return true;
 }
