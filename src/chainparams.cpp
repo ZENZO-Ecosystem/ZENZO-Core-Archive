@@ -1,6 +1,6 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2014-2015 The Dash developers
+// Copyright (c) 2009-2019 The Bitcoin developers
+// Copyright (c) 2014-2019 The Dash developers
 // Copyright (c) 2015-2019 The PIVX developers
 // Copyright (c) 2018-2019 The ZENZO developers
 // Distributed under the MIT software license, see the accompanying
@@ -110,7 +110,6 @@ public:
         pchMessageStart[1] = 0x51;
         pchMessageStart[2] = 0xb9;
         pchMessageStart[3] = 0xc4;
-        vAlertPubKey = ParseHex("04162d81bfff02880ee2e149d7420f159564c20797778cd148cba5356aa608f3a122ab22bcd3f84ac1d252471b5fc71752d1504c848ef0b0c6bd1c155e81be23bc");
         nDefaultPort = 26210;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // ZENZO starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 4000000;
@@ -228,7 +227,6 @@ public:
         pchMessageStart[1] = 0x57;
         pchMessageStart[2] = 0x5a;
         pchMessageStart[3] = 0xa1;
-        vAlertPubKey = ParseHex("04cf32b9f482f43f671af99a044521689cf2c59faa62974082da7eb9f45e5b6e313cb4445b22e274a86ab30b5aa70fd9cc6ed76f6e950aa6dd46d129de4c8628f2");
         nDefaultPort = 16210;
         nEnforceBlockUpgradeMajority = 51;
         nRejectBlockOutdatedMajority = 75;

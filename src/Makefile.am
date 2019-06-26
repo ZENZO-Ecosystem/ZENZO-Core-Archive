@@ -80,7 +80,6 @@ BITCOIN_CORE_H = \
   accumulators.h \
   accumulatormap.h \
   addrman.h \
-  alert.h \
   allocators.h \
   amount.h \
   base58.h \
@@ -195,7 +194,6 @@ libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 libbitcoin_server_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_SOURCES = \
   addrman.cpp \
-  alert.cpp \
   bloom.cpp \
   chain.cpp \
   checkpoints.cpp \
