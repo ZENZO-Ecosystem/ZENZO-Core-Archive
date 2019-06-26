@@ -687,6 +687,5 @@ public:
 
 int CheckForUpdates(std::string addr, std::string ver);
 void replaceAll(std::string& str, const std::string& from, const std::string& to);
-int toInt(const std::string);
 
 #endif // BITCOIN_NET_H
