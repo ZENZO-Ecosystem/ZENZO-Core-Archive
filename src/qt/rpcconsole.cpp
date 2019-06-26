@@ -1,5 +1,5 @@
-// Copyright (c) 2011-2014 The Bitcoin developers
-// Copyright (c) 2014-2015 The Dash developers
+// Copyright (c) 2011-2019 The Bitcoin developers
+// Copyright (c) 2014-2019 The Dash developers
 // Copyright (c) 2015-2019 The PIVX developers
 // Copyright (c) 2018-2019 The ZENZO developers
 // Distributed under the MIT/X11 software license, see the accompanying
@@ -10,7 +10,6 @@
 
 #include "clientmodel.h"
 #include "guiutil.h"
-#include "peertablemodel.h"
 
 #include "chainparams.h"
 #include "main.h"
@@ -28,6 +27,7 @@
 
 #include <QDir>
 #include <QKeyEvent>
+#include <QMenu>
 #include <QScrollBar>
 #include <QThread>
 #include <QTime>
@@ -223,7 +223,8 @@ RPCConsole::RPCConsole(QWidget* parent) : QWidget(parent),
                                           ui(new Ui::RPCConsole),
                                           clientModel(0),
                                           historyPtr(0),
-                                          cachedNodeid(-1)
+                                          cachedNodeid(-1),
+                                          contextMenu(0)
 {
     ui->setupUi(this);
     GUIUtil::restoreWindowGeometry("nRPCConsoleWindow", this->size(), this);
@@ -347,9 +348,21 @@ void RPCConsole::setClientModel(ClientModel* model)
         ui->peerWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
         ui->peerWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
         ui->peerWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+        ui->peerWidget->setContextMenuPolicy(Qt::CustomContextMenu);
         ui->peerWidget->setColumnWidth(PeerTableModel::Address, ADDRESS_COLUMN_WIDTH);
         ui->peerWidget->setColumnWidth(PeerTableModel::Subversion, SUBVERSION_COLUMN_WIDTH);
         ui->peerWidget->setColumnWidth(PeerTableModel::Ping, PING_COLUMN_WIDTH);
+
+        // create context menu actions
+        QAction* disconnectAction = new QAction(tr("&Disconnect Node"), this);
+
+        // create context menu
+        contextMenu = new QMenu();
+        contextMenu->addAction(disconnectAction);
+
+        // context menu signals
+        connect(ui->peerWidget, SIGNAL(customContextMenuRequested(const QPoint&)), this, SLOT(showMenu(const QPoint&)));
+        connect(disconnectAction, SIGNAL(triggered()), this, SLOT(disconnectSelectedNode()));
 
         // connect the peerWidget selection model to our peerSelected() handler
         connect(ui->peerWidget->selectionModel(), SIGNAL(selectionChanged(const QItemSelection&, const QItemSelection&)),
@@ -837,6 +850,24 @@ void RPCConsole::hideEvent(QHideEvent* event)
 
     // stop PeerTableModel auto refresh
     clientModel->getPeerTableModel()->stopAutoRefresh();
+}
+
+void RPCConsole::showMenu(const QPoint& point)
+{
+    QModelIndex index = ui->peerWidget->indexAt(point);
+    if (index.isValid())
+        contextMenu->exec(QCursor::pos());
+}
+
+void RPCConsole::disconnectSelectedNode()
+{
+    // Get currently selected peer address
+    QString strNode = GUIUtil::getEntryData(ui->peerWidget, 0, PeerTableModel::Address);
+    // Find the node, disconnect it and clear the selected node
+    if (CNode *bannedNode = FindNode(strNode.toStdString())) {
+        bannedNode->CloseSocketDisconnect();
+        ui->peerWidget->selectionModel()->clearSelection();
+    }
 }
 
 void RPCConsole::showBackups()

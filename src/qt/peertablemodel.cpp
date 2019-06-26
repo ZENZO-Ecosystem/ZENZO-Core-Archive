@@ -1,4 +1,5 @@
-// Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2011-2019 The Bitcoin developers
+// Copyright (c) 2018-2019 The ZENZO developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -8,7 +9,6 @@
 #include "guiconstants.h"
 #include "guiutil.h"
 
-#include "net.h"
 #include "sync.h"
 
 #include <QDebug>
@@ -91,18 +91,17 @@ public:
             mapNodeRows.insert(std::pair<NodeId, int>(stats.nodeStats.nodeid, row++));
     }
 
-    int size()
+    int size() const
     {
         return cachedNodeStats.size();
     }
 
     CNodeCombinedStats* index(int idx)
     {
-        if (idx >= 0 && idx < cachedNodeStats.size()) {
+        if (idx >= 0 && idx < cachedNodeStats.size())
             return &cachedNodeStats[idx];
-        } else {
-            return 0;
-        }
+
+        return 0;
     }
 };
 
@@ -165,7 +164,7 @@ QVariant PeerTableModel::data(const QModelIndex& index, int role) const
         }
     } else if (role == Qt::TextAlignmentRole) {
         if (index.column() == Ping)
-            return (int)(Qt::AlignRight | Qt::AlignVCenter);
+            return (QVariant)(Qt::AlignRight | Qt::AlignVCenter);
     }
 
     return QVariant();
@@ -195,11 +194,10 @@ QModelIndex PeerTableModel::index(int row, int column, const QModelIndex& parent
     Q_UNUSED(parent);
     CNodeCombinedStats* data = priv->index(row);
 
-    if (data) {
+    if (data)
         return createIndex(row, column, data);
-    } else {
-        return QModelIndex();
-    }
+    
+    return QModelIndex();
 }
 
 const CNodeCombinedStats* PeerTableModel::getNodeStats(int idx)
