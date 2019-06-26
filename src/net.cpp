@@ -1735,7 +1735,7 @@ void StartNode(boost::thread_group& threadGroup, CScheduler& scheduler)
             LogPrintf("Loaded %i addresses from peers.dat  %dms\n", addrman.size(), GetTimeMillis() - nStart);
         else {
             LogPrintf("Invalid or missing peers.dat; recreating\n");
-            DumpAddreses();
+            DumpAddresses();
         }
     }
     
@@ -1747,7 +1747,7 @@ void StartNode(boost::thread_group& threadGroup, CScheduler& scheduler)
     if (!bandb.Read(banmap)) {
         LogPrintf("Invalid or missing banlist.dat; recreating\n");
         CNode::SetBannedSetDirty(true); // force write
-        DumpBanList();
+        DumpBanlist();
     }
 
     CNode::SetBanned(banmap); // Thread safe setter
