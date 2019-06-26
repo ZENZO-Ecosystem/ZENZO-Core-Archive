@@ -2338,8 +2338,10 @@ void DumpBanlist()
 
     CBanDB bandb;
     banmap_t banmap;
+    CNode::SetBannedSetDirty(false);
     CNode::GetBanned(banmap);
-    bandb.Write(banmap);
+    if (!bandb.Write(banmap))
+        CNode::SetBannedSetDirty(true);
 
     LogPrint("net", "Flushed %d banned node ips/subnets to banlist.dat  %dms\n",
              banmap.size(), GetTimeMillis() - nStart);
