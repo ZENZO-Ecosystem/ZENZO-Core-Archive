@@ -222,12 +222,45 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     currentWatchUnconfBalance = watchUnconfBalance;
     currentWatchImmatureBalance = watchImmatureBalance;
 
+    CAmount nLockedBalance = 0;
+    if (pwalletMain) {
+        nLockedBalance = pwalletMain->GetLockedCoins();
+    }
+    
+    CAmount nTotalBalance = balance + unconfirmedBalance;
+    CAmount nUnlockedBalance = nTotalBalance - nLockedBalance;
+
     // ZNZ labels
-    ui->labelBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, balance - immatureBalance, false, BitcoinUnits::separatorAlways));
-    if (GetBoolArg("-zerocoin", false)) ui->labelzBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, zerocoinBalance, false, BitcoinUnits::separatorAlways));
+    ui->labelBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, balance - (immatureBalance + nLockedBalance), false, BitcoinUnits::separatorAlways));
     ui->labelUnconfirmed->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, unconfirmedBalance, false, BitcoinUnits::separatorAlways));
     ui->labelImmature->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, immatureBalance, false, BitcoinUnits::separatorAlways));
     ui->labelTotal->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, balance + unconfirmedBalance, false, BitcoinUnits::separatorAlways));
+    if (GetBoolArg("-zerocoin", false)) ui->labelzBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, zerocoinBalance, false, BitcoinUnits::separatorAlways));
+
+    if (unconfirmedBalance > 0.01) {
+        ui->labelUnconfirmed->setVisible(true);
+        ui->labelPendingText->setVisible(true);
+    } else {
+        ui->labelUnconfirmed->setVisible(false);
+        ui->labelPendingText->setVisible(false);
+    }
+    if (immatureBalance > 0.01) {
+        ui->labelImmature->setVisible(true);
+        ui->labelImmatureText->setVisible(true);
+    } else {
+        ui->labelImmature->setVisible(false);
+        ui->labelImmatureText->setVisible(false);
+    }
+    if (nLockedBalance > 0.01) {
+        ui->labelTotal->setVisible(true);
+        ui->labelTotalText->setVisible(true);
+    } else if (nTotalBalance != nTotalBalance - unconfirmedBalance) {
+        ui->labelTotal->setVisible(true);
+        ui->labelTotalText->setVisible(true);
+    } else {
+        ui->labelTotal->setVisible(false);
+        ui->labelTotalText->setVisible(false);
+    }
 
     // Watchonly labels
     ui->labelWatchAvailable->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, watchOnlyBalance, false, BitcoinUnits::separatorAlways));
@@ -238,16 +271,18 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     // zZNZ labels
     QString szPercentage = "";
     QString sPercentage = "";
-    CAmount nLockedBalance = 0;
-    if (pwalletMain) {
-        nLockedBalance = pwalletMain->GetLockedCoins();
-    }
-    ui->labelLockedBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, nLockedBalance, false, BitcoinUnits::separatorAlways));
 
-    CAmount nTotalBalance = balance + unconfirmedBalance;
-    CAmount nUnlockedBalance = nTotalBalance - nLockedBalance;
     CAmount matureZerocoinBalance = zerocoinBalance - immatureZerocoinBalance;
     getPercentage(nUnlockedBalance, zerocoinBalance, sPercentage, szPercentage);
+
+    if (nLockedBalance > 0.01) {
+        ui->labelLockedBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, nLockedBalance, false, BitcoinUnits::separatorAlways));
+        ui->labelLockedBalance->setVisible(true);
+        ui->labelLockedBalanceText->setVisible(true);
+    } else {
+        ui->labelLockedBalance->setVisible(false);
+        ui->labelLockedBalanceText->setVisible(false);
+    }
 
     if (GetBoolArg("-zerocoin", false)) {
       ui->labelBalancez->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, nTotalBalance - unconfirmedBalance, false, BitcoinUnits::separatorAlways));
@@ -255,7 +290,6 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
       ui->labelzBalanceImmature->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, immatureZerocoinBalance, false, BitcoinUnits::separatorAlways));
       ui->labelzBalanceUnconfirmed->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, unconfirmedZerocoinBalance, false, BitcoinUnits::separatorAlways));
       ui->labelzBalanceMature->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, matureZerocoinBalance, false, BitcoinUnits::separatorAlways));
-      ui->labelTotalz->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, nTotalBalance + zerocoinBalance, false, BitcoinUnits::separatorAlways));
       //ui->labelUnLockedBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, nUnlockedBalance, false, BitcoinUnits::separatorAlways));
       //ui->labelZNZPercent->setText(sPercentage);
       //ui->labelzZNZPercent->setText(szPercentage);

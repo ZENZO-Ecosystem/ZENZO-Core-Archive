@@ -266,15 +266,13 @@ void SendCoinsDialog::on_sendButton_clicked()
     if (CoinControlDialog::coinControl->fSplitBlock)
         CoinControlDialog::coinControl->nSplitBlock = int(ui->splitBlockLineEdit->text().toInt());
 
-    QString strFunds = tr("using") + " <b>" + tr("anonymous funds") + "</b>";
     QString strFee = "";
+    QString strFunds = "";
     recipients[0].inputType = ALL_COINS;
-    strFunds = tr("using") + " <b>" + tr("any available funds (not recommended)") + "</b>";
 
     if (ui->checkSwiftTX->isChecked()) {
         recipients[0].useSwiftTX = true;
-        strFunds += " ";
-        strFunds += tr("and SwiftX");
+        strFunds = tr("using SwiftX");
     } else {
         recipients[0].useSwiftTX = false;
     }
@@ -298,7 +296,10 @@ void SendCoinsDialog::on_sendButton_clicked()
             if (rcp.label.length() > 0) // label with address
             {
                 recipientElement = tr("%1 to %2").arg(amount, GUIUtil::HtmlEscape(rcp.label));
-                recipientElement.append(QString(" (%1)").arg(address));
+
+                // append lable's address for experienced users
+                if (model->getOptionsModel()->getCoinControlFeatures())
+                    recipientElement.append(QString(" (%1)").arg(address));
             } else // just address
             {
                 recipientElement = tr("%1 to %2").arg(amount, address);
@@ -311,7 +312,8 @@ void SendCoinsDialog::on_sendButton_clicked()
             recipientElement = tr("%1 to %2").arg(amount, address);
         }
 
-        if (fSplitBlock) {
+		// Only display the UTXO splitter dialog when it's enabled and splitting into atleast 2 UTXOs
+        if (fSplitBlock && CoinControlDialog::coinControl->nSplitBlock > 1) {
             recipientElement.append(tr(" split into %1 outputs using the UTXO splitter.").arg(CoinControlDialog::coinControl->nSplitBlock));
         }
 
@@ -371,8 +373,9 @@ void SendCoinsDialog::send(QList<SendCoinsRecipient> recipients, QString strFee,
         questionString.append(" ");
         questionString.append(strFee);
 
-        // append transaction size
-        questionString.append(" (" + QString::number((double)currentTransaction.getTransactionSize() / 1000) + " kB)");
+        // append transaction size for experienced users
+	    if (model->getOptionsModel()->getCoinControlFeatures())
+            questionString.append(" (" + QString::number((double)currentTransaction.getTransactionSize() / 1000) + " kB)");
     }
 
     // add total amount in all subdivision units
@@ -384,10 +387,13 @@ void SendCoinsDialog::send(QList<SendCoinsRecipient> recipients, QString strFee,
             alternativeUnits.append(BitcoinUnits::formatHtmlWithUnit(u, totalAmount));
     }
 
-    // Show total amount + all alternative units
-    questionString.append(tr("Total Amount = <b>%1</b><br />= %2")
+    // Show total amount + all alternative units for experienced users
+    if (model->getOptionsModel()->getCoinControlFeatures())
+        questionString.append(tr("Total Amount = <b>%1</b><br />= %2")
                               .arg(BitcoinUnits::formatHtmlWithUnit(model->getOptionsModel()->getDisplayUnit(), totalAmount))
                               .arg(alternativeUnits.join("<br />= ")));
+    else // Show simple total amount
+	    questionString.append(tr("Total Amount = <b>%1</b>").arg(BitcoinUnits::formatHtmlWithUnit(model->getOptionsModel()->getDisplayUnit(), totalAmount)));
 
     // Limit number of displayed entries
     int messageEntries = formatted.size();
@@ -401,7 +407,9 @@ void SendCoinsDialog::send(QList<SendCoinsRecipient> recipients, QString strFee,
         }
     }
     questionString.append("<hr />");
-    questionString.append(tr("<b>(%1 of %2 entries displayed)</b>").arg(displayedEntries).arg(messageEntries));
+	
+	if (messageEntries > 1)
+    	questionString.append(tr("<b>(%1 of %2 entries displayed)</b>").arg(displayedEntries).arg(messageEntries));
 
     // Display message box
     SendConfirmationDialog confirmationDialog(tr("Confirm send coins"),
