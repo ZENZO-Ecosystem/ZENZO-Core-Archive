@@ -45,8 +45,6 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet) : QDialog(paren
     ui->databaseCache->setMaximum(nMaxDbCache);
     ui->threadsScriptVerif->setMinimum(-(int)boost::thread::hardware_concurrency());
     ui->threadsScriptVerif->setMaximum(MAX_SCRIPTCHECK_THREADS);
-    ui->preferredDenom->setVisible(false);
-    ui->labelPreferredDenom->setVisible(false);
 
 /* Network elements init */
 #ifndef USE_UPNP

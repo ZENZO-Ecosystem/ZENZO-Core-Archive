@@ -158,39 +158,12 @@ OverviewPage::~OverviewPage()
     delete ui;
 }
 
-void OverviewPage::getPercentage(CAmount nUnlockedBalance, CAmount nZerocoinBalance, QString& sZNZPercentage, QString& szZNZPercentage)
-{
-    int nPrecision = 2;
-    double dzPercentage = 0.0;
-
-    if (nZerocoinBalance <= 0){
-        dzPercentage = 0.0;
-    }
-    else{
-        if (nUnlockedBalance <= 0){
-            dzPercentage = 100.0;
-        }
-        else{
-            dzPercentage = 100.0 * (double)(nZerocoinBalance / (double)(nZerocoinBalance + nUnlockedBalance));
-        }
-    }
-
-    double dPercentage = 100.0 - dzPercentage;
-
-    szZNZPercentage = "(" + QLocale(QLocale::system()).toString(dzPercentage, 'f', nPrecision) + " %)";
-    sZNZPercentage = "(" + QLocale(QLocale::system()).toString(dPercentage, 'f', nPrecision) + " %)";
-
-}
-
 void OverviewPage::setUpdate(const int status)
 {
-  // Debug console prints for update status tests
-  //std::cout << "Changing update status: " << status << endl;
-
   if (status == 0) {
     ui->lableUpgrade->setVisible(false);
     ui->buttonUpgrade->setVisible(false);
-  } else if (status == 1) {
+  } else {
     ui->lableUpgrade->setVisible(true);
     ui->buttonUpgrade->setVisible(true);
   }
@@ -213,11 +186,6 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     currentBalance = balance;
     currentUnconfirmedBalance = unconfirmedBalance;
     currentImmatureBalance = immatureBalance;
-    if (GetBoolArg("-zerocoin", false)) { // Hide Zerocoin UI
-      currentZerocoinBalance = zerocoinBalance;
-      currentUnconfirmedZerocoinBalance = unconfirmedZerocoinBalance;
-      currentimmatureZerocoinBalance = immatureZerocoinBalance;
-    }
     currentWatchOnlyBalance = watchOnlyBalance;
     currentWatchUnconfBalance = watchUnconfBalance;
     currentWatchImmatureBalance = watchImmatureBalance;
@@ -228,14 +196,12 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     }
     
     CAmount nTotalBalance = balance + unconfirmedBalance;
-    CAmount nUnlockedBalance = nTotalBalance - nLockedBalance;
 
     // ZNZ labels
     ui->labelBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, balance - (immatureBalance + nLockedBalance), false, BitcoinUnits::separatorAlways));
     ui->labelUnconfirmed->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, unconfirmedBalance, false, BitcoinUnits::separatorAlways));
     ui->labelImmature->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, immatureBalance, false, BitcoinUnits::separatorAlways));
     ui->labelTotal->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, balance + unconfirmedBalance, false, BitcoinUnits::separatorAlways));
-    if (GetBoolArg("-zerocoin", false)) ui->labelzBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, zerocoinBalance, false, BitcoinUnits::separatorAlways));
 
     if (unconfirmedBalance > 0.01) {
         ui->labelUnconfirmed->setVisible(true);
@@ -268,13 +234,6 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     ui->labelWatchImmature->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, watchImmatureBalance, false, BitcoinUnits::separatorAlways));
     ui->labelWatchTotal->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, watchOnlyBalance + watchUnconfBalance + watchImmatureBalance, false, BitcoinUnits::separatorAlways));
 
-    // zZNZ labels
-    QString szPercentage = "";
-    QString sPercentage = "";
-
-    CAmount matureZerocoinBalance = zerocoinBalance - immatureZerocoinBalance;
-    getPercentage(nUnlockedBalance, zerocoinBalance, sPercentage, szPercentage);
-
     if (nLockedBalance > 0.01) {
         ui->labelLockedBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, nLockedBalance, false, BitcoinUnits::separatorAlways));
         ui->labelLockedBalance->setVisible(true);
@@ -283,45 +242,6 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
         ui->labelLockedBalance->setVisible(false);
         ui->labelLockedBalanceText->setVisible(false);
     }
-
-    if (GetBoolArg("-zerocoin", false)) {
-      ui->labelBalancez->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, nTotalBalance - unconfirmedBalance, false, BitcoinUnits::separatorAlways));
-      //ui->labelzBalancez->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, zerocoinBalance, false, BitcoinUnits::separatorAlways));
-      ui->labelzBalanceImmature->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, immatureZerocoinBalance, false, BitcoinUnits::separatorAlways));
-      ui->labelzBalanceUnconfirmed->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, unconfirmedZerocoinBalance, false, BitcoinUnits::separatorAlways));
-      ui->labelzBalanceMature->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, matureZerocoinBalance, false, BitcoinUnits::separatorAlways));
-      //ui->labelUnLockedBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, nUnlockedBalance, false, BitcoinUnits::separatorAlways));
-      //ui->labelZNZPercent->setText(sPercentage);
-      //ui->labelzZNZPercent->setText(szPercentage);
-    } else {
-      // Kill zZNZ Displays
-      ui->labelBalancez->setVisible(false);
-      ui->labelzBalanceImmature->setVisible(false);
-      ui->labelzBalanceUnconfirmed->setVisible(false);
-      ui->labelzBalanceMature->setVisible(false);
-      ui->labelTotalz->setVisible(false);
-
-      // Kill widget Displays
-      /*ui->label_5z->setVisible(false);
-      ui->line_CombinedBalance->setVisible(false);
-      ui->horizontalSpacer_1->changeSize(0, 0);
-      ui->horizontalSpacer_1->invalidate();*/
-      ui->frame_CombinedBalances->setVisible(false);
-      ui->frame_ZerocoinBalances->setVisible(false);
-    }
-
-    // Adjust bubble-help according to AutoMint settings
-    QString automintHelp = tr("Current percentage of zZNZ.\nIf AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).\n");
-    bool fEnableZeromint = GetBoolArg("-enablezeromint", false);
-    int nZeromintPercentage = GetArg("-zeromintpercentage", 10);
-    if (fEnableZeromint) {
-        automintHelp += tr("AutoMint is currently enabled and set to ") + QString::number(nZeromintPercentage) + "%.\n";
-        automintHelp += tr("To disable AutoMint delete set 'enablezeromint=1' to 'enablezeromint=0' in zenzo.conf.");
-    }
-    else {
-        automintHelp += tr("AutoMint is currently disabled.\nTo enable AutoMint add 'enablezeromint=1' in zenzo.conf");
-    }
-    //ui->labelzZNZPercent->setToolTip(automintHelp);
 
     // only show immature (newly mined) balance if it's non-zero, so as not to complicate things
     // for the non-mining users
