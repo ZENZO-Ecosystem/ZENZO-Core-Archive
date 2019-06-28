@@ -27,8 +27,6 @@
 #include <QDebug>
 #include <QTimer>
 
-static const int64_t nClientStartupTime = GetTime();
-
 ClientModel::ClientModel(OptionsModel* optionsModel, QObject* parent) : QObject(parent),
                                                                         optionsModel(optionsModel),
                                                                         banTableModel(0),
@@ -234,7 +232,7 @@ QString ClientModel::clientName() const
 
 QString ClientModel::formatClientStartupTime() const
 {
-    return QDateTime::fromTime_t(nClientStartupTime).toString();
+    return QDateTime::fromTime_t(GetStartupTime()).toString();
 }
 
 void ClientModel::updateBanlist()

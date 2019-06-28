@@ -1,6 +1,6 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2014-2015 The Dash developers
+// Copyright (c) 2009-2019 The Bitcoin developers
+// Copyright (c) 2014-2019 The Dash developers
 // Copyright (c) 2015-2019 The PIVX developers
 // Copyright (c) 2018-2019 The ZENZO developers
 // Distributed under the MIT software license, see the accompanying
@@ -244,6 +244,21 @@ Value stop(const Array& params, bool fHelp)
     return "ZENZO server stopping";
 }
 
+Value uptime(const Array& params, bool fHelp)
+{
+    if (fHelp || params.size() > 1)
+        throw std::runtime_error(
+                "uptime\n"
+                        "\nReturns the current uptime of the server.\n"
+                        "\nResult:\n"
+                        "ttt        (numeric) The number of seconds that the server has been running\n"
+                        "\nExamples:\n"
+                + HelpExampleCli("uptime", "")
+                + HelpExampleRpc("uptime", "")
+        );
+
+    return GetTime() - GetStartupTime();
+}
 
 /**
  * Call Table
@@ -256,6 +271,7 @@ static const CRPCCommand vRPCCommands[] =
         {"control", "getinfo", &getinfo, true, false, false}, /* uses wallet if enabled */
         {"control", "help", &help, true, true, false},
         {"control", "stop", &stop, true, true, false},
+        {"control", "uptime", &uptime, true, true, false},
 
         /* P2P networking */
         {"network", "getnetworkinfo", &getnetworkinfo, true, false, false},
