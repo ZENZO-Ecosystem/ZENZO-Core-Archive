@@ -1456,19 +1456,6 @@ bool CheckZerocoinSpend(const CTransaction tx, bool fVerifySignature, CValidatio
         return state.DoS(100, error("Transaction spend more than was redeemed in zerocoins"));
     }
 
-    // Send signal to wallet if this is ours
-    if (pwalletMain) {
-        CWalletDB walletdb(pwalletMain->strWalletFile);
-        list <CBigNum> listMySerials = walletdb.ListMintedCoinsSerial();
-        for (const auto& newSpend : vSpends) {
-            list<CBigNum>::iterator it = find(listMySerials.begin(), listMySerials.end(), newSpend.getCoinSerialNumber());
-            if (it != listMySerials.end()) {
-                LogPrintf("%s: %s detected spent zerocoin mint in transaction %s \n", __func__, it->GetHex(), tx.GetHash().GetHex());
-                pwalletMain->NotifyZerocoinChanged(pwalletMain, it->GetHex(), "Used", CT_UPDATED);
-            }
-        }
-    }
-
     return fValidated;
 }
 
@@ -1630,9 +1617,9 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
     if (pfMissingInputs)
         *pfMissingInputs = false;
 
-    //Temporarily disable zerocoin for maintenance
-    if (GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE) && tx.ContainsZerocoins())
-        return state.DoS(10, error("AcceptToMemoryPool : Zerocoin transactions are temporarily disabled for maintenance"), REJECT_INVALID, "bad-tx");
+    // Permanently reject new zerocoin transactions
+    if (tx.ContainsZerocoins())
+        return state.DoS(10, error("AcceptToMemoryPool : Zerocoin rejected"), REJECT_INVALID, "bad-tx");
 
     if (!CheckTransaction(tx, chainActive.Height() >= Params().Zerocoin_AccumulatorStartHeight(), true, state))
         return state.DoS(100, error("AcceptToMemoryPool: : CheckTransaction failed"), REJECT_INVALID, "bad-tx");

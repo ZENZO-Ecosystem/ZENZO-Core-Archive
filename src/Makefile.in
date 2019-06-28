@@ -505,8 +505,7 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/locale/zenzo_uk.ts qt/locale/zenzo_zh_CN.ts \
 	qt/locale/zenzo_zh_TW.ts qt/paymentrequest.proto \
 	qt/res/icons/add.png qt/res/icons/address-book.png \
-	qt/res/icons/automint_active.png \
-	qt/res/icons/automint_inactive.png qt/res/icons/bitcoin.ico \
+	qt/res/icons/bitcoin.ico \
 	qt/res/icons/bitcoin.png qt/res/icons/bitcoin_testnet.ico \
 	qt/res/icons/bitcoin_testnet.png qt/res/icons/browse.png \
 	qt/res/icons/clock1.png qt/res/icons/clock2.png \
@@ -836,31 +835,27 @@ qt_zenzo_qt_OBJECTS = $(am_qt_zenzo_qt_OBJECTS)
 qt_zenzo_qt_LINK = $(LIBTOOL) $(AM_V_lt) $(qt_zenzo_qt_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(OBJCXXLD) $(AM_OBJCXXFLAGS) \
 	$(OBJCXXFLAGS) $(qt_zenzo_qt_LDFLAGS) $(LDFLAGS) -o $@
-am__test_test_zenzo_SOURCES_DIST =  \
-	test/zerocoin_implementation_tests.cpp \
-	test/zerocoin_denomination_tests.cpp \
-	test/zerocoin_transactions_tests.cpp \
-	test/benchmark_zerocoin.cpp test/tutorial_zerocoin.cpp \
-	test/libzerocoin_tests.cpp test/allocator_tests.cpp \
-	test/base32_tests.cpp test/base58_tests.cpp \
-	test/base64_tests.cpp test/checkblock_tests.cpp \
-	test/Checkpoints_tests.cpp test/coins_tests.cpp \
-	test/compress_tests.cpp test/crypto_tests.cpp \
-	test/DoS_tests.cpp test/getarg_tests.cpp test/hash_tests.cpp \
-	test/key_tests.cpp test/main_tests.cpp test/mempool_tests.cpp \
-	test/mruset_tests.cpp test/multisig_tests.cpp \
-	test/netbase_tests.cpp test/pmt_tests.cpp test/rpc_tests.cpp \
-	test/sanity_tests.cpp test/script_P2SH_tests.cpp \
-	test/script_tests.cpp test/scriptnum_tests.cpp \
-	test/serialize_tests.cpp test/sighash_tests.cpp \
-	test/sigopcount_tests.cpp test/skiplist_tests.cpp \
-	test/test_zenzo.cpp test/timedata_tests.cpp \
-	test/torcontrol_tests.cpp test/transaction_tests.cpp \
-	test/uint256_tests.cpp test/univalue_tests.cpp \
-	test/util_tests.cpp test/accounting_tests.cpp \
-	test/wallet_tests.cpp test/rpc_wallet_tests.cpp \
-	test/data/script_valid.json test/data/base58_keys_valid.json \
-	test/data/sig_canonical.json test/data/sig_noncanonical.json \
+am__test_test_zenzo_SOURCES_DIST = test/libzerocoin_tests.cpp \
+	test/allocator_tests.cpp test/base32_tests.cpp \
+	test/base58_tests.cpp test/base64_tests.cpp \
+	test/checkblock_tests.cpp test/Checkpoints_tests.cpp \
+	test/coins_tests.cpp test/compress_tests.cpp \
+	test/crypto_tests.cpp test/DoS_tests.cpp test/getarg_tests.cpp \
+	test/hash_tests.cpp test/key_tests.cpp test/main_tests.cpp \
+	test/mempool_tests.cpp test/mruset_tests.cpp \
+	test/multisig_tests.cpp test/netbase_tests.cpp \
+	test/pmt_tests.cpp test/rpc_tests.cpp test/sanity_tests.cpp \
+	test/script_P2SH_tests.cpp test/script_tests.cpp \
+	test/scriptnum_tests.cpp test/serialize_tests.cpp \
+	test/sighash_tests.cpp test/sigopcount_tests.cpp \
+	test/skiplist_tests.cpp test/test_zenzo.cpp \
+	test/timedata_tests.cpp test/torcontrol_tests.cpp \
+	test/transaction_tests.cpp test/uint256_tests.cpp \
+	test/univalue_tests.cpp test/util_tests.cpp \
+	test/accounting_tests.cpp test/wallet_tests.cpp \
+	test/rpc_wallet_tests.cpp test/data/script_valid.json \
+	test/data/base58_keys_valid.json test/data/sig_canonical.json \
+	test/data/sig_noncanonical.json \
 	test/data/base58_encode_decode.json \
 	test/data/base58_keys_invalid.json \
 	test/data/script_invalid.json test/data/tx_invalid.json \
@@ -868,12 +863,7 @@ am__test_test_zenzo_SOURCES_DIST =  \
 @ENABLE_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__objects_17 = test/test_test_zenzo-accounting_tests.$(OBJEXT) \
 @ENABLE_TESTS_TRUE@@ENABLE_WALLET_TRUE@	test/test_test_zenzo-wallet_tests.$(OBJEXT) \
 @ENABLE_TESTS_TRUE@@ENABLE_WALLET_TRUE@	test/test_test_zenzo-rpc_wallet_tests.$(OBJEXT)
-@ENABLE_TESTS_TRUE@am__objects_18 = test/test_test_zenzo-zerocoin_implementation_tests.$(OBJEXT) \
-@ENABLE_TESTS_TRUE@	test/test_test_zenzo-zerocoin_denomination_tests.$(OBJEXT) \
-@ENABLE_TESTS_TRUE@	test/test_test_zenzo-zerocoin_transactions_tests.$(OBJEXT) \
-@ENABLE_TESTS_TRUE@	test/test_test_zenzo-benchmark_zerocoin.$(OBJEXT) \
-@ENABLE_TESTS_TRUE@	test/test_test_zenzo-tutorial_zerocoin.$(OBJEXT) \
-@ENABLE_TESTS_TRUE@	test/test_test_zenzo-libzerocoin_tests.$(OBJEXT) \
+@ENABLE_TESTS_TRUE@am__objects_18 = test/test_test_zenzo-libzerocoin_tests.$(OBJEXT) \
 @ENABLE_TESTS_TRUE@	test/test_test_zenzo-allocator_tests.$(OBJEXT) \
 @ENABLE_TESTS_TRUE@	test/test_test_zenzo-base32_tests.$(OBJEXT) \
 @ENABLE_TESTS_TRUE@	test/test_test_zenzo-base58_tests.$(OBJEXT) \
@@ -2001,13 +1991,7 @@ EXTRA_DIST = leveldb $(am__append_18)
 
 @ENABLE_TESTS_TRUE@RAW_TEST_FILES = 
 @ENABLE_TESTS_TRUE@GENERATED_TEST_FILES = $(JSON_TEST_FILES:.json=.json.h) $(RAW_TEST_FILES:.raw=.raw.h)
-@ENABLE_TESTS_TRUE@BITCOIN_TESTS =  \
-@ENABLE_TESTS_TRUE@	test/zerocoin_implementation_tests.cpp \
-@ENABLE_TESTS_TRUE@	test/zerocoin_denomination_tests.cpp \
-@ENABLE_TESTS_TRUE@	test/zerocoin_transactions_tests.cpp \
-@ENABLE_TESTS_TRUE@	test/benchmark_zerocoin.cpp \
-@ENABLE_TESTS_TRUE@	test/tutorial_zerocoin.cpp \
-@ENABLE_TESTS_TRUE@	test/libzerocoin_tests.cpp \
+@ENABLE_TESTS_TRUE@BITCOIN_TESTS = test/libzerocoin_tests.cpp \
 @ENABLE_TESTS_TRUE@	test/allocator_tests.cpp \
 @ENABLE_TESTS_TRUE@	test/base32_tests.cpp test/base58_tests.cpp \
 @ENABLE_TESTS_TRUE@	test/base64_tests.cpp \
@@ -2236,8 +2220,6 @@ EXTRA_DIST = leveldb $(am__append_18)
 @ENABLE_QT_TRUE@RES_ICONS = \
 @ENABLE_QT_TRUE@  qt/res/icons/add.png \
 @ENABLE_QT_TRUE@  qt/res/icons/address-book.png \
-@ENABLE_QT_TRUE@  qt/res/icons/automint_active.png \
-@ENABLE_QT_TRUE@  qt/res/icons/automint_inactive.png \
 @ENABLE_QT_TRUE@  qt/res/icons/bitcoin.ico \
 @ENABLE_QT_TRUE@  qt/res/icons/bitcoin.png \
 @ENABLE_QT_TRUE@  qt/res/icons/bitcoin_testnet.ico \
@@ -3022,16 +3004,6 @@ test/$(am__dirstamp):
 test/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) test/$(DEPDIR)
 	@: > test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_zenzo-zerocoin_implementation_tests.$(OBJEXT):  \
-	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_zenzo-zerocoin_denomination_tests.$(OBJEXT):  \
-	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_zenzo-zerocoin_transactions_tests.$(OBJEXT):  \
-	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_zenzo-benchmark_zerocoin.$(OBJEXT):  \
-	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_zenzo-tutorial_zerocoin.$(OBJEXT):  \
-	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
 test/test_test_zenzo-libzerocoin_tests.$(OBJEXT):  \
 	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
 test/test_test_zenzo-allocator_tests.$(OBJEXT): test/$(am__dirstamp) \
@@ -3425,7 +3397,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_zenzo-base32_tests.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_zenzo-base58_tests.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_zenzo-base64_tests.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_zenzo-benchmark_zerocoin.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_zenzo-checkblock_tests.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_zenzo-coins_tests.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_zenzo-compress_tests.Po@am__quote@
@@ -3454,14 +3425,10 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_zenzo-timedata_tests.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_zenzo-torcontrol_tests.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_zenzo-transaction_tests.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_zenzo-tutorial_zerocoin.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_zenzo-uint256_tests.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_zenzo-univalue_tests.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_zenzo-util_tests.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_zenzo-wallet_tests.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_zenzo-zerocoin_denomination_tests.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_zenzo-zerocoin_implementation_tests.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_zenzo-zerocoin_transactions_tests.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@univalue/$(DEPDIR)/univalue.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@univalue/$(DEPDIR)/univalue_read.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@univalue/$(DEPDIR)/univalue_write.Po@am__quote@
@@ -7009,76 +6976,6 @@ qt/qt_zenzo_qt-zenzo.obj: qt/zenzo.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/zenzo.cpp' object='qt/qt_zenzo_qt-zenzo.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_zenzo_qt_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_zenzo_qt-zenzo.obj `if test -f 'qt/zenzo.cpp'; then $(CYGPATH_W) 'qt/zenzo.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/zenzo.cpp'; fi`
-
-test/test_test_zenzo-zerocoin_implementation_tests.o: test/zerocoin_implementation_tests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zenzo_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zenzo-zerocoin_implementation_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zenzo-zerocoin_implementation_tests.Tpo -c -o test/test_test_zenzo-zerocoin_implementation_tests.o `test -f 'test/zerocoin_implementation_tests.cpp' || echo '$(srcdir)/'`test/zerocoin_implementation_tests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zenzo-zerocoin_implementation_tests.Tpo test/$(DEPDIR)/test_test_zenzo-zerocoin_implementation_tests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/zerocoin_implementation_tests.cpp' object='test/test_test_zenzo-zerocoin_implementation_tests.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zenzo_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zenzo-zerocoin_implementation_tests.o `test -f 'test/zerocoin_implementation_tests.cpp' || echo '$(srcdir)/'`test/zerocoin_implementation_tests.cpp
-
-test/test_test_zenzo-zerocoin_implementation_tests.obj: test/zerocoin_implementation_tests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zenzo_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zenzo-zerocoin_implementation_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zenzo-zerocoin_implementation_tests.Tpo -c -o test/test_test_zenzo-zerocoin_implementation_tests.obj `if test -f 'test/zerocoin_implementation_tests.cpp'; then $(CYGPATH_W) 'test/zerocoin_implementation_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/zerocoin_implementation_tests.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zenzo-zerocoin_implementation_tests.Tpo test/$(DEPDIR)/test_test_zenzo-zerocoin_implementation_tests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/zerocoin_implementation_tests.cpp' object='test/test_test_zenzo-zerocoin_implementation_tests.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zenzo_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zenzo-zerocoin_implementation_tests.obj `if test -f 'test/zerocoin_implementation_tests.cpp'; then $(CYGPATH_W) 'test/zerocoin_implementation_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/zerocoin_implementation_tests.cpp'; fi`
-
-test/test_test_zenzo-zerocoin_denomination_tests.o: test/zerocoin_denomination_tests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zenzo_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zenzo-zerocoin_denomination_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zenzo-zerocoin_denomination_tests.Tpo -c -o test/test_test_zenzo-zerocoin_denomination_tests.o `test -f 'test/zerocoin_denomination_tests.cpp' || echo '$(srcdir)/'`test/zerocoin_denomination_tests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zenzo-zerocoin_denomination_tests.Tpo test/$(DEPDIR)/test_test_zenzo-zerocoin_denomination_tests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/zerocoin_denomination_tests.cpp' object='test/test_test_zenzo-zerocoin_denomination_tests.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zenzo_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zenzo-zerocoin_denomination_tests.o `test -f 'test/zerocoin_denomination_tests.cpp' || echo '$(srcdir)/'`test/zerocoin_denomination_tests.cpp
-
-test/test_test_zenzo-zerocoin_denomination_tests.obj: test/zerocoin_denomination_tests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zenzo_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zenzo-zerocoin_denomination_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zenzo-zerocoin_denomination_tests.Tpo -c -o test/test_test_zenzo-zerocoin_denomination_tests.obj `if test -f 'test/zerocoin_denomination_tests.cpp'; then $(CYGPATH_W) 'test/zerocoin_denomination_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/zerocoin_denomination_tests.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zenzo-zerocoin_denomination_tests.Tpo test/$(DEPDIR)/test_test_zenzo-zerocoin_denomination_tests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/zerocoin_denomination_tests.cpp' object='test/test_test_zenzo-zerocoin_denomination_tests.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zenzo_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zenzo-zerocoin_denomination_tests.obj `if test -f 'test/zerocoin_denomination_tests.cpp'; then $(CYGPATH_W) 'test/zerocoin_denomination_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/zerocoin_denomination_tests.cpp'; fi`
-
-test/test_test_zenzo-zerocoin_transactions_tests.o: test/zerocoin_transactions_tests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zenzo_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zenzo-zerocoin_transactions_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zenzo-zerocoin_transactions_tests.Tpo -c -o test/test_test_zenzo-zerocoin_transactions_tests.o `test -f 'test/zerocoin_transactions_tests.cpp' || echo '$(srcdir)/'`test/zerocoin_transactions_tests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zenzo-zerocoin_transactions_tests.Tpo test/$(DEPDIR)/test_test_zenzo-zerocoin_transactions_tests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/zerocoin_transactions_tests.cpp' object='test/test_test_zenzo-zerocoin_transactions_tests.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zenzo_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zenzo-zerocoin_transactions_tests.o `test -f 'test/zerocoin_transactions_tests.cpp' || echo '$(srcdir)/'`test/zerocoin_transactions_tests.cpp
-
-test/test_test_zenzo-zerocoin_transactions_tests.obj: test/zerocoin_transactions_tests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zenzo_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zenzo-zerocoin_transactions_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zenzo-zerocoin_transactions_tests.Tpo -c -o test/test_test_zenzo-zerocoin_transactions_tests.obj `if test -f 'test/zerocoin_transactions_tests.cpp'; then $(CYGPATH_W) 'test/zerocoin_transactions_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/zerocoin_transactions_tests.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zenzo-zerocoin_transactions_tests.Tpo test/$(DEPDIR)/test_test_zenzo-zerocoin_transactions_tests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/zerocoin_transactions_tests.cpp' object='test/test_test_zenzo-zerocoin_transactions_tests.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zenzo_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zenzo-zerocoin_transactions_tests.obj `if test -f 'test/zerocoin_transactions_tests.cpp'; then $(CYGPATH_W) 'test/zerocoin_transactions_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/zerocoin_transactions_tests.cpp'; fi`
-
-test/test_test_zenzo-benchmark_zerocoin.o: test/benchmark_zerocoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zenzo_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zenzo-benchmark_zerocoin.o -MD -MP -MF test/$(DEPDIR)/test_test_zenzo-benchmark_zerocoin.Tpo -c -o test/test_test_zenzo-benchmark_zerocoin.o `test -f 'test/benchmark_zerocoin.cpp' || echo '$(srcdir)/'`test/benchmark_zerocoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zenzo-benchmark_zerocoin.Tpo test/$(DEPDIR)/test_test_zenzo-benchmark_zerocoin.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/benchmark_zerocoin.cpp' object='test/test_test_zenzo-benchmark_zerocoin.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zenzo_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zenzo-benchmark_zerocoin.o `test -f 'test/benchmark_zerocoin.cpp' || echo '$(srcdir)/'`test/benchmark_zerocoin.cpp
-
-test/test_test_zenzo-benchmark_zerocoin.obj: test/benchmark_zerocoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zenzo_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zenzo-benchmark_zerocoin.obj -MD -MP -MF test/$(DEPDIR)/test_test_zenzo-benchmark_zerocoin.Tpo -c -o test/test_test_zenzo-benchmark_zerocoin.obj `if test -f 'test/benchmark_zerocoin.cpp'; then $(CYGPATH_W) 'test/benchmark_zerocoin.cpp'; else $(CYGPATH_W) '$(srcdir)/test/benchmark_zerocoin.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zenzo-benchmark_zerocoin.Tpo test/$(DEPDIR)/test_test_zenzo-benchmark_zerocoin.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/benchmark_zerocoin.cpp' object='test/test_test_zenzo-benchmark_zerocoin.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zenzo_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zenzo-benchmark_zerocoin.obj `if test -f 'test/benchmark_zerocoin.cpp'; then $(CYGPATH_W) 'test/benchmark_zerocoin.cpp'; else $(CYGPATH_W) '$(srcdir)/test/benchmark_zerocoin.cpp'; fi`
-
-test/test_test_zenzo-tutorial_zerocoin.o: test/tutorial_zerocoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zenzo_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zenzo-tutorial_zerocoin.o -MD -MP -MF test/$(DEPDIR)/test_test_zenzo-tutorial_zerocoin.Tpo -c -o test/test_test_zenzo-tutorial_zerocoin.o `test -f 'test/tutorial_zerocoin.cpp' || echo '$(srcdir)/'`test/tutorial_zerocoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zenzo-tutorial_zerocoin.Tpo test/$(DEPDIR)/test_test_zenzo-tutorial_zerocoin.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/tutorial_zerocoin.cpp' object='test/test_test_zenzo-tutorial_zerocoin.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zenzo_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zenzo-tutorial_zerocoin.o `test -f 'test/tutorial_zerocoin.cpp' || echo '$(srcdir)/'`test/tutorial_zerocoin.cpp
-
-test/test_test_zenzo-tutorial_zerocoin.obj: test/tutorial_zerocoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zenzo_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zenzo-tutorial_zerocoin.obj -MD -MP -MF test/$(DEPDIR)/test_test_zenzo-tutorial_zerocoin.Tpo -c -o test/test_test_zenzo-tutorial_zerocoin.obj `if test -f 'test/tutorial_zerocoin.cpp'; then $(CYGPATH_W) 'test/tutorial_zerocoin.cpp'; else $(CYGPATH_W) '$(srcdir)/test/tutorial_zerocoin.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zenzo-tutorial_zerocoin.Tpo test/$(DEPDIR)/test_test_zenzo-tutorial_zerocoin.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/tutorial_zerocoin.cpp' object='test/test_test_zenzo-tutorial_zerocoin.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zenzo_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zenzo-tutorial_zerocoin.obj `if test -f 'test/tutorial_zerocoin.cpp'; then $(CYGPATH_W) 'test/tutorial_zerocoin.cpp'; else $(CYGPATH_W) '$(srcdir)/test/tutorial_zerocoin.cpp'; fi`
 
 test/test_test_zenzo-libzerocoin_tests.o: test/libzerocoin_tests.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zenzo_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zenzo-libzerocoin_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zenzo-libzerocoin_tests.Tpo -c -o test/test_test_zenzo-libzerocoin_tests.o `test -f 'test/libzerocoin_tests.cpp' || echo '$(srcdir)/'`test/libzerocoin_tests.cpp

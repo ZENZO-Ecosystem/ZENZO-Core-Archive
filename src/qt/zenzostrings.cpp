@@ -50,14 +50,11 @@ QT_TRANSLATE_NOOP("zenzo-core", ""
 "Delete all wallet transactions and only recover those parts of the "
 "blockchain through -rescan on startup"),
 QT_TRANSLATE_NOOP("zenzo-core", ""
-"Disable all zenzo specific functionality (Masternodes, Obfuscation, SwiftX, "
+"Disable all zenzo specific functionality (Masternodes, SwiftX, "
 "Budgeting) (0-1, default: %u)"),
 QT_TRANSLATE_NOOP("zenzo-core", ""
 "Distributed under the MIT software license, see the accompanying file "
 "COPYING or <http://www.opensource.org/licenses/mit-license.php>."),
-QT_TRANSLATE_NOOP("zenzo-core", ""
-"Enable automatic wallet backups triggered after each zZNZ minting (0-1, "
-"default: %u)"),
 QT_TRANSLATE_NOOP("zenzo-core", ""
 "Enable spork administration functionality with the appropriate private key."),
 QT_TRANSLATE_NOOP("zenzo-core", ""
@@ -133,9 +130,6 @@ QT_TRANSLATE_NOOP("zenzo-core", ""
 "need to anonymize some more coins."),
 QT_TRANSLATE_NOOP("zenzo-core", ""
 "Output debugging information (default: %u, supplying <category> is optional)"),
-QT_TRANSLATE_NOOP("zenzo-core", ""
-"Preferred Denomination for automatically minted Zerocoin  "
-"(1/5/10/50/100/500/1000/5000), 0 for no preference. default: %u)"),
 QT_TRANSLATE_NOOP("zenzo-core", ""
 "Query for peer addresses via DNS lookup, if low on addresses (default: 1 "
 "unless -connect)"),
@@ -274,7 +268,6 @@ QT_TRANSLATE_NOOP("zenzo-core", "Display verbose coin stake messages in the debu
 QT_TRANSLATE_NOOP("zenzo-core", "Do not load the wallet and disable wallet RPC calls"),
 QT_TRANSLATE_NOOP("zenzo-core", "Do you want to rebuild the block database now?"),
 QT_TRANSLATE_NOOP("zenzo-core", "Done loading"),
-QT_TRANSLATE_NOOP("zenzo-core", "Enable automatic Zerocoin minting (0-1, default: %u)"),
 QT_TRANSLATE_NOOP("zenzo-core", "Enable publish hash block in <address>"),
 QT_TRANSLATE_NOOP("zenzo-core", "Enable publish hash transaction (locked via SwiftX) in <address>"),
 QT_TRANSLATE_NOOP("zenzo-core", "Enable publish hash transaction in <address>"),
@@ -382,7 +375,6 @@ QT_TRANSLATE_NOOP("zenzo-core", "Only accept block chain matching built-in check
 QT_TRANSLATE_NOOP("zenzo-core", "Only connect to nodes in network <net> (ipv4, ipv6 or onion)"),
 QT_TRANSLATE_NOOP("zenzo-core", "Options:"),
 QT_TRANSLATE_NOOP("zenzo-core", "Password for JSON-RPC connections"),
-QT_TRANSLATE_NOOP("zenzo-core", "Percentage of automatically minted Zerocoin  (10-100, default: %u)"),
 QT_TRANSLATE_NOOP("zenzo-core", "Preparing for resync..."),
 QT_TRANSLATE_NOOP("zenzo-core", "Prepend debug output with timestamp (default: %u)"),
 QT_TRANSLATE_NOOP("zenzo-core", "Print version and exit"),
@@ -397,10 +389,8 @@ QT_TRANSLATE_NOOP("zenzo-core", "Recalculating supply statistics may take 30-60 
 QT_TRANSLATE_NOOP("zenzo-core", "Receive and display P2P network alerts (default: %u)"),
 QT_TRANSLATE_NOOP("zenzo-core", "Relay and mine data carrier transactions (default: %u)"),
 QT_TRANSLATE_NOOP("zenzo-core", "Relay non-P2SH multisig (default: %u)"),
-QT_TRANSLATE_NOOP("zenzo-core", "Rescan the block chain for missing wallet transactions"),
+QT_TRANSLATE_NOOP("zenzo-core", "Rescan the blockchain for missing wallet transactions"),
 QT_TRANSLATE_NOOP("zenzo-core", "Rescanning..."),
-QT_TRANSLATE_NOOP("zenzo-core", "ResetMintZerocoin finished: "),
-QT_TRANSLATE_NOOP("zenzo-core", "ResetSpentZerocoin finished: "),
 QT_TRANSLATE_NOOP("zenzo-core", "Run a thread to flush wallet periodically (default: %u)"),
 QT_TRANSLATE_NOOP("zenzo-core", "Run in the background as a daemon and accept commands"),
 QT_TRANSLATE_NOOP("zenzo-core", "Send transactions as zero-fee transactions if possible (default: %u)"),
@@ -487,7 +477,6 @@ QT_TRANSLATE_NOOP("zenzo-core", "Your entries added successfully."),
 QT_TRANSLATE_NOOP("zenzo-core", "Your transaction was accepted into the pool!"),
 QT_TRANSLATE_NOOP("zenzo-core", "Zapping all transactions from wallet..."),
 QT_TRANSLATE_NOOP("zenzo-core", "ZeroMQ notification options:"),
-QT_TRANSLATE_NOOP("zenzo-core", "Zerocoin options:"),
 QT_TRANSLATE_NOOP("zenzo-core", "failed to validate zerocoin"),
 QT_TRANSLATE_NOOP("zenzo-core", "on startup"),
 QT_TRANSLATE_NOOP("zenzo-core", "wallet.dat corrupt, salvage failed"),

@@ -69,7 +69,6 @@ public:
     void removeAllWallets();
 #endif // ENABLE_WALLET
     bool enableWallet;
-    bool enableZerocoin;
     bool fMultiSend = false;
 
 protected:

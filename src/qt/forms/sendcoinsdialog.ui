@@ -1702,16 +1702,6 @@
               <number>3</number>
              </property>
              <item>
-              <widget class="QCheckBox" name="checkzZNZ">
-               <property name="enabled">
-                <bool>false</bool>
-               </property>
-               <property name="text">
-                <string>Anonymized ZNZ</string>
-               </property>
-              </widget>
-             </item>
-             <item>
               <widget class="QCheckBox" name="checkSwiftTX">
                <property name="enabled">
                 <bool>true</bool>
