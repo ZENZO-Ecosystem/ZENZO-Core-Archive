@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2014-2015 The Dash developers
+// Copyright (c) 2009-2019 The Bitcoin developers
+// Copyright (c) 2014-2019 The Dash developers
 // Copyright (c) 2015-2019 The PIVX developers
 // Copyright (c) 2018-2019 The ZENZO developers
 // Distributed under the MIT software license, see the accompanying
@@ -1618,6 +1618,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
         uiInterface.NotifyBlockTip.connect(BlockNotifyCallback);
 
     // scan for better chains in the block chain database, that are not yet connected in the active best chain
+    uiInterface.InitMessage(_("Activating best chain..."));
     CValidationState state;
     if (!ActivateBestChain(state))
         strErrors << "Failed to connect best block";
