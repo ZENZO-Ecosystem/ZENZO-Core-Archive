@@ -20,6 +20,7 @@ TransactionDescDialog::TransactionDescDialog(const QModelIndex& idx, QWidget* pa
     /* Open CSS when configured */
     this->setStyleSheet(GUIUtil::loadStyleSheet());
 
+    setWindowTitle(tr("Details for %1").arg(idx.data(TransactionTableModel::TxIDRole).toString()));
     QString desc = idx.data(TransactionTableModel::LongDescriptionRole).toString();
     ui->detailText->setHtml(desc);
 }
