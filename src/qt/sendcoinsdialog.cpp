@@ -460,6 +460,7 @@ SendCoinsEntry* SendCoinsDialog::addEntry()
     entry->setModel(model);
     ui->entries->addWidget(entry);
     connect(entry, SIGNAL(removeEntry(SendCoinsEntry*)), this, SLOT(removeEntry(SendCoinsEntry*)));
+	connect(entry, SIGNAL(useAvailableBalance(SendCoinsEntry*)), this, SLOT(useAvailableBalance(SendCoinsEntry*)));
     connect(entry, SIGNAL(payAmountChanged()), this, SLOT(coinControlUpdateLabels()));
 
     updateTabsAndLabels();
@@ -631,7 +632,7 @@ void SendCoinsDialog::processSendCoinsReturn(const WalletModel::SendCoinsReturn&
         if(!fPrepare)
             fAskForUnlock = true;
         else
-            msgParams.first = tr("Error: The wallet was unlocked only to anonymize coins.");
+            msgParams.first = tr("Error: The wallet was unlocked only to stake coins.");
         break;
 
     case WalletModel::InsaneFee:
@@ -647,7 +648,7 @@ void SendCoinsDialog::processSendCoinsReturn(const WalletModel::SendCoinsReturn&
     if(fAskForUnlock) {
         model->requestUnlock(false);
         if(model->getEncryptionStatus () != WalletModel::Unlocked) {
-            msgParams.first = tr("Error: The wallet was unlocked only to anonymize coins. Unlock canceled.");
+            msgParams.first = tr("Error: The wallet was unlocked only to stake coins. Unlock canceled.");
         }
         else {
             // Wallet unlocked
@@ -677,6 +678,37 @@ void SendCoinsDialog::on_buttonMinimizeFee_clicked()
 {
     updateFeeMinimizedLabel();
     minimizeFeeSection(true);
+}
+
+void SendCoinsDialog::useAvailableBalance(SendCoinsEntry* entry)
+{
+    setMinimumFee();
+
+    // Get CCoinControl instance if CoinControl is enabled or create a new one.
+    CCoinControl coin_control;
+    if (model->getOptionsModel()->getCoinControlFeatures()) {
+        coin_control = *CoinControlDialog::coinControl;
+    }
+
+    vector<COutput> availOutputs;
+    assert(pwalletMain != NULL);
+    pwalletMain->AvailableCoins(availOutputs, false);
+
+    // Calculate available amount to send.
+    CAmount amount = model->getBalance(&coin_control);
+    for (int i = 0; i < ui->entries->count(); ++i) {
+        SendCoinsEntry* e = qobject_cast<SendCoinsEntry*>(ui->entries->itemAt(i)->widget());
+        if (e && !e->isHidden() && e != entry) {
+            amount -= e->getValue().amount;
+        }
+    }
+
+    if (amount > 0) {
+	  amount -= CWallet::minTxFee.GetFeePerK() * availOutputs.size();
+      entry->setAmount(amount);
+    } else {
+      entry->setAmount(0);
+    }
 }
 
 void SendCoinsDialog::setMinimumFee()
@@ -771,7 +803,7 @@ void SendCoinsDialog::splitBlockChecked(int state)
 //UTXO splitter
 void SendCoinsDialog::splitBlockLineEditChanged(const QString& text)
 {
-    //grab the amount in Coin Control AFter Fee field
+    //grab the amount in Coin Control After Fee field
     QString qAfterFee = ui->labelCoinControlAfterFee->text().left(ui->labelCoinControlAfterFee->text().indexOf(" ")).replace("~", "").simplified().replace(" ", "");
 
     //convert to CAmount

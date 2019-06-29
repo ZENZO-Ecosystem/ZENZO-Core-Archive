@@ -30,6 +30,42 @@
     <property name="spacing">
      <number>12</number>
     </property>
+    <item row="2" column="0">
+     <widget class="QLabel" name="amountLabel">
+      <property name="text">
+       <string>A&amp;mount:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+      <property name="buddy">
+       <cstring>payAmount</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="messageLabel">
+      <property name="text">
+       <string>Message:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLabel" name="messageTextLabel">
+      <property name="toolTip">
+       <string>A message that was attached to the ZENZO: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the ZENZO network.</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::PlainText</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="BitcoinAmountField" name="payAmount"/>
+    </item>
     <item row="0" column="0">
      <widget class="QLabel" name="payToLabel">
       <property name="text">
@@ -43,7 +79,34 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="1">
+    <item row="1" column="0">
+     <widget class="QLabel" name="labelLabel">
+      <property name="text">
+       <string>&amp;Label:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+      <property name="buddy">
+       <cstring>addAsLabel</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QPushButton" name="useAvailableBalanceButton">
+      <property name="text">
+       <string>Use available balance</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1" colspan="2">
+     <widget class="QLineEdit" name="addAsLabel">
+      <property name="toolTip">
+       <string>Enter a label for this address to add it to the list of used addresses</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1" colspan="2">
      <layout class="QHBoxLayout" name="payToLayout">
       <property name="spacing">
        <number>0</number>
@@ -114,62 +177,6 @@
       </item>
      </layout>
     </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="labelLabel">
-      <property name="text">
-       <string>&amp;Label:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>addAsLabel</cstring>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="addAsLabel">
-      <property name="toolTip">
-       <string>Enter a label for this address to add it to the list of used addresses</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="amountLabel">
-      <property name="text">
-       <string>A&amp;mount:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>payAmount</cstring>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="BitcoinAmountField" name="payAmount"/>
-    </item>
-    <item row="3" column="0">
-     <widget class="QLabel" name="messageLabel">
-      <property name="text">
-       <string>Message:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QLabel" name="messageTextLabel">
-      <property name="toolTip">
-       <string>A message that was attached to the ZENZO: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the ZENZO network.</string>
-      </property>
-      <property name="textFormat">
-       <enum>Qt::PlainText</enum>
-      </property>
-     </widget>
-    </item>
    </layout>
   </widget>
   <widget class="QFrame" name="SendCoins_InsecurePaymentRequest">
@@ -231,8 +238,8 @@
        </brush>
       </colorrole>
       <colorrole role="Text">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
+       <brush brushstyle="NoBrush">
+        <color alpha="128">
          <red>0</red>
          <green>0</green>
          <blue>0</blue>
@@ -305,15 +312,6 @@
       <colorrole role="ToolTipText">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-       </brush>
-      </colorrole>
-      <colorrole role="Text">
-       <brush brushstyle="NoBrush">
-        <color alpha="128">
          <red>0</red>
          <green>0</green>
          <blue>0</blue>
@@ -377,8 +375,8 @@
        </brush>
       </colorrole>
       <colorrole role="Text">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
+       <brush brushstyle="NoBrush">
+        <color alpha="128">
          <red>0</red>
          <green>0</green>
          <blue>0</blue>
@@ -451,15 +449,6 @@
       <colorrole role="ToolTipText">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-       </brush>
-      </colorrole>
-      <colorrole role="Text">
-       <brush brushstyle="NoBrush">
-        <color alpha="128">
          <red>0</red>
          <green>0</green>
          <blue>0</blue>
@@ -523,11 +512,11 @@
        </brush>
       </colorrole>
       <colorrole role="Text">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>127</red>
-         <green>127</green>
-         <blue>63</blue>
+       <brush brushstyle="NoBrush">
+        <color alpha="128">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
         </color>
        </brush>
       </colorrole>
@@ -597,15 +586,6 @@
       <colorrole role="ToolTipText">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-       </brush>
-      </colorrole>
-      <colorrole role="Text">
-       <brush brushstyle="NoBrush">
-        <color alpha="128">
          <red>0</red>
          <green>0</green>
          <blue>0</blue>
@@ -763,8 +743,8 @@
        </brush>
       </colorrole>
       <colorrole role="Text">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
+       <brush brushstyle="NoBrush">
+        <color alpha="128">
          <red>0</red>
          <green>0</green>
          <blue>0</blue>
@@ -846,15 +826,6 @@
       <colorrole role="ToolTipText">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-       </brush>
-      </colorrole>
-      <colorrole role="Text">
-       <brush brushstyle="NoBrush">
-        <color alpha="128">
          <red>0</red>
          <green>0</green>
          <blue>0</blue>
@@ -918,8 +889,8 @@
        </brush>
       </colorrole>
       <colorrole role="Text">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
+       <brush brushstyle="NoBrush">
+        <color alpha="128">
          <red>0</red>
          <green>0</green>
          <blue>0</blue>
@@ -1007,15 +978,6 @@
         </color>
        </brush>
       </colorrole>
-      <colorrole role="Text">
-       <brush brushstyle="NoBrush">
-        <color alpha="128">
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-       </brush>
-      </colorrole>
      </inactive>
      <disabled>
       <colorrole role="WindowText">
@@ -1073,11 +1035,11 @@
        </brush>
       </colorrole>
       <colorrole role="Text">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>70</red>
-         <green>116</green>
-         <blue>59</blue>
+       <brush brushstyle="NoBrush">
+        <color alpha="128">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
         </color>
        </brush>
       </colorrole>
@@ -1156,15 +1118,6 @@
       <colorrole role="ToolTipText">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-       </brush>
-      </colorrole>
-      <colorrole role="Text">
-       <brush brushstyle="NoBrush">
-        <color alpha="128">
          <red>0</red>
          <green>0</green>
          <blue>0</blue>

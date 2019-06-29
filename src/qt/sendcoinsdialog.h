@@ -78,6 +78,7 @@ private slots:
     void on_buttonChooseFee_clicked();
     void on_buttonMinimizeFee_clicked();
     void removeEntry(SendCoinsEntry* entry);
+    void useAvailableBalance(SendCoinsEntry* entry);
     void updateDisplayUnit();
     void updateSwiftTX();
     void coinControlFeatureChanged(bool);
