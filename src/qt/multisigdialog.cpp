@@ -697,7 +697,7 @@ void MultisigDialog::commitMultisigTx()
                     throw runtime_error(string("Transaction rejected - ") + state.GetRejectReason());
             }
         } else if (fHaveChain) {
-            throw runtime_error("transaction already in block chain");
+            throw runtime_error("transaction already in blockchain");
         }
         RelayTransaction(tx);
 #endif

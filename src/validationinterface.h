@@ -48,7 +48,7 @@ protected:
 };
 
 struct CMainSignals {
-    /** Notifies listeners of updated block chain tip */
+    /** Notifies listeners of updated blockchain tip */
     boost::signals2::signal<void (const CBlockIndex *)> UpdatedBlockTip;
     /** Notifies listeners of updated transaction data (transaction, and optionally the block it is found in. */
     boost::signals2::signal<void (const CTransaction &, const CBlock *)> SyncTransaction;
@@ -56,7 +56,7 @@ struct CMainSignals {
     boost::signals2::signal<void (const CTransaction &)> NotifyTransactionLock;
     /** Notifies listeners of an updated transaction without new data (for now: a coinbase potentially becoming visible). */
     boost::signals2::signal<bool (const uint256 &)> UpdatedTransaction;
-    /** Notifies listeners of a new active block chain. */
+    /** Notifies listeners of a new active blockchain. */
     boost::signals2::signal<void (const CBlockLocator &)> SetBestChain;
     /** Notifies listeners about an inventory item being seen on the network. */
     boost::signals2::signal<void (const uint256 &)> Inventory;

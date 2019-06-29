@@ -275,7 +275,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Block chain</string>
+          <string>blockchain</string>
          </property>
         </widget>
        </item>
@@ -1465,7 +1465,7 @@
        <item row="8" column="3">
         <widget class="QLabel" name="label_repair_rescan">
          <property name="text">
-          <string>Rescan the block chain for missing wallet transactions.</string>
+          <string>Rescan the blockchain for missing wallet transactions.</string>
          </property>
          <property name="wordWrap">
           <bool>true</bool>
@@ -1597,7 +1597,7 @@
        <item row="12" column="3">
         <widget class="QLabel" name="label_repair_reindex">
          <property name="text">
-          <string>Rebuild block chain index from current blk000??.dat files.</string>
+          <string>Rebuild blockchain index from current blk000??.dat files.</string>
          </property>
          <property name="wordWrap">
           <bool>true</bool>
