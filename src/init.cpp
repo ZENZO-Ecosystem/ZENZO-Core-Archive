@@ -529,6 +529,9 @@ std::string HelpMessage(HelpMessageMode mode)
 
 std::string LicenseInfo()
 {
+    const std::string URL_SOURCE_CODE = "<https://github.com/ZENZO-Ecosystem/ZENZO-Core>";
+    const std::string URL_WEBSITE = "<https://zenzo.io>";
+
     return FormatParagraph(strprintf(_("Copyright (C) 2009-%i The Bitcoin Core Developers"), COPYRIGHT_YEAR)) + "\n" +
            "\n" +
            FormatParagraph(strprintf(_("Copyright (C) 2014-%i The Dash Core Developers"), COPYRIGHT_YEAR)) + "\n" +
@@ -537,7 +540,15 @@ std::string LicenseInfo()
            "\n" +
            FormatParagraph(strprintf(_("Copyright (C) 2018-%i The ZENZO Core Developers"), COPYRIGHT_YEAR)) + "\n" +
            "\n" +
-           FormatParagraph(_("This is experimental software.")) + "\n" +
+           strprintf(_("Please contribute if you find ZENZO Core useful. "
+                       "Visit %s for further information about the software."),
+                       URL_WEBSITE) +
+                       "\n" +
+                       strprintf(_("The source code is available from %s."),
+                       URL_SOURCE_CODE) +
+                       "\n" +
+                       "\n" +
+                       _("This is experimental software.") + "\n" +
            "\n" +
            FormatParagraph(_("Distributed under the MIT software license, see the accompanying file COPYING or <http://www.opensource.org/licenses/mit-license.php>.")) + "\n" +
            "\n" +
