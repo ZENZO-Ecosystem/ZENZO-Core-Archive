@@ -171,7 +171,7 @@ void OverviewPage::updateWallet()
     QObject* button = QObject::sender();
     if (button == ui->buttonUpgrade)
     {
-      QUrl url("https://github.com/Zenzo-Ecosystem/ZENZO-Core/releases");
+      QUrl url("https://github.com/ZENZO-Ecosystem/ZENZO-Core/releases");
       QDesktopServices::openUrl(url);
     }
 }
