@@ -32,10 +32,10 @@ SendCoinsEntry::SendCoinsEntry(QWidget* parent) : QStackedWidget(parent),
     ui->addAsLabel->setPlaceholderText(tr("Enter a label for this address to add it to your address book"));
 #endif
 
-    // normal zenzo address field
+    // Normal ZENZO address field
     GUIUtil::setupAddressWidget(ui->payTo, this);
-    // just a label for displaying zenzo address(es)
-    ui->payTo_is->setFont(GUIUtil::bitcoinAddressFont());
+    // Just a label for displaying ZENZO address(es)
+    ui->payTo_is->setFont(GUIUtil::fixedPitchFont());
 
     // Connect signals
     connect(ui->payAmount, SIGNAL(valueChanged()), this, SIGNAL(payAmountChanged()));

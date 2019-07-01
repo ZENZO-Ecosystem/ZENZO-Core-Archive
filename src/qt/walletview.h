@@ -1,4 +1,5 @@
-// Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2011-2019 The Bitcoin developers
+// Copyright (c) 2018-2019 The ZENZO developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,6 +14,7 @@
 class BitcoinGUI;
 class ClientModel;
 class OverviewPage;
+class PlatformStyle;
 class ReceiveCoinsDialog;
 class SendCoinsDialog;
 class SendCoinsRecipient;
@@ -37,7 +39,7 @@ class WalletView : public QStackedWidget
     Q_OBJECT
 
 public:
-    explicit WalletView(QWidget* parent);
+    explicit WalletView(const PlatformStyle *platformStyle, QWidget* parent);
     ~WalletView();
 
     void setBitcoinGUI(BitcoinGUI* gui);
@@ -70,6 +72,8 @@ private:
 
     QProgressDialog* progressDialog;
     QLabel* transactionSum;
+
+    const PlatformStyle *platformStyle;
 
 public slots:
     /** Switch to overview (home) page */

@@ -15,6 +15,7 @@
 #include <QCompleter>
 
 class ClientModel;
+class PlatformStyle;
 
 namespace Ui
 {
@@ -32,7 +33,7 @@ class RPCConsole : public QWidget
     Q_OBJECT
 
 public:
-    explicit RPCConsole(QWidget* parent);
+    explicit RPCConsole(const PlatformStyle *platformStyle, QWidget* parent);
     ~RPCConsole();
 
     void setClientModel(ClientModel* model);
@@ -82,6 +83,11 @@ public slots:
     void walletReindex();
     void walletResync();
 
+    /** Customize console font size */
+    void fontBigger();
+    void fontSmaller();
+    void setFontSize(int newSize);
+    /** Append the message to the message widget */
     void message(int category, const QString& message, bool html = false);
     /** Set number of connections shown in the UI */
     void setNumConnections(int count);
@@ -148,7 +154,9 @@ private:
     ClientModel* clientModel;
     QStringList history;
     int historyPtr;
+    int consoleFontSize;
     NodeId cachedNodeid;
+    const PlatformStyle *platformStyle;
     QCompleter *autoCompleter;
     QMenu *peersTableContextMenu;
     QMenu *banTableContextMenu;

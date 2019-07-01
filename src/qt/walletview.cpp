@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2011-2019 The Bitcoin developers
 // Copyright (c) 2018-2019 The ZENZO developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -17,6 +17,7 @@
 #include "multisigdialog.h"
 #include "optionsmodel.h"
 #include "overviewpage.h"
+#include "platformstyle.h"
 #include "receivecoinsdialog.h"
 #include "sendcoinsdialog.h"
 #include "signverifymessagedialog.h"
@@ -36,9 +37,10 @@
 #include <QSettings>
 #include <QVBoxLayout>
 
-WalletView::WalletView(QWidget* parent) : QStackedWidget(parent),
+WalletView::WalletView(const PlatformStyle *platformStyle, QWidget* parent) : QStackedWidget(parent),
                                           clientModel(0),
-                                          walletModel(0)
+                                          walletModel(0),
+                                          platformStyle(platformStyle)
 {
     // Create tabs
     overviewPage = new OverviewPage();
