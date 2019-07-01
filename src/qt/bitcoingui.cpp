@@ -18,7 +18,7 @@
 #include "optionsdialog.h"
 #include "optionsmodel.h"
 #include "rpcconsole.h"
-#include "rpcserver.h"
+#include "rpc/server.h"
 #include "utilitydialog.h"
 
 #ifdef ENABLE_WALLET
