@@ -77,9 +77,9 @@
      <widget class="QLabel" name="sizeWarningLabel">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>19</x>
         <y>140</y>
-        <width>400</width>
+        <width>391</width>
         <height>131</height>
        </rect>
       </property>
@@ -101,9 +101,9 @@ Thanks for downloading the ZENZO Wallet and welcome to the ZENZO Ecosystem!</str
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>20</x>
         <y>30</y>
-        <width>371</width>
+        <width>361</width>
         <height>91</height>
        </rect>
       </property>
