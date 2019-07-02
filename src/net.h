@@ -764,8 +764,6 @@ public:
     bool Read(banmap_t& banSet);
 };
 
-void DumpBanlist();
-
 /* Decentralized Version Manager functions */
 int CheckForUpdates(std::string addr, std::string ver);
 void replaceAll(std::string& str, const std::string& from, const std::string& to);

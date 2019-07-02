@@ -509,19 +509,12 @@ Value setban(const Array& params, bool fHelp)
             absolute = true;
 
         isSubnet ? CNode::Ban(subNet, BanReasonManuallyAdded, banTime, absolute) : CNode::Ban(netAddr, BanReasonManuallyAdded, banTime, absolute);
-
-        // Disconnect possible nodes
-        while(CNode *bannedNode = (isSubnet ? FindNode(subNet) : FindNode(netAddr)))
-            bannedNode->fDisconnect = true;
     }
     else if(strCommand == "remove")
     {
         if (!( isSubnet ? CNode::Unban(subNet) : CNode::Unban(netAddr) ))
             throw JSONRPCError(RPC_MISC_ERROR, "Error: Unban failed");
     }
-    
-    DumpBanlist(); // Store banlist to disk
-    uiInterface.BannedListChanged();
 
     return true;
 }
@@ -567,8 +560,6 @@ Value clearbanned(const Array& params, bool fHelp)
                             );
 
     CNode::ClearBanned();
-    DumpBanlist(); // Store banlist to disk
-    uiInterface.BannedListChanged();
 
     return true;
 }
