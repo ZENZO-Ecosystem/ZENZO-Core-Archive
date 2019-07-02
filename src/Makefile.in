@@ -528,8 +528,7 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/res/icons/remove.png qt/res/icons/send.png \
 	qt/res/icons/staking_active.png \
 	qt/res/icons/staking_inactive.png qt/res/icons/synced.png \
-	qt/res/icons/trade.png qt/res/icons/transaction0.png \
-	qt/res/icons/transaction2.png \
+	qt/res/icons/transaction0.png qt/res/icons/transaction2.png \
 	qt/res/icons/transaction_conflicted.png \
 	qt/res/icons/tx_inout.png qt/res/icons/tx_input.png \
 	qt/res/icons/tx_output.png qt/res/icons/tx_mined.png \
@@ -2267,7 +2266,6 @@ EXTRA_DIST = leveldb $(am__append_18)
 @ENABLE_QT_TRUE@  qt/res/icons/staking_active.png \
 @ENABLE_QT_TRUE@  qt/res/icons/staking_inactive.png \
 @ENABLE_QT_TRUE@  qt/res/icons/synced.png \
-@ENABLE_QT_TRUE@  qt/res/icons/trade.png \
 @ENABLE_QT_TRUE@  qt/res/icons/transaction0.png \
 @ENABLE_QT_TRUE@  qt/res/icons/transaction2.png \
 @ENABLE_QT_TRUE@  qt/res/icons/transaction_conflicted.png \
