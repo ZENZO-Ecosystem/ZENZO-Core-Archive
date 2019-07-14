@@ -1438,6 +1438,8 @@ void ThreadOpenConnections()
 
 void ThreadOpenAddedConnections()
 {
+    // Change seednodes depending on network type
+    bool isTestnet = GetBoolArg("-testnet", false);
     {
         LOCK(cs_vAddedNodes);
         vAddedNodes = mapMultiArgs["-addnode"];
@@ -1448,11 +1450,13 @@ void ThreadOpenAddedConnections()
             std::list<std::string> lAddresses(0);
 
             /* Kitty's seednodes list */
-            lAddresses.push_back("195.206.181.235:26210"); // Unused Server
-            lAddresses.push_back("160.20.147.226:26210"); // ZENZO Arcade Server
-            lAddresses.push_back("109.230.215.134:26210"); // Old ZENZO Arcade Server
-            lAddresses.push_back("23.82.128.40:26210"); // PIVX Radio
-            lAddresses.push_back("160.20.147.220:26210"); // Germany Seednode
+            if (!isTestnet) {
+                lAddresses.push_back("195.206.181.235:26210"); // Unused Server
+                lAddresses.push_back("160.20.147.226:26210"); // ZENZO Arcade Server
+                lAddresses.push_back("109.230.215.134:26210"); // Old ZENZO Arcade Server
+                lAddresses.push_back("23.82.128.40:26210"); // PIVX Radio
+                lAddresses.push_back("160.20.147.220:26210"); // Germany Seednode
+            }
 
             {
                 LOCK(cs_vAddedNodes);
@@ -1473,11 +1477,13 @@ void ThreadOpenAddedConnections()
         std::list<std::string> lAddresses(0);
 
         /* Kitty's seednodes list */
-        lAddresses.push_back("195.206.181.235:26210"); // Unused Server
-        lAddresses.push_back("160.20.147.226:26210"); // ZENZO Arcade Server
-        lAddresses.push_back("109.230.215.134:26210"); // Old ZENZO Arcade Server
-        lAddresses.push_back("23.82.128.40:26210"); // PIVX Radio
-        lAddresses.push_back("160.20.147.220:26210"); // Germany Seednode
+        if (!isTestnet) {
+            lAddresses.push_back("195.206.181.235:26210"); // Unused Server
+            lAddresses.push_back("160.20.147.226:26210"); // ZENZO Arcade Server
+            lAddresses.push_back("109.230.215.134:26210"); // Old ZENZO Arcade Server
+            lAddresses.push_back("23.82.128.40:26210"); // PIVX Radio
+            lAddresses.push_back("160.20.147.220:26210"); // Germany Seednode
+        }
 
         {
             LOCK(cs_vAddedNodes);
