@@ -117,6 +117,56 @@ void setupAddressWidget(QValidatedLineEdit* widget, QWidget* parent)
     widget->setCheckValidator(new BitcoinAddressCheckValidator(parent));
 }
 
+void setupAliasWidget(QValidatedLineEdit* widget, QWidget* parent)
+{
+    parent->setFocusProxy(widget);
+
+    widget->setFont(fixedPitchFont());
+#if QT_VERSION >= 0x040700
+    widget->setPlaceholderText(QObject::tr("Enter a Masternode Alias (e.g. %1)").arg("mn1"));
+#endif
+}
+
+void setupIPWidget(QValidatedLineEdit* widget, QWidget* parent)
+{
+    parent->setFocusProxy(widget);
+
+    widget->setFont(fixedPitchFont());
+#if QT_VERSION >= 0x040700
+    widget->setPlaceholderText(QObject::tr("Enter a VPS IP (e.g. %1)").arg("127.0.0.2:26210"));
+#endif
+}
+
+void setupPrivKeyWidget(QValidatedLineEdit* widget, QWidget* parent)
+{
+    parent->setFocusProxy(widget);
+
+    widget->setFont(fixedPitchFont());
+#if QT_VERSION >= 0x040700
+    widget->setPlaceholderText(QObject::tr("Enter a Private Key (e.g. %1)").arg("93HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xt"));
+#endif
+}
+
+void setupTXIDWidget(QValidatedLineEdit* widget, QWidget* parent)
+{
+    parent->setFocusProxy(widget);
+
+    widget->setFont(fixedPitchFont());
+#if QT_VERSION >= 0x040700
+    widget->setPlaceholderText(QObject::tr("Enter a TX Output (e.g. %1)").arg("2bcd3c84c84f87eaa86e4e56834c92937a07f9e18718810b92e0d0324456a57c"));
+#endif
+}
+
+void setupTXIDIndexWidget(QValidatedLineEdit* widget, QWidget* parent)
+{
+    parent->setFocusProxy(widget);
+
+    widget->setFont(fixedPitchFont());
+#if QT_VERSION >= 0x040700
+    widget->setPlaceholderText(QObject::tr("Enter a TX Index (e.g. %1)").arg("1"));
+#endif
+}
+
 void setupAmountWidget(QLineEdit* widget, QWidget* parent)
 {
     QDoubleValidator* amountValidator = new QDoubleValidator(parent);
@@ -128,7 +178,7 @@ void setupAmountWidget(QLineEdit* widget, QWidget* parent)
 
 bool parseBitcoinURI(const QUrl& uri, SendCoinsRecipient* out)
 {
-    // return if URI is not valid or is no Zenzo: URI
+    // return if URI is not valid or is no zenzo: URI
     if (!uri.isValid() || uri.scheme() != QString(URI_SCHEME))
         return false;
 

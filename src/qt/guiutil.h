@@ -44,6 +44,11 @@ QFont fixedPitchFont();
 
 // Set up widgets for address and amounts
 void setupAddressWidget(QValidatedLineEdit* widget, QWidget* parent);
+void setupAliasWidget(QValidatedLineEdit* widget, QWidget* parent);
+void setupIPWidget(QValidatedLineEdit* widget, QWidget* parent);
+void setupPrivKeyWidget(QValidatedLineEdit* widget, QWidget* parent);
+void setupTXIDWidget(QValidatedLineEdit* widget, QWidget* parent);
+void setupTXIDIndexWidget(QValidatedLineEdit* widget, QWidget* parent);
 void setupAmountWidget(QLineEdit* widget, QWidget* parent);
 
 // Parse "zenzo:" URI into recipient object, return true on successful parsing

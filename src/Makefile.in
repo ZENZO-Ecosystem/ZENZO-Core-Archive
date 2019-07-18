@@ -139,6 +139,9 @@ TESTS = $(am__EXEEXT_6) $(am__EXEEXT_5)
 @ENABLE_QT_TRUE@am__append_24 = qt/libbitcoinqt.a
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@am__append_25 = \
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@  qt/addressbookpage.cpp \
+@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@  qt/privkeypage.cpp \
+@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@  qt/outputspage.cpp \
+@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@  qt/configuremasternodepage.cpp \
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@  qt/addresstablemodel.cpp \
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@  qt/askpassphrasedialog.cpp \
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@  qt/bip38tooldialog.cpp \
@@ -442,11 +445,12 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/rpcconsole.cpp qt/splashscreen.cpp qt/trafficgraphdata.cpp \
 	qt/trafficgraphwidget.cpp qt/utilitydialog.cpp \
 	qt/winshutdownmonitor.cpp qt/addressbookpage.cpp \
-	qt/addresstablemodel.cpp qt/askpassphrasedialog.cpp \
-	qt/bip38tooldialog.cpp qt/coincontroldialog.cpp \
-	qt/coincontroltreewidget.cpp qt/editaddressdialog.cpp \
-	qt/multisenddialog.cpp qt/multisigdialog.cpp \
-	qt/openuridialog.cpp qt/overviewpage.cpp \
+	qt/privkeypage.cpp qt/outputspage.cpp \
+	qt/configuremasternodepage.cpp qt/addresstablemodel.cpp \
+	qt/askpassphrasedialog.cpp qt/bip38tooldialog.cpp \
+	qt/coincontroldialog.cpp qt/coincontroltreewidget.cpp \
+	qt/editaddressdialog.cpp qt/multisenddialog.cpp \
+	qt/multisigdialog.cpp qt/openuridialog.cpp qt/overviewpage.cpp \
 	qt/paymentrequestplus.cpp qt/paymentserver.cpp \
 	qt/receivecoinsdialog.cpp qt/receiverequestdialog.cpp \
 	qt/recentrequeststablemodel.cpp qt/sendcoinsdialog.cpp \
@@ -456,7 +460,8 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/transactiontablemodel.cpp qt/transactionview.cpp \
 	qt/walletframe.cpp qt/walletmodel.cpp \
 	qt/walletmodeltransaction.cpp qt/walletview.cpp \
-	qt/addressbookpage.h qt/addresstablemodel.h \
+	qt/addressbookpage.h qt/privkeypage.h qt/outputspage.h \
+	qt/configuremasternodepage.h qt/addresstablemodel.h \
 	qt/askpassphrasedialog.h qt/bantablemodel.h \
 	qt/bip38tooldialog.h qt/bitcoinaddressvalidator.h \
 	qt/bitcoinamountfield.h qt/bitcoingui.h qt/bitcoinunits.h \
@@ -480,6 +485,8 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/utilitydialog.h qt/walletframe.h qt/walletmodel.h \
 	qt/walletmodeltransaction.h qt/walletview.h \
 	qt/winshutdownmonitor.h qt/forms/addressbookpage.ui \
+	qt/forms/privkeypage.ui qt/forms/outputspage.ui \
+	qt/forms/configuremasternodepage.ui \
 	qt/forms/askpassphrasedialog.ui qt/forms/bip38tooldialog.ui \
 	qt/forms/coincontroldialog.ui qt/forms/blockexplorer.ui \
 	qt/forms/editaddressdialog.ui qt/forms/helpmessagedialog.ui \
@@ -548,6 +555,9 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/res/css/default.css $(wildcard \
 	$(srcdir)/qt/res/movies/spinner-*.png)
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@am__objects_3 = qt/qt_libbitcoinqt_a-addressbookpage.$(OBJEXT) \
+@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@	qt/qt_libbitcoinqt_a-privkeypage.$(OBJEXT) \
+@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@	qt/qt_libbitcoinqt_a-outputspage.$(OBJEXT) \
+@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@	qt/qt_libbitcoinqt_a-configuremasternodepage.$(OBJEXT) \
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@	qt/qt_libbitcoinqt_a-addresstablemodel.$(OBJEXT) \
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@	qt/qt_libbitcoinqt_a-askpassphrasedialog.$(OBJEXT) \
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@	qt/qt_libbitcoinqt_a-bip38tooldialog.$(OBJEXT) \
@@ -612,6 +622,9 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 @ENABLE_QT_TRUE@	$(am__objects_1) $(am__objects_1) \
 @ENABLE_QT_TRUE@	$(am__objects_1) $(am__objects_1)
 @ENABLE_QT_TRUE@am__objects_5 = qt/qt_libbitcoinqt_a-moc_addressbookpage.$(OBJEXT) \
+@ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-moc_privkeypage.$(OBJEXT) \
+@ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-moc_outputspage.$(OBJEXT) \
+@ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-moc_configuremasternodepage.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-moc_addresstablemodel.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-moc_askpassphrasedialog.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-moc_bantablemodel.$(OBJEXT) \
@@ -2071,6 +2084,9 @@ EXTRA_DIST = leveldb $(am__append_18)
 
 @ENABLE_QT_TRUE@QT_FORMS_UI = \
 @ENABLE_QT_TRUE@  qt/forms/addressbookpage.ui \
+@ENABLE_QT_TRUE@  qt/forms/privkeypage.ui \
+@ENABLE_QT_TRUE@  qt/forms/outputspage.ui \
+@ENABLE_QT_TRUE@  qt/forms/configuremasternodepage.ui \
 @ENABLE_QT_TRUE@  qt/forms/askpassphrasedialog.ui \
 @ENABLE_QT_TRUE@  qt/forms/bip38tooldialog.ui \
 @ENABLE_QT_TRUE@  qt/forms/coincontroldialog.ui \
@@ -2094,6 +2110,9 @@ EXTRA_DIST = leveldb $(am__append_18)
 
 @ENABLE_QT_TRUE@QT_MOC_CPP = \
 @ENABLE_QT_TRUE@  qt/moc_addressbookpage.cpp \
+@ENABLE_QT_TRUE@  qt/moc_privkeypage.cpp \
+@ENABLE_QT_TRUE@  qt/moc_outputspage.cpp \
+@ENABLE_QT_TRUE@  qt/moc_configuremasternodepage.cpp \
 @ENABLE_QT_TRUE@  qt/moc_addresstablemodel.cpp \
 @ENABLE_QT_TRUE@  qt/moc_askpassphrasedialog.cpp \
 @ENABLE_QT_TRUE@  qt/moc_bantablemodel.cpp \
@@ -2163,6 +2182,9 @@ EXTRA_DIST = leveldb $(am__append_18)
 @ENABLE_QT_TRUE@PROTOBUF_PROTO = qt/paymentrequest.proto
 @ENABLE_QT_TRUE@BITCOIN_QT_H = \
 @ENABLE_QT_TRUE@  qt/addressbookpage.h \
+@ENABLE_QT_TRUE@  qt/privkeypage.h \
+@ENABLE_QT_TRUE@  qt/outputspage.h \
+@ENABLE_QT_TRUE@  qt/configuremasternodepage.h \
 @ENABLE_QT_TRUE@  qt/addresstablemodel.h \
 @ENABLE_QT_TRUE@  qt/askpassphrasedialog.h \
 @ENABLE_QT_TRUE@  qt/bantablemodel.h \
@@ -2703,6 +2725,12 @@ qt/qt_libbitcoinqt_a-winshutdownmonitor.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
 qt/qt_libbitcoinqt_a-addressbookpage.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
+qt/qt_libbitcoinqt_a-privkeypage.$(OBJEXT): qt/$(am__dirstamp) \
+	qt/$(DEPDIR)/$(am__dirstamp)
+qt/qt_libbitcoinqt_a-outputspage.$(OBJEXT): qt/$(am__dirstamp) \
+	qt/$(DEPDIR)/$(am__dirstamp)
+qt/qt_libbitcoinqt_a-configuremasternodepage.$(OBJEXT):  \
+	qt/$(am__dirstamp) qt/$(DEPDIR)/$(am__dirstamp)
 qt/qt_libbitcoinqt_a-addresstablemodel.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
 qt/qt_libbitcoinqt_a-askpassphrasedialog.$(OBJEXT):  \
@@ -2760,6 +2788,12 @@ qt/qt_libbitcoinqt_a-walletmodeltransaction.$(OBJEXT):  \
 qt/qt_libbitcoinqt_a-walletview.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
 qt/qt_libbitcoinqt_a-moc_addressbookpage.$(OBJEXT):  \
+	qt/$(am__dirstamp) qt/$(DEPDIR)/$(am__dirstamp)
+qt/qt_libbitcoinqt_a-moc_privkeypage.$(OBJEXT): qt/$(am__dirstamp) \
+	qt/$(DEPDIR)/$(am__dirstamp)
+qt/qt_libbitcoinqt_a-moc_outputspage.$(OBJEXT): qt/$(am__dirstamp) \
+	qt/$(DEPDIR)/$(am__dirstamp)
+qt/qt_libbitcoinqt_a-moc_configuremasternodepage.$(OBJEXT):  \
 	qt/$(am__dirstamp) qt/$(DEPDIR)/$(am__dirstamp)
 qt/qt_libbitcoinqt_a-moc_addresstablemodel.$(OBJEXT):  \
 	qt/$(am__dirstamp) qt/$(DEPDIR)/$(am__dirstamp)
@@ -3307,6 +3341,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-clientmodel.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-coincontroldialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-coincontroltreewidget.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-configuremasternodepage.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-csvmodelwriter.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-editaddressdialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-guiutil.Po@am__quote@
@@ -3325,6 +3360,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_clientmodel.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_coincontroldialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_coincontroltreewidget.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_configuremasternodepage.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_csvmodelwriter.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_editaddressdialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_guiutil.Po@am__quote@
@@ -3338,9 +3374,11 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_openuridialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_optionsdialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_optionsmodel.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_outputspage.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_overviewpage.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_paymentserver.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_peertablemodel.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_privkeypage.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_qvalidatedlineedit.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_qvaluecombobox.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_receivecoinsdialog.Po@am__quote@
@@ -3368,12 +3406,14 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-openuridialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-optionsdialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-optionsmodel.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-outputspage.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-overviewpage.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-paymentrequest.pb.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-paymentrequestplus.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-paymentserver.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-peertablemodel.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-platformstyle.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-privkeypage.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_zenzo.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_zenzo_locale.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-qvalidatedlineedit.Po@am__quote@
@@ -5693,6 +5733,48 @@ qt/qt_libbitcoinqt_a-addressbookpage.obj: qt/addressbookpage.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-addressbookpage.obj `if test -f 'qt/addressbookpage.cpp'; then $(CYGPATH_W) 'qt/addressbookpage.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/addressbookpage.cpp'; fi`
 
+qt/qt_libbitcoinqt_a-privkeypage.o: qt/privkeypage.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-privkeypage.o -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-privkeypage.Tpo -c -o qt/qt_libbitcoinqt_a-privkeypage.o `test -f 'qt/privkeypage.cpp' || echo '$(srcdir)/'`qt/privkeypage.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-privkeypage.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-privkeypage.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/privkeypage.cpp' object='qt/qt_libbitcoinqt_a-privkeypage.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-privkeypage.o `test -f 'qt/privkeypage.cpp' || echo '$(srcdir)/'`qt/privkeypage.cpp
+
+qt/qt_libbitcoinqt_a-privkeypage.obj: qt/privkeypage.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-privkeypage.obj -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-privkeypage.Tpo -c -o qt/qt_libbitcoinqt_a-privkeypage.obj `if test -f 'qt/privkeypage.cpp'; then $(CYGPATH_W) 'qt/privkeypage.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/privkeypage.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-privkeypage.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-privkeypage.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/privkeypage.cpp' object='qt/qt_libbitcoinqt_a-privkeypage.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-privkeypage.obj `if test -f 'qt/privkeypage.cpp'; then $(CYGPATH_W) 'qt/privkeypage.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/privkeypage.cpp'; fi`
+
+qt/qt_libbitcoinqt_a-outputspage.o: qt/outputspage.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-outputspage.o -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-outputspage.Tpo -c -o qt/qt_libbitcoinqt_a-outputspage.o `test -f 'qt/outputspage.cpp' || echo '$(srcdir)/'`qt/outputspage.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-outputspage.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-outputspage.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/outputspage.cpp' object='qt/qt_libbitcoinqt_a-outputspage.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-outputspage.o `test -f 'qt/outputspage.cpp' || echo '$(srcdir)/'`qt/outputspage.cpp
+
+qt/qt_libbitcoinqt_a-outputspage.obj: qt/outputspage.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-outputspage.obj -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-outputspage.Tpo -c -o qt/qt_libbitcoinqt_a-outputspage.obj `if test -f 'qt/outputspage.cpp'; then $(CYGPATH_W) 'qt/outputspage.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/outputspage.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-outputspage.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-outputspage.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/outputspage.cpp' object='qt/qt_libbitcoinqt_a-outputspage.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-outputspage.obj `if test -f 'qt/outputspage.cpp'; then $(CYGPATH_W) 'qt/outputspage.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/outputspage.cpp'; fi`
+
+qt/qt_libbitcoinqt_a-configuremasternodepage.o: qt/configuremasternodepage.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-configuremasternodepage.o -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-configuremasternodepage.Tpo -c -o qt/qt_libbitcoinqt_a-configuremasternodepage.o `test -f 'qt/configuremasternodepage.cpp' || echo '$(srcdir)/'`qt/configuremasternodepage.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-configuremasternodepage.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-configuremasternodepage.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/configuremasternodepage.cpp' object='qt/qt_libbitcoinqt_a-configuremasternodepage.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-configuremasternodepage.o `test -f 'qt/configuremasternodepage.cpp' || echo '$(srcdir)/'`qt/configuremasternodepage.cpp
+
+qt/qt_libbitcoinqt_a-configuremasternodepage.obj: qt/configuremasternodepage.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-configuremasternodepage.obj -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-configuremasternodepage.Tpo -c -o qt/qt_libbitcoinqt_a-configuremasternodepage.obj `if test -f 'qt/configuremasternodepage.cpp'; then $(CYGPATH_W) 'qt/configuremasternodepage.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/configuremasternodepage.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-configuremasternodepage.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-configuremasternodepage.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/configuremasternodepage.cpp' object='qt/qt_libbitcoinqt_a-configuremasternodepage.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-configuremasternodepage.obj `if test -f 'qt/configuremasternodepage.cpp'; then $(CYGPATH_W) 'qt/configuremasternodepage.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/configuremasternodepage.cpp'; fi`
+
 qt/qt_libbitcoinqt_a-addresstablemodel.o: qt/addresstablemodel.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-addresstablemodel.o -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-addresstablemodel.Tpo -c -o qt/qt_libbitcoinqt_a-addresstablemodel.o `test -f 'qt/addresstablemodel.cpp' || echo '$(srcdir)/'`qt/addresstablemodel.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-addresstablemodel.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-addresstablemodel.Po
@@ -6098,6 +6180,48 @@ qt/qt_libbitcoinqt_a-moc_addressbookpage.obj: qt/moc_addressbookpage.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_addressbookpage.cpp' object='qt/qt_libbitcoinqt_a-moc_addressbookpage.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-moc_addressbookpage.obj `if test -f 'qt/moc_addressbookpage.cpp'; then $(CYGPATH_W) 'qt/moc_addressbookpage.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_addressbookpage.cpp'; fi`
+
+qt/qt_libbitcoinqt_a-moc_privkeypage.o: qt/moc_privkeypage.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-moc_privkeypage.o -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_privkeypage.Tpo -c -o qt/qt_libbitcoinqt_a-moc_privkeypage.o `test -f 'qt/moc_privkeypage.cpp' || echo '$(srcdir)/'`qt/moc_privkeypage.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_privkeypage.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_privkeypage.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_privkeypage.cpp' object='qt/qt_libbitcoinqt_a-moc_privkeypage.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-moc_privkeypage.o `test -f 'qt/moc_privkeypage.cpp' || echo '$(srcdir)/'`qt/moc_privkeypage.cpp
+
+qt/qt_libbitcoinqt_a-moc_privkeypage.obj: qt/moc_privkeypage.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-moc_privkeypage.obj -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_privkeypage.Tpo -c -o qt/qt_libbitcoinqt_a-moc_privkeypage.obj `if test -f 'qt/moc_privkeypage.cpp'; then $(CYGPATH_W) 'qt/moc_privkeypage.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_privkeypage.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_privkeypage.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_privkeypage.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_privkeypage.cpp' object='qt/qt_libbitcoinqt_a-moc_privkeypage.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-moc_privkeypage.obj `if test -f 'qt/moc_privkeypage.cpp'; then $(CYGPATH_W) 'qt/moc_privkeypage.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_privkeypage.cpp'; fi`
+
+qt/qt_libbitcoinqt_a-moc_outputspage.o: qt/moc_outputspage.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-moc_outputspage.o -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_outputspage.Tpo -c -o qt/qt_libbitcoinqt_a-moc_outputspage.o `test -f 'qt/moc_outputspage.cpp' || echo '$(srcdir)/'`qt/moc_outputspage.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_outputspage.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_outputspage.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_outputspage.cpp' object='qt/qt_libbitcoinqt_a-moc_outputspage.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-moc_outputspage.o `test -f 'qt/moc_outputspage.cpp' || echo '$(srcdir)/'`qt/moc_outputspage.cpp
+
+qt/qt_libbitcoinqt_a-moc_outputspage.obj: qt/moc_outputspage.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-moc_outputspage.obj -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_outputspage.Tpo -c -o qt/qt_libbitcoinqt_a-moc_outputspage.obj `if test -f 'qt/moc_outputspage.cpp'; then $(CYGPATH_W) 'qt/moc_outputspage.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_outputspage.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_outputspage.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_outputspage.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_outputspage.cpp' object='qt/qt_libbitcoinqt_a-moc_outputspage.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-moc_outputspage.obj `if test -f 'qt/moc_outputspage.cpp'; then $(CYGPATH_W) 'qt/moc_outputspage.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_outputspage.cpp'; fi`
+
+qt/qt_libbitcoinqt_a-moc_configuremasternodepage.o: qt/moc_configuremasternodepage.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-moc_configuremasternodepage.o -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_configuremasternodepage.Tpo -c -o qt/qt_libbitcoinqt_a-moc_configuremasternodepage.o `test -f 'qt/moc_configuremasternodepage.cpp' || echo '$(srcdir)/'`qt/moc_configuremasternodepage.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_configuremasternodepage.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_configuremasternodepage.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_configuremasternodepage.cpp' object='qt/qt_libbitcoinqt_a-moc_configuremasternodepage.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-moc_configuremasternodepage.o `test -f 'qt/moc_configuremasternodepage.cpp' || echo '$(srcdir)/'`qt/moc_configuremasternodepage.cpp
+
+qt/qt_libbitcoinqt_a-moc_configuremasternodepage.obj: qt/moc_configuremasternodepage.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-moc_configuremasternodepage.obj -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_configuremasternodepage.Tpo -c -o qt/qt_libbitcoinqt_a-moc_configuremasternodepage.obj `if test -f 'qt/moc_configuremasternodepage.cpp'; then $(CYGPATH_W) 'qt/moc_configuremasternodepage.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_configuremasternodepage.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_configuremasternodepage.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_configuremasternodepage.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_configuremasternodepage.cpp' object='qt/qt_libbitcoinqt_a-moc_configuremasternodepage.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-moc_configuremasternodepage.obj `if test -f 'qt/moc_configuremasternodepage.cpp'; then $(CYGPATH_W) 'qt/moc_configuremasternodepage.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_configuremasternodepage.cpp'; fi`
 
 qt/qt_libbitcoinqt_a-moc_addresstablemodel.o: qt/moc_addresstablemodel.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-moc_addresstablemodel.o -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-moc_addresstablemodel.Tpo -c -o qt/qt_libbitcoinqt_a-moc_addresstablemodel.o `test -f 'qt/moc_addresstablemodel.cpp' || echo '$(srcdir)/'`qt/moc_addresstablemodel.cpp
