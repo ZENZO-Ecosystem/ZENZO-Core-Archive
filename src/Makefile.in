@@ -275,6 +275,7 @@ am_libbitcoin_common_a_OBJECTS =  \
 	libbitcoin_common_a-allocators.$(OBJEXT) \
 	libbitcoin_common_a-amount.$(OBJEXT) \
 	libbitcoin_common_a-base58.$(OBJEXT) \
+	libbitcoin_common_a-bip39.$(OBJEXT) \
 	libbitcoin_common_a-bip38.$(OBJEXT) \
 	libbitcoin_common_a-chainparams.$(OBJEXT) \
 	libbitcoin_common_a-coins.$(OBJEXT) \
@@ -287,6 +288,7 @@ am_libbitcoin_common_a_OBJECTS =  \
 	libbitcoin_common_a-eccryptoverify.$(OBJEXT) \
 	libbitcoin_common_a-ecwrapper.$(OBJEXT) \
 	libbitcoin_common_a-hash.$(OBJEXT) \
+	libbitcoin_common_a-hdchain.$(OBJEXT) \
 	libbitcoin_common_a-key.$(OBJEXT) \
 	libbitcoin_common_a-keystore.$(OBJEXT) \
 	libbitcoin_common_a-netbase.$(OBJEXT) \
@@ -342,30 +344,30 @@ am__libbitcoin_util_a_SOURCES_DIST = allocators.cpp compat/strnlen.cpp \
 	rpc/protocol.cpp sync.cpp uint256.cpp util.cpp \
 	utilstrencodings.cpp utilmoneystr.cpp utiltime.cpp \
 	activemasternode.h accumulators.h accumulatormap.h addrman.h \
-	allocators.h amount.h base58.h bip38.h bloom.h chain.h \
-	chainparams.h chainparamsbase.h chainparamsseeds.h \
-	checkpoints.h checkqueue.h clientversion.h coincontrol.h \
-	coins.h compat.h compat/sanity.h compressor.h \
+	allocators.h amount.h base58.h bip39.h bip39_english.h bip38.h \
+	bloom.h chain.h chainparams.h chainparamsbase.h \
+	chainparamsseeds.h checkpoints.h checkqueue.h clientversion.h \
+	coincontrol.h coins.h compat.h compat/sanity.h compressor.h \
 	primitives/block.h primitives/transaction.h \
 	primitives/zerocoin.h core_io.h crypter.h \
 	denomination_functions.h obfuscation.h obfuscation-relay.h \
-	db.h eccryptoverify.h ecwrapper.h hash.h init.h kernel.h \
-	swifttx.h key.h keystore.h leveldbwrapper.h limitedmap.h \
-	main.h masternode.h masternode-payments.h masternode-budget.h \
-	masternode-sync.h masternodeman.h masternodeconfig.h \
-	merkleblock.h miner.h mruset.h netbase.h net.h noui.h pow.h \
-	protocol.h pubkey.h random.h reverse_iterate.h rpc/client.h \
-	rpc/protocol.h rpc/server.h scheduler.h script/interpreter.h \
-	script/script.h script/sigcache.h script/sign.h \
-	script/standard.h script/script_error.h serialize.h spork.h \
-	sporkdb.h streams.h sync.h threadsafety.h timedata.h \
-	tinyformat.h torcontrol.h txdb.h txmempool.h ui_interface.h \
-	uint256.h undo.h util.h utilstrencodings.h utilmoneystr.h \
-	utiltime.h validationinterface.h version.h wallet.h \
-	wallet_ismine.h walletdb.h zmq/zmqabstractnotifier.h \
-	zmq/zmqconfig.h zmq/zmqnotificationinterface.h \
-	zmq/zmqpublishnotifier.h compat/glibc_compat.cpp \
-	compat/glibcxx_compat.cpp
+	db.h eccryptoverify.h ecwrapper.h hash.h hdchain.h init.h \
+	kernel.h swifttx.h key.h keystore.h leveldbwrapper.h \
+	limitedmap.h main.h masternode.h masternode-payments.h \
+	masternode-budget.h masternode-sync.h masternodeman.h \
+	masternodeconfig.h merkleblock.h miner.h mruset.h netbase.h \
+	net.h noui.h pow.h protocol.h pubkey.h random.h \
+	reverse_iterate.h rpc/client.h rpc/protocol.h rpc/server.h \
+	scheduler.h script/interpreter.h script/script.h \
+	script/sigcache.h script/sign.h script/standard.h \
+	script/script_error.h serialize.h spork.h sporkdb.h streams.h \
+	sync.h threadsafety.h timedata.h tinyformat.h torcontrol.h \
+	txdb.h txmempool.h ui_interface.h uint256.h undo.h util.h \
+	utilstrencodings.h utilmoneystr.h utiltime.h \
+	validationinterface.h version.h wallet.h wallet_ismine.h \
+	walletdb.h zmq/zmqabstractnotifier.h zmq/zmqconfig.h \
+	zmq/zmqnotificationinterface.h zmq/zmqpublishnotifier.h \
+	compat/glibc_compat.cpp compat/glibcxx_compat.cpp
 @GLIBC_BACK_COMPAT_TRUE@am__objects_2 = compat/libbitcoin_util_a-glibc_compat.$(OBJEXT) \
 @GLIBC_BACK_COMPAT_TRUE@	compat/libbitcoin_util_a-glibcxx_compat.$(OBJEXT)
 am_libbitcoin_util_a_OBJECTS = libbitcoin_util_a-allocators.$(OBJEXT) \
@@ -528,6 +530,7 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/res/icons/eye_minus.png qt/res/icons/eye_plus.png \
 	qt/res/icons/filesave.png qt/res/icons/fontbigger.png \
 	qt/res/icons/fontsmaller.png qt/res/icons/history.png \
+	qt/res/icons/hd_enabled.png qt/res/icons/hd_disabled.png \
 	qt/res/icons/key.png qt/res/icons/lock_closed.png \
 	qt/res/icons/lock_open.png qt/res/icons/masternodes.png \
 	qt/res/icons/overview.png qt/res/icons/qrcode.png \
@@ -1598,6 +1601,8 @@ BITCOIN_CORE_H = \
   allocators.h \
   amount.h \
   base58.h \
+  bip39.h \
+  bip39_english.h \
   bip38.h \
   bloom.h \
   chain.h \
@@ -1624,6 +1629,7 @@ BITCOIN_CORE_H = \
   eccryptoverify.h \
   ecwrapper.h \
   hash.h \
+  hdchain.h \
   init.h \
   kernel.h \
   swifttx.h \
@@ -1876,6 +1882,7 @@ libbitcoin_common_a_SOURCES = \
   allocators.cpp \
   amount.cpp \
   base58.cpp \
+  bip39.cpp \
   bip38.cpp \
   chainparams.cpp \
   coins.cpp \
@@ -1888,6 +1895,7 @@ libbitcoin_common_a_SOURCES = \
   eccryptoverify.cpp \
   ecwrapper.cpp \
   hash.cpp \
+  hdchain.cpp \
   key.cpp \
   keystore.cpp \
   netbase.cpp \
@@ -2275,6 +2283,8 @@ EXTRA_DIST = leveldb $(am__append_18)
 @ENABLE_QT_TRUE@  qt/res/icons/fontbigger.png \
 @ENABLE_QT_TRUE@  qt/res/icons/fontsmaller.png \
 @ENABLE_QT_TRUE@  qt/res/icons/history.png \
+@ENABLE_QT_TRUE@  qt/res/icons/hd_enabled.png \
+@ENABLE_QT_TRUE@  qt/res/icons/hd_disabled.png \
 @ENABLE_QT_TRUE@  qt/res/icons/key.png \
 @ENABLE_QT_TRUE@  qt/res/icons/lock_closed.png \
 @ENABLE_QT_TRUE@  qt/res/icons/lock_open.png \
@@ -3198,6 +3208,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoin_common_a-amount.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoin_common_a-base58.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoin_common_a-bip38.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoin_common_a-bip39.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoin_common_a-chainparams.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoin_common_a-coins.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoin_common_a-compressor.Po@am__quote@
@@ -3206,6 +3217,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoin_common_a-eccryptoverify.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoin_common_a-ecwrapper.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoin_common_a-hash.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoin_common_a-hdchain.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoin_common_a-key.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoin_common_a-keystore.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoin_common_a-netbase.Po@am__quote@
@@ -4067,6 +4079,20 @@ libbitcoin_common_a-base58.obj: base58.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_common_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libbitcoin_common_a-base58.obj `if test -f 'base58.cpp'; then $(CYGPATH_W) 'base58.cpp'; else $(CYGPATH_W) '$(srcdir)/base58.cpp'; fi`
 
+libbitcoin_common_a-bip39.o: bip39.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_common_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libbitcoin_common_a-bip39.o -MD -MP -MF $(DEPDIR)/libbitcoin_common_a-bip39.Tpo -c -o libbitcoin_common_a-bip39.o `test -f 'bip39.cpp' || echo '$(srcdir)/'`bip39.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libbitcoin_common_a-bip39.Tpo $(DEPDIR)/libbitcoin_common_a-bip39.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bip39.cpp' object='libbitcoin_common_a-bip39.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_common_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libbitcoin_common_a-bip39.o `test -f 'bip39.cpp' || echo '$(srcdir)/'`bip39.cpp
+
+libbitcoin_common_a-bip39.obj: bip39.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_common_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libbitcoin_common_a-bip39.obj -MD -MP -MF $(DEPDIR)/libbitcoin_common_a-bip39.Tpo -c -o libbitcoin_common_a-bip39.obj `if test -f 'bip39.cpp'; then $(CYGPATH_W) 'bip39.cpp'; else $(CYGPATH_W) '$(srcdir)/bip39.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libbitcoin_common_a-bip39.Tpo $(DEPDIR)/libbitcoin_common_a-bip39.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bip39.cpp' object='libbitcoin_common_a-bip39.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_common_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libbitcoin_common_a-bip39.obj `if test -f 'bip39.cpp'; then $(CYGPATH_W) 'bip39.cpp'; else $(CYGPATH_W) '$(srcdir)/bip39.cpp'; fi`
+
 libbitcoin_common_a-bip38.o: bip38.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_common_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libbitcoin_common_a-bip38.o -MD -MP -MF $(DEPDIR)/libbitcoin_common_a-bip38.Tpo -c -o libbitcoin_common_a-bip38.o `test -f 'bip38.cpp' || echo '$(srcdir)/'`bip38.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libbitcoin_common_a-bip38.Tpo $(DEPDIR)/libbitcoin_common_a-bip38.Po
@@ -4234,6 +4260,20 @@ libbitcoin_common_a-hash.obj: hash.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='hash.cpp' object='libbitcoin_common_a-hash.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_common_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libbitcoin_common_a-hash.obj `if test -f 'hash.cpp'; then $(CYGPATH_W) 'hash.cpp'; else $(CYGPATH_W) '$(srcdir)/hash.cpp'; fi`
+
+libbitcoin_common_a-hdchain.o: hdchain.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_common_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libbitcoin_common_a-hdchain.o -MD -MP -MF $(DEPDIR)/libbitcoin_common_a-hdchain.Tpo -c -o libbitcoin_common_a-hdchain.o `test -f 'hdchain.cpp' || echo '$(srcdir)/'`hdchain.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libbitcoin_common_a-hdchain.Tpo $(DEPDIR)/libbitcoin_common_a-hdchain.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='hdchain.cpp' object='libbitcoin_common_a-hdchain.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_common_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libbitcoin_common_a-hdchain.o `test -f 'hdchain.cpp' || echo '$(srcdir)/'`hdchain.cpp
+
+libbitcoin_common_a-hdchain.obj: hdchain.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_common_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libbitcoin_common_a-hdchain.obj -MD -MP -MF $(DEPDIR)/libbitcoin_common_a-hdchain.Tpo -c -o libbitcoin_common_a-hdchain.obj `if test -f 'hdchain.cpp'; then $(CYGPATH_W) 'hdchain.cpp'; else $(CYGPATH_W) '$(srcdir)/hdchain.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libbitcoin_common_a-hdchain.Tpo $(DEPDIR)/libbitcoin_common_a-hdchain.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='hdchain.cpp' object='libbitcoin_common_a-hdchain.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_common_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libbitcoin_common_a-hdchain.obj `if test -f 'hdchain.cpp'; then $(CYGPATH_W) 'hdchain.cpp'; else $(CYGPATH_W) '$(srcdir)/hdchain.cpp'; fi`
 
 libbitcoin_common_a-key.o: key.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_common_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libbitcoin_common_a-key.o -MD -MP -MF $(DEPDIR)/libbitcoin_common_a-key.Tpo -c -o libbitcoin_common_a-key.o `test -f 'key.cpp' || echo '$(srcdir)/'`key.cpp

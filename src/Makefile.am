@@ -83,6 +83,8 @@ BITCOIN_CORE_H = \
   allocators.h \
   amount.h \
   base58.h \
+  bip39.h \
+  bip39_english.h \
   bip38.h \
   bloom.h \
   chain.h \
@@ -109,6 +111,7 @@ BITCOIN_CORE_H = \
   eccryptoverify.h \
   ecwrapper.h \
   hash.h \
+  hdchain.h \
   init.h \
   kernel.h \
   swifttx.h \
@@ -365,6 +368,7 @@ libbitcoin_common_a_SOURCES = \
   allocators.cpp \
   amount.cpp \
   base58.cpp \
+  bip39.cpp \
   bip38.cpp \
   chainparams.cpp \
   coins.cpp \
@@ -377,6 +381,7 @@ libbitcoin_common_a_SOURCES = \
   eccryptoverify.cpp \
   ecwrapper.cpp \
   hash.cpp \
+  hdchain.cpp \
   key.cpp \
   keystore.cpp \
   netbase.cpp \

@@ -58,7 +58,7 @@ public:
     }
     CKeyMetadata(int64_t nCreateTime_)
     {
-        nVersion = CKeyMetadata::CURRENT_VERSION;
+        SetNull();
         nCreateTime = nCreateTime_;
     }
 
@@ -149,6 +149,10 @@ public:
     static bool Recover(CDBEnv& dbenv, std::string filename, bool fOnlyKeys);
     static bool Recover(CDBEnv& dbenv, std::string filename);
 
+  //! write the hdchain model (external chain child index counter)
+    bool WriteHDChain(const CHDChain& chain);
+    bool WriteCryptedHDChain(const CHDChain& chain);
+    bool WriteHDPubKey(const CHDPubKey& hdPubKey, const CKeyMetadata& keyMeta);
     bool WriteZerocoinMint(const CZerocoinMint& zerocoinMint);
     bool EraseZerocoinMint(const CZerocoinMint& zerocoinMint);
     bool ReadZerocoinMint(const CBigNum &bnSerial, CZerocoinMint& zerocoinMint);
