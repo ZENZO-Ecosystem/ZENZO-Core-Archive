@@ -1,4 +1,5 @@
-// Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2011-2019 The Bitcoin developers
+// Copyright (c) 2018-2019 The ZENZO developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -145,6 +146,10 @@ void ReceiveRequestDialog::update()
         html += "<b>" + tr("Label") + "</b>: " + GUIUtil::HtmlEscape(info.label) + "<br>";
     if (!info.message.isEmpty())
         html += "<b>" + tr("Message") + "</b>: " + GUIUtil::HtmlEscape(info.message) + "<br>";
+    if(info.useSwiftTX)
+        html += "<b>"+tr("InstantSend")+"</b>: Yes<br>";
+    else
+        html += "<b>"+tr("InstantSend")+"</b>: No<br>";
     ui->outUri->setText(html);
 
 #ifdef USE_QRCODE
