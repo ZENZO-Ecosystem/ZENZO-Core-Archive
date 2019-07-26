@@ -70,6 +70,7 @@ Starting with the latest changes, ending with the oldest changes. Each commit ha
 - [Net] *(JSKitty)* - Read/Write banlist to disk in datadir (banlist.dat)
 - [Net] *(JSKitty)* - Optimize and tweak DVM Core
 ---
+- [Build] *(DCx7C5)* - Updated Makefile for Linux Qt Builds
 - [Build] *(JSKitty)* - Remove stale m4 file
 - [Build] *(JSKitty)* - Fix macOS dmg issue (10.12+)
 - [Build] *(JSKitty)* - Compile winshutdownmonitor.cpp for Windows only
@@ -96,6 +97,8 @@ Starting with the latest changes, ending with the oldest changes. Each commit ha
 (Project Maintainer & Core Developer) **JSKitty**
 
 (Bounty Developer) **technikpto**
+
+(Ally Developer) **DCx7C5** - [CoinMiningPool](https://coinminingpool.org/) & [OASIS](http://exploreoasis.com/)
 
 (Upstream Patches) **PIVX Core Team**, **Dash Core Team** and **Bitcoin Core Team**
 
