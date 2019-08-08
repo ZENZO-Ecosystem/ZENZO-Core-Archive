@@ -1270,6 +1270,9 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
 
     fReindex = GetBoolArg("-reindex", false);
 
+    // Create blocks directory if it doesn't already exist
+    boost::filesystem::create_directories(GetDataDir() / "blocks");
+
     // cache size calculations
     size_t nTotalCache = (GetArg("-dbcache", nDefaultDbCache) << 20);
     if (nTotalCache < (nMinDbCache << 20))
