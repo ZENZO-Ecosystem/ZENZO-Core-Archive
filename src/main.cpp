@@ -22,6 +22,7 @@
 #include "net.h"
 #include "obfuscation.h"
 #include "pow.h"
+#include "scheduler.h"
 #include "spork.h"
 #include "sporkdb.h"
 #include "swifttx.h"
@@ -52,8 +53,13 @@ using namespace libzerocoin;
 
 // 6 comes from OPCODE (1) + vch.size() (1) + BIGNUM size (4)
 #define SCRIPT_OFFSET 6
+
 // For Script size (BIGNUM/Uint256 size)
 #define BIGNUM_SIZE   4
+
+// Blockchain Backup interval (Minutes)
+#define BLOCKCHAIN_BACKUP_INTERVAL 15
+
 /**
  * Global state
  */
@@ -4984,6 +4990,59 @@ bool LoadBlockIndex()
     return true;
 }
 
+bool BackupsActive = false;
+
+bool BackupBlockIndex()
+{
+    int64_t nStartTime = GetTimeMillis();
+
+    filesystem::path const & blocksDir = GetDataDir() / "blocks";
+    filesystem::path const & destinationDir = GetDataDir() / "chainbackup";
+
+    // Sanity check for blockchain data directories
+    if (!filesystem::exists(blocksDir))
+    {
+        LogPrintf("%f : Blocks directory does not exist\n", __func__);
+        return false;
+    }
+
+    // Remove old backup data (At this point, the wallet has already loaded the main block index, so removing this backup is safe)
+    if (filesystem::exists(destinationDir))
+        LogPrintf("%s : Removed %f old blockchain data backup files\n", __func__, filesystem::remove_all(destinationDir));
+
+    // Create chainbackup directory
+    filesystem::create_directory(destinationDir);
+
+    // Create chainbackup subdirectories
+    filesystem::create_directory(destinationDir / "blocks");
+
+    // Recursively copy blockchain data into chainbackup directory
+    // blocks
+    for (const auto& dirEnt : filesystem::recursive_directory_iterator{blocksDir})
+    {
+        const auto& path = dirEnt.path();
+        auto relativePathStr = path.string();
+        boost::replace_first(relativePathStr, blocksDir.string(), "");
+        filesystem::copy(path, destinationDir / "blocks" / relativePathStr);
+    }
+
+    LogPrintf("%s : Blockchain data backup completed in %ld milliseconds\n", __func__, GetTimeMillis() - nStartTime);
+    return true;
+}
+
+bool ScheduleBackupBlockIndex(CScheduler& scheduler)
+{
+    // Only enable the scheduler once,
+    if (!BackupsActive) {
+        // Backup blockchain data every BLOCKCHAIN_BACKUP_INTERVAL minutes
+        scheduler.scheduleEvery(&BackupBlockIndex, BLOCKCHAIN_BACKUP_INTERVAL * 60);
+        BackupsActive = true;
+        LogPrintf("%s : Blockchain data backup schedule has started at an interval of %s minutes\n", __func__, BLOCKCHAIN_BACKUP_INTERVAL);
+
+        // Start initial backup
+        BackupBlockIndex();
+    }
+}
 
 bool InitBlockIndex()
 {

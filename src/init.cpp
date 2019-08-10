@@ -1833,7 +1833,12 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
         GenerateBitcoins(GetBoolArg("-gen", false), pwalletMain, GetArg("-genproclimit", 1));
 #endif
 
-    // ********************************************************* Step 12: finished
+    // ********************************************************* Step 12: backup blockchain data (If applicable)
+
+    uiInterface.InitMessage(_("Backing up blockchain data..."));
+    ScheduleBackupBlockIndex(scheduler);
+    
+    // ********************************************************* Step 13: finished
 
     SetRPCWarmupFinished();
     uiInterface.InitMessage(_("Done loading"));

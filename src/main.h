@@ -210,6 +210,10 @@ bool LoadExternalBlockFile(FILE* fileIn, CDiskBlockPos* dbp = NULL);
 bool InitBlockIndex();
 /** Load the block tree and coins database from disk */
 bool LoadBlockIndex();
+/** Backup blockchain data immediately */
+bool BackupBlockIndex();
+/** Backup blockchain data at a scheduled interval */
+bool ScheduleBackupBlockIndex(CScheduler& scheduler);
 /** Unload database information */
 void UnloadBlockIndex();
 /** See whether the protocol update is enforced for connected nodes */
