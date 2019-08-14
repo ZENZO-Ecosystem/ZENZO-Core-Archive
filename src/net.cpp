@@ -2343,9 +2343,6 @@ bool CBanDB::Read(banmap_t& banSet)
 
 int CheckForUpdates (std::string addr, std::string ver)
 {
-    // Some forced test parameters to test DVM's durability to non-original subversions
-    ver = "";
-
     if (fUpdateCheck == true)
     {
         // Splice raw version integer from the Sub Version of the peer and ourselves
