@@ -2343,39 +2343,48 @@ bool CBanDB::Read(banmap_t& banSet)
 
 int CheckForUpdates (std::string addr, std::string ver)
 {
-  if (fUpdateCheck == true)
-  {
-    // Splice raw version integer from the Sub Version of the peer and ourselves
-    replaceAll(ver, "/", "");
-    replaceAll(ver, ".", "");
-    replaceAll(ver, "ZENZO Core:", "");
-    replaceAll(ver, "Zenzo Core:", "");
-    int verInt = std::stoi(ver);
+    // Some forced test parameters to test DVM's durability to non-original subversions
+    ver = "";
 
-    std::string localVer = FormatFullVersion();
-    replaceAll(localVer, "v", "");
-    replaceAll(localVer, ".", "");
-    int localVerInt = std::stoi(localVer);
+    if (fUpdateCheck == true)
+    {
+        // Splice raw version integer from the Sub Version of the peer and ourselves
+        try {
+            replaceAll(ver, "/", "");
+            replaceAll(ver, ".", "");
+            replaceAll(ver, "ZENZO Core:", "");
+            replaceAll(ver, "Zenzo Core:", "");
+            int verInt = std::stoi(ver);
 
-    // Compare our version integer to the connected node
-    if (verInt > localVerInt) {
-      higherVerPeers++;
-    } else if (verInt == localVerInt) {
-      currentVerPeers++;
-    } else lowerVerPeers ++;
+            std::string localVer = FormatFullVersion();
+            replaceAll(localVer, "v", "");
+            replaceAll(localVer, ".", "");
+            int localVerInt = std::stoi(localVer);
 
-    // Calculate peers needed for a 'majority' upgrade
-    int peersForUpgrade = (higherVerPeers + currentVerPeers + lowerVerPeers) / nUpgradeMajority;
+            // Compare our version integer to the connected node
+            if (verInt > localVerInt) {
+              higherVerPeers++;
+            } else if (verInt == localVerInt) {
+              currentVerPeers++;
+            } else lowerVerPeers ++;
 
-    // Ensure minimum is atleast 2 peers
-    if (peersForUpgrade < 2)
-        peersForUpgrade = 2;
+            // Calculate peers needed for a 'majority' upgrade
+            int peersForUpgrade = (higherVerPeers + currentVerPeers + lowerVerPeers) / nUpgradeMajority;
 
-    // Check if majority consensus is met
-    shouldUpgrade = ((higherVerPeers >= peersForUpgrade) ? shouldUpgrade = true : shouldUpgrade = false);
+            // Ensure minimum is atleast 2 peers
+            if (peersForUpgrade < 2)
+                peersForUpgrade = 2;
 
-    return shouldUpgrade;
-  }
+            // Check if majority consensus is met
+            shouldUpgrade = ((higherVerPeers >= peersForUpgrade) ? shouldUpgrade = true : shouldUpgrade = false);
+
+            return shouldUpgrade;
+        } catch (const std::exception& e) {
+            // Ending up here likely means the node subver is different, e.g: A seeder, lightwallet or simply a tampered subver. Catch the parsing error and ignore the node.
+            LogPrintf("DVM: New node version couldn't be parsed, ignoring version %v of peer %d\n", ver, addr);
+            return false;
+        }
+    }
 }
 
 void replaceAll(std::string& str, const std::string& from, const std::string& to)
