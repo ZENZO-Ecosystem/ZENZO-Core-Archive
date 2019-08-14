@@ -90,6 +90,8 @@ public slots:
     void setFontSize(int newSize);
     /** Append the message to the message widget */
     void message(int category, const QString& message, bool html = false);
+    /** Append the printed logs to the logs widget */
+    void updateLogs();
     /** Set number of connections shown in the UI */
     void setNumConnections(int count);
     /** Set number of blocks shown in the UI */
