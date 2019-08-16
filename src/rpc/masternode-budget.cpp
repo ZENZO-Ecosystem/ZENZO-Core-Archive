@@ -136,7 +136,7 @@ Value preparebudget(const Array& params, bool fHelp)
 
     if (fHelp || params.size() != 6)
         throw runtime_error(
-            "preparebudget \"proposal-name\" \"url\" payment-count block-start \"zenzo-address\" monthy-payment\n"
+            "preparebudget \"proposal-name\" \"url\" payment-count block-start \"zenzo-address\" monthly-payment\n"
             "\nPrepare proposal for network by signing and creating tx\n"
 
             "\nArguments:\n"
@@ -229,7 +229,7 @@ Value submitbudget(const Array& params, bool fHelp)
 
     if (fHelp || params.size() != 7)
         throw runtime_error(
-            "submitbudget \"proposal-name\" \"url\" payment-count block-start \"zenzo-address\" monthy-payment \"fee-tx\"\n"
+            "submitbudget \"proposal-name\" \"url\" payment-count block-start \"zenzo-address\" monthly-payment \"fee-tx\"\n"
             "\nSubmit proposal to the network\n"
 
             "\nArguments:\n"
@@ -1012,7 +1012,7 @@ Value checkbudgets(const Array& params, bool fHelp)
     if (fHelp || params.size() != 0)
         throw runtime_error(
             "checkbudgets\n"
-            "\nInitiates a buddget check cycle manually\n"
+            "\nInitiates a budget check cycle manually\n"
             "\nExamples:\n" +
             HelpExampleCli("checkbudgets", "") + HelpExampleRpc("checkbudgets", ""));
 
