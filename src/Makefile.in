@@ -137,7 +137,8 @@ TESTS = $(am__EXEEXT_6) $(am__EXEEXT_5)
 @ENABLE_TESTS_TRUE@am__append_22 = $(CLEAN_BITCOIN_TEST)
 @ENABLE_QT_TRUE@am__append_23 = qt/zenzo-qt
 @ENABLE_QT_TRUE@am__append_24 = qt/libbitcoinqt.a
-@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@am__append_25 = \
+@ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@am__append_25 = qt/winshutdownmonitor.cpp
+@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@am__append_26 = \
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@  qt/addressbookpage.cpp \
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@  qt/privkeypage.cpp \
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@  qt/outputspage.cpp \
@@ -173,20 +174,20 @@ TESTS = $(am__EXEEXT_6) $(am__EXEEXT_5)
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@  qt/walletmodeltransaction.cpp \
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@  qt/walletview.cpp
 
-@ENABLE_QT_TRUE@@TARGET_DARWIN_TRUE@am__append_26 = $(BITCOIN_MM)
-@ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@am__append_27 = $(BITCOIN_RC)
-@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@am__append_28 = $(LIBBITCOIN_WALLET)
-@ENABLE_QT_TRUE@@ENABLE_ZMQ_TRUE@am__append_29 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
-@ENABLE_QT_TRUE@am__append_30 = $(CLEAN_QT)
-@ENABLE_QT_TESTS_TRUE@am__append_31 = qt/test/test_zenzo-qt
+@ENABLE_QT_TRUE@@TARGET_DARWIN_TRUE@am__append_27 = $(BITCOIN_MM)
+@ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@am__append_28 = $(BITCOIN_RC)
+@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@am__append_29 = $(LIBBITCOIN_WALLET)
+@ENABLE_QT_TRUE@@ENABLE_ZMQ_TRUE@am__append_30 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+@ENABLE_QT_TRUE@am__append_31 = $(CLEAN_QT)
 @ENABLE_QT_TESTS_TRUE@am__append_32 = qt/test/test_zenzo-qt
-@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__append_33 = qt/test/moc_paymentservertests.cpp
-@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__append_34 = \
+@ENABLE_QT_TESTS_TRUE@am__append_33 = qt/test/test_zenzo-qt
+@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__append_34 = qt/test/moc_paymentservertests.cpp
+@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__append_35 = \
 @ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@  qt/test/paymentservertests.cpp
 
-@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__append_35 = $(LIBBITCOIN_WALLET)
-@ENABLE_QT_TESTS_TRUE@@ENABLE_ZMQ_TRUE@am__append_36 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
-@ENABLE_QT_TESTS_TRUE@am__append_37 = $(CLEAN_BITCOIN_QT_TEST)
+@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__append_36 = $(LIBBITCOIN_WALLET)
+@ENABLE_QT_TESTS_TRUE@@ENABLE_ZMQ_TRUE@am__append_37 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+@ENABLE_QT_TESTS_TRUE@am__append_38 = $(CLEAN_BITCOIN_QT_TEST)
 subdir = src
 SUBDIRS =
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -557,7 +558,8 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/res/images/walletFrame.png qt/res/images/walletFrame_bg.png \
 	qt/res/css/default.css $(wildcard \
 	$(srcdir)/qt/res/movies/spinner-*.png)
-@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@am__objects_3 = qt/qt_libbitcoinqt_a-addressbookpage.$(OBJEXT) \
+@ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@am__objects_3 = qt/qt_libbitcoinqt_a-winshutdownmonitor.$(OBJEXT)
+@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@am__objects_4 = qt/qt_libbitcoinqt_a-addressbookpage.$(OBJEXT) \
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@	qt/qt_libbitcoinqt_a-privkeypage.$(OBJEXT) \
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@	qt/qt_libbitcoinqt_a-outputspage.$(OBJEXT) \
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@	qt/qt_libbitcoinqt_a-configuremasternodepage.$(OBJEXT) \
@@ -591,7 +593,7 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@	qt/qt_libbitcoinqt_a-walletmodel.$(OBJEXT) \
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@	qt/qt_libbitcoinqt_a-walletmodeltransaction.$(OBJEXT) \
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@	qt/qt_libbitcoinqt_a-walletview.$(OBJEXT)
-@ENABLE_QT_TRUE@am__objects_4 =  \
+@ENABLE_QT_TRUE@am__objects_5 =  \
 @ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-bantablemodel.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-bitcoinaddressvalidator.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-bitcoinamountfield.$(OBJEXT) \
@@ -616,15 +618,15 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 @ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-trafficgraphdata.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-trafficgraphwidget.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-utilitydialog.$(OBJEXT) \
-@ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-winshutdownmonitor.$(OBJEXT) \
-@ENABLE_QT_TRUE@	$(am__objects_3)
-@ENABLE_QT_TRUE@am_qt_libbitcoinqt_a_OBJECTS = $(am__objects_4) \
+@ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-utilitydialog.$(OBJEXT) \
+@ENABLE_QT_TRUE@	$(am__objects_3) $(am__objects_4)
+@ENABLE_QT_TRUE@am_qt_libbitcoinqt_a_OBJECTS = $(am__objects_5) \
 @ENABLE_QT_TRUE@	$(am__objects_1) $(am__objects_1) \
 @ENABLE_QT_TRUE@	$(am__objects_1) $(am__objects_1) \
 @ENABLE_QT_TRUE@	$(am__objects_1) $(am__objects_1) \
 @ENABLE_QT_TRUE@	$(am__objects_1) $(am__objects_1) \
 @ENABLE_QT_TRUE@	$(am__objects_1) $(am__objects_1)
-@ENABLE_QT_TRUE@am__objects_5 = qt/qt_libbitcoinqt_a-moc_addressbookpage.$(OBJEXT) \
+@ENABLE_QT_TRUE@am__objects_6 = qt/qt_libbitcoinqt_a-moc_addressbookpage.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-moc_privkeypage.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-moc_outputspage.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-moc_configuremasternodepage.$(OBJEXT) \
@@ -676,14 +678,14 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 @ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-moc_walletframe.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-moc_walletmodel.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-moc_walletview.$(OBJEXT)
-@ENABLE_QT_TRUE@am__objects_6 = qt/qt_libbitcoinqt_a-paymentrequest.pb.$(OBJEXT)
-@ENABLE_QT_TRUE@am__objects_7 =  \
+@ENABLE_QT_TRUE@am__objects_7 = qt/qt_libbitcoinqt_a-paymentrequest.pb.$(OBJEXT)
+@ENABLE_QT_TRUE@am__objects_8 =  \
 @ENABLE_QT_TRUE@	qt/qt_libbitcoinqt_a-qrc_zenzo.$(OBJEXT)
-@ENABLE_QT_TRUE@am__objects_8 = qt/qt_libbitcoinqt_a-qrc_zenzo_locale.$(OBJEXT)
-@ENABLE_QT_TRUE@nodist_qt_libbitcoinqt_a_OBJECTS = $(am__objects_5) \
-@ENABLE_QT_TRUE@	$(am__objects_1) $(am__objects_6) \
+@ENABLE_QT_TRUE@am__objects_9 = qt/qt_libbitcoinqt_a-qrc_zenzo_locale.$(OBJEXT)
+@ENABLE_QT_TRUE@nodist_qt_libbitcoinqt_a_OBJECTS = $(am__objects_6) \
 @ENABLE_QT_TRUE@	$(am__objects_1) $(am__objects_7) \
-@ENABLE_QT_TRUE@	$(am__objects_8)
+@ENABLE_QT_TRUE@	$(am__objects_1) $(am__objects_8) \
+@ENABLE_QT_TRUE@	$(am__objects_9)
 qt_libbitcoinqt_a_OBJECTS = $(am_qt_libbitcoinqt_a_OBJECTS) \
 	$(nodist_qt_libbitcoinqt_a_OBJECTS)
 univalue_libbitcoin_univalue_a_AR = $(AR) $(ARFLAGS)
@@ -736,7 +738,7 @@ am__libbitcoinconsensus_la_SOURCES_DIST = allocators.cpp \
 	script/interpreter.cpp script/bitcoinconsensus.cpp uint256.cpp \
 	utilstrencodings.cpp compat/glibc_compat.cpp \
 	compat/glibcxx_compat.cpp
-@BUILD_BITCOIN_LIBS_TRUE@@GLIBC_BACK_COMPAT_TRUE@am__objects_9 = compat/libbitcoinconsensus_la-glibc_compat.lo \
+@BUILD_BITCOIN_LIBS_TRUE@@GLIBC_BACK_COMPAT_TRUE@am__objects_10 = compat/libbitcoinconsensus_la-glibc_compat.lo \
 @BUILD_BITCOIN_LIBS_TRUE@@GLIBC_BACK_COMPAT_TRUE@	compat/libbitcoinconsensus_la-glibcxx_compat.lo
 @BUILD_BITCOIN_LIBS_TRUE@am_libbitcoinconsensus_la_OBJECTS =  \
 @BUILD_BITCOIN_LIBS_TRUE@	libbitcoinconsensus_la-allocators.lo \
@@ -756,7 +758,7 @@ am__libbitcoinconsensus_la_SOURCES_DIST = allocators.cpp \
 @BUILD_BITCOIN_LIBS_TRUE@	script/libbitcoinconsensus_la-bitcoinconsensus.lo \
 @BUILD_BITCOIN_LIBS_TRUE@	libbitcoinconsensus_la-uint256.lo \
 @BUILD_BITCOIN_LIBS_TRUE@	libbitcoinconsensus_la-utilstrencodings.lo \
-@BUILD_BITCOIN_LIBS_TRUE@	$(am__objects_9)
+@BUILD_BITCOIN_LIBS_TRUE@	$(am__objects_10)
 libbitcoinconsensus_la_OBJECTS = $(am_libbitcoinconsensus_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
@@ -779,15 +781,15 @@ am__qt_test_test_zenzo_qt_SOURCES_DIST = qt/test/test_main.cpp \
 	qt/test/uritests.cpp qt/test/uritests.h \
 	qt/test/paymentrequestdata.h qt/test/paymentservertests.h \
 	qt/test/paymentservertests.cpp
-@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__objects_10 = qt/test/qt_test_test_zenzo_qt-paymentservertests.$(OBJEXT)
+@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__objects_11 = qt/test/qt_test_test_zenzo_qt-paymentservertests.$(OBJEXT)
 @ENABLE_QT_TESTS_TRUE@am_qt_test_test_zenzo_qt_OBJECTS = qt/test/qt_test_test_zenzo_qt-test_main.$(OBJEXT) \
 @ENABLE_QT_TESTS_TRUE@	qt/test/qt_test_test_zenzo_qt-uritests.$(OBJEXT) \
-@ENABLE_QT_TESTS_TRUE@	$(am__objects_1) $(am__objects_10)
-@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__objects_11 = qt/test/qt_test_test_zenzo_qt-moc_paymentservertests.$(OBJEXT)
-@ENABLE_QT_TESTS_TRUE@am__objects_12 = qt/test/qt_test_test_zenzo_qt-moc_uritests.$(OBJEXT) \
-@ENABLE_QT_TESTS_TRUE@	$(am__objects_11)
-@ENABLE_QT_TESTS_TRUE@nodist_qt_test_test_zenzo_qt_OBJECTS =  \
+@ENABLE_QT_TESTS_TRUE@	$(am__objects_1) $(am__objects_11)
+@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__objects_12 = qt/test/qt_test_test_zenzo_qt-moc_paymentservertests.$(OBJEXT)
+@ENABLE_QT_TESTS_TRUE@am__objects_13 = qt/test/qt_test_test_zenzo_qt-moc_uritests.$(OBJEXT) \
 @ENABLE_QT_TESTS_TRUE@	$(am__objects_12)
+@ENABLE_QT_TESTS_TRUE@nodist_qt_test_test_zenzo_qt_OBJECTS =  \
+@ENABLE_QT_TESTS_TRUE@	$(am__objects_13)
 qt_test_test_zenzo_qt_OBJECTS = $(am_qt_test_test_zenzo_qt_OBJECTS) \
 	$(nodist_qt_test_test_zenzo_qt_OBJECTS)
 @ENABLE_QT_TESTS_TRUE@@ENABLE_ZMQ_TRUE@am__DEPENDENCIES_2 =  \
@@ -797,7 +799,7 @@ am__DEPENDENCIES_3 = $(am__append_2)
 am__DEPENDENCIES_4 = $(am__append_3)
 @ENABLE_QT_TESTS_TRUE@qt_test_test_zenzo_qt_DEPENDENCIES =  \
 @ENABLE_QT_TESTS_TRUE@	$(LIBBITCOINQT) $(LIBBITCOIN_SERVER) \
-@ENABLE_QT_TESTS_TRUE@	$(am__append_35) $(am__DEPENDENCIES_2) \
+@ENABLE_QT_TESTS_TRUE@	$(am__append_36) $(am__DEPENDENCIES_2) \
 @ENABLE_QT_TESTS_TRUE@	$(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) \
 @ENABLE_QT_TESTS_TRUE@	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
 @ENABLE_QT_TESTS_TRUE@	$(LIBBITCOIN_UNIVALUE) \
@@ -822,23 +824,23 @@ qt_test_test_zenzo_qt_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(LDFLAGS) -o $@
 am__qt_zenzo_qt_SOURCES_DIST = qt/zenzo.cpp qt/macdockiconhandler.mm \
 	qt/macnotificationhandler.mm qt/res/zenzo-qt-res.rc
-@ENABLE_QT_TRUE@am__objects_13 =  \
+@ENABLE_QT_TRUE@am__objects_14 =  \
 @ENABLE_QT_TRUE@	qt/qt_zenzo_qt-macdockiconhandler.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_zenzo_qt-macnotificationhandler.$(OBJEXT)
-@ENABLE_QT_TRUE@@TARGET_DARWIN_TRUE@am__objects_14 =  \
-@ENABLE_QT_TRUE@@TARGET_DARWIN_TRUE@	$(am__objects_13)
-@ENABLE_QT_TRUE@am__objects_15 = qt/res/zenzo-qt-res.$(OBJEXT)
-@ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@am__objects_16 =  \
-@ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@	$(am__objects_15)
+@ENABLE_QT_TRUE@@TARGET_DARWIN_TRUE@am__objects_15 =  \
+@ENABLE_QT_TRUE@@TARGET_DARWIN_TRUE@	$(am__objects_14)
+@ENABLE_QT_TRUE@am__objects_16 = qt/res/zenzo-qt-res.$(OBJEXT)
+@ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@am__objects_17 =  \
+@ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@	$(am__objects_16)
 @ENABLE_QT_TRUE@am_qt_zenzo_qt_OBJECTS =  \
 @ENABLE_QT_TRUE@	qt/qt_zenzo_qt-zenzo.$(OBJEXT) \
-@ENABLE_QT_TRUE@	$(am__objects_14) $(am__objects_16)
+@ENABLE_QT_TRUE@	$(am__objects_15) $(am__objects_17)
 qt_zenzo_qt_OBJECTS = $(am_qt_zenzo_qt_OBJECTS)
 @ENABLE_QT_TRUE@@ENABLE_ZMQ_TRUE@am__DEPENDENCIES_5 =  \
 @ENABLE_QT_TRUE@@ENABLE_ZMQ_TRUE@	$(LIBBITCOIN_ZMQ) \
 @ENABLE_QT_TRUE@@ENABLE_ZMQ_TRUE@	$(am__DEPENDENCIES_1)
 @ENABLE_QT_TRUE@qt_zenzo_qt_DEPENDENCIES = qt/libbitcoinqt.a \
-@ENABLE_QT_TRUE@	$(LIBBITCOIN_SERVER) $(am__append_28) \
+@ENABLE_QT_TRUE@	$(LIBBITCOIN_SERVER) $(am__append_29) \
 @ENABLE_QT_TRUE@	$(am__DEPENDENCIES_5) $(LIBBITCOIN_CLI) \
 @ENABLE_QT_TRUE@	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
 @ENABLE_QT_TRUE@	$(LIBBITCOIN_CRYPTO) $(LIBBITCOIN_UNIVALUE) \
@@ -878,10 +880,10 @@ am__test_test_zenzo_SOURCES_DIST = test/libzerocoin_tests.cpp \
 	test/data/base58_keys_invalid.json \
 	test/data/script_invalid.json test/data/tx_invalid.json \
 	test/data/tx_valid.json test/data/sighash.json
-@ENABLE_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__objects_17 = test/test_test_zenzo-accounting_tests.$(OBJEXT) \
+@ENABLE_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__objects_18 = test/test_test_zenzo-accounting_tests.$(OBJEXT) \
 @ENABLE_TESTS_TRUE@@ENABLE_WALLET_TRUE@	test/test_test_zenzo-wallet_tests.$(OBJEXT) \
 @ENABLE_TESTS_TRUE@@ENABLE_WALLET_TRUE@	test/test_test_zenzo-rpc_wallet_tests.$(OBJEXT)
-@ENABLE_TESTS_TRUE@am__objects_18 = test/test_test_zenzo-libzerocoin_tests.$(OBJEXT) \
+@ENABLE_TESTS_TRUE@am__objects_19 = test/test_test_zenzo-libzerocoin_tests.$(OBJEXT) \
 @ENABLE_TESTS_TRUE@	test/test_test_zenzo-allocator_tests.$(OBJEXT) \
 @ENABLE_TESTS_TRUE@	test/test_test_zenzo-base32_tests.$(OBJEXT) \
 @ENABLE_TESTS_TRUE@	test/test_test_zenzo-base58_tests.$(OBJEXT) \
@@ -917,11 +919,11 @@ am__test_test_zenzo_SOURCES_DIST = test/libzerocoin_tests.cpp \
 @ENABLE_TESTS_TRUE@	test/test_test_zenzo-uint256_tests.$(OBJEXT) \
 @ENABLE_TESTS_TRUE@	test/test_test_zenzo-univalue_tests.$(OBJEXT) \
 @ENABLE_TESTS_TRUE@	test/test_test_zenzo-util_tests.$(OBJEXT) \
-@ENABLE_TESTS_TRUE@	$(am__objects_17)
-@ENABLE_TESTS_TRUE@am_test_test_zenzo_OBJECTS = $(am__objects_18) \
+@ENABLE_TESTS_TRUE@	$(am__objects_18)
+@ENABLE_TESTS_TRUE@am_test_test_zenzo_OBJECTS = $(am__objects_19) \
 @ENABLE_TESTS_TRUE@	$(am__objects_1) $(am__objects_1)
-@ENABLE_TESTS_TRUE@am__objects_19 = $(am__objects_1) $(am__objects_1)
-@ENABLE_TESTS_TRUE@nodist_test_test_zenzo_OBJECTS = $(am__objects_19)
+@ENABLE_TESTS_TRUE@am__objects_20 = $(am__objects_1) $(am__objects_1)
+@ENABLE_TESTS_TRUE@nodist_test_test_zenzo_OBJECTS = $(am__objects_20)
 test_test_zenzo_OBJECTS = $(am_test_test_zenzo_OBJECTS) \
 	$(nodist_test_test_zenzo_OBJECTS)
 @BUILD_BITCOIN_LIBS_TRUE@am__DEPENDENCIES_6 = libbitcoinconsensus.la
@@ -944,8 +946,8 @@ test_test_zenzo_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_CXXFLAGS) $(CXXFLAGS) $(test_test_zenzo_LDFLAGS) \
 	$(LDFLAGS) -o $@
 am__zenzo_cli_SOURCES_DIST = zenzo-cli.cpp zenzo-cli-res.rc
-@TARGET_WINDOWS_TRUE@am__objects_20 = zenzo-cli-res.$(OBJEXT)
-am_zenzo_cli_OBJECTS = zenzo_cli-zenzo-cli.$(OBJEXT) $(am__objects_20)
+@TARGET_WINDOWS_TRUE@am__objects_21 = zenzo-cli-res.$(OBJEXT)
+am_zenzo_cli_OBJECTS = zenzo_cli-zenzo-cli.$(OBJEXT) $(am__objects_21)
 zenzo_cli_OBJECTS = $(am_zenzo_cli_OBJECTS)
 zenzo_cli_DEPENDENCIES = $(LIBBITCOIN_CLI) $(LIBBITCOIN_UTIL) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
@@ -962,8 +964,8 @@ zenzo_tx_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
 	$(CXXFLAGS) $(zenzo_tx_LDFLAGS) $(LDFLAGS) -o $@
 am__zenzod_SOURCES_DIST = zenzod.cpp zenzod-res.rc
-@TARGET_WINDOWS_TRUE@am__objects_21 = zenzod-res.$(OBJEXT)
-am_zenzod_OBJECTS = zenzod-zenzod.$(OBJEXT) $(am__objects_21)
+@TARGET_WINDOWS_TRUE@am__objects_22 = zenzod-res.$(OBJEXT)
+am_zenzod_OBJECTS = zenzod-zenzod.$(OBJEXT) $(am__objects_22)
 zenzod_OBJECTS = $(am_zenzod_OBJECTS)
 @ENABLE_ZMQ_TRUE@am__DEPENDENCIES_8 = $(LIBBITCOIN_ZMQ) \
 @ENABLE_ZMQ_TRUE@	$(am__DEPENDENCIES_1)
@@ -1995,7 +1997,7 @@ CLEANFILES = leveldb/libleveldb.a leveldb/libmemenv.a *.gcda *.gcno \
 	compat/*.gcda compat/*.gcno crypto/*.gcda crypto/*.gcno \
 	primitives/*.gcda primitives/*.gcno script/*.gcda \
 	script/*.gcno univalue/*.gcda univalue/*.gcno zmq/*.gcda \
-	zmq/*.gcno $(am__append_22) $(am__append_30) $(am__append_37)
+	zmq/*.gcno $(am__append_22) $(am__append_31) $(am__append_38)
 DISTCLEANFILES = obj/build.h
 EXTRA_DIST = leveldb $(am__append_18)
 @ENABLE_TESTS_TRUE@TEST_SRCDIR = test
@@ -2325,7 +2327,8 @@ EXTRA_DIST = leveldb $(am__append_18)
 @ENABLE_QT_TRUE@	qt/qvaluecombobox.cpp qt/rpcconsole.cpp \
 @ENABLE_QT_TRUE@	qt/splashscreen.cpp qt/trafficgraphdata.cpp \
 @ENABLE_QT_TRUE@	qt/trafficgraphwidget.cpp qt/utilitydialog.cpp \
-@ENABLE_QT_TRUE@	qt/winshutdownmonitor.cpp $(am__append_25)
+@ENABLE_QT_TRUE@	qt/utilitydialog.cpp $(am__append_25) \
+@ENABLE_QT_TRUE@	$(am__append_26)
 @ENABLE_QT_TRUE@RES_IMAGES = \
 @ENABLE_QT_TRUE@  qt/res/images/about.png \
 @ENABLE_QT_TRUE@  qt/res/images/zenzo_chan.png \
@@ -2368,11 +2371,11 @@ EXTRA_DIST = leveldb $(am__append_18)
 @ENABLE_QT_TRUE@qt_zenzo_qt_CPPFLAGS = $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
 @ENABLE_QT_TRUE@  $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
 
-@ENABLE_QT_TRUE@qt_zenzo_qt_SOURCES = qt/zenzo.cpp $(am__append_26) \
-@ENABLE_QT_TRUE@	$(am__append_27)
+@ENABLE_QT_TRUE@qt_zenzo_qt_SOURCES = qt/zenzo.cpp $(am__append_27) \
+@ENABLE_QT_TRUE@	$(am__append_28)
 @ENABLE_QT_TRUE@qt_zenzo_qt_LDADD = qt/libbitcoinqt.a \
-@ENABLE_QT_TRUE@	$(LIBBITCOIN_SERVER) $(am__append_28) \
-@ENABLE_QT_TRUE@	$(am__append_29) $(LIBBITCOIN_CLI) \
+@ENABLE_QT_TRUE@	$(LIBBITCOIN_SERVER) $(am__append_29) \
+@ENABLE_QT_TRUE@	$(am__append_30) $(LIBBITCOIN_CLI) \
 @ENABLE_QT_TRUE@	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
 @ENABLE_QT_TRUE@	$(LIBBITCOIN_CRYPTO) $(LIBBITCOIN_UNIVALUE) \
 @ENABLE_QT_TRUE@	$(LIBBITCOIN_ZEROCOIN) $(LIBLEVELDB) \
@@ -2388,7 +2391,7 @@ EXTRA_DIST = leveldb $(am__append_18)
 @ENABLE_QT_TRUE@QT_QM = $(QT_TS:.ts=.qm)
 @ENABLE_QT_TRUE@CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno
 @ENABLE_QT_TESTS_TRUE@TEST_QT_MOC_CPP = qt/test/moc_uritests.cpp \
-@ENABLE_QT_TESTS_TRUE@	$(am__append_33)
+@ENABLE_QT_TESTS_TRUE@	$(am__append_34)
 @ENABLE_QT_TESTS_TRUE@TEST_QT_H = \
 @ENABLE_QT_TESTS_TRUE@  qt/test/uritests.h \
 @ENABLE_QT_TESTS_TRUE@  qt/test/paymentrequestdata.h \
@@ -2400,11 +2403,11 @@ EXTRA_DIST = leveldb $(am__append_18)
 @ENABLE_QT_TESTS_TRUE@qt_test_test_zenzo_qt_SOURCES =  \
 @ENABLE_QT_TESTS_TRUE@	qt/test/test_main.cpp \
 @ENABLE_QT_TESTS_TRUE@	qt/test/uritests.cpp $(TEST_QT_H) \
-@ENABLE_QT_TESTS_TRUE@	$(am__append_34)
+@ENABLE_QT_TESTS_TRUE@	$(am__append_35)
 @ENABLE_QT_TESTS_TRUE@nodist_qt_test_test_zenzo_qt_SOURCES = $(TEST_QT_MOC_CPP)
 @ENABLE_QT_TESTS_TRUE@qt_test_test_zenzo_qt_LDADD = $(LIBBITCOINQT) \
-@ENABLE_QT_TESTS_TRUE@	$(LIBBITCOIN_SERVER) $(am__append_35) \
-@ENABLE_QT_TESTS_TRUE@	$(am__append_36) $(LIBBITCOIN_CLI) \
+@ENABLE_QT_TESTS_TRUE@	$(LIBBITCOIN_SERVER) $(am__append_36) \
+@ENABLE_QT_TESTS_TRUE@	$(am__append_37) $(LIBBITCOIN_CLI) \
 @ENABLE_QT_TESTS_TRUE@	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
 @ENABLE_QT_TESTS_TRUE@	$(LIBBITCOIN_CRYPTO) \
 @ENABLE_QT_TESTS_TRUE@	$(LIBBITCOIN_UNIVALUE) \

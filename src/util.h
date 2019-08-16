@@ -64,6 +64,8 @@ extern std::string strMiscWarning;
 extern bool fLogTimestamps;
 extern bool fLogIPs;
 extern volatile bool fReopenDebugLog;
+extern int logSize;
+extern std::vector<std::string> logs;
 
 void SetupEnvironment();
 

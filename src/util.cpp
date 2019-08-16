@@ -138,6 +138,10 @@ bool fLogTimestamps = false;
 bool fLogIPs = false;
 volatile bool fReopenDebugLog = false;
 
+/** GUI-based logging */
+int logSize = 25; // Default amount of logs kept by the GUI logger before the oldest gets erased
+vector<string> logs;
+
 /** Init OpenSSL library multithreading support */
 static CCriticalSection** ppmutexOpenSSL;
 void locking_callback(int mode, int i, const char* file, int line)
@@ -277,6 +281,11 @@ int LogPrintStr(const std::string& str)
             if (freopen(pathDebug.string().c_str(), "a", fileout) != NULL)
                 setbuf(fileout, NULL); // unbuffered
         }
+
+        // Save print into logsStr for GUI-based logging
+        logs.push_back(str + "<br>");
+        if (logs.size() > logSize)
+            logs.erase(logs.begin());
 
         // Debug print useful for profiling
         if (fLogTimestamps && fStartedNewLine)

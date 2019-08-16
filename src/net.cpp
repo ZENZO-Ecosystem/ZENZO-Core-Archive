@@ -24,9 +24,6 @@
 #include "primitives/transaction.h"
 #include "scheduler.h"
 #include "ui_interface.h"
-#ifdef ENABLE_WALLET
-#include "wallet.h"
-#endif
 
 #ifdef WIN32
 #include <string.h>
@@ -1613,25 +1610,6 @@ void ThreadMessageHandler()
     }
 }
 
-#ifdef ENABLE_WALLET
-// ppcoin: stake minter thread
-void static ThreadStakeMinter()
-{
-    boost::this_thread::interruption_point();
-    LogPrintf("ThreadStakeMinter started\n");
-    CWallet* pwallet = pwalletMain;
-    try {
-        BitcoinMiner(pwallet, true);
-        boost::this_thread::interruption_point();
-    } catch (std::exception& e) {
-        LogPrintf("ThreadStakeMinter() exception \n");
-    } catch (...) {
-        LogPrintf("ThreadStakeMinter() error \n");
-    }
-    LogPrintf("ThreadStakeMinter exiting,\n");
-}
-#endif
-
 bool BindListenPort(const CService& addrBind, std::string& strError, bool fWhitelisted)
 {
     strError = "";
@@ -1834,12 +1812,6 @@ void StartNode(boost::thread_group& threadGroup, CScheduler& scheduler)
 
     // Dump network addresses
     scheduler.scheduleEvery(&DumpData, DUMP_ADDRESSES_INTERVAL * 1000);
-
-  #ifdef ENABLE_WALLET
-    // ppcoin:mint proof-of-stake blocks in the background
-    if (GetBoolArg("-staking", true) && pwalletMain)
-        threadGroup.create_thread(boost::bind(&TraceThread<void (*)()>, "stakemint", &ThreadStakeMinter));
-  #endif
 }
 
 bool StopNode()
@@ -2371,39 +2343,45 @@ bool CBanDB::Read(banmap_t& banSet)
 
 int CheckForUpdates (std::string addr, std::string ver)
 {
-  if (fUpdateCheck == true)
-  {
-    // Splice raw version integer from the Sub Version of the peer and ourselves
-    replaceAll(ver, "/", "");
-    replaceAll(ver, ".", "");
-    replaceAll(ver, "ZENZO Core:", "");
-    replaceAll(ver, "Zenzo Core:", "");
-    int verInt = std::stoi(ver);
+    if (fUpdateCheck == true)
+    {
+        // Splice raw version integer from the Sub Version of the peer and ourselves
+        try {
+            replaceAll(ver, "/", "");
+            replaceAll(ver, ".", "");
+            replaceAll(ver, "ZENZO Core:", "");
+            replaceAll(ver, "Zenzo Core:", "");
+            int verInt = std::stoi(ver);
 
-    std::string localVer = FormatFullVersion();
-    replaceAll(localVer, "v", "");
-    replaceAll(localVer, ".", "");
-    int localVerInt = std::stoi(localVer);
+            std::string localVer = FormatFullVersion();
+            replaceAll(localVer, "v", "");
+            replaceAll(localVer, ".", "");
+            int localVerInt = std::stoi(localVer);
 
-    // Compare our version integer to the connected node
-    if (verInt > localVerInt) {
-      higherVerPeers++;
-    } else if (verInt == localVerInt) {
-      currentVerPeers++;
-    } else lowerVerPeers ++;
+            // Compare our version integer to the connected node
+            if (verInt > localVerInt) {
+              higherVerPeers++;
+            } else if (verInt == localVerInt) {
+              currentVerPeers++;
+            } else lowerVerPeers ++;
 
-    // Calculate peers needed for a 'majority' upgrade
-    int peersForUpgrade = (higherVerPeers + currentVerPeers + lowerVerPeers) / nUpgradeMajority;
+            // Calculate peers needed for a 'majority' upgrade
+            int peersForUpgrade = (higherVerPeers + currentVerPeers + lowerVerPeers) / nUpgradeMajority;
 
-    // Ensure minimum is atleast 2 peers
-    if (peersForUpgrade < 2)
-        peersForUpgrade = 2;
+            // Ensure minimum is atleast 2 peers
+            if (peersForUpgrade < 2)
+                peersForUpgrade = 2;
 
-    // Check if majority consensus is met
-    shouldUpgrade = ((higherVerPeers >= peersForUpgrade) ? shouldUpgrade = true : shouldUpgrade = false);
+            // Check if majority consensus is met
+            shouldUpgrade = ((higherVerPeers >= peersForUpgrade) ? shouldUpgrade = true : shouldUpgrade = false);
 
-    return shouldUpgrade;
-  }
+            return shouldUpgrade;
+        } catch (const std::exception& e) {
+            // Ending up here likely means the node subver is different, e.g: A seeder, lightwallet or simply a tampered subver. Catch the parsing error and ignore the node.
+            LogPrintf("DVM: New node version couldn't be parsed, ignoring version %v of peer %d\n", ver, addr);
+            return false;
+        }
+    }
 }
 
 void replaceAll(std::string& str, const std::string& from, const std::string& to)
