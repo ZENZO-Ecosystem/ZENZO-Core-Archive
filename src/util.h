@@ -30,6 +30,16 @@
 #include <boost/filesystem/path.hpp>
 #include <boost/thread/exceptions.hpp>
 
+// Debugging macros
+// Uncomment the following line to enable debugging messages
+// or enable on a per file basis prior to inclusion of util.h
+//#define ENABLE_ZENZO_DEBUG
+#ifdef ENABLE_ZENZO_DEBUG
+#define DBG( x ) x
+#else
+#define DBG( x )
+#endif
+
 //ZENZO only features
 
 extern bool fMasterNode;

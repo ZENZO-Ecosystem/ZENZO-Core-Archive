@@ -122,6 +122,7 @@ class CCryptoKeyStore : public CBasicKeyStore
 {
 private:
     CryptedKeyMap mapCryptedKeys;
+    CHDChain cryptedHDChain;
 
     CKeyingMaterial vMasterKey;
 
@@ -138,6 +139,10 @@ protected:
     //! will encrypt previously unencrypted keys
     bool EncryptKeys(CKeyingMaterial& vMasterKeyIn);
 
+    bool EncryptHDChain(const CKeyingMaterial& vMasterKeyIn);
+    bool DecryptHDChain(CHDChain& hdChainRet) const;
+    bool SetHDChain(const CHDChain& chain);
+    bool SetCryptedHDChain(const CHDChain& chain);
     bool Unlock(const CKeyingMaterial& vMasterKeyIn);
 
 public:
@@ -191,6 +196,8 @@ public:
             mi++;
         }
     }
+    
+    bool GetHDChain(CHDChain& hdChainRet) const;
 
     /**
      * Wallet status (encrypted, locked) changed.

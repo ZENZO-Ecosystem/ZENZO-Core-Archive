@@ -10,6 +10,7 @@
 #include "allocators.h"
 #include "serialize.h"
 #include "uint256.h"
+#include "pubkey.h"
 
 #include <stdexcept>
 #include <vector>
@@ -170,11 +171,28 @@ struct CExtKey {
                memcmp(&a.vchChainCode[0], &b.vchChainCode[0], 32) == 0 && a.key == b.key;
     }
 
-    void Encode(unsigned char code[74]) const;
-    void Decode(const unsigned char code[74]);
+    void Encode(unsigned char code[BIP32_EXTKEY_SIZE]) const;
+    void Decode(const unsigned char code[BIP32_EXTKEY_SIZE]);
     bool Derive(CExtKey& out, unsigned int nChild) const;
     CExtPubKey Neuter() const;
     void SetMaster(const unsigned char* seed, unsigned int nSeedLen);
+    template <typename Stream>
+    void Serialize(Stream& s, int nType, int nVersion) const
+    {
+        unsigned int len = BIP32_EXTKEY_SIZE;
+        ::WriteCompactSize(s, len);
+        unsigned char code[BIP32_EXTKEY_SIZE];
+        Encode(code);
+        s.write((const char *)&code[0], len);
+    }
+    template <typename Stream>
+    void Unserialize(Stream& s, int nType, int nVersion)
+    {
+        unsigned int len = ::ReadCompactSize(s);
+        unsigned char code[BIP32_EXTKEY_SIZE];
+        s.read((char *)&code[0], len);
+        Decode(code);
+    }
 };
 
 /** Check that required EC support is available at runtime */

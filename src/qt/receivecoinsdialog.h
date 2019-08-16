@@ -58,6 +58,9 @@ private:
     GUIUtil::TableViewLastColumnResizingFixer* columnResizingFixer;
     WalletModel* model;
     QMenu* contextMenu;
+    QString address;
+
+    QString getAddress(QString label = "");
     void copyColumnToClipboard(int column);
     virtual void resizeEvent(QResizeEvent* event);
 
@@ -73,6 +76,7 @@ private slots:
     void copyMessage();
     void copyAmount();
     void copyAddress();
+    void receiveAddressUsed();
 };
 
 #endif // BITCOIN_QT_RECEIVECOINSDIALOG_H

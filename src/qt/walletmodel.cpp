@@ -138,6 +138,9 @@ void WalletModel::pollBalanceChanged()
         if (transactionTableModel) {
             transactionTableModel->updateConfirmations();
         }
+		
+        // Address in receive tab may have been used
+        emit notifyReceiveAddressChanged();
     }
 }
 
@@ -698,4 +701,14 @@ bool WalletModel::saveReceiveRequest(const std::string& sAddress, const int64_t 
 bool WalletModel::isMine(CBitcoinAddress address)
 {
     return IsMine(*wallet, address.Get());
+}
+
+bool WalletModel::isUsed(CBitcoinAddress address)
+{
+    return wallet->IsUsed(address);
+}
+
+bool WalletModel::hdEnabled() const
+{
+    return wallet->IsHDEnabled();
 }
