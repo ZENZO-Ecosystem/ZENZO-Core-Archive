@@ -134,7 +134,7 @@ public:
         SetNull();
     }
 
-    CZerocoinSpend(CBigNum coinSerial, uint256 hashTx, CBigNum pubCoin, libzerocoin::CoinDenomination denomination, unsigned int nAccumulatorChecksum)
+    CZerocoinSpend(CBigNum coinSerial, arith_uint256 hashTx, CBigNum pubCoin, libzerocoin::CoinDenomination denomination, unsigned int nAccumulatorChecksum)
     {
         this->coinSerial = coinSerial;
         this->hashTx = hashTx;
