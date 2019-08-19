@@ -77,7 +77,7 @@ public:
 
     uint64_t Get64(int n = 0) const
     {
-        return pn[2 * n] | (uint64_t)pn[2 * n + 1] << 32;
+        return data[2 * n] | (uint64_t)data[2 * n + 1] << 32;
     }
 
     uint32_t Get32(int n = 0) const
@@ -92,7 +92,7 @@ public:
     uint64_t GetLow64() const
     {
         assert(WIDTH >= 2);
-        return pn[0] | (uint64_t)pn[1] << 32;
+        return data[0] | (uint64_t)data[1] << 32;
     }
 
     unsigned int GetSerializeSize(int nType, int nVersion) const
