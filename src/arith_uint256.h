@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2015 The Bitcoin developers
+// Copyright (c) 2009-2014 The Bitcoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,8 +13,6 @@
 #include <string>
 #include <vector>
 
-class uint256;
-
 class uint_error : public std::runtime_error {
 public:
     explicit uint_error(const std::string& str) : std::runtime_error(str) {}
@@ -27,8 +25,8 @@ class base_uint
 protected:
     enum { WIDTH=BITS/32 };
     uint32_t pn[WIDTH];
-
 public:
+
     base_uint()
     {
         for (int i = 0; i < WIDTH; i++)
@@ -57,6 +55,7 @@ public:
     }
 
     explicit base_uint(const std::string& str);
+    explicit base_uint(const std::vector<unsigned char>& vch);
 
     bool operator!() const
     {
@@ -231,6 +230,26 @@ public:
     void SetHex(const std::string& str);
     std::string ToString() const;
 
+    unsigned char* begin()
+    {
+        return (unsigned char*)&pn[0];
+    }
+
+    unsigned char* end()
+    {
+        return (unsigned char*)&pn[WIDTH];
+    }
+
+    const unsigned char* begin() const
+    {
+        return (unsigned char*)&pn[0];
+    }
+
+    const unsigned char* end() const
+    {
+        return (unsigned char*)&pn[WIDTH];
+    }
+
     unsigned int size() const
     {
         return sizeof(pn);
@@ -247,6 +266,50 @@ public:
         assert(WIDTH >= 2);
         return pn[0] | (uint64_t)pn[1] << 32;
     }
+
+    unsigned int GetSerializeSize(int nType, int nVersion) const
+    {
+        return sizeof(pn);
+    }
+
+    template<typename Stream>
+    void Serialize(Stream& s, int nType, int nVersion) const
+    {
+        s.write((char*)pn, sizeof(pn));
+    }
+
+    template<typename Stream>
+    void Unserialize(Stream& s, int nType, int nVersion)
+    {
+        s.read((char*)pn, sizeof(pn));
+    }
+
+    // Temporary for migration to blob160/256
+    uint64_t GetCheapHash() const
+    {
+        return GetLow64();
+    }
+    void SetNull()
+    {
+        memset(pn, 0, sizeof(pn));
+    }
+    bool IsNull() const
+    {
+        for (int i = 0; i < WIDTH; i++)
+            if (pn[i] != 0)
+                return false;
+        return true;
+    }
+};
+
+/** 160-bit unsigned big integer. */
+class arith_uint160 : public base_uint<160> {
+public:
+    arith_uint160() {}
+    arith_uint160(const base_uint<160>& b) : base_uint<160>(b) {}
+    arith_uint160(uint64_t b) : base_uint<160>(b) {}
+    explicit arith_uint160(const std::string& str) : base_uint<160>(str) {}
+    explicit arith_uint160(const std::vector<unsigned char>& vch) : base_uint<160>(vch) {}
 };
 
 /** 256-bit unsigned big integer. */
@@ -256,6 +319,7 @@ public:
     arith_uint256(const base_uint<256>& b) : base_uint<256>(b) {}
     arith_uint256(uint64_t b) : base_uint<256>(b) {}
     explicit arith_uint256(const std::string& str) : base_uint<256>(str) {}
+    explicit arith_uint256(const std::vector<unsigned char>& vch) : base_uint<256>(vch) {}
 
     /**
      * The "compact" format is a representation of a whole
@@ -280,11 +344,7 @@ public:
     arith_uint256& SetCompact(uint32_t nCompact, bool *pfNegative = NULL, bool *pfOverflow = NULL);
     uint32_t GetCompact(bool fNegative = false) const;
 
-    friend uint256 ArithToUint256(const arith_uint256 &);
-    friend arith_uint256 UintToArith256(const uint256 &);
+    uint64_t GetHash(const arith_uint256& salt) const;
 };
 
-uint256 ArithToUint256(const arith_uint256 &);
-arith_uint256 UintToArith256(const uint256 &);
-
-#endif // BITCOIN_ARITH_UINT256_H
+#endif // BITCOIN_UINT256_H
