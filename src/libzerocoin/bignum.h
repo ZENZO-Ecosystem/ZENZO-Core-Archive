@@ -9,6 +9,7 @@
 #include <stdexcept>
 #include <vector>
 #include <openssl/bn.h>
+#include "arith_uint256.h"
 #include "serialize.h"
 #include "uint256.h"
 #include "version.h"
@@ -100,7 +101,7 @@ public:
     CBigNum(unsigned int n)     { BN_init(this); setulong(n); }
     CBigNum(unsigned long n)    { BN_init(this); setulong(n); }
   //  CBigNum(uint64_t n)           { BN_init(this); setuint64(n); }
-    explicit CBigNum(uint256 n) { BN_init(this); setuint256(n); }
+    explicit CBigNum(arith_uint256 n) { BN_init(this); setuint256(n); }
 
     explicit CBigNum(const std::vector<unsigned char>& vch)
     {
