@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_CONSENSUS_CONSENSUS_PARAMS_H
-#define BITCOIN_CONSENSUS_CONSENSUS_PARAMS_H
+#ifndef ZENZO_CONSENSUS_PARAMS_H
+#define ZENZO_CONSENSUS_PARAMS_H
 
 #include "arith_uint256.h"
 #include "uint256.h"
@@ -30,4 +30,4 @@ namespace Consensus {
     };
 } // namespace Consensus
 
-#endif // BITCOIN_CONSENSUS_CONSENSUS_PARAMS_H
+#endif // ZENZO_CONSENSUS_PARAMS_H
