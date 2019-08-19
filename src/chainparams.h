@@ -49,7 +49,6 @@ public:
     const uint256& HashGenesisBlock() const { return consensus.hashGenesisBlock; }
     const MessageStartChars& MessageStart() const { return pchMessageStart; }
     int GetDefaultPort() const { return nDefaultPort; }
-    const uint256& ProofOfWorkLimit() const { return consensus.powLimit; }
     int SubsidyHalvingInterval() const { return consensus.nSubsidyHalvingInterval; }
     int EnforceBlockUpgradeMajority() const { return consensus.nMajorityEnforceBlockUpgrade; }
     int RejectBlockOutdatedMajority() const { return consensus.nMajorityRejectBlockOutdated; }
@@ -72,9 +71,6 @@ public:
     bool SkipProofOfWorkCheck() const { return fSkipProofOfWorkCheck; }
     /** Make standard checks */
     bool RequireStandard() const { return fRequireStandard; }
-    int64_t TargetTimespan() const { return consensus.nPowTargetTimespan; }
-    int64_t TargetSpacing() const { return consensus.nPowTargetSpacing; }
-    int64_t DifficultyAdjustmentInterval() const { return consensus.nPowTargetTimespan / consensus.nPowTargetSpacing; }
     int COINBASE_MATURITY() const { return nMaturity; }
     CAmount MaxMoneyOut() const { return nMaxMoneyOut; }
     /** The masternode count that we will allow the see-saw reward payments to be off by */
