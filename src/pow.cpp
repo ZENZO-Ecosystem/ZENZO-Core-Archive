@@ -25,15 +25,15 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
     int64_t PastBlocksMin = 24;
     int64_t PastBlocksMax = 24;
     int64_t CountBlocks = 0;
-    uint256 PastDifficultyAverage;
-    uint256 PastDifficultyAveragePrev;
+    arith_uint256 PastDifficultyAverage;
+    arith_uint256 PastDifficultyAveragePrev;
 
     if (BlockLastSolved == NULL || BlockLastSolved->nHeight == 0 || BlockLastSolved->nHeight < PastBlocksMin) {
-        return params.powLimit.GetCompact();
+        return UintToArith256(params.powLimit).GetCompact();
     }
 
     if (pindexLast->nHeight > params.LAST_POW_BLOCK()) {
-        uint256 bnTargetLimit = (~uint256(0) >> 24);
+        arith_uint256 bnTargetLimit = (~uint256(0) >> 24);
         int64_t nTargetSpacing = 60;
         int64_t nTargetTimespan = 60 * 40;
 
@@ -46,7 +46,7 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
 
         // ppcoin: target change every block
         // ppcoin: retarget with exponential moving toward target spacing
-        uint256 bnNew;
+        arith_uint256 bnNew;
         bnNew.SetCompact(pindexLast->nBits);
 
         int64_t nInterval = nTargetTimespan / nTargetSpacing;
@@ -87,7 +87,7 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
         BlockReading = BlockReading->pprev;
     }
 
-    uint256 bnNew(PastDifficultyAverage);
+    arith_uint256 bnNew(PastDifficultyAverage);
 
     int64_t _nTargetTimespan = CountBlocks * params.TargetSpacing();
 
@@ -97,11 +97,12 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast)
         nActualTimespan = _nTargetTimespan * 3;
 
     // Retarget
+    const arith_uint256 bnPowLimit = UintToArith256(params.powLimit);
     bnNew *= nActualTimespan;
     bnNew /= _nTargetTimespan;
 
-    if (bnNew > params.powLimit) {
-        bnNew = params.powLimit;
+    if (bnNew > bnPowLimit) {
+        bnNew = bnPowLimit;
     }
 
     return bnNew.GetCompact();	
@@ -116,7 +117,7 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
 {
     bool fNegative;
     bool fOverflow;
-    uint256 bnTarget;
+    arith_uint256 bnTarget;
 
     if (params.SkipProofOfWorkCheck())
         return true;
@@ -124,7 +125,7 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
     bnTarget.SetCompact(nBits, &fNegative, &fOverflow);
 
     // Check range
-    if (fNegative || bnTarget == 0 || fOverflow || bnTarget > params.powLimit)
+    if (fNegative || bnTarget == 0 || fOverflow || bnTarget > UintToArith256(params.powLimit))
         return error("CheckProofOfWork() : nBits below minimum work");
 
     // Check proof of work matches claimed amount
@@ -134,16 +135,16 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
     return true;
 }
 
-uint256 GetBlockProof(const CBlockIndex& block)
+arith_uint256 GetBlockProof(const CBlockIndex& block)
 {
-    uint256 bnTarget;
+    arith_uint256 bnTarget;
     bool fNegative;
     bool fOverflow;
     bnTarget.SetCompact(block.nBits, &fNegative, &fOverflow);
     if (fNegative || fOverflow || bnTarget == 0)
         return 0;
     // We need to compute 2**256 / (bnTarget+1), but we can't represent 2**256
-    // as it's too large for a uint256. However, as 2**256 is at least as large
+    // as it's too large for a arith_uint256. However, as 2**256 is at least as large
     // as bnTarget+1, it is equal to ((2**256 - bnTarget - 1) / (bnTarget+1)) + 1,
     // or ~bnTarget / (nTarget+1) + 1.
     return (~bnTarget / (bnTarget + 1)) + 1;

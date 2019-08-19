@@ -106,7 +106,7 @@ public:
         consensus.nMajorityEnforceBlockUpgrade = 750;
         consensus.nMajorityRejectBlockOutdated = 950;
         consensus.nMajorityWindow = 1000;
-        consensus.powLimit = ~arith_uint256(0) >> 20;
+        consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
         consensus.nPowTargetTimespan = 1 * 60; // ZENZO: 1 minute
         consensus.nPowTargetSpacing = 1 * 60;  // ZENZO: 1 minute
         consensus.fPowAllowMinDifficultyBlocks = false;
@@ -304,7 +304,7 @@ public:
         consensus.nMajorityEnforceBlockUpgrade = 750;
         consensus.nMajorityRejectBlockOutdated = 950;
         consensus.nMajorityWindow = 1000;
-        consensus.powLimit = ~arith_uint256(0) >> 1;
+        consensus.powLimit = powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
         pchMessageStart[0] = 0xc6;
         pchMessageStart[1] = 0xbd;
         pchMessageStart[2] = 0xf2;
