@@ -5,6 +5,7 @@
 #define SHEKEL_ZEROCOIN_H
 
 #include <amount.h>
+#include "arith_uint256.h"
 #include <limits.h>
 #include "libzerocoin/bignum.h"
 #include "libzerocoin/Denominations.h"
@@ -18,7 +19,7 @@ private:
     CBigNum value;
     CBigNum randomness;
     CBigNum serialNumber;
-    uint256 txid;
+    arith_uint256 txid;
     bool isUsed;
 
 public:
