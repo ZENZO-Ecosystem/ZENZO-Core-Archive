@@ -102,6 +102,14 @@ public:
     {
         networkID = CBaseChainParams::MAIN;
         strNetworkID = "main";
+        consensus.nSubsidyHalvingInterval = 4000000;
+        consensus.nMajorityEnforceBlockUpgrade = 750;
+        consensus.nMajorityRejectBlockOutdated = 950;
+        consensus.nMajorityWindow = 1000;
+        consensus.powLimit = ~arith_uint256(0) >> 20;
+        consensus.nPowTargetTimespan = 1 * 60; // ZENZO: 1 minute
+        consensus.nPowTargetSpacing = 1 * 60;  // ZENZO: 1 minute
+        consensus.fPowAllowMinDifficultyBlocks = false;
         /**
          * The message start string is designed to be unlikely to occur in normal data.
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
@@ -112,15 +120,8 @@ public:
         pchMessageStart[2] = 0xb9;
         pchMessageStart[3] = 0xc4;
         nDefaultPort = 26210;
-        bnProofOfWorkLimit = ~uint256(0) >> 20; // ZENZO starting difficulty is 1 / 2^12
-        nSubsidyHalvingInterval = 4000000;
         nMaxReorganizationDepth = 100;
-        nEnforceBlockUpgradeMajority = 750;
-        nRejectBlockOutdatedMajority = 950;
-        nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // ZENZO: 1 day
-        nTargetSpacing = 1 * 60;  // ZENZO: 1 minute
         nMaturity = 50;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 83000000 * COIN;
@@ -161,8 +162,8 @@ public:
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 1050765;
 
-		hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0000024c78d7d2fb56363f7777bab06de80307ac751b02e843ca7ae62d2310d2"));
+        consensus.hashGenesisBlock = genesis.GetHash();
+        assert(consensus.hashGenesisBlock == uint256("0000024c78d7d2fb56363f7777bab06de80307ac751b02e843ca7ae62d2310d2"));
         assert(genesis.hashMerkleRoot == uint256("7411c8de5f43691fd7cb0f6264867edb8bb35da1bd6f0377e0981b86832254a1"));
 
 		vSeeds.push_back(CDNSSeedData("80.240.31.194", "80.240.31.194")); // Primary DNS Seeder
@@ -183,7 +184,6 @@ public:
 
         fRequireRPCPassword = true;
         fMiningRequiresPeers = true;
-        fAllowMinDifficultyBlocks = false;
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
@@ -224,17 +224,16 @@ public:
     {
         networkID = CBaseChainParams::TESTNET;
         strNetworkID = "test";
+        consensus.nMajorityEnforceBlockUpgrade = 51;
+        consensus.nMajorityRejectBlockOutdated = 75;
+        consensus.nMajorityWindow = 100;
+        consensus.fPowAllowMinDifficultyBlocks = true;
         pchMessageStart[0] = 0x35;
         pchMessageStart[1] = 0x57;
         pchMessageStart[2] = 0x5a;
         pchMessageStart[3] = 0xa1;
         nDefaultPort = 16210;
-        nEnforceBlockUpgradeMajority = 51;
-        nRejectBlockOutdatedMajority = 75;
-        nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // ZENZO: 1 day
-        nTargetSpacing = 1 * 60;  // ZENZO: 1 minute
         nLastPOWBlock = 200;
         nMaturity = 15;
         nMasternodeCountDrift = 4;
@@ -251,8 +250,8 @@ public:
         genesis.nTime = 1538323043;
         genesis.nNonce = 1050765;
 
-	    hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0000024c78d7d2fb56363f7777bab06de80307ac751b02e843ca7ae62d2310d2"));
+        consensus.hashGenesisBlock = genesis.GetHash();
+        assert(consensus.hashGenesisBlock == uint256("0000024c78d7d2fb56363f7777bab06de80307ac751b02e843ca7ae62d2310d2"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -272,7 +271,6 @@ public:
 
         fRequireRPCPassword = true;
         fMiningRequiresPeers = false;
-        fAllowMinDifficultyBlocks = true;
         fDefaultConsistencyChecks = false;
         fRequireStandard = false;
         fMineBlocksOnDemand = false;
@@ -302,26 +300,23 @@ public:
     {
         networkID = CBaseChainParams::REGTEST;
         strNetworkID = "regtest";
-        strNetworkID = "regtest";
+        consensus.nSubsidyHalvingInterval = 150;
+        consensus.nMajorityEnforceBlockUpgrade = 750;
+        consensus.nMajorityRejectBlockOutdated = 950;
+        consensus.nMajorityWindow = 1000;
+        consensus.powLimit = ~arith_uint256(0) >> 1;
         pchMessageStart[0] = 0xc6;
         pchMessageStart[1] = 0xbd;
         pchMessageStart[2] = 0xf2;
         pchMessageStart[3] = 0x3a;
-        nSubsidyHalvingInterval = 150;
-        nEnforceBlockUpgradeMajority = 750;
-        nRejectBlockOutdatedMajority = 950;
-        nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespan = 24 * 60 * 60; // ZENZO: 1 day
-        nTargetSpacing = 1 * 60;        // ZENZO: 1 minutes
-        bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1538323043;
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 1050765;
 
-        hashGenesisBlock = genesis.GetHash();
+        consensus.hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 36210;
-        assert(hashGenesisBlock == uint256("0000024c78d7d2fb56363f7777bab06de80307ac751b02e843ca7ae62d2310d2"));
+        assert(consensus.hashGenesisBlock == uint256("0000024c78d7d2fb56363f7777bab06de80307ac751b02e843ca7ae62d2310d2"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.
@@ -329,7 +324,6 @@ public:
         nExtCoinType = 1;
         fRequireRPCPassword = false;
         fMiningRequiresPeers = false;
-        fAllowMinDifficultyBlocks = true;
         fDefaultConsistencyChecks = true;
         fRequireStandard = false;
         fMineBlocksOnDemand = true;

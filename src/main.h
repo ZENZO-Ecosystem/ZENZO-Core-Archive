@@ -18,7 +18,6 @@
 #include "chainparams.h"
 #include "coins.h"
 #include "net.h"
-#include "pow.h"
 #include "primitives/block.h"
 #include "primitives/transaction.h"
 #include "primitives/zerocoin.h"
