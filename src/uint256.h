@@ -75,6 +75,26 @@ public:
         return sizeof(data);
     }
 
+    uint64_t Get64(int n = 0) const
+    {
+        return pn[2 * n] | (uint64_t)pn[2 * n + 1] << 32;
+    }
+
+    uint32_t Get32(int n = 0) const
+    {
+        return static_cast<uint32_t>(Get64());
+    }
+    /**
+     * Returns the position of the highest bit set plus one, or zero if the
+     * value is zero.
+     */
+    unsigned int bits() const;
+    uint64_t GetLow64() const
+    {
+        assert(WIDTH >= 2);
+        return pn[0] | (uint64_t)pn[1] << 32;
+    }
+
     unsigned int GetSerializeSize(int nType, int nVersion) const
     {
         return sizeof(data);
