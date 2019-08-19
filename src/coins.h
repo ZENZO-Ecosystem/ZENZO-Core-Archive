@@ -318,7 +318,8 @@ struct CCoinsCacheEntry {
 
 typedef boost::unordered_map<uint256, CCoinsCacheEntry, CCoinsKeyHasher> CCoinsMap;
 
-struct CCoinsStats {
+struct CCoinsStats
+{
     int nHeight;
     uint256 hashBlock;
     uint64_t nTransactions;
@@ -327,8 +328,9 @@ struct CCoinsStats {
     uint256 hashSerialized;
     CAmount nTotalAmount;
 
-    CCoinsStats() : nHeight(0), hashBlock(0), nTransactions(0), nTransactionOutputs(0), nSerializedSize(0), nTotalAmount(0) {}
+    CCoinsStats() : nHeight(0), nTransactions(0), nTransactionOutputs(0), nSerializedSize(0), nTotalAmount(0) {}
 };
+
 
 
 /** Abstract view on the open txout dataset. */
