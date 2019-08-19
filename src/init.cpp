@@ -17,6 +17,7 @@
 #include "addrman.h"
 #include "amount.h"
 #include "checkpoints.h"
+#include "consensus/validation.h"
 #include "compat/sanity.h"
 #include "key.h"
 #include "main.h"

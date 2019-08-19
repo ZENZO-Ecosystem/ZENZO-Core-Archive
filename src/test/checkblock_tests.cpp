@@ -2,13 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-//
-// Unit tests for block.CheckBlock()
-//
-
-
-
 #include "clientversion.h"
+#include "consensus/validation.h"
 #include "main.h"
 #include "utiltime.h"
 
