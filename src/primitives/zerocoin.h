@@ -48,7 +48,7 @@ public:
         txid = 0;
     }
 
-    uint256 GetHash() const;
+    arith_uint256 GetHash() const;
 
     CBigNum GetValue() const { return value; }
     void SetValue(CBigNum value){ this->value = value; }
@@ -63,8 +63,8 @@ public:
     void SetRandomness(CBigNum rand){ this->randomness = rand; }
     CBigNum GetSerialNumber() const { return serialNumber; }
     void SetSerialNumber(CBigNum serial){ this->serialNumber = serial; }
-    uint256 GetTxHash() const { return this->txid; }
-    void SetTxHash(uint256 txid) { this->txid = txid; }
+    arith_uint256 GetTxHash() const { return this->txid; }
+    void SetTxHash(arith_uint256 txid) { this->txid = txid; }
 
     inline bool operator <(const CZerocoinMint& a) const { return GetHeight() < a.GetHeight(); }
 
@@ -152,12 +152,12 @@ public:
     }
 
     CBigNum GetSerial() const { return coinSerial; }
-    uint256 GetTxHash() const { return hashTx; }
-    void SetTxHash(uint256 hash) { this->hashTx = hash; }
+    arith_uint256 GetTxHash() const { return hashTx; }
+    void SetTxHash(arith_uint256 hash) { this->hashTx = hash; }
     CBigNum GetPubCoin() const { return pubCoin; }
     libzerocoin::CoinDenomination GetDenomination() const { return denomination; }
     unsigned int GetAccumulatorChecksum() const { return this->nAccumulatorChecksum; }
-    uint256 GetHash() const;
+    arith_uint256 GetHash() const;
     void SetMintCount(int nMintsAdded) { this->nMintCount = nMintsAdded; }
     int GetMintCount() const { return nMintCount; }
  
