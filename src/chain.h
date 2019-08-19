@@ -174,7 +174,7 @@ public:
     unsigned int nTime;
     unsigned int nBits;
     unsigned int nNonce;
-    uint256 nAccumulatorCheckpoint;
+    arith_uint256 nAccumulatorCheckpoint;
 
     //! (memory only) Sequential id assigned to distinguish order in which blocks are received.
     uint32_t nSequenceId;
