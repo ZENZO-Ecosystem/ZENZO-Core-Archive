@@ -122,7 +122,7 @@ class CZerocoinSpend
 {
 private:
     CBigNum coinSerial;
-    uint256 hashTx;
+    arith_uint256 hashTx;
     CBigNum pubCoin;
     libzerocoin::CoinDenomination denomination;
     unsigned int nAccumulatorChecksum;
