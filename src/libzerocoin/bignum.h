@@ -267,7 +267,7 @@ public:
         BN_mpi2bn(pch, p - pch, this);
     }
 
-    arith_uint256 getarith_uint256() const
+    arith_uint256 getuint256() const
     {
         unsigned int nSize = BN_bn2mpi(this, NULL);
         if (nSize < 4)

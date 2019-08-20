@@ -7,7 +7,6 @@
 #ifndef BITCOIN_PRIMITIVES_BLOCK_H
 #define BITCOIN_PRIMITIVES_BLOCK_H
 
-#include "arith_uint256.h"
 #include "primitives/transaction.h"
 #include "keystore.h"
 #include "serialize.h"
@@ -31,7 +30,7 @@ public:
     uint32_t nTime;
     uint32_t nBits;
     uint32_t nNonce;
-    arith_uint256 nAccumulatorCheckpoint;
+    uint256 nAccumulatorCheckpoint;
 
     CBlockHeader()
     {
@@ -63,7 +62,7 @@ public:
         nTime = 0;
         nBits = 0;
         nNonce = 0;
-        nAccumulatorCheckpoint = 0;
+        nAccumulatorCheckpoint.SetNull();;
     }
 
     bool IsNull() const

@@ -65,7 +65,7 @@ SerialNumberSignatureOfKnowledge::SerialNumberSignatureOfKnowledge(const
 
         //use a random 256 bit seed that expands to 1024 bit for v[i]
         while (true) {
-            uint256 hashRand = CBigNum::randBignum(CBigNum(~uint256(0))).getarith_uint256();
+            uint256 hashRand = CBigNum::randBignum(CBigNum(~uint256(0))).getuint256();
             CBigNum bnExpanded = SeedTo1024(hashRand);
 
             if(bnExpanded > params->serialNumberSoKCommitmentGroup.groupOrder)
@@ -138,7 +138,7 @@ bool SerialNumberSignatureOfKnowledge::Verify(const CBigNum& coinSerialNumber, c
 		int byte = i / 8;
 		bool challenge_bit = ((hashbytes[byte] >> bit) & 0x01);
 		if(challenge_bit) {
-			tprime[i] = challengeCalculation(coinSerialNumber, s_notprime[i], SeedTo1024(sprime[i].getarith_uint256()));
+			tprime[i] = challengeCalculation(coinSerialNumber, s_notprime[i], SeedTo1024(sprime[i].getuint256()));
 		} else {
 			CBigNum exp = b.pow_mod(s_notprime[i], params->serialNumberSoKCommitmentGroup.groupOrder);
 			tprime[i] = ((valueOfCommitmentToCoin.pow_mod(exp, params->serialNumberSoKCommitmentGroup.modulus) % params->serialNumberSoKCommitmentGroup.modulus) *
