@@ -8,6 +8,7 @@
 #define BITCOIN_PRIMITIVES_TRANSACTION_H
 
 #include "amount.h"
+#include "arith_uint256.h"
 #include "script/script.h"
 #include "serialize.h"
 #include "uint256.h"
@@ -20,7 +21,7 @@ class CTransaction;
 class COutPoint
 {
 public:
-    uint256 hash;
+    arith_uint256 hash;
     uint32_t n;
 
     COutPoint() { SetNull(); }
