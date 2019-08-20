@@ -44,7 +44,7 @@ public:
         value = 0;
         denomination = libzerocoin::ZQ_ERROR;
         nHeight = 0;
-        txid = 0;
+        txid.SetNull();
     }
 
     uint256 GetHash() const;
@@ -145,7 +145,7 @@ public:
     void SetNull()
     {
         coinSerial = 0;
-        hashTx = 0;
+        hashTx.SetNull();
         pubCoin = 0;
         denomination = libzerocoin::ZQ_ERROR;
     }
