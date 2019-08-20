@@ -10,6 +10,7 @@
 #define BITCOIN_WALLET_H
 
 #include "amount.h"
+#include "arith_uint256.h"
 #include "base58.h"
 #include "crypter.h"
 #include "kernel.h"
@@ -690,7 +691,7 @@ private:
     int GetDepthInMainChainINTERNAL(const CBlockIndex*& pindexRet) const;
 
 public:
-    uint256 hashBlock;
+    arith_uint256 hashBlock;
     std::vector<uint256> vMerkleBranch;
     int nIndex;
 
