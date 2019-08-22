@@ -167,6 +167,7 @@ BITCOIN_CORE_H = \
   utiltime.h \
   validationinterface.h \
   version.h \
+  voting.h \
   wallet.h \
   wallet_ismine.h \
   walletdb.h \
@@ -217,6 +218,7 @@ libbitcoin_server_a_SOURCES = \
   rpc/net.cpp \
   rpc/rawtransaction.cpp \
   rpc/server.cpp \
+  rpc/governance.cpp \
   script/sigcache.cpp \
   sporkdb.cpp \
   timedata.cpp \
@@ -262,6 +264,7 @@ libbitcoin_wallet_a_SOURCES = \
   primitives/zerocoin.cpp \
   rpc/wallet.cpp \
   kernel.cpp \
+  voting.cpp \
   wallet.cpp \
   wallet_ismine.cpp \
   walletdb.cpp \

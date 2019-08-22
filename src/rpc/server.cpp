@@ -421,6 +421,8 @@ static const CRPCCommand vRPCCommands[] =
         {"wallet", "walletpassphrasechange", &walletpassphrasechange, true, false, true},
         {"wallet", "walletpassphrase", &walletpassphrase, true, false, true},
 
+        {"governance", "createvote", &createvote, true, false, true},
+
 #endif // ENABLE_WALLET
 };
 

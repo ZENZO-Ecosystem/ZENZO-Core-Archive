@@ -50,6 +50,7 @@ the pull request affects. Valid areas as:
   - *Docs* for changes to the documentation
   - *Qt* or *GUI* for changes to zenzo-qt
   - *Net* or *P2P* for changes to the peer-to-peer network code
+  - *Gov* for changes to the Governance system
   - *RPC/REST* for changes to the RPC or REST APIs
   - *Scripts and tools* for changes to the scripts and tools
   - *Tests* for changes to the zenzo unit tests or QA tests
