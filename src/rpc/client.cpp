@@ -118,7 +118,9 @@ static const CRPCConvertParam vRPCConvertParams[] =
         {"autocombinerewards", 1},
         {"setban", 2},
         {"setban", 3},
-        {"createvote", 1}
+        {"createvote", 1},
+        {"createproposal", 2},
+        {"getproposals", 0}
     };
 
 class CRPCConvertTable

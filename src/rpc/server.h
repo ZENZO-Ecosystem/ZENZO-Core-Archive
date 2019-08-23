@@ -287,6 +287,8 @@ extern json_spirit::Value setmocktime(const json_spirit::Array& params, bool fHe
 extern json_spirit::Value getstakingstatus(const json_spirit::Array& params, bool fHelp);
 
 extern json_spirit::Value createvote(const json_spirit::Array& params, bool fHelp); // in rpc/governance.cpp
+extern json_spirit::Value createproposal(const json_spirit::Array& params, bool fHelp);
+extern json_spirit::Value getproposals(const json_spirit::Array& params, bool fHelp);
 
 // in rest.cpp
 extern bool HTTPReq_REST(AcceptedConnection* conn,

@@ -7,6 +7,10 @@
 #include "wallet.h"
 #include "voting.h"
 
+std::vector<CProposal> vProposals;
+
+/** CVoter Class */
+
 // Create a new vote signature using an address within the local wallet
 std::string CVoter::CreateVote(const std::string& addr, const std::string& utxo, const int& proposal)
 {
@@ -36,4 +40,32 @@ std::string CVoter::CreateVote(const std::string& addr, const std::string& utxo,
 
     // The signing was successful, return the vote signature
     return EncodeBase64(&vchSig[0], vchSig.size());
+}
+
+/** CProposal(s) Class */
+
+// Create a new proposal object
+CProposal CreateProposal(const std::string& strName, const std::string& strDesc)
+{
+    CProposal p;
+    p.name = strName;
+    p.desc = strDesc;
+    p.votesAgainst = 0;
+    p.votesFor = 0;
+    p.index = vProposals.size() + 1;
+    return p;
+}
+
+// Submit a proposal object to the network, also saving it into the local vProposals list
+std::string SubmitProposal(const CProposal& p)
+{
+    // Make sure we aren't submitting a duplicate index proposal
+    if (!vProposals.empty())
+        for (unsigned i=0; i < vProposals.size(); i++)
+            if (vProposals[i].index == p.index)
+                return "duplicate";
+
+    // Proposal passed tests, save into memory and broadcast to our peers
+    vProposals.push_back(p);
+    return "success";
 }
