@@ -44,7 +44,7 @@ public:
         value = 0;
         denomination = libzerocoin::ZQ_ERROR;
         nHeight = 0;
-        txid = 0;
+        txid = uint256();
     }
 
     uint256 GetHash() const;
