@@ -168,7 +168,7 @@ bool CalculateAccumulatorCheckpoint(int nHeight, uint256& nCheckpoint)
     //set the accumulators to last checkpoint value
     AccumulatorMap mapAccumulators;
     if (!mapAccumulators.Load(chainActive[nHeight - 1]->nAccumulatorCheckpoint)) {
-        if (chainActive[nHeight - 1]->nAccumulatorCheckpoint == 0) {
+        if (chainActive[nHeight - 1]->nAccumulatorCheckpoint.IsNull()) {
             //Before zerocoin is fully activated so set to init state
             mapAccumulators.Reset();
         } else {
@@ -263,7 +263,7 @@ bool GenerateAccumulatorWitness(const PublicCoin &coin, Accumulator& accumulator
     }
 
     int nHeightMintAdded= mapBlockIndex[hashBlock]->nHeight;
-    uint256 nCheckpointBeforeMint = 0;
+    uint256 nCheckpointBeforeMint = uint256();
     CBlockIndex* pindex = chainActive[nHeightMintAdded];
     int nChanges = 0;
 
