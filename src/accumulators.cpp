@@ -19,7 +19,7 @@ uint32_t ParseChecksum(uint256 nChecksum, CoinDenomination denomination)
 {
     //shift to the beginning bit of this denomination and trim any remaining bits by returning 32 bits only
     int pos = distance(zerocoinDenomList.begin(), find(zerocoinDenomList.begin(), zerocoinDenomList.end(), denomination));
-    nChecksum = nChecksum >> (32*((zerocoinDenomList.size() - 1) - pos));
+    nChecksum = ArithToUint256(UintToArith256(nChecksum) >> (32*((zerocoinDenomList.size() - 1) - pos)));
     return nChecksum.Get32();
 }
 
