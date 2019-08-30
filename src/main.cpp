@@ -1091,9 +1091,9 @@ void FindMints(vector<CZerocoinMint> vMintsToFind, vector<CZerocoinMint>& vMints
         }
 
         //see if this mint is spent
-        uint256 hashTxSpend = 0;
+        uint256 hashTxSpend = uint256();
         zerocoinDB->ReadCoinSpend(mint.GetSerialNumber(), hashTxSpend);
-        bool fSpent = hashTxSpend != 0;
+        bool fSpent = UintToArith256(hashTxSpend) != 0;
 
         //if marked as spent, check that it actually made it into the chain
         CTransaction txSpend;
