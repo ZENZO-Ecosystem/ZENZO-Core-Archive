@@ -112,7 +112,7 @@ public:
 private:
     const uint256 signatureHash() const;
     CoinDenomination denomination;
-    uint32_t accChecksum;
+    uint256 accChecksum;
     uint256 ptxHash;
     CBigNum accCommitmentToCoinValue;
     CBigNum serialCommitmentToCoinValue;
