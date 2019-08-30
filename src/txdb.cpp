@@ -352,18 +352,18 @@ bool CZerocoinDB::EraseCoinSpend(const CBigNum& bnSerial)
     return Erase(make_pair('s', hash));
 }
 
-bool CZerocoinDB::WriteAccumulatorValue(const uint32_t& nChecksum, const CBigNum& bnValue)
+bool CZerocoinDB::WriteAccumulatorValue(const uint256& nChecksum, const CBigNum& bnValue)
 {
     LogPrint("zero","%s : checksum:%d val:%s\n", __func__, nChecksum, bnValue.GetHex());
     return Write(make_pair('a', nChecksum), bnValue);
 }
 
-bool CZerocoinDB::ReadAccumulatorValue(const uint32_t& nChecksum, CBigNum& bnValue)
+bool CZerocoinDB::ReadAccumulatorValue(const uint256& nChecksum, CBigNum& bnValue)
 {
     return Read(make_pair('a', nChecksum), bnValue);
 }
 
-bool CZerocoinDB::EraseAccumulatorValue(const uint32_t& nChecksum)
+bool CZerocoinDB::EraseAccumulatorValue(const uint256& nChecksum)
 {
     LogPrint("zero", "%s : checksum:%d\n", __func__, nChecksum);
     return Erase(make_pair('a', nChecksum));
