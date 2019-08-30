@@ -416,7 +416,9 @@ calculateGroupModulusAndOrder(uint256 seed, uint32_t pLen, uint32_t qLen,
 
 		// Verify that resultModulus is prime. First generate a pseudorandom integer "a".
 		CBigNum a = generateIntegerFromSeed(pLen, pseed, &iterations);
-		pseed += iterations + 1;
+		arith_pseed = UintToArith256(pseed);
+		arith_pseed += (iterations + 1);
+		pseed = ArithToUint256(arith_pseed);
 
 		// Set a = 2 + (a mod (resultModulus–3)).
 		a = CBigNum(2) + (a % ((*resultModulus) - CBigNum(3)));
