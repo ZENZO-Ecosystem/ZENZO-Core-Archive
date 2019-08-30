@@ -573,7 +573,9 @@ generateRandomPrime(uint32_t primeBitLen, uint256 in_seed, uint256 *out_seed,
 		// of the previous call.
 		uint32_t numIterations;
 		CBigNum x = generateIntegerFromSeed(primeBitLen, *out_seed, &numIterations);
-		(*out_seed) += numIterations + 1;
+		arith_uint256 arith_out_seed = UintToArith256(*out_seed);
+		arith_out_seed += numIterations + 1;
+		(*out_seed) = ArithToUint256(arith_out_seed);
 
 		// Compute "t" = ⎡x / (2 * c0⎤
 		// TODO no Ceiling call
