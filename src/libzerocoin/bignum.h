@@ -10,6 +10,7 @@
 #include <vector>
 #include <openssl/bn.h>
 #include "serialize.h"
+#include "arith_uint256.h"
 #include "uint256.h"
 #include "version.h"
 
@@ -99,9 +100,9 @@ public:
     CBigNum(unsigned short n)   { BN_init(this); setulong(n); }
     CBigNum(unsigned int n)     { BN_init(this); setulong(n); }
     CBigNum(unsigned long n)    { BN_init(this); setulong(n); }
-  //  CBigNum(uint64_t n)           { BN_init(this); setuint64(n); }
-    explicit CBigNum(uint256 n) { BN_init(this); setuint256(n); }
-
+    //  CBigNum(uint64_t n)           { BN_init(this); setuint64(n); }
+     explicit CBigNum(uint256 n)   { bn = BN_new(); setuint256(n); }
+    explicit CBigNum(arith_uint256 n) { bn = BN_new(); setarith_256(n); }
     explicit CBigNum(const std::vector<unsigned char>& vch)
     {
         BN_init(this);
@@ -266,6 +267,11 @@ public:
         BN_mpi2bn(pch, p - pch, this);
     }
 
+    void setarith_256(arith_uint256 n)
+    {
+        setuint256(ArithToUint256(n));
+    }
+
     uint256 getuint256() const
     {
         unsigned int nSize = BN_bn2mpi(this, NULL);
@@ -279,6 +285,12 @@ public:
         for (unsigned int i = 0, j = vch.size()-1; i < sizeof(n) && j >= 4; i++, j--)
             ((unsigned char*)&n)[i] = vch[j];
         return n;
+    }
+
+    arith_uint256 getarith_uint256() const
+    {
+        auto n = getuint256();
+        return Uint256ToArith(n);
     }
 
     void setvch(const std::vector<unsigned char>& vch)
