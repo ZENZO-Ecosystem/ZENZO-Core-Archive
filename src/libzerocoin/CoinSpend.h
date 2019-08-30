@@ -80,7 +80,7 @@ public:
 	 *
 	 * @return the checksum
 	 */
-    uint32_t getAccumulatorChecksum() const { return this->accChecksum; }
+    uint256 getAccumulatorChecksum() const { return this->accChecksum; }
 
     /**Gets the txout hash used in this proof.
 	 *
