@@ -517,6 +517,7 @@ generateRandomPrime(uint32_t primeBitLen, uint256 in_seed, uint256 *out_seed,
 
 		// Set prime_seed = in_seed, prime_gen_counter = 0.
 		uint256     prime_seed = in_seed;
+		arith_uint256 arith_prime_seed;
 		(*prime_gen_counter) = 0;
 
 		// Loop up to "4 * primeBitLen" iterations.
