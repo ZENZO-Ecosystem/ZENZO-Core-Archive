@@ -124,7 +124,7 @@ std::string BIP38_Encrypt(std::string strAddress, std::string strPassphrase, uin
     uint512 b58Checksum(hashChecksum.ToString().substr(64 - 8, 8));
 
     // append the encrypted key with checksum (currently occupies 312 bits)
-    encryptedKey = encryptedKey | (b58Checksum << 312);
+    encryptedKey = encryptedKey | (UintToArith512(b58Checksum) << 312);
 
     //43 bytes is the total size that we are encoding
     return EncodeBase58(encryptedKey.begin(), encryptedKey.begin() + 43);
