@@ -69,7 +69,7 @@ void DatabaseChecksums(AccumulatorMap& mapAccumulators)
         CBigNum bnValue = mapAccumulators.GetValue(denom);
         uint32_t nCheckSum = GetChecksum(bnValue);
         AddAccumulatorChecksum(nCheckSum, bnValue, false);
-        nCheckpoint = nCheckpoint << 32 | nCheckSum;
+        nCheckpoint = ArithToUint256(UintToArith256(nCheckpoint) << 32) | nCheckSum;
     }
 }
 
@@ -155,7 +155,7 @@ bool EraseCheckpoints(int nStartHeight, int nEndHeight)
 bool CalculateAccumulatorCheckpoint(int nHeight, uint256& nCheckpoint)
 {
     if (nHeight < Params().Zerocoin_StartHeight()) {
-        nCheckpoint = 0;
+        nCheckpoint = uint256();
         return true;
     }
 
