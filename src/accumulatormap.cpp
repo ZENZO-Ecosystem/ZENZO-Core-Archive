@@ -34,7 +34,7 @@ void AccumulatorMap::Reset()
 bool AccumulatorMap::Load(uint256 nCheckpoint)
 {
     for (auto& denom : zerocoinDenomList) {
-        uint32_t nChecksum = ParseChecksum(nCheckpoint, denom);
+        uint256 nChecksum = ParseChecksum(nCheckpoint, denom);
 
         CBigNum bnValue;
         if (!zerocoinDB->ReadAccumulatorValue(nChecksum, bnValue)) {
@@ -78,7 +78,7 @@ uint256 AccumulatorMap::GetCheckpoint()
     assert(zerocoinDenomList.size() == 8);
     for (auto& denom : zerocoinDenomList) {
         CBigNum bnValue = mapAccumulators.at(denom)->getValue();
-        uint32_t nCheckSum = GetChecksum(bnValue);
+        uint256 nCheckSum = GetChecksum(bnValue);
         nCheckpoint = nCheckpoint << 32 | nCheckSum;
     }
 
