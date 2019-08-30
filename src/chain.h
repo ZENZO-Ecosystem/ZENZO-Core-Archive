@@ -7,6 +7,7 @@
 #ifndef BITCOIN_CHAIN_H
 #define BITCOIN_CHAIN_H
 
+#include "arith_uint256.h"
 #include "pow.h"
 #include "primitives/block.h"
 #include "tinyformat.h"
@@ -136,7 +137,7 @@ public:
     unsigned int nUndoPos;
 
     //! (memory only) Total amount of work (expected number of hashes) in the chain up to and including this block
-    uint256 nChainWork;
+    arith_uint256 nChainWork;
 
     //! Number of transactions in this block.
     //! Note: in a potential headers-first mode, this number cannot be relied upon
@@ -191,7 +192,7 @@ public:
         nFile = 0;
         nDataPos = 0;
         nUndoPos = 0;
-        nChainWork = 0;
+        nChainWork = arith_uint256(0);
         nTx = 0;
         nChainTx = 0;
         nStatus = 0;
@@ -346,7 +347,7 @@ public:
 
     unsigned int GetStakeEntropyBit() const
     {
-        unsigned int nEntropyBit = ((GetBlockHash().Get64()) & 1);
+        unsigned int nEntropyBit = ((GetBlockHash().GetCheapHash()) & 1);
         if (fDebug || GetBoolArg("-printstakemodifier", false))
             LogPrintf("GetStakeEntropyBit: nHeight=%u hashBlock=%s nEntropyBit=%u\n", nHeight, GetBlockHash().ToString().c_str(), nEntropyBit);
 
@@ -434,7 +435,7 @@ public:
 
     explicit CDiskBlockIndex(const CBlockIndex* pindex) : CBlockIndex(*pindex)
     {
-        hashPrev = (pprev ? pprev->GetBlockHash() : uint256(0));
+        hashPrev = (pprev ? pprev->GetBlockHash() : uint256());
     }
 
     ADD_SERIALIZE_METHODS;
