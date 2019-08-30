@@ -387,7 +387,9 @@ calculateGroupModulusAndOrder(uint256 seed, uint32_t pLen, uint32_t qLen,
 	// Generate a random integer "x" of pLen bits
 	uint32_t iterations;
 	CBigNum x = generateIntegerFromSeed(pLen, pseed, &iterations);
-	pseed += (iterations + 1);
+	arith_uint256 arith_pseed = UintToArith256(pseed);
+	arith_pseed += (iterations + 1);
+	pseed = ArithToUint256(arith_pseed);
 
 	// Set x = 2^{pLen−1} + (x mod 2^{pLen–1}).
 	CBigNum powerOfTwo = CBigNum(2).pow(pLen-1);
