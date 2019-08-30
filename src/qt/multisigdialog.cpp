@@ -571,7 +571,7 @@ bool MultisigDialog::signMultisigTx(CMutableTransaction& tx, string& errorOut, Q
                 if (!GetTransaction(txin.prevout.hash, txVin, hashBlock, true))
                     throw runtime_error("txin could not be found");
 
-                if (hashBlock == 0)
+                if (hashBlock.IsNull())
                     throw runtime_error("txin is unconfirmed");
 
                 //get pubkey from input
@@ -613,7 +613,7 @@ bool MultisigDialog::signMultisigTx(CMutableTransaction& tx, string& errorOut, Q
             if (!GetTransaction(txin.prevout.hash, txVin, hashBlock, true))
                 throw runtime_error("txin could not be found");
 
-            if (hashBlock == 0)
+            if (hashBlock.IsNull())
                 throw runtime_error("txin is unconfirmed");
 
             txin.scriptSig.clear();
@@ -650,7 +650,7 @@ bool MultisigDialog::isFullyVerified(CMutableTransaction& tx){
             if (!GetTransaction(txin.prevout.hash, txVin, hashBlock, true)){
                 throw runtime_error("txin could not be found");
             }
-            if (hashBlock == 0){
+            if (hashBlock.IsNull()){
                 throw runtime_error("txin is unconfirmed");
             }
 

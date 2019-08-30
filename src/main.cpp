@@ -4128,7 +4128,7 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
 
 bool IsBlockHashInChain(const uint256& hashBlock)
 {
-    if (hashBlock == 0 || !mapBlockIndex.count(hashBlock))
+    if (hashBlock.IsNull() || !mapBlockIndex.count(hashBlock))
         return false;
 
     return chainActive.Contains(mapBlockIndex[hashBlock]);
