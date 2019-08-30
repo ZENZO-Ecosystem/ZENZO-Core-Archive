@@ -101,8 +101,8 @@ public:
     CBigNum(unsigned int n)     { BN_init(this); setulong(n); }
     CBigNum(unsigned long n)    { BN_init(this); setulong(n); }
     //  CBigNum(uint64_t n)           { BN_init(this); setuint64(n); }
-     explicit CBigNum(uint256 n)   { bn = BN_new(); setuint256(n); }
-    explicit CBigNum(arith_uint256 n) { bn = BN_new(); setarith_256(n); }
+    explicit CBigNum(uint256 n) { BN_init(this); setuint256(n); }
+    explicit CBigNum(arith_uint256 n) { BN_init(this); setarith_256(n); }
     explicit CBigNum(const std::vector<unsigned char>& vch)
     {
         BN_init(this);
