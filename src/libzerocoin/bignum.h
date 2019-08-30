@@ -290,7 +290,7 @@ public:
     arith_uint256 getarith_uint256() const
     {
         auto n = getuint256();
-        return Uint256ToArith(n);
+        return UintToArith256(n);
     }
 
     void setvch(const std::vector<unsigned char>& vch)
