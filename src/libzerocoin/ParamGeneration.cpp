@@ -600,7 +600,9 @@ generateRandomPrime(uint32_t primeBitLen, uint256 in_seed, uint256 *out_seed,
 			// 1. First pick an integer "a" in between 2 and (c - 2)
 			CBigNum a = generateIntegerFromSeed(c.bitSize(), (*out_seed), &numIterations);
 			a = CBigNum(2) + (a % (c - CBigNum(3)));
-			(*out_seed) += (numIterations + 1);
+			arith_out_seed = UintToArith256(*out_seed);
+			arith_out_seed += (numIterations + 1);
+			(*out_seed) = ArithToUint256(arith_out_seed);
 
 			// 2. Compute "z" = a^{2*t} mod c
 			CBigNum z = a.pow_mod(CBigNum(2) * t, c);
@@ -638,8 +640,7 @@ generateIntegerFromSeed(uint32_t numBits, uint256 seed, uint32_t *numIterations)
 	// Loop "iterations" times filling up the value "result" with random bits
 	for (uint32_t count = 0; count < iterations; count++) {
 		// result += ( H(pseed + count) * 2^{count * p0len} )
-		result += CBigNum(calculateHash(seed + count)) * CBigNum(2).pow(count * HASH_OUTPUT_BITS);
-	}
+		result += CBigNum(calculateHash(ArithToUint256(UintToArith256(seed) + count))) * CBigNum(2).pow(count * HASH_OUTPUT_BITS);	}
 
 	result = CBigNum(2).pow(numBits - 1) + (result % (CBigNum(2).pow(numBits - 1)));
 
