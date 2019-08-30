@@ -65,8 +65,8 @@ SerialNumberSignatureOfKnowledge::SerialNumberSignatureOfKnowledge(const
 
         //use a random 256 bit seed that expands to 1024 bit for v[i]
         while (true) {
-            uint256 hashRand = CBigNum::randBignum(CBigNum(~uint256(0))).getuint256();
-            CBigNum bnExpanded = SeedTo1024(hashRand);
+			arith_uint256 hashRand = CBigNum::randBignum(CBigNum(~arith_uint256(0))).getarith_uint256();
+			CBigNum bnExpanded = SeedTo1024(ArithToUint256(hashRand));
 
             if(bnExpanded > params->serialNumberSoKCommitmentGroup.groupOrder)
                 continue;
