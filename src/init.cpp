@@ -1402,7 +1402,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
                             double dPercent = (pindex->nHeight - nZerocoinStart) / (double)(chainActive.Height() - nZerocoinStart);
                             uiInterface.ShowProgress(_("Calculating missing accumulators..."), (int)(dPercent * 100));
                             if(find(listAccCheckpointsNoDB.begin(), listAccCheckpointsNoDB.end(), pindex->nAccumulatorCheckpoint) != listAccCheckpointsNoDB.end()) {
-                                uint256 nCheckpointCalculated = 0;
+                                uint256 nCheckpointCalculated = uint256();
                                 if (!CalculateAccumulatorCheckpoint(pindex->nHeight, nCheckpointCalculated)) {
                                     // GetCheckpoint could have terminated due to a shutdown request. Check this here.
                                     if (ShutdownRequested())
