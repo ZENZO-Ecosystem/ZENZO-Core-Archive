@@ -530,7 +530,9 @@ generateRandomPrime(uint32_t primeBitLen, uint256 in_seed, uint256 *out_seed,
 			cout << "Generated c = " << c << endl;
 #endif
 
-			prime_seed += (iteration_count + 1);
+			arith_prime_seed = UintToArith256(prime_seed);
+			arith_prime_seed += (iteration_count + 1);
+			prime_seed = ArithToUint256(arith_prime_seed);
 			(*prime_gen_counter)++;
 
 			// Set "intc" to be the least odd integer >= "c" we just generated
