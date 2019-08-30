@@ -1175,19 +1175,19 @@ void FindMints(vector<CZerocoinMint> vMintsToFind, vector<CZerocoinMint>& vMints
 
 bool GetZerocoinMint(const CBigNum& bnPubcoin, uint256& txHash)
 {
-    txHash = 0;
+    txHash = uint256();
     return zerocoinDB->ReadCoinMint(bnPubcoin, txHash);
 }
 
 bool IsSerialKnown(const CBigNum& bnSerial)
 {
-    uint256 txHash = 0;
+    uint256 txHash = uint256();
     return zerocoinDB->ReadCoinSpend(bnSerial, txHash);
 }
 
 bool IsSerialInBlockchain(const CBigNum& bnSerial, int& nHeightTx)
 {
-    uint256 txHash = 0;
+    uint256 txHash = uint256();
     // if not in zerocoinDB then its not in the blockchain
     if (!zerocoinDB->ReadCoinSpend(bnSerial, txHash))
         return false;
