@@ -55,7 +55,7 @@ bool GetAccumulatorValueFromDB(uint256 nCheckpoint, CoinDenomination denom, CBig
     return GetAccumulatorValueFromChecksum(nChecksum, false, bnAccValue);
 }
 
-void AddAccumulatorChecksum(const uint32_t nChecksum, const CBigNum &bnValue, bool fMemoryOnly)
+void AddAccumulatorChecksum(const uint256 nChecksum, const CBigNum &bnValue, bool fMemoryOnly)
 {
     if(!fMemoryOnly)
         zerocoinDB->WriteAccumulatorValue(nChecksum, bnValue);
@@ -100,7 +100,7 @@ bool EraseAccumulatorValues(const uint256& nCheckpointErase, const uint256& nChe
 bool LoadAccumulatorValuesFromDB(const uint256 nCheckpoint)
 {
     for (auto& denomination : zerocoinDenomList) {
-        uint32_t nChecksum = ParseChecksum(nCheckpoint, denomination);
+        uint256 nChecksum = ParseChecksum(nCheckpoint, denomination);
 
         //if read is not successful then we are not in a state to verify zerocoin transactions
         CBigNum bnValue;
