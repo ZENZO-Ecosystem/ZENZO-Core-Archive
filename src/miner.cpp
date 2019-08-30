@@ -375,7 +375,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
             UpdateTime(pblock, pindexPrev);
         pblock->nBits = GetNextWorkRequired(pindexPrev, pblock);
         pblock->nNonce = 0;
-        uint256 nCheckpoint = 0;
+        uint256 nCheckpoint = uint256();
         if (chainActive.Height() + 1 == nCheckpointLast.first)
             nCheckpoint = nCheckpointLast.second;
         else if(!CalculateAccumulatorCheckpoint(nHeight, nCheckpoint)){
