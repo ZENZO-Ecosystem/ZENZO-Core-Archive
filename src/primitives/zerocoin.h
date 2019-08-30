@@ -145,7 +145,7 @@ public:
     void SetNull()
     {
         coinSerial = 0;
-        hashTx = 0;
+        hashTx = uint256();
         pubCoin = 0;
         denomination = libzerocoin::ZQ_ERROR;
     }
