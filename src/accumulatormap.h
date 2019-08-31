@@ -6,23 +6,18 @@
 
 #include "libzerocoin/Accumulator.h"
 #include "libzerocoin/Coin.h"
-#include "arith_uint256.h"
 
 //A map with an accumulator for each denomination
 class AccumulatorMap
 {
 private:
-    libzerocoin::ZerocoinParams* params;
     std::map<libzerocoin::CoinDenomination, std::unique_ptr<libzerocoin::Accumulator> > mapAccumulators;
-    std::set<libzerocoin::CoinDenomination> setUnusedDenominations;
 public:
-    explicit AccumulatorMap(libzerocoin::ZerocoinParams* params);
-    bool Load(const std::map<libzerocoin::CoinDenomination, uint256>& mapCheckpoints);
-    bool Accumulate(const libzerocoin::PublicCoin& pubCoin, bool fSkipValidation = false);
-    libzerocoin::Accumulator GetAccumulator(libzerocoin::CoinDenomination denom);
+    AccumulatorMap();
+    bool Load(uint256 nCheckpoint);
+    bool Accumulate(libzerocoin::PublicCoin pubCoin, bool fSkipValidation = false);
     CBigNum GetValue(libzerocoin::CoinDenomination denom);
-    std::map<libzerocoin::CoinDenomination, uint256> GetCheckpoints(bool fShowZeroIfEmpty = false);
+    uint256 GetCheckpoint();
     void Reset();
-    void Reset(libzerocoin::ZerocoinParams* params2);
 };
 #endif //SHEKEL_ACCUMULATORMAP_H
