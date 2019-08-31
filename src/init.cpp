@@ -1410,12 +1410,6 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
                                     return InitError(_("Failed to calculate accumulator checkpoint"));
                                 }
 
-                                //check that the calculated checkpoint is what is in the index.
-                                if(nCheckpointCalculated != pindex->nAccumulatorCheckpoint) {
-                                    LogPrintf("%s : height=%d calculated_checkpoint=%s actual=%s\n", __func__, pindex->nHeight, nCheckpointCalculated.GetHex(), pindex->nAccumulatorCheckpoint.GetHex());
-                                    return InitError(_("Calculated accumulator checkpoint is not what is recorded by block index"));
-                                }
-
                                 auto it = find(listAccCheckpointsNoDB.begin(), listAccCheckpointsNoDB.end(), pindex->nAccumulatorCheckpoint);
                                 listAccCheckpointsNoDB.erase(it);
                             }
