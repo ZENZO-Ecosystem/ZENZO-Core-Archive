@@ -64,12 +64,10 @@ void AddAccumulatorChecksum(const uint32_t nChecksum, const CBigNum &bnValue, bo
 
 void DatabaseChecksums(AccumulatorMap& mapAccumulators)
 {
-    uint256 nCheckpoint = uint256();
     for (auto& denom : zerocoinDenomList) {
         CBigNum bnValue = mapAccumulators.GetValue(denom);
         uint32_t nCheckSum = GetChecksum(bnValue);
         AddAccumulatorChecksum(nCheckSum, bnValue, false);
-        nCheckpoint = ArithToUint256(UintToArith256(nCheckpoint) << 32 | nCheckSum);
     }
 }
 
@@ -97,7 +95,7 @@ bool EraseAccumulatorValues(const uint256& nCheckpointErase, const uint256& nChe
     return true;
 }
 
-bool LoadAccumulatorValuesFromDB(const uint256 nCheckpoint)
+bool LoadAccumulatorValuesFromDB(const std::map<libzerocoin::CoinDenomination, uint256>& mapCheckpoints)
 {
     for (auto& denomination : zerocoinDenomList) {
         uint32_t nChecksum = ParseChecksum(nCheckpoint, denomination);
@@ -152,7 +150,7 @@ bool EraseCheckpoints(int nStartHeight, int nEndHeight)
 }
 
 //Get checkpoint value for a specific block height
-bool CalculateAccumulatorCheckpoint(int nHeight, uint256& nCheckpoint)
+bool CalculateAccumulatorCheckpoint(int nHeight, std::map<libzerocoin::CoinDenomination, uint256>& mapCheckpoints, AccumulatorMap& mapAccumulators)
 {
     if (nHeight < Params().Zerocoin_StartHeight()) {
         nCheckpoint = uint256();
