@@ -99,8 +99,8 @@ public:
     const CBigNum& getRandomness() const { return this->randomness; }
 
     void setPublicCoin(PublicCoin p) { publicCoin = p; }
-    void setRandomness(Bignum n) { randomness = n; }
-    void setSerialNumber(Bignum n) { serialNumber = n; }
+    void setRandomness(CBigNum n) { randomness = n; }
+    void setSerialNumber(CBigNum n) { serialNumber = n; }
 
     ADD_SERIALIZE_METHODS;
     template <typename Stream, typename Operation>
