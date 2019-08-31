@@ -38,7 +38,7 @@ bool AccumulatorMap::Load(uint256 nCheckpoint)
 
         CBigNum bnValue;
         if (!zerocoinDB->ReadAccumulatorValue(nChecksum, bnValue)) {
-            LogPrintf("%s : cannot find checksum %d\n", __func__, nChecksum);
+            LogPrintf("%s : cannot find checksum %d\n", __func__, nChecksum.GetHex());
             return false;
         }
 
