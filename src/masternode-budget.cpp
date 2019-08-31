@@ -1975,8 +1975,6 @@ bool CFinalizedBudget::IsTransactionValid(const CTransaction& txNew, int nBlockH
     BOOST_FOREACH (CTxOut out, txNew.vout) {
         if (vecBudgetPayments[nCurrentBudgetPayment].payee == out.scriptPubKey && vecBudgetPayments[nCurrentBudgetPayment].nAmount == out.nValue) {
             found = true;
-            LogPrint("masternode","CFinalizedBudget::IsTransactionValid - Found valid Budget Payment of %d for %d\n",
-                      vecBudgetPayments[nCurrentBudgetPayment].nAmount, vecBudgetPayments[nCurrentBudgetPayment].nProposalHash);
         }
     }
 
