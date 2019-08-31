@@ -204,7 +204,7 @@ unsigned int base_uint<BITS>::bits() const
     }
     return 0;
 }
-
+/*
 // Explicit instantiations for base_uint<32>
 template base_uint<32>::base_uint(const std::string&);
 template base_uint<32>::base_uint(const std::vector<unsigned char>&);
@@ -219,7 +219,7 @@ template double base_uint<32>::getdouble() const;
 template std::string base_uint<32>::ToString() const;
 //template void base_uint<32>::SetHex(const char*);
 //template void base_uint<32>::SetHex(const std::string&);
-template unsigned int base_uint<32>::bits() const;
+template unsigned int base_uint<32>::bits() const; */
 
 // Explicit instantiations for base_uint<256>
 template base_uint<256>::base_uint(const std::string&);
@@ -298,7 +298,7 @@ uint32_t arith_uint256::GetCompact(bool fNegative) const
     return nCompact;
 }
 
-/**/
+/*
 uint32_t ArithToUint32_t(const arith_uint32_t &a)
 {
     uint32_t b;
@@ -313,7 +313,7 @@ arith_uint32_t UintToArith32_t(const uint32_t &a)
         b.pn[x] = ReadLE32(a.begin() + x*4);
     return b;
 }
-/**/
+*/
 
 uint256 ArithToUint256(const arith_uint256 &a)
 {

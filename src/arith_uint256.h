@@ -276,7 +276,9 @@ public:
     }
 };
 
+
 /** 32-bit unsigned int. */
+/*
 class arith_uint32_t : public base_uint<32> {
 public:
     arith_uint32_t() {}
@@ -289,7 +291,7 @@ public:
     friend arith_uint32_t UintToArith32_t(const uint32_t &);
     uint64_t GetHash(const arith_uint32_t& salt) const;
 };
-
+*/
 
 /** 256-bit unsigned big integer. */
 class arith_uint256 : public base_uint<256> {
@@ -345,8 +347,8 @@ public:
 
 };
 
-uint32_t ArithToUint32_t(const arith_uint32_t &);
-arith_uint32_t UintToArith32_t(const uint32_t &);
+//uint32_t ArithToUint32_t(const arith_uint32_t &);
+//arith_uint32_t UintToArith32_t(const uint32_t &);
 uint256 ArithToUint256(const arith_uint256 &);
 arith_uint256 UintToArith256(const uint256 &);
 uint512 ArithToUint512(const arith_uint512 &);
