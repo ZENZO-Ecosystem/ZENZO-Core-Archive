@@ -298,6 +298,7 @@ uint32_t arith_uint256::GetCompact(bool fNegative) const
     return nCompact;
 }
 
+/**/
 uint32_t ArithToUint32_t(const arith_uint32_t &a)
 {
     uint32_t b;
@@ -312,6 +313,7 @@ arith_uint32_t UintToArith32_t(const uint32_t &a)
         b.pn[x] = ReadLE32(a.begin() + x*4);
     return b;
 }
+/**/
 
 uint256 ArithToUint256(const arith_uint256 &a)
 {

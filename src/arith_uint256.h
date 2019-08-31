@@ -286,7 +286,7 @@ public:
     explicit arith_uint32_t(const std::vector<unsigned char>& vch) : base_uint<32>(vch) {}
 
     friend uint32_t ArithToUint32_t(const arith_uint32_t &);
-    friend arith_uint32_t UintToArith32_t(const uint256 &);
+    friend arith_uint32_t UintToArith32_t(const uint32_t &);
     uint64_t GetHash(const arith_uint32_t& salt) const;
 };
 
