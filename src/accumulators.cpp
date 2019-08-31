@@ -133,9 +133,9 @@ bool EraseCheckpoints(int nStartHeight, int nEndHeight)
         uint256 nCheckpointDelete = pindex->nAccumulatorCheckpoint;
 
         for (auto denom : zerocoinDenomList) {
-            auto nChecksumDelete = ParseChecksum(nCheckpointDelete, denom);
-            if (count(listCheckpointsPrev.begin(), listCheckpointsPrev.end(), nCheckpointDelete))
-                continue;
+            uint32_t nChecksumDelete = ParseChecksum(nCheckpointDelete, denom);
+            //if (count(listCheckpointsPrev.begin(), listCheckpointsPrev.end(), nCheckpointDelete))
+            //    continue;
             EraseChecksum(nChecksumDelete);
         }
         LogPrintf("%s : erasing checksums for block %d\n", __func__, pindex->nHeight);
