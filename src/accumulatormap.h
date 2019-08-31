@@ -4,6 +4,7 @@
 #ifndef SHEKEL_ACCUMULATORMAP_H
 #define SHEKEL_ACCUMULATORMAP_H
 
+#include "arith_uint256.h"
 #include "libzerocoin/Accumulator.h"
 #include "libzerocoin/Coin.h"
 
