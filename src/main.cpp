@@ -3040,7 +3040,9 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
             REJECT_INVALID, "bad-cb-amount");
     }
 
+    // will soon remove checks as zerocoin is no longer used on the network
     // zerocoin accumulator: if a new accumulator checkpoint was generated, check that it is the correct value
+    /*
     if (!fVerifyingBlocks && pindex->nHeight >= Params().Zerocoin_StartHeight() && pindex->nHeight % 10 == 0) {
         uint256 nCheckpointCalculated = uint256();
         if (!CalculateAccumulatorCheckpoint(pindex->nHeight, nCheckpointCalculated))
@@ -3055,7 +3057,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
             return state.DoS(100, error("ConnectBlock() : new accumulator checkpoint generated on a block that is not multiple of 10"));
         }
     }
-
+*/
     if (!control.Wait())
         return state.DoS(100, false);
     int64_t nTime2 = GetTimeMicros();
