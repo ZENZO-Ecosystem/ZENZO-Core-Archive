@@ -110,21 +110,11 @@ public:
  * opaque blob of 256 bits and has no integer operations. Use arith_uint256 if
  * those are required.
  */
-template <unsigned int BITS>
 class uint256 : public base_blob<256> {
-protected:
-    enum { WIDTH=BITS/32 };
-    uint32_t pn[WIDTH];
 public:
     uint256() {}
     uint256(const base_blob<256>& b) : base_blob<256>(b) {}
     explicit uint256(const std::vector<unsigned char>& vch) : base_blob<256>(vch) {}
-
-
-    uint32_t Get32(int n = 0) const
-    {
-        return pn[2 * n];
-    }
 
     /** A cheap hash function that just returns 64 bits from the result, it can be
      * used when the contents are considered uniformly random. It is not appropriate
