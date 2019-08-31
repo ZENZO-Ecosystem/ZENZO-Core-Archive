@@ -125,7 +125,7 @@ bool EraseCheckpoints(int nStartHeight, int nEndHeight)
     uint256 nCheckpointPrev = pindex->pprev->nAccumulatorCheckpoint;
 
     //Keep a list of checkpoints from the previous block so that we don't delete them
-    list<uint256> listCheckpointsPrev;
+    list<uint32_t> listCheckpointsPrev;
     for (auto denom : zerocoinDenomList)
         listCheckpointsPrev.emplace_back(ParseChecksum(nCheckpointPrev, denom));
 
