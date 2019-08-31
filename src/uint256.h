@@ -110,6 +110,7 @@ public:
  * opaque blob of 256 bits and has no integer operations. Use arith_uint256 if
  * those are required.
  */
+template <unsigned int BITS>
 class uint256 : public base_blob<256> {
 protected:
     enum { WIDTH=BITS/32 };
