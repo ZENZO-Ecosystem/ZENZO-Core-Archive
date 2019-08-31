@@ -18,8 +18,8 @@ void AddAccumulatorChecksum(const uint32_t nChecksum, const CBigNum &bnValue, bo
 bool CalculateAccumulatorCheckpoint(int nHeight, uint256& nCheckpoint);
 bool LoadAccumulatorValuesFromDB(const uint256 nCheckpoint);
 bool EraseAccumulatorValues(const uint256& nCheckpointErase, const uint256& nCheckpointPrevious);
-uint256 ParseChecksum(uint256 nChecksum, libzerocoin::CoinDenomination denomination);
-uint256 GetChecksum(const CBigNum &bnValue);
+uint32_t ParseChecksum(uint256 nChecksum, libzerocoin::CoinDenomination denomination);
+uint32_t GetChecksum(const CBigNum &bnValue);
 bool InvalidCheckpointRange(int nHeight);
 
 #endif //SHEKEL_ACCUMULATORS_H
