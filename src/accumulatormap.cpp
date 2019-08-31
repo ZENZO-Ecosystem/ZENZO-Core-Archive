@@ -4,6 +4,7 @@
 
 #include "accumulatormap.h"
 #include "accumulators.h"
+#include "arith_uint256.h"
 #include "main.h"
 #include "txdb.h"
 #include "libzerocoin/Denominations.h"
@@ -12,72 +13,53 @@ using namespace libzerocoin;
 using namespace std;
 
 //Construct accumulators for all denominations
-AccumulatorMap::AccumulatorMap(libzerocoin::ZerocoinParams* params)
+AccumulatorMap::AccumulatorMap()
 {
-    this->params = params;
     for (auto& denom : zerocoinDenomList) {
-        unique_ptr<Accumulator> uptr(new Accumulator(params, denom));
+        unique_ptr<Accumulator> uptr(new Accumulator(Params().Zerocoin_Params(), denom));
         mapAccumulators.insert(make_pair(denom, std::move(uptr)));
     }
-
-    for (auto denom : libzerocoin::zerocoinDenomList)
-        setUnusedDenominations.emplace(denom);
 }
 
 //Reset each accumulator to its default state
 void AccumulatorMap::Reset()
 {
-    Reset(params);
-}
-
-void AccumulatorMap::Reset(libzerocoin::ZerocoinParams* params2)
-{
-    this->params = params2;
     mapAccumulators.clear();
-    setUnusedDenominations.clear();
     for (auto& denom : zerocoinDenomList) {
-        unique_ptr<Accumulator> uptr(new Accumulator(params2, denom));
+        unique_ptr<Accumulator> uptr(new Accumulator(Params().Zerocoin_Params(), denom));
         mapAccumulators.insert(make_pair(denom, std::move(uptr)));
-        setUnusedDenominations.emplace(denom);
     }
 }
 
-//Load a checksums matched to each accumulator from the database
-bool AccumulatorMap::Load(const std::map<libzerocoin::CoinDenomination, uint256>& mapCheckpoints)
+//Load a checkpoint containing 8 32bit checksums of accumulator values.
+bool AccumulatorMap::Load(uint256 nCheckpoint)
 {
-    for (auto& mi : mapCheckpoints) {
-        if (mi.second == uint256())
-            continue;
+    for (auto& denom : zerocoinDenomList) {
+        uint32_t nChecksum = ParseChecksum(nCheckpoint, denom);
 
         CBigNum bnValue;
-        if (!pzerocoinDB->ReadAccumulatorValue(mi.second, bnValue))
-            return error("%s : cannot find checksum %s", __func__, mi.second.GetHex());
+        if (!zerocoinDB->ReadAccumulatorValue(nChecksum, bnValue)) {
+            LogPrintf("%s : cannot find checksum %d\n", __func__, nChecksum);
+            return false;
+        }
 
-        mapAccumulators.at(mi.first)->setValue(bnValue);
-        setUnusedDenominations.erase(mi.first);
+        mapAccumulators.at(denom)->setValue(bnValue);
     }
     return true;
 }
 
 //Add a zerocoin to the accumulator of its denomination.
-bool AccumulatorMap::Accumulate(const PublicCoin& pubCoin, bool fSkipValidation)
+bool AccumulatorMap::Accumulate(PublicCoin pubCoin, bool fSkipValidation)
 {
     CoinDenomination denom = pubCoin.getDenomination();
     if (denom == CoinDenomination::ZQ_ERROR)
         return false;
 
-    setUnusedDenominations.erase(denom);
-    if (fSkipValidation) {
+    if (fSkipValidation)
         mapAccumulators.at(denom)->increment(pubCoin.getValue());
-        return true;
-    }
-
-    return mapAccumulators.at(denom)->accumulate(pubCoin);
-}
-
-libzerocoin::Accumulator AccumulatorMap::GetAccumulator(libzerocoin::CoinDenomination denom)
-{
-    return libzerocoin::Accumulator(params, denom, GetValue(denom));
+    else
+        mapAccumulators.at(denom)->accumulate(pubCoin);
+    return true;
 }
 
 //Get the value of a specific accumulator
@@ -87,25 +69,21 @@ CBigNum AccumulatorMap::GetValue(CoinDenomination denom)
         return CBigNum(0);
     return mapAccumulators.at(denom)->getValue();
 }
+
 //Calculate a 32bit checksum of each accumulator value. Concatenate checksums into uint256
-std::map<libzerocoin::CoinDenomination, uint256> AccumulatorMap::GetCheckpoints(bool fShowZeroIfEmpty)
+uint256 AccumulatorMap::GetCheckpoint()
 {
-    std::map<libzerocoin::CoinDenomination, uint256> mapCheckpoints;
+    uint256 nCheckpoint;
 
     //Prevent possible overflows from future changes to the list and forgetting to update this code
     assert(zerocoinDenomList.size() == 8);
     for (auto& denom : zerocoinDenomList) {
-        if (fShowZeroIfEmpty && setUnusedDenominations.count(denom)) {
-            mapCheckpoints.emplace(std::make_pair(denom, uint256()));
-            continue;
-        }
-
         CBigNum bnValue = mapAccumulators.at(denom)->getValue();
-        auto hashChecksum = GetChecksum(bnValue);
-        mapCheckpoints.emplace(std::make_pair(denom, hashChecksum));
+        uint32_t nCheckSum = GetChecksum(bnValue);
+        nCheckpoint = ArithToUint256(UintToArith256(nCheckpoint) << 32 | nCheckSum);
     }
 
-    return mapCheckpoints;
+    return nCheckpoint;
 }
 
 

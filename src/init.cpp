@@ -1402,12 +1402,18 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
                             double dPercent = (pindex->nHeight - nZerocoinStart) / (double)(chainActive.Height() - nZerocoinStart);
                             uiInterface.ShowProgress(_("Calculating missing accumulators..."), (int)(dPercent * 100));
                             if(find(listAccCheckpointsNoDB.begin(), listAccCheckpointsNoDB.end(), pindex->nAccumulatorCheckpoint) != listAccCheckpointsNoDB.end()) {
-                                AccumulatorMap mapAccumulators(Params().Zerocoin_Params());
-                                if (!ValidateAccumulatorCheckpoint(block, pindex, mapAccumulators)) {
+                                uint256 nCheckpointCalculated = uint256();
+                                if (!CalculateAccumulatorCheckpoint(pindex->nHeight, nCheckpointCalculated)) {
                                     // GetCheckpoint could have terminated due to a shutdown request. Check this here.
                                     if (ShutdownRequested())
                                         break;
                                     return InitError(_("Failed to calculate accumulator checkpoint"));
+                                }
+
+                                //check that the calculated checkpoint is what is in the index.
+                                if(nCheckpointCalculated != pindex->nAccumulatorCheckpoint) {
+                                    LogPrintf("%s : height=%d calculated_checkpoint=%s actual=%s\n", __func__, pindex->nHeight, nCheckpointCalculated.GetHex(), pindex->nAccumulatorCheckpoint.GetHex());
+                                    return InitError(_("Calculated accumulator checkpoint is not what is recorded by block index"));
                                 }
 
                                 auto it = find(listAccCheckpointsNoDB.begin(), listAccCheckpointsNoDB.end(), pindex->nAccumulatorCheckpoint);
