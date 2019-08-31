@@ -387,7 +387,32 @@ public:
 
     void SetHex(const std::string& str)
     {
-        SetHexBool(str);
+        // skip 0x
+        const char* psz = str.c_str();
+        while (isspace(*psz))
+            psz++;
+        bool fNegative = false;
+        if (*psz == '-')
+        {
+            fNegative = true;
+            psz++;
+        }
+        if (psz[0] == '0' && tolower(psz[1]) == 'x')
+            psz += 2;
+        while (isspace(*psz))
+            psz++;
+
+        // hex string to bignum
+        static const signed char phexdigit[256] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 0,1,2,3,4,5,6,7,8,9,0,0,0,0,0,0, 0,0xa,0xb,0xc,0xd,0xe,0xf,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 0,0xa,0xb,0xc,0xd,0xe,0xf,0,0,0,0,0,0,0,0,0 };
+        *this = 0;
+        while (isxdigit(*psz))
+        {
+            *this <<= 4;
+            int n = phexdigit[(unsigned char)*psz++];
+            *this += n;
+        }
+        if (fNegative)
+            *this = 0 - *this;
     }
 
     bool SetHexBool(const std::string& str)
@@ -428,22 +453,22 @@ public:
         CAutoBN_CTX pctx;
         CBigNum bnBase = nBase;
         CBigNum bn0 = 0;
-        CBigNum locBn = *this;
         std::string str;
-        BN_set_negative(locBn.bn, false);
+        CBigNum bn = *this;
+        BN_set_negative(&bn, false);
         CBigNum dv;
         CBigNum rem;
-        if (BN_cmp(locBn.bn, bn0.bn) == 0)
+        if (BN_cmp(&bn, &bn0) == 0)
             return "0";
-        while (BN_cmp(locBn.bn, bn0.bn) > 0)
+        while (BN_cmp(&bn, &bn0) > 0)
         {
-            if (!BN_div(dv.bn, rem.bn, locBn.bn, bnBase.bn, pctx))
+            if (!BN_div(&dv, &rem, &bn, &bnBase, pctx))
                 throw bignum_error("CBigNum::ToString() : BN_div failed");
-            locBn = dv;
+            bn = dv;
             unsigned int c = rem.getulong();
             str += "0123456789abcdef"[c];
         }
-        if (BN_is_negative(bn))
+        if (BN_is_negative(this))
             str += "-";
         reverse(str.begin(), str.end());
         return str;
@@ -452,11 +477,6 @@ public:
     std::string GetHex() const
     {
         return ToString(16);
-    }
-
-    std::string GetDec() const
-    {
-        return ToString(10);
     }
 
     unsigned int GetSerializeSize(int nType=0, int nVersion=PROTOCOL_VERSION) const
@@ -495,7 +515,7 @@ public:
     CBigNum pow(const CBigNum& e) const {
         CAutoBN_CTX pctx;
         CBigNum ret;
-        if (!BN_exp(ret.bn, bn, e.bn, pctx))
+        if (!BN_exp(&ret, this, &e, pctx))
             throw bignum_error("CBigNum::pow : BN_exp failed");
         return ret;
     }
@@ -508,8 +528,8 @@ public:
     CBigNum mul_mod(const CBigNum& b, const CBigNum& m) const {
         CAutoBN_CTX pctx;
         CBigNum ret;
-        if (!BN_mod_mul(ret.bn, bn, b.bn, m.bn, pctx))
-            throw bignum_error("CBigNum::mul_mod : BN_mod_mul failed");
+        if (!BN_mod_mul(&ret, this, &b, &m, pctx))
+                throw bignum_error("CBigNum::mul_mod : BN_mod_mul failed");
 
         return ret;
     }
@@ -526,25 +546,25 @@ public:
             // g^-x = (g^-1)^x
             CBigNum inv = this->inverse(m);
             CBigNum posE = e * -1;
-            if (!BN_mod_exp(ret.bn, inv.bn, posE.bn, m.bn, pctx))
+            if (!BN_mod_exp(&ret, &inv, &posE, &m, pctx))
                 throw bignum_error("CBigNum::pow_mod: BN_mod_exp failed on negative exponent");
         }else
-        if (!BN_mod_exp(ret.bn, bn, e.bn, m.bn, pctx))
-            throw bignum_error("CBigNum::pow_mod : BN_mod_exp failed");
+            if (!BN_mod_exp(&ret, this, &e, &m, pctx))
+                throw bignum_error("CBigNum::pow_mod : BN_mod_exp failed");
 
         return ret;
     }
 
-    /**
-     * Calculates the inverse of this element mod m.
-     * i.e. i such this*i = 1 mod m
-     * @param m the modu
-     * @return the inverse
-     */
+   /**
+    * Calculates the inverse of this element mod m.
+    * i.e. i such this*i = 1 mod m
+    * @param m the modu
+    * @return the inverse
+    */
     CBigNum inverse(const CBigNum& m) const {
         CAutoBN_CTX pctx;
         CBigNum ret;
-        if (!BN_mod_inverse(ret.bn, bn, m.bn, pctx))
+        if (!BN_mod_inverse(&ret, this, &m, pctx))
             throw bignum_error("CBigNum::inverse*= :BN_mod_inverse");
         return ret;
     }
@@ -557,7 +577,7 @@ public:
      */
     static CBigNum generatePrime(const unsigned int numBits, bool safe = false) {
         CBigNum ret;
-        if(!BN_generate_prime_ex(ret.bn, numBits, (safe == true), NULL, NULL, NULL))
+        if(!BN_generate_prime_ex(&ret, numBits, (safe == true), NULL, NULL, NULL))
             throw bignum_error("CBigNum::generatePrime*= :BN_generate_prime_ex");
         return ret;
     }
@@ -570,20 +590,20 @@ public:
     CBigNum gcd( const CBigNum& b) const{
         CAutoBN_CTX pctx;
         CBigNum ret;
-        if (!BN_gcd(ret.bn, bn, b.bn, pctx))
+        if (!BN_gcd(&ret, this, &b, pctx))
             throw bignum_error("CBigNum::gcd*= :BN_gcd");
         return ret;
     }
 
-    /**
-     * Miller-Rabin primality test on this element
-     * @param checks: optional, the number of Miller-Rabin tests to run
-     *                          default causes error rate of 2^-80.
-     * @return true if prime
-     */
+   /**
+    * Miller-Rabin primality test on this element
+    * @param checks: optional, the number of Miller-Rabin tests to run
+    * 			 	default causes error rate of 2^-80.
+    * @return true if prime
+    */
     bool isPrime(const int checks=BN_prime_checks) const {
         CAutoBN_CTX pctx;
-        int ret = BN_is_prime_ex(bn, checks, pctx, NULL);
+        int ret = BN_is_prime(this, checks, NULL, pctx, NULL);
         if(ret < 0){
             throw bignum_error("CBigNum::isPrime :BN_is_prime");
         }
@@ -591,34 +611,33 @@ public:
     }
 
     bool isOne() const {
-        return BN_is_one(bn);
+        return BN_is_one(this);
     }
 
 
 
     bool operator!() const
     {
-        return BN_is_zero(bn);
+        return BN_is_zero(this);
     }
 
     CBigNum& operator+=(const CBigNum& b)
     {
-        if (!BN_add(bn, bn, b.bn))
+        if (!BN_add(this, this, &b))
             throw bignum_error("CBigNum::operator+= : BN_add failed");
         return *this;
     }
 
     CBigNum& operator-=(const CBigNum& b)
     {
-        if (!BN_sub(bn, bn, b.bn))
-            throw bignum_error("CBigNum::operator-= : BN_sub failed");
+        *this = *this - b;
         return *this;
     }
 
     CBigNum& operator*=(const CBigNum& b)
     {
         CAutoBN_CTX pctx;
-        if (!BN_mul(bn, bn, b.bn, pctx))
+        if (!BN_mul(this, this, &b, pctx))
             throw bignum_error("CBigNum::operator*= : BN_mul failed");
         return *this;
     }
@@ -637,7 +656,7 @@ public:
 
     CBigNum& operator<<=(unsigned int shift)
     {
-        if (!BN_lshift(bn, bn, shift))
+        if (!BN_lshift(this, this, shift))
             throw bignum_error("CBigNum:operator<<= : BN_lshift failed");
         return *this;
     }
@@ -648,13 +667,13 @@ public:
         //   if built on ubuntu 9.04 or 9.10, probably depends on version of OpenSSL
         CBigNum a = 1;
         a <<= shift;
-        if (BN_cmp(a.bn, bn) > 0)
+        if (BN_cmp(&a, this) > 0)
         {
-            bn = 0;
+            *this = 0;
             return *this;
         }
 
-        if (!BN_rshift(bn, bn, shift))
+        if (!BN_rshift(this, this, shift))
             throw bignum_error("CBigNum:operator>>= : BN_rshift failed");
         return *this;
     }
@@ -663,7 +682,7 @@ public:
     CBigNum& operator++()
     {
         // prefix operator
-        if (!BN_add(bn, bn, BN_value_one()))
+        if (!BN_add(this, this, BN_value_one()))
             throw bignum_error("CBigNum::operator++ : BN_add failed");
         return *this;
     }
@@ -680,9 +699,9 @@ public:
     {
         // prefix operator
         CBigNum r;
-        if (!BN_sub(r.bn, bn, BN_value_one()))
+        if (!BN_sub(&r, this, BN_value_one()))
             throw bignum_error("CBigNum::operator-- : BN_sub failed");
-        bn = r.bn;
+        *this = r;
         return *this;
     }
 
