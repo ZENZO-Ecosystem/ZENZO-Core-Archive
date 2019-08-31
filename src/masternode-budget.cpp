@@ -206,7 +206,7 @@ void CBudgetManager::SubmitFinalBudget()
         return;
     }
 
-    if (nBlockHash != uint256(0)) {
+    if (nBlockHash != uint256()) {
         BlockMap::iterator mi = mapBlockIndex.find(nBlockHash);
         if (mi != mapBlockIndex.end() && (*mi).second) {
             CBlockIndex* pindex = (*mi).second;
