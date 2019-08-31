@@ -400,16 +400,16 @@ public:
     }
 
     template<typename Stream>
-    void Serialize(Stream& s) const
+    void Serialize(Stream& s, int nType=0, int nVersion=PROTOCOL_VERSION) const
     {
-        ::Serialize(s, getvch());
+        ::Serialize(s, getvch(), nType, nVersion);
     }
 
     template<typename Stream>
-    void Unserialize(Stream& s)
+    void Unserialize(Stream& s, int nType=0, int nVersion=PROTOCOL_VERSION)
     {
         std::vector<unsigned char> vch;
-        ::Unserialize(s, vch);
+        ::Unserialize(s, vch, nType, nVersion);
         setvch(vch);
     }
 
