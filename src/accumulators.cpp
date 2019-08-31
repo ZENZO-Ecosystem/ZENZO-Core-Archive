@@ -64,12 +64,10 @@ void AddAccumulatorChecksum(const uint32_t nChecksum, const CBigNum &bnValue, bo
 
 void DatabaseChecksums(AccumulatorMap& mapAccumulators)
 {
-    uint256 nCheckpoint = uint256();
     for (auto& denom : zerocoinDenomList) {
         CBigNum bnValue = mapAccumulators.GetValue(denom);
         uint32_t nCheckSum = GetChecksum(bnValue);
         AddAccumulatorChecksum(nCheckSum, bnValue, false);
-        nCheckpoint = ArithToUint256(UintToArith256(nCheckpoint) << 32 | nCheckSum);
     }
 }
 
