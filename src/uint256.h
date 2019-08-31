@@ -42,22 +42,6 @@ public:
         memset(data, 0, sizeof(data));
     }
 
-    base_blob& operator|=(const base_blob& b)
-    {
-        for (int i = 0; i < WIDTH; i++)
-            data[i] |= b.data[i];
-        return *this;
-    }
-
-
-    base_blob& operator|=(uint64_t b)
-    {
-        data[0] |= (unsigned int)b;
-        data[1] |= (unsigned int)(b >> 32);
-        return *this;
-    }
-
-    friend inline const base_blob operator|(const base_blob& a, const base_blob& b) { return base_blob(a) |= b; }
     friend inline bool operator==(const base_blob& a, const base_blob& b) { return memcmp(a.data, b.data, sizeof(a.data)) == 0; }
     friend inline bool operator!=(const base_blob& a, const base_blob& b) { return memcmp(a.data, b.data, sizeof(a.data)) != 0; }
     friend inline bool operator<(const base_blob& a, const base_blob& b) { return memcmp(a.data, b.data, sizeof(a.data)) < 0; }
