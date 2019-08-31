@@ -27,7 +27,7 @@ Accumulator::Accumulator(const AccumulatorAndProofParams* p, const CoinDenominat
 	this->value = this->params->accumulatorBase;
 }
 
-Accumulator::Accumulator(const ZerocoinParams* p, const CoinDenomination d, const CBigNum bnValue) {
+Accumulator::Accumulator(const ZerocoinParams* p, const CoinDenomination d, const BigNum bnValue) {
 	this->params = &(p->accumulatorParams);
     denomination = d;
 
