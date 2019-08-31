@@ -78,7 +78,7 @@ uint256 AccumulatorMap::GetCheckpoint()
     assert(zerocoinDenomList.size() == 8);
     for (auto& denom : zerocoinDenomList) {
         CBigNum bnValue = mapAccumulators.at(denom)->getValue();
-        uint256 nCheckSum = GetChecksum(bnValue);
+        uint256 nCheckpoint = GetChecksum(bnValue);
     }
 
     return nCheckpoint;
