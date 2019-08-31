@@ -20,7 +20,7 @@ uint32_t ParseChecksum(uint256 nChecksum, CoinDenomination denomination)
     //shift to the beginning bit of this denomination and trim any remaining bits by returning 32 bits only
     int pos = distance(zerocoinDenomList.begin(), find(zerocoinDenomList.begin(), zerocoinDenomList.end(), denomination));
     nChecksum = ArithToUint256(UintToArith256(nChecksum) >> (32*((zerocoinDenomList.size() - 1) - pos)));
-    return ArithToUint32_t(UintToArith256(nChecksum).Get32());
+    return UintToArith256(nChecksum).Get32();
 }
 
 uint32_t GetChecksum(const CBigNum &bnValue)
@@ -29,7 +29,7 @@ uint32_t GetChecksum(const CBigNum &bnValue)
     ss << bnValue;
     uint256 hash = Hash(ss.begin(), ss.end());
 
-    return ArithToUint32_t(UintToArith256(hash).Get32());
+    return UintToArith256(hash).Get32();
 }
 
 bool GetAccumulatorValueFromChecksum(uint32_t nChecksum, bool fMemoryOnly, CBigNum& bnAccValue)
