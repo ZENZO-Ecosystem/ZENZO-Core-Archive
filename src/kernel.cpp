@@ -109,7 +109,7 @@ static bool SelectBlockFromCandidates(
         if(fModifierV2)
             hashProof = pindex->GetBlockHash();
         else
-            hashProof = pindex->IsProofOfStake() ? 0 : pindex->GetBlockHash();
+            hashProof = pindex->IsProofOfStake() ? uint256() : pindex->GetBlockHash();
 
         CDataStream ss(SER_GETHASH, 0);
         ss << hashProof << nStakeModifierPrev;
