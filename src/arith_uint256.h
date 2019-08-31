@@ -276,6 +276,21 @@ public:
     }
 };
 
+/** 32-bit unsigned int. */
+class arith_uint32_t : public base_uint<332> {
+public:
+    arith_uint32_t() {}
+    arith_uint32_t(const base_uint<32>& b) : base_uint<32>(b) {}
+    arith_uint32_t(uint64_t b) : base_uint<32>(b) {}
+    explicit arith_uint32_t(const std::string& str) : base_uint<32>(str) {}
+    explicit arith_uint32_t(const std::vector<unsigned char>& vch) : base_uint<32>(vch) {}
+
+    friend uint32_t ArithToUint32_t(const arith_uint32_t &);
+    friend arith_uint32_t UintToArith32_t(const uint256 &);
+    uint64_t GetHash(const arith_uint32_t& salt) const;
+};
+
+
 /** 256-bit unsigned big integer. */
 class arith_uint256 : public base_uint<256> {
 public:
@@ -330,6 +345,8 @@ public:
 
 };
 
+uint32_t ArithToUint32_t(const arith_uint32_t &);
+arith_uint32_t UintToArith32_t(const uint32_t &);
 uint256 ArithToUint256(const arith_uint256 &);
 arith_uint256 UintToArith256(const uint256 &);
 uint512 ArithToUint512(const arith_uint512 &);

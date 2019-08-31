@@ -12,27 +12,27 @@
 
 using namespace libzerocoin;
 
-std::map<uint256, CBigNum> mapAccumulatorValues;
+std::map<uint32_t, CBigNum> mapAccumulatorValues;
 std::list<uint256> listAccCheckpointsNoDB;
 
-uint256 ParseChecksum(uint256 nChecksum, CoinDenomination denomination)
+uint32_t ParseChecksum(uint256 nChecksum, CoinDenomination denomination)
 {
     //shift to the beginning bit of this denomination and trim any remaining bits by returning 32 bits only
     int pos = distance(zerocoinDenomList.begin(), find(zerocoinDenomList.begin(), zerocoinDenomList.end(), denomination));
     nChecksum = ArithToUint256(UintToArith256(nChecksum) >> (32*((zerocoinDenomList.size() - 1) - pos)));
-    return nChecksum;
+    return ArithToUint32_t(UintToArith32_t(nChecksum).Get32());
 }
 
-uint256 GetChecksum(const CBigNum &bnValue)
+uint32_t GetChecksum(const CBigNum &bnValue)
 {
     CDataStream ss(SER_GETHASH, 0);
     ss << bnValue;
     uint256 hash = Hash(ss.begin(), ss.end());
 
-    return hash;
+    return ArithToUint32_t(UintToArith32_t(hash).Get32());
 }
 
-bool GetAccumulatorValueFromChecksum(uint256 nChecksum, bool fMemoryOnly, CBigNum& bnAccValue)
+bool GetAccumulatorValueFromChecksum(uint32_t nChecksum, bool fMemoryOnly, CBigNum& bnAccValue)
 {
     if (mapAccumulatorValues.count(nChecksum)) {
         bnAccValue = mapAccumulatorValues.at(nChecksum);
@@ -51,11 +51,11 @@ bool GetAccumulatorValueFromChecksum(uint256 nChecksum, bool fMemoryOnly, CBigNu
 
 bool GetAccumulatorValueFromDB(uint256 nCheckpoint, CoinDenomination denom, CBigNum& bnAccValue)
 {
-    uint256 nChecksum = ParseChecksum(nCheckpoint, denom);
+    uint32_t nChecksum = ParseChecksum(nCheckpoint, denom);
     return GetAccumulatorValueFromChecksum(nChecksum, false, bnAccValue);
 }
 
-void AddAccumulatorChecksum(const uint256 nChecksum, const CBigNum &bnValue, bool fMemoryOnly)
+void AddAccumulatorChecksum(const uint32_t nChecksum, const CBigNum &bnValue, bool fMemoryOnly)
 {
     if(!fMemoryOnly)
         zerocoinDB->WriteAccumulatorValue(nChecksum, bnValue);
@@ -66,23 +66,23 @@ void DatabaseChecksums(AccumulatorMap& mapAccumulators)
 {
     for (auto& denom : zerocoinDenomList) {
         CBigNum bnValue = mapAccumulators.GetValue(denom);
-        auto nCheckSum = GetChecksum(bnValue);
+        uint32_t nCheckSum = GetChecksum(bnValue);
         AddAccumulatorChecksum(nCheckSum, bnValue, false);
     }
 }
 
-bool EraseChecksum(uint256 nChecksum)
+bool EraseChecksum(uint32_t nChecksum)
 {
     //erase from both memory and database
     mapAccumulatorValues.erase(nChecksum);
     return zerocoinDB->EraseAccumulatorValue(nChecksum);
 }
 
-bool EraseAccumulatorValues(const uint256& nCheckpointErase, const uint256& nCheckpointPrevious)
+bool EraseAccumulatorValues(const uint32_t& nCheckpointErase, const uint256& nCheckpointPrevious)
 {
     for (auto& denomination : zerocoinDenomList) {
-        uint256 nChecksumErase = ParseChecksum(nCheckpointErase, denomination);
-        uint256 nChecksumPrevious = ParseChecksum(nCheckpointPrevious, denomination);
+        uint32_t nChecksumErase = ParseChecksum(nCheckpointErase, denomination);
+        uint32_t nChecksumPrevious = ParseChecksum(nCheckpointPrevious, denomination);
 
         //if the previous checksum is the same, then it should remain in the database and map
         if(nChecksumErase == nChecksumPrevious)
@@ -98,7 +98,7 @@ bool EraseAccumulatorValues(const uint256& nCheckpointErase, const uint256& nChe
 bool LoadAccumulatorValuesFromDB(const uint256 nCheckpoint)
 {
     for (auto& denomination : zerocoinDenomList) {
-        uint256 nChecksum = ParseChecksum(nCheckpoint, denomination);
+        uint32_t nChecksum = ParseChecksum(nCheckpoint, denomination);
 
         //if read is not successful then we are not in a state to verify zerocoin transactions
         CBigNum bnValue;
@@ -125,7 +125,7 @@ bool EraseCheckpoints(int nStartHeight, int nEndHeight)
     uint256 nCheckpointPrev = pindex->pprev->nAccumulatorCheckpoint;
 
     //Keep a list of checkpoints from the previous block so that we don't delete them
-    list<uint256> listCheckpointsPrev;
+    list<uint32_t> listCheckpointsPrev;
     for (auto denom : zerocoinDenomList)
         listCheckpointsPrev.emplace_back(ParseChecksum(nCheckpointPrev, denom));
 
@@ -133,7 +133,7 @@ bool EraseCheckpoints(int nStartHeight, int nEndHeight)
         uint256 nCheckpointDelete = pindex->nAccumulatorCheckpoint;
 
         for (auto denom : zerocoinDenomList) {
-            uint256 nChecksumDelete = ParseChecksum(nCheckpointDelete, denom);
+            uint32_t nChecksumDelete = ParseChecksum(nCheckpointDelete, denom);
             if (count(listCheckpointsPrev.begin(), listCheckpointsPrev.end(), nCheckpointDelete))
                 continue;
             EraseChecksum(nChecksumDelete);
@@ -330,7 +330,7 @@ bool GenerateAccumulatorWitness(const PublicCoin &coin, Accumulator& accumulator
         //if a new checkpoint was generated on this block, and we have added the specified amount of checkpointed accumulators,
         //then initialize the accumulator at this point and break
         if (!InvalidCheckpointRange(pindex->nHeight) && (pindex->nHeight == nHeightStop || (nSecurityLevel != 100 && nCheckpointsAdded >= nSecurityLevel))) {
-            uint256 nChecksum = ParseChecksum(chainActive[pindex->nHeight + 10]->nAccumulatorCheckpoint, coin.getDenomination());
+            uint32_t nChecksum = ParseChecksum(chainActive[pindex->nHeight + 10]->nAccumulatorCheckpoint, coin.getDenomination());
             CBigNum bnAccValue = 0;
             if (!zerocoinDB->ReadAccumulatorValue(nChecksum, bnAccValue)) {
                 LogPrintf("%s : failed to find checksum in database for accumulator\n", __func__);

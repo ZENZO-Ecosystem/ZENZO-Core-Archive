@@ -85,9 +85,9 @@ public:
     bool ReadCoinSpend(const CBigNum& bnSerial, uint256& txHash);
     bool EraseCoinMint(const CBigNum& bnPubcoin);
     bool EraseCoinSpend(const CBigNum& bnSerial);
-    bool WriteAccumulatorValue(const uint256& nChecksum, const CBigNum& bnValue);
-    bool ReadAccumulatorValue(const uint256& nChecksum, CBigNum& bnValue);
-    bool EraseAccumulatorValue(const uint256& nChecksum);
+    bool WriteAccumulatorValue(const uint32_t& nChecksum, const CBigNum& bnValue);
+    bool ReadAccumulatorValue(const uint32_t& nChecksum, CBigNum& bnValue);
+    bool EraseAccumulatorValue(const uint32_t& nChecksum);
 };
 
 #endif // BITCOIN_TXDB_H
