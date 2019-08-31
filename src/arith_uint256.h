@@ -277,7 +277,7 @@ public:
 };
 
 /** 32-bit unsigned int. */
-class arith_uint32_t : public base_uint<332> {
+class arith_uint32_t : public base_uint<32> {
 public:
     arith_uint32_t() {}
     arith_uint32_t(const base_uint<32>& b) : base_uint<32>(b) {}
