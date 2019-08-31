@@ -62,7 +62,7 @@ public:
 	 * @param a hash of the partial transaction that contains this coin spend
 	 * @throw ZerocoinException if the process fails
 	 */
-    CoinSpend(const ZerocoinParams* p, const PrivateCoin& coin, Accumulator& a, const uint256& checksum, const AccumulatorWitness& witness, const uint256& ptxHash);
+    CoinSpend(const ZerocoinParams* p, const PrivateCoin& coin, Accumulator& a, const uint32_t checksum, const AccumulatorWitness& witness, const uint256& ptxHash);
 
     /** Returns the serial number of the coin spend by this proof.
 	 *
@@ -80,7 +80,7 @@ public:
 	 *
 	 * @return the checksum
 	 */
-    uint256 getAccumulatorChecksum() const { return this->accChecksum; }
+    uint32_t getAccumulatorChecksum() const { return this->accChecksum; }
 
     /**Gets the txout hash used in this proof.
 	 *
@@ -112,7 +112,7 @@ public:
 private:
     const uint256 signatureHash() const;
     CoinDenomination denomination;
-    uint256 accChecksum;
+    uint32_t accChecksum;
     uint256 ptxHash;
     CBigNum accCommitmentToCoinValue;
     CBigNum serialCommitmentToCoinValue;

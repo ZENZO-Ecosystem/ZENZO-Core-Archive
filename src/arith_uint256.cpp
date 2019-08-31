@@ -205,6 +205,22 @@ unsigned int base_uint<BITS>::bits() const
     return 0;
 }
 
+// Explicit instantiations for base_uint<32>
+template base_uint<32>::base_uint(const std::string&);
+template base_uint<32>::base_uint(const std::vector<unsigned char>&);
+template base_uint<32>& base_uint<32>::operator<<=(unsigned int);
+template base_uint<32>& base_uint<32>::operator>>=(unsigned int);
+template base_uint<32>& base_uint<32>::operator*=(uint32_t b32);
+template base_uint<32>& base_uint<32>::operator*=(const base_uint<32>& b);
+template base_uint<32>& base_uint<32>::operator/=(const base_uint<32>& b);
+template int base_uint<32>::CompareTo(const base_uint<32>&) const;
+template bool base_uint<32>::EqualTo(uint64_t) const;
+template double base_uint<32>::getdouble() const;
+template std::string base_uint<32>::ToString() const;
+//template void base_uint<32>::SetHex(const char*);
+//template void base_uint<32>::SetHex(const std::string&);
+template unsigned int base_uint<32>::bits() const;
+
 // Explicit instantiations for base_uint<256>
 template base_uint<256>::base_uint(const std::string&);
 template base_uint<256>::base_uint(const std::vector<unsigned char>&);
