@@ -69,7 +69,7 @@ void DatabaseChecksums(AccumulatorMap& mapAccumulators)
         CBigNum bnValue = mapAccumulators.GetValue(denom);
         uint32_t nCheckSum = GetChecksum(bnValue);
         AddAccumulatorChecksum(nCheckSum, bnValue, false);
-        nCheckpoint = ArithToUint256(UintToArith256(nCheckpoint) << 32) | nCheckSum;
+        nCheckpoint = ArithToUint256(UintToArith256(nCheckpoint) << 32 | nCheckSum);
     }
 }
 
