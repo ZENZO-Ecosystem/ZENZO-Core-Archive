@@ -123,11 +123,6 @@ public:
      * @note The result of this function is not stable between little and big endian.
      */
 
-    uint32_t Get32(int n = 0) const
-    {
-        return pn[2 * n];
-    }
-
     uint64_t GetCheapHash() const
     {
         uint64_t result;
