@@ -71,7 +71,7 @@ void DatabaseChecksums(AccumulatorMap& mapAccumulators)
     }
 }
 
-bool EraseChecksum(uint32_t nChecksum)
+bool EraseChecksum(uint256 nChecksum)
 {
     //erase from both memory and database
     mapAccumulatorValues.erase(nChecksum);
