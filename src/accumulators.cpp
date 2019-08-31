@@ -78,7 +78,7 @@ bool EraseChecksum(uint32_t nChecksum)
     return zerocoinDB->EraseAccumulatorValue(nChecksum);
 }
 
-bool EraseAccumulatorValues(const uint32_t& nCheckpointErase, const uint256& nCheckpointPrevious)
+bool EraseAccumulatorValues(const uint256& nCheckpointErase, const uint256& nCheckpointPrevious)
 {
     for (auto& denomination : zerocoinDenomList) {
         uint32_t nChecksumErase = ParseChecksum(nCheckpointErase, denomination);
