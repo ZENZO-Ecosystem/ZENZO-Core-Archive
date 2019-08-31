@@ -2622,7 +2622,7 @@ bool DisconnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex
 
     if (!fVerifyingBlocks) {
         //if block is an accumulator checkpoint block, remove checkpoint and checksums from db
-        uint32_t nCheckpoint = pindex->nAccumulatorCheckpoint;
+        uint256 nCheckpoint = pindex->nAccumulatorCheckpoint;
         if(nCheckpoint != pindex->pprev->nAccumulatorCheckpoint) {
             if(!EraseAccumulatorValues(nCheckpoint, pindex->pprev->nAccumulatorCheckpoint))
                 return error("DisconnectBlock(): failed to erase checkpoint");
