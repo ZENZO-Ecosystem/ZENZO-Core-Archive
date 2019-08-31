@@ -785,7 +785,7 @@ inline const CBigNum operator%(const CBigNum& a, const CBigNum& b)
 inline const CBigNum operator<<(const CBigNum& a, unsigned int shift)
 {
     CBigNum r;
-    if (!BN_lshift(r.bn, a.bn, shift))
+    if (!BN_lshift(&r, &a, shift))
         throw bignum_error("CBigNum:operator<< : BN_lshift failed");
     return r;
 }
