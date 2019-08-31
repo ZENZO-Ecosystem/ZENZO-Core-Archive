@@ -32,7 +32,7 @@ uint256 GetChecksum(const CBigNum &bnValue)
     return hash;
 }
 
-bool GetAccumulatorValueFromChecksum(uint32_t nChecksum, bool fMemoryOnly, CBigNum& bnAccValue)
+bool GetAccumulatorValueFromChecksum(uint256 nChecksum, bool fMemoryOnly, CBigNum& bnAccValue)
 {
     if (mapAccumulatorValues.count(nChecksum)) {
         bnAccValue = mapAccumulatorValues.at(nChecksum);
