@@ -122,16 +122,22 @@ bool EraseCheckpoints(int nStartHeight, int nEndHeight)
     nEndHeight = min(chainActive.Height(), nEndHeight);
 
     CBlockIndex* pindex = chainActive[nStartHeight];
+    uint256 nCheckpointPrev = pindex->pprev->nAccumulatorCheckpoint;
 
-    auto mapCheckpointsPrev = pindex->pprev->mapAccumulatorHashes;
-    while (pindex) {
-        //Do not erase the hash if it is the same as the previous block
-        for (auto pairPrevious : mapCheckpointsPrev) {
-            auto hashChecksum = pindex->GetAccumulatorHash(pairPrevious.first);
-            if (hashChecksum != pairPrevious.second)
-                EraseChecksum(hashChecksum);
+    //Keep a list of checkpoints from the previous block so that we don't delete them
+    list<uint256> listCheckpointsPrev;
+    for (auto denom : zerocoinDenomList)
+        listCheckpointsPrev.emplace_back(ParseChecksum(nCheckpointPrev, denom));
+
+    while (true) {
+        uint256 nCheckpointDelete = pindex->nAccumulatorCheckpoint;
+
+        for (auto denom : zerocoinDenomList) {
+            uint32_t nChecksumDelete = ParseChecksum(nCheckpointDelete, denom);
+            if (count(listCheckpointsPrev.begin(), listCheckpointsPrev.end(), nCheckpointDelete))
+                continue;
+            EraseChecksum(nChecksumDelete);
         }
-
         LogPrintf("%s : erasing checksums for block %d\n", __func__, pindex->nHeight);
 
         if (pindex->nHeight + 1 <= nEndHeight)
