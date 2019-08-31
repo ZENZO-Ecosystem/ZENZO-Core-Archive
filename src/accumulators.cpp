@@ -152,93 +152,78 @@ bool EraseCheckpoints(int nStartHeight, int nEndHeight)
 //Get checkpoint value for a specific block height
 bool CalculateAccumulatorCheckpoint(int nHeight, std::map<libzerocoin::CoinDenomination, uint256>& mapCheckpoints, AccumulatorMap& mapAccumulators)
 {
-    if (nHeight < Params().Zerocoin_StartHeight()) {
-        nCheckpoint = uint256();
-        return true;
-    }
-
     //the checkpoint is updated every ten blocks, return current active checkpoint if not update block
-    if (nHeight % 10 != 0) {
-        nCheckpoint = chainActive[nHeight - 1]->nAccumulatorCheckpoint;
+    if (nHeight % 10 != 0 || nHeight == 10) {
+        mapCheckpoints = chainActive[nHeight - 1]->mapAccumulatorHashes;
         return true;
     }
 
     //set the accumulators to last checkpoint value
-    AccumulatorMap mapAccumulators;
-    if (!mapAccumulators.Load(chainActive[nHeight - 1]->nAccumulatorCheckpoint)) {
-        if (chainActive[nHeight - 1]->nAccumulatorCheckpoint.IsNull()) {
-            //Before zerocoin is fully activated so set to init state
-            mapAccumulators.Reset();
-        } else {
-            LogPrintf("%s: failed to reset to previous checkpoint\n", __func__);
-            return false;
-        }
-    }
+    int nHeightCheckpoint;
+    mapAccumulators.Reset();
+    if (!InitializeAccumulators(nHeight, nHeightCheckpoint, mapAccumulators))
+        return error("%s: failed to initialize accumulators", __func__);
 
     //Accumulate all coins over the last ten blocks that havent been accumulated (height - 20 through height - 11)
     int nTotalMintsFound = 0;
-    CBlockIndex *pindex = chainActive[nHeight - 20];
+    CBlockIndex *pindex = chainActive[nHeightCheckpoint - 20];
 
-    //When zerocoin activates, search previous blocks for mints that were accidentally minted before activation time
-    if (nHeight == Params().Zerocoin_StartHeight()) {
-        pindex = chainActive[Params().Zerocoin_AccumulatorStartHeight()];
-        mapAccumulators.Reset();
-    }
+    if (!pindex)
+        return false;
 
     while (pindex->nHeight < nHeight - 10) {
-        // checking whether we should stop this process due to a shutdown request
-        if (ShutdownRequested()) {
-            return false;
-        }
-
-        //make sure this block is eligible for accumulation
-        if (pindex->nHeight < Params().Zerocoin_AccumulatorStartHeight()) {
-            pindex = chainActive[pindex->nHeight + 1];
-            continue;
-        }
-
         //grab mints from this block
         CBlock block;
-        if(!ReadBlockFromDisk(block, pindex)) {
-            LogPrint("zero","%s: failed to read block from disk\n", __func__);
-            return false;
-        }
+        if(!ReadBlockFromDisk(block, pindex, Params().GetConsensus()))
+            return error("%s: failed to read block from disk", __func__);
 
         std::list<PublicCoin> listPubcoins;
-        if (!BlockToPubcoinList(block, listPubcoins)) {
-            LogPrint("zero","%s: failed to get zerocoin mintlist from block %n\n", __func__, pindex->nHeight);
-            return false;
-        }
+        if (!BlockToPubcoinList(block, listPubcoins))
+            return error("%s: failed to get zerocoin mintlist from block %d", __func__, pindex->nHeight);
 
         nTotalMintsFound += listPubcoins.size();
-        LogPrint("zero", "%s found %d mints\n", __func__, listPubcoins.size());
 
         //add the pubcoins to accumulator
-        for (const PublicCoin pubcoin : listPubcoins) {
-            if (!pubcoin.validate())
-                continue;
-
-            if(!mapAccumulators.Accumulate(pubcoin, true)) {
-                LogPrintf("%s: failed to add pubcoin to accumulator at height %n\n", __func__, pindex->nHeight);
-                return false;
-            }
+        for (const PublicCoin& pubcoin : listPubcoins) {
+            if(!mapAccumulators.Accumulate(pubcoin, true))
+                return error("%s: failed to add pubcoin to accumulator at height %d", __func__, pindex->nHeight);
         }
+
         pindex = chainActive.Next(pindex);
     }
 
     // if there were no new mints found, the accumulator checkpoint will be the same as the last checkpoint
     if (nTotalMintsFound == 0) {
-        nCheckpoint = chainActive[nHeight - 1]->nAccumulatorCheckpoint;
+        mapCheckpoints = chainActive[nHeight - 1]->mapAccumulatorHashes;
     }
     else
-        nCheckpoint = mapAccumulators.GetCheckpoint();
+        mapCheckpoints = mapAccumulators.GetCheckpoints();
 
-    // make sure that these values are databased because reorgs may have deleted the checksums from DB
-    DatabaseChecksums(mapAccumulators);
-
-    LogPrint("zero", "%s checkpoint=%s\n", __func__, nCheckpoint.GetHex());
+    //LogPrintf("%s checkpoint=%s\n", __func__, nCheckpoint.GetHex());
     return true;
 }
+bool ValidateAccumulatorCheckpoint(const CBlock& block, CBlockIndex* pindex, AccumulatorMap& mapAccumulators)
+{
+    if (pindex->nHeight % 10 == 0 && pindex->nHeight > 10) {
+        std::map<libzerocoin::CoinDenomination, uint256> mapCheckpointCalculated;
+
+        if (!CalculateAccumulatorCheckpoint(pindex->nHeight, mapCheckpointCalculated, mapAccumulators))
+            return error("%s : failed to calculate accumulator checkpoint", __func__);
+
+        for (auto checkpointPair: mapAccumulators.GetCheckpoints(true)) {
+            if (checkpointPair.second != block.mapAccumulatorHashes.at(checkpointPair.first))
+                return error("%s : accumulator does not match calculated value. block=%s calculated=%s", __func__, pindex->mapAccumulatorHashes.at(checkpointPair.first).GetHex(), checkpointPair.second.GetHex());
+        }
+
+        return true;
+    }
+
+    if (block.mapAccumulatorHashes != pindex->pprev->mapAccumulatorHashes)
+        return error("%s : new accumulator checkpoint generated on a block that is not multiple of 10", __func__);
+
+    return true;
+}
+
 
 bool InvalidCheckpointRange(int nHeight)
 {
