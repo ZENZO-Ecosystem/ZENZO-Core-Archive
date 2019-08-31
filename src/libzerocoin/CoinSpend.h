@@ -62,7 +62,7 @@ public:
 	 * @param a hash of the partial transaction that contains this coin spend
 	 * @throw ZerocoinException if the process fails
 	 */
-    CoinSpend(const ZerocoinParams* p, const PrivateCoin& coin, Accumulator& a, const uint256 checksum, const AccumulatorWitness& witness, const uint256& ptxHash);
+    CoinSpend(const ZerocoinParams* p, const PrivateCoin& coin, Accumulator& a, const uint256& checksum, const AccumulatorWitness& witness, const uint256& ptxHash);
 
     /** Returns the serial number of the coin spend by this proof.
 	 *
