@@ -45,15 +45,15 @@ public:
     base_blob& operator|=(const base_uint& b)
     {
         for (int i = 0; i < WIDTH; i++)
-            pn[i] |= b.pn[i];
+            data[i] |= b.data[i];
         return *this;
     }
 
 
     base_blob& operator|=(uint64_t b)
     {
-        pn[0] |= (unsigned int)b;
-        pn[1] |= (unsigned int)(b >> 32);
+        data[0] |= (unsigned int)b;
+        data[1] |= (unsigned int)(b >> 32);
         return *this;
     }
 
