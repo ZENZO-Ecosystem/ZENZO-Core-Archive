@@ -111,6 +111,9 @@ public:
  * those are required.
  */
 class uint256 : public base_blob<256> {
+protected:
+    enum { WIDTH=BITS/32 };
+    uint32_t pn[WIDTH];
 public:
     uint256() {}
     uint256(const base_blob<256>& b) : base_blob<256>(b) {}
