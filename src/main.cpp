@@ -1493,12 +1493,14 @@ bool CheckTransaction(const CTransaction& tx, bool fZerocoinActive, bool fReject
         if (!MoneyRange(nValueOut))
             return state.DoS(100, error("CheckTransaction() : txout total out of range"),
                 REJECT_INVALID, "bad-txns-txouttotal-toolarge");
+        //TODO: remove this 
+        /*
         if (fZerocoinActive && txout.IsZerocoinMint()) {
             if(!CheckZerocoinMint(tx.GetHash(), txout, state, false)) {
                 if (fRejectBadUTXO)
                     return state.DoS(100, error("CheckTransaction() : invalid zerocoin mint"));
             }
-        }
+        } */
         if (fZerocoinActive && txout.scriptPubKey.IsZerocoinSpend())
             nZCSpendCount++;
     }
