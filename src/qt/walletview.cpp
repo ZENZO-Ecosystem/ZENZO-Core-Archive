@@ -7,7 +7,6 @@
 
 #include "addressbookpage.h"
 #include "askpassphrasedialog.h"
-#include "bip38tooldialog.h"
 #include "bitcoingui.h"
 #include "blockexplorer.h"
 #include "clientmodel.h"
@@ -304,14 +303,6 @@ void WalletView::gotoVerifyMessageTab(QString addr)
 
     if (!addr.isEmpty())
         signVerifyMessageDialog->setAddress_VM(addr);
-}
-
-void WalletView::gotoBip38Tool()
-{
-    Bip38ToolDialog* bip38ToolDialog = new Bip38ToolDialog(this);
-    //bip38ToolDialog->setAttribute(Qt::WA_DeleteOnClose);
-    bip38ToolDialog->setModel(walletModel);
-    bip38ToolDialog->showTab_ENC(true);
 }
 
 void WalletView::gotoMultiSendDialog()

@@ -86,7 +86,6 @@ BITCOIN_CORE_H = \
   base58.h \
   bip39.h \
   bip39_english.h \
-  bip38.h \
   bloom.h \
   chain.h \
   chainparams.h \
@@ -246,7 +245,6 @@ libbitcoin_wallet_a_CFLAGS = -fPIC
 libbitcoin_wallet_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_SOURCES = \
   activemasternode.cpp \
-  bip38.cpp \
   denomination_functions.cpp \
   obfuscation.cpp \
   obfuscation-relay.cpp \
@@ -278,7 +276,6 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/hmac_sha256.cpp \
   crypto/rfc6979_hmac_sha256.cpp \
   crypto/hmac_sha512.cpp \
-  crypto/scrypt.cpp \
   crypto/ripemd160.cpp \
   crypto/sph_md_helper.c \
   crypto/sph_sha2big.c \
@@ -308,7 +305,6 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/hmac_sha256.h \
   crypto/rfc6979_hmac_sha256.h \
   crypto/hmac_sha512.h \
-  crypto/scrypt.h \
   crypto/sha1.h \
   crypto/ripemd160.h \
   crypto/sph_blake.h \
@@ -370,7 +366,6 @@ libbitcoin_common_a_SOURCES = \
   amount.cpp \
   base58.cpp \
   bip39.cpp \
-  bip38.cpp \
   chainparams.cpp \
   coins.cpp \
   compressor.cpp \
@@ -508,7 +503,6 @@ libbitcoinconsensus_la_SOURCES = \
   arith_uint256.cpp \
   primitives/transaction.cpp \
   crypto/hmac_sha512.cpp \
-  crypto/scrypt.cpp \
   crypto/sha1.cpp \
   crypto/sha256.cpp \
   crypto/sha512.cpp \

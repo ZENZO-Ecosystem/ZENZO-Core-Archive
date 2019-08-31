@@ -463,6 +463,4 @@ static unsigned char pblank[1];
     return hash[33].trim256();
 }
 
-void scrypt_hash(const char* pass, unsigned int pLen, const char* salt, unsigned int sLen, char* output, unsigned int N, unsigned int r, unsigned int p, unsigned int dkLen);
-
 #endif // BITCOIN_HASH_H

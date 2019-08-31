@@ -95,7 +95,6 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle* n
                                                                             usedReceivingAddressesAction(0),
                                                                             signMessageAction(0),
                                                                             verifyMessageAction(0),
-                                                                            bip38ToolAction(0),
                                                                             multisigCreateAction(0),
                                                                             multisigSpendAction(0),
                                                                             multisigSignAction(0),
@@ -447,8 +446,6 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
     signMessageAction->setStatusTip(tr("Sign messages with your ZENZO addresses to prove you own them"));
     verifyMessageAction = new QAction(QIcon(":/icons/transaction_0"), tr("&Verify message..."), this);
     verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified ZENZO addresses"));
-    bip38ToolAction = new QAction(QIcon(":/icons/key"), tr("&BIP38 tool"), this);
-    bip38ToolAction->setToolTip(tr("Encrypt and decrypt private keys using a passphrase"));
     multiSendAction = new QAction(QIcon(":/icons/edit"), tr("&MultiSend"), this);
     multiSendAction->setToolTip(tr("MultiSend Settings"));
     multiSendAction->setCheckable(true);
@@ -506,7 +503,6 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
         connect(lockWalletAction, SIGNAL(triggered()), walletFrame, SLOT(lockWallet()));
         connect(signMessageAction, SIGNAL(triggered()), this, SLOT(gotoSignMessageTab()));
         connect(verifyMessageAction, SIGNAL(triggered()), this, SLOT(gotoVerifyMessageTab()));
-        connect(bip38ToolAction, SIGNAL(triggered()), this, SLOT(gotoBip38Tool()));
         connect(usedSendingAddressesAction, SIGNAL(triggered()), walletFrame, SLOT(usedSendingAddresses()));
         connect(usedReceivingAddressesAction, SIGNAL(triggered()), walletFrame, SLOT(usedReceivingAddresses()));
         connect(openAction, SIGNAL(triggered()), this, SLOT(openClicked()));
@@ -552,7 +548,6 @@ void BitcoinGUI::createMenuBar()
         settings->addAction(changePassphraseAction);
         settings->addAction(unlockWalletAction);
         settings->addAction(lockWalletAction);
-        settings->addAction(bip38ToolAction);
         settings->addAction(multiSendAction);
         settings->addSeparator();
     }
@@ -708,7 +703,6 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
     multisigCreateAction->setEnabled(enabled);
     multisigSpendAction->setEnabled(enabled);
     multisigSignAction->setEnabled(enabled);
-    bip38ToolAction->setEnabled(enabled);
     usedSendingAddressesAction->setEnabled(enabled);
     usedReceivingAddressesAction->setEnabled(enabled);
     openAction->setEnabled(enabled);
@@ -754,7 +748,6 @@ void BitcoinGUI::createTrayIconMenu()
     trayIconMenu->addSeparator();
     trayIconMenu->addAction(signMessageAction);
     trayIconMenu->addAction(verifyMessageAction);
-    trayIconMenu->addAction(bip38ToolAction);
     trayIconMenu->addSeparator();
     trayIconMenu->addAction(optionsAction);
     trayIconMenu->addSeparator();
@@ -875,11 +868,6 @@ void BitcoinGUI::gotoMultisigSpend()
 void BitcoinGUI::gotoMultisigSign()
 {
     if(walletFrame) walletFrame->gotoMultisigDialog(2);
-}
-
-void BitcoinGUI::gotoBip38Tool()
-{
-    if (walletFrame) walletFrame->gotoBip38Tool();
 }
 
 void BitcoinGUI::gotoMultiSendDialog()

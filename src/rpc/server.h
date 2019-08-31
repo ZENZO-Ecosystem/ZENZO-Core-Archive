@@ -169,8 +169,6 @@ extern json_spirit::Value importaddress(const json_spirit::Array& params, bool f
 extern json_spirit::Value dumphdinfo(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value dumpwallet(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value importwallet(const json_spirit::Array& params, bool fHelp);
-extern json_spirit::Value bip38encrypt(const json_spirit::Array& params, bool fHelp);
-extern json_spirit::Value bip38decrypt(const json_spirit::Array& params, bool fHelp);
 
 extern json_spirit::Value getgenerate(const json_spirit::Array& params, bool fHelp); // in rpc/mining.cpp
 extern json_spirit::Value setgenerate(const json_spirit::Array& params, bool fHelp);

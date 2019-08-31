@@ -154,7 +154,6 @@ HEADERS += src/activemasternode.h \
            src/crypto/sha512.h \
            src/crypto/sha256.h \
            src/crypto/sha1.h \
-           src/crypto/scrypt.h \
            src/crypto/hmac_sha512.h \
            src/crypto/hmac_sha256.h \
            src/crypto/common.h \
