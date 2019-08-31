@@ -419,7 +419,7 @@ Test_MintAndSpend()
 		cc << *gCoins[0];
 		PrivateCoin myCoin(g_Params,cc);
 
-		CoinSpend spend(g_Params, myCoin, acc, uint256(), wAcc, uint256());
+		CoinSpend spend(g_Params, myCoin, acc, 0, wAcc, uint256());
 
 		// Serialize the proof and deserialize into newSpend
 		CDataStream ss(SER_NETWORK, PROTOCOL_VERSION);
