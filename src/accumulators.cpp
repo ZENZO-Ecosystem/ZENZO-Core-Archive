@@ -64,7 +64,7 @@ void AddAccumulatorChecksum(const uint32_t nChecksum, const CBigNum &bnValue, bo
 
 void DatabaseChecksums(AccumulatorMap& mapAccumulators)
 {
-    uint256 nCheckpoint = 0;
+    uint256 nCheckpoint = uint256();
     for (auto& denom : zerocoinDenomList) {
         CBigNum bnValue = mapAccumulators.GetValue(denom);
         uint32_t nCheckSum = GetChecksum(bnValue);
