@@ -12,7 +12,7 @@
 
 using namespace libzerocoin;
 
-std::map<uint32_t, CBigNum> mapAccumulatorValues;
+std::map<uint256, CBigNum> mapAccumulatorValues;
 std::list<uint256> listAccCheckpointsNoDB;
 
 uint256 ParseChecksum(uint256 nChecksum, CoinDenomination denomination)
