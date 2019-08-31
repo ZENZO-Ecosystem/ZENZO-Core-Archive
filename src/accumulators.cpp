@@ -103,7 +103,7 @@ bool LoadAccumulatorValuesFromDB(const uint256 nCheckpoint)
         //if read is not successful then we are not in a state to verify zerocoin transactions
         CBigNum bnValue;
         if (!zerocoinDB->ReadAccumulatorValue(nChecksum, bnValue)) {
-            LogPrint("zero","%s : Missing databased value for checksum %d\n", __func__, nChecksum.GetHex());
+            LogPrint("zero","%s : Missing databased value for checksum %d\n", __func__, nChecksum);
             if (!count(listAccCheckpointsNoDB.begin(), listAccCheckpointsNoDB.end(), nCheckpoint))
                 listAccCheckpointsNoDB.push_back(nCheckpoint);
             return false;
