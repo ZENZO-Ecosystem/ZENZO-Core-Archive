@@ -42,7 +42,7 @@ public:
         memset(data, 0, sizeof(data));
     }
 
-    base_blob& operator|=(const base_uint& b)
+    base_blob& operator|=(const base_blob& b)
     {
         for (int i = 0; i < WIDTH; i++)
             data[i] |= b.data[i];
