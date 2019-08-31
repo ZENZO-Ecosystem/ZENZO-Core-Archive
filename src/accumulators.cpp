@@ -133,7 +133,7 @@ bool EraseCheckpoints(int nStartHeight, int nEndHeight)
         uint256 nCheckpointDelete = pindex->nAccumulatorCheckpoint;
 
         for (auto denom : zerocoinDenomList) {
-            uint32_t nChecksumDelete = ParseChecksum(nCheckpointDelete, denom);
+            auto nChecksumDelete = ParseChecksum(nCheckpointDelete, denom);
             if (count(listCheckpointsPrev.begin(), listCheckpointsPrev.end(), nCheckpointDelete))
                 continue;
             EraseChecksum(nChecksumDelete);
