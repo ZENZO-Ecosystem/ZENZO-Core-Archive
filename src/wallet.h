@@ -200,7 +200,7 @@ public:
     mutable CCriticalSection cs_wallet;
 
     bool fFileBacked;
-    bool fWalletUnlockAnonymizeOnly;
+    bool fWalletUnlockStakingOnly;
     std::string strWalletFile;
 
     void LoadKeyPool(int nIndex, const CKeyPool &keypool)
@@ -275,7 +275,7 @@ public:
         nNextResend = 0;
         nLastResend = 0;
         nTimeFirstKey = 0;
-        fWalletUnlockAnonymizeOnly = false;
+        fWalletUnlockStakingOnly = false;
 
         // Stake Settings
         nHashDrift = 45;

@@ -413,7 +413,7 @@ WalletModel::EncryptionStatus WalletModel::getEncryptionStatus() const
 {
     if (!wallet->IsCrypted()) {
         return Unencrypted;
-    } else if (wallet->fWalletUnlockAnonymizeOnly) {
+    } else if (wallet->fWalletUnlockStakingOnly) {
         return UnlockedForAnonymizationOnly;
     } else if (wallet->IsLocked()) {
         return Locked;
@@ -434,21 +434,21 @@ bool WalletModel::setWalletEncrypted(bool encrypted, const SecureString& passphr
     }
 }
 
-bool WalletModel::setWalletLocked(bool locked, const SecureString& passPhrase, bool anonymizeOnly)
+bool WalletModel::setWalletLocked(bool locked, const SecureString& passPhrase, bool stakingOnly)
 {
     if (locked) {
         // Lock
-        wallet->fWalletUnlockAnonymizeOnly = false;
+        wallet->fWalletUnlockStakingOnly = false;
         return wallet->Lock();
     } else {
         // Unlock
-        return wallet->Unlock(passPhrase, anonymizeOnly);
+        return wallet->Unlock(passPhrase, stakingOnly);
     }
 }
 
 bool WalletModel::isAnonymizeOnlyUnlocked()
 {
-    return wallet->fWalletUnlockAnonymizeOnly;
+    return wallet->fWalletUnlockStakingOnly;
 }
 
 bool WalletModel::changePassphrase(const SecureString& oldPass, const SecureString& newPass)
@@ -556,7 +556,7 @@ WalletModel::UnlockContext WalletModel::requestUnlock(bool relock)
 
     if (!was_locked && isAnonymizeOnlyUnlocked()) {
         setWalletLocked(true);
-        wallet->fWalletUnlockAnonymizeOnly = false;
+        wallet->fWalletUnlockStakingOnly = false;
         was_locked = getEncryptionStatus() == Locked;
     }
 
