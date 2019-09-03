@@ -7,6 +7,7 @@
 
 #include "addressbookpage.h"
 #include "askpassphrasedialog.h"
+#include "backupdialog.h"
 #include "bip38tooldialog.h"
 #include "bitcoingui.h"
 #include "blockexplorer.h"
@@ -356,6 +357,13 @@ void WalletView::encryptWallet(bool status)
 
 void WalletView::backupWallet()
 {
+    BackupPage* backupPage = new BackupPage(this);
+    //backupPage->setModel(walletModel);
+    backupPage->show();
+
+    // Return here, until we add multiple backup options and backwards compatability again
+    return;
+
     QString filename = GUIUtil::getSaveFileName(this,
         tr("Backup Wallet"), QString(),
         tr("Wallet Data (*.dat)"), NULL);
