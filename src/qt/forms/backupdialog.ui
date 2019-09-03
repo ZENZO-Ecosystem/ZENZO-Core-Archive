@@ -25,6 +25,9 @@
      <property name="textFormat">
       <enum>Qt::RichText</enum>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
      <property name="wordWrap">
       <bool>true</bool>
      </property>
@@ -155,4 +158,5 @@
  </resources>
  <connections/>
 </ui>
+
 

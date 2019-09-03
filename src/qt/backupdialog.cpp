@@ -26,8 +26,10 @@ BackupPage::BackupPage(QWidget* parent) : QDialog(parent),
 {
     ui->setupUi(this);
 
-	key = BackupPage::getSeed();
-	ui->textSeed->setText(key);
+    this->setWindowTitle("ZENZO Core - Wallet Backup");
+
+    key = BackupPage::getSeed();
+    ui->textSeed->setText(key);
 
     // Build context menu
     contextMenu = new QMenu();
