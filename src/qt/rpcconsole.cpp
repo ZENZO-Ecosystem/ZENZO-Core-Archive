@@ -823,19 +823,19 @@ void RPCConsole::showConsole()
 
 void RPCConsole::showNetwork()
 {
-    ui->tabWidget->setCurrentIndex(2);
+    ui->tabWidget->setCurrentIndex(3);
     show();
 }
 
 void RPCConsole::showPeers()
 {
-    ui->tabWidget->setCurrentIndex(3);
+    ui->tabWidget->setCurrentIndex(4);
     show();
 }
 
 void RPCConsole::showRepair()
 {
-    ui->tabWidget->setCurrentIndex(4);
+    ui->tabWidget->setCurrentIndex(5);
     show();
 }
 
