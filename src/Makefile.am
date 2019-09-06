@@ -87,6 +87,7 @@ BITCOIN_CORE_H = \
   bip39_english.h \
   bip38.h \
   bloom.h \
+  blocksignature.h \
   chain.h \
   chainparams.h \
   chainparamsbase.h \
@@ -150,6 +151,7 @@ BITCOIN_CORE_H = \
   serialize.h \
   spork.h \
   sporkdb.h \
+  stakeinput.h \
   streams.h \
   sync.h \
   threadsafety.h \
@@ -198,6 +200,7 @@ libbitcoin_server_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT
 libbitcoin_server_a_SOURCES = \
   addrman.cpp \
   bloom.cpp \
+  blocksignature.cpp \
   chain.cpp \
   checkpoints.cpp \
   init.cpp \
@@ -265,6 +268,7 @@ libbitcoin_wallet_a_SOURCES = \
   wallet.cpp \
   wallet_ismine.cpp \
   walletdb.cpp \
+  stakeinput.cpp \
   $(BITCOIN_CORE_H)
 
 # crypto primitives library

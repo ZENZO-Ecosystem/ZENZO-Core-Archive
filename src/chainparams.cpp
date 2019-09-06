@@ -15,6 +15,7 @@
 #include <assert.h>
 
 #include <boost/assign/list_of.hpp>
+#include <limits>
 
 using namespace std;
 using namespace boost::assign;
@@ -95,6 +96,17 @@ libzerocoin::ZerocoinParams* CChainParams::Zerocoin_Params() const
     return &ZCParams;
 }
 
+bool CChainParams::HasStakeMinAgeOrDepth(const int contextHeight, const uint32_t contextTime,
+        const int utxoFromBlockHeight, const uint32_t utxoFromBlockTime) const
+{
+    // before stake modifier V2, the age required was 3 * 60 * 60 (3 hours) / not required on regtest
+    if (!IsStakeModifierV2(contextHeight))
+        return (NetworkID() == CBaseChainParams::REGTEST || (utxoFromBlockTime + 10800 <= contextTime));
+
+    // after stake modifier V2, we require the utxo to be nStakeMinDepth deep in the chain
+    return (contextHeight - utxoFromBlockHeight >= nStakeMinDepth);
+}
+
 class CMainParams : public CChainParams
 {
 public:
@@ -119,9 +131,11 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // ZENZO: 1 day
         nTargetSpacing = 1 * 60;  // ZENZO: 1 minute
         nMaturity = 50;
+        nStakeMinDepth = 600;
+        nFutureTimeDriftPoW = 7200;
+        nFutureTimeDriftPoS = 180;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 83000000 * COIN;
 
@@ -135,6 +149,7 @@ public:
         nBlockRecalculateAccumulators = ~1; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = ~1; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = ~1; //Last valid accumulator checkpoint
+        nBlockStakeModifierlV2 = 1967000; //Switch to Stake Modifier V2
 
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -233,10 +248,10 @@ public:
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // ZENZO: 1 day
         nTargetSpacing = 1 * 60;  // ZENZO: 1 minute
         nLastPOWBlock = 200;
         nMaturity = 15;
+        nStakeMinDepth = 100;
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 51197; //approx Mon, 17 Apr 2017 04:00:00 GMT
         nMaxMoneyOut = 43199500 * COIN;
@@ -246,6 +261,7 @@ public:
         nBlockRecalculateAccumulators = 9908000; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 9891737; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = 9891730; //Last valid accumulator checkpoint
+        nBlockStakeModifierlV2 = 1214000; //Switch to Stake Modifier V2
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1538323043;
@@ -312,12 +328,13 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespan = 24 * 60 * 60; // ZENZO: 1 day
-        nTargetSpacing = 1 * 60;        // ZENZO: 1 minutes
+        nTargetSpacing = 1 * 60;  // ZENZO: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1538323043;
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 1050765;
+
+        nBlockStakeModifierlV2 = std::numeric_limits<int>::max(); // max integer value (never switch on regtest)
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 36210;
