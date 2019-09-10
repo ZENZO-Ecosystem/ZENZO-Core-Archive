@@ -21,6 +21,8 @@ Steps to Upgrade:
 ---
 Starting with the latest changes, ending with the oldest changes. Each commit having it's own category.
 # Changelog
+- [UI] *(JSKitty)* - Add HD mnemonic backup 
+- [UI] *(JSKitty)* - Add GUI-based debug log viewer 
 - [UI] *(JSKitty)* - Add GUI Masternode Management Page
 - [UI] *(JSKitty)* - Add a recovery via GUI for corrupt block databases
 - [UI] *(JSKitty)* - Rename Masternode Pubkey to Payee Address
@@ -42,9 +44,12 @@ Starting with the latest changes, ending with the oldest changes. Each commit ha
 - [UI] *(JSKitty)* - Added Updates settings tab
 - [UI] *(technikpto)* - Add all masternodes tab
 ---
+- [Core] *(JSKitty)* - Catch subver parsing exceptions in DVM
 - [Core] *(JSKitty)* - Add Hierarchical Deterministic (HD) Wallets 
 - [Core] *(JSKitty)* - Remove Gitan-OSX warning for High Sierra builds
 ---
+- [Wallet] *(JSKitty)* - Don't create new keys when generating PoS blocks
+- [Wallet] *(JSKitty)* - Refactor StakeThread & improve staking efficiency
 - [Wallet] *(JSKitty)* - Don't assert if we were beaten to the block
 - [Wallet] *(JSKitty)* - Do all block index writes in a batch
 - [Wallet] *(JSKitty)* - Fix wallet flushing on client-related TXs
@@ -55,6 +60,9 @@ Starting with the latest changes, ending with the oldest changes. Each commit ha
 ---
 - [Consensus] *(JSKitty)* - Create new block checkpoint & stats
 ---
+- [RPC] *(JSKitty)* - Fix AmtFromVal max invalid amount parsing
+- [RPC] *(JSKitty)* - Add transaction size to JSON output
+- [RPC] *(JSKitty)* - Fix null id in RPC response during startup
 - [RPC] *(JSKitty)* - Add signmessagewithprivkey
 - [RPC] *(JSKitty)* - Add uptime command
 - [RPC] *(JSKitty)* - Remove all Zerocoin and Obfuscation commands
@@ -70,6 +78,7 @@ Starting with the latest changes, ending with the oldest changes. Each commit ha
 - [Net] *(JSKitty)* - Read/Write banlist to disk in datadir (banlist.dat)
 - [Net] *(JSKitty)* - Optimize and tweak DVM Core
 ---
+- [Build] *(mrmetech)* - Fix depends for multiple platforms
 - [Build] *(DCx7C5)* - Updated Makefile for Linux Qt Builds
 - [Build] *(JSKitty)* - Remove stale m4 file
 - [Build] *(JSKitty)* - Fix macOS dmg issue (10.12+)
@@ -78,16 +87,22 @@ Starting with the latest changes, ending with the oldest changes. Each commit ha
 - [Build] *(JSKitty)* - Remove unused files from Qt Makefile
 - [Build] *(JSKitty)* - Fixed config file executable perms
 ---
+- [Docs] *(JSKitty)* - Remove unnecessary MN guides 
 - [Docs] *(JSKitty)* - Add libevent-dev dependency to build docs
 - [Docs] *(JSKitty)* - Update contributing guidelines
 - [Docs] *(JSKitty)* - Tweak BDB compilation
 ---
 - [Refactor] *(JSKitty)* - Move rpc files into dedicated rpc directory
 ---
+- [Misc] *(JSKitty)* - Fix incorrect genesis block refs
+- [Misc] *(JSKitty)* - Remove unused Bitcoin Core 0.8 block hardlinking
 - [Misc] *(JSKitty)* - Fully purge Zerocoin
 - [Misc] *(JSKitty)* - Add extra filedump logging & initial dat files
 - [Misc] *(JSKitty)* - Fix tiny timedata memory leak
 ---
+- [Trivial] *(JSKitty)* - Update some PIVX & Dash branding leftovers
+- [Trivial] *(JSKitty)* - Rename anon unlock funcs for staking
+- [Trivial] *(JSKitty)* - Budget RPC Typo fixes
 - [Trivial] *(JSKitty)* - Remove unused GUI files
 - [Trivial] *(JSKitty)* - Remove unused icon files
 - [Trivial] *(JSKitty)* - Fix minor method typos
@@ -96,7 +111,8 @@ Starting with the latest changes, ending with the oldest changes. Each commit ha
 # Credits
 (Project Maintainer & Core Developer) **JSKitty**
 
-(Bounty Developer) **technikpto**
+(Bounty Developers) **technikpto**, **mrmetech**
+
 
 (Ally Developer) **DCx7C5** - [CoinMiningPool](https://coinminingpool.org/) & [OASIS](http://exploreoasis.com/)
 
