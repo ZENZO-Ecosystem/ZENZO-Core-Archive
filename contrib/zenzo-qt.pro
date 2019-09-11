@@ -59,7 +59,6 @@ QT += widgets
 # Input
 HEADERS += src/activemasternode.h \
            src/addrman.h \
-           src/alert.h \
            src/allocators.h \
            src/amount.h \
            src/base58.h \
@@ -311,7 +310,6 @@ HEADERS += src/activemasternode.h \
            src/secp256k1/src/testrand.h \
            src/secp256k1/src/testrand_impl.h \
            src/secp256k1/src/util.h \
-           src/test/data/alertTests.raw.h \
            src/test/data/base58_encode_decode.json.h \
            src/test/data/base58_keys_invalid.json.h \
            src/test/data/base58_keys_valid.json.h \
@@ -365,7 +363,6 @@ FORMS += src/qt/forms/addressbookpage.ui \
          src/qt/forms/transactiondescdialog.ui
 SOURCES += src/activemasternode.cpp \
            src/addrman.cpp \
-           src/alert.cpp \
            src/allocators.cpp \
            src/amount.cpp \
            src/base58.cpp \
@@ -536,7 +533,6 @@ SOURCES += src/activemasternode.cpp \
            src/script/sign.cpp \
            src/script/standard.cpp \
            src/test/accounting_tests.cpp \
-           src/test/alert_tests.cpp \
            src/test/allocator_tests.cpp \
            src/test/base32_tests.cpp \
            src/test/base58_tests.cpp \

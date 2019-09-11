@@ -1,3 +1,7 @@
+// Copyright (c) 2017-2019 The PIVX developers
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 #include "blockexplorer.h"
 #include "bitcoinunits.h"
 #include "chainparams.h"
@@ -44,7 +48,7 @@ static std::string ValueToString(CAmount nValue, bool AllowNegative = false)
     if (nValue < 0 && !AllowNegative)
         return "<span>" + _("unknown") + "</span>";
 
-    QString Str = BitcoinUnits::formatWithUnit(BitcoinUnits::ZNZ, nValue);
+    QString Str = BitcoinUnits::formatWithUnit(BitcoinUnits::PIV, nValue);
     if (AllowNegative && nValue > 0)
         Str = '+' + Str;
     return std::string("<span>") + Str.toUtf8().data() + "</span>";
@@ -176,7 +180,7 @@ const CBlockIndex* getexplorerBlockIndex(int64_t height)
 
 std::string getexplorerBlockHash(int64_t Height)
 {
-    std::string genesisblockhash = "0000024c78d7d2fb56363f7777bab06de80307ac751b02e843ca7ae62d2310d2";
+    std::string genesisblockhash = "0000041e482b9b9691d98eefb48473405c0b8ec31b76df3797c74a78680ef818";
     CBlockIndex* pindexBest = mapBlockIndex[chainActive.Tip()->GetBlockHash()];
     if ((Height < 0) || (Height > pindexBest->nHeight)) {
         return genesisblockhash;
@@ -391,15 +395,17 @@ std::string AddressToString(const CBitcoinAddress& Address)
     /*
     CScript AddressScript;
     AddressScript.SetDestination(Address.Get());
+
     CAmount Sum = 0;
     bool fAddrIndex = false;
+
     if (!fAddrIndex)
         return ""; // it will take too long to find transactions by address
     else
     {
         std::vector<CDiskTxPos> Txs;
         paddressmap->GetTxs(Txs, AddressScript.GetID());
-        BOOST_FOREACH (const CDiskTxPos& pos, Txs)
+        for (const CDiskTxPos& pos : Txs)
         {
             CTransaction tx;
             CBlock block;
@@ -432,7 +438,7 @@ BlockExplorer::BlockExplorer(QWidget* parent) : QMainWindow(parent),
     ui->setupUi(this);
 
     this->setStyleSheet(GUIUtil::loadStyleSheet());
-
+    
     connect(ui->pushSearch, SIGNAL(released()), this, SLOT(onSearch()));
     connect(ui->content, SIGNAL(linkActivated(const QString&)), this, SLOT(goTo(const QString&)));
     connect(ui->back, SIGNAL(released()), this, SLOT(back()));
@@ -470,9 +476,9 @@ void BlockExplorer::showEvent(QShowEvent*)
         m_History.push_back(text);
         updateNavButtons();
 
-        if (!GetBoolArg("-txindex", false)) {
-            QString Warning = tr("Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (zenzo.conf).");
-            QMessageBox::warning(this, "ZENZO Core Blockchain Explorer", Warning, QMessageBox::Ok);
+        if (!GetBoolArg("-txindex", true)) {
+            QString Warning = tr("Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (pivx.conf).");
+            QMessageBox::warning(this, "PIVX Core Blockchain Explorer", Warning, QMessageBox::Ok);
         }
     }
 }
@@ -548,7 +554,7 @@ void BlockExplorer::setBlock(CBlockIndex* pBlock)
 
 void BlockExplorer::setContent(const std::string& Content)
 {
-    QString CSS = "body {font-size:12px; color:#f8f6f6; bgcolor:#8778dc;}\n a, span { font-family: monospace; }\n span.addr {color:#8778dc; font-weight: bold;}\n table tr td {padding: 3px; border: 1px solid black; background-color: #8778dc;}\n td.d0 {font-weight: bold; color:#f8f6f6;}\n h2, h3 { white-space:nowrap; color:#8778dc;}\n a { color:#fff; text-decoration:none; }\n a.nav {color:#8778dc;}\n";
+    QString CSS = "body {font-size:12px; color:#f8f6f6; bgcolor:#5B4C7C;}\n a, span { font-family: monospace; }\n span.addr {color:#5B4C7C; font-weight: bold;}\n table tr td {padding: 3px; border: 1px solid black; background-color: #5B4C7C;}\n td.d0 {font-weight: bold; color:#f8f6f6;}\n h2, h3 { white-space:nowrap; color:#5B4C7C;}\n a { color:#88f6f6; text-decoration:none; }\n a.nav {color:#5B4C7C;}\n";
     QString FullContent = "<html><head><style type=\"text/css\">" + CSS + "</style></head>" + "<body>" + Content.c_str() + "</body></html>";
     // printf(FullContent.toUtf8());
 

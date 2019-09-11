@@ -2353,8 +2353,8 @@ https://www.transifex.com/zenzo-project/zenzo-project-translations</source>
     </message>
     <message>
         <location line="+259"/>
-        <source>Available:</source>
-        <translation>Available:</translation>
+        <source>AVAILABLE:</source>
+        <translation>AVAILABLE:</translation>
     </message>
     <message>
         <location line="+16"/>

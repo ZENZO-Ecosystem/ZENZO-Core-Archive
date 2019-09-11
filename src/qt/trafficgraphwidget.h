@@ -1,14 +1,10 @@
-// Copyright (c) 2011-2019 The Bitcoin developers
-// Copyright (c) 2018-2019 The ZENZO developers
+// Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_QT_TRAFFICGRAPHWIDGET_H
 #define BITCOIN_QT_TRAFFICGRAPHWIDGET_H
-
-#include "trafficgraphdata.h"
-
-#include <boost/function.hpp>
 
 #include <QQueue>
 #include <QWidget>
@@ -34,18 +30,20 @@ protected:
 
 public slots:
     void updateRates();
-    void setGraphRangeMins(int value);
+    void setGraphRangeMins(int mins);
     void clear();
 
 private:
-    typedef boost::function<float(const TrafficSample&)> SampleChooser;
-    void paintPath(QPainterPath &path, const TrafficGraphData::SampleQueue &queue, SampleChooser chooser);
+    void paintPath(QPainterPath& path, QQueue<float>& samples);
 
     QTimer* timer;
     float fMax;
     int nMins;
+    QQueue<float> vSamplesIn;
+    QQueue<float> vSamplesOut;
+    quint64 nLastBytesIn;
+    quint64 nLastBytesOut;
     ClientModel* clientModel;
-    TrafficGraphData trafficGraphData;
 };
 
 #endif // BITCOIN_QT_TRAFFICGRAPHWIDGET_H

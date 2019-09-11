@@ -723,6 +723,7 @@ QT_SELECT
 QT_TEST_INCLUDES
 QT_DBUS_INCLUDES
 QT_LDFLAGS
+QT_LIBS
 QT_INCLUDES
 QT_PIE_FLAGS
 LUPDATE
@@ -742,8 +743,10 @@ QT_DBUS_LIBS
 QT_DBUS_CFLAGS
 QT_TEST_LIBS
 QT_TEST_CFLAGS
-QT_LIBS
-QT_CFLAGS
+QT4_LIBS
+QT4_CFLAGS
+QT5_LIBS
+QT5_CFLAGS
 QT_TRANSLATION_DIR
 BDB_LIBS
 BDB_CPPFLAGS
@@ -985,8 +988,10 @@ PYTHONPATH
 PKG_CONFIG
 PKG_CONFIG_PATH
 PKG_CONFIG_LIBDIR
-QT_CFLAGS
-QT_LIBS
+QT5_CFLAGS
+QT5_LIBS
+QT4_CFLAGS
+QT4_LIBS
 QT_TEST_CFLAGS
 QT_TEST_LIBS
 QT_DBUS_CFLAGS
@@ -1701,7 +1706,7 @@ Optional Packages:
   --with-daemon           build zenzod daemon (default=yes)
   --with-incompatible-bdb allow using a bdb version other than 4.8
   --with-gui[=no|qt4|qt5|auto]
-                          build zenzo-qt GUI (default=auto, qt5 tried first)
+                          build bitcoin-qt GUI (default=auto, qt5 tried first)
   --with-qt-incdir=INC_DIR
                           specify qt include path (overridden by pkgconfig)
   --with-qt-libdir=LIB_DIR
@@ -1773,8 +1778,10 @@ Some influential environment variables:
               directories to add to pkg-config's search path
   PKG_CONFIG_LIBDIR
               path overriding pkg-config's built-in search path
-  QT_CFLAGS   C compiler flags for QT, overriding pkg-config
-  QT_LIBS     linker flags for QT, overriding pkg-config
+  QT5_CFLAGS  C compiler flags for QT5, overriding pkg-config
+  QT5_LIBS    linker flags for QT5, overriding pkg-config
+  QT4_CFLAGS  C compiler flags for QT4, overriding pkg-config
+  QT4_LIBS    linker flags for QT4, overriding pkg-config
   QT_TEST_CFLAGS
               C compiler flags for QT_TEST, overriding pkg-config
   QT_TEST_LIBS
@@ -22774,7 +22781,7 @@ fi
 if test "${with_gui+set}" = set; then :
   withval=$with_gui;
      bitcoin_qt_want_version=$withval
-     if test x$bitcoin_qt_want_version = xyes; then
+     if test "x$bitcoin_qt_want_version" = xyes; then
        bitcoin_qt_force=yes
        bitcoin_qt_want_version=auto
      fi
@@ -22831,21 +22838,21 @@ fi
 
   use_pkgconfig=$use_pkgconfig
 
-  if test x$use_pkgconfig = x; then
+  if test "x$use_pkgconfig" = x; then
     use_pkgconfig=yes
   fi
 
-  if test x$use_pkgconfig = xyes; then
+  if test "x$use_pkgconfig" = xyes; then
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
 
 
   auto_priority_version=qt5
-  if test x$auto_priority_version = x; then
+  if test "x$auto_priority_version" = x; then
     auto_priority_version=qt5
   fi
-    if test x$bitcoin_qt_want_version = xqt5 ||  ( test x$bitcoin_qt_want_version = xauto && test x$auto_priority_version = xqt5 ); then
+    if test "x$bitcoin_qt_want_version" = xqt5 ||  ( test "x$bitcoin_qt_want_version" = xauto && test "x$auto_priority_version" = xqt5 ); then
       QT_LIB_PREFIX=Qt5
       bitcoin_qt_got_major_vers=5
     else
@@ -22855,17 +22862,17 @@ fi
     qt5_modules="Qt5Core Qt5Gui Qt5Network Qt5Widgets"
     qt4_modules="QtCore QtGui QtNetwork"
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
 
-      if test x$bitcoin_qt_want_version = xqt5 || ( test x$bitcoin_qt_want_version = xauto && test x$auto_priority_version = xqt5 ); then
+      if test "x$bitcoin_qt_want_version" = xqt5 || ( test "x$bitcoin_qt_want_version" = xauto && test "x$auto_priority_version" = xqt5 ); then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for QT" >&5
-$as_echo_n "checking for QT... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for QT5" >&5
+$as_echo_n "checking for QT5... " >&6; }
 
-if test -n "$QT_CFLAGS"; then
-    pkg_cv_QT_CFLAGS="$QT_CFLAGS"
+if test -n "$QT5_CFLAGS"; then
+    pkg_cv_QT5_CFLAGS="$QT5_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"\$qt5_modules\""; } >&5
@@ -22873,7 +22880,7 @@ if test -n "$QT_CFLAGS"; then
   ac_status=$?
   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
   test $ac_status = 0; }; then
-  pkg_cv_QT_CFLAGS=`$PKG_CONFIG --cflags "$qt5_modules" 2>/dev/null`
+  pkg_cv_QT5_CFLAGS=`$PKG_CONFIG --cflags "$qt5_modules" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes
 else
   pkg_failed=yes
@@ -22881,8 +22888,8 @@ fi
  else
     pkg_failed=untried
 fi
-if test -n "$QT_LIBS"; then
-    pkg_cv_QT_LIBS="$QT_LIBS"
+if test -n "$QT5_LIBS"; then
+    pkg_cv_QT5_LIBS="$QT5_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"\$qt5_modules\""; } >&5
@@ -22890,7 +22897,7 @@ if test -n "$QT_LIBS"; then
   ac_status=$?
   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
   test $ac_status = 0; }; then
-  pkg_cv_QT_LIBS=`$PKG_CONFIG --libs "$qt5_modules" 2>/dev/null`
+  pkg_cv_QT5_LIBS=`$PKG_CONFIG --libs "$qt5_modules" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes
 else
   pkg_failed=yes
@@ -22911,12 +22918,12 @@ else
         _pkg_short_errors_supported=no
 fi
         if test $_pkg_short_errors_supported = yes; then
-	        QT_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "$qt5_modules" 2>&1`
+	        QT5_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "$qt5_modules" 2>&1`
         else
-	        QT_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "$qt5_modules" 2>&1`
+	        QT5_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "$qt5_modules" 2>&1`
         fi
 	# Put the nasty error message in config.log where it belongs
-	echo "$QT_PKG_ERRORS" >&5
+	echo "$QT5_PKG_ERRORS" >&5
 
 	have_qt=no
 elif test $pkg_failed = untried; then
@@ -22924,20 +22931,20 @@ elif test $pkg_failed = untried; then
 $as_echo "no" >&6; }
 	have_qt=no
 else
-	QT_CFLAGS=$pkg_cv_QT_CFLAGS
-	QT_LIBS=$pkg_cv_QT_LIBS
+	QT5_CFLAGS=$pkg_cv_QT5_CFLAGS
+	QT5_LIBS=$pkg_cv_QT5_LIBS
         { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
 $as_echo "yes" >&6; }
-	QT_INCLUDES="$QT_CFLAGS"; have_qt=yes
+	QT_INCLUDES="$QT5_CFLAGS"; QT_LIBS="$QT5_LIBS" have_qt=yes
 fi
-      elif test x$bitcoin_qt_want_version = xqt4 || ( test x$bitcoin_qt_want_version = xauto && test x$auto_priority_version = xqt4 ); then
+      elif test "x$bitcoin_qt_want_version" = xqt4 || ( test "x$bitcoin_qt_want_version" = xauto && test "x$auto_priority_version" = xqt4 ); then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for QT" >&5
-$as_echo_n "checking for QT... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for QT4" >&5
+$as_echo_n "checking for QT4... " >&6; }
 
-if test -n "$QT_CFLAGS"; then
-    pkg_cv_QT_CFLAGS="$QT_CFLAGS"
+if test -n "$QT4_CFLAGS"; then
+    pkg_cv_QT4_CFLAGS="$QT4_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"\$qt4_modules\""; } >&5
@@ -22945,7 +22952,7 @@ if test -n "$QT_CFLAGS"; then
   ac_status=$?
   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
   test $ac_status = 0; }; then
-  pkg_cv_QT_CFLAGS=`$PKG_CONFIG --cflags "$qt4_modules" 2>/dev/null`
+  pkg_cv_QT4_CFLAGS=`$PKG_CONFIG --cflags "$qt4_modules" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes
 else
   pkg_failed=yes
@@ -22953,8 +22960,8 @@ fi
  else
     pkg_failed=untried
 fi
-if test -n "$QT_LIBS"; then
-    pkg_cv_QT_LIBS="$QT_LIBS"
+if test -n "$QT4_LIBS"; then
+    pkg_cv_QT4_LIBS="$QT4_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"\$qt4_modules\""; } >&5
@@ -22962,7 +22969,7 @@ if test -n "$QT_LIBS"; then
   ac_status=$?
   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
   test $ac_status = 0; }; then
-  pkg_cv_QT_LIBS=`$PKG_CONFIG --libs "$qt4_modules" 2>/dev/null`
+  pkg_cv_QT4_LIBS=`$PKG_CONFIG --libs "$qt4_modules" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes
 else
   pkg_failed=yes
@@ -22983,12 +22990,12 @@ else
         _pkg_short_errors_supported=no
 fi
         if test $_pkg_short_errors_supported = yes; then
-	        QT_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "$qt4_modules" 2>&1`
+	        QT4_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "$qt4_modules" 2>&1`
         else
-	        QT_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "$qt4_modules" 2>&1`
+	        QT4_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "$qt4_modules" 2>&1`
         fi
 	# Put the nasty error message in config.log where it belongs
-	echo "$QT_PKG_ERRORS" >&5
+	echo "$QT4_PKG_ERRORS" >&5
 
 	have_qt=no
 elif test $pkg_failed = untried; then
@@ -22996,23 +23003,23 @@ elif test $pkg_failed = untried; then
 $as_echo "no" >&6; }
 	have_qt=no
 else
-	QT_CFLAGS=$pkg_cv_QT_CFLAGS
-	QT_LIBS=$pkg_cv_QT_LIBS
+	QT4_CFLAGS=$pkg_cv_QT4_CFLAGS
+	QT4_LIBS=$pkg_cv_QT4_LIBS
         { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
 $as_echo "yes" >&6; }
-	QT_INCLUDES="$QT_CFLAGS"; have_qt=yes
+	QT_INCLUDES="$QT4_CFLAGS"; QT_LIBS="$QT4_LIBS" ; have_qt=yes
 fi
       fi
 
-            if test x$have_qt = xno && test x$bitcoin_qt_want_version = xauto; then
-        if test x$auto_priority_version = xqt5; then
+            if test "x$have_qt" = xno && test "x$bitcoin_qt_want_version" = xauto; then
+        if test "x$auto_priority_version" = xqt5; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for QT" >&5
-$as_echo_n "checking for QT... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for QT4" >&5
+$as_echo_n "checking for QT4... " >&6; }
 
-if test -n "$QT_CFLAGS"; then
-    pkg_cv_QT_CFLAGS="$QT_CFLAGS"
+if test -n "$QT4_CFLAGS"; then
+    pkg_cv_QT4_CFLAGS="$QT4_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"\$qt4_modules\""; } >&5
@@ -23020,7 +23027,7 @@ if test -n "$QT_CFLAGS"; then
   ac_status=$?
   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
   test $ac_status = 0; }; then
-  pkg_cv_QT_CFLAGS=`$PKG_CONFIG --cflags "$qt4_modules" 2>/dev/null`
+  pkg_cv_QT4_CFLAGS=`$PKG_CONFIG --cflags "$qt4_modules" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes
 else
   pkg_failed=yes
@@ -23028,8 +23035,8 @@ fi
  else
     pkg_failed=untried
 fi
-if test -n "$QT_LIBS"; then
-    pkg_cv_QT_LIBS="$QT_LIBS"
+if test -n "$QT4_LIBS"; then
+    pkg_cv_QT4_LIBS="$QT4_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"\$qt4_modules\""; } >&5
@@ -23037,7 +23044,7 @@ if test -n "$QT_LIBS"; then
   ac_status=$?
   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
   test $ac_status = 0; }; then
-  pkg_cv_QT_LIBS=`$PKG_CONFIG --libs "$qt4_modules" 2>/dev/null`
+  pkg_cv_QT4_LIBS=`$PKG_CONFIG --libs "$qt4_modules" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes
 else
   pkg_failed=yes
@@ -23058,12 +23065,12 @@ else
         _pkg_short_errors_supported=no
 fi
         if test $_pkg_short_errors_supported = yes; then
-	        QT_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "$qt4_modules" 2>&1`
+	        QT4_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "$qt4_modules" 2>&1`
         else
-	        QT_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "$qt4_modules" 2>&1`
+	        QT4_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "$qt4_modules" 2>&1`
         fi
 	# Put the nasty error message in config.log where it belongs
-	echo "$QT_PKG_ERRORS" >&5
+	echo "$QT4_PKG_ERRORS" >&5
 
 	have_qt=no
 elif test $pkg_failed = untried; then
@@ -23071,20 +23078,20 @@ elif test $pkg_failed = untried; then
 $as_echo "no" >&6; }
 	have_qt=no
 else
-	QT_CFLAGS=$pkg_cv_QT_CFLAGS
-	QT_LIBS=$pkg_cv_QT_LIBS
+	QT4_CFLAGS=$pkg_cv_QT4_CFLAGS
+	QT4_LIBS=$pkg_cv_QT4_LIBS
         { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
 $as_echo "yes" >&6; }
-	QT_INCLUDES="$QT_CFLAGS"; have_qt=yes; QT_LIB_PREFIX=Qt; bitcoin_qt_got_major_vers=4
+	QT_INCLUDES="$QT4_CFLAGS"; QT_LIBS="$QT4_LIBS" ; have_qt=yes; QT_LIB_PREFIX=Qt; bitcoin_qt_got_major_vers=4
 fi
         else
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for QT" >&5
-$as_echo_n "checking for QT... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for QT5" >&5
+$as_echo_n "checking for QT5... " >&6; }
 
-if test -n "$QT_CFLAGS"; then
-    pkg_cv_QT_CFLAGS="$QT_CFLAGS"
+if test -n "$QT5_CFLAGS"; then
+    pkg_cv_QT5_CFLAGS="$QT5_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"\$qt5_modules\""; } >&5
@@ -23092,7 +23099,7 @@ if test -n "$QT_CFLAGS"; then
   ac_status=$?
   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
   test $ac_status = 0; }; then
-  pkg_cv_QT_CFLAGS=`$PKG_CONFIG --cflags "$qt5_modules" 2>/dev/null`
+  pkg_cv_QT5_CFLAGS=`$PKG_CONFIG --cflags "$qt5_modules" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes
 else
   pkg_failed=yes
@@ -23100,8 +23107,8 @@ fi
  else
     pkg_failed=untried
 fi
-if test -n "$QT_LIBS"; then
-    pkg_cv_QT_LIBS="$QT_LIBS"
+if test -n "$QT5_LIBS"; then
+    pkg_cv_QT5_LIBS="$QT5_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"\$qt5_modules\""; } >&5
@@ -23109,7 +23116,7 @@ if test -n "$QT_LIBS"; then
   ac_status=$?
   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
   test $ac_status = 0; }; then
-  pkg_cv_QT_LIBS=`$PKG_CONFIG --libs "$qt5_modules" 2>/dev/null`
+  pkg_cv_QT5_LIBS=`$PKG_CONFIG --libs "$qt5_modules" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes
 else
   pkg_failed=yes
@@ -23130,12 +23137,12 @@ else
         _pkg_short_errors_supported=no
 fi
         if test $_pkg_short_errors_supported = yes; then
-	        QT_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "$qt5_modules" 2>&1`
+	        QT5_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "$qt5_modules" 2>&1`
         else
-	        QT_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "$qt5_modules" 2>&1`
+	        QT5_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "$qt5_modules" 2>&1`
         fi
 	# Put the nasty error message in config.log where it belongs
-	echo "$QT_PKG_ERRORS" >&5
+	echo "$QT5_PKG_ERRORS" >&5
 
 	have_qt=no
 elif test $pkg_failed = untried; then
@@ -23143,21 +23150,21 @@ elif test $pkg_failed = untried; then
 $as_echo "no" >&6; }
 	have_qt=no
 else
-	QT_CFLAGS=$pkg_cv_QT_CFLAGS
-	QT_LIBS=$pkg_cv_QT_LIBS
+	QT5_CFLAGS=$pkg_cv_QT5_CFLAGS
+	QT5_LIBS=$pkg_cv_QT5_LIBS
         { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
 $as_echo "yes" >&6; }
-	QT_INCLUDES="$QT_CFLAGS"; have_qt=yes; QT_LIB_PREFIX=Qt5; bitcoin_qt_got_major_vers=5
+	QT_INCLUDES="$QT5_CFLAGS"; QT_LIBS="$QT5_LIBS" ; have_qt=yes; QT_LIB_PREFIX=Qt5; bitcoin_qt_got_major_vers=5
 fi
         fi
       fi
-      if test x$have_qt != xyes; then
+      if test "x$have_qt" != xyes; then
         have_qt=no
 
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Qt dependencies not found; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: Qt dependencies not found; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Qt dependencies not found; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: Qt dependencies not found; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
@@ -23173,7 +23180,7 @@ $as_echo "$as_me: WARNING: Qt dependencies not found; zenzo-qt frontend will not
   fi
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
 
 
@@ -23247,7 +23254,7 @@ else
 $as_echo "yes" >&6; }
 	QT_TEST_INCLUDES="$QT_TEST_CFLAGS"; have_qt_test=yes
 fi
-      if test x$use_dbus != xno; then
+      if test "x$use_dbus" != xno; then
 
 pkg_failed=no
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for QT_DBUS" >&5
@@ -23335,7 +23342,7 @@ fi
 
   else
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
 
   TEMP_CPPFLAGS="$CPPFLAGS"
@@ -23343,10 +23350,10 @@ fi
   CXXFLAGS="$PIC_FLAGS $CXXFLAGS"
   TEMP_LIBS="$LIBS"
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
 
-    if test x$qt_include_path != x; then
+    if test "x$qt_include_path" != x; then
       QT_INCLUDES="-I$qt_include_path -I$qt_include_path/QtCore -I$qt_include_path/QtGui -I$qt_include_path/QtWidgets -I$qt_include_path/QtNetwork -I$qt_include_path/QtTest -I$qt_include_path/QtDBus"
       CPPFLAGS="$QT_INCLUDES $CPPFLAGS"
     fi
@@ -23358,17 +23365,17 @@ fi
 
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
     ac_fn_cxx_check_header_mongrel "$LINENO" "QtPlugin" "ac_cv_header_QtPlugin" "$ac_includes_default"
 if test "x$ac_cv_header_QtPlugin" = xyes; then :
 
 else
 
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: QtCore headers missing; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: QtCore headers missing; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: QtCore headers missing; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: QtCore headers missing; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
@@ -23385,17 +23392,17 @@ fi
   fi
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
     ac_fn_cxx_check_header_mongrel "$LINENO" "QApplication" "ac_cv_header_QApplication" "$ac_includes_default"
 if test "x$ac_cv_header_QApplication" = xyes; then :
 
 else
 
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: QtGui headers missing; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: QtGui headers missing; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: QtGui headers missing; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: QtGui headers missing; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
@@ -23412,17 +23419,17 @@ fi
   fi
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
     ac_fn_cxx_check_header_mongrel "$LINENO" "QLocalSocket" "ac_cv_header_QLocalSocket" "$ac_includes_default"
 if test "x$ac_cv_header_QLocalSocket" = xyes; then :
 
 else
 
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: QtNetwork headers missing; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: QtNetwork headers missing; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: QtNetwork headers missing; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: QtNetwork headers missing; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
@@ -23440,10 +23447,10 @@ fi
 
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
 
-    if test x$bitcoin_qt_want_version = xauto; then
+    if test "x$bitcoin_qt_want_version" = xauto; then
 
   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for Qt 5" >&5
 $as_echo_n "checking for Qt 5... " >&6; }
@@ -23453,15 +23460,18 @@ else
 
   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
-#include <QtCore>
+
+      #include <QtCore/qconfig.h>
+      #ifndef QT_VERSION
+      #  include <QtCore/qglobal.h>
+      #endif
+
 int
 main ()
 {
 
       #if QT_VERSION < 0x050000
-      choke me
-      #else
-      return 0;
+      choke
       #endif
 
   ;
@@ -23479,7 +23489,7 @@ fi
 { $as_echo "$as_me:${as_lineno-$LINENO}: result: $bitcoin_cv_qt5" >&5
 $as_echo "$bitcoin_cv_qt5" >&6; }
     fi
-    if test x$bitcoin_cv_qt5 = xyes || test x$bitcoin_qt_want_version = xqt5; then
+    if test "x$bitcoin_cv_qt5" = xyes || test "x$bitcoin_qt_want_version" = xqt5; then
       QT_LIB_PREFIX=Qt5
       bitcoin_qt_got_major_vers=5
     else
@@ -23494,15 +23504,15 @@ $as_echo "$bitcoin_cv_qt5" >&6; }
 
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
 
     LIBS=
-    if test x$qt_lib_path != x; then
+    if test "x$qt_lib_path" != x; then
       LIBS="$LIBS -L$qt_lib_path"
     fi
 
-    if test x$TARGET_OS = xwindows; then
+    if test "x$TARGET_OS" = xwindows; then
       { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -limm32" >&5
 $as_echo_n "checking for main in -limm32... " >&6; }
 if ${ac_cv_lib_imm32_main+:} false; then :
@@ -23542,10 +23552,10 @@ _ACEOF
 
 else
 
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: libimm32 not found; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: libimm32 not found; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: libimm32 not found; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: libimm32 not found; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
@@ -23564,7 +23574,7 @@ fi
 
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
     as_ac_Lib=`$as_echo "ac_cv_lib_z ''_main" | $as_tr_sh`
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lz " >&5
@@ -23616,7 +23626,7 @@ fi
   fi
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing png_error " >&5
 $as_echo_n "checking for library containing png_error ... " >&6; }
@@ -23683,7 +23693,7 @@ fi
   fi
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing jpeg_create_decompress " >&5
 $as_echo_n "checking for library containing jpeg_create_decompress ... " >&6; }
@@ -23750,7 +23760,7 @@ fi
   fi
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing pcre16_exec" >&5
 $as_echo_n "checking for library containing pcre16_exec... " >&6; }
@@ -23817,7 +23827,7 @@ fi
   fi
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing hb_ot_tags_from_script " >&5
 $as_echo_n "checking for library containing hb_ot_tags_from_script ... " >&6; }
@@ -23884,7 +23894,7 @@ fi
   fi
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
     as_ac_Lib=`$as_echo "ac_cv_lib_${QT_LIB_PREFIX}Core   ''_main" | $as_tr_sh`
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -l${QT_LIB_PREFIX}Core   " >&5
@@ -23927,15 +23937,15 @@ _ACEOF
 
 else
 
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: lib$QT_LIB_PREFIXCore not found; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: lib$QT_LIB_PREFIXCore not found; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: lib${QT_LIB_PREFIX}Core not found; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: lib${QT_LIB_PREFIX}Core not found; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
   else
-    as_fn_error $? "lib$QT_LIB_PREFIXCore not found" "$LINENO" 5
+    as_fn_error $? "lib${QT_LIB_PREFIX}Core not found" "$LINENO" 5
   fi
 
 fi
@@ -23946,7 +23956,7 @@ fi
   fi
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
     as_ac_Lib=`$as_echo "ac_cv_lib_${QT_LIB_PREFIX}Gui    ''_main" | $as_tr_sh`
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -l${QT_LIB_PREFIX}Gui    " >&5
@@ -23989,15 +23999,15 @@ _ACEOF
 
 else
 
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: lib$QT_LIB_PREFIXGui not found; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: lib$QT_LIB_PREFIXGui not found; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: lib${QT_LIB_PREFIX}Gui not found; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: lib${QT_LIB_PREFIX}Gui not found; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
   else
-    as_fn_error $? "lib$QT_LIB_PREFIXGui not found" "$LINENO" 5
+    as_fn_error $? "lib${QT_LIB_PREFIX}Gui not found" "$LINENO" 5
   fi
 
 fi
@@ -24008,7 +24018,7 @@ fi
   fi
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
     as_ac_Lib=`$as_echo "ac_cv_lib_${QT_LIB_PREFIX}Network''_main" | $as_tr_sh`
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -l${QT_LIB_PREFIX}Network" >&5
@@ -24051,15 +24061,15 @@ _ACEOF
 
 else
 
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: lib$QT_LIB_PREFIXNetwork not found; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: lib$QT_LIB_PREFIXNetwork not found; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: lib${QT_LIB_PREFIX}Network not found; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: lib${QT_LIB_PREFIX}Network not found; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
   else
-    as_fn_error $? "lib$QT_LIB_PREFIXNetwork not found" "$LINENO" 5
+    as_fn_error $? "lib${QT_LIB_PREFIX}Network not found" "$LINENO" 5
   fi
 
 fi
@@ -24069,9 +24079,9 @@ fi
 
   fi
 
-  if test x$bitcoin_qt_got_major_vers = x5; then
+  if test "x$bitcoin_qt_got_major_vers" = x5; then
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
     as_ac_Lib=`$as_echo "ac_cv_lib_${QT_LIB_PREFIX}Widgets''_main" | $as_tr_sh`
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -l${QT_LIB_PREFIX}Widgets" >&5
@@ -24114,15 +24124,15 @@ _ACEOF
 
 else
 
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: lib$QT_LIB_PREFIXWidgets not found; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: lib$QT_LIB_PREFIXWidgets not found; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: lib${QT_LIB_PREFIX}Widgets not found; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: lib${QT_LIB_PREFIX}Widgets not found; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
   else
-    as_fn_error $? "lib$QT_LIB_PREFIXWidgets not found" "$LINENO" 5
+    as_fn_error $? "lib${QT_LIB_PREFIX}Widgets not found" "$LINENO" 5
   fi
 
 fi
@@ -24137,11 +24147,11 @@ fi
   LIBS="$TEMP_LIBS"
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
 
     LIBS=
-    if test x$qt_lib_path != x; then
+    if test "x$qt_lib_path" != x; then
       LIBS="-L$qt_lib_path"
     fi
     as_ac_Lib=`$as_echo "ac_cv_lib_${QT_LIB_PREFIX}Test''_main" | $as_tr_sh`
@@ -24196,9 +24206,9 @@ fi
 
 
     QT_TEST_LIBS="$LIBS"
-    if test x$use_dbus != xno; then
+    if test "x$use_dbus" != xno; then
       LIBS=
-      if test x$qt_lib_path != x; then
+      if test "x$qt_lib_path" != x; then
         LIBS="-L$qt_lib_path"
       fi
       as_ac_Lib=`$as_echo "ac_cv_lib_${QT_LIB_PREFIX}DBus''_main" | $as_tr_sh`
@@ -24272,15 +24282,14 @@ fi
   fi
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
 
   TEMP_CPPFLAGS=$CPPFLAGS
   TEMP_CXXFLAGS=$CXXFLAGS
   CPPFLAGS="$QT_INCLUDES $CPPFLAGS"
   CXXFLAGS="$PIC_FLAGS $CXXFLAGS"
-  if test x$bitcoin_qt_got_major_vers = x5; then
-    TEMP_CPPFLAGS="$TEMP_CPPFLAGS -DHAVE_QT5"
+  if test "x$bitcoin_qt_got_major_vers" = x5; then
 
   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for static Qt" >&5
 $as_echo_n "checking for static Qt... " >&6; }
@@ -24290,15 +24299,18 @@ else
 
   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
-#include <QtCore>
+
+      #include <QtCore/qconfig.h>
+      #ifndef QT_VERSION
+      #  include <QtCore/qglobal.h>
+      #endif
+
 int
 main ()
 {
 
-      #if defined(QT_STATIC)
-      return 0;
-      #else
-      choke me
+      #if !defined(QT_STATIC)
+      choke
       #endif
 
   ;
@@ -24315,22 +24327,22 @@ rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
 fi
 { $as_echo "$as_me:${as_lineno-$LINENO}: result: $bitcoin_cv_static_qt" >&5
 $as_echo "$bitcoin_cv_static_qt" >&6; }
-  if test xbitcoin_cv_static_qt = xyes; then
+  if test "x$bitcoin_cv_static_qt" = xyes; then
 
 $as_echo "#define QT_STATICPLUGIN 1" >>confdefs.h
 
   fi
 
-    if test x$bitcoin_cv_static_qt = xyes; then
+    if test "x$bitcoin_cv_static_qt" = xyes; then
 
-  if test x$bitcoin_qt_got_major_vers = x5; then
-      if test x$qt_plugin_path != x; then
+  if test "x$bitcoin_qt_got_major_vers" = x5; then
+      if test "x$qt_plugin_path" != x; then
         QT_LIBS="$QT_LIBS -L$qt_plugin_path/platforms"
         if test -d "$qt_plugin_path/accessible"; then
           QT_LIBS="$QT_LIBS -L$qt_plugin_path/accessible"
         fi
       fi
-     if test x$use_pkgconfig = xyes; then
+     if test "x$use_pkgconfig" = xyes; then
      :
 
 pkg_failed=no
@@ -24423,7 +24435,7 @@ else
 $as_echo "yes" >&6; }
 	QT_LIBS="$QTPLATFORM_LIBS $QT_LIBS"
 fi
-       if test x$TARGET_OS = xlinux; then
+       if test "x$TARGET_OS" = xlinux; then
 
 pkg_failed=no
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for X11XCB" >&5
@@ -24608,7 +24620,7 @@ $as_echo "yes" >&6; }
 	QT_LIBS="$QTXCBQPA_LIBS $QT_LIBS"
 fi
          fi
-       elif test x$TARGET_OS = xdarwin; then
+       elif test "x$TARGET_OS" = xdarwin; then
 
 pkg_failed=no
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for QTPRINT" >&5
@@ -24703,22 +24715,28 @@ fi
        fi
 
      else
-       if test x$TARGET_OS = xwindows; then
+       if test "x$TARGET_OS" = xwindows; then
          { $as_echo "$as_me:${as_lineno-$LINENO}: checking for Qt >= 5.6" >&5
 $as_echo_n "checking for Qt >= 5.6... " >&6; }
 if ${bitcoin_cv_need_platformsupport+:} false; then :
   $as_echo_n "(cached) " >&6
 else
-  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+
+           cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
-#include <QtCore>
+
+               #include <QtCore/qconfig.h>
+               #ifndef QT_VERSION
+               #  include <QtCore/qglobal.h>
+               #endif
+
 int
 main ()
 {
 
-             #if QT_VERSION < 0x050600
-             choke;
-             #endif
+               #if QT_VERSION < 0x050600
+               choke
+               #endif
 
   ;
   return 0;
@@ -24734,9 +24752,9 @@ rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
 fi
 { $as_echo "$as_me:${as_lineno-$LINENO}: result: $bitcoin_cv_need_platformsupport" >&5
 $as_echo "$bitcoin_cv_need_platformsupport" >&6; }
-         if test x$bitcoin_cv_need_platformsupport = xyes; then
+         if test "x$bitcoin_cv_need_platformsupport" = xyes; then
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
     as_ac_Lib=`$as_echo "ac_cv_lib_${QT_LIB_PREFIX}PlatformSupport''_main" | $as_tr_sh`
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -l${QT_LIB_PREFIX}PlatformSupport" >&5
@@ -24779,15 +24797,15 @@ _ACEOF
 
 else
 
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: lib$QT_LIB_PREFIXPlatformSupport not found; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: lib$QT_LIB_PREFIXPlatformSupport not found; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: lib${QT_LIB_PREFIX}PlatformSupport not found; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: lib${QT_LIB_PREFIX}PlatformSupport not found; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
   else
-    as_fn_error $? "lib$QT_LIB_PREFIXPlatformSupport not found" "$LINENO" 5
+    as_fn_error $? "lib${QT_LIB_PREFIX}PlatformSupport not found" "$LINENO" 5
   fi
 
 fi
@@ -24801,7 +24819,7 @@ fi
        fi
      fi
   else
-    if test x$qt_plugin_path != x; then
+    if test "x$qt_plugin_path" != x; then
       QT_LIBS="$QT_LIBS -L$qt_plugin_path/accessible"
       QT_LIBS="$QT_LIBS -L$qt_plugin_path/codecs"
     fi
@@ -24815,16 +24833,22 @@ $as_echo_n "checking for Qt < 5.4... " >&6; }
 if ${bitcoin_cv_need_acc_widget+:} false; then :
   $as_echo_n "(cached) " >&6
 else
-  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+
+        cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
-#include <QtCore>
+
+            #include <QtCore/qconfig.h>
+            #ifndef QT_VERSION
+            #  include <QtCore/qglobal.h>
+            #endif
+
 int
 main ()
 {
 
-          #if QT_VERSION >= 0x050400
-          choke;
-          #endif
+            #if QT_VERSION >= 0x050400
+            choke
+            #endif
 
   ;
   return 0;
@@ -24840,7 +24864,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
 fi
 { $as_echo "$as_me:${as_lineno-$LINENO}: result: $bitcoin_cv_need_acc_widget" >&5
 $as_echo "$bitcoin_cv_need_acc_widget" >&6; }
-      if test "x$bitcoin_cv_need_acc_widget" = "xyes"; then
+      if test "x$bitcoin_cv_need_acc_widget" = xyes; then
 
   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for static Qt plugins: -lqtaccessiblewidgets" >&5
 $as_echo_n "checking for static Qt plugins: -lqtaccessiblewidgets... " >&6; }
@@ -24866,10 +24890,10 @@ $as_echo "yes" >&6; }; QT_LIBS="-lqtaccessiblewidgets $QT_LIBS"
 else
   { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; };
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Could not resolve: -lqtaccessiblewidgets; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: Could not resolve: -lqtaccessiblewidgets; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Could not resolve: -lqtaccessiblewidgets; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: Could not resolve: -lqtaccessiblewidgets; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
@@ -24883,7 +24907,51 @@ rm -f core conftest.err conftest.$ac_objext \
   LIBS="$CHECK_STATIC_PLUGINS_TEMP_LIBS"
 
       fi
-      if test x$TARGET_OS = xwindows; then
+
+  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for static Qt plugins: -lqminimal" >&5
+$as_echo_n "checking for static Qt plugins: -lqminimal... " >&6; }
+  CHECK_STATIC_PLUGINS_TEMP_LIBS="$LIBS"
+  LIBS="-lqminimal $QT_LIBS $LIBS"
+  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+    #define QT_STATICPLUGIN
+    #include <QtPlugin>
+    Q_IMPORT_PLUGIN(QMinimalIntegrationPlugin)
+int
+main ()
+{
+return 0;
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_cxx_try_link "$LINENO"; then :
+  { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+$as_echo "yes" >&6; }; QT_LIBS="-lqminimal $QT_LIBS"
+else
+  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+$as_echo "no" >&6; };
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Could not resolve: -lqminimal; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: Could not resolve: -lqminimal; bitcoin-qt frontend will not be built" >&2;}
+    fi
+    bitcoin_enable_qt=no
+    bitcoin_enable_qt_test=no
+  else
+    as_fn_error $? "Could not resolve: -lqminimal" "$LINENO" 5
+  fi
+
+fi
+rm -f core conftest.err conftest.$ac_objext \
+    conftest$ac_exeext conftest.$ac_ext
+  LIBS="$CHECK_STATIC_PLUGINS_TEMP_LIBS"
+
+
+$as_echo "#define QT_QPA_PLATFORM_MINIMAL 1" >>confdefs.h
+
+      if test "x$TARGET_OS" = xwindows; then
 
   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for static Qt plugins: -lqwindows" >&5
 $as_echo_n "checking for static Qt plugins: -lqwindows... " >&6; }
@@ -24909,10 +24977,10 @@ $as_echo "yes" >&6; }; QT_LIBS="-lqwindows $QT_LIBS"
 else
   { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; };
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Could not resolve: -lqwindows; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: Could not resolve: -lqwindows; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Could not resolve: -lqwindows; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: Could not resolve: -lqwindows; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
@@ -24928,7 +24996,7 @@ rm -f core conftest.err conftest.$ac_objext \
 
 $as_echo "#define QT_QPA_PLATFORM_WINDOWS 1" >>confdefs.h
 
-      elif test x$TARGET_OS = xlinux; then
+      elif test "x$TARGET_OS" = xlinux; then
 
   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for static Qt plugins: -lqxcb -lxcb-static" >&5
 $as_echo_n "checking for static Qt plugins: -lqxcb -lxcb-static... " >&6; }
@@ -24954,10 +25022,10 @@ $as_echo "yes" >&6; }; QT_LIBS="-lqxcb -lxcb-static $QT_LIBS"
 else
   { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; };
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Could not resolve: -lqxcb -lxcb-static; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: Could not resolve: -lqxcb -lxcb-static; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Could not resolve: -lqxcb -lxcb-static; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: Could not resolve: -lqxcb -lxcb-static; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
@@ -24973,7 +25041,7 @@ rm -f core conftest.err conftest.$ac_objext \
 
 $as_echo "#define QT_QPA_PLATFORM_XCB 1" >>confdefs.h
 
-      elif test x$TARGET_OS = xdarwin; then
+      elif test "x$TARGET_OS" = xdarwin; then
         { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether the linker accepts -framework IOKit" >&5
 $as_echo_n "checking whether the linker accepts -framework IOKit... " >&6; }
 if ${ax_cv_check_ldflags___framework_IOKit+:} false; then :
@@ -25035,10 +25103,10 @@ $as_echo "yes" >&6; }; QT_LIBS="-lqcocoa $QT_LIBS"
 else
   { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; };
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Could not resolve: -lqcocoa; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: Could not resolve: -lqcocoa; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Could not resolve: -lqcocoa; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: Could not resolve: -lqcocoa; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
@@ -25057,7 +25125,7 @@ $as_echo "#define QT_QPA_PLATFORM_COCOA 1" >>confdefs.h
       fi
     fi
   else
-    if test x$TARGET_OS = xwindows; then
+    if test "x$TARGET_OS" = xwindows; then
 
 $as_echo "#define QT_STATICPLUGIN 1" >>confdefs.h
 
@@ -25091,10 +25159,10 @@ $as_echo "yes" >&6; }; QT_LIBS="-lqcncodecs -lqjpcodecs -lqtwcodecs -lqkrcodecs 
 else
   { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; };
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Could not resolve: -lqcncodecs -lqjpcodecs -lqtwcodecs -lqkrcodecs -lqtaccessiblewidgets; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: Could not resolve: -lqcncodecs -lqjpcodecs -lqtwcodecs -lqkrcodecs -lqtaccessiblewidgets; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Could not resolve: -lqcncodecs -lqjpcodecs -lqtwcodecs -lqkrcodecs -lqtaccessiblewidgets; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: Could not resolve: -lqcncodecs -lqjpcodecs -lqtwcodecs -lqkrcodecs -lqtaccessiblewidgets; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
@@ -25118,15 +25186,15 @@ rm -f core conftest.err conftest.$ac_objext \
   fi
 
 
-  if test x$use_pkgconfig$qt_bin_path = xyes; then
-    if test x$bitcoin_qt_got_major_vers = x5; then
+  if test "x$use_pkgconfig$qt_bin_path" = xyes; then
+    if test "x$bitcoin_qt_got_major_vers" = x5; then
       qt_bin_path="`$PKG_CONFIG --variable=host_bins Qt5Core 2>/dev/null`"
     fi
   fi
 
-  if test x$use_hardening != xno; then
+  if test "x$use_hardening" != xno; then
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
 
     { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether -fPIE can be used with this Qt config" >&5
@@ -25137,14 +25205,19 @@ $as_echo_n "checking whether -fPIE can be used with this Qt config... " >&6; }
     CXXFLAGS="$PIE_FLAGS $CXXFLAGS"
     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
-#include <QtCore/qconfig.h>
+
+        #include <QtCore/qconfig.h>
+        #ifndef QT_VERSION
+        #  include <QtCore/qglobal.h>
+        #endif
+
 int
 main ()
 {
 
-          #if defined(QT_REDUCE_RELOCATIONS)
-              choke;
-          #endif
+        #if defined(QT_REDUCE_RELOCATIONS)
+        choke
+        #endif
 
   ;
   return 0;
@@ -25169,7 +25242,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
 
   else
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
 
     { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether -fPIC is needed with this Qt config" >&5
@@ -25178,14 +25251,19 @@ $as_echo_n "checking whether -fPIC is needed with this Qt config... " >&6; }
     CPPFLAGS="$QT_INCLUDES $CPPFLAGS"
     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
-#include <QtCore/qconfig.h>
+
+        #include <QtCore/qconfig.h>
+        #ifndef QT_VERSION
+        #  include <QtCore/qglobal.h>
+        #endif
+
 int
 main ()
 {
 
-          #if defined(QT_REDUCE_RELOCATIONS)
-              choke;
-          #endif
+        #if defined(QT_REDUCE_RELOCATIONS)
+        choke
+        #endif
 
   ;
   return 0;
@@ -25211,10 +25289,10 @@ rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
 
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
 
-    if test "x$qt_bin_path" != "x"; then
+    if test "x$qt_bin_path" != x; then
       for ac_prog in moc-qt${bitcoin_qt_got_major_vers} moc${bitcoin_qt_got_major_vers} moc
 do
   # Extract the first word of "$ac_prog", so it can be a program name with args.
@@ -25307,12 +25385,12 @@ fi
 done
 
     fi
-    if test "x$MOC" = "x" && test "x" != "xyes"; then
+    if test "x$MOC" = x && test "x" != xyes; then
 
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: MOC not found; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: MOC not found; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: MOC not found; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: MOC not found; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
@@ -25330,10 +25408,10 @@ $as_echo "$as_me: WARNING: MOC not found; zenzo-qt frontend will not be built" >
 
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
 
-    if test "x$qt_bin_path" != "x"; then
+    if test "x$qt_bin_path" != x; then
       for ac_prog in uic-qt${bitcoin_qt_got_major_vers} uic${bitcoin_qt_got_major_vers} uic
 do
   # Extract the first word of "$ac_prog", so it can be a program name with args.
@@ -25426,12 +25504,12 @@ fi
 done
 
     fi
-    if test "x$UIC" = "x" && test "x" != "xyes"; then
+    if test "x$UIC" = x && test "x" != xyes; then
 
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: UIC not found; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: UIC not found; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: UIC not found; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: UIC not found; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
@@ -25449,10 +25527,10 @@ $as_echo "$as_me: WARNING: UIC not found; zenzo-qt frontend will not be built" >
 
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
 
-    if test "x$qt_bin_path" != "x"; then
+    if test "x$qt_bin_path" != x; then
       for ac_prog in rcc-qt${bitcoin_qt_got_major_vers} rcc${bitcoin_qt_got_major_vers} rcc
 do
   # Extract the first word of "$ac_prog", so it can be a program name with args.
@@ -25545,12 +25623,12 @@ fi
 done
 
     fi
-    if test "x$RCC" = "x" && test "x" != "xyes"; then
+    if test "x$RCC" = x && test "x" != xyes; then
 
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: RCC not found; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: RCC not found; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: RCC not found; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: RCC not found; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
@@ -25568,10 +25646,10 @@ $as_echo "$as_me: WARNING: RCC not found; zenzo-qt frontend will not be built" >
 
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
 
-    if test "x$qt_bin_path" != "x"; then
+    if test "x$qt_bin_path" != x; then
       for ac_prog in lrelease-qt${bitcoin_qt_got_major_vers} lrelease${bitcoin_qt_got_major_vers} lrelease
 do
   # Extract the first word of "$ac_prog", so it can be a program name with args.
@@ -25664,12 +25742,12 @@ fi
 done
 
     fi
-    if test "x$LRELEASE" = "x" && test "x" != "xyes"; then
+    if test "x$LRELEASE" = x && test "x" != xyes; then
 
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: LRELEASE not found; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: LRELEASE not found; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: LRELEASE not found; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: LRELEASE not found; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
@@ -25687,10 +25765,10 @@ $as_echo "$as_me: WARNING: LRELEASE not found; zenzo-qt frontend will not be bui
 
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
 
-    if test "x$qt_bin_path" != "x"; then
+    if test "x$qt_bin_path" != x; then
       for ac_prog in lupdate-qt${bitcoin_qt_got_major_vers} lupdate${bitcoin_qt_got_major_vers} lupdate
 do
   # Extract the first word of "$ac_prog", so it can be a program name with args.
@@ -25783,12 +25861,12 @@ fi
 done
 
     fi
-    if test "x$LUPDATE" = "x" && test "xyes" != "xyes"; then
+    if test "x$LUPDATE" = x && test "xyes" != xyes; then
 
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: LUPDATE not found; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: LUPDATE not found; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: LUPDATE not found; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: LUPDATE not found; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
@@ -25809,7 +25887,7 @@ $as_echo "$as_me: WARNING: LUPDATE not found; zenzo-qt frontend will not be buil
   case $host in
     *darwin*)
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
 
        MOC_DEFS="${MOC_DEFS} -DQ_OS_MAC"
@@ -25861,7 +25939,7 @@ fi
     ;;
     *mingw*)
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
 
          { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether the linker accepts -mwindows" >&5
@@ -25913,24 +25991,24 @@ fi
     { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether to build Zenzo Core GUI" >&5
 $as_echo_n "checking whether to build Zenzo Core GUI... " >&6; }
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
 
     bitcoin_enable_qt=yes
     bitcoin_enable_qt_test=yes
-    if test x$have_qt_test = xno; then
+    if test "x$have_qt_test" = xno; then
       bitcoin_enable_qt_test=no
     fi
     bitcoin_enable_qt_dbus=no
-    if test x$use_dbus != xno && test x$have_qt_dbus = xyes; then
+    if test "x$use_dbus" != xno && test "x$have_qt_dbus" = xyes; then
       bitcoin_enable_qt_dbus=yes
     fi
-    if test x$use_dbus = xyes && test x$have_qt_dbus = xno; then
-      as_fn_error $? "\"libQtDBus not found. Install libQtDBus or remove --with-qtdbus.\"" "$LINENO" 5
+    if test "x$use_dbus" = xyes && test "x$have_qt_dbus" = xno; then
+      as_fn_error $? "libQtDBus not found. Install libQtDBus or remove --with-qtdbus." "$LINENO" 5
     fi
-    if test x$LUPDATE = x; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: \"lupdate is required to update qt translations\"" >&5
-$as_echo "$as_me: WARNING: \"lupdate is required to update qt translations\"" >&2;}
+    if test "x$LUPDATE" = x; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: lupdate is required to update qt translations" >&5
+$as_echo "$as_me: WARNING: lupdate is required to update qt translations" >&2;}
     fi
 
   else
@@ -28038,7 +28116,7 @@ $as_echo "yes" >&6; }
 
 fi
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
 
 pkg_failed=no
@@ -28100,10 +28178,10 @@ fi
 	echo "$PROTOBUF_PKG_ERRORS" >&5
 
 
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: libprotobuf not found; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: libprotobuf not found; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: libprotobuf not found; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: libprotobuf not found; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
@@ -28115,10 +28193,10 @@ elif test $pkg_failed = untried; then
      	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: libprotobuf not found; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: libprotobuf not found; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: libprotobuf not found; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: libprotobuf not found; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
@@ -28140,7 +28218,7 @@ fi
 
       if test x$use_qr != xno; then
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
 
 pkg_failed=no
@@ -28715,7 +28793,7 @@ _ACEOF
   fi
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
     as_ac_Lib=`$as_echo "ac_cv_lib_protobuf ''_main" | $as_tr_sh`
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lprotobuf " >&5
@@ -28753,10 +28831,10 @@ if eval test \"x\$"$as_ac_Lib"\" = x"yes"; then :
   PROTOBUF_LIBS=-lprotobuf
 else
 
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: libprotobuf not found; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: libprotobuf not found; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: libprotobuf not found; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: libprotobuf not found; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
@@ -28773,7 +28851,7 @@ fi
 
   if test x$use_qr != xno; then
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lqrencode" >&5
 $as_echo_n "checking for main in -lqrencode... " >&6; }
@@ -28817,7 +28895,7 @@ fi
   fi
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
     ac_fn_cxx_check_header_mongrel "$LINENO" "qrencode.h" "ac_cv_header_qrencode_h" "$ac_includes_default"
 if test "x$ac_cv_header_qrencode_h" = xyes; then :
@@ -28851,10 +28929,10 @@ LIBS="$LIBS_TEMP"
 
 
 
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$bitcoin_enable_qt" != xno && test "x$bitcoin_qt_want_version" != xno; then
     true
 
-    if test "x$protoc_bin_path" != "x"; then
+    if test "x$protoc_bin_path" != x; then
       for ac_prog in protoc
 do
   # Extract the first word of "$ac_prog", so it can be a program name with args.
@@ -28947,12 +29025,12 @@ fi
 done
 
     fi
-    if test "x$PROTOC" = "x" && test "x" != "xyes"; then
+    if test "x$PROTOC" = x && test "x" != xyes; then
 
-  if test "x$bitcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: PROTOC not found; zenzo-qt frontend will not be built" >&5
-$as_echo "$as_me: WARNING: PROTOC not found; zenzo-qt frontend will not be built" >&2;}
+  if test "x$bitcoin_qt_want_version" = xauto && test "x$bitcoin_qt_force" != xyes; then
+    if test "x$bitcoin_enable_qt" != xno; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: PROTOC not found; bitcoin-qt frontend will not be built" >&5
+$as_echo "$as_me: WARNING: PROTOC not found; bitcoin-qt frontend will not be built" >&2;}
     fi
     bitcoin_enable_qt=no
     bitcoin_enable_qt_test=no
@@ -31323,7 +31401,6 @@ $as_echo X"$file" |
     cat <<_LT_EOF >> "$cfgfile"
 #! $SHELL
 # Generated automatically by $as_me ($PACKAGE) $VERSION
-# Libtool was configured on host `(hostname || uname -n) 2>/dev/null | sed 1q`:
 # NOTE: Changes made to this file will be lost: look at ltmain.sh.
 
 # Provide generalized library-building support services.

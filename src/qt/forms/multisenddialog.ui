@@ -17,16 +17,7 @@
    <string>MultiSend</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="0">
-   <property name="leftMargin">
-    <number>6</number>
-   </property>
-   <property name="topMargin">
-    <number>6</number>
-   </property>
-   <property name="rightMargin">
-    <number>6</number>
-   </property>
-   <property name="bottomMargin">
+   <property name="margin">
     <number>6</number>
    </property>
    <item>
@@ -37,8 +28,8 @@
         <number>1</number>
        </property>
        <property name="text">
-        <string>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other ZENZO addresses after it matures.
-To Add: enter percentage to give and ZENZO address to add to the MultiSend vector.
+        <string>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other PIVX addresses after it matures.
+To Add: enter percentage to give and PIVX address to add to the MultiSend vector.
 To Delete: Enter address to delete and press delete.
 MultiSend will not be activated unless you have clicked Activate</string>
        </property>
@@ -155,9 +146,6 @@ MultiSend will not be activated unless you have clicked Activate</string>
              <height>32</height>
             </size>
            </property>
-           <property name="cursor">
-            <cursorShape>PointingHandCursor</cursorShape>
-           </property>
            <property name="toolTip">
             <string>Choose an address from the address book</string>
            </property>
@@ -165,7 +153,7 @@ MultiSend will not be activated unless you have clicked Activate</string>
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../zenzo.qrc">
+            <iconset resource="../pivx.qrc">
              <normaloff>:/icons/address-book</normaloff>:/icons/address-book</iconset>
            </property>
            <property name="shortcut">
@@ -226,9 +214,6 @@ MultiSend will not be activated unless you have clicked Activate</string>
         <layout class="QHBoxLayout" name="horizontalLayout_4">
          <item>
           <widget class="QPushButton" name="viewButton">
-           <property name="cursor">
-            <cursorShape>PointingHandCursor</cursorShape>
-           </property>
            <property name="toolTip">
             <string/>
            </property>
@@ -246,9 +231,6 @@ MultiSend will not be activated unless you have clicked Activate</string>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
           <widget class="QPushButton" name="addButton">
-           <property name="cursor">
-            <cursorShape>PointingHandCursor</cursorShape>
-           </property>
            <property name="toolTip">
             <string/>
            </property>
@@ -262,9 +244,6 @@ MultiSend will not be activated unless you have clicked Activate</string>
          </item>
          <item>
           <widget class="QPushButton" name="deleteButton">
-           <property name="cursor">
-            <cursorShape>PointingHandCursor</cursorShape>
-           </property>
            <property name="toolTip">
             <string/>
            </property>
@@ -282,9 +261,6 @@ MultiSend will not be activated unless you have clicked Activate</string>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
           <widget class="QPushButton" name="activateButton">
-           <property name="cursor">
-            <cursorShape>PointingHandCursor</cursorShape>
-           </property>
            <property name="statusTip">
             <string>Activate MultiSend</string>
            </property>
@@ -295,9 +271,6 @@ MultiSend will not be activated unless you have clicked Activate</string>
          </item>
          <item>
           <widget class="QPushButton" name="disableButton">
-           <property name="cursor">
-            <cursorShape>PointingHandCursor</cursorShape>
-           </property>
            <property name="statusTip">
             <string>Deactivate MultiSend</string>
            </property>
@@ -346,7 +319,7 @@ MultiSend will not be activated unless you have clicked Activate</string>
   </layout>
  </widget>
  <resources>
-  <include location="../zenzo.qrc"/>
+  <include location="../pivx.qrc"/>
  </resources>
  <connections/>
 </ui>

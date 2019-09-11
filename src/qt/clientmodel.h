@@ -1,14 +1,15 @@
-// Copyright (c) 2011-2019 The Bitcoin developers
-// Copyright (c) 2014-2019 The Dash developers
-// Copyright (c) 2015-2019 The PIVX developers
-// Copyright (c) 2018-2019 The ZENZO developers
+// Copyright (c) 2011-2014 The Bitcoin developers
+// Copyright (c) 2014-2015 The Dash developers
+// Copyright (c) 2015-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_QT_CLIENTMODEL_H
 #define BITCOIN_QT_CLIENTMODEL_H
 
+#include "uint256.h"
 #include <QObject>
+#include <QDateTime>
 
 class AddressTableModel;
 class BanTableModel;
@@ -37,7 +38,7 @@ enum NumConnections {
     CONNECTIONS_ALL = (CONNECTIONS_IN | CONNECTIONS_OUT),
 };
 
-/** Model for ZENZO network client. */
+/** Model for PIVX network client. */
 class ClientModel : public QObject
 {
     Q_OBJECT
@@ -62,6 +63,8 @@ public:
     double getVerificationProgress() const;
     QDateTime getLastBlockDate() const;
 
+    QString getLastBlockHash() const;
+
     //! Return true if core is doing initial block download
     bool inInitialBlockDownload() const;
     //! Return true if core is importing blocks
@@ -74,6 +77,9 @@ public:
     bool isReleaseVersion() const;
     QString clientName() const;
     QString formatClientStartupTime() const;
+    QString dataDir() const;
+
+    bool getTorInfo(std::string& ip_port) const;
 
 private:
     OptionsModel* optionsModel;
@@ -110,7 +116,7 @@ public slots:
     void updateTimer();
     void updateMnTimer();
     void updateNumConnections(int numConnections);
-    void updateAlert();
+    void updateAlert(const QString& hash, int status);
     void updateBanlist();
 };
 

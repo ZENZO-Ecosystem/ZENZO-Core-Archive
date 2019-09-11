@@ -1,5 +1,5 @@
-// Copyright (c) 2011-2019 The Bitcoin developers
-// Copyright (c) 2018-2019 The ZENZO developers
+// Copyright (c) 2011-2014 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -8,15 +8,14 @@
 
 #include "guiutil.h"
 #include "peertablemodel.h"
-#include "trafficgraphdata.h"
 
 #include "net.h"
 
-#include <QWidget>
+#include <QDialog>
 #include <QCompleter>
 
 class ClientModel;
-class PlatformStyle;
+class RPCTimerInterface;
 
 namespace Ui
 {
@@ -28,13 +27,13 @@ class QMenu;
 class QItemSelection;
 QT_END_NAMESPACE
 
-/** Local ZENZO RPC console. */
-class RPCConsole : public QWidget
+/** Local Bitcoin RPC console. */
+class RPCConsole : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit RPCConsole(const PlatformStyle *platformStyle, QWidget* parent);
+    explicit RPCConsole(QWidget* parent);
     ~RPCConsole();
 
     void setClientModel(ClientModel* model);
@@ -49,7 +48,6 @@ public:
 
 protected:
     virtual bool eventFilter(QObject* obj, QEvent* event);
-    void keyPressEvent(QKeyEvent *);
 
 private slots:
     void on_lineEdit_returnPressed();
@@ -84,14 +82,8 @@ public slots:
     void walletReindex();
     void walletResync();
 
-    /** Customize console font size */
-    void fontBigger();
-    void fontSmaller();
-    void setFontSize(int newSize);
-    /** Append the message to the message widget */
+    void reject();
     void message(int category, const QString& message, bool html = false);
-    /** Append the printed logs to the logs widget */
-    void updateLogs();
     /** Set number of connections shown in the UI */
     void setNumConnections(int count);
     /** Set number of blocks shown in the UI */
@@ -112,7 +104,7 @@ public slots:
     void showPeers();
     /** Switch to wallet-repair tab and show */
     void showRepair();
-    /** Open external (default) editor with zenzo.conf */
+    /** Open external (default) editor with pivx.conf */
     void showConfEditor();
     /** Open external (default) editor with masternode.conf */
     void showMNConfEditor();
@@ -139,7 +131,7 @@ signals:
 private:
     static QString FormatBytes(quint64 bytes);
     void startExecutor();
-    void setTrafficGraphRange(TrafficGraphData::GraphRange range);
+    void setTrafficGraphRange(int mins);
     /** Build parameter list for restart */
     void buildParameterlist(QString arg);
     /** show detailed information on ui about selected node */
@@ -157,12 +149,11 @@ private:
     ClientModel* clientModel;
     QStringList history;
     int historyPtr;
-    int consoleFontSize;
     NodeId cachedNodeid;
-    const PlatformStyle *platformStyle;
     QCompleter *autoCompleter;
     QMenu *peersTableContextMenu;
     QMenu *banTableContextMenu;
+    RPCTimerInterface *rpcTimerInterface;
 };
 
 #endif // BITCOIN_QT_RPCCONSOLE_H

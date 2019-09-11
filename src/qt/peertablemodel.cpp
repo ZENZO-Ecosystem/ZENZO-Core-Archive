@@ -1,5 +1,5 @@
-// Copyright (c) 2011-2019 The Bitcoin developers
-// Copyright (c) 2018-2019 The ZENZO developers
+// Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2017-2019 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -9,6 +9,7 @@
 #include "guiconstants.h"
 #include "guiutil.h"
 
+#include "net.h"
 #include "sync.h"
 
 #include <QDebug>
@@ -58,13 +59,13 @@ public:
                 return;
             }
             cachedNodeStats.clear();
-#if QT_VERSION >= 0x040700
+
             cachedNodeStats.reserve(vNodes.size());
-#endif
-            BOOST_FOREACH (CNode* pnode, vNodes) {
+            foreach (CNode* pnode, vNodes) {
                 CNodeCombinedStats stats;
                 stats.nodeStateStats.nMisbehavior = 0;
                 stats.nodeStateStats.nSyncHeight = -1;
+                stats.nodeStateStats.nCommonHeight = -1;
                 stats.fNodeStateStatsAvailable = false;
                 pnode->copyStats(stats.nodeStats);
                 cachedNodeStats.append(stats);
@@ -75,7 +76,7 @@ public:
         {
             TRY_LOCK(cs_main, lockMain);
             if (lockMain) {
-                BOOST_FOREACH (CNodeCombinedStats& stats, cachedNodeStats)
+                for (CNodeCombinedStats& stats : cachedNodeStats)
                     stats.fNodeStateStatsAvailable = GetNodeStateStats(stats.nodeStats.nodeid, stats.nodeStateStats);
             }
         }
@@ -87,21 +88,22 @@ public:
         // build index map
         mapNodeRows.clear();
         int row = 0;
-        BOOST_FOREACH (CNodeCombinedStats& stats, cachedNodeStats)
+        foreach (const CNodeCombinedStats& stats, cachedNodeStats)
             mapNodeRows.insert(std::pair<NodeId, int>(stats.nodeStats.nodeid, row++));
     }
 
-    int size() const
+    int size()
     {
         return cachedNodeStats.size();
     }
 
     CNodeCombinedStats* index(int idx)
     {
-        if (idx >= 0 && idx < cachedNodeStats.size())
+        if (idx >= 0 && idx < cachedNodeStats.size()) {
             return &cachedNodeStats[idx];
-
-        return 0;
+        } else {
+            return 0;
+        }
     }
 };
 
@@ -164,7 +166,7 @@ QVariant PeerTableModel::data(const QModelIndex& index, int role) const
         }
     } else if (role == Qt::TextAlignmentRole) {
         if (index.column() == Ping)
-            return (QVariant)(Qt::AlignRight | Qt::AlignVCenter);
+            return (int)(Qt::AlignRight | Qt::AlignVCenter);
     }
 
     return QVariant();
@@ -194,10 +196,11 @@ QModelIndex PeerTableModel::index(int row, int column, const QModelIndex& parent
     Q_UNUSED(parent);
     CNodeCombinedStats* data = priv->index(row);
 
-    if (data)
+    if (data) {
         return createIndex(row, column, data);
-    
-    return QModelIndex();
+    } else {
+        return QModelIndex();
+    }
 }
 
 const CNodeCombinedStats* PeerTableModel::getNodeStats(int idx)

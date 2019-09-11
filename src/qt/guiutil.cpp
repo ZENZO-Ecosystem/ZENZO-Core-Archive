@@ -1,7 +1,6 @@
-// Copyright (c) 2011-2019 The Bitcoin developers
-// Copyright (c) 2014-2019 The Dash developers
-// Copyright (c) 2015-2019 The PIVX developers
-// Copyright (c) 2018-2019 The ZENZO developers
+// Copyright (c) 2011-2014 The Bitcoin developers
+// Copyright (c) 2014-2015 The Dash developers
+// Copyright (c) 2015-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -57,12 +56,9 @@
 #include <QSettings>
 #include <QTextDocument> // for Qt::mightBeRichText
 #include <QThread>
-
-#if QT_VERSION < 0x050000
-#include <QUrl>
-#else
 #include <QUrlQuery>
-#endif
+#include <QMouseEvent>
+
 
 #if BOOST_FILESYSTEM_VERSION >= 3
 static boost::filesystem::detail::utf8_codecvt_facet utf8;
@@ -78,7 +74,7 @@ extern double NSAppKitVersionNumber;
 #endif
 #endif
 
-#define URI_SCHEME "zenzo"
+#define URI_SCHEME "pivx"
 
 namespace GUIUtil
 {
@@ -92,79 +88,54 @@ QString dateTimeStr(qint64 nTime)
     return dateTimeStr(QDateTime::fromTime_t((qint32)nTime));
 }
 
-QFont fixedPitchFont()
+QFont bitcoinAddressFont()
 {
     QFont font("Monospace");
-#if QT_VERSION >= 0x040800
     font.setStyleHint(QFont::Monospace);
-#else
-    font.setStyleHint(QFont::TypeWriter);
-#endif
     return font;
+}
+
+/**
+ * Parse a string into a number of base monetary units and
+ * return validity.
+ * @note Must return 0 if !valid.
+ */
+CAmount parseValue(const QString& text, int displayUnit, bool* valid_out)
+{
+    CAmount val = 0;
+    bool valid = BitcoinUnits::parse(displayUnit, text, &val);
+    if (valid) {
+        if (val < 0 || val > BitcoinUnits::maxMoney())
+            valid = false;
+    }
+    if (valid_out)
+        *valid_out = valid;
+    return valid ? val : 0;
+}
+
+QString formatBalance(CAmount amount, int nDisplayUnit, bool isZpiv){
+    return (amount == 0) ? ("0.00 " + BitcoinUnits::name(nDisplayUnit, isZpiv)) : BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, amount, false, BitcoinUnits::separatorAlways, true, isZpiv);
+}
+
+bool requestUnlock(WalletModel* walletModel, AskPassphraseDialog::Context context, bool relock){
+    // Request unlock if wallet was locked or unlocked for mixing:
+    WalletModel::EncryptionStatus encStatus = walletModel->getEncryptionStatus();
+    if (encStatus == walletModel->Locked) {
+        return WalletModel::UnlockContext(walletModel->requestUnlock(context, relock)).isValid();
+    }
+    return true;
 }
 
 void setupAddressWidget(QValidatedLineEdit* widget, QWidget* parent)
 {
     parent->setFocusProxy(widget);
 
-    widget->setFont(fixedPitchFont());
-#if QT_VERSION >= 0x040700
+    widget->setFont(bitcoinAddressFont());
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
-    widget->setPlaceholderText(QObject::tr("Enter a ZENZO address (e.g. %1)").arg("ZxpedX7YZ1tFMR84B9rxw2wuG8r7Fv12hZ"));
-#endif
+    widget->setPlaceholderText(QObject::tr("Enter a PIVX address (e.g. %1)").arg("D7VFR83SQbiezrW72hjcWJtcfip5krte2Z"));
     widget->setValidator(new BitcoinAddressEntryValidator(parent));
     widget->setCheckValidator(new BitcoinAddressCheckValidator(parent));
-}
-
-void setupAliasWidget(QValidatedLineEdit* widget, QWidget* parent)
-{
-    parent->setFocusProxy(widget);
-
-    widget->setFont(fixedPitchFont());
-#if QT_VERSION >= 0x040700
-    widget->setPlaceholderText(QObject::tr("Enter a Masternode Alias (e.g. %1)").arg("mn1"));
-#endif
-}
-
-void setupIPWidget(QValidatedLineEdit* widget, QWidget* parent)
-{
-    parent->setFocusProxy(widget);
-
-    widget->setFont(fixedPitchFont());
-#if QT_VERSION >= 0x040700
-    widget->setPlaceholderText(QObject::tr("Enter a VPS IP (e.g. %1)").arg("127.0.0.2:26210"));
-#endif
-}
-
-void setupPrivKeyWidget(QValidatedLineEdit* widget, QWidget* parent)
-{
-    parent->setFocusProxy(widget);
-
-    widget->setFont(fixedPitchFont());
-#if QT_VERSION >= 0x040700
-    widget->setPlaceholderText(QObject::tr("Enter a Private Key (e.g. %1)").arg("93HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xt"));
-#endif
-}
-
-void setupTXIDWidget(QValidatedLineEdit* widget, QWidget* parent)
-{
-    parent->setFocusProxy(widget);
-
-    widget->setFont(fixedPitchFont());
-#if QT_VERSION >= 0x040700
-    widget->setPlaceholderText(QObject::tr("Enter a TX Output (e.g. %1)").arg("2bcd3c84c84f87eaa86e4e56834c92937a07f9e18718810b92e0d0324456a57c"));
-#endif
-}
-
-void setupTXIDIndexWidget(QValidatedLineEdit* widget, QWidget* parent)
-{
-    parent->setFocusProxy(widget);
-
-    widget->setFont(fixedPitchFont());
-#if QT_VERSION >= 0x040700
-    widget->setPlaceholderText(QObject::tr("Enter a TX Index (e.g. %1)").arg("1"));
-#endif
 }
 
 void setupAmountWidget(QLineEdit* widget, QWidget* parent)
@@ -178,7 +149,7 @@ void setupAmountWidget(QLineEdit* widget, QWidget* parent)
 
 bool parseBitcoinURI(const QUrl& uri, SendCoinsRecipient* out)
 {
-    // return if URI is not valid or is no zenzo: URI
+    // return if URI is not valid or is no PIVX: URI
     if (!uri.isValid() || uri.scheme() != QString(URI_SCHEME))
         return false;
 
@@ -190,15 +161,10 @@ bool parseBitcoinURI(const QUrl& uri, SendCoinsRecipient* out)
     }
     rv.amount = 0;
 
-#if QT_VERSION < 0x050000
-    QList<QPair<QString, QString> > items = uri.queryItems();
-#else
     QUrlQuery uriQuery(uri);
     QList<QPair<QString, QString> > items = uriQuery.queryItems();
-#endif
-
-    rv.useSwiftTX = false;
-    for (QList<QPair<QString, QString> >::iterator i = items.begin(); i != items.end(); i++) {
+    for (QList<QPair<QString, QString> >::iterator i = items.begin(); i != items.end(); i++)
+    {
         bool fShouldReturnFalse = false;
         if (i->first.startsWith("req-")) {
             i->first.remove(0, 4);
@@ -209,19 +175,12 @@ bool parseBitcoinURI(const QUrl& uri, SendCoinsRecipient* out)
             rv.label = i->second;
             fShouldReturnFalse = false;
         }
-        if (i->first == "IS")
-        {
-            if(i->second.compare(QString("1")) == 0)
-                rv.useSwiftTX = true;
-
-            fShouldReturnFalse = false;
-        }
         if (i->first == "message") {
             rv.message = i->second;
             fShouldReturnFalse = false;
         } else if (i->first == "amount") {
             if (!i->second.isEmpty()) {
-                if (!BitcoinUnits::parse(BitcoinUnits::ZNZ, i->second, &rv.amount)) {
+                if (!BitcoinUnits::parse(BitcoinUnits::PIV, i->second, &rv.amount)) {
                     return false;
                 }
             }
@@ -239,9 +198,9 @@ bool parseBitcoinURI(const QUrl& uri, SendCoinsRecipient* out)
 
 bool parseBitcoinURI(QString uri, SendCoinsRecipient* out)
 {
-    // Convert zenzo:// to zenzo:
+    // Convert pivx:// to pivx:
     //
-    //    Cannot handle this later, because zenzo:// will cause Qt to see the part after // as host,
+    //    Cannot handle this later, because pivx:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
     if (uri.startsWith(URI_SCHEME "://", Qt::CaseInsensitive)) {
         uri.replace(0, std::strlen(URI_SCHEME) + 3, URI_SCHEME ":");
@@ -256,7 +215,7 @@ QString formatBitcoinURI(const SendCoinsRecipient& info)
     int paramCount = 0;
 
     if (info.amount) {
-        ret += QString("?amount=%1").arg(BitcoinUnits::format(BitcoinUnits::ZNZ, info.amount, false, BitcoinUnits::separatorNever));
+        ret += QString("?amount=%1").arg(BitcoinUnits::format(BitcoinUnits::PIV, info.amount, false, BitcoinUnits::separatorNever));
         paramCount++;
     }
 
@@ -269,12 +228,6 @@ QString formatBitcoinURI(const SendCoinsRecipient& info)
     if (!info.message.isEmpty()) {
         QString msg(QUrl::toPercentEncoding(info.message));
         ret += QString("%1message=%2").arg(paramCount == 0 ? "?" : "&").arg(msg);
-        paramCount++;
-    }
-
-    if(info.useSwiftTX)
-    {
-        ret += QString("%1IS=1").arg(paramCount == 0 ? "?" : "&");
         paramCount++;
     }
 
@@ -291,11 +244,7 @@ bool isDust(const QString& address, const CAmount& amount)
 
 QString HtmlEscape(const QString& str, bool fMultiLine)
 {
-#if QT_VERSION < 0x050000
-    QString escaped = Qt::escape(str);
-#else
     QString escaped = str.toHtmlEscaped();
-#endif
     escaped = escaped.replace(" ", "&nbsp;");
     if (fMultiLine) {
         escaped = escaped.replace("\n", "<br>\n");
@@ -339,12 +288,10 @@ QString getSaveFileName(QWidget* parent, const QString& caption, const QString& 
     QString myDir;
     if (dir.isEmpty()) // Default to user documents location
     {
-#if QT_VERSION < 0x050000
-        myDir = QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation);
-#else
         myDir = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
-#endif
-    } else {
+    }
+    else
+    {
         myDir = dir;
     }
     /* Directly convert path to native OS path separators */
@@ -381,12 +328,10 @@ QString getOpenFileName(QWidget* parent, const QString& caption, const QString& 
     QString myDir;
     if (dir.isEmpty()) // Default to user documents location
     {
-#if QT_VERSION < 0x050000
-        myDir = QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation);
-#else
         myDir = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
-#endif
-    } else {
+    }
+    else
+    {
         myDir = dir;
     }
     /* Directly convert path to native OS path separators */
@@ -425,40 +370,44 @@ bool isObscured(QWidget* w)
     return !(checkPoint(QPoint(0, 0), w) && checkPoint(QPoint(w->width() - 1, 0), w) && checkPoint(QPoint(0, w->height() - 1), w) && checkPoint(QPoint(w->width() - 1, w->height() - 1), w) && checkPoint(QPoint(w->width() / 2, w->height() / 2), w));
 }
 
-void openDebugLogfile()
+bool openDebugLogfile()
 {
     boost::filesystem::path pathDebug = GetDataDir() / "debug.log";
 
     /* Open debug.log with the associated application */
     if (boost::filesystem::exists(pathDebug))
-        QDesktopServices::openUrl(QUrl::fromLocalFile(boostPathToQString(pathDebug)));
+        return QDesktopServices::openUrl(QUrl::fromLocalFile(boostPathToQString(pathDebug)));
+    return false;
 }
 
-void openConfigfile()
+bool openConfigfile()
 {
     boost::filesystem::path pathConfig = GetConfigFile();
 
-    /* Open zenzo.conf with the associated application */
+    /* Open pivx.conf with the associated application */
     if (boost::filesystem::exists(pathConfig))
-        QDesktopServices::openUrl(QUrl::fromLocalFile(boostPathToQString(pathConfig)));
+        return QDesktopServices::openUrl(QUrl::fromLocalFile(boostPathToQString(pathConfig)));
+    return false;
 }
 
-void openMNConfigfile()
+bool openMNConfigfile()
 {
     boost::filesystem::path pathConfig = GetMasternodeConfigFile();
 
     /* Open masternode.conf with the associated application */
     if (boost::filesystem::exists(pathConfig))
-        QDesktopServices::openUrl(QUrl::fromLocalFile(boostPathToQString(pathConfig)));
+        return QDesktopServices::openUrl(QUrl::fromLocalFile(boostPathToQString(pathConfig)));
+    return false;
 }
 
-void showBackups()
+bool showBackups()
 {
     boost::filesystem::path pathBackups = GetDataDir() / "backups";
 
     /* Open folder with default browser */
     if (boost::filesystem::exists(pathBackups))
-        QDesktopServices::openUrl(QUrl::fromLocalFile(boostPathToQString(pathBackups)));
+        return QDesktopServices::openUrl(QUrl::fromLocalFile(boostPathToQString(pathBackups)));
+    return false;
 }
 
 void SubstituteFonts(const QString& language)
@@ -485,7 +434,7 @@ void SubstituteFonts(const QString& language)
             /* 10.10 or later system */
             if (language == "zh_CN" || language == "zh_TW" || language == "zh_HK") // traditional or simplified Chinese
                 QFont::insertSubstitution(".Helvetica Neue DeskInterface", "Heiti SC");
-            else if (language == "ja") // Japanese
+            else if (language == "ja") // Japanesee
                 QFont::insertSubstitution(".Helvetica Neue DeskInterface", "Songti SC");
             else
                 QFont::insertSubstitution(".Helvetica Neue DeskInterface", "Lucida Grande");
@@ -536,11 +485,7 @@ void TableViewLastColumnResizingFixer::disconnectViewHeadersSignals()
 // Refactored here for readability.
 void TableViewLastColumnResizingFixer::setViewHeaderResizeMode(int logicalIndex, QHeaderView::ResizeMode resizeMode)
 {
-#if QT_VERSION < 0x050000
-    tableView->horizontalHeader()->setResizeMode(logicalIndex, resizeMode);
-#else
     tableView->horizontalHeader()->setSectionResizeMode(logicalIndex, resizeMode);
-#endif
 }
 
 void TableViewLastColumnResizingFixer::resizeColumn(int nColumnIndex, int width)
@@ -660,12 +605,12 @@ bool DHMSTableWidgetItem::operator<(QTableWidgetItem const& item) const
 #ifdef WIN32
 boost::filesystem::path static StartupShortcutPath()
 {
-    return GetSpecialFolderPath(CSIDL_STARTUP) / "Zenzo.lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / "PIVX.lnk";
 }
 
 bool GetStartOnSystemStartup()
 {
-    // check for Zenzo.lnk
+    // check for PIVX.lnk
     return boost::filesystem::exists(StartupShortcutPath());
 }
 
@@ -739,7 +684,7 @@ boost::filesystem::path static GetAutostartDir()
 
 boost::filesystem::path static GetAutostartFilePath()
 {
-    return GetAutostartDir() / "zenzo.desktop";
+    return GetAutostartDir() / "pivx.desktop";
 }
 
 bool GetStartOnSystemStartup()
@@ -775,10 +720,10 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         boost::filesystem::ofstream optionFile(GetAutostartFilePath(), std::ios_base::out | std::ios_base::trunc);
         if (!optionFile.good())
             return false;
-        // Write a zenzo.desktop file to the autostart directory:
+        // Write a pivx.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
-        optionFile << "Name=Zenzo\n";
+        optionFile << "Name=PIVX\n";
         optionFile << "Exec=" << pszExePath << " -min\n";
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";
@@ -799,7 +744,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
 LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef findUrl);
 LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef findUrl)
 {
-    // loop through the list of startup items and try to find the zenzo app
+    // loop through the list of startup items and try to find the pivx app
     CFArrayRef listSnapshot = LSSharedFileListCopySnapshot(list, NULL);
     for (int i = 0; i < CFArrayGetCount(listSnapshot); i++) {
         LSSharedFileListItemRef item = (LSSharedFileListItemRef)CFArrayGetValueAtIndex(listSnapshot, i);
@@ -844,7 +789,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
     LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, bitcoinAppUrl);
 
     if (fAutoStart && !foundItem) {
-        // add zenzo app to startup item list
+        // add pivx app to startup item list
         LSSharedFileListInsertItemURL(loginItems, kLSSharedFileListItemBeforeFirst, NULL, NULL, bitcoinAppUrl, NULL, NULL);
     } else if (!fAutoStart && foundItem) {
         // remove item
@@ -892,7 +837,7 @@ bool isExternal(QString theme)
     if (theme.isEmpty())
         return false;
 
-    return (theme.operator!=("default"));
+    return (theme.operator!=("default") && theme.operator!=("default-dark"));
 }
 
 // Open CSS when configured
@@ -1007,6 +952,11 @@ QString formatServicesStr(quint64 mask)
 QString formatPingTime(double dPingTime)
 {
     return dPingTime == 0 ? QObject::tr("N/A") : QString(QObject::tr("%1 ms")).arg(QString::number((int)(dPingTime * 1000), 10));
+}
+
+QString formatTimeOffset(int64_t nTimeOffset)
+{
+  return QString(QObject::tr("%1 s")).arg(QString::number((int)nTimeOffset, 10));
 }
 
 } // namespace GUIUtil

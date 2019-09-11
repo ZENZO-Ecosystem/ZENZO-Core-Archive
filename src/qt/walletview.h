@@ -1,21 +1,24 @@
-// Copyright (c) 2011-2019 The Bitcoin developers
-// Copyright (c) 2018-2019 The ZENZO developers
-// Distributed under the MIT/X11 software license, see the accompanying
+// Copyright (c) 2011-2014 The Bitcoin developers
+// Copyright (c) 2017-2019 The PIVX developers
+// Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_QT_WALLETVIEW_H
 #define BITCOIN_QT_WALLETVIEW_H
 
 #include "amount.h"
+#include "askpassphrasedialog.h"
 #include "masternodelist.h"
 
 #include <QStackedWidget>
+#include <ui_interface.h>
 
 class BitcoinGUI;
 class ClientModel;
 class OverviewPage;
-class PlatformStyle;
 class ReceiveCoinsDialog;
+class PrivacyDialog;
+class GovernancePage;
 class SendCoinsDialog;
 class SendCoinsRecipient;
 class TransactionView;
@@ -39,7 +42,7 @@ class WalletView : public QStackedWidget
     Q_OBJECT
 
 public:
-    explicit WalletView(const PlatformStyle *platformStyle, QWidget* parent);
+    explicit WalletView(QWidget* parent);
     ~WalletView();
 
     void setBitcoinGUI(BitcoinGUI* gui);
@@ -64,6 +67,8 @@ private:
     OverviewPage* overviewPage;
     QWidget* transactionsPage;
     ReceiveCoinsDialog* receiveCoinsPage;
+    PrivacyDialog* privacyPage;
+    GovernancePage* governancePage;
     SendCoinsDialog* sendCoinsPage;
     BlockExplorer* explorerWindow;
     MasternodeList* masternodeListPage;
@@ -73,17 +78,19 @@ private:
     QProgressDialog* progressDialog;
     QLabel* transactionSum;
 
-    const PlatformStyle *platformStyle;
-
 public slots:
     /** Switch to overview (home) page */
     void gotoOverviewPage();
     /** Switch to history (transactions) page */
     void gotoHistoryPage();
+    /** Switch to governance page */
+    void gotoGovernancePage();
     /** Switch to masternode page */
     void gotoMasternodePage();
     /** Switch to explorer page */
     void gotoBlockExplorerPage();
+    /** Switch to privacy page */
+    void gotoPrivacyPage();
     /** Switch to receive coins page */
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */
@@ -112,7 +119,7 @@ public slots:
     /** Change encrypted wallet passphrase */
     void changePassphrase();
     /** Ask for passphrase to unlock wallet temporarily */
-    void unlockWallet();
+    void unlockWallet(AskPassphraseDialog::Context context);
     /** Lock wallet */
     void lockWallet();
     /** Toggle wallet lock state */
@@ -129,7 +136,7 @@ public slots:
     /** Show progress dialog e.g. for rescan */
     void showProgress(const QString& title, int nProgress);
 
-    /** Update selected ZNZ amount from transactionview */
+    /** Update selected PIV amount from transactionview */
     void trxAmount(QString amount);
 
 signals:
@@ -139,8 +146,6 @@ signals:
     void message(const QString& title, const QString& message, unsigned int style);
     /** Encryption status of wallet changed */
     void encryptionStatusChanged(int status);
-    /** HD-Enabled status of wallet changed (only possible during startup) */
-    void hdEnabledStatusChanged(int hdEnabled);
     /** Notify that a new transaction appeared */
     void incomingTransaction(const QString& date, int unit, const CAmount& amount, const QString& type, const QString& address);
 };

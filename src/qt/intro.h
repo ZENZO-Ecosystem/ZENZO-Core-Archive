@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -20,7 +21,7 @@ class Intro;
 
 /** Introduction screen (pre-GUI startup).
   Allows the user to choose a data directory,
-  in which the wallet and blockchain will be stored.
+  in which the wallet and block chain will be stored.
  */
 class Intro : public QDialog
 {
@@ -72,6 +73,7 @@ private:
     void startThread();
     void checkPath(const QString& dataDir);
     QString getPathToCheck();
+    void updateDataDirStatus(bool enabled);
 
     friend class FreespaceChecker;
 };

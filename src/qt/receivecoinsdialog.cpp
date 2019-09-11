@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -20,8 +21,9 @@
 #include <QMessageBox>
 #include <QScrollBar>
 #include <QTextDocument>
+#include <QSettings>
 
-ReceiveCoinsDialog::ReceiveCoinsDialog(QWidget* parent) : QDialog(parent),
+ReceiveCoinsDialog::ReceiveCoinsDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
                                                           ui(new Ui::ReceiveCoinsDialog),
                                                           model(0)
 {
@@ -30,6 +32,7 @@ ReceiveCoinsDialog::ReceiveCoinsDialog(QWidget* parent) : QDialog(parent),
 #ifdef Q_OS_MAC // Icons on push buttons are very uncommon on Mac
     ui->clearButton->setIcon(QIcon());
     ui->receiveButton->setIcon(QIcon());
+    ui->receivingAddressesButton->setIcon(QIcon());
     ui->showRequestButton->setIcon(QIcon());
     ui->removeRequestButton->setIcon(QIcon());
 #endif
@@ -82,24 +85,28 @@ void ReceiveCoinsDialog::setModel(WalletModel* model)
             SLOT(recentRequestsView_selectionChanged(QItemSelection, QItemSelection)));
         // Last 2 columns are set by the columnResizingFixer, when the table geometry is ready.
         columnResizingFixer = new GUIUtil::TableViewLastColumnResizingFixer(tableView, AMOUNT_MINIMUM_COLUMN_WIDTH, DATE_COLUMN_WIDTH);
-    }
 
         // Init address field
-        address = getAddress();
+        QSettings settings;
+        address = settings.value("current_receive_address").toString();
+        if (address.isEmpty())
+            address = getAddress();
         ui->reqAddress->setText(address);
 
         connect(model, SIGNAL(notifyReceiveAddressChanged()), this, SLOT(receiveAddressUsed()));
+    }
 }
 
 ReceiveCoinsDialog::~ReceiveCoinsDialog()
 {
+    QSettings settings;
+    settings.setValue("current_receive_address", address);
     delete ui;
 }
 
 void ReceiveCoinsDialog::clear()
 {
     ui->reqAmount->clear();
-    address = getAddress();
     ui->reqAddress->setText(address);
     ui->reqLabel->setText("");
     ui->reqMessage->setText("");
@@ -155,7 +162,6 @@ void ReceiveCoinsDialog::on_receiveButton_clicked()
     }
     SendCoinsRecipient info(address, label,
         ui->reqAmount->value(), ui->reqMessage->text());
-	info.useSwiftTX = ui->checkUseInstantSend->isChecked();
     ReceiveRequestDialog* dialog = new ReceiveRequestDialog(this);
     dialog->setAttribute(Qt::WA_DeleteOnClose);
     dialog->setModel(model->getOptionsModel());
@@ -165,6 +171,15 @@ void ReceiveCoinsDialog::on_receiveButton_clicked()
 
     /* Store request for later reference */
     model->getRecentRequestsTableModel()->addNewRequest(info);
+}
+
+void ReceiveCoinsDialog::on_receivingAddressesButton_clicked()
+{
+    if (!model)
+        return;
+    AddressBookPage dlg(AddressBookPage::ForEditing, AddressBookPage::ReceivingTab, this);
+    dlg.setModel(model->getAddressTableModel());
+    dlg.exec();
 }
 
 void ReceiveCoinsDialog::on_recentRequestsView_doubleClicked(const QModelIndex& index)
@@ -280,7 +295,9 @@ void ReceiveCoinsDialog::copyAddress()
 
 void ReceiveCoinsDialog::receiveAddressUsed()
 {
-    if (model && model->isUsed(CBitcoinAddress(address.toStdString()))) {
+    if ((!ui->reuseAddress->isChecked()) && model && model->isUsed(CBitcoinAddress(address.toStdString()))) {
+        address = getAddress();
         clear();
     }
 }
+

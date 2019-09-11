@@ -1,5 +1,5 @@
-// Copyright (c) 2011-2019 The Bitcoin developers
-// Copyright (c) 2018-2019 The ZENZO developers
+// Copyright (c) 2011-2014 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -25,7 +25,6 @@ class NetworkStyle;
 class Notificator;
 class OptionsModel;
 class BlockExplorer;
-class PlatformStyle;
 class RPCConsole;
 class SendCoinsRecipient;
 class UnitDisplayStatusBarControl;
@@ -52,7 +51,7 @@ class BitcoinGUI : public QMainWindow
 public:
     static const QString DEFAULT_WALLET;
 
-    explicit BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle* networkStyle, QWidget* parent = 0);
+    explicit BitcoinGUI(const NetworkStyle* networkStyle, QWidget* parent = 0);
     ~BitcoinGUI();
 
     /** Set the client model.
@@ -85,8 +84,8 @@ private:
 
     UnitDisplayStatusBarControl* unitDisplayControl;
     QLabel* labelStakingIcon;
+    QPushButton* labelAutoMintIcon;
     QPushButton* labelEncryptionIcon;
-    QLabel *labelWalletHDStatusIcon;
     QLabel* labelTorIcon;
     QPushButton* labelConnectionsIcon;
     QLabel* labelBlocksIcon;
@@ -110,6 +109,8 @@ private:
     QAction* multisigSignAction;
     QAction* aboutAction;
     QAction* receiveCoinsAction;
+    QAction* governanceAction;
+    QAction* privacyAction;
     QAction* optionsAction;
     QAction* toggleHideAction;
     QAction* encryptWalletAction;
@@ -140,8 +141,6 @@ private:
     /** Keep track of previous number of blocks, to detect progress */
     int prevBlocks;
     int spinnerFrame;
-
-    const PlatformStyle *platformStyle;
 
     /** Create the main UI actions. */
     void createActions(const NetworkStyle* networkStyle);
@@ -187,12 +186,8 @@ public slots:
 
 #ifdef ENABLE_WALLET
     void setStakingStatus();
+    void setAutoMintStatus();
 
-    /** Set the hd-enabled status as shown in the UI.
-       setHDStatus           current hd enabled status
-       @see WalletModel::hdEnabled
-    */
-    void setHDStatus(int hdEnabled);
     /** Set the encryption status as shown in the UI.
        @param[in] status            current encryption status
        @see WalletModel::EncryptionStatus
@@ -215,12 +210,16 @@ private slots:
     void gotoOverviewPage();
     /** Switch to history (transactions) page */
     void gotoHistoryPage();
+    /** Switch to Governance Page */
+    void gotoGovernancePage();
     /** Switch to Explorer Page */
     void gotoBlockExplorerPage();
     /** Switch to masternode page */
     void gotoMasternodePage();
-    /** Switch to receive coins page */
+    /** Switch to privacy page */
     void gotoReceiveCoinsPage();
+    /** Switch to receive coins page */
+    void gotoPrivacyPage();
     /** Switch to send coins page */
     void gotoSendCoinsPage(QString addr = "");
 
@@ -269,7 +268,7 @@ class UnitDisplayStatusBarControl : public QLabel
     Q_OBJECT
 
 public:
-    explicit UnitDisplayStatusBarControl(const PlatformStyle *platformStyle);
+    explicit UnitDisplayStatusBarControl();
     /** Lets the control know about the Options Model (and its signals) */
     void setOptionsModel(OptionsModel* optionsModel);
 

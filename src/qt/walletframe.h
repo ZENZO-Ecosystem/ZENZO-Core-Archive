@@ -1,18 +1,18 @@
-// Copyright (c) 2011-2019 The Bitcoin developers
-// Copyright (c) 2015-2019 The PIVX developers
-// Copyright (c) 2018-2019 The ZENZO developers
+// Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2016-2019 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_QT_WALLETFRAME_H
 #define BITCOIN_QT_WALLETFRAME_H
 
+#include "askpassphrasedialog.h"
+
 #include <QFrame>
 #include <QMap>
 
 class BitcoinGUI;
 class ClientModel;
-class PlatformStyle;
 class SendCoinsRecipient;
 class WalletModel;
 class WalletView;
@@ -27,7 +27,7 @@ class WalletFrame : public QFrame
     Q_OBJECT
 
 public:
-    explicit WalletFrame(const PlatformStyle *platformStyle, BitcoinGUI* _gui = 0);
+    explicit WalletFrame(BitcoinGUI* _gui = 0);
     ~WalletFrame();
 
     void setClientModel(ClientModel* clientModel);
@@ -49,8 +49,6 @@ private:
 
     bool bOutOfSync;
 
-    const PlatformStyle *platformStyle;
-
     WalletView* currentWalletView();
 
 public slots:
@@ -58,10 +56,14 @@ public slots:
     void gotoOverviewPage();
     /** Switch to history (transactions) page */
     void gotoHistoryPage();
+    /** Switch to governance page */
+    void gotoGovernancePage();
     /** Switch to masternode page */
     void gotoMasternodePage();
     /** Switch to receive coins page */
     void gotoReceiveCoinsPage();
+    /** Switch to privacy page */
+    void gotoPrivacyPage();
     /** Switch to send coins page */
     void gotoSendCoinsPage(QString addr = "");
     /** Switch to explorer page */
@@ -84,7 +86,8 @@ public slots:
     /** Change encrypted wallet passphrase */
     void changePassphrase();
     /** Ask for passphrase to unlock wallet temporarily */
-    void unlockWallet();
+    void unlockWallet(AskPassphraseDialog::Context context);
+    void unlockWallet(bool setContext);
     /** Lock wallet */
     void lockWallet();
     /** Toggle Wallet Lock State */

@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -8,9 +9,7 @@
 #include "walletmodel.h"
 
 #include <QDialog>
-#include <QMessageBox>
 #include <QString>
-#include <QTimer>
 
 static const int MAX_SEND_POPUP_ENTRIES = 10;
 
@@ -55,7 +54,8 @@ public slots:
     void accept();
     SendCoinsEntry* addEntry();
     void updateTabsAndLabels();
-    void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance,
+    void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance, 
+                    const CAmount& zerocoinBalance, const CAmount& unconfirmedZerocoinBalance, const CAmount& immatureZerocoinBalance,
                     const CAmount& watchOnlyBalance, const CAmount& watchUnconfBalance, const CAmount& watchImmatureBalance);
 
 private:
@@ -78,7 +78,6 @@ private slots:
     void on_buttonChooseFee_clicked();
     void on_buttonMinimizeFee_clicked();
     void removeEntry(SendCoinsEntry* entry);
-    void useAvailableBalance(SendCoinsEntry* entry);
     void updateDisplayUnit();
     void updateSwiftTX();
     void coinControlFeatureChanged(bool);
@@ -105,24 +104,6 @@ private slots:
 signals:
     // Fired when a message should be reported to the user
     void message(const QString& title, const QString& message, unsigned int style);
-};
-
-class SendConfirmationDialog : public QMessageBox
-{
-    Q_OBJECT
-
-public:
-    SendConfirmationDialog(const QString &title, const QString &text, int secDelay = 0, QWidget *parent = 0);
-    int exec();
-
-private Q_SLOTS:
-    void countDown();
-    void updateYesButton();
-
-private:
-    QAbstractButton *yesButton;
-    QTimer countDownTimer;
-    int secDelay;
 };
 
 #endif // BITCOIN_QT_SENDCOINSDIALOG_H
