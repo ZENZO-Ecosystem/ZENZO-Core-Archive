@@ -33,7 +33,7 @@ static const bool DEFAULT_SPLASHSCREEN = true;
 /* Transaction list -- TX status decoration - offline */
 #define COLOR_TX_STATUS_OFFLINE QColor(192, 192, 192)
 /* Transaction list -- TX status decoration - default color */
-#define COLOR_BLACK QColor(0, 0, 0)
+#define COLOR_BLACK QColor(147, 149, 152)
 
 /* Tooltips longer than this (in characters) are converted into rich text,
    so that they can be word-wrapped.
@@ -49,9 +49,9 @@ static const int MAX_URI_LENGTH = 255;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 35
 
-#define QAPP_ORG_NAME "Zenzo"
-#define QAPP_ORG_DOMAIN "zenzo.org"
-#define QAPP_APP_NAME_DEFAULT "Zenzo-Qt"
-#define QAPP_APP_NAME_TESTNET "Zenzo-Qt-testnet"
+#define QAPP_ORG_NAME "ZENZO"
+#define QAPP_ORG_DOMAIN "zenzo.io"
+#define QAPP_APP_NAME_DEFAULT "ZENZO-Qt"
+#define QAPP_APP_NAME_TESTNET "ZENZO-Qt-testnet"
 
 #endif // BITCOIN_QT_GUICONSTANTS_H

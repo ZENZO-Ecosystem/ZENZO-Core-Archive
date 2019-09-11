@@ -210,11 +210,11 @@ background-color:#f2f2f2;
 /***************************** Global Qt Objects ***********************************************************/
 
 QPushButton { /* Global Button Style */
-background-color: #8778dc;
+background-color: #b396f6;
 border-width: 1px;
-border-style: outset;
+border-style: solid;
 border-color: #382f44;
-border-radius: 2px;
+border-radius: 25px;
 color:#ffffff;
 font-size:12px;
 font-weight:bold;
@@ -956,7 +956,7 @@ QWidget .QFrame#frame_Balances .QLabel#label_5 { /* ZNZ Balances Label */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 min-width:160px;
 background-color:transparent;
-color:#382F44;
+color:#939598;
 font-weight:bold;
 font-size:14px;
 margin-right:5px;
@@ -983,7 +983,8 @@ margin-left:16px;
 QWidget .QFrame#frame_Balances .QLabel#labelBalanceText { /* Available Balance Label */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 min-width:160px;
-color:#372f44;
+color:#939598;
+margin-top:5px;
 margin-right:5px;
 padding-right:5px;
 font-weight:bold;
@@ -994,7 +995,7 @@ QWidget .QFrame#frame_Balances .QLabel#labelBalance { /* Available Balance */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 font-size:12px;
 font-weight:bold;
-color:#000;
+color:#939598;
 margin-left:0px;
 }
 
@@ -1007,7 +1008,8 @@ margin-left:16px;
 QWidget .QFrame#frame_Balances .QLabel#labelPendingText { /* Pending Balance Label */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 min-width:160px;
-color:#372f44;
+color:#939598;
+margin-top:5px;
 margin-right:5px;
 padding-right:5px;
 font-weight:bold;
@@ -1018,7 +1020,7 @@ QWidget .QFrame#frame_Balances .QLabel#labelUnconfirmed { /* Pending Balance */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 font-size:12px;
 font-weight:bold;
-color:#000;
+color:#939598;
 margin-left:0px;
 }
 
@@ -1031,7 +1033,7 @@ margin-left:16px;
 QWidget .QFrame#frame_Balances .QLabel#labelImmatureText { /* Immature Balance Label */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 min-width:160px;
-color:#372f44;
+color:#939598;
 margin-right:5px;
 padding-right:5px;
 font-weight:bold;
@@ -1042,7 +1044,7 @@ QWidget .QFrame#frame_Balances .QLabel#labelImmature { /* Immature Balance */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 font-size:12px;
 font-weight:bold;
-color:#000;
+color:#939598;
 margin-left:0px;
 }
 
@@ -1055,7 +1057,8 @@ margin-left:16px;
 QWidget .QFrame#frame_Balances .QLabel#labelTotalText { /* Total Balance Label */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 min-width:160px;
-color:#372f44;
+color:#939598;
+margin-top:5px;
 margin-right:5px;
 padding-right:5px;
 font-weight:bold;
@@ -1066,7 +1069,7 @@ QWidget .QFrame#frame_Balances .QLabel#labelTotal { /* Total Balance */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 font-size:12px;
 font-weight:bold;
-color:#000;
+color:#939598;
 margin-left:0px;
 }
 
@@ -1079,7 +1082,8 @@ margin-left:16px;
 QWidget .QFrame#frame_Balances .QLabel#labelLockedBalanceText { /* Available zZNZ Label */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 min-width:160px;
-color:#372f44;
+color:#939598;
+margin-top:5px;
 margin-right:5px;
 padding-right:5px;
 font-weight:bold;
@@ -1090,7 +1094,7 @@ QWidget .QFrame#frame_Balances .QLabel#labelLockedBalance { /* Available zZNZ Ba
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 font-size:12px;
 font-weight:bold;
-color:#000;
+color:#939598;
 margin-left:0px;
 }
 
