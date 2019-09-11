@@ -1701,7 +1701,7 @@ QListView {
 }
 
 QListView::item {
-    color: white;
+    color: black;
     height: 36px;
 }
 
