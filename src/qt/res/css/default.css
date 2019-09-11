@@ -1745,7 +1745,7 @@ QListWidget {
 QListWidget::item {
     border-radius: 8px;
     border: none;
-    color: #fff;
+    color: black;
 }
 QListWidget::item:selected {
     border: 2px solid #9966cc;
