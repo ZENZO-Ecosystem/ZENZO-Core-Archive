@@ -107,7 +107,7 @@ StartOptionsSort::StartOptionsSort(std::vector<std::string> Words, int rows, QWi
             listViewBorder->setPen(Qt::NoPen);
 
             listView->setPos(ki,ii);
-            QPen myPen(QColor(255,255,255), 2, Qt::MPenStyle);
+            QPen myPen(QColor(0,0,0), 2, Qt::MPenStyle);
             listView->setPen(myPen);
 
             graphicsList.push_back(listView);
