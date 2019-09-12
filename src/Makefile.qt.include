@@ -36,6 +36,12 @@ QT_FORMS_UI = \
   qt/forms/outputspage.ui \
   qt/forms/configuremasternodepage.ui \
   qt/forms/askpassphrasedialog.ui \
+  qt/forms/startoptionsdialog.ui \
+  qt/forms/startoptions.ui \
+  qt/forms/startoptionsrestore.ui \
+  qt/forms/startoptionssort.ui \
+  qt/forms/startoptionsrevealed.ui \
+  qt/forms/startoptionsmain.ui \
   qt/forms/backupdialog.ui \
   qt/forms/bip38tooldialog.ui \
   qt/forms/coincontroldialog.ui \
@@ -64,6 +70,12 @@ QT_MOC_CPP = \
   qt/moc_configuremasternodepage.cpp \
   qt/moc_addresstablemodel.cpp \
   qt/moc_askpassphrasedialog.cpp \
+  qt/moc_startoptionsdialog.cpp \
+  qt/moc_startoptions.cpp \
+  qt/moc_startoptionsrestore.cpp \
+  qt/moc_startoptionssort.cpp \
+  qt/moc_startoptionsrevealed.cpp \
+  qt/moc_startoptionsmain.cpp \
   qt/moc_bantablemodel.cpp \
   qt/moc_backupdialog.cpp \
   qt/moc_bip38tooldialog.cpp \
@@ -139,6 +151,12 @@ BITCOIN_QT_H = \
   qt/configuremasternodepage.h \
   qt/addresstablemodel.h \
   qt/askpassphrasedialog.h \
+  qt/startoptionsdialog.h \
+  qt/startoptions.h \
+  qt/startoptionsrestore.h \
+  qt/startoptionssort.h \
+  qt/startoptionsrevealed.h \
+  qt/startoptionsmain.h \
   qt/bantablemodel.h \
   qt/bip38tooldialog.h \
   qt/backupdialog.h \
@@ -282,7 +300,12 @@ BITCOIN_QT_CPP = \
   qt/splashscreen.cpp \
   qt/trafficgraphdata.cpp \
   qt/trafficgraphwidget.cpp \
-  qt/utilitydialog.cpp \
+  qt/startoptionsdialog.cpp \
+  qt/startoptions.cpp \
+  qt/startoptionsrestore.cpp \
+  qt/startoptionssort.cpp \
+  qt/startoptionsrevealed.cpp \
+  qt/startoptionsmain.cpp \
   qt/utilitydialog.cpp
 
 if TARGET_WINDOWS

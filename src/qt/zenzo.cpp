@@ -29,6 +29,8 @@
 #endif
 #include "masternodeconfig.h"
 
+#include <startoptionsmain.h>
+
 #include "init.h"
 #include "main.h"
 #include "rpc/server.h"
@@ -55,6 +57,7 @@
 #include <QThread>
 #include <QTimer>
 #include <QTranslator>
+#include <vector>
 
 #if defined(QT_STATICPLUGIN)
 #include <QtPlugin>
@@ -175,7 +178,7 @@ class BitcoinCore : public QObject
 {
     Q_OBJECT
 public:
-    explicit BitcoinCore();
+    explicit BitcoinCore(std::vector<std::string>& wordlist);
 
 public slots:
     void initialize();
@@ -196,6 +199,7 @@ private:
 
     /// Pass fatal exception message to UI thread
     void handleRunawayException(std::exception* e);
+    std::vector<std::string> words;
 };
 
 /** Main ZENZO application object */
@@ -213,9 +217,12 @@ public:
     /// Create options model
     void createOptionsModel();
     /// Create main window
-    void createWindow(const NetworkStyle* networkStyle);
+    bool createWindow(const NetworkStyle* networkStyle);
     /// Create splash screen
     void createSplashScreen(const NetworkStyle* networkStyle);
+
+    /// Get mnemonic words on first startup
+    bool setupMnemonicWords(std::vector<std::string>& wordlist);
 
     /// Request core initialization
     void requestInitialize();
@@ -251,6 +258,7 @@ private:
     PaymentServer* paymentServer;
     WalletModel* walletModel;
 #endif
+    std::vector<std::string> wordlist;
     int returnValue;
     const PlatformStyle *platformStyle;
 
@@ -259,7 +267,7 @@ private:
 
 #include "zenzo.moc"
 
-BitcoinCore::BitcoinCore() : QObject()
+BitcoinCore::BitcoinCore(std::vector<std::string>& wordlist) : QObject(), words(wordlist)
 {
 }
 
@@ -275,7 +283,7 @@ void BitcoinCore::initialize()
 
     try {
         qDebug() << __func__ << ": Running AppInit2 in thread";
-        int rv = AppInit2(threadGroup, scheduler);
+        int rv = AppInit2(threadGroup, scheduler, words);
         if (rv) {
             /* Start a dummy RPC thread if no RPC thread is active yet
              * to handle timeouts.
@@ -399,8 +407,27 @@ void BitcoinApplication::createOptionsModel()
     optionsModel = new OptionsModel();
 }
 
-void BitcoinApplication::createWindow(const NetworkStyle* networkStyle)
+// this will be used to get mnemonic words
+bool BitcoinApplication::setupMnemonicWords(std::vector<std::string>& wordlist) {
+    namespace fs = boost::filesystem;
+
+    std::string walletFile = GetArg("-wallet", "wallet.dat");
+    if (fs::exists(walletFile)) return true;
+
+    if (CheckIfWalletDatExists()) return true;
+
+    StartOptionsMain dlg(nullptr);
+    dlg.exec();
+    wordlist = dlg.getWords();
+    return false;
+}
+
+bool BitcoinApplication::createWindow(const NetworkStyle* networkStyle)
 {
+    /// doesn't check if wallet is enabled, It will be assumbed if the user is using the gui wallet is enabled
+    if (!setupMnemonicWords(wordlist)) {
+        if (wordlist.empty()) return false;
+    }
     window = new BitcoinGUI(platformStyle, networkStyle, 0);
 
     pollShutdownTimer = new QTimer(window);
@@ -423,7 +450,7 @@ void BitcoinApplication::startThread()
     if (coreThread)
         return;
     coreThread = new QThread(this);
-    BitcoinCore* executor = new BitcoinCore();
+    BitcoinCore* executor = new BitcoinCore(wordlist);
     executor->moveToThread(coreThread);
 
     /*  communication to and from thread */
@@ -691,7 +718,9 @@ int main(int argc, char* argv[])
         app.createSplashScreen(networkStyle.data());
 
     try {
-        app.createWindow(networkStyle.data());
+        if (!app.createWindow(networkStyle.data())) {
+            return EXIT_FAILURE;
+        }
         app.requestInitialize();
 #if defined(Q_OS_WIN) && QT_VERSION >= 0x050000
         WinShutdownMonitor::registerShutdownBlockReason(QObject::tr("ZENZO Core didn't yet exit safely..."), (HWND)app.getMainWinId());

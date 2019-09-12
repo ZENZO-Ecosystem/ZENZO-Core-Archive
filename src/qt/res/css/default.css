@@ -1692,3 +1692,70 @@ color:#333;
 QCalendarWidget QAbstractItemView:disabled { /* Calendar widget days not in month */
 color:#818181;
 }
+
+
+/*Seed Words Generator*/
+QListView {
+    background-color: white;
+    border: 2px solid white;
+}
+
+QListView::item {
+    color: black;
+    height: 36px;
+}
+
+QGraphicsView {
+    background-color: white;
+    border: 2px solid white;
+}
+
+QRadioButton {
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+QRadioButton:focus {
+    background-color: #000;
+}
+QRadioButton::indicator {
+    display: none;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+}
+QRadioButton:checked {
+    background-color: transparent;
+    border: 2px solid #9966cc;
+}
+QRadioButton:unchecked {
+    background-color: transparent;
+    border-width: 2px;
+    border-color:  #777;
+}
+QRadioButton::unchecked:hover {
+    background-color:  white;
+}
+
+QListWidget {
+    border-color: white;
+}
+QListWidget::item {
+    border-radius: 8px;
+    border: none;
+    color: black;
+}
+QListWidget::item:selected {
+    border: 2px solid #9966cc;
+    border-radius: 8px;
+    padding-left: 4px;
+    background: transparent;
+}
+QListWidget::item:focus {
+    border: 1px solid white;
+    background:  white; ;
+    border-radius: 8px;
+    padding-left: 4px;
+}  
