@@ -26,7 +26,7 @@ StartOptionsMain::StartOptionsMain(QWidget *parent)
     ui->setupUi(this);
     this->setStyleSheet(GUIUtil::loadStyleSheet());
 
-    this->setWindowTitle("Zenzo Wallet Setup");
+    this->setWindowTitle("ZENZO Wallet Setup");
 
 
     wordsList = CMnemonic::getListOfAllWordInLanguage();
@@ -171,7 +171,7 @@ void StartOptionsMain::on_Next_clicked()
             boost::trim_right(words_empty_str);
             boost::trim_right(words_mnemonic);
             if(words_empty_str != words_mnemonic) {
-                QString error = "Your words are in the wrong order Please try again";
+                QString error = "The words you input are not in the correct order. Please look carefully and try again.";
                 StartOptionsDialog dlg(error, this);
                 dlg.exec();
             } else {
@@ -195,7 +195,7 @@ void StartOptionsMain::on_Next_clicked()
                 wordsDone = word_str;
                 QApplication::quit();
             } else {
-                QString error = "Your words are invalid. This could be because, you are using non real words or that they may be misspelt";
+                QString error = "The words you input are incorrect. Please look carefully over the words you input to make sure there are no extra spaces or characters and try again.";
                 StartOptionsDialog dlg(error, this);
                 dlg.exec();
             }
