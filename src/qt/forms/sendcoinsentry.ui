@@ -16,6 +16,9 @@
   <property name="autoFillBackground">
    <bool>false</bool>
   </property>
+  <property name="currentIndex">
+   <number>0</number>
+  </property>
   <widget class="QFrame" name="SendCoins">
    <property name="toolTip">
     <string>This is a normal payment.</string>
@@ -33,7 +36,7 @@
     <item row="2" column="0">
      <widget class="QLabel" name="amountLabel">
       <property name="text">
-       <string>A&amp;mount:</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#939598;&quot;&gt;A&amp;amp;mount:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -46,7 +49,7 @@
     <item row="3" column="0">
      <widget class="QLabel" name="messageLabel">
       <property name="text">
-       <string>Message:</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#939598;&quot;&gt;Message:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -69,7 +72,7 @@
     <item row="0" column="0">
      <widget class="QLabel" name="payToLabel">
       <property name="text">
-       <string>Pay &amp;To:</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#939598;&quot;&gt;Pay &amp;amp;To:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -82,7 +85,7 @@
     <item row="1" column="0">
      <widget class="QLabel" name="labelLabel">
       <property name="text">
-       <string>&amp;Label:</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#939598;&quot;&gt;&amp;amp;Label:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1251,3 +1254,4 @@
  </resources>
  <connections/>
 </ui>
+

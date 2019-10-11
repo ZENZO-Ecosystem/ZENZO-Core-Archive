@@ -55,7 +55,7 @@
              </font>
             </property>
             <property name="text">
-             <string>RECEIVE</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#939598;&quot;&gt;RECEIVE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
           </item>
@@ -139,7 +139,7 @@
              <item row="2" column="2">
               <widget class="QLabel" name="label_5">
                <property name="text">
-                <string>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#939598;&quot;&gt;Use this form to request payments. All fields are &lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#939598;&quot;&gt;optional&lt;/span&gt;&lt;span style=&quot; color:#939598;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
               </widget>
              </item>
@@ -149,7 +149,7 @@
                 <string>An optional label to associate with the new receiving address.</string>
                </property>
                <property name="text">
-                <string>&amp;Label:</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#939598;&quot;&gt;&amp;amp;Label:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -172,7 +172,7 @@
                 <string>Your receiving address. You can copy and use it to receive coins on this wallet. A new one will be generated once it is used.</string>
                </property>
                <property name="text">
-                <string>&amp;Address:</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#939598;&quot;&gt;&amp;amp;Address:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -184,9 +184,6 @@
              </item>
              <item row="5" column="2">
               <widget class="QLineEdit" name="reqAddress">
-               <property name="readOnly">
-                <bool>true</bool>
-               </property>
                <property name="minimumSize">
                 <size>
                  <width>80</width>
@@ -196,6 +193,9 @@
                <property name="toolTip">
                 <string>Your receiving address. You can copy and use it to receive coins on this wallet. A new one will be generated once it is used.</string>
                </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
               </widget>
              </item>
              <item row="6" column="0">
@@ -204,7 +204,7 @@
                 <string>An optional amount to request. Leave this empty or zero to not request a specific amount.</string>
                </property>
                <property name="text">
-                <string>A&amp;mount:</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#939598;&quot;&gt;A&amp;amp;mount:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -233,7 +233,7 @@
                 <string>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the ZENZO network.</string>
                </property>
                <property name="text">
-                <string>&amp;Message:</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#939598;&quot;&gt;&amp;amp;Message:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -255,6 +255,9 @@
                <property name="toolTip">
                 <string>Reuse one of the previously used receiving addresses.&lt;br&gt;Reusing addresses has security and privacy issues.&lt;br&gt;Do not use this unless re-generating a payment request made before.</string>
                </property>
+               <property name="styleSheet">
+                <string notr="true">color: rgb(147, 149, 152);</string>
+               </property>
                <property name="text">
                 <string>R&amp;euse an existing receiving address (not recommended)</string>
                </property>
@@ -267,16 +270,19 @@
                </property>
               </widget>
              </item>
-            <item row="9" column="2">
-             <widget class="QCheckBox" name="checkUseInstantSend">
-              <property name="text">
-               <string>Request InstantSend</string>
-              </property>
-              <property name="checked">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
+             <item row="9" column="2">
+              <widget class="QCheckBox" name="checkUseInstantSend">
+               <property name="styleSheet">
+                <string notr="true">color: rgb(147, 149, 152);</string>
+               </property>
+               <property name="text">
+                <string>Request InstantSend</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
              <item row="10" column="2">
               <layout class="QHBoxLayout" name="horizontalLayout">
                <item>
@@ -382,7 +388,7 @@
               </font>
              </property>
              <property name="text">
-              <string>Requested payments history</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#939598;&quot;&gt;Requested payments history&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
             </widget>
            </item>
@@ -534,3 +540,4 @@
  </resources>
  <connections/>
 </ui>
+

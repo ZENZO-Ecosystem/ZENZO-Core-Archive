@@ -195,6 +195,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
 
     QString endSpan = "</span>";
     QString availableStr = "AVAILABLE:<br><span style=\" font-size:12pt; font-weight:600;\">";
+    QString totalStr = "TOTAL:<br><span style=\" font-size:10pt; font-weight:600;\">";
     QString pendingStr = "PENDING:<br><span style=\" font-size:10pt; font-weight:600;\">";
     QString lockedStr = "LOCKED:<br><span style=\" font-size:10pt; font-weight:600;\">";
 
@@ -203,7 +204,8 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     ui->labelBalanceText->setText(availableStr + BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, balance - (immatureBalance + nLockedBalance), false, BitcoinUnits::separatorAlways));
     // Pending Balance (Incoming unconfirmed, staked / MN immature)
     ui->labelPendingText->setText(pendingStr + BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, unconfirmedBalance + immatureBalance, false, BitcoinUnits::separatorAlways));
-    //ui->labelTotal->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, balance + unconfirmedBalance, false, BitcoinUnits::separatorAlways));
+    // Total Balance (Spendable + Pending + Locked)
+    ui->labelTotalText->setText(totalStr + BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, nTotalBalance, false, BitcoinUnits::separatorAlways));
 
     if (unconfirmedBalance > 0.01 || immatureBalance > 0.01) {
         ui->labelPendingText->setVisible(true);
@@ -211,13 +213,10 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
         ui->labelPendingText->setVisible(false);
     }
     if (nLockedBalance > 0.01) {
-        //ui->labelTotal->setVisible(true);
         ui->labelTotalText->setVisible(true);
     } else if (nTotalBalance != nTotalBalance - unconfirmedBalance) {
-        //ui->labelTotal->setVisible(true);
         ui->labelTotalText->setVisible(true);
     } else {
-        //ui->labelTotal->setVisible(false);
         ui->labelTotalText->setVisible(false);
     }
 

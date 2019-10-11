@@ -294,21 +294,21 @@
                      <item>
                       <widget class="QLabel" name="labelBalanceText">
                        <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; color:#939598;&quot;&gt;AVAILABLE:&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#939598;&quot;&gt;0.000 000 00 ZNZ&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#939598;&quot;&gt;AVAILABLE:&lt;/span&gt;&lt;span style=&quot; font-size:10pt; color:#939598;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; color:#939598;&quot;&gt;0.000 000 00 ZNZ&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
                       </widget>
                      </item>
                      <item>
                       <widget class="QLabel" name="labelTotalText">
                        <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; color:#939598;&quot;&gt;TOTAL:&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#939598;&quot;&gt;0.000 000 00 ZNZ&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#939598;&quot;&gt;TOTAL:&lt;/span&gt;&lt;span style=&quot; font-size:10pt; color:#939598;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#939598;&quot;&gt;0.000 000 00 ZNZ&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
                       </widget>
                      </item>
                      <item>
                       <widget class="QLabel" name="labelPendingText">
                        <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; color:#939598;&quot;&gt;PENDING:&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#939598;&quot;&gt;0.000 000 00 ZNZ&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#939598;&quot;&gt;PENDING:&lt;/span&gt;&lt;span style=&quot; font-size:10pt; color:#939598;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#939598;&quot;&gt;0.000 000 00 ZNZ&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
                       </widget>
                      </item>
@@ -318,7 +318,7 @@
                         <string>Locked ZNZ or Masternode collaterals.</string>
                        </property>
                        <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; color:#939598;&quot;&gt;LOCKED:&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#939598;&quot;&gt;0.000 000 00 ZNZ&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#939598;&quot;&gt;LOCKED:&lt;/span&gt;&lt;span style=&quot; font-size:10pt; color:#939598;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#939598;&quot;&gt;0.000 000 00 ZNZ&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
                       </widget>
                      </item>
