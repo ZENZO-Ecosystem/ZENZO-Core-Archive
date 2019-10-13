@@ -47,6 +47,7 @@ Value createproposal(const Array& params, bool fHelp)
             "  \"for\": n,          (numeric) total verified votes in favor of the proposal\n"
             "  \"against\": n,      (numeric) total verified votes against the proposal\n"
             "  \"index\": n,        (numeric) the unique index identifier of the proposal\n"
+            "  \"hash\": \"hash\",  (string) the hash of the proposal\n"
             "}\n"
             "\nExamples:\n" +
             HelpExampleCli("createproposal", "\"name\" \"desc\"") + HelpExampleRpc("createproposal", "\"name\" \"desc\""));
@@ -67,6 +68,7 @@ Value createproposal(const Array& params, bool fHelp)
     obj.push_back(Pair("for", p.votesFor));
     obj.push_back(Pair("against", p.votesAgainst));
     obj.push_back(Pair("index", p.index));
+    obj.push_back(Pair("hash", p.hash));
 
     return obj;
 }
@@ -85,6 +87,7 @@ Value getproposals(const Array& params, bool fHelp)
             "    \"for\": n,          (numeric) total verified votes in favor of the proposal\n"
             "    \"against\": n,      (numeric) total verified votes against the proposal\n"
             "    \"index\": n,        (numeric) the unique index identifier of the proposal\n"
+            "    \"hash\": \"hash\",  (string) the hash of the proposal\n"
             "  }, ...\n"
             "]\n"
             "\nExamples:\n" +
@@ -99,6 +102,7 @@ Value getproposals(const Array& params, bool fHelp)
         obj.push_back(Pair("for", p.votesFor));
         obj.push_back(Pair("against", p.votesAgainst));
         obj.push_back(Pair("index", p.index));
+        obj.push_back(Pair("hash", p.hash));
         arr.push_back(obj);
     }
 

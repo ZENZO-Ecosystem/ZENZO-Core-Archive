@@ -18,6 +18,26 @@ public:
     std::string CreateVote(const std::string& addr, const std::string& utxo, const int& proposal);
 };
 
+/**
+ * The Vote class acts as a template for Vote creation and parsing.
+ */
+class CVote
+{
+public:
+    // The TX-hash of the vote
+    std::string tx;
+    // The Signature of the vote
+    std::string sig;
+    // The sentiment of the vote (for / against)
+    std::string sentiment;
+    // The weight of the vote (Total ZNZ rounded-down)
+    int weight;
+    // The index of the proposal this vote was casted to
+    int index;
+    // The hash of the vote
+    std::string hash;
+};
+
 // Create a new CProposal object
 CProposal CreateProposal(const std::string& name, const std::string& desc);
 
@@ -41,4 +61,6 @@ public:
     int votesAgainst;
     // The unique proposal index
     int index;
+    // The hash of the proposal
+    std::string hash;
 };

@@ -3,6 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "base58.h"
+#include "hash.h"
 #include "init.h"
 #include "wallet.h"
 #include "voting.h"
@@ -53,6 +54,11 @@ CProposal CreateProposal(const std::string& strName, const std::string& strDesc)
     p.votesAgainst = 0;
     p.votesFor = 0;
     p.index = vProposals.size() + 1;
+
+    // Yuhu! Almost there, now let's hash the main proposal data to ensure it doesn't get tampered post-submission
+    std::string str = p.name + p.desc + std::to_string(p.index);
+    p.hash = Hash(BEGIN(str), END(str)).GetHex();
+
     return p;
 }
 
