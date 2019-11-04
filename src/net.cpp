@@ -1451,7 +1451,7 @@ void ThreadOpenAddedConnections()
                 lAddresses.push_back("144.91.87.251:26210");
                 lAddresses.push_back("45.12.32.114:26210");
                 lAddresses.push_back("45.12.32.58:26210");
-                lAddresses.push_back("149.28.31.76:26210");
+                lAddresses.push_back("202.182.96.186:26210");
             }
 
             {
@@ -1477,7 +1477,7 @@ void ThreadOpenAddedConnections()
             lAddresses.push_back("144.91.87.251:26210");
             lAddresses.push_back("45.12.32.114:26210");
             lAddresses.push_back("45.12.32.58:26210");
-            lAddresses.push_back("149.28.31.76:26210");
+            lAddresses.push_back("202.182.96.186:26210");
         }
 
         {
