@@ -1587,7 +1587,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler, const std
             // Create new keyUser and set as default key
             RandAddSeedPerfmon();
 
-       if (GetBoolArg("-usehd", DEFAULT_USE_HD_WALLET) && !pwalletMain->IsHDEnabled()) {
+       if ((GetBoolArg("-usehd", DEFAULT_USE_HD_WALLET) && !pwalletMain->IsHDEnabled()) || (words.size() != 0 && !pwalletMain->IsHDEnabled())) {
                 if (GetArg("-mnemonicpassphrase", "").size() > 256)
                     return InitError(_("Mnemonic passphrase is too long, must be at most 256 characters"));
                 // generate a new master key
