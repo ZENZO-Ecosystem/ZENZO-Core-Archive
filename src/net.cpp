@@ -1448,11 +1448,10 @@ void ThreadOpenAddedConnections()
 
             /* Kitty's seednodes list */
             if (!isTestnet) {
-                lAddresses.push_back("195.206.181.235:26210"); // Unused Server
-                lAddresses.push_back("160.20.147.226:26210"); // ZENZO Arcade Server
-                lAddresses.push_back("109.230.215.134:26210"); // Old ZENZO Arcade Server
-                lAddresses.push_back("23.82.128.40:26210"); // PIVX Radio
-                lAddresses.push_back("160.20.147.220:26210"); // Germany Seednode
+                lAddresses.push_back("144.91.87.251:26210");
+                lAddresses.push_back("45.12.32.114:26210");
+                lAddresses.push_back("45.12.32.58:26210");
+                lAddresses.push_back("149.28.31.76:26210");
             }
 
             {
@@ -1475,11 +1474,10 @@ void ThreadOpenAddedConnections()
 
         /* Kitty's seednodes list */
         if (!isTestnet) {
-            lAddresses.push_back("195.206.181.235:26210"); // Unused Server
-            lAddresses.push_back("160.20.147.226:26210"); // ZENZO Arcade Server
-            lAddresses.push_back("109.230.215.134:26210"); // Old ZENZO Arcade Server
-            lAddresses.push_back("23.82.128.40:26210"); // PIVX Radio
-            lAddresses.push_back("160.20.147.220:26210"); // Germany Seednode
+            lAddresses.push_back("144.91.87.251:26210");
+            lAddresses.push_back("45.12.32.114:26210");
+            lAddresses.push_back("45.12.32.58:26210");
+            lAddresses.push_back("149.28.31.76:26210");
         }
 
         {
