@@ -424,9 +424,11 @@ bool BitcoinApplication::setupMnemonicWords(std::vector<std::string>& wordlist) 
 
 bool BitcoinApplication::createWindow(const NetworkStyle* networkStyle)
 {
-    /// doesn't check if wallet is enabled, It will be assumbed if the user is using the gui wallet is enabled
-    if (!setupMnemonicWords(wordlist)) {
-        if (wordlist.empty()) return false;
+    /// Only display the MnemonicWords dialog on a wallet using HD
+    if (GetBoolArg("-usehd", true)) {
+        if (!setupMnemonicWords(wordlist)) {
+          if (wordlist.empty()) return false;
+        }
     }
     window = new BitcoinGUI(platformStyle, networkStyle, 0);
 

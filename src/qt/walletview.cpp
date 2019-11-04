@@ -357,13 +357,24 @@ void WalletView::encryptWallet(bool status)
 
 void WalletView::backupWallet()
 {
-    BackupPage* backupPage = new BackupPage(this);
-    //backupPage->setModel(walletModel);
-    backupPage->show();
+    WalletModel::EncryptionStatus encStatus = walletModel->getEncryptionStatus();
 
-    // Return here, until we add multiple backup options and backwards compatability again
-    return;
+    // If this is a HD wallet, ensure the wallet is unlocked to decrypt the seed
+    CHDChain hdChainCurrent;
+    if (encStatus == walletModel->Locked && pwalletMain->GetHDChain(hdChainCurrent)) {
+        AskPassphraseDialog dlg(AskPassphraseDialog::UnlockStaking, this, walletModel);
+        dlg.exec();
+        return backupWallet();
+    }
 
+    // Reaching here means we have an unlocked HD wallet, display the backup seedphrase!
+    if (pwalletMain->GetHDChain(hdChainCurrent)) {
+        BackupPage* backupPage = new BackupPage(this);
+        backupPage->show();
+        return;
+    }
+
+    // Reaching here means we're not using a HD wallet, run the traditional wallet.dat backup instead
     QString filename = GUIUtil::getSaveFileName(this,
         tr("Backup Wallet"), QString(),
         tr("Wallet Data (*.dat)"), NULL);

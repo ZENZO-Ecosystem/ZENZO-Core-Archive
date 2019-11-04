@@ -58,7 +58,7 @@ static const unsigned int MAX_FREE_TRANSACTION_CREATE_SIZE = 1000;
 //! if set, all keys will be derived by using BIP32
 static const bool DEFAULT_USE_HD_WALLET = true;
 //! if set, will show warning if the wallet is a hd wallet and is unencrypted
-static const bool DEFAULT_ENABLE_WARN_ENCRYPTHD = false;
+static const bool DEFAULT_ENABLE_WARN_ENCRYPTHD = true;
 
 class CAccountingEntry;
 class CCoinControl;
