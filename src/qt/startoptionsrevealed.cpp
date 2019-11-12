@@ -16,7 +16,6 @@ StartOptionsRevealed::StartOptionsRevealed(std::vector<std::string>& Words, int 
 
     for(int i=0; i<rows; i++){
         for(int k=0; k<6; k++){
-
             QLabel* label = new QLabel(this);
             label->setStyleSheet("QLabel{background-color:transparent;padding-left:8px;padding-right:8px;border-radius:0px;color:black;border-bottom:2px solid rgb(35,136,237);}");
             label->setMinimumSize(80,36);
@@ -31,7 +30,7 @@ StartOptionsRevealed::StartOptionsRevealed(std::vector<std::string>& Words, int 
     for (QLabel* label : labelsList) {
         label->setStyleSheet("QLabel{background-color:transparent;padding-left:8px;padding-right:8px;border-radius:0px;color:#black;border-bottom:2px solid rgb(35,136,237);}");
         label->setContentsMargins(8,12,8,12);
-        label->setText(QString::fromStdString(Words[i]));
+        label->setText(QString::fromStdString(std::to_string(i + 1) + ". ") + QString::fromStdString(Words[i]));
         i++;
     }
 
