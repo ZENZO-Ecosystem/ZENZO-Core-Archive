@@ -194,7 +194,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     CAmount nTotalBalance = balance + unconfirmedBalance;
 
     QString endSpan = "</span>";
-    QString availableStr = "AVAILABLE:<br><span style=\" font-size:12pt; font-weight:600;\">";
+    QString availableStr = "AVAILABLE:<br><span style=\" font-size:12pt; font-weight:600; color: #646668;\">";
     QString totalStr = "TOTAL:<br><span style=\" font-size:10pt; font-weight:600;\">";
     QString pendingStr = "PENDING:<br><span style=\" font-size:10pt; font-weight:600;\">";
     QString lockedStr = "LOCKED:<br><span style=\" font-size:10pt; font-weight:600;\">";
