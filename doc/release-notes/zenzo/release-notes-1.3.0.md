@@ -3,7 +3,7 @@
 ## Summary
 This major update brings massive cumulative additions and improvements to ZENZO Core, such as: Bitcoin Core, PIVX Core and Dash Core upstream backports. A massive GUI and user-experience overhaul, network efficiency improvements, block database durability and atomicity improvements, node corruption & damage auto-troubleshooting w/ self-repairing, default HD Wallets.
 
-Generally, the list of improvements is too long to summarize accurately. So you'll just have to bear with me.
+Generally, the list of improvements is too long to summarize accurately and briefly. So you'll just have to bear with me.
 
 ## How to Upgrade
 _ZENZO Core v1.3.0 is a **non-consensus-breaking** update, meaning: You are not required to upgrade, but we would
@@ -21,8 +21,10 @@ Steps to Upgrade:
 ---
 Starting with the latest changes, ending with the oldest changes. Each commit having it's own category.
 # Changelog
-- [UI] *(JSKitty)* - Add HD mnemonic backup 
-- [UI] *(JSKitty)* - Add GUI-based debug log viewer 
+- [UI] *(mrmetech)* - Added BIP39 graphical interface
+- [UI] *(JSKitty)* - Overview Page re-design
+- [UI] *(JSKitty)* - Add HD mnemonic backup
+- [UI] *(JSKitty)* - Add GUI-based debug log viewer
 - [UI] *(JSKitty)* - Add GUI Masternode Management Page
 - [UI] *(JSKitty)* - Add a recovery via GUI for corrupt block databases
 - [UI] *(JSKitty)* - Rename Masternode Pubkey to Payee Address
@@ -48,6 +50,8 @@ Starting with the latest changes, ending with the oldest changes. Each commit ha
 - [Core] *(JSKitty)* - Add Hierarchical Deterministic (HD) Wallets 
 - [Core] *(JSKitty)* - Remove Gitan-OSX warning for High Sierra builds
 ---
+- [Spork] *(JSKitty)* - Remove Spork 16 ZC_Maintenance mode
+---
 - [Wallet] *(JSKitty)* - Don't create new keys when generating PoS blocks
 - [Wallet] *(JSKitty)* - Refactor StakeThread & improve staking efficiency
 - [Wallet] *(JSKitty)* - Don't assert if we were beaten to the block
@@ -72,6 +76,8 @@ Starting with the latest changes, ending with the oldest changes. Each commit ha
 - [RPC] *(JSKitty)* - Added unconf/immature to getwalletinfo
 - [RPC] *(JSKitty)* - Standardize DVM RPCs
 ---
+- [Net] *(JSKitty)* - Update Seednodes
+- [Net] *(JSKitty)* - Increase max blocks in transit
 - [Net] *(JSKitty)* - Don't connect to Mainnet seeds in Testnet
 - [Net] *(JSKitty)* - Encapsulation preresquisites
 - [Net] *(JSKitty)* - Remove Bitcoin's P2P alert system
@@ -94,6 +100,7 @@ Starting with the latest changes, ending with the oldest changes. Each commit ha
 ---
 - [Refactor] *(JSKitty)* - Move rpc files into dedicated rpc directory
 ---
+- [Misc] *(JSKitty)* - Stop loading the wallet if shutdown was requested
 - [Misc] *(JSKitty)* - Fix incorrect genesis block refs
 - [Misc] *(JSKitty)* - Remove unused Bitcoin Core 0.8 block hardlinking
 - [Misc] *(JSKitty)* - Fully purge Zerocoin
