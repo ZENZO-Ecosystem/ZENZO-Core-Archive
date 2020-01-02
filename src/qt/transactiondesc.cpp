@@ -12,12 +12,14 @@
 #include "transactionrecord.h"
 
 #include "base58.h"
+#include "consensus/consensus.h"
 #include "db.h"
 #include "main.h"
 #include "script/script.h"
 #include "timedata.h"
 #include "ui_interface.h"
 #include "util.h"
+#include "db.h"
 #include "wallet.h"
 
 #include <stdint.h>

@@ -17,6 +17,7 @@
 #include "addrman.h"
 #include "amount.h"
 #include "checkpoints.h"
+#include "consensus/validation.h"
 #include "compat/sanity.h"
 #include "key.h"
 #include "main.h"
@@ -1393,7 +1394,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler, const std
                             double dPercent = (pindex->nHeight - nZerocoinStart) / (double)(chainActive.Height() - nZerocoinStart);
                             uiInterface.ShowProgress(_("Calculating missing accumulators..."), (int)(dPercent * 100));
                             if(find(listAccCheckpointsNoDB.begin(), listAccCheckpointsNoDB.end(), pindex->nAccumulatorCheckpoint) != listAccCheckpointsNoDB.end()) {
-                                uint256 nCheckpointCalculated = 0;
+                                arith_uint256 nCheckpointCalculated = 0;
                                 if (!CalculateAccumulatorCheckpoint(pindex->nHeight, nCheckpointCalculated)) {
                                     // GetCheckpoint could have terminated due to a shutdown request. Check this here.
                                     if (ShutdownRequested())

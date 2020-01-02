@@ -7,6 +7,7 @@
 #include "transactionrecord.h"
 
 #include "base58.h"
+#include "consensus/consensus.h"
 #include "obfuscation.h"
 #include "swifttx.h"
 #include "timedata.h"

@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2015 The Bitcoin developers
+// Copyright (c) 2009-2014 The Bitcoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -27,8 +27,8 @@ class base_uint
 protected:
     enum { WIDTH=BITS/32 };
     uint32_t pn[WIDTH];
-
 public:
+
     base_uint()
     {
         for (int i = 0; i < WIDTH; i++)
@@ -287,4 +287,4 @@ public:
 uint256 ArithToUint256(const arith_uint256 &);
 arith_uint256 UintToArith256(const uint256 &);
 
-#endif // BITCOIN_ARITH_UINT256_H
+#endif // BITCOIN_UINT256_H

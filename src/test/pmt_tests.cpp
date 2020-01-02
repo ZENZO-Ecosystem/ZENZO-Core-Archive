@@ -6,6 +6,7 @@
 #include "serialize.h"
 #include "streams.h"
 #include "uint256.h"
+#include "arith_uint256.h"
 #include "version.h"
 
 #include <vector>
@@ -21,8 +22,7 @@ public:
     void Damage() {
         unsigned int n = rand() % vHash.size();
         int bit = rand() % 256;
-        uint256 &hash = vHash[n];
-        hash ^= ((uint256)1 << bit);
+        *(vHash[n].begin() + (bit>>3)) ^= 1<<(bit&7);
     }
 };
 

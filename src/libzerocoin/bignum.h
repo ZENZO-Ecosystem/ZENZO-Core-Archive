@@ -9,6 +9,7 @@
 #include <stdexcept>
 #include <vector>
 #include <openssl/bn.h>
+#include "arith_uint256.h"
 #include "serialize.h"
 #include "uint256.h"
 #include "version.h"
@@ -100,7 +101,7 @@ public:
     CBigNum(unsigned int n)     { BN_init(this); setulong(n); }
     CBigNum(unsigned long n)    { BN_init(this); setulong(n); }
   //  CBigNum(uint64_t n)           { BN_init(this); setuint64(n); }
-    explicit CBigNum(uint256 n) { BN_init(this); setuint256(n); }
+    explicit CBigNum(arith_uint256 n) { BN_init(this); setarith_uint256(n); }
 
     explicit CBigNum(const std::vector<unsigned char>& vch)
     {
@@ -238,7 +239,7 @@ public:
         BN_mpi2bn(pch, p - pch, this);
     }
 
-    void setuint256(uint256 n)
+    void setarith_uint256(arith_uint256 n)
     {
         unsigned char pch[sizeof(n) + 6];
         unsigned char* p = pch + 4;
@@ -266,7 +267,7 @@ public:
         BN_mpi2bn(pch, p - pch, this);
     }
 
-    uint256 getuint256() const
+    arith_uint256 getuint256() const
     {
         unsigned int nSize = BN_bn2mpi(this, NULL);
         if (nSize < 4)
@@ -275,7 +276,7 @@ public:
         BN_bn2mpi(this, &vch[0]);
         if (vch.size() > 4)
             vch[4] &= 0x7f;
-        uint256 n = 0;
+        arith_uint256 n = 0;
         for (unsigned int i = 0, j = vch.size()-1; i < sizeof(n) && j >= 4; i++, j--)
             ((unsigned char*)&n)[i] = vch[j];
         return n;

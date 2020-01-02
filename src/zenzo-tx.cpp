@@ -6,9 +6,9 @@
 #include "base58.h"
 #include "clientversion.h"
 #include "coins.h"
+#include "consensus/consensus.h"
 #include "core_io.h"
 #include "keystore.h"
-#include "primitives/block.h" // for MAX_BLOCK_SIZE
 #include "primitives/transaction.h"
 #include "script/script.h"
 #include "script/sign.h"

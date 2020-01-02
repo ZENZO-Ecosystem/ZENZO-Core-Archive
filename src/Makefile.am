@@ -82,6 +82,7 @@ BITCOIN_CORE_H = \
   addrman.h \
   allocators.h \
   amount.h \
+  arith_uint256.h \
   base58.h \
   bip39.h \
   bip39_english.h \
@@ -99,6 +100,9 @@ BITCOIN_CORE_H = \
   compat.h \
   compat/sanity.h \
   compressor.h \
+  consensus/consensus.h \
+  consensus/params.h \
+  consensus/validation.h \
   primitives/block.h \
   primitives/transaction.h \
   primitives/zerocoin.h \
@@ -404,6 +408,7 @@ libbitcoin_common_a_SOURCES = \
 libbitcoin_util_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_util_a_SOURCES = \
   allocators.cpp \
+  arith_uint256.cpp \
   compat/strnlen.cpp \
   compat/glibc_sanity.cpp \
   compat/glibcxx_sanity.cpp \
@@ -504,6 +509,7 @@ if BUILD_BITCOIN_LIBS
 include_HEADERS = script/bitcoinconsensus.h
 libbitcoinconsensus_la_SOURCES = \
   allocators.cpp \
+  arith_uint256.cpp \
   primitives/transaction.cpp \
   crypto/hmac_sha512.cpp \
   crypto/scrypt.cpp \

@@ -10,6 +10,7 @@
 
 #include "chainparamsbase.h"
 #include "checkpoints.h"
+#include "consensus/params.h"
 #include "primitives/block.h"
 #include "protocol.h"
 #include "uint256.h"
@@ -44,15 +45,14 @@ public:
         MAX_BASE58_TYPES
     };
 
-    const uint256& HashGenesisBlock() const { return hashGenesisBlock; }
+    const Consensus::Params& GetConsensus() const { return consensus; }
+    const uint256& HashGenesisBlock() const { return consensus.hashGenesisBlock; }
     const MessageStartChars& MessageStart() const { return pchMessageStart; }
     int GetDefaultPort() const { return nDefaultPort; }
-    const uint256& ProofOfWorkLimit() const { return bnProofOfWorkLimit; }
-    int SubsidyHalvingInterval() const { return nSubsidyHalvingInterval; }
-    /** Used to check majorities for block version upgrade */
-    int EnforceBlockUpgradeMajority() const { return nEnforceBlockUpgradeMajority; }
-    int RejectBlockOutdatedMajority() const { return nRejectBlockOutdatedMajority; }
-    int ToCheckBlockUpgradeMajority() const { return nToCheckBlockUpgradeMajority; }
+    int SubsidyHalvingInterval() const { return consensus.nSubsidyHalvingInterval; }
+    int EnforceBlockUpgradeMajority() const { return consensus.nMajorityEnforceBlockUpgrade; }
+    int RejectBlockOutdatedMajority() const { return consensus.nMajorityRejectBlockOutdated; }
+    int ToCheckBlockUpgradeMajority() const { return consensus.nMajorityWindow; }
     int MaxReorganizationDepth() const { return nMaxReorganizationDepth; }
 
     /** Used if GenerateBitcoins is called with a negative number of threads */
@@ -66,14 +66,11 @@ public:
     /** Default value for -checkmempool and -checkblockindex argument */
     bool DefaultConsistencyChecks() const { return fDefaultConsistencyChecks; }
     /** Allow mining of a min-difficulty block */
-    bool AllowMinDifficultyBlocks() const { return fAllowMinDifficultyBlocks; }
+    bool AllowMinDifficultyBlocks() const { return consensus.fPowAllowMinDifficultyBlocks; }
     /** Skip proof-of-work check: allow mining of any difficulty block */
     bool SkipProofOfWorkCheck() const { return fSkipProofOfWorkCheck; }
     /** Make standard checks */
     bool RequireStandard() const { return fRequireStandard; }
-    int64_t TargetTimespan() const { return nTargetTimespan; }
-    int64_t TargetSpacing() const { return nTargetSpacing; }
-    int64_t Interval() const { return nTargetTimespan / nTargetSpacing; }
     int COINBASE_MATURITY() const { return nMaturity; }
     CAmount MaxMoneyOut() const { return nMaxMoneyOut; }
     /** The masternode count that we will allow the see-saw reward payments to be off by */
@@ -120,17 +117,10 @@ public:
 protected:
     CChainParams() {}
 
-    uint256 hashGenesisBlock;
+    Consensus::Params consensus;
     MessageStartChars pchMessageStart;
     int nDefaultPort;
-    uint256 bnProofOfWorkLimit;
     int nMaxReorganizationDepth;
-    int nSubsidyHalvingInterval;
-    int nEnforceBlockUpgradeMajority;
-    int nRejectBlockOutdatedMajority;
-    int nToCheckBlockUpgradeMajority;
-    int64_t nTargetTimespan;
-    int64_t nTargetSpacing;
     int nLastPOWBlock;
     int nMasternodeCountDrift;
     int nMaturity;
@@ -146,7 +136,6 @@ protected:
     std::vector<CAddress> vFixedSeeds;
     bool fRequireRPCPassword;
     bool fMiningRequiresPeers;
-    bool fAllowMinDifficultyBlocks;
     bool fDefaultConsistencyChecks;
     bool fRequireStandard;
     bool fMineBlocksOnDemand;

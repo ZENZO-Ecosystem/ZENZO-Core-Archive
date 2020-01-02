@@ -7,6 +7,7 @@
 #ifndef BITCOIN_CHAIN_H
 #define BITCOIN_CHAIN_H
 
+#include "arith_uint256.h"
 #include "pow.h"
 #include "primitives/block.h"
 #include "tinyformat.h"
@@ -136,7 +137,7 @@ public:
     unsigned int nUndoPos;
 
     //! (memory only) Total amount of work (expected number of hashes) in the chain up to and including this block
-    uint256 nChainWork;
+    arith_uint256 nChainWork;
 
     //! Number of transactions in this block.
     //! Note: in a potential headers-first mode, this number cannot be relied upon
@@ -158,7 +159,7 @@ public:
     };
 
     // proof-of-stake specific fields
-    uint256 GetBlockTrust() const;
+    arith_uint256 GetBlockTrust() const;
     uint64_t nStakeModifier;             // hash modifier for proof-of-stake
     unsigned int nStakeModifierChecksum; // checksum of index; in-memeory only
     COutPoint prevoutStake;
@@ -191,7 +192,7 @@ public:
         nFile = 0;
         nDataPos = 0;
         nUndoPos = 0;
-        nChainWork = 0;
+        nChainWork = arith_uint256();
         nTx = 0;
         nChainTx = 0;
         nStatus = 0;
@@ -210,7 +211,7 @@ public:
         nTime = 0;
         nBits = 0;
         nNonce = 0;
-        nAccumulatorCheckpoint = 0;
+        nAccumulatorCheckpoint.SetNull();
         // Start supply of each denomination with 0s
         for (auto& denom : libzerocoin::zerocoinDenomList) {
             mapZerocoinSupply.insert(make_pair(denom, 0));
@@ -434,7 +435,7 @@ public:
 
     explicit CDiskBlockIndex(const CBlockIndex* pindex) : CBlockIndex(*pindex)
     {
-        hashPrev = (pprev ? pprev->GetBlockHash() : uint256(0));
+        hashPrev = (pprev ? pprev->GetBlockHash() : uint256());
     }
 
     ADD_SERIALIZE_METHODS;
