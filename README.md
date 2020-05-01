@@ -1,6 +1,8 @@
 # ZENZO Core Integration/Staging Repository
 
-[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE) [![Chat on Discord](https://img.shields.io/badge/chat-Discord-brightgreen.svg)](https://discord.gg/invite/nzGapAh) [![GitHub version](https://badge.fury.io/gh/Zenzo-Ecosystem%2FZENZO-Core.svg)](https://badge.fury.io/gh/Zenzo-Ecosystem%2FZENZO-Core)
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+![Discord](https://img.shields.io/discord/416110590017273867.svg?color=7289da&logo=discord&logoColor=white) 
+[![GitHub version](https://badge.fury.io/gh/Zenzo-Ecosystem%2FZENZO-Core.svg)](https://badge.fury.io/gh/Zenzo-Ecosystem%2FZENZO-Core)
 
 ZENZO(ZNZ) is an open-source digital
 currency based on Bitcoin's blockchain technology, Dash’s Masternodes and 
