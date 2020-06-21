@@ -152,7 +152,7 @@ bool EraseCheckpoints(int nStartHeight, int nEndHeight)
 }
 
 //Get checkpoint value for a specific block height
-bool CalculateAccumulatorCheckpoint(int nHeight, uint256& nCheckpoint)
+bool CalculateAccumulatorCheckpoint(int nHeight, uint256& nCheckpoint, AccumulatorMap& mapAccumulators)
 {
     if (nHeight < Params().Zerocoin_StartHeight()) {
         nCheckpoint = 0;
@@ -166,7 +166,7 @@ bool CalculateAccumulatorCheckpoint(int nHeight, uint256& nCheckpoint)
     }
 
     //set the accumulators to last checkpoint value
-    AccumulatorMap mapAccumulators;
+    mapAccumulators.Reset();
     if (!mapAccumulators.Load(chainActive[nHeight - 1]->nAccumulatorCheckpoint)) {
         if (chainActive[nHeight - 1]->nAccumulatorCheckpoint == 0) {
             //Before zerocoin is fully activated so set to init state
@@ -229,14 +229,10 @@ bool CalculateAccumulatorCheckpoint(int nHeight, uint256& nCheckpoint)
     }
 
     // if there were no new mints found, the accumulator checkpoint will be the same as the last checkpoint
-    if (nTotalMintsFound == 0) {
+    if (nTotalMintsFound == 0)
         nCheckpoint = chainActive[nHeight - 1]->nAccumulatorCheckpoint;
-    }
     else
         nCheckpoint = mapAccumulators.GetCheckpoint();
-
-    // make sure that these values are databased because reorgs may have deleted the checksums from DB
-    DatabaseChecksums(mapAccumulators);
 
     LogPrint("zero", "%s checkpoint=%s\n", __func__, nCheckpoint.GetHex());
     return true;
@@ -245,6 +241,27 @@ bool CalculateAccumulatorCheckpoint(int nHeight, uint256& nCheckpoint)
 bool InvalidCheckpointRange(int nHeight)
 {
     return nHeight > Params().Zerocoin_Block_LastGoodCheckpoint() && nHeight < Params().Zerocoin_Block_RecalculateAccumulators();
+}
+
+bool ValidateAccumulatorCheckpoint(const CBlock& block, CBlockIndex* pindex, AccumulatorMap& mapAccumulators)
+{
+    if (!fVerifyingBlocks && pindex->nHeight >= Params().Zerocoin_StartHeight() && pindex->nHeight % 10 == 0) {
+        uint256 nCheckpointCalculated = 0;
+
+        if (!CalculateAccumulatorCheckpoint(pindex->nHeight, nCheckpointCalculated, mapAccumulators)) {
+            return error("%s : failed to calculate accumulator checkpoint", __func__);
+        }
+
+        if (nCheckpointCalculated != block.nAccumulatorCheckpoint) {
+            LogPrintf("%s: block=%d calculated: %s\n block: %s\n", __func__, pindex->nHeight, nCheckpointCalculated.GetHex(), block.nAccumulatorCheckpoint.GetHex());
+            return error("%s : accumulator does not match calculated value", __func__);
+        }
+    } else if (!fVerifyingBlocks) {
+        if (block.nAccumulatorCheckpoint != pindex->pprev->nAccumulatorCheckpoint)
+            return error("%s : new accumulator checkpoint generated on a block that is not multiple of 10", __func__);
+    }
+
+    return true;
 }
 
 bool GenerateAccumulatorWitness(const PublicCoin &coin, Accumulator& accumulator, AccumulatorWitness& witness, int nSecurityLevel, int& nMintsAdded, string& strError)

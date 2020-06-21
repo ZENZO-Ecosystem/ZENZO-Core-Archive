@@ -376,9 +376,10 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
         pblock->nBits = GetNextWorkRequired(pindexPrev, pblock);
         pblock->nNonce = 0;
         uint256 nCheckpoint = 0;
+        AccumulatorMap mapAccumulators;
         if (chainActive.Height() + 1 == nCheckpointLast.first)
             nCheckpoint = nCheckpointLast.second;
-        else if(!CalculateAccumulatorCheckpoint(nHeight, nCheckpoint)){
+        else if(!CalculateAccumulatorCheckpoint(nHeight, nCheckpoint, mapAccumulators)){
             LogPrintf("%s: failed to get accumulator checkpoint\n", __func__);
         }
         pblock->nAccumulatorCheckpoint = nCheckpoint;

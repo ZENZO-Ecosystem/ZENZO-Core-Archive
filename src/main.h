@@ -154,6 +154,7 @@ extern bool fVerifyingBlocks;
 
 extern bool fLargeWorkForkFound;
 extern bool fLargeWorkInvalidChainFound;
+extern bool fBlockDatabaseForkFound;
 
 extern unsigned int nStakeMinAge;
 extern int64_t nLastCoinStakeSearchInterval;
@@ -359,6 +360,7 @@ void UpdateCoins(const CTransaction& tx, CValidationState& state, CCoinsViewCach
 bool CheckTransaction(const CTransaction& tx, bool fZerocoinActive, bool fRejectBadUTXO, CValidationState& state);
 bool CheckZerocoinMint(const uint256& txHash, const CTxOut& txout, CValidationState& state, bool fCheckOnly = false);
 bool CheckZerocoinSpend(const CTransaction tx, bool fVerifySignature, CValidationState& state);
+bool ContextualCheckCoinSpend(const libzerocoin::CoinSpend& spend, CBlockIndex* pindex, const uint256& txid);
 libzerocoin::CoinSpend TxInToZerocoinSpend(const CTxIn& txin);
 bool TxOutToPublicCoin(const CTxOut txout, libzerocoin::PublicCoin& pubCoin, CValidationState& state);
 bool BlockToPubcoinList(const CBlock& block, list<libzerocoin::PublicCoin>& listPubcoins);
