@@ -429,7 +429,7 @@ bool BitcoinApplication::setupMnemonicWords(std::vector<std::string>& wordlist) 
 bool BitcoinApplication::createWindow(const NetworkStyle* networkStyle)
 {
     /// Only display the MnemonicWords dialog on a wallet using HD
-    if (GetBoolArg("-usehd", true)) {
+    if (GetBoolArg("-usehd", false)) {
         if (!setupMnemonicWords(wordlist)) {
           if (wordlist.empty()) return false;
         }
