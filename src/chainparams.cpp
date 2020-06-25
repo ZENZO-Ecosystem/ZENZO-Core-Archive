@@ -61,18 +61,49 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
 	(400, uint256("0000000a6551d2f6addaffd58fcfc92f1cdb1f0ed91c4cce2b7c925124c51bdc"))
 	(500, uint256("d95c542234350153f61595a58c486485c9d9e01ea26b71614a1938779b4620ae"))
 	(600, uint256("ae353efb716ed1e28c2c597fe41358a9a79f979178dd3da2a568a02f5f9973c8"))
-	(383000, uint256("934c36d558b4ba0298cd6f8d928035eba557b8e1ad6728ee31616ab7edc92c88"))
-        (400000, uint256("ca732c0aa9808a052c2353bfba5face5d1b96e615bb6261a0775431f357770ec"))
-        (450000, uint256("0f189a57d8fa6c8459407075944928a3adbf5ad092d03e2844f30056d9e94b3f"))
-        (500000, uint256("2f134a9e6224bbef72691f38e23a2e55b156e5563917f1c0c1e286fec7c48161"))
-        (550000, uint256("5beb580ddf42d987e578147636d3f2b7bcdba410380c5d311e023fcb8a29fdf2"))
-        (585087, uint256("505d2cb0e9de48c2a33d119a0c8ab713f980cad9d07308692953e46608a2fe76"));
+	(25000, uint256("da9b39cd3d8a1a940e6cdc327ba6be3559de524626482489faf2a09e6ab69d4e")) // Automated 25000-block interval checkpointing past here
+    (50000, uint256("ea5aa3fb7a8a181ff91fc8adf3d934de071a172ee0e19b89d9c2c35e1e3a3d07"))
+    (75000, uint256("edd4f2e2cb88c992fa4697f0e63d1ab3a2cb84befabe4333b5efa3582c47aecc"))
+    (100000, uint256("4bc2604874e1e3d2da3e9ead296e893f389367661b699c271125b75775dd1515"))
+    (125000, uint256("cf3c1808bc555211cb32422b60dd37a32caf3edfc086e0c5b01ef7a1705a6729"))
+    (150000, uint256("2c8018a8f76d5b805ed19a4ed354556eea9140d5029bd1067fba4d9ef296a475"))
+    (175000, uint256("b1457e580e580ccf721fa38bcf52075dcec2f70ea385ae23d4eb53f04667e73f"))
+    (200000, uint256("4110614e1ba848e1e3d9fadf220d9d73617e4f824fe25598727cdf7f4a376842"))
+    (225000, uint256("f543789586705da3295236252b445e31d6b18c28681eee374f765cf536179883"))
+    (250000, uint256("befcbdae271af6e2fe229506f5cf9d19e129dff9514a3af28e9cddfaa49f060f"))
+    (275000, uint256("320370b529e3371a49e2c88f6fcefcb3b8c8b55857a3cacff2d49874e660914c"))
+    (300000, uint256("698c0576726386f311dae87a13ef5a4c12cca90692ceb566f5c08ab8080bc8e6"))
+    (325000, uint256("80d9965b9716843715518d14acfe379fd5818b97c87030f966f256d9ad231bd7"))
+    (350000, uint256("8d4d2a10dd08d8cf331b82ad50abefe81ac886379764a25ce7ce8a748393fa07"))
+    (375000, uint256("53b7d602471efe3975b3a4de0af089020db8a839b5e84e54384daffdcc5feff8"))
+    (400000, uint256("ca732c0aa9808a052c2353bfba5face5d1b96e615bb6261a0775431f357770ec"))
+    (425000, uint256("97d7859fa1c31baa2a352d1f3bc1253bcb539d74e4dcbfebd338c8ce28bfe051"))
+    (450000, uint256("0f189a57d8fa6c8459407075944928a3adbf5ad092d03e2844f30056d9e94b3f"))
+    (475000, uint256("ee4dc469a9b7b6889ad2d48b3877c2f037bf91a203624a0e84c7280b22739761"))
+    (500000, uint256("2f134a9e6224bbef72691f38e23a2e55b156e5563917f1c0c1e286fec7c48161"))
+    (525000, uint256("6958b6902f1eadc24131f481574cd23f6930399368e7d8b92e2eb6c75f22d50d"))
+    (550000, uint256("5beb580ddf42d987e578147636d3f2b7bcdba410380c5d311e023fcb8a29fdf2"))
+    (575000, uint256("1ba304dca4e6facb7075030bd277646a24c894fcd6787dbe5b3f78b5ad5a9e4b"))
+    (600000, uint256("9773120486fdee1e1ace679813247a2148f84a9e9e9f2f44db28c54d79d3d07c"))
+    (625000, uint256("68928981c2fc9f4e8e4bd7d4cc7cf1a8436d2406c4d95e3b82fdb1a7612e78a7"))
+    (650000, uint256("06248960f7bee9fadc23701e05a6a688adb29719515f523dfb2651811d577b56"))
+    (675000, uint256("ad408358b0c0cf545f65186203c9267df7052b712a392b317fdd98023386a966"))
+    (700000, uint256("aafd7166ed25520e93e546bce5428f28c8375f3aaeeb3351a14b2f380806b645"))
+    (725000, uint256("c1cda697d0b738d1b1e972a93725022a7dfb85a137fcbd32f24d73ee319000d4"))
+    (750000, uint256("8e66096fe7c4f8ceecaba9c70c699abeb43f1e46983e24f91f2fb09beadb408c"))
+    (775000, uint256("8398d56f0931913e298effd1d029f4238317f425e0f9a8a4b2e0e0c66ec035a9"))
+    (800000, uint256("a40e58993827d422b3d874a8c91f92583b39ac5bdb90a824e11eb6a380c599d9"))
+    (825000, uint256("bfc646db18388c576ec12b9ac2d32082fcc4e055c38c4aaaf7533ce16f34066e"))
+    (850000, uint256("10fc098b963f0f113c4f570e6a44ebacc14013acb8b673d9205f4c3947ac5502"))
+    (875000, uint256("1e1583e0e3edf1d65df50334abf449f2d66e6877f52c86a17515f1ee1bc85a70"))
+    (900000, uint256("1581520407087daa61390fd464883428a0c6dc00c0a8fe03d587a782b2ccfb83"))
+    (904056, uint256("7df9224fb6a016a911e388c73318b43f4c0c41616ffa2e461c2aa753cb1ee840"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1573756508, // * UNIX timestamp of last checkpoint block
-    1193316,    // * total number of transactions between genesis and last checkpoint
+    1593114396, // * UNIX timestamp of last checkpoint block
+    1845110,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
-    2881        // * estimated number of transactions per day after checkpoint
+    2939        // * estimated number of transactions per day after checkpoint
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
@@ -120,9 +151,6 @@ public:
         bnProofOfWorkLimit = ~uint256(0) >> 20; // ZENZO starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 4000000;
         nMaxReorganizationDepth = 100;
-        nEnforceBlockUpgradeMajority = 750;
-        nRejectBlockOutdatedMajority = 950;
-        nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; // ZENZO: 1 day
         nTargetSpacing = 1 * 60;  // ZENZO: 1 minute
@@ -234,9 +262,6 @@ public:
         pchMessageStart[2] = 0x5a;
         pchMessageStart[3] = 0xa1;
         nDefaultPort = 16210;
-        nEnforceBlockUpgradeMajority = 51;
-        nRejectBlockOutdatedMajority = 75;
-        nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; // ZENZO: 1 day
         nTargetSpacing = 1 * 60;  // ZENZO: 1 minute
@@ -313,9 +338,6 @@ public:
         pchMessageStart[2] = 0xf2;
         pchMessageStart[3] = 0x3a;
         nSubsidyHalvingInterval = 150;
-        nEnforceBlockUpgradeMajority = 750;
-        nRejectBlockOutdatedMajority = 950;
-        nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
         nTargetTimespan = 24 * 60 * 60; // ZENZO: 1 day
         nTargetSpacing = 1 * 60;        // ZENZO: 1 minutes
@@ -376,9 +398,6 @@ public:
 
     //! Published setters to allow changing values in unit test cases
     virtual void setSubsidyHalvingInterval(int anSubsidyHalvingInterval) { nSubsidyHalvingInterval = anSubsidyHalvingInterval; }
-    virtual void setEnforceBlockUpgradeMajority(int anEnforceBlockUpgradeMajority) { nEnforceBlockUpgradeMajority = anEnforceBlockUpgradeMajority; }
-    virtual void setRejectBlockOutdatedMajority(int anRejectBlockOutdatedMajority) { nRejectBlockOutdatedMajority = anRejectBlockOutdatedMajority; }
-    virtual void setToCheckBlockUpgradeMajority(int anToCheckBlockUpgradeMajority) { nToCheckBlockUpgradeMajority = anToCheckBlockUpgradeMajority; }
     virtual void setDefaultConsistencyChecks(bool afDefaultConsistencyChecks) { fDefaultConsistencyChecks = afDefaultConsistencyChecks; }
     virtual void setAllowMinDifficultyBlocks(bool afAllowMinDifficultyBlocks) { fAllowMinDifficultyBlocks = afAllowMinDifficultyBlocks; }
     virtual void setSkipProofOfWorkCheck(bool afSkipProofOfWorkCheck) { fSkipProofOfWorkCheck = afSkipProofOfWorkCheck; }

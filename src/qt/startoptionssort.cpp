@@ -21,6 +21,25 @@ CustomRectItem::CustomRectItem(QGraphicsItem *parent):
     setFlags(QGraphicsItem::ItemIsSelectable);
 }
 
+void StartOptionsSort::keyPressEvent(QKeyEvent *event){
+    Q_FOREACH(QGraphicsItem *item, scene->selectedItems())
+    if(event->key() == Qt::Key_Backspace){
+
+        if(CustomRectItem *rItem = qgraphicsitem_cast<CustomRectItem*> (item)){
+            for (auto const& i : labelsList)
+            {
+                if (i->count() < 4) {
+                    i->addItem(rItem->text());
+                    rItem->setText(QString());
+                    break;
+                }
+            }
+        }
+        scene->clearSelection();
+    }
+    QWidget::keyPressEvent(event);
+}
+
 void CustomRectItem::setText(const QString &text){
     this->m_text = text;
     update();

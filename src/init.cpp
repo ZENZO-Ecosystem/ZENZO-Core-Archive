@@ -379,6 +379,7 @@ std::string HelpMessage(HelpMessageMode mode)
     strUsage += HelpMessageGroup(_("Wallet options:"));
     strUsage += HelpMessageOpt("-createwalletbackups=<n>", _("Number of automatic wallet backups (default: 10)"));
     strUsage += HelpMessageOpt("-disablewallet", _("Do not load the wallet and disable wallet RPC calls"));
+    strUsage += HelpMessageOpt("-skipmnemonicstartupui", _("Skip the Mnemonic startup page"));
     strUsage += HelpMessageOpt("-keypool=<n>", strprintf(_("Set key pool size to <n> (default: %u)"), 100));
     if (GetBoolArg("-help-debug", false))
         strUsage += HelpMessageOpt("-mintxfee=<amt>", strprintf(_("Fees (in ZNZ/Kb) smaller than this are considered zero fee for transaction creation (default: %s)"),
@@ -1394,7 +1395,8 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler, const std
                             uiInterface.ShowProgress(_("Calculating missing accumulators..."), (int)(dPercent * 100));
                             if(find(listAccCheckpointsNoDB.begin(), listAccCheckpointsNoDB.end(), pindex->nAccumulatorCheckpoint) != listAccCheckpointsNoDB.end()) {
                                 uint256 nCheckpointCalculated = 0;
-                                if (!CalculateAccumulatorCheckpoint(pindex->nHeight, nCheckpointCalculated)) {
+                                AccumulatorMap mapAccumulators;
+                                if (!CalculateAccumulatorCheckpoint(pindex->nHeight, nCheckpointCalculated, mapAccumulators)) {
                                     // GetCheckpoint could have terminated due to a shutdown request. Check this here.
                                     if (ShutdownRequested())
                                         break;
