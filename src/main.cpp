@@ -4726,10 +4726,10 @@ bool static LoadBlockIndexDB()
                     fBlockDatabaseForkFound = false;
                     LogPrintf("LoadBlockIndexDB() : No fork detected... (height: %i, hash: %i)\n", pindex->nHeight, pindex->GetBlockHash().ToString());
                 }
-            } else if (!fBlockDatabaseForkFound && pindex->nHeight > 875000) { // If higher than the last auto-checkpoint, check every block (Not the most optimized)
+            } else if (!fBlockDatabaseForkFound && pindex->nHeight > 900000) { // If higher than the last auto-checkpoint, check every block (Not the most optimized)
                 if (!Checkpoints::CheckBlock(pindex->nHeight, pindex->GetBlockHash())) {
                     fBlockDatabaseForkFound = true;
-                    LogPrintf("LoadBlockIndexDB() : (>875000) Possible fork detected, but we have no more checkpoints to compare against, assuming irreversibly forked...\n");
+                    LogPrintf("LoadBlockIndexDB() : (>900000) Possible fork detected, but we have no more checkpoints to compare against, assuming irreversibly forked...\n");
                 }
                 // No need to revert the flag here, as we'll be spammed with "good" blocks that do not have a checkpoint paired
             }
